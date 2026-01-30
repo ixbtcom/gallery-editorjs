@@ -1,148 +1,223 @@
-[![](https://badgen.net/badge/@editorjs/v2.0/blue)](https://www.npmjs.com/package/@editorjs/editorjs) 
-[![](https://badgen.net/badge/Gallery-editorjs/v1.2.3/blue)](https://www.npmjs.com/package/@vtchinh/gallery-editorjs)
+# Gallery Tool for Editor.js
 
-# Carousel Tool
+Плагин галереи для Editor.js с поддержкой множественных изображений, атрибуции источников и различных макетов отображения.
 
-Gallery with custom column for [Editor.js](https://editorjs.io).
+## Возможности
 
-Inspired from [mr8bit/carousel-editorjs](https://github.com/mr8bit/carousel-editorjs)
+- **Множественные изображения** — добавляйте неограниченное количество изображений в одну галерею
+- **Загрузка файлов** — с устройства или по URL
+- **Атрибуция источников** — подпись, источник и ссылка на источник для каждого изображения
+- **Макеты** — Grid (сетка), Carousel (карусель), Masonry (мозаика)
+- **Управление колонками** — настройка количества колонок (1-5)
+- **Сортировка** — перемещение изображений влево/вправо
+- **TypeScript** — полная типизация
 
-![](./img/preload.png)
+## Установка
 
-## Features
+```bash
+npm install @ixbtcom/gallery-editorjs
+# или
+yarn add @ixbtcom/gallery-editorjs
+```
 
-- Uploading file from the device
-- Preload image
-- Change the image position
-- Toggle the gallery style ([`standard`, `carousel`, `masonry`] are included)
-- Column settings
-- Remove Image From Server
+## Использование
 
-## Installation
-
-`npm i @vtchinh/gallery-editorjs`
-
-### Manual downloading and connecting
-
-1. Upload folder `dist` from repository
-2. Add `dist/bundle.js` file to your page.
-
-## Usage
-
-Add a new Tool to the `tools` property of the Editor.js initial config.
+### Базовое подключение
 
 ```javascript
-import Carousel from 'Carousel';
+import EditorJS from '@editorjs/editorjs';
+import GalleryTool from '@ixbtcom/gallery-editorjs';
 
-// or if you inject ImageTool via standalone script
-const Carousel = window.Carousel;
- 
-var editor = EditorJS({
-  ...
-
+const editor = new EditorJS({
+  holder: 'editor',
   tools: {
-    ...
-    carousel: {
-        class: Carousel,
-        config: {
-            endpoints: {
-                byFile: "URL_FETCH",
-                removeImage: "URL_FETCH", //default null
-            },
-            additionalRequestHeaders: {
-                'authorization': 'Bearer eyJhbGciJ9...TJVA95OrM7h7HgQ',
-                // ...
-            },
-            field: 'image',
-            types: 'image/*',
-            additionalRequestData: { // for custom data
-                name: 'your custom data name',
-                order_data: 'your order custom data',
-            },
-            galleryCallback: 'your_prefer_callback_data' // object return is required
-        }
+    gallery: {
+      class: GalleryTool,
+      config: {
+        endpoints: {
+          byFile: '/api/upload/image',
+          byUrl: '/api/upload/image-by-url',
+        },
+      },
     },
-  }
-  ...
+  },
 });
+```
 
-function your_prefer_callback_data() {
-  return {'key': 'value'};
+### С кастомным uploader
+
+```javascript
+const editor = new EditorJS({
+  tools: {
+    gallery: {
+      class: GalleryTool,
+      config: {
+        uploader: {
+          uploadByFile: async (file) => {
+            const formData = new FormData();
+            formData.append('image', file);
+
+            const response = await fetch('/api/upload', {
+              method: 'POST',
+              body: formData,
+            });
+
+            return response.json();
+          },
+          uploadByUrl: async (url) => {
+            const response = await fetch('/api/upload-by-url', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ url }),
+            });
+
+            return response.json();
+          },
+        },
+      },
+    },
+  },
+});
+```
+
+## Конфигурация
+
+| Параметр | Тип | Описание |
+|----------|-----|----------|
+| `endpoints.byFile` | `string` | URL для загрузки файлов |
+| `endpoints.byUrl` | `string` | URL для загрузки по URL |
+| `uploader.uploadByFile` | `function` | Кастомная функция загрузки файла |
+| `uploader.uploadByUrl` | `function` | Кастомная функция загрузки по URL |
+| `captionPlaceholder` | `string` | Плейсхолдер для подписи (default: "Caption") |
+| `sourcePlaceholder` | `string` | Плейсхолдер для источника (default: "Source") |
+| `sourceLinkPlaceholder` | `string` | Плейсхолдер для ссылки (default: "Source link") |
+| `field` | `string` | Имя поля для FormData (default: "image") |
+| `types` | `string` | MIME-типы файлов (default: "image/*") |
+| `additionalRequestData` | `object` | Дополнительные данные для запроса |
+| `additionalRequestHeaders` | `object` | Дополнительные заголовки |
+
+## Формат ответа сервера
+
+Сервер должен возвращать JSON в формате:
+
+```json
+{
+  "success": 1,
+  "file": {
+    "url": "https://cdn.example.com/image.jpg"
+  }
 }
 ```
 
-For `removeImage` configuration, all you need is providing a request for `POST['image']` key.
-<br>Don't forget to put `csrf-token` meta as something like `<meta name="csrf-token" content="{{ csrf_token }}">` to your `<head>`
+При ошибке:
 
+```json
+{
+  "success": 0,
+  "message": "Описание ошибки"
+}
+```
 
-# Change Log
-All notable changes to this project will be documented in this file.
+## Структура данных блока
 
-## [1.2.3] - 2022-07-13
+```typescript
+interface GalleryToolData {
+  items: GalleryItemData[];
+  layout: 'grid' | 'carousel' | 'masonry';
+  columns: number; // 1-5
+}
 
-### Added
+interface GalleryItemData {
+  url: string;      // URL изображения
+  caption: string;  // Подпись
+  source: string;   // Источник/атрибуция
+  sourceLink: string; // Ссылка на источник
+}
+```
 
-- Add some styles for fixing the image size.
+### Пример сохранённых данных
 
-## [1.2.2] - 2022-06-14
+```json
+{
+  "type": "gallery",
+  "data": {
+    "items": [
+      {
+        "url": "https://cdn.example.com/photo1.jpg",
+        "caption": "Фото с мероприятия",
+        "source": "Пресс-служба компании",
+        "sourceLink": "https://company.com/press"
+      },
+      {
+        "url": "https://cdn.example.com/photo2.jpg",
+        "caption": "Новый продукт",
+        "source": "",
+        "sourceLink": ""
+      }
+    ],
+    "layout": "grid",
+    "columns": 3
+  }
+}
+```
 
-Now we can have more custom data on upload.
-### Added
+## Макеты (Block Tunes)
 
-- Upload data callback
+### Grid (Сетка)
+Изображения располагаются в равномерной сетке с настраиваемым количеством колонок.
 
-## [1.2.1] - 2022-05-14
-  
-Provide the ability to remove the image from Server.
- 
-### Changed
+### Carousel (Карусель)
+Горизонтальная прокрутка изображений. Ширина каждого элемента фиксирована (280px).
 
-- Added some note for the `csrf-token`
+### Masonry (Мозаика)
+CSS-колонки с автоматической раскладкой изображений разной высоты.
 
-## [1.2.0] - 2022-05-14
-  
-Provide the ability to remove the image from Server.
- 
-### Added
+## i18n (Локализация)
 
-- API to remove image from server.
+Плагин поддерживает локализацию через API Editor.js:
 
-## [1.1.5] - 2022-05-05
-  
-We have changed the preloader.
- 
-### Changed
+```javascript
+const editor = new EditorJS({
+  i18n: {
+    messages: {
+      toolNames: {
+        Gallery: 'Галерея',
+      },
+      tools: {
+        gallery: {
+          Caption: 'Подпись',
+          Source: 'Источник',
+          'Source link': 'Ссылка на источник',
+          Grid: 'Сетка',
+          Carousel: 'Карусель',
+          Masonry: 'Мозаика',
+          "Couldn't upload image. Please try another.":
+            'Не удалось загрузить изображение. Попробуйте другое.',
+        },
+      },
+    },
+  },
+});
+```
 
-- Image Preloader for example.
+## Разработка
 
-## [1.1.4] - 2022-05-05
-  
-We have fixed some bugs when saving the caption.
+```bash
+# Установка зависимостей
+npm install
 
-### Fixed
+# Сборка
+npm run build
 
-- Bug on saving captions.
+# Сборка с watch
+npm run dev
+```
 
-## [1.1.3] - 2022-05-05
-  
-Change the way to catch caption HTML structure.
- 
-### Changed
+## Требования
 
-- Refactor captions.
+- Editor.js >= 2.30.0
+- Современный браузер с поддержкой ES2020
 
-## [1.1.2] - 2022-05-04
-  
-We have fixed some bugs when saving the caption.
- 
-### Fixed
+## Лицензия
 
-- Bug on saving captions
- 
-## [1.1.1] - 2022-05-04
-  
-We have tested and fixed so many times from version 1.0.0
- 
-## [1.0.0] - 2022-04-25
- 
-- Released.
+MIT
