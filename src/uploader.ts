@@ -34,12 +34,18 @@ export default class Uploader {
       reader.onload = (e) => {
         onPreview((e.target as FileReader).result as string);
       };
+      reader.onerror = () => {
+        this.onError('Failed to read file');
+      };
     };
 
     let upload: Promise<UploadResponseFormat>;
 
     if (this.config.uploader?.uploadByFile) {
       upload = ajax.selectFiles({ accept: this.config.types ?? 'image/*' }).then((files: File[]) => {
+        if (!files || files.length === 0) {
+          throw new Error('No file selected');
+        }
         preparePreview(files[0]);
         const customUpload = this.config.uploader!.uploadByFile!(files[0]);
 
@@ -50,13 +56,20 @@ export default class Uploader {
         return customUpload;
       });
     } else {
+      if (!this.config.endpoints.byFile) {
+        this.onError('Upload endpoint (byFile) is not configured');
+        return;
+      }
+
       upload = ajax.transport({
-        url: this.config.endpoints.byFile!,
+        url: this.config.endpoints.byFile,
         data: this.config.additionalRequestData,
         accept: this.config.types ?? 'image/*',
         headers: this.config.additionalRequestHeaders as Record<string, string>,
         beforeSend: (files: File[]) => {
-          preparePreview(files[0]);
+          if (files && files.length > 0) {
+            preparePreview(files[0]);
+          }
         },
         fieldName: this.config.field ?? 'image',
       }).then((response: AjaxResponse) => response.body as UploadResponseFormat);
@@ -80,8 +93,13 @@ export default class Uploader {
         console.warn('Custom uploader method uploadByUrl should return a Promise');
       }
     } else {
+      if (!this.config.endpoints.byUrl) {
+        this.onError('Upload endpoint (byUrl) is not configured');
+        return;
+      }
+
       upload = ajax.post({
-        url: this.config.endpoints.byUrl!,
+        url: this.config.endpoints.byUrl,
         data: {
           url,
           ...this.config.additionalRequestData,
@@ -105,6 +123,9 @@ export default class Uploader {
     reader.onload = (e) => {
       onPreview((e.target as FileReader).result as string);
     };
+    reader.onerror = () => {
+      this.onError('Failed to read file');
+    };
 
     let upload: Promise<UploadResponseFormat>;
 
@@ -115,6 +136,11 @@ export default class Uploader {
         console.warn('Custom uploader method uploadByFile should return a Promise');
       }
     } else {
+      if (!this.config.endpoints.byFile) {
+        this.onError('Upload endpoint (byFile) is not configured');
+        return;
+      }
+
       const formData = new FormData();
       formData.append(this.config.field ?? 'image', file);
 
@@ -125,7 +151,7 @@ export default class Uploader {
       }
 
       upload = ajax.post({
-        url: this.config.endpoints.byFile!,
+        url: this.config.endpoints.byFile,
         data: formData,
         type: ajax.contentType.JSON,
         headers: this.config.additionalRequestHeaders as Record<string, string>,

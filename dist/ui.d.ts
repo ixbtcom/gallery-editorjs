@@ -25,6 +25,10 @@ interface UiParams {
  * Gallery UI class
  */
 export default class Ui {
+    /** Minimum number of columns */
+    private static readonly MIN_COLUMNS;
+    /** Maximum number of columns */
+    private static readonly MAX_COLUMNS;
     nodes: Nodes;
     private api;
     private config;
@@ -33,6 +37,7 @@ export default class Ui {
     private onColumnsChange;
     private readOnly;
     private currentColumns;
+    private previousColumns;
     constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, readOnly }: UiParams);
     private get CSS();
     /**
@@ -66,6 +71,10 @@ export default class Ui {
     private createColumnsControl;
     private changeColumns;
     private updateColumnsClass;
+    /**
+     * Validate URL to prevent malicious protocols
+     */
+    private isValidImageUrl;
     private updateColumnsDisplay;
     private createItemControls;
     private moveItem;

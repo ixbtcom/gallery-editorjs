@@ -38,6 +38,11 @@ interface UiParams {
  * Gallery UI class
  */
 export default class Ui {
+  /** Minimum number of columns */
+  private static readonly MIN_COLUMNS = 1;
+  /** Maximum number of columns */
+  private static readonly MAX_COLUMNS = 5;
+
   public nodes: Nodes;
   private api: API;
   private config: GalleryConfig;
@@ -46,6 +51,7 @@ export default class Ui {
   private onColumnsChange: (columns: number) => void;
   private readOnly: boolean;
   private currentColumns: number = 2;
+  private previousColumns: number = 2;
 
   constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, readOnly }: UiParams) {
     this.api = api;
@@ -129,19 +135,22 @@ export default class Ui {
       contentEditable: !this.readOnly,
     });
     caption.dataset.placeholder = this.config.captionPlaceholder ?? 'Caption';
-    caption.innerHTML = data.caption || '';
+    // Use textContent to prevent XSS
+    caption.textContent = data.caption || '';
 
     const source = make('div', [this.CSS.itemSource, this.CSS.input], {
       contentEditable: !this.readOnly,
     });
     source.dataset.placeholder = this.config.sourcePlaceholder ?? 'Source';
-    source.innerHTML = data.source || '';
+    // Use textContent to prevent XSS
+    source.textContent = data.source || '';
 
     const sourceLink = make('div', [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly,
     });
     sourceLink.dataset.placeholder = this.config.sourceLinkPlaceholder ?? 'Source link';
-    sourceLink.innerHTML = data.sourceLink || '';
+    // Use textContent to prevent XSS
+    sourceLink.textContent = data.sourceLink || '';
 
     imageContainer.appendChild(preloader);
     imageContainer.appendChild(img);
@@ -245,9 +254,10 @@ export default class Ui {
       const url = (item as HTMLElement).dataset.url;
       if (!url) return;
 
-      const caption = item.querySelector(`.${this.CSS.itemCaption}`)?.innerHTML || '';
-      const source = item.querySelector(`.${this.CSS.itemSource}`)?.innerHTML || '';
-      const sourceLink = item.querySelector(`.${this.CSS.itemSourceLink}`)?.innerHTML || '';
+      // Use textContent to prevent XSS when saving data
+      const caption = item.querySelector(`.${this.CSS.itemCaption}`)?.textContent || '';
+      const source = item.querySelector(`.${this.CSS.itemSource}`)?.textContent || '';
+      const sourceLink = item.querySelector(`.${this.CSS.itemSourceLink}`)?.textContent || '';
 
       data.push({ url, caption, source, sourceLink });
     });
@@ -289,7 +299,8 @@ export default class Ui {
       if (e.key === 'Enter') {
         e.preventDefault();
         const url = input.value.trim();
-        if (url) {
+        // Validate URL to prevent javascript: and other malicious protocols
+        if (url && this.isValidImageUrl(url)) {
           this.onSelectUrl(url);
           input.value = '';
           wrapper.style.display = 'none';
@@ -340,8 +351,9 @@ export default class Ui {
   }
 
   private changeColumns(delta: number): void {
-    const newColumns = Math.min(5, Math.max(1, this.currentColumns + delta));
+    const newColumns = Math.min(Ui.MAX_COLUMNS, Math.max(Ui.MIN_COLUMNS, this.currentColumns + delta));
     if (newColumns !== this.currentColumns) {
+      this.previousColumns = this.currentColumns;
       this.currentColumns = newColumns;
       this.updateColumnsClass();
       this.updateColumnsDisplay();
@@ -350,10 +362,29 @@ export default class Ui {
   }
 
   private updateColumnsClass(): void {
-    for (let i = 1; i <= 5; i++) {
-      this.nodes.wrapper.classList.remove(`gallery-tool--columns-${i}`);
+    // Optimized: only replace changed class instead of removing all
+    const oldClass = `gallery-tool--columns-${this.previousColumns}`;
+    const newClass = `gallery-tool--columns-${this.currentColumns}`;
+
+    if (this.nodes.wrapper.classList.contains(oldClass)) {
+      this.nodes.wrapper.classList.replace(oldClass, newClass);
+    } else {
+      // Fallback for initial render
+      for (let i = Ui.MIN_COLUMNS; i <= Ui.MAX_COLUMNS; i++) {
+        this.nodes.wrapper.classList.remove(`gallery-tool--columns-${i}`);
+      }
+      this.nodes.wrapper.classList.add(newClass);
     }
-    this.nodes.wrapper.classList.add(`gallery-tool--columns-${this.currentColumns}`);
+  }
+
+  /**
+   * Validate URL to prevent malicious protocols
+   */
+  private isValidImageUrl(url: string): boolean {
+    // Allow http, https, and data: URLs for images
+    return url.startsWith('http://') ||
+           url.startsWith('https://') ||
+           url.startsWith('data:image/');
   }
 
   private updateColumnsDisplay(): void {
