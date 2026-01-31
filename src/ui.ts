@@ -299,14 +299,14 @@ export default class Ui {
 
   private createFileButton(): HTMLElement {
     const button = make('div', [this.CSS.button]);
-    button.innerHTML = this.config.buttonContent ?? `${IconPicture} Add Image`;
+    button.innerHTML = `${IconPicture} ${this.config.buttonContent}`;
     button.addEventListener('click', () => this.onSelectFile());
     return button;
   }
 
   private createUrlButton(): HTMLElement {
     const button = make('div', [this.CSS.button]);
-    button.innerHTML = this.config.urlButtonContent ?? `${IconLink} Add from URL`;
+    button.innerHTML = `${IconLink} ${this.config.urlButtonContent}`;
     button.addEventListener('click', () => this.toggleUrlInput());
     return button;
   }
@@ -467,5 +467,32 @@ export default class Ui {
       'gallery-tool--filled'
     );
     this.nodes.wrapper.classList.add(`gallery-tool--${state}`);
+  }
+
+  /**
+   * Apply tune to wrapper
+   */
+  public applyTune(tuneName: string, status: boolean): void {
+    this.nodes.wrapper.classList.toggle(`gallery-tool--${tuneName}`, status);
+
+    // Show/hide stretched badge
+    if (tuneName === 'stretched') {
+      this.updateStretchedBadge(status);
+    }
+  }
+
+  /**
+   * Update stretched badge visibility
+   */
+  private updateStretchedBadge(isStretched: boolean): void {
+    const existingBadge = this.nodes.wrapper.querySelector('.gallery-tool__stretched-badge');
+
+    if (isStretched && !existingBadge) {
+      const badge = make('div', ['gallery-tool__stretched-badge']);
+      badge.textContent = 'Обложка';
+      this.nodes.wrapper.insertBefore(badge, this.nodes.wrapper.firstChild);
+    } else if (!isStretched && existingBadge) {
+      existingBadge.remove();
+    }
   }
 }

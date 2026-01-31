@@ -79,5 +79,13 @@ export default class Ui {
     private createItemControls;
     private moveItem;
     private toggleState;
+    /**
+     * Apply tune to wrapper
+     */
+    applyTune(tuneName: string, status: boolean): void;
+    /**
+     * Update stretched badge visibility
+     */
+    private updateStretchedBadge;
 }
 export {};

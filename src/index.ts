@@ -11,14 +11,28 @@ import type {
   BlockToolConstructorOptions,
   BlockTool,
   BlockAPI,
+  PasteConfig,
+  PasteEvent,
+  PatternPasteEventDetail,
+  FilePasteEventDetail,
 } from '@editorjs/editorjs';
 import type { TunesMenuConfig } from '@editorjs/editorjs/types/tools';
 import './index.css';
 
 import Ui from './ui';
 import Uploader from './uploader';
-import { IconPicture } from '@codexteam/icons';
+import { IconPicture, IconStretch } from '@codexteam/icons';
 import type { UploadResponseFormat, GalleryToolData, GalleryConfig, GalleryItemData } from './types/types';
+
+/**
+ * Tune configuration
+ */
+interface ActionConfig {
+  name: string;
+  icon: string;
+  title: string;
+  toggle: boolean;
+}
 
 type GalleryToolConstructorOptions = BlockToolConstructorOptions<GalleryToolData, GalleryConfig>;
 
@@ -49,8 +63,8 @@ export default class GalleryTool implements BlockTool {
       captionPlaceholder: this.api.i18n.t(config.captionPlaceholder ?? 'Caption'),
       sourcePlaceholder: this.api.i18n.t(config.sourcePlaceholder ?? 'Source'),
       sourceLinkPlaceholder: this.api.i18n.t(config.sourceLinkPlaceholder ?? 'Source link'),
-      buttonContent: config.buttonContent,
-      urlButtonContent: config.urlButtonContent,
+      buttonContent: config.buttonContent ?? this.api.i18n.t('Add Image'),
+      urlButtonContent: config.urlButtonContent ?? this.api.i18n.t('Add from URL'),
       uploader: config.uploader,
     };
 
@@ -73,6 +87,7 @@ export default class GalleryTool implements BlockTool {
       items: [],
       layout: 'grid',
       columns: 1,
+      stretched: false,
     };
 
     if (data && data.items) {
@@ -98,10 +113,53 @@ export default class GalleryTool implements BlockTool {
   }
 
   /**
+   * Available gallery tunes
+   */
+  public static get tunes(): Array<ActionConfig> {
+    return [
+      {
+        name: 'stretched',
+        icon: IconStretch,
+        title: 'Stretch image',
+        toggle: true,
+      },
+    ];
+  }
+
+  /**
+   * Specify paste substitutes
+   */
+  public static get pasteConfig(): PasteConfig {
+    return {
+      tags: [
+        {
+          img: { src: true },
+        },
+      ],
+      patterns: {
+        image: /https?:\/\/\S+\.(gif|jpe?g|tiff|png|svg|webp)(\?[a-z0-9=]*)?$/i,
+      },
+      files: {
+        mimeTypes: ['image/*'],
+      },
+    };
+  }
+
+  /**
    * Renders Block content
    */
   public render(): HTMLElement {
-    return this.ui.render(this._data.items, this._data.columns);
+    const wrapper = this.ui.render(this._data.items, this._data.columns);
+
+    // Apply saved tunes
+    GalleryTool.tunes.forEach(({ name }) => {
+      const value = this._data[name as keyof GalleryToolData] as boolean;
+      if (value) {
+        this.setTune(name, value);
+      }
+    });
+
+    return wrapper;
   }
 
   /**
@@ -132,13 +190,26 @@ export default class GalleryTool implements BlockTool {
    * Returns configuration for block tunes
    */
   public renderSettings(): TunesMenuConfig {
+    // Tunes (withBorder, stretched, withBackground)
+    const tunes = GalleryTool.tunes.map(tune => ({
+      icon: tune.icon,
+      label: this.api.i18n.t(tune.title),
+      name: tune.name,
+      toggle: tune.toggle,
+      isActive: this._data[tune.name as keyof GalleryToolData] as boolean,
+      onActivate: () => {
+        this.tuneToggled(tune.name);
+      },
+    }));
+
+    // Layouts (grid, carousel, masonry)
     const layouts = [
       { name: 'grid', title: 'Grid', icon: this.getGridIcon() },
       { name: 'carousel', title: 'Carousel', icon: this.getCarouselIcon() },
       { name: 'masonry', title: 'Masonry', icon: this.getMasonryIcon() },
     ];
 
-    return layouts.map(layout => ({
+    const layoutItems = layouts.map(layout => ({
       icon: layout.icon,
       label: this.api.i18n.t(layout.title),
       name: layout.name,
@@ -148,6 +219,38 @@ export default class GalleryTool implements BlockTool {
         this.updateLayoutClass();
       },
     }));
+
+    return [...tunes, ...layoutItems];
+  }
+
+  /**
+   * Handle paste events
+   */
+  public async onPaste(event: PasteEvent): Promise<void> {
+    switch (event.type) {
+      case 'tag': {
+        const image = (event.detail as { data: HTMLImageElement }).data;
+
+        if (/^blob:/.test(image.src)) {
+          const response = await fetch(image.src);
+          const file = await response.blob();
+          this.uploadFile(file);
+        } else {
+          this.uploadFromUrl(image.src);
+        }
+        break;
+      }
+      case 'pattern': {
+        const url = (event.detail as PatternPasteEventDetail).data;
+        this.uploadFromUrl(url);
+        break;
+      }
+      case 'file': {
+        const file = (event.detail as FilePasteEventDetail).file;
+        this.uploadFile(file);
+        break;
+      }
+    }
   }
 
   /**
@@ -155,6 +258,17 @@ export default class GalleryTool implements BlockTool {
    */
   private selectFile(): void {
     this.uploader.uploadSelectedFile({
+      onPreview: (src: string) => {
+        this.currentLoadingItem = this.ui.createLoadingItem(src);
+      },
+    });
+  }
+
+  /**
+   * Upload file from paste/drag-n-drop
+   */
+  private uploadFile(file: Blob): void {
+    this.uploader.uploadByFile(file, {
       onPreview: (src: string) => {
         this.currentLoadingItem = this.ui.createLoadingItem(src);
       },
@@ -225,6 +339,32 @@ export default class GalleryTool implements BlockTool {
     const wrapper = this.ui.nodes.wrapper;
     wrapper.classList.remove('gallery-tool--grid', 'gallery-tool--carousel', 'gallery-tool--masonry');
     wrapper.classList.add(`gallery-tool--${this._data.layout}`);
+  }
+
+  /**
+   * Callback fired when Block Tune is activated
+   */
+  private tuneToggled(tuneName: string): void {
+    const currentValue = this._data[tuneName as keyof GalleryToolData] as boolean;
+    this.setTune(tuneName, !currentValue);
+  }
+
+  /**
+   * Set one tune
+   */
+  private setTune(tuneName: string, value: boolean): void {
+    if (tuneName === 'stretched') {
+      this._data.stretched = value;
+    }
+    this.ui.applyTune(tuneName, value);
+
+    if (tuneName === 'stretched') {
+      Promise.resolve().then(() => {
+        this.block.stretched = value;
+      }).catch((err) => {
+        console.error(err);
+      });
+    }
   }
 
   private getGridIcon(): string {

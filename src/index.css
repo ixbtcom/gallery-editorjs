@@ -290,3 +290,20 @@
 .gallery-tool--loading .gallery-tool__item-image img {
   display: none;
 }
+
+/* Tune: stretched */
+.gallery-tool--stretched .gallery-tool__item-image img {
+  max-height: none;
+}
+
+/* Stretched badge */
+.gallery-tool__stretched-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  background: var(--accent-color);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+}
