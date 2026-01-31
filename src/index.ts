@@ -72,7 +72,7 @@ export default class GalleryTool implements BlockTool {
     this._data = {
       items: [],
       layout: 'grid',
-      columns: 2,
+      columns: 1,
     };
 
     if (data && data.items) {

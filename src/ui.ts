@@ -50,8 +50,8 @@ export default class Ui {
   private onSelectUrl: (url: string) => void;
   private onColumnsChange: (columns: number) => void;
   private readOnly: boolean;
-  private currentColumns: number = 2;
-  private previousColumns: number = 2;
+  private currentColumns: number = 1;
+  private previousColumns: number = 1;
 
   constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, readOnly }: UiParams) {
     this.api = api;
@@ -87,6 +87,7 @@ export default class Ui {
       item: 'gallery-tool__item',
       itemImage: 'gallery-tool__item-image',
       itemPreloader: 'gallery-tool__item-preloader',
+      itemDimensions: 'gallery-tool__item-dimensions',
       itemCaption: 'gallery-tool__item-caption',
       itemSource: 'gallery-tool__item-source',
       itemSourceLink: 'gallery-tool__item-source-link',
@@ -154,6 +155,13 @@ export default class Ui {
 
     imageContainer.appendChild(preloader);
     imageContainer.appendChild(img);
+
+    // Add dimensions badge if available
+    if (data.width && data.height) {
+      const dimensions = make('div', [this.CSS.itemDimensions]);
+      dimensions.textContent = `${data.width} × ${data.height}`;
+      imageContainer.appendChild(dimensions);
+    }
 
     img.onload = () => {
       preloader.style.display = 'none';
@@ -235,6 +243,14 @@ export default class Ui {
     };
 
     imageContainer.appendChild(img);
+
+    // Add dimensions badge if available
+    if (data.width && data.height) {
+      const dimensions = make('div', [this.CSS.itemDimensions]);
+      dimensions.textContent = `${data.width} × ${data.height}`;
+      imageContainer.appendChild(dimensions);
+    }
+
     item.dataset.url = data.url;
     if (data.width) item.dataset.width = String(data.width);
     if (data.height) item.dataset.height = String(data.height);
