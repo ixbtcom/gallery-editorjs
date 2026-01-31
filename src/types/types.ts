@@ -27,6 +27,10 @@ export interface GalleryItemData {
   caption: string;
   source: string;
   sourceLink: string;
+  /** Оригинальная ширина изображения (из upload response) */
+  width?: number;
+  /** Оригинальная высота изображения (из upload response) */
+  height?: number;
 }
 
 /**

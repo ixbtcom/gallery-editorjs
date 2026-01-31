@@ -170,6 +170,8 @@ export default class Ui {
     item.appendChild(sourceLink);
 
     item.dataset.url = data.url;
+    if (data.width) item.dataset.width = String(data.width);
+    if (data.height) item.dataset.height = String(data.height);
 
     this.nodes.itemsContainer.appendChild(item);
     this.toggleState(UiState.Filled);
@@ -221,11 +223,11 @@ export default class Ui {
   /**
    * Update loading item with uploaded image
    */
-  public fillLoadingItem(item: HTMLElement, url: string): void {
+  public fillLoadingItem(item: HTMLElement, data: GalleryItemData): void {
     const imageContainer = item.querySelector(`.${this.CSS.itemImage}`) as HTMLElement;
     const preloader = item.querySelector(`.${this.CSS.itemPreloader}`) as HTMLElement;
 
-    const img = make('img', null, { src: url }) as HTMLImageElement;
+    const img = make('img', null, { src: data.url }) as HTMLImageElement;
     img.onload = () => {
       if (preloader) {
         preloader.style.display = 'none';
@@ -233,7 +235,9 @@ export default class Ui {
     };
 
     imageContainer.appendChild(img);
-    item.dataset.url = url;
+    item.dataset.url = data.url;
+    if (data.width) item.dataset.width = String(data.width);
+    if (data.height) item.dataset.height = String(data.height);
 
     if (!this.readOnly) {
       const controls = this.createItemControls(item);
@@ -251,7 +255,8 @@ export default class Ui {
     const data: GalleryItemData[] = [];
 
     items.forEach((item) => {
-      const url = (item as HTMLElement).dataset.url;
+      const el = item as HTMLElement;
+      const url = el.dataset.url;
       if (!url) return;
 
       // Use textContent to prevent XSS when saving data
@@ -259,7 +264,11 @@ export default class Ui {
       const source = item.querySelector(`.${this.CSS.itemSource}`)?.textContent || '';
       const sourceLink = item.querySelector(`.${this.CSS.itemSourceLink}`)?.textContent || '';
 
-      data.push({ url, caption, source, sourceLink });
+      // Read dimensions from data-attributes
+      const width = el.dataset.width ? parseInt(el.dataset.width, 10) : undefined;
+      const height = el.dataset.height ? parseInt(el.dataset.height, 10) : undefined;
+
+      data.push({ url, caption, source, sourceLink, width, height });
     });
 
     return data;

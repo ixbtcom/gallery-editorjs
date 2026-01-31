@@ -166,16 +166,20 @@ export default class GalleryTool implements BlockTool {
    */
   private onUpload(response: UploadResponseFormat): void {
     if (response.success && response.file) {
+      const itemData: GalleryItemData = {
+        url: response.file.url,
+        caption: '',
+        source: '',
+        sourceLink: '',
+        width: response.file.width,
+        height: response.file.height,
+      };
+
       if (this.currentLoadingItem) {
-        this.ui.fillLoadingItem(this.currentLoadingItem, response.file.url);
+        this.ui.fillLoadingItem(this.currentLoadingItem, itemData);
         this.currentLoadingItem = null;
       } else {
-        this.ui.addItem({
-          url: response.file.url,
-          caption: '',
-          source: '',
-          sourceLink: '',
-        });
+        this.ui.addItem(itemData);
       }
     } else {
       this.uploadingFailed('incorrect response: ' + JSON.stringify(response));

@@ -55,7 +55,7 @@ export default class Ui {
     /**
      * Update loading item with uploaded image
      */
-    fillLoadingItem(item: HTMLElement, url: string): void;
+    fillLoadingItem(item: HTMLElement, data: GalleryItemData): void;
     /**
      * Get all items data
      */
