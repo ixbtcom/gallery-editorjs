@@ -7,7 +7,7 @@ function S(_, t = null, e = {}) {
     Object.prototype.hasOwnProperty.call(e, i) && (a[i] = e[i]);
   return a;
 }
-const T = class T {
+const k = class k {
   constructor({ api: t, config: e, onSelectFile: a, onSelectUrl: i, onColumnsChange: o, readOnly: r }) {
     this.currentColumns = 2, this.previousColumns = 2, this.api = t, this.config = e, this.onSelectFile = a, this.onSelectUrl = i, this.onColumnsChange = o, this.readOnly = r, this.nodes = {
       wrapper: S("div", [this.CSS.wrapper]),
@@ -174,7 +174,7 @@ const T = class T {
     return i.innerHTML = "+", i.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(a), t.appendChild(i), t;
   }
   changeColumns(t) {
-    const e = Math.min(T.MAX_COLUMNS, Math.max(T.MIN_COLUMNS, this.currentColumns + t));
+    const e = Math.min(k.MAX_COLUMNS, Math.max(k.MIN_COLUMNS, this.currentColumns + t));
     e !== this.currentColumns && (this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   updateColumnsClass() {
@@ -182,7 +182,7 @@ const T = class T {
     if (this.nodes.wrapper.classList.contains(t))
       this.nodes.wrapper.classList.replace(t, e);
     else {
-      for (let a = T.MIN_COLUMNS; a <= T.MAX_COLUMNS; a++)
+      for (let a = k.MIN_COLUMNS; a <= k.MAX_COLUMNS; a++)
         this.nodes.wrapper.classList.remove(`gallery-tool--columns-${a}`);
       this.nodes.wrapper.classList.add(e);
     }
@@ -222,9 +222,9 @@ const T = class T {
     ), this.nodes.wrapper.classList.add(`gallery-tool--${t}`);
   }
 };
-T.MIN_COLUMNS = 1, T.MAX_COLUMNS = 5;
-let O = T;
-function P(_) {
+k.MIN_COLUMNS = 1, k.MAX_COLUMNS = 5;
+let O = k;
+function B(_) {
   return _ && _.__esModule && Object.prototype.hasOwnProperty.call(_, "default") ? _.default : _;
 }
 var U = { exports: {} };
@@ -761,8 +761,8 @@ var U = { exports: {} };
     }]);
   });
 })(U);
-var B = U.exports;
-const k = /* @__PURE__ */ P(B);
+var P = U.exports;
+const T = /* @__PURE__ */ B(P);
 function x(_) {
   return _ !== void 0 && typeof _.then == "function";
 }
@@ -785,7 +785,7 @@ class R {
     };
     let a;
     if ((i = this.config.uploader) != null && i.uploadByFile)
-      a = k.selectFiles({ accept: this.config.types ?? "image/*" }).then((o) => {
+      a = T.selectFiles({ accept: this.config.types ?? "image/*" }).then((o) => {
         if (!o || o.length === 0)
           throw new Error("No file selected");
         e(o[0]);
@@ -797,7 +797,7 @@ class R {
         this.onError("Upload endpoint (byFile) is not configured");
         return;
       }
-      a = k.transport({
+      a = T.transport({
         url: this.config.endpoints.byFile,
         data: this.config.additionalRequestData,
         accept: this.config.types ?? "image/*",
@@ -823,13 +823,13 @@ class R {
         this.onError("Upload endpoint (byUrl) is not configured");
         return;
       }
-      e = k.post({
+      e = T.post({
         url: this.config.endpoints.byUrl,
         data: {
           url: t,
           ...this.config.additionalRequestData
         },
-        type: k.contentType.JSON,
+        type: T.contentType.JSON,
         headers: this.config.additionalRequestHeaders
       }).then((i) => i.body);
     }
@@ -857,10 +857,10 @@ class R {
       const r = new FormData();
       r.append(this.config.field ?? "image", t), this.config.additionalRequestData && Object.entries(this.config.additionalRequestData).forEach(([u, C]) => {
         r.append(u, C);
-      }), i = k.post({
+      }), i = T.post({
         url: this.config.endpoints.byFile,
         data: r,
-        type: k.contentType.JSON,
+        type: T.contentType.JSON,
         headers: this.config.additionalRequestHeaders
       }).then((u) => u.body);
     }
@@ -924,6 +924,13 @@ class D {
    */
   render() {
     return this.ui.render(this._data.items, this._data.columns);
+  }
+  /**
+   * Fires after clicks on the Toolbox Gallery Icon
+   * Initiates click on the Select File button to immediately open file dialog
+   */
+  appendCallback() {
+    this.ui.nodes.fileButton.click();
   }
   /**
    * Validate data

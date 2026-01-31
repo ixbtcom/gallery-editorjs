@@ -105,6 +105,14 @@ export default class GalleryTool implements BlockTool {
   }
 
   /**
+   * Fires after clicks on the Toolbox Gallery Icon
+   * Initiates click on the Select File button to immediately open file dialog
+   */
+  public appendCallback(): void {
+    this.ui.nodes.fileButton.click();
+  }
+
+  /**
    * Validate data
    */
   public validate(savedData: GalleryToolData): boolean {

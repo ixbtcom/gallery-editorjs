@@ -29,6 +29,11 @@ export default class GalleryTool implements BlockTool {
      */
     render(): HTMLElement;
     /**
+     * Fires after clicks on the Toolbox Gallery Icon
+     * Initiates click on the Select File button to immediately open file dialog
+     */
+    appendCallback(): void;
+    /**
      * Validate data
      */
     validate(savedData: GalleryToolData): boolean;
