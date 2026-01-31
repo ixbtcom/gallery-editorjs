@@ -80,6 +80,7 @@ export default class GalleryTool implements BlockTool {
       onSelectFile: () => this.selectFile(),
       onSelectUrl: (url: string) => this.uploadFromUrl(url),
       onColumnsChange: (columns: number) => this.onColumnsChange(columns),
+      onRemoveImage: (url: string) => this.onRemoveImage(url),
       readOnly,
     });
 
@@ -330,6 +331,28 @@ export default class GalleryTool implements BlockTool {
    */
   private onColumnsChange(columns: number): void {
     this._data.columns = columns;
+  }
+
+  /**
+   * Handle image removal - delete from S3
+   */
+  private onRemoveImage(url: string): void {
+    const deleteEndpoint = this.config.endpoints.deleteImage;
+    if (!deleteEndpoint || !url) {
+      return;
+    }
+
+    // Send delete request to backend
+    fetch(deleteEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(this.config.additionalRequestHeaders || {}),
+      },
+      body: JSON.stringify({ url }),
+    }).catch((error) => {
+      console.error('Gallery Tool: failed to delete image from S3', error);
+    });
   }
 
   /**

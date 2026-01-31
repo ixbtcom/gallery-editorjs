@@ -1,4 +1,4 @@
-import { IconPicture, IconLink } from '@codexteam/icons';
+import { IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
 import type { API } from '@editorjs/editorjs';
 import type { GalleryConfig, GalleryItemData } from './types/types';
@@ -31,6 +31,7 @@ interface UiParams {
   onSelectFile: () => void;
   onSelectUrl: (url: string) => void;
   onColumnsChange: (columns: number) => void;
+  onRemoveImage: (url: string) => void;
   readOnly: boolean;
 }
 
@@ -49,16 +50,18 @@ export default class Ui {
   private onSelectFile: () => void;
   private onSelectUrl: (url: string) => void;
   private onColumnsChange: (columns: number) => void;
+  private onRemoveImage: (url: string) => void;
   private readOnly: boolean;
   private currentColumns: number = 1;
   private previousColumns: number = 1;
 
-  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, readOnly }: UiParams) {
+  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, readOnly }: UiParams) {
     this.api = api;
     this.config = config;
     this.onSelectFile = onSelectFile;
     this.onSelectUrl = onSelectUrl;
     this.onColumnsChange = onColumnsChange;
+    this.onRemoveImage = onRemoveImage;
     this.readOnly = readOnly;
 
     this.nodes = {
@@ -66,13 +69,12 @@ export default class Ui {
       itemsContainer: make('div', [this.CSS.itemsContainer]),
       addButtons: make('div', [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
-      urlButton: this.createUrlButton(),
+      urlButton: make('div'), // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
       columnsControl: this.createColumnsControl(),
     };
 
     this.nodes.addButtons.appendChild(this.nodes.fileButton);
-    this.nodes.addButtons.appendChild(this.nodes.urlButton);
     this.nodes.addButtons.appendChild(this.nodes.urlInput);
     this.nodes.addButtons.appendChild(this.nodes.columnsControl);
 
@@ -184,6 +186,9 @@ export default class Ui {
     this.nodes.itemsContainer.appendChild(item);
     this.toggleState(UiState.Filled);
 
+    // Auto-adjust columns after adding item
+    this.autoAdjustColumns();
+
     return item;
   }
 
@@ -261,6 +266,9 @@ export default class Ui {
     }
 
     this.toggleState(UiState.Filled);
+
+    // Auto-adjust columns after filling item
+    this.autoAdjustColumns();
   }
 
   /**
@@ -304,52 +312,41 @@ export default class Ui {
     return button;
   }
 
-  private createUrlButton(): HTMLElement {
-    const button = make('div', [this.CSS.button]);
-    button.innerHTML = `${IconLink} ${this.config.urlButtonContent}`;
-    button.addEventListener('click', () => this.toggleUrlInput());
-    return button;
-  }
-
   private createUrlInput(): HTMLElement {
     const wrapper = make('div', [this.CSS.urlInputWrapper]);
-    wrapper.style.display = 'none';
 
     const input = make('input', [this.CSS.urlInput, this.CSS.input], {
       type: 'text',
     }) as HTMLInputElement;
-    input.placeholder = 'Paste image URL and press Enter';
+    input.placeholder = this.config.urlInputPlaceholder ?? 'Вставьте ссылку на изображение';
 
+    // Handle Enter key
     input.addEventListener('keydown', (e: KeyboardEvent) => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        const url = input.value.trim();
-        // Validate URL to prevent javascript: and other malicious protocols
-        if (url && this.isValidImageUrl(url)) {
-          this.onSelectUrl(url);
-          input.value = '';
-          wrapper.style.display = 'none';
-        }
+        this.handleUrlInput(input);
       }
-      if (e.key === 'Escape') {
-        wrapper.style.display = 'none';
-        input.value = '';
-      }
+    });
+
+    // Handle paste - auto-submit URL
+    input.addEventListener('paste', (e: ClipboardEvent) => {
+      // Small delay to get pasted value
+      setTimeout(() => {
+        this.handleUrlInput(input);
+      }, 50);
     });
 
     wrapper.appendChild(input);
     return wrapper;
   }
 
-  private toggleUrlInput(): void {
-    const wrapper = this.nodes.urlInput;
-    const input = wrapper.querySelector('input') as HTMLInputElement;
-
-    if (wrapper.style.display === 'none') {
-      wrapper.style.display = 'block';
-      input.focus();
-    } else {
-      wrapper.style.display = 'none';
+  /**
+   * Process URL from input field
+   */
+  private handleUrlInput(input: HTMLInputElement): void {
+    const url = input.value.trim();
+    if (url && this.isValidImageUrl(url)) {
+      this.onSelectUrl(url);
       input.value = '';
     }
   }
@@ -419,16 +416,44 @@ export default class Ui {
     }
   }
 
+  /**
+   * Auto-adjust columns based on items count
+   * 1 item = 1 column, 2+ items = 2 columns
+   */
+  private autoAdjustColumns(): void {
+    const itemsCount = this.nodes.itemsContainer.children.length;
+    const targetColumns = itemsCount <= 1 ? 1 : 2;
+
+    if (targetColumns !== this.currentColumns) {
+      this.previousColumns = this.currentColumns;
+      this.currentColumns = targetColumns;
+      this.updateColumnsClass();
+      this.updateColumnsDisplay();
+      this.onColumnsChange(targetColumns);
+    }
+  }
+
   private createItemControls(item: HTMLElement): HTMLElement {
     const controls = make('div', [this.CSS.itemControls]);
 
     const removeBtn = make('button', [this.CSS.itemRemove]);
     removeBtn.innerHTML = '×';
     removeBtn.addEventListener('click', () => {
+      // Get URL before removing for S3 deletion
+      const imageUrl = item.dataset.url;
+      if (imageUrl) {
+        this.onRemoveImage(imageUrl);
+      }
+
       item.remove();
-      if (this.nodes.itemsContainer.children.length === 0) {
+
+      const itemsCount = this.nodes.itemsContainer.children.length;
+      if (itemsCount === 0) {
         this.toggleState(UiState.Empty);
       }
+
+      // Auto-adjust columns after removal
+      this.autoAdjustColumns();
     });
 
     const moveLeftBtn = make('button', [this.CSS.itemMoveLeft]);

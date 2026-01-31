@@ -51,6 +51,7 @@ export interface GalleryConfig {
   endpoints: {
     byFile?: string;
     byUrl?: string;
+    deleteImage?: string;
   };
   field?: string;
   types?: string;
@@ -59,6 +60,8 @@ export interface GalleryConfig {
   sourceLinkPlaceholder?: string;
   buttonContent?: string;
   urlButtonContent?: string;
+  /** Placeholder для поля ввода URL изображения */
+  urlInputPlaceholder?: string;
   additionalRequestData?: Record<string, unknown>;
   additionalRequestHeaders?: Record<string, string>;
   uploader?: {

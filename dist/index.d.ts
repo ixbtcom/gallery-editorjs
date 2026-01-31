@@ -91,6 +91,10 @@ export default class GalleryTool implements BlockTool {
      */
     private onColumnsChange;
     /**
+     * Handle image removal - delete from S3
+     */
+    private onRemoveImage;
+    /**
      * Update layout class on wrapper
      */
     private updateLayoutClass;

@@ -19,6 +19,7 @@ interface UiParams {
     onSelectFile: () => void;
     onSelectUrl: (url: string) => void;
     onColumnsChange: (columns: number) => void;
+    onRemoveImage: (url: string) => void;
     readOnly: boolean;
 }
 /**
@@ -35,10 +36,11 @@ export default class Ui {
     private onSelectFile;
     private onSelectUrl;
     private onColumnsChange;
+    private onRemoveImage;
     private readOnly;
     private currentColumns;
     private previousColumns;
-    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, readOnly }: UiParams);
+    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, readOnly }: UiParams);
     private get CSS();
     /**
      * Render the gallery UI
@@ -65,9 +67,11 @@ export default class Ui {
      */
     getColumns(): number;
     private createFileButton;
-    private createUrlButton;
     private createUrlInput;
-    private toggleUrlInput;
+    /**
+     * Process URL from input field
+     */
+    private handleUrlInput;
     private createColumnsControl;
     private changeColumns;
     private updateColumnsClass;
@@ -76,6 +80,11 @@ export default class Ui {
      */
     private isValidImageUrl;
     private updateColumnsDisplay;
+    /**
+     * Auto-adjust columns based on items count
+     * 1 item = 1 column, 2+ items = 2 columns
+     */
+    private autoAdjustColumns;
     private createItemControls;
     private moveItem;
     private toggleState;
