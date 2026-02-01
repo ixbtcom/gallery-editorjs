@@ -84,16 +84,13 @@ export default class GalleryTool implements BlockTool {
       readOnly,
     });
 
+    // Мержим данные с defaults чтобы не терять layout при загрузке старых данных
     this._data = {
-      items: [],
-      layout: 'grid',
-      columns: 1,
-      stretched: false,
+      items: data?.items ?? [],
+      layout: data?.layout ?? 'grid',
+      columns: data?.columns ?? 3,
+      stretched: data?.stretched ?? false,
     };
-
-    if (data && data.items) {
-      this._data = data;
-    }
   }
 
   /**

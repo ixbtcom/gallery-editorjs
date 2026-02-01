@@ -249,16 +249,23 @@
 }
 
 /* Layout variations */
+.gallery-tool--carousel {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .gallery-tool--carousel .gallery-tool__items {
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 12px;
   padding-bottom: 8px;
+  max-width: 100%;
 }
 
 .gallery-tool--carousel .gallery-tool__item {
   flex-shrink: 0;
   width: 280px;
+  max-width: 80%;
 }
 
 .gallery-tool--carousel .gallery-tool__item-image img {
