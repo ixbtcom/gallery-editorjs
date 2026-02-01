@@ -43,7 +43,7 @@
   height: auto;
   display: block;
   object-fit: cover;
-  max-height: 200px;
+  max-height: 400px;
 }
 
 /* Preloader */
@@ -259,6 +259,10 @@
 .gallery-tool--carousel .gallery-tool__item {
   flex-shrink: 0;
   width: 280px;
+}
+
+.gallery-tool--carousel .gallery-tool__item-image img {
+  max-height: 280px;
 }
 
 .gallery-tool--masonry .gallery-tool__items {
