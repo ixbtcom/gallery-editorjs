@@ -172,11 +172,11 @@ const k = class k {
     t && this.isValidImageUrl(t) && (this.onSelectUrl(t), e.value = "");
   }
   createColumnsControl() {
-    const e = S("div", [this.CSS.columnsControl]), t = S("button", [this.CSS.columnsButton]);
+    const e = S("div", [this.CSS.columnsControl]), t = S("button", [this.CSS.columnsButton], { type: "button" });
     t.innerHTML = "−", t.addEventListener("click", () => this.changeColumns(-1));
     const s = S("span", [this.CSS.columnsDisplay]);
     s.textContent = `${this.currentColumns} col`;
-    const i = S("button", [this.CSS.columnsButton]);
+    const i = S("button", [this.CSS.columnsButton], { type: "button" });
     return i.innerHTML = "+", i.addEventListener("click", () => this.changeColumns(1)), e.appendChild(t), e.appendChild(s), e.appendChild(i), e;
   }
   changeColumns(e) {
@@ -212,7 +212,7 @@ const k = class k {
     t !== this.currentColumns && (this.previousColumns = this.currentColumns, this.currentColumns = t, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(t));
   }
   createItemControls(e) {
-    const t = S("div", [this.CSS.itemControls]), s = S("button", [this.CSS.itemRemove]);
+    const t = S("div", [this.CSS.itemControls]), s = S("button", [this.CSS.itemRemove], { type: "button" });
     s.innerHTML = "×", s.addEventListener("click", () => {
       const n = e.dataset.url;
       n && this.onRemoveImage(n), e.remove(), this.nodes.itemsContainer.children.length === 0 && this.toggleState(
@@ -220,9 +220,9 @@ const k = class k {
         /* Empty */
       ), this.autoAdjustColumns();
     });
-    const i = S("button", [this.CSS.itemMoveLeft]);
+    const i = S("button", [this.CSS.itemMoveLeft], { type: "button" });
     i.innerHTML = "←", i.addEventListener("click", () => this.moveItem(e, -1));
-    const r = S("button", [this.CSS.itemMoveRight]);
+    const r = S("button", [this.CSS.itemMoveRight], { type: "button" });
     return r.innerHTML = "→", r.addEventListener("click", () => this.moveItem(e, 1)), t.appendChild(i), t.appendChild(s), t.appendChild(r), t;
   }
   moveItem(e, t) {

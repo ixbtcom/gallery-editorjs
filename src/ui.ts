@@ -354,14 +354,14 @@ export default class Ui {
   private createColumnsControl(): HTMLElement {
     const wrapper = make('div', [this.CSS.columnsControl]);
 
-    const minusBtn = make('button', [this.CSS.columnsButton]);
+    const minusBtn = make('button', [this.CSS.columnsButton], { type: 'button' });
     minusBtn.innerHTML = '−';
     minusBtn.addEventListener('click', () => this.changeColumns(-1));
 
     const display = make('span', [this.CSS.columnsDisplay]);
     display.textContent = `${this.currentColumns} col`;
 
-    const plusBtn = make('button', [this.CSS.columnsButton]);
+    const plusBtn = make('button', [this.CSS.columnsButton], { type: 'button' });
     plusBtn.innerHTML = '+';
     plusBtn.addEventListener('click', () => this.changeColumns(1));
 
@@ -436,7 +436,7 @@ export default class Ui {
   private createItemControls(item: HTMLElement): HTMLElement {
     const controls = make('div', [this.CSS.itemControls]);
 
-    const removeBtn = make('button', [this.CSS.itemRemove]);
+    const removeBtn = make('button', [this.CSS.itemRemove], { type: 'button' });
     removeBtn.innerHTML = '×';
     removeBtn.addEventListener('click', () => {
       // Get URL before removing for S3 deletion
@@ -456,11 +456,11 @@ export default class Ui {
       this.autoAdjustColumns();
     });
 
-    const moveLeftBtn = make('button', [this.CSS.itemMoveLeft]);
+    const moveLeftBtn = make('button', [this.CSS.itemMoveLeft], { type: 'button' });
     moveLeftBtn.innerHTML = '←';
     moveLeftBtn.addEventListener('click', () => this.moveItem(item, -1));
 
-    const moveRightBtn = make('button', [this.CSS.itemMoveRight]);
+    const moveRightBtn = make('button', [this.CSS.itemMoveRight], { type: 'button' });
     moveRightBtn.innerHTML = '→';
     moveRightBtn.addEventListener('click', () => this.moveItem(item, 1));
 
