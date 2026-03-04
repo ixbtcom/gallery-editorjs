@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@codexteam/ajax": "^4.2.0",
-    "@editorjs/editorjs": "2.30.0-rc.12",
+    "@editorjs/editorjs": "^2.30.8",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
     "postcss": "^8.4.41",
