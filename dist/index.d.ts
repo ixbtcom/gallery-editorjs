@@ -24,7 +24,7 @@ export default class GalleryTool implements BlockTool {
     private ui;
     private _data;
     private currentLoadingItem;
-    constructor({ data, config, api, readOnly, block }: GalleryToolConstructorOptions);
+    constructor({ data, config: cfg, api, readOnly, block }: GalleryToolConstructorOptions);
     /**
      * Notify core that read-only mode is supported
      */

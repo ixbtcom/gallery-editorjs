@@ -49,10 +49,12 @@ export default class GalleryTool implements BlockTool {
   private _data: GalleryToolData;
   private currentLoadingItem: HTMLElement | null = null;
 
-  constructor({ data, config, api, readOnly, block }: GalleryToolConstructorOptions) {
+  constructor({ data, config: cfg, api, readOnly, block }: GalleryToolConstructorOptions) {
     this.api = api;
     this.readOnly = readOnly;
     this.block = block;
+
+    const config = cfg ?? {} as GalleryConfig;
 
     this.config = {
       endpoints: config.endpoints ?? {},
