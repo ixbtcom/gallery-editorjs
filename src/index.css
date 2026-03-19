@@ -111,12 +111,12 @@
 
 .gallery-tool__item-source {
   color: var(--ej-text-secondary);
-  font-size: 12px;
+
 }
 
 .gallery-tool__item-source-link {
   color: var(--ej-primary);
-  font-size: 12px;
+
 }
 
 /* Placeholder styles */
