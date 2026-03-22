@@ -54,6 +54,8 @@ export default class Ui {
   private readOnly: boolean;
   private currentColumns: number = 1;
   private previousColumns: number = 1;
+  private isRendering: boolean = false;
+  private columnsLocked: boolean = false;
 
   constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, readOnly }: UiParams) {
     this.api = api;
@@ -114,12 +116,22 @@ export default class Ui {
   public render(items: GalleryItemData[], columns: number): HTMLElement {
     this.currentColumns = columns;
     this.updateColumnsClass();
+    this.updateColumnsDisplay();
 
-    if (items.length === 0) {
-      this.toggleState(UiState.Empty);
-    } else {
-      items.forEach(item => this.addItem(item));
-      this.toggleState(UiState.Filled);
+    this.isRendering = true;
+    try {
+      if (items.length === 0) {
+        this.toggleState(UiState.Empty);
+      } else {
+        items.forEach(item => this.addItem(item));
+        this.toggleState(UiState.Filled);
+      }
+    } finally {
+      this.isRendering = false;
+    }
+
+    if (items.length > 0) {
+      this.columnsLocked = true;
     }
 
     return this.nodes.wrapper;
@@ -375,6 +387,7 @@ export default class Ui {
   private changeColumns(delta: number): void {
     const newColumns = Math.min(Ui.MAX_COLUMNS, Math.max(Ui.MIN_COLUMNS, this.currentColumns + delta));
     if (newColumns !== this.currentColumns) {
+      this.columnsLocked = true;
       this.previousColumns = this.currentColumns;
       this.currentColumns = newColumns;
       this.updateColumnsClass();
@@ -421,6 +434,8 @@ export default class Ui {
    * 1 item = 1 column, 2+ items = 2 columns
    */
   private autoAdjustColumns(): void {
+    if (this.isRendering || this.columnsLocked) return;
+
     const itemsCount = this.nodes.itemsContainer.children.length;
     const targetColumns = itemsCount <= 1 ? 1 : 2;
 
@@ -450,9 +465,9 @@ export default class Ui {
       const itemsCount = this.nodes.itemsContainer.children.length;
       if (itemsCount === 0) {
         this.toggleState(UiState.Empty);
+        this.columnsLocked = false;
       }
 
-      // Auto-adjust columns after removal
       this.autoAdjustColumns();
     });
 

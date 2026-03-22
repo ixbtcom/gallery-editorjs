@@ -40,6 +40,8 @@ export default class Ui {
     private readOnly;
     private currentColumns;
     private previousColumns;
+    private isRendering;
+    private columnsLocked;
     constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, readOnly }: UiParams);
     private get CSS();
     /**
