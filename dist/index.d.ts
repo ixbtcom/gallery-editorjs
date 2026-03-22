@@ -22,6 +22,7 @@ export default class GalleryTool implements BlockTool {
     private config;
     private uploader;
     private ui;
+    private cropModal;
     private _data;
     private currentLoadingItem;
     constructor({ data, config: cfg, api, readOnly, block }: GalleryToolConstructorOptions);
@@ -90,6 +91,10 @@ export default class GalleryTool implements BlockTool {
      * Handle columns change
      */
     private onColumnsChange;
+    /**
+     * Handle crop image request
+     */
+    private handleCropImage;
     /**
      * Handle image removal - delete from S3
      */

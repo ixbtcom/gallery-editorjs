@@ -21,6 +21,7 @@ import './index.css';
 
 import Ui from './ui';
 import Uploader from './uploader';
+import CropModal from './crop-modal';
 import { IconPicture, IconStretch } from '@codexteam/icons';
 import type { UploadResponseFormat, GalleryToolData, GalleryConfig, GalleryItemData } from './types/types';
 
@@ -46,6 +47,7 @@ export default class GalleryTool implements BlockTool {
   private config: GalleryConfig;
   private uploader: Uploader;
   private ui: Ui;
+  private cropModal: CropModal;
   private _data: GalleryToolData;
   private currentLoadingItem: HTMLElement | null = null;
 
@@ -68,6 +70,7 @@ export default class GalleryTool implements BlockTool {
       buttonContent: config.buttonContent ?? this.api.i18n.t('Add Image'),
       urlButtonContent: config.urlButtonContent ?? this.api.i18n.t('Add from URL'),
       uploader: config.uploader,
+      mediaHost: config.mediaHost,
     };
 
     this.uploader = new Uploader({
@@ -76,6 +79,8 @@ export default class GalleryTool implements BlockTool {
       onError: (error: string) => this.uploadingFailed(error),
     });
 
+    this.cropModal = new CropModal();
+
     this.ui = new Ui({
       api,
       config: this.config,
@@ -83,6 +88,7 @@ export default class GalleryTool implements BlockTool {
       onSelectUrl: (url: string) => this.uploadFromUrl(url),
       onColumnsChange: (columns: number) => this.onColumnsChange(columns),
       onRemoveImage: (url: string) => this.onRemoveImage(url),
+      onCropImage: (item: HTMLElement) => this.handleCropImage(item),
       readOnly,
     });
 
@@ -290,6 +296,7 @@ export default class GalleryTool implements BlockTool {
     if (response.success && response.file) {
       const itemData: GalleryItemData = {
         url: response.file.url,
+        imagorPath: response.file.imagor_path,
         caption: '',
         source: '',
         sourceLink: '',
@@ -330,6 +337,32 @@ export default class GalleryTool implements BlockTool {
    */
   private onColumnsChange(columns: number): void {
     this._data.columns = columns;
+  }
+
+  /**
+   * Handle crop image request
+   */
+  private async handleCropImage(item: HTMLElement): Promise<void> {
+    const url = item.dataset.url;
+    if (!url) return;
+
+    const existingCrop = item.dataset.crop;
+    const result = await this.cropModal.open(url, existingCrop);
+
+    if (result === null) {
+      // Cancelled
+      return;
+    }
+
+    if (result.crop === '') {
+      // Reset crop
+      this.ui.updateItemAfterCrop(item, undefined, 0, 0);
+    } else {
+      // Apply crop
+      this.ui.updateItemAfterCrop(item, result.crop, result.croppedWidth, result.croppedHeight);
+    }
+
+    this.block.dispatchChange();
   }
 
   /**

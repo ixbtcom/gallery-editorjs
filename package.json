@@ -43,6 +43,7 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "dependencies": {
-    "@codexteam/icons": "^0.3.0"
+    "@codexteam/icons": "^0.3.0",
+    "cropperjs": "^1.6.2"
   }
 }

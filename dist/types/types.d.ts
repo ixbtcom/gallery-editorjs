@@ -11,6 +11,8 @@ export interface UploadResponseFormat {
     success: number;
     file: {
         url: string;
+        /** Normalized imagor path from backend (snake_case PHP convention) */
+        imagor_path?: string;
         mime?: string;
         size?: number;
         width?: number;
@@ -18,10 +20,23 @@ export interface UploadResponseFormat {
     };
 }
 /**
+ * Crop operation result from CropModal
+ */
+export interface CropResult {
+    /** Imagor crop string "AxB:CxD" (float 0-1), empty string for reset */
+    crop: string;
+    /** Cropped region width in pixels */
+    croppedWidth: number;
+    /** Cropped region height in pixels */
+    croppedHeight: number;
+}
+/**
  * Single gallery item data
  */
 export interface GalleryItemData {
     url: string;
+    /** Normalized imagor path for preview URL building */
+    imagorPath?: string;
     caption: string;
     source: string;
     sourceLink: string;
@@ -29,6 +44,12 @@ export interface GalleryItemData {
     width?: number;
     /** Оригинальная высота изображения (из upload response) */
     height?: number;
+    /** Imagor crop string "AxB:CxD" (float 0-1) */
+    crop?: string;
+    /** Cropped region width in pixels */
+    croppedWidth?: number;
+    /** Cropped region height in pixels */
+    croppedHeight?: number;
 }
 /**
  * Gallery tool saved data format
@@ -64,6 +85,8 @@ export interface GalleryConfig {
         uploadByFile?: (file: Blob) => Promise<UploadResponseFormat>;
         uploadByUrl?: (url: string) => Promise<UploadResponseFormat>;
     };
+    /** Base URL for imagor/thumbor service (e.g. 'https://media.ixbt.site') */
+    mediaHost?: string;
 }
 /**
  * Layout tune configuration

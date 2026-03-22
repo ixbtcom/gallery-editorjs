@@ -4,6 +4,11 @@ import type { API } from '@editorjs/editorjs';
 import type { GalleryConfig, GalleryItemData } from './types/types';
 
 /**
+ * Crop icon SVG
+ */
+const IconCrop = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>';
+
+/**
  * UI state enumeration
  */
 enum UiState {
@@ -32,6 +37,7 @@ interface UiParams {
   onSelectUrl: (url: string) => void;
   onColumnsChange: (columns: number) => void;
   onRemoveImage: (url: string) => void;
+  onCropImage: (item: HTMLElement) => void;
   readOnly: boolean;
 }
 
@@ -51,19 +57,21 @@ export default class Ui {
   private onSelectUrl: (url: string) => void;
   private onColumnsChange: (columns: number) => void;
   private onRemoveImage: (url: string) => void;
+  private onCropImage: (item: HTMLElement) => void;
   private readOnly: boolean;
   private currentColumns: number = 1;
   private previousColumns: number = 1;
   private isRendering: boolean = false;
   private columnsLocked: boolean = false;
 
-  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, readOnly }: UiParams) {
+  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, readOnly }: UiParams) {
     this.api = api;
     this.config = config;
     this.onSelectFile = onSelectFile;
     this.onSelectUrl = onSelectUrl;
     this.onColumnsChange = onColumnsChange;
     this.onRemoveImage = onRemoveImage;
+    this.onCropImage = onCropImage;
     this.readOnly = readOnly;
 
     this.nodes = {
@@ -99,6 +107,8 @@ export default class Ui {
       itemRemove: 'gallery-tool__item-remove',
       itemMoveLeft: 'gallery-tool__item-move-left',
       itemMoveRight: 'gallery-tool__item-move-right',
+      itemCrop: 'gallery-tool__item-crop',
+      itemCropped: 'gallery-tool__item--cropped',
       addButtons: 'gallery-tool__add-buttons',
       button: this.api.styles.button,
       input: this.api.styles.input,
@@ -144,7 +154,17 @@ export default class Ui {
     const item = make('div', [this.CSS.item]);
     const imageContainer = make('div', [this.CSS.itemImage]);
     const preloader = make('div', [this.CSS.itemPreloader]);
-    const img = make('img', null, { src: data.url }) as HTMLImageElement;
+
+    // Determine image src: use crop preview if available, otherwise original
+    const imgSrc = (data.crop && data.imagorPath)
+      ? this.buildPreviewUrl(data.imagorPath, data.crop)
+      : data.url;
+    const img = make('img', null, { src: imgSrc }) as HTMLImageElement;
+
+    // Mark item as cropped
+    if (data.crop) {
+      item.classList.add(this.CSS.itemCropped);
+    }
 
     const caption = make('div', [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly,
@@ -191,9 +211,14 @@ export default class Ui {
     item.appendChild(source);
     item.appendChild(sourceLink);
 
+    // Store data in dataset
     item.dataset.url = data.url;
     if (data.width) item.dataset.width = String(data.width);
     if (data.height) item.dataset.height = String(data.height);
+    if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
+    if (data.crop) item.dataset.crop = data.crop;
+    if (data.croppedWidth) item.dataset.croppedWidth = String(data.croppedWidth);
+    if (data.croppedHeight) item.dataset.croppedHeight = String(data.croppedHeight);
 
     this.nodes.itemsContainer.appendChild(item);
     this.toggleState(UiState.Filled);
@@ -271,6 +296,7 @@ export default class Ui {
     item.dataset.url = data.url;
     if (data.width) item.dataset.width = String(data.width);
     if (data.height) item.dataset.height = String(data.height);
+    if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
 
     if (!this.readOnly) {
       const controls = this.createItemControls(item);
@@ -304,10 +330,59 @@ export default class Ui {
       const width = el.dataset.width ? parseInt(el.dataset.width, 10) : undefined;
       const height = el.dataset.height ? parseInt(el.dataset.height, 10) : undefined;
 
-      data.push({ url, caption, source, sourceLink, width, height });
+      // Read crop data (undefined = omitted from JSON)
+      const imagorPath = el.dataset.imagorPath || undefined;
+      const crop = el.dataset.crop || undefined;
+      const croppedWidth = el.dataset.croppedWidth ? parseInt(el.dataset.croppedWidth, 10) : undefined;
+      const croppedHeight = el.dataset.croppedHeight ? parseInt(el.dataset.croppedHeight, 10) : undefined;
+
+      data.push({ url, imagorPath, caption, source, sourceLink, width, height, crop, croppedWidth, croppedHeight });
     });
 
     return data;
+  }
+
+  /**
+   * Update item DOM after crop operation
+   */
+  public updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number): void {
+    const img = item.querySelector(`.${this.CSS.itemImage} img`) as HTMLImageElement | null;
+    if (!img) return;
+
+    if (crop) {
+      // Apply crop
+      item.dataset.crop = crop;
+      item.dataset.croppedWidth = String(croppedWidth);
+      item.dataset.croppedHeight = String(croppedHeight);
+      item.classList.add(this.CSS.itemCropped);
+
+      const imagorPath = item.dataset.imagorPath;
+      if (imagorPath) {
+        img.src = this.buildPreviewUrl(imagorPath, crop);
+      }
+    } else {
+      // Reset crop
+      delete item.dataset.crop;
+      delete item.dataset.croppedWidth;
+      delete item.dataset.croppedHeight;
+      item.classList.remove(this.CSS.itemCropped);
+
+      img.src = item.dataset.url || '';
+    }
+  }
+
+  /**
+   * Build imagor preview URL with crop + fit-in resize.
+   * Mirrors ImageService::url() logic using imagorPath (normalized short URL).
+   */
+  public buildPreviewUrl(imagorPath: string, crop: string, maxWidth = 600): string {
+    const mediaHost = this.config.mediaHost;
+    if (!mediaHost || !imagorPath) return '';
+
+    const segments = ['unsafe'];
+    if (crop) segments.push(crop);
+    segments.push('fit-in', `${maxWidth}x0`, imagorPath);
+    return `${mediaHost}/${segments.join('/')}`;
   }
 
   /**
@@ -479,7 +554,12 @@ export default class Ui {
     moveRightBtn.innerHTML = '→';
     moveRightBtn.addEventListener('click', () => this.moveItem(item, 1));
 
+    const cropBtn = make('button', [this.CSS.itemCrop], { type: 'button' });
+    cropBtn.innerHTML = IconCrop;
+    cropBtn.addEventListener('click', () => this.onCropImage(item));
+
     controls.appendChild(moveLeftBtn);
+    controls.appendChild(cropBtn);
     controls.appendChild(removeBtn);
     controls.appendChild(moveRightBtn);
 

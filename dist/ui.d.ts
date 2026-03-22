@@ -20,6 +20,7 @@ interface UiParams {
     onSelectUrl: (url: string) => void;
     onColumnsChange: (columns: number) => void;
     onRemoveImage: (url: string) => void;
+    onCropImage: (item: HTMLElement) => void;
     readOnly: boolean;
 }
 /**
@@ -37,12 +38,13 @@ export default class Ui {
     private onSelectUrl;
     private onColumnsChange;
     private onRemoveImage;
+    private onCropImage;
     private readOnly;
     private currentColumns;
     private previousColumns;
     private isRendering;
     private columnsLocked;
-    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, readOnly }: UiParams);
+    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, readOnly }: UiParams);
     private get CSS();
     /**
      * Render the gallery UI
@@ -64,6 +66,15 @@ export default class Ui {
      * Get all items data
      */
     getItemsData(): GalleryItemData[];
+    /**
+     * Update item DOM after crop operation
+     */
+    updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number): void;
+    /**
+     * Build imagor preview URL with crop + fit-in resize.
+     * Mirrors ImageService::url() logic using imagorPath (normalized short URL).
+     */
+    buildPreviewUrl(imagorPath: string, crop: string, maxWidth?: number): string;
     /**
      * Get current columns count
      */
