@@ -17,7 +17,11 @@ export interface UploadResponseFormat {
         size?: number;
         width?: number;
         height?: number;
+        /** content_images Media uuid (для cover-тоггла) */
+        media_id?: string;
     };
+    /** uuid Media, назначенной обложкой авто-флоу (online $set) */
+    cover_assigned?: string;
 }
 /**
  * Crop operation result from CropModal
@@ -35,6 +39,8 @@ export interface CropResult {
  */
 export interface GalleryItemData {
     url: string;
+    /** content_images Media uuid (для cover-тоггла) */
+    media_id?: string;
     /** Normalized imagor path for preview URL building */
     imagorPath?: string;
     caption: string;
@@ -87,6 +93,16 @@ export interface GalleryConfig {
     };
     /** Base URL for imagor/thumbor service (e.g. 'https://media.ixbt.site') */
     mediaHost?: string;
+    /** Cover (онлайн-обложка) integration, provided by filament-editorjs. */
+    cover?: {
+        enabled?: boolean;
+        endpoint?: string | null;
+        csrf?: string;
+        /** Текущая uuid обложки (для подсветки активного элемента). */
+        coverUuid?: () => string | null;
+        /** Хост сообщает $set/трекинг при смене обложки. */
+        onCoverChanged?: (coverUuid: string | null) => void;
+    };
 }
 /**
  * Layout tune configuration

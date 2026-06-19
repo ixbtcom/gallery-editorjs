@@ -71,6 +71,7 @@ export default class GalleryTool implements BlockTool {
       urlButtonContent: config.urlButtonContent ?? this.api.i18n.t('Add from URL'),
       uploader: config.uploader,
       mediaHost: config.mediaHost,
+      cover: config.cover,
     };
 
     this.uploader = new Uploader({
@@ -87,7 +88,7 @@ export default class GalleryTool implements BlockTool {
       onSelectFile: () => this.selectFile(),
       onSelectUrl: (url: string) => this.uploadFromUrl(url),
       onColumnsChange: (columns: number) => this.onColumnsChange(columns),
-      onRemoveImage: (url: string) => this.onRemoveImage(url),
+      onRemoveImage: (url: string, mediaId?: string) => this.onRemoveImage(url, mediaId),
       onCropImage: (item: HTMLElement) => this.handleCropImage(item),
       readOnly,
     });
@@ -296,6 +297,7 @@ export default class GalleryTool implements BlockTool {
     if (response.success && response.file) {
       const itemData: GalleryItemData = {
         url: response.file.url,
+        media_id: response.file.media_id,
         imagorPath: response.file.imagor_path,
         caption: '',
         source: '',
@@ -368,23 +370,31 @@ export default class GalleryTool implements BlockTool {
   /**
    * Handle image removal - delete from S3
    */
-  private onRemoveImage(url: string): void {
+  private onRemoveImage(url: string, mediaId?: string): void {
     const deleteEndpoint = this.config.endpoints.deleteImage;
-    if (!deleteEndpoint || !url) {
+    if (!deleteEndpoint || (!url && !mediaId)) {
       return;
     }
 
-    // Send delete request to backend
+    // Send delete request to backend; media_id даёт удаление Media + онлайн-очистку обложки
     fetch(deleteEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         ...(this.config.additionalRequestHeaders || {}),
       },
-      body: JSON.stringify({ url }),
-    }).catch((error) => {
-      console.error('Gallery Tool: failed to delete image from S3', error);
-    });
+      body: JSON.stringify({ url, media_id: mediaId }),
+    })
+      .then((r) => r.json())
+      .then((payload) => {
+        if (payload && payload.cover_cleared) {
+          this.config.cover?.onCoverChanged?.(null);
+          this.ui.markCover(null);
+        }
+      })
+      .catch((error) => {
+        console.error('Gallery Tool: failed to delete image', error);
+      });
   }
 
   /**

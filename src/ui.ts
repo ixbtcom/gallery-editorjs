@@ -36,7 +36,7 @@ interface UiParams {
   onSelectFile: () => void;
   onSelectUrl: (url: string) => void;
   onColumnsChange: (columns: number) => void;
-  onRemoveImage: (url: string) => void;
+  onRemoveImage: (url: string, mediaId?: string) => void;
   onCropImage: (item: HTMLElement) => void;
   readOnly: boolean;
 }
@@ -56,7 +56,7 @@ export default class Ui {
   private onSelectFile: () => void;
   private onSelectUrl: (url: string) => void;
   private onColumnsChange: (columns: number) => void;
-  private onRemoveImage: (url: string) => void;
+  private onRemoveImage: (url: string, mediaId?: string) => void;
   private onCropImage: (item: HTMLElement) => void;
   private readOnly: boolean;
   private currentColumns: number = 1;
@@ -213,6 +213,10 @@ export default class Ui {
 
     // Store data in dataset
     item.dataset.url = data.url;
+    if (data.media_id) item.dataset.mediaId = data.media_id;
+    if (this.config.cover?.enabled && data.media_id && this.config.cover.coverUuid?.() === data.media_id) {
+      item.setAttribute('data-cover', '');
+    }
     if (data.width) item.dataset.width = String(data.width);
     if (data.height) item.dataset.height = String(data.height);
     if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
@@ -294,6 +298,10 @@ export default class Ui {
     }
 
     item.dataset.url = data.url;
+    if (data.media_id) item.dataset.mediaId = data.media_id;
+    if (this.config.cover?.enabled && data.media_id && this.config.cover.coverUuid?.() === data.media_id) {
+      item.setAttribute('data-cover', '');
+    }
     if (data.width) item.dataset.width = String(data.width);
     if (data.height) item.dataset.height = String(data.height);
     if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
@@ -335,8 +343,9 @@ export default class Ui {
       const crop = el.dataset.crop || undefined;
       const croppedWidth = el.dataset.croppedWidth ? parseInt(el.dataset.croppedWidth, 10) : undefined;
       const croppedHeight = el.dataset.croppedHeight ? parseInt(el.dataset.croppedHeight, 10) : undefined;
+      const media_id = el.dataset.mediaId || undefined;
 
-      data.push({ url, imagorPath, caption, source, sourceLink, width, height, crop, croppedWidth, croppedHeight });
+      data.push({ url, media_id, imagorPath, caption, source, sourceLink, width, height, crop, croppedWidth, croppedHeight });
     });
 
     return data;
@@ -529,10 +538,11 @@ export default class Ui {
     const removeBtn = make('button', [this.CSS.itemRemove], { type: 'button' });
     removeBtn.innerHTML = '×';
     removeBtn.addEventListener('click', () => {
-      // Get URL before removing for S3 deletion
+      // Get URL + media_id before removing (media_id -> удаление Media + очистка обложки)
       const imageUrl = item.dataset.url;
-      if (imageUrl) {
-        this.onRemoveImage(imageUrl);
+      const mediaId = item.dataset.mediaId;
+      if (imageUrl || mediaId) {
+        this.onRemoveImage(imageUrl ?? '', mediaId);
       }
 
       item.remove();
@@ -560,10 +570,77 @@ export default class Ui {
 
     controls.appendChild(moveLeftBtn);
     controls.appendChild(cropBtn);
+
+    // Cover (онлайн-обложка): per-item тоггл, виден только когда включено хостом.
+    if (this.config.cover?.enabled) {
+      const coverBtn = make('button', ['gallery-tool__item-cover'], { type: 'button' });
+      coverBtn.innerHTML = '★';
+      coverBtn.title = this.api.i18n.t('Сделать обложкой');
+      coverBtn.addEventListener('click', () => {
+        void this.onSetCover(item);
+      });
+      controls.appendChild(coverBtn);
+    }
+
     controls.appendChild(removeBtn);
     controls.appendChild(moveRightBtn);
 
     return controls;
+  }
+
+  /**
+   * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
+   * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
+   */
+  private async onSetCover(item: HTMLElement): Promise<void> {
+    const cover = this.config.cover;
+    if (!cover?.endpoint) {
+      return;
+    }
+
+    const mediaId = item.dataset.mediaId;
+    if (!mediaId) {
+      this.api.notifier.show({ message: this.api.i18n.t('Сначала дождитесь загрузки картинки'), style: 'error' });
+
+      return;
+    }
+
+    try {
+      const response = await fetch(cover.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': cover.csrf ?? '' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ media_id: mediaId }),
+      });
+
+      const payload = await response.json().catch(() => ({ success: 0 }));
+
+      if (payload.blocked) {
+        this.api.notifier.show({ message: payload.message ?? this.api.i18n.t('Обложка задана вручную'), style: 'error' });
+
+        return;
+      }
+
+      if (payload.success === 1) {
+        this.markCover(payload.cover_uuid ?? mediaId);
+        cover.onCoverChanged?.(payload.cover_uuid ?? mediaId);
+        this.api.notifier.show({ message: this.api.i18n.t('Обложка обновлена') });
+      }
+    } catch {
+      this.api.notifier.show({ message: this.api.i18n.t('Не удалось задать обложку'), style: 'error' });
+    }
+  }
+
+  /**
+   * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
+   */
+  public markCover(coverUuid: string | null): void {
+    const items = this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`);
+    items.forEach((el) => {
+      const item = el as HTMLElement;
+      const isCover = !!coverUuid && item.dataset.mediaId === coverUuid;
+      item.toggleAttribute('data-cover', isCover);
+    });
   }
 
   private moveItem(item: HTMLElement, direction: number): void {

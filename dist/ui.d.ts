@@ -19,7 +19,7 @@ interface UiParams {
     onSelectFile: () => void;
     onSelectUrl: (url: string) => void;
     onColumnsChange: (columns: number) => void;
-    onRemoveImage: (url: string) => void;
+    onRemoveImage: (url: string, mediaId?: string) => void;
     onCropImage: (item: HTMLElement) => void;
     readOnly: boolean;
 }
@@ -99,6 +99,15 @@ export default class Ui {
      */
     private autoAdjustColumns;
     private createItemControls;
+    /**
+     * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
+     * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
+     */
+    private onSetCover;
+    /**
+     * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
+     */
+    markCover(coverUuid: string | null): void;
     private moveItem;
     private toggleState;
     /**

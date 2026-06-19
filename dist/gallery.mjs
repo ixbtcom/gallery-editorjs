@@ -1,4 +1,4 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__stretched-badge{display:inline-block;margin-bottom:8px;padding:4px 10px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:500;border-radius:var(--ej-radius-md)}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}/*!
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__stretched-badge{display:inline-block;margin-bottom:8px;padding:4px 10px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:500;border-radius:var(--ej-radius-md)}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}/*!
  * Cropper.js v1.6.2
  * https://fengyuanchen.github.io/cropperjs
  *
@@ -77,6 +77,7 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Add a new item to the gallery
    */
   addItem(t) {
+    var c, l, p;
     const e = E("div", [this.CSS.item]), i = E("div", [this.CSS.itemImage]), a = E("div", [this.CSS.itemPreloader]), r = t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : t.url, n = E("img", null, { src: r });
     t.crop && e.classList.add(this.CSS.itemCropped);
     const s = E("div", [this.CSS.itemCaption, this.CSS.input], {
@@ -91,16 +92,16 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
       contentEditable: !this.readOnly
     });
     if (h.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", h.textContent = t.sourceLink || "", i.appendChild(a), i.appendChild(n), t.width && t.height) {
-      const c = E("div", [this.CSS.itemDimensions]);
-      c.textContent = `${t.width} × ${t.height}`, i.appendChild(c);
+      const y = E("div", [this.CSS.itemDimensions]);
+      y.textContent = `${t.width} × ${t.height}`, i.appendChild(y);
     }
     if (n.onload = () => {
       a.style.display = "none";
     }, !this.readOnly) {
-      const c = this.createItemControls(e);
-      e.appendChild(c);
+      const y = this.createItemControls(e);
+      e.appendChild(y);
     }
-    return e.appendChild(i), e.appendChild(s), e.appendChild(d), e.appendChild(h), e.dataset.url = t.url, t.width && (e.dataset.width = String(t.width)), t.height && (e.dataset.height = String(t.height)), t.imagorPath && (e.dataset.imagorPath = t.imagorPath), t.crop && (e.dataset.crop = t.crop), t.croppedWidth && (e.dataset.croppedWidth = String(t.croppedWidth)), t.croppedHeight && (e.dataset.croppedHeight = String(t.croppedHeight)), this.nodes.itemsContainer.appendChild(e), this.toggleState(
+    return e.appendChild(i), e.appendChild(s), e.appendChild(d), e.appendChild(h), e.dataset.url = t.url, t.media_id && (e.dataset.mediaId = t.media_id), (c = this.config.cover) != null && c.enabled && t.media_id && ((p = (l = this.config.cover).coverUuid) == null ? void 0 : p.call(l)) === t.media_id && e.setAttribute("data-cover", ""), t.width && (e.dataset.width = String(t.width)), t.height && (e.dataset.height = String(t.height)), t.imagorPath && (e.dataset.imagorPath = t.imagorPath), t.crop && (e.dataset.crop = t.crop), t.croppedWidth && (e.dataset.croppedWidth = String(t.croppedWidth)), t.croppedHeight && (e.dataset.croppedHeight = String(t.croppedHeight)), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "filled"
       /* Filled */
     ), this.autoAdjustColumns(), e;
@@ -131,16 +132,17 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Update loading item with uploaded image
    */
   fillLoadingItem(t, e) {
+    var n, s, d;
     const i = t.querySelector(`.${this.CSS.itemImage}`), a = t.querySelector(`.${this.CSS.itemPreloader}`), r = E("img", null, { src: e.url });
     if (r.onload = () => {
       a && (a.style.display = "none");
     }, i.appendChild(r), e.width && e.height) {
-      const n = E("div", [this.CSS.itemDimensions]);
-      n.textContent = `${e.width} × ${e.height}`, i.appendChild(n);
+      const h = E("div", [this.CSS.itemDimensions]);
+      h.textContent = `${e.width} × ${e.height}`, i.appendChild(h);
     }
-    if (t.dataset.url = e.url, e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), !this.readOnly) {
-      const n = this.createItemControls(t);
-      t.insertBefore(n, t.firstChild);
+    if (t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (n = this.config.cover) != null && n.enabled && e.media_id && ((d = (s = this.config.cover).coverUuid) == null ? void 0 : d.call(s)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), !this.readOnly) {
+      const h = this.createItemControls(t);
+      t.insertBefore(h, t.firstChild);
     }
     this.toggleState(
       "filled"
@@ -153,11 +155,11 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   getItemsData() {
     const t = this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`), e = [];
     return t.forEach((i) => {
-      var u, f, g;
+      var f, g, v;
       const a = i, r = a.dataset.url;
       if (!r) return;
-      const n = ((u = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : u.textContent) || "", s = ((f = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : f.textContent) || "", d = ((g = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : g.textContent) || "", h = a.dataset.width ? parseInt(a.dataset.width, 10) : void 0, c = a.dataset.height ? parseInt(a.dataset.height, 10) : void 0, l = a.dataset.imagorPath || void 0, p = a.dataset.crop || void 0, y = a.dataset.croppedWidth ? parseInt(a.dataset.croppedWidth, 10) : void 0, w = a.dataset.croppedHeight ? parseInt(a.dataset.croppedHeight, 10) : void 0;
-      e.push({ url: r, imagorPath: l, caption: n, source: s, sourceLink: d, width: h, height: c, crop: p, croppedWidth: y, croppedHeight: w });
+      const n = ((f = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : f.textContent) || "", s = ((g = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : g.textContent) || "", d = ((v = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : v.textContent) || "", h = a.dataset.width ? parseInt(a.dataset.width, 10) : void 0, c = a.dataset.height ? parseInt(a.dataset.height, 10) : void 0, l = a.dataset.imagorPath || void 0, p = a.dataset.crop || void 0, y = a.dataset.croppedWidth ? parseInt(a.dataset.croppedWidth, 10) : void 0, w = a.dataset.croppedHeight ? parseInt(a.dataset.croppedHeight, 10) : void 0, u = a.dataset.mediaId || void 0;
+      e.push({ url: r, media_id: u, imagorPath: l, caption: n, source: s, sourceLink: d, width: h, height: c, crop: p, croppedWidth: y, croppedHeight: w });
     }), e;
   }
   /**
@@ -254,10 +256,11 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     e !== this.currentColumns && (this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   createItemControls(t) {
+    var s;
     const e = E("div", [this.CSS.itemControls]), i = E("button", [this.CSS.itemRemove], { type: "button" });
     i.innerHTML = "×", i.addEventListener("click", () => {
-      const s = t.dataset.url;
-      s && this.onRemoveImage(s), t.remove(), this.nodes.itemsContainer.children.length === 0 && (this.toggleState(
+      const d = t.dataset.url, h = t.dataset.mediaId;
+      (d || h) && this.onRemoveImage(d ?? "", h), t.remove(), this.nodes.itemsContainer.children.length === 0 && (this.toggleState(
         "empty"
         /* Empty */
       ), this.columnsLocked = !1), this.autoAdjustColumns();
@@ -267,7 +270,52 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const r = E("button", [this.CSS.itemMoveRight], { type: "button" });
     r.innerHTML = "→", r.addEventListener("click", () => this.moveItem(t, 1));
     const n = E("button", [this.CSS.itemCrop], { type: "button" });
-    return n.innerHTML = De, n.addEventListener("click", () => this.onCropImage(t)), e.appendChild(a), e.appendChild(n), e.appendChild(i), e.appendChild(r), e;
+    if (n.innerHTML = De, n.addEventListener("click", () => this.onCropImage(t)), e.appendChild(a), e.appendChild(n), (s = this.config.cover) != null && s.enabled) {
+      const d = E("button", ["gallery-tool__item-cover"], { type: "button" });
+      d.innerHTML = "★", d.title = this.api.i18n.t("Сделать обложкой"), d.addEventListener("click", () => {
+        this.onSetCover(t);
+      }), e.appendChild(d);
+    }
+    return e.appendChild(i), e.appendChild(r), e;
+  }
+  /**
+   * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
+   * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
+   */
+  async onSetCover(t) {
+    var a;
+    const e = this.config.cover;
+    if (!(e != null && e.endpoint))
+      return;
+    const i = t.dataset.mediaId;
+    if (!i) {
+      this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" });
+      return;
+    }
+    try {
+      const n = await (await fetch(e.endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": e.csrf ?? "" },
+        credentials: "same-origin",
+        body: JSON.stringify({ media_id: i })
+      })).json().catch(() => ({ success: 0 }));
+      if (n.blocked) {
+        this.api.notifier.show({ message: n.message ?? this.api.i18n.t("Обложка задана вручную"), style: "error" });
+        return;
+      }
+      n.success === 1 && (this.markCover(n.cover_uuid ?? i), (a = e.onCoverChanged) == null || a.call(e, n.cover_uuid ?? i), this.api.notifier.show({ message: this.api.i18n.t("Обложка обновлена") }));
+    } catch {
+      this.api.notifier.show({ message: this.api.i18n.t("Не удалось задать обложку"), style: "error" });
+    }
+  }
+  /**
+   * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
+   */
+  markCover(t) {
+    this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`).forEach((i) => {
+      const a = i, r = !!t && a.dataset.mediaId === t;
+      a.toggleAttribute("data-cover", r);
+    });
   }
   moveItem(t, e) {
     const i = Array.from(this.nodes.itemsContainer.children), r = i.indexOf(t) + e;
@@ -1043,7 +1091,7 @@ function Pe() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var mt = typeof window < "u" && typeof window.document < "u", U = mt ? window : {}, Rt = mt && U.document.documentElement ? "ontouchstart" in U.document.documentElement : !1, At = mt ? "PointerEvent" in U : !1, _ = "cropper", Nt = "all", le = "crop", ce = "move", ue = "zoom", G = "e", J = "w", Z = "s", W = "n", at = "ne", nt = "nw", ot = "se", st = "sw", Et = "".concat(_, "-crop"), Yt = "".concat(_, "-disabled"), A = "".concat(_, "-hidden"), zt = "".concat(_, "-hide"), Be = "".concat(_, "-invisible"), ft = "".concat(_, "-modal"), Dt = "".concat(_, "-move"), lt = "".concat(_, "Action"), dt = "".concat(_, "Preview"), Pt = "crop", de = "move", pe = "none", Mt = "crop", Tt = "cropend", _t = "cropmove", Ot = "cropstart", $t = "dblclick", He = Rt ? "touchstart" : "mousedown", je = Rt ? "touchmove" : "mousemove", Ue = Rt ? "touchend touchcancel" : "mouseup", qt = At ? "pointerdown" : He, Vt = At ? "pointermove" : je, Gt = At ? "pointerup pointercancel" : Ue, Jt = "ready", Kt = "resize", Qt = "wheel", Lt = "zoom", Zt = "image/jpeg", Fe = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, We = /^data:/, Xe = /^data:image\/jpeg;base64,/, Ye = /^img|canvas$/i, fe = 200, me = 100, te = {
+var mt = typeof window < "u" && typeof window.document < "u", U = mt ? window : {}, Rt = mt && U.document.documentElement ? "ontouchstart" in U.document.documentElement : !1, At = mt ? "PointerEvent" in U : !1, _ = "cropper", Nt = "all", le = "crop", ce = "move", de = "zoom", G = "e", J = "w", Z = "s", W = "n", at = "ne", nt = "nw", ot = "se", st = "sw", Et = "".concat(_, "-crop"), Yt = "".concat(_, "-disabled"), A = "".concat(_, "-hidden"), zt = "".concat(_, "-hide"), Be = "".concat(_, "-invisible"), ft = "".concat(_, "-modal"), Dt = "".concat(_, "-move"), lt = "".concat(_, "Action"), ut = "".concat(_, "Preview"), Pt = "crop", ue = "move", pe = "none", Mt = "crop", Tt = "cropend", _t = "cropmove", Ot = "cropstart", $t = "dblclick", He = Rt ? "touchstart" : "mousedown", je = Rt ? "touchmove" : "mousemove", Ue = Rt ? "touchend touchcancel" : "mouseup", qt = At ? "pointerdown" : He, Vt = At ? "pointermove" : je, Gt = At ? "pointerup pointercancel" : Ue, Jt = "ready", Kt = "resize", Qt = "wheel", Lt = "zoom", Zt = "image/jpeg", Fe = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, We = /^data:/, Xe = /^data:image\/jpeg;base64,/, Ye = /^img|canvas$/i, fe = 200, me = 100, te = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
@@ -1384,11 +1432,11 @@ function ai(o, t, e, i) {
     aspectRatio: y,
     width: S,
     height: T
-  }), ut = z({
+  }), dt = z({
     aspectRatio: y,
     width: $,
     height: F
-  }, "cover"), gt = Math.min(V.width, Math.max(ut.width, w)), vt = Math.min(V.height, Math.max(ut.height, u)), Ht = z({
+  }, "cover"), gt = Math.min(V.width, Math.max(dt.width, w)), vt = Math.min(V.height, Math.max(dt.height, u)), Ht = z({
     aspectRatio: a,
     width: S,
     height: T
@@ -1487,7 +1535,7 @@ function ci(o) {
     scaleY: i
   };
 }
-var ui = {
+var di = {
   render: function() {
     this.initContainer(), this.initCanvas(), this.initCropBox(), this.renderCanvas(), this.cropped && this.renderCropBox();
   },
@@ -1596,14 +1644,14 @@ var ui = {
   output: function() {
     this.preview(), rt(this.element, Mt, this.getData());
   }
-}, di = {
+}, ui = {
   initPreview: function() {
     var t = this.element, e = this.crossOrigin, i = this.options.preview, a = e ? this.crossOriginUrl : this.url, r = t.alt || "The image to preview", n = document.createElement("img");
     if (e && (n.crossOrigin = e), n.src = a, n.alt = r, this.viewBox.appendChild(n), this.viewBoxImage = n, !!i) {
       var s = i;
       typeof i == "string" ? s = t.ownerDocument.querySelectorAll(i) : i.querySelector && (s = [i]), this.previews = s, L(s, function(d) {
         var h = document.createElement("img");
-        ct(d, dt, {
+        ct(d, ut, {
           width: d.offsetWidth,
           height: d.offsetHeight,
           html: d.innerHTML
@@ -1613,11 +1661,11 @@ var ui = {
   },
   resetPreview: function() {
     L(this.previews, function(t) {
-      var e = It(t, dt);
+      var e = It(t, ut);
       Y(t, {
         width: e.width,
         height: e.height
-      }), t.innerHTML = e.html, Ze(t, dt);
+      }), t.innerHTML = e.html, Ze(t, ut);
     });
   },
   preview: function() {
@@ -1629,7 +1677,7 @@ var ui = {
       translateX: -d,
       translateY: -h
     }, t)))), L(this.previews, function(c) {
-      var l = It(c, dt), p = l.width, y = l.height, w = p, u = y, f = 1;
+      var l = It(c, ut), p = l.width, y = l.height, w = p, u = y, f = 1;
       a && (f = p / a, u = r * f), r && u > y && (f = y / r, w = a * f, u = y), Y(c, {
         width: w,
         height: u
@@ -1672,7 +1720,7 @@ var ui = {
     }
   },
   dblclick: function() {
-    this.disabled || this.options.dragMode === pe || this.setDragMode(Ke(this.dragBox, Et) ? de : Pt);
+    this.disabled || this.options.dragMode === pe || this.setDragMode(Ke(this.dragBox, Et) ? ue : Pt);
   },
   wheel: function(t) {
     var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, a = 1;
@@ -1687,7 +1735,7 @@ var ui = {
       var a = this.options, r = this.pointers, n;
       t.changedTouches ? L(t.changedTouches, function(s) {
         r[s.identifier] = pt(s);
-      }) : r[t.pointerId || 0] = pt(t), Object.keys(r).length > 1 && a.zoomable && a.zoomOnTouch ? n = ue : n = It(t.target, lt), Fe.test(n) && rt(this.element, Ot, {
+      }) : r[t.pointerId || 0] = pt(t), Object.keys(r).length > 1 && a.zoomable && a.zoomOnTouch ? n = de : n = It(t.target, lt), Fe.test(n) && rt(this.element, Ot, {
         originalEvent: t,
         action: n
       }) !== !1 && (t.preventDefault(), this.action = n, this.cropping = !1, n === le && (this.cropping = !0, I(this.dragBox, ft)));
@@ -1818,7 +1866,7 @@ var ui = {
       case ce:
         this.move(m.x, m.y), b = !1;
         break;
-      case ue:
+      case de:
         this.zoom(ei(n), t), b = !1;
         break;
       case le:
@@ -2120,8 +2168,8 @@ var ui = {
       var V = w / s;
       k.push($ * V, q * V, F * V, H * V);
     }
-    return g.drawImage.apply(g, [i].concat(he(k.map(function(ut) {
-      return Math.floor(it(ut));
+    return g.drawImage.apply(g, [i].concat(he(k.map(function(dt) {
+      return Math.floor(it(dt));
     })))), f;
   },
   /**
@@ -2141,7 +2189,7 @@ var ui = {
   setDragMode: function(t) {
     var e = this.options, i = this.dragBox, a = this.face;
     if (this.ready && !this.disabled) {
-      var r = t === Pt, n = e.movable && t === de;
+      var r = t === Pt, n = e.movable && t === ue;
       t = r || n ? t : pe, e.dragMode = t, ct(i, lt, t), et(i, Et, r), et(i, Dt, n), e.cropBoxMovable || (ct(a, lt, t), et(a, Et, r), et(a, Dt, n));
     }
     return this;
@@ -2283,7 +2331,7 @@ var ui = {
     }
   }]);
 }();
-O(Ce.prototype, ui, di, pi, fi, mi, gi);
+O(Ce.prototype, di, ui, pi, fi, mi, gi);
 class yi {
   constructor() {
     this.overlay = null, this.cropper = null, this.escHandler = null, this.resolvePromise = null;
@@ -2447,7 +2495,8 @@ class kt {
       buttonContent: n.buttonContent ?? this.api.i18n.t("Add Image"),
       urlButtonContent: n.urlButtonContent ?? this.api.i18n.t("Add from URL"),
       uploader: n.uploader,
-      mediaHost: n.mediaHost
+      mediaHost: n.mediaHost,
+      cover: n.cover
     }, this.uploader = new _e({
       config: this.config,
       onUpload: (s) => this.onUpload(s),
@@ -2458,7 +2507,7 @@ class kt {
       onSelectFile: () => this.selectFile(),
       onSelectUrl: (s) => this.uploadFromUrl(s),
       onColumnsChange: (s) => this.onColumnsChange(s),
-      onRemoveImage: (s) => this.onRemoveImage(s),
+      onRemoveImage: (s, d) => this.onRemoveImage(s, d),
       onCropImage: (s) => this.handleCropImage(s),
       readOnly: a
     }), this._data = {
@@ -2630,6 +2679,7 @@ class kt {
     if (t.success && t.file) {
       const e = {
         url: t.file.url,
+        media_id: t.file.media_id,
         imagorPath: t.file.imagor_path,
         caption: "",
         source: "",
@@ -2668,17 +2718,20 @@ class kt {
   /**
    * Handle image removal - delete from S3
    */
-  onRemoveImage(t) {
-    const e = this.config.endpoints.deleteImage;
-    !e || !t || fetch(e, {
+  onRemoveImage(t, e) {
+    const i = this.config.endpoints.deleteImage;
+    !i || !t && !e || fetch(i, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         ...this.config.additionalRequestHeaders || {}
       },
-      body: JSON.stringify({ url: t })
-    }).catch((i) => {
-      console.error("Gallery Tool: failed to delete image from S3", i);
+      body: JSON.stringify({ url: t, media_id: e })
+    }).then((a) => a.json()).then((a) => {
+      var r, n;
+      a && a.cover_cleared && ((n = (r = this.config.cover) == null ? void 0 : r.onCoverChanged) == null || n.call(r, null), this.ui.markCover(null));
+    }).catch((a) => {
+      console.error("Gallery Tool: failed to delete image", a);
     });
   }
   /**
