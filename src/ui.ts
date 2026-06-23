@@ -591,18 +591,23 @@ export default class Ui {
   /**
    * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
    * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
+   *
+   * @param auto - авто-перекат (после удаления обложки): тихий режим без
+   *   error-тостов, другой success-текст. Возвращает true, если обложка назначена.
    */
-  private async onSetCover(item: HTMLElement): Promise<void> {
+  private async onSetCover(item: HTMLElement, auto = false): Promise<boolean> {
     const cover = this.config.cover;
     if (!cover?.endpoint) {
-      return;
+      return false;
     }
 
     const mediaId = item.dataset.mediaId;
     if (!mediaId) {
-      this.api.notifier.show({ message: this.api.i18n.t('Сначала дождитесь загрузки картинки'), style: 'error' });
+      if (!auto) {
+        this.api.notifier.show({ message: this.api.i18n.t('Сначала дождитесь загрузки картинки'), style: 'error' });
+      }
 
-      return;
+      return false;
     }
 
     try {
@@ -616,19 +621,59 @@ export default class Ui {
       const payload = await response.json().catch(() => ({ success: 0 }));
 
       if (payload.blocked) {
-        this.api.notifier.show({ message: payload.message ?? this.api.i18n.t('Обложка задана вручную'), style: 'error' });
+        if (!auto) {
+          this.api.notifier.show({ message: payload.message ?? this.api.i18n.t('Обложка задана вручную'), style: 'error' });
+        }
 
-        return;
+        return false;
       }
 
       if (payload.success === 1) {
         this.markCover(payload.cover_uuid ?? mediaId);
         cover.onCoverChanged?.(payload.cover_uuid ?? mediaId);
-        this.api.notifier.show({ message: this.api.i18n.t('Обложка обновлена') });
+        this.api.notifier.show({
+          message: this.api.i18n.t(auto ? 'Обложка переназначена на следующую картинку' : 'Обложка обновлена'),
+        });
+
+        return true;
       }
+
+      return false;
     } catch {
-      this.api.notifier.show({ message: this.api.i18n.t('Не удалось задать обложку'), style: 'error' });
+      if (!auto) {
+        this.api.notifier.show({ message: this.api.i18n.t('Не удалось задать обложку'), style: 'error' });
+      }
+
+      return false;
     }
+  }
+
+  /**
+   * Онлайн-перекат обложки после удаления текущей картинки-обложки: назначает
+   * обложкой первую оставшуюся картинку галереи (по DOM-порядку). Если картинок
+   * не осталось - очищает обложку онлайн. Вызывается из onRemoveImage при
+   * cover_cleared (удалённый элемент был обложкой).
+   */
+  public async rolloverCover(): Promise<void> {
+    const cover = this.config.cover;
+    if (!cover?.enabled) {
+      return;
+    }
+
+    const items = Array.from(
+      this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`)
+    ) as HTMLElement[];
+    const next = items.find((el) => !!el.dataset.mediaId) ?? null;
+
+    if (next) {
+      await this.onSetCover(next, true);
+
+      return;
+    }
+
+    // Картинок-кандидатов больше нет - очищаем обложку онлайн.
+    this.markCover(null);
+    cover.onCoverChanged?.(null);
   }
 
   /**

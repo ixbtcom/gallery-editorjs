@@ -388,8 +388,9 @@ export default class GalleryTool implements BlockTool {
       .then((r) => r.json())
       .then((payload) => {
         if (payload && payload.cover_cleared) {
-          this.config.cover?.onCoverChanged?.(null);
-          this.ui.markCover(null);
+          // Удалённый элемент был обложкой - онлайн-перекат на следующую картинку
+          // (или очистка, если картинок не осталось).
+          void this.ui.rolloverCover();
         }
       })
       .catch((error) => {

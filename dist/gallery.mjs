@@ -281,32 +281,51 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   /**
    * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
    * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
+   *
+   * @param auto - авто-перекат (после удаления обложки): тихий режим без
+   *   error-тостов, другой success-текст. Возвращает true, если обложка назначена.
    */
-  async onSetCover(t) {
-    var a;
-    const e = this.config.cover;
-    if (!(e != null && e.endpoint))
-      return;
-    const i = t.dataset.mediaId;
-    if (!i) {
-      this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" });
-      return;
-    }
+  async onSetCover(t, e = !1) {
+    var r;
+    const i = this.config.cover;
+    if (!(i != null && i.endpoint))
+      return !1;
+    const a = t.dataset.mediaId;
+    if (!a)
+      return e || this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1;
     try {
-      const n = await (await fetch(e.endpoint, {
+      const s = await (await fetch(i.endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": e.csrf ?? "" },
+        headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": i.csrf ?? "" },
         credentials: "same-origin",
-        body: JSON.stringify({ media_id: i })
+        body: JSON.stringify({ media_id: a })
       })).json().catch(() => ({ success: 0 }));
-      if (n.blocked) {
-        this.api.notifier.show({ message: n.message ?? this.api.i18n.t("Обложка задана вручную"), style: "error" });
-        return;
-      }
-      n.success === 1 && (this.markCover(n.cover_uuid ?? i), (a = e.onCoverChanged) == null || a.call(e, n.cover_uuid ?? i), this.api.notifier.show({ message: this.api.i18n.t("Обложка обновлена") }));
+      return s.blocked ? (e || this.api.notifier.show({ message: s.message ?? this.api.i18n.t("Обложка задана вручную"), style: "error" }), !1) : s.success === 1 ? (this.markCover(s.cover_uuid ?? a), (r = i.onCoverChanged) == null || r.call(i, s.cover_uuid ?? a), this.api.notifier.show({
+        message: this.api.i18n.t(e ? "Обложка переназначена на следующую картинку" : "Обложка обновлена")
+      }), !0) : !1;
     } catch {
-      this.api.notifier.show({ message: this.api.i18n.t("Не удалось задать обложку"), style: "error" });
+      return e || this.api.notifier.show({ message: this.api.i18n.t("Не удалось задать обложку"), style: "error" }), !1;
     }
+  }
+  /**
+   * Онлайн-перекат обложки после удаления текущей картинки-обложки: назначает
+   * обложкой первую оставшуюся картинку галереи (по DOM-порядку). Если картинок
+   * не осталось - очищает обложку онлайн. Вызывается из onRemoveImage при
+   * cover_cleared (удалённый элемент был обложкой).
+   */
+  async rolloverCover() {
+    var a;
+    const t = this.config.cover;
+    if (!(t != null && t.enabled))
+      return;
+    const i = Array.from(
+      this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`)
+    ).find((r) => !!r.dataset.mediaId) ?? null;
+    if (i) {
+      await this.onSetCover(i, !0);
+      return;
+    }
+    this.markCover(null), (a = t.onCoverChanged) == null || a.call(t, null);
   }
   /**
    * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
@@ -2728,8 +2747,7 @@ class kt {
       },
       body: JSON.stringify({ url: t, media_id: e })
     }).then((a) => a.json()).then((a) => {
-      var r, n;
-      a && a.cover_cleared && ((n = (r = this.config.cover) == null ? void 0 : r.onCoverChanged) == null || n.call(r, null), this.ui.markCover(null));
+      a && a.cover_cleared && this.ui.rolloverCover();
     }).catch((a) => {
       console.error("Gallery Tool: failed to delete image", a);
     });
