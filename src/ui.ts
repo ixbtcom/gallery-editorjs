@@ -538,12 +538,9 @@ export default class Ui {
     const removeBtn = make('button', [this.CSS.itemRemove], { type: 'button' });
     removeBtn.innerHTML = '×';
     removeBtn.addEventListener('click', () => {
-      // Get URL + media_id before removing (media_id -> удаление Media + очистка обложки)
+      // Сохраняем ссылку до удаления DOM-элемента для фонового удаления Media.
       const imageUrl = item.dataset.url;
       const mediaId = item.dataset.mediaId;
-      if (imageUrl || mediaId) {
-        this.onRemoveImage(imageUrl ?? '', mediaId);
-      }
 
       item.remove();
 
@@ -554,6 +551,10 @@ export default class Ui {
       }
 
       this.autoAdjustColumns();
+
+      if (imageUrl || mediaId) {
+        this.onRemoveImage(imageUrl ?? '', mediaId);
+      }
     });
 
     const moveLeftBtn = make('button', [this.CSS.itemMoveLeft], { type: 'button' });
@@ -571,14 +572,12 @@ export default class Ui {
     controls.appendChild(moveLeftBtn);
     controls.appendChild(cropBtn);
 
-    // Cover (онлайн-обложка): per-item тоггл, виден только когда включено хостом.
+    // Выбор базовой обложки остаётся доступен и при ручном override.
     if (this.config.cover?.enabled) {
       const coverBtn = make('button', ['gallery-tool__item-cover'], { type: 'button' });
       coverBtn.innerHTML = '★';
       coverBtn.title = this.api.i18n.t('Сделать обложкой');
-      coverBtn.addEventListener('click', () => {
-        void this.onSetCover(item);
-      });
+      coverBtn.addEventListener('click', () => this.onSetCover(item));
       controls.appendChild(coverBtn);
     }
 
@@ -589,91 +588,26 @@ export default class Ui {
   }
 
   /**
-   * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
-   * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
-   *
-   * @param auto - авто-перекат (после удаления обложки): тихий режим без
-   *   error-тостов, другой success-текст. Возвращает true, если обложка назначена.
+   * Выбрать элемент gallery базовой обложкой в состоянии формы.
    */
-  private async onSetCover(item: HTMLElement, auto = false): Promise<boolean> {
+  private onSetCover(item: HTMLElement): boolean {
     const cover = this.config.cover;
-    if (!cover?.endpoint) {
+    if (!cover?.enabled) {
       return false;
     }
 
     const mediaId = item.dataset.mediaId;
     if (!mediaId) {
-      if (!auto) {
-        this.api.notifier.show({ message: this.api.i18n.t('Сначала дождитесь загрузки картинки'), style: 'error' });
-      }
+      this.api.notifier.show({ message: this.api.i18n.t('Сначала дождитесь загрузки картинки'), style: 'error' });
 
       return false;
     }
 
-    try {
-      const response = await fetch(cover.endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': cover.csrf ?? '' },
-        credentials: 'same-origin',
-        body: JSON.stringify({ media_id: mediaId }),
-      });
+    this.markCover(mediaId);
+    cover.onCoverChanged?.(mediaId);
+    this.api.notifier.show({ message: this.api.i18n.t('Базовая обложка обновлена') });
 
-      const payload = await response.json().catch(() => ({ success: 0 }));
-
-      if (payload.blocked) {
-        if (!auto) {
-          this.api.notifier.show({ message: payload.message ?? this.api.i18n.t('Обложка задана вручную'), style: 'error' });
-        }
-
-        return false;
-      }
-
-      if (payload.success === 1) {
-        this.markCover(payload.cover_uuid ?? mediaId);
-        cover.onCoverChanged?.(payload.cover_uuid ?? mediaId);
-        this.api.notifier.show({
-          message: this.api.i18n.t(auto ? 'Обложка переназначена на следующую картинку' : 'Обложка обновлена'),
-        });
-
-        return true;
-      }
-
-      return false;
-    } catch {
-      if (!auto) {
-        this.api.notifier.show({ message: this.api.i18n.t('Не удалось задать обложку'), style: 'error' });
-      }
-
-      return false;
-    }
-  }
-
-  /**
-   * Онлайн-перекат обложки после удаления текущей картинки-обложки: назначает
-   * обложкой первую оставшуюся картинку галереи (по DOM-порядку). Если картинок
-   * не осталось - очищает обложку онлайн. Вызывается из onRemoveImage при
-   * cover_cleared (удалённый элемент был обложкой).
-   */
-  public async rolloverCover(): Promise<void> {
-    const cover = this.config.cover;
-    if (!cover?.enabled) {
-      return;
-    }
-
-    const items = Array.from(
-      this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`)
-    ) as HTMLElement[];
-    const next = items.find((el) => !!el.dataset.mediaId) ?? null;
-
-    if (next) {
-      await this.onSetCover(next, true);
-
-      return;
-    }
-
-    // Картинок-кандидатов больше нет - очищаем обложку онлайн.
-    this.markCover(null);
-    cover.onCoverChanged?.(null);
+    return true;
   }
 
   /**

@@ -260,10 +260,10 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const e = E("div", [this.CSS.itemControls]), i = E("button", [this.CSS.itemRemove], { type: "button" });
     i.innerHTML = "×", i.addEventListener("click", () => {
       const d = t.dataset.url, h = t.dataset.mediaId;
-      (d || h) && this.onRemoveImage(d ?? "", h), t.remove(), this.nodes.itemsContainer.children.length === 0 && (this.toggleState(
+      t.remove(), this.nodes.itemsContainer.children.length === 0 && (this.toggleState(
         "empty"
         /* Empty */
-      ), this.columnsLocked = !1), this.autoAdjustColumns();
+      ), this.columnsLocked = !1), this.autoAdjustColumns(), (d || h) && this.onRemoveImage(d ?? "", h);
     });
     const a = E("button", [this.CSS.itemMoveLeft], { type: "button" });
     a.innerHTML = "←", a.addEventListener("click", () => this.moveItem(t, -1));
@@ -272,60 +272,20 @@ const De = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const n = E("button", [this.CSS.itemCrop], { type: "button" });
     if (n.innerHTML = De, n.addEventListener("click", () => this.onCropImage(t)), e.appendChild(a), e.appendChild(n), (s = this.config.cover) != null && s.enabled) {
       const d = E("button", ["gallery-tool__item-cover"], { type: "button" });
-      d.innerHTML = "★", d.title = this.api.i18n.t("Сделать обложкой"), d.addEventListener("click", () => {
-        this.onSetCover(t);
-      }), e.appendChild(d);
+      d.innerHTML = "★", d.title = this.api.i18n.t("Сделать обложкой"), d.addEventListener("click", () => this.onSetCover(t)), e.appendChild(d);
     }
     return e.appendChild(i), e.appendChild(r), e;
   }
   /**
-   * Тоггл обложки на элементе gallery: серверный endpoint, blocked (ручная -
-   * приоритет), затем подсветка + сообщение хосту ($set/трекинг).
-   *
-   * @param auto - авто-перекат (после удаления обложки): тихий режим без
-   *   error-тостов, другой success-текст. Возвращает true, если обложка назначена.
+   * Выбрать элемент gallery базовой обложкой в состоянии формы.
    */
-  async onSetCover(t, e = !1) {
-    var r;
-    const i = this.config.cover;
-    if (!(i != null && i.endpoint))
-      return !1;
-    const a = t.dataset.mediaId;
-    if (!a)
-      return e || this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1;
-    try {
-      const s = await (await fetch(i.endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "X-CSRF-TOKEN": i.csrf ?? "" },
-        credentials: "same-origin",
-        body: JSON.stringify({ media_id: a })
-      })).json().catch(() => ({ success: 0 }));
-      return s.blocked ? (e || this.api.notifier.show({ message: s.message ?? this.api.i18n.t("Обложка задана вручную"), style: "error" }), !1) : s.success === 1 ? (this.markCover(s.cover_uuid ?? a), (r = i.onCoverChanged) == null || r.call(i, s.cover_uuid ?? a), this.api.notifier.show({
-        message: this.api.i18n.t(e ? "Обложка переназначена на следующую картинку" : "Обложка обновлена")
-      }), !0) : !1;
-    } catch {
-      return e || this.api.notifier.show({ message: this.api.i18n.t("Не удалось задать обложку"), style: "error" }), !1;
-    }
-  }
-  /**
-   * Онлайн-перекат обложки после удаления текущей картинки-обложки: назначает
-   * обложкой первую оставшуюся картинку галереи (по DOM-порядку). Если картинок
-   * не осталось - очищает обложку онлайн. Вызывается из onRemoveImage при
-   * cover_cleared (удалённый элемент был обложкой).
-   */
-  async rolloverCover() {
+  onSetCover(t) {
     var a;
-    const t = this.config.cover;
-    if (!(t != null && t.enabled))
-      return;
-    const i = Array.from(
-      this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`)
-    ).find((r) => !!r.dataset.mediaId) ?? null;
-    if (i) {
-      await this.onSetCover(i, !0);
-      return;
-    }
-    this.markCover(null), (a = t.onCoverChanged) == null || a.call(t, null);
+    const e = this.config.cover;
+    if (!(e != null && e.enabled))
+      return !1;
+    const i = t.dataset.mediaId;
+    return i ? (this.markCover(i), (a = e.onCoverChanged) == null || a.call(e, i), this.api.notifier.show({ message: this.api.i18n.t("Базовая обложка обновлена") }), !0) : (this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1);
   }
   /**
    * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
@@ -2738,6 +2698,7 @@ class kt {
    * Handle image removal - delete from S3
    */
   onRemoveImage(t, e) {
+    this.block.dispatchChange();
     const i = this.config.endpoints.deleteImage;
     !i || !t && !e || fetch(i, {
       method: "POST",
@@ -2746,9 +2707,7 @@ class kt {
         ...this.config.additionalRequestHeaders || {}
       },
       body: JSON.stringify({ url: t, media_id: e })
-    }).then((a) => a.json()).then((a) => {
-      a && a.cover_cleared && this.ui.rolloverCover();
-    }).catch((a) => {
+    }).then((a) => a.json()).catch((a) => {
       console.error("Gallery Tool: failed to delete image", a);
     });
   }

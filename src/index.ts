@@ -371,12 +371,14 @@ export default class GalleryTool implements BlockTool {
    * Handle image removal - delete from S3
    */
   private onRemoveImage(url: string, mediaId?: string): void {
+    this.block.dispatchChange();
+
     const deleteEndpoint = this.config.endpoints.deleteImage;
     if (!deleteEndpoint || (!url && !mediaId)) {
       return;
     }
 
-    // Send delete request to backend; media_id даёт удаление Media + онлайн-очистку обложки
+    // Удаление Media не управляет pointer: общий registry пересчитает его по onChange.
     fetch(deleteEndpoint, {
       method: 'POST',
       headers: {
@@ -386,13 +388,6 @@ export default class GalleryTool implements BlockTool {
       body: JSON.stringify({ url, media_id: mediaId }),
     })
       .then((r) => r.json())
-      .then((payload) => {
-        if (payload && payload.cover_cleared) {
-          // Удалённый элемент был обложкой - онлайн-перекат на следующую картинку
-          // (или очистка, если картинок не осталось).
-          void this.ui.rolloverCover();
-        }
-      })
       .catch((error) => {
         console.error('Gallery Tool: failed to delete image', error);
       });
