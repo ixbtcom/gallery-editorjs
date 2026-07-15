@@ -91,6 +91,7 @@ export interface GalleryConfig {
     };
     /** Base URL for imagor/thumbor service (e.g. 'https://media.ixbt.site') */
     mediaHost?: string;
+    onMediaRemoved?: (mediaId: string) => void;
     /** Локальный выбор базовой обложки, provided by filament-editorjs. */
     cover?: {
         enabled?: boolean;

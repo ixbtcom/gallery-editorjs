@@ -1021,7 +1021,7 @@ function xt(o) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
   }, xt(o);
 }
-function Le(o, t) {
+function Ie(o, t) {
   if (!(o instanceof t))
     throw new TypeError("Cannot call a class as a function");
 }
@@ -1031,7 +1031,7 @@ function Xt(o, t) {
     i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(o, se(i.key), i);
   }
 }
-function Ie(o, t, e) {
+function Le(o, t, e) {
   return t && Xt(o.prototype, t), e && Xt(o, e), Object.defineProperty(o, "prototype", {
     writable: !1
   }), o;
@@ -1070,7 +1070,7 @@ function Pe() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var mt = typeof window < "u" && typeof window.document < "u", U = mt ? window : {}, Rt = mt && U.document.documentElement ? "ontouchstart" in U.document.documentElement : !1, At = mt ? "PointerEvent" in U : !1, _ = "cropper", Nt = "all", le = "crop", ce = "move", de = "zoom", G = "e", J = "w", Z = "s", W = "n", at = "ne", nt = "nw", ot = "se", st = "sw", Et = "".concat(_, "-crop"), Yt = "".concat(_, "-disabled"), A = "".concat(_, "-hidden"), zt = "".concat(_, "-hide"), Be = "".concat(_, "-invisible"), ft = "".concat(_, "-modal"), Dt = "".concat(_, "-move"), lt = "".concat(_, "Action"), ut = "".concat(_, "Preview"), Pt = "crop", ue = "move", pe = "none", Mt = "crop", Tt = "cropend", _t = "cropmove", Ot = "cropstart", $t = "dblclick", He = Rt ? "touchstart" : "mousedown", je = Rt ? "touchmove" : "mousemove", Ue = Rt ? "touchend touchcancel" : "mouseup", qt = At ? "pointerdown" : He, Vt = At ? "pointermove" : je, Gt = At ? "pointerup pointercancel" : Ue, Jt = "ready", Kt = "resize", Qt = "wheel", Lt = "zoom", Zt = "image/jpeg", Fe = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, We = /^data:/, Xe = /^data:image\/jpeg;base64,/, Ye = /^img|canvas$/i, fe = 200, me = 100, te = {
+var mt = typeof window < "u" && typeof window.document < "u", U = mt ? window : {}, Rt = mt && U.document.documentElement ? "ontouchstart" in U.document.documentElement : !1, At = mt ? "PointerEvent" in U : !1, _ = "cropper", Nt = "all", le = "crop", ce = "move", de = "zoom", G = "e", J = "w", Z = "s", W = "n", at = "ne", nt = "nw", ot = "se", st = "sw", Et = "".concat(_, "-crop"), Yt = "".concat(_, "-disabled"), A = "".concat(_, "-hidden"), zt = "".concat(_, "-hide"), Be = "".concat(_, "-invisible"), ft = "".concat(_, "-modal"), Dt = "".concat(_, "-move"), lt = "".concat(_, "Action"), ut = "".concat(_, "Preview"), Pt = "crop", ue = "move", pe = "none", Mt = "crop", Tt = "cropend", _t = "cropmove", Ot = "cropstart", $t = "dblclick", He = Rt ? "touchstart" : "mousedown", je = Rt ? "touchmove" : "mousemove", Ue = Rt ? "touchend touchcancel" : "mouseup", qt = At ? "pointerdown" : He, Vt = At ? "pointermove" : je, Gt = At ? "pointerup pointercancel" : Ue, Jt = "ready", Kt = "resize", Qt = "wheel", It = "zoom", Zt = "image/jpeg", Fe = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, We = /^data:/, Xe = /^data:image\/jpeg;base64,/, Ye = /^img|canvas$/i, fe = 200, me = 100, te = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
@@ -1172,7 +1172,7 @@ var Ve = Array.prototype.slice;
 function ge(o) {
   return Array.from ? Array.from(o) : Ve.call(o);
 }
-function L(o, t) {
+function I(o, t) {
   return o && R(t) && (Array.isArray(o) || D(o.length) ? ge(o).forEach(function(e, i) {
     t.call(o, e, i, o);
   }) : K(o) && Object.keys(o).forEach(function(e) {
@@ -1195,18 +1195,18 @@ function it(o) {
 var Je = /^width|height|left|top|marginLeft|marginTop$/;
 function Y(o, t) {
   var e = o.style;
-  L(t, function(i, a) {
+  I(t, function(i, a) {
     Je.test(a) && D(i) && (i = "".concat(i, "px")), e[a] = i;
   });
 }
 function Ke(o, t) {
   return o.classList ? o.classList.contains(t) : o.className.indexOf(t) > -1;
 }
-function I(o, t) {
+function L(o, t) {
   if (t) {
     if (D(o.length)) {
-      L(o, function(i) {
-        I(i, t);
+      I(o, function(i) {
+        L(i, t);
       });
       return;
     }
@@ -1221,7 +1221,7 @@ function I(o, t) {
 function j(o, t) {
   if (t) {
     if (D(o.length)) {
-      L(o, function(e) {
+      I(o, function(e) {
         j(e, t);
       });
       return;
@@ -1236,19 +1236,19 @@ function j(o, t) {
 function et(o, t, e) {
   if (t) {
     if (D(o.length)) {
-      L(o, function(i) {
+      I(o, function(i) {
         et(i, t, e);
       });
       return;
     }
-    e ? I(o, t) : j(o, t);
+    e ? L(o, t) : j(o, t);
   }
 }
 var Qe = /([a-z\d])([A-Z])/g;
 function Bt(o) {
   return o.replace(Qe, "$1-$2").toLowerCase();
 }
-function It(o, t) {
+function Lt(o, t) {
   return K(o[t]) ? o[t] : o.dataset ? o.dataset[t] : o.getAttribute("data-".concat(Bt(t)));
 }
 function ct(o, t, e) {
@@ -1352,8 +1352,8 @@ function ht(o) {
 }
 function ei(o) {
   var t = oe({}, o), e = 0;
-  return L(o, function(i, a) {
-    delete t[a], L(t, function(r) {
+  return I(o, function(i, a) {
+    delete t[a], I(t, function(r) {
       var n = Math.abs(i.startX - r.startX), s = Math.abs(i.startY - r.startY), d = Math.abs(i.endX - r.endX), h = Math.abs(i.endY - r.endY), c = Math.sqrt(n * n + s * s), l = Math.sqrt(d * d + h * h), p = (l - c) / c;
       Math.abs(p) > Math.abs(e) && (e = p);
     });
@@ -1371,7 +1371,7 @@ function pt(o, t) {
 }
 function ii(o) {
   var t = 0, e = 0, i = 0;
-  return L(o, function(a) {
+  return I(o, function(a) {
     var r = a.startX, n = a.startY;
     t += r, e += n, i += 1;
   }), t /= i, e /= i, {
@@ -1439,7 +1439,7 @@ function ni(o, t, e) {
 var oi = /^data:.*,/;
 function si(o) {
   var t = o.replace(oi, ""), e = atob(t), i = new ArrayBuffer(e.length), a = new Uint8Array(i);
-  return L(a, function(r, n) {
+  return I(a, function(r, n) {
     a[n] = e.charCodeAt(n);
   }), i;
 }
@@ -1520,7 +1520,7 @@ var di = {
   },
   initContainer: function() {
     var t = this.element, e = this.options, i = this.container, a = this.cropper, r = Number(e.minContainerWidth), n = Number(e.minContainerHeight);
-    I(a, A), j(t, A);
+    L(a, A), j(t, A);
     var s = {
       width: Math.max(i.offsetWidth, r >= 0 ? r : fe),
       height: Math.max(i.offsetHeight, n >= 0 ? n : me)
@@ -1528,7 +1528,7 @@ var di = {
     this.containerData = s, Y(a, {
       width: s.width,
       height: s.height
-    }), I(t, A), j(a, A);
+    }), L(t, A), j(a, A);
   },
   // Canvas (image wrapper)
   initCanvas: function() {
@@ -1628,7 +1628,7 @@ var di = {
     var t = this.element, e = this.crossOrigin, i = this.options.preview, a = e ? this.crossOriginUrl : this.url, r = t.alt || "The image to preview", n = document.createElement("img");
     if (e && (n.crossOrigin = e), n.src = a, n.alt = r, this.viewBox.appendChild(n), this.viewBoxImage = n, !!i) {
       var s = i;
-      typeof i == "string" ? s = t.ownerDocument.querySelectorAll(i) : i.querySelector && (s = [i]), this.previews = s, L(s, function(d) {
+      typeof i == "string" ? s = t.ownerDocument.querySelectorAll(i) : i.querySelector && (s = [i]), this.previews = s, I(s, function(d) {
         var h = document.createElement("img");
         ct(d, ut, {
           width: d.offsetWidth,
@@ -1639,8 +1639,8 @@ var di = {
     }
   },
   resetPreview: function() {
-    L(this.previews, function(t) {
-      var e = It(t, ut);
+    I(this.previews, function(t) {
+      var e = Lt(t, ut);
       Y(t, {
         width: e.width,
         height: e.height
@@ -1655,8 +1655,8 @@ var di = {
     }, ht(O({
       translateX: -d,
       translateY: -h
-    }, t)))), L(this.previews, function(c) {
-      var l = It(c, ut), p = l.width, y = l.height, w = p, u = y, f = 1;
+    }, t)))), I(this.previews, function(c) {
+      var l = Lt(c, ut), p = l.width, y = l.height, w = p, u = y, f = 1;
       a && (f = p / a, u = r * f), r && u > y && (f = y / r, w = a * f, u = y), Y(c, {
         width: w,
         height: u
@@ -1672,14 +1672,14 @@ var di = {
 }, pi = {
   bind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    R(e.cropstart) && P(t, Ot, e.cropstart), R(e.cropmove) && P(t, _t, e.cropmove), R(e.cropend) && P(t, Tt, e.cropend), R(e.crop) && P(t, Mt, e.crop), R(e.zoom) && P(t, Lt, e.zoom), P(i, qt, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && P(i, Qt, this.onWheel = this.wheel.bind(this), {
+    R(e.cropstart) && P(t, Ot, e.cropstart), R(e.cropmove) && P(t, _t, e.cropmove), R(e.cropend) && P(t, Tt, e.cropend), R(e.crop) && P(t, Mt, e.crop), R(e.zoom) && P(t, It, e.zoom), P(i, qt, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && P(i, Qt, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
     }), e.toggleDragModeOnDblclick && P(i, $t, this.onDblclick = this.dblclick.bind(this)), P(t.ownerDocument, Vt, this.onCropMove = this.cropMove.bind(this)), P(t.ownerDocument, Gt, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && P(window, Kt, this.onResize = this.resize.bind(this));
   },
   unbind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    R(e.cropstart) && B(t, Ot, e.cropstart), R(e.cropmove) && B(t, _t, e.cropmove), R(e.cropend) && B(t, Tt, e.cropend), R(e.crop) && B(t, Mt, e.crop), R(e.zoom) && B(t, Lt, e.zoom), B(i, qt, this.onCropStart), e.zoomable && e.zoomOnWheel && B(i, Qt, this.onWheel, {
+    R(e.cropstart) && B(t, Ot, e.cropstart), R(e.cropmove) && B(t, _t, e.cropmove), R(e.cropend) && B(t, Tt, e.cropend), R(e.crop) && B(t, Mt, e.crop), R(e.zoom) && B(t, It, e.zoom), B(i, qt, this.onCropStart), e.zoomable && e.zoomOnWheel && B(i, Qt, this.onWheel, {
       passive: !1,
       capture: !0
     }), e.toggleDragModeOnDblclick && B(i, $t, this.onDblclick), B(t.ownerDocument, Vt, this.onCropMove), B(t.ownerDocument, Gt, this.onCropEnd), e.responsive && B(window, Kt, this.onResize);
@@ -1690,9 +1690,9 @@ var di = {
       var t = this.options, e = this.container, i = this.containerData, a = e.offsetWidth / i.width, r = e.offsetHeight / i.height, n = Math.abs(a - 1) > Math.abs(r - 1) ? a : r;
       if (n !== 1) {
         var s, d;
-        t.restore && (s = this.getCanvasData(), d = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(L(s, function(h, c) {
+        t.restore && (s = this.getCanvasData(), d = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(I(s, function(h, c) {
           s[c] = h * n;
-        })), this.setCropBoxData(L(d, function(h, c) {
+        })), this.setCropBoxData(I(d, function(h, c) {
           d[c] = h * n;
         })));
       }
@@ -1712,12 +1712,12 @@ var di = {
     if (!(this.disabled || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
     (D(e) && e !== 1 || D(i) && i !== 0 || t.ctrlKey))) {
       var a = this.options, r = this.pointers, n;
-      t.changedTouches ? L(t.changedTouches, function(s) {
+      t.changedTouches ? I(t.changedTouches, function(s) {
         r[s.identifier] = pt(s);
-      }) : r[t.pointerId || 0] = pt(t), Object.keys(r).length > 1 && a.zoomable && a.zoomOnTouch ? n = de : n = It(t.target, lt), Fe.test(n) && rt(this.element, Ot, {
+      }) : r[t.pointerId || 0] = pt(t), Object.keys(r).length > 1 && a.zoomable && a.zoomOnTouch ? n = de : n = Lt(t.target, lt), Fe.test(n) && rt(this.element, Ot, {
         originalEvent: t,
         action: n
-      }) !== !1 && (t.preventDefault(), this.action = n, this.cropping = !1, n === le && (this.cropping = !0, I(this.dragBox, ft)));
+      }) !== !1 && (t.preventDefault(), this.action = n, this.cropping = !1, n === le && (this.cropping = !0, L(this.dragBox, ft)));
     }
   },
   cropMove: function(t) {
@@ -1727,7 +1727,7 @@ var di = {
       t.preventDefault(), rt(this.element, _t, {
         originalEvent: t,
         action: e
-      }) !== !1 && (t.changedTouches ? L(t.changedTouches, function(a) {
+      }) !== !1 && (t.changedTouches ? I(t.changedTouches, function(a) {
         O(i[a.identifier] || {}, pt(a, !0));
       }) : O(i[t.pointerId || 0] || {}, pt(t, !0)), this.change(t));
     }
@@ -1735,7 +1735,7 @@ var di = {
   cropEnd: function(t) {
     if (!this.disabled) {
       var e = this.action, i = this.pointers;
-      t.changedTouches ? L(t.changedTouches, function(a) {
+      t.changedTouches ? I(t.changedTouches, function(a) {
         delete i[a.identifier];
       }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, et(this.dragBox, ft, this.cropped && this.options.modal)), rt(this.element, Tt, {
         originalEvent: t,
@@ -1856,14 +1856,14 @@ var di = {
         x = we(this.cropper), h = C.startX - x.left, c = C.startY - x.top, l = r.minWidth, p = r.minHeight, m.x > 0 ? s = m.y > 0 ? ot : at : m.x < 0 && (h -= l, s = m.y > 0 ? st : nt), m.y < 0 && (c -= p), this.cropped || (j(this.cropBox, A), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
         break;
     }
-    b && (r.width = l, r.height = p, r.left = h, r.top = c, this.action = s, this.renderCropBox()), L(n, function(M) {
+    b && (r.width = l, r.height = p, r.left = h, r.top = c, this.action = s, this.renderCropBox()), I(n, function(M) {
       M.startX = M.endX, M.startY = M.endY;
     });
   }
 }, gi = {
   // Show the crop box manually
   crop: function() {
-    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && I(this.dragBox, ft), j(this.cropBox, A), this.setCropBoxData(this.initialCropBoxData)), this;
+    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && L(this.dragBox, ft), j(this.cropBox, A), this.setCropBoxData(this.initialCropBoxData)), this;
   },
   // Reset the image and crop box to their initial states
   reset: function() {
@@ -1876,7 +1876,7 @@ var di = {
       top: 0,
       width: 0,
       height: 0
-    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), j(this.dragBox, ft), I(this.cropBox, A)), this;
+    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), j(this.dragBox, ft), L(this.cropBox, A)), this;
   },
   /**
    * Replace the image's src and rebuild the cropper
@@ -1886,7 +1886,7 @@ var di = {
    */
   replace: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
-    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, L(this.previews, function(i) {
+    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, I(this.previews, function(i) {
       i.getElementsByTagName("img")[0].src = t;
     }))) : (this.isImg && (this.replaced = !0), this.options.data = null, this.uncreate(), this.load(t))), this;
   },
@@ -1896,7 +1896,7 @@ var di = {
   },
   // Disable (freeze) the cropper
   disable: function() {
-    return this.ready && !this.disabled && (this.disabled = !0, I(this.cropper, Yt)), this;
+    return this.ready && !this.disabled && (this.disabled = !0, L(this.cropper, Yt)), this;
   },
   /**
    * Destroy the cropper and remove the instance from the image
@@ -1947,7 +1947,7 @@ var di = {
     var a = this.options, r = this.canvasData, n = r.width, s = r.height, d = r.naturalWidth, h = r.naturalHeight;
     if (t = Number(t), t >= 0 && this.ready && !this.disabled && a.zoomable) {
       var c = d * t, l = h * t;
-      if (rt(this.element, Lt, {
+      if (rt(this.element, It, {
         ratio: t,
         oldRatio: n / d,
         originalEvent: i
@@ -2023,7 +2023,7 @@ var di = {
         height: r.height
       };
       var s = i.width / i.naturalWidth;
-      if (L(n, function(c, l) {
+      if (I(n, function(c, l) {
         n[l] = c / s;
       }), t) {
         var d = Math.round(n.y + n.height), h = Math.round(n.x + n.width);
@@ -2073,7 +2073,7 @@ var di = {
    */
   getCanvasData: function() {
     var t = this.canvasData, e = {};
-    return this.ready && L(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
+    return this.ready && I(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
       e[i] = t[i];
     }), e;
   },
@@ -2176,11 +2176,11 @@ var di = {
 }, vi = U.Cropper, Ce = /* @__PURE__ */ function() {
   function o(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (Le(this, o), !t || !Ye.test(t.tagName))
+    if (Ie(this, o), !t || !Ye.test(t.tagName))
       throw new Error("The first argument is required and must be an <img> or <canvas> element.");
     this.element = t, this.options = O({}, te, tt(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
   }
-  return Ie(o, [{
+  return Le(o, [{
     key: "init",
     value: function() {
       var e = this.element, i = e.tagName.toLowerCase(), a;
@@ -2235,7 +2235,7 @@ var di = {
       var e = this.element, i = this.url, a = e.crossOrigin, r = i;
       this.options.checkCrossOrigin && ie(i) && (a || (a = "anonymous"), r = re(i)), this.crossOrigin = a, this.crossOriginUrl = r;
       var n = document.createElement("img");
-      a && (n.crossOrigin = a), n.src = r || i, n.alt = e.alt || "The image to crop", this.image = n, n.onload = this.start.bind(this), n.onerror = this.stop.bind(this), I(n, zt), e.parentNode.insertBefore(n, e.nextSibling);
+      a && (n.crossOrigin = a), n.src = r || i, n.alt = e.alt || "The image to crop", this.image = n, n.onload = this.start.bind(this), n.onerror = this.stop.bind(this), L(n, zt), e.parentNode.insertBefore(n, e.nextSibling);
     }
   }, {
     key: "start",
@@ -2271,7 +2271,7 @@ var di = {
         var e = this.element, i = this.options, a = this.image, r = e.parentNode, n = document.createElement("div");
         n.innerHTML = ze;
         var s = n.querySelector(".".concat(_, "-container")), d = s.querySelector(".".concat(_, "-canvas")), h = s.querySelector(".".concat(_, "-drag-box")), c = s.querySelector(".".concat(_, "-crop-box")), l = c.querySelector(".".concat(_, "-face"));
-        this.container = r, this.cropper = s, this.canvas = d, this.dragBox = h, this.cropBox = c, this.viewBox = s.querySelector(".".concat(_, "-view-box")), this.face = l, d.appendChild(a), I(e, A), r.insertBefore(s, e.nextSibling), j(a, zt), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, I(c, A), i.guides || I(c.getElementsByClassName("".concat(_, "-dashed")), A), i.center || I(c.getElementsByClassName("".concat(_, "-center")), A), i.background && I(s, "".concat(_, "-bg")), i.highlight || I(l, Be), i.cropBoxMovable && (I(l, Dt), ct(l, lt, Nt)), i.cropBoxResizable || (I(c.getElementsByClassName("".concat(_, "-line")), A), I(c.getElementsByClassName("".concat(_, "-point")), A)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), R(i.ready) && P(e, Jt, i.ready, {
+        this.container = r, this.cropper = s, this.canvas = d, this.dragBox = h, this.cropBox = c, this.viewBox = s.querySelector(".".concat(_, "-view-box")), this.face = l, d.appendChild(a), L(e, A), r.insertBefore(s, e.nextSibling), j(a, zt), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, L(c, A), i.guides || L(c.getElementsByClassName("".concat(_, "-dashed")), A), i.center || L(c.getElementsByClassName("".concat(_, "-center")), A), i.background && L(s, "".concat(_, "-bg")), i.highlight || L(l, Be), i.cropBoxMovable && (L(l, Dt), ct(l, lt, Nt)), i.cropBoxResizable || (L(c.getElementsByClassName("".concat(_, "-line")), A), L(c.getElementsByClassName("".concat(_, "-point")), A)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), R(i.ready) && P(e, Jt, i.ready, {
           once: !0
         }), rt(e, Jt);
       }
@@ -2475,7 +2475,8 @@ class kt {
       urlButtonContent: n.urlButtonContent ?? this.api.i18n.t("Add from URL"),
       uploader: n.uploader,
       mediaHost: n.mediaHost,
-      cover: n.cover
+      cover: n.cover,
+      onMediaRemoved: n.onMediaRemoved
     }, this.uploader = new _e({
       config: this.config,
       onUpload: (s) => this.onUpload(s),
@@ -2570,6 +2571,13 @@ class kt {
    */
   save() {
     return this._data.items = this.ui.getItemsData(), this._data.columns = this.ui.getColumns(), this._data;
+  }
+  removed() {
+    const t = this.ui.getItemsData().map((e) => e.media_id).filter((e) => !!e);
+    new Set(t).forEach((e) => {
+      var i, a;
+      return (a = (i = this.config).onMediaRemoved) == null ? void 0 : a.call(i, e);
+    });
   }
   /**
    * Returns configuration for block tunes
@@ -2698,17 +2706,21 @@ class kt {
    * Handle image removal - delete from S3
    */
   onRemoveImage(t, e) {
-    this.block.dispatchChange();
+    var a, r;
+    if (this.block.dispatchChange(), e) {
+      (r = (a = this.config).onMediaRemoved) == null || r.call(a, e);
+      return;
+    }
     const i = this.config.endpoints.deleteImage;
-    !i || !t && !e || fetch(i, {
+    !i || !t || fetch(i, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         ...this.config.additionalRequestHeaders || {}
       },
-      body: JSON.stringify({ url: t, media_id: e })
-    }).then((a) => a.json()).catch((a) => {
-      console.error("Gallery Tool: failed to delete image", a);
+      body: JSON.stringify({ url: t })
+    }).then((n) => n.json()).catch((n) => {
+      console.error("Gallery Tool: failed to delete image", n);
     });
   }
   /**

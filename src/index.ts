@@ -72,6 +72,7 @@ export default class GalleryTool implements BlockTool {
       uploader: config.uploader,
       mediaHost: config.mediaHost,
       cover: config.cover,
+      onMediaRemoved: config.onMediaRemoved,
     };
 
     this.uploader = new Uploader({
@@ -191,6 +192,14 @@ export default class GalleryTool implements BlockTool {
     this._data.items = this.ui.getItemsData();
     this._data.columns = this.ui.getColumns();
     return this._data;
+  }
+
+  public removed(): void {
+    const mediaIds = this.ui.getItemsData()
+      .map(item => item.media_id)
+      .filter((mediaId): mediaId is string => Boolean(mediaId));
+
+    new Set(mediaIds).forEach(mediaId => this.config.onMediaRemoved?.(mediaId));
   }
 
   /**
@@ -373,8 +382,14 @@ export default class GalleryTool implements BlockTool {
   private onRemoveImage(url: string, mediaId?: string): void {
     this.block.dispatchChange();
 
+    if (mediaId) {
+      this.config.onMediaRemoved?.(mediaId);
+
+      return;
+    }
+
     const deleteEndpoint = this.config.endpoints.deleteImage;
-    if (!deleteEndpoint || (!url && !mediaId)) {
+    if (!deleteEndpoint || !url) {
       return;
     }
 
@@ -385,7 +400,7 @@ export default class GalleryTool implements BlockTool {
         'Content-Type': 'application/json',
         ...(this.config.additionalRequestHeaders || {}),
       },
-      body: JSON.stringify({ url, media_id: mediaId }),
+      body: JSON.stringify({ url }),
     })
       .then((r) => r.json())
       .catch((error) => {

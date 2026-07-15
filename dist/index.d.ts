@@ -59,6 +59,7 @@ export default class GalleryTool implements BlockTool {
      * Return Block data
      */
     save(): GalleryToolData;
+    removed(): void;
     /**
      * Returns configuration for block tunes
      */
