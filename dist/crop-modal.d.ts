@@ -9,14 +9,16 @@ export default class CropModal {
     private cropper;
     private escHandler;
     private resolvePromise;
+    private showOriginalOnClickInput;
     /**
      * Открывает модальное окно кадрирования.
      *
      * @param imageUrl - URL изображения для кадрирования
      * @param existingCrop - существующая строка кадрирования "AxB:CxD" для восстановления области
+     * @param existingShowOriginalOnClick - сохранённое поведение lightbox
      * @returns Promise с результатом кадрирования или null при отмене
      */
-    open(imageUrl: string, existingCrop?: string): Promise<CropResult | null>;
+    open(imageUrl: string, existingCrop?: string, existingShowOriginalOnClick?: boolean): Promise<CropResult | null>;
     /**
      * Полностью уничтожает модальное окно и освобождает ресурсы.
      */

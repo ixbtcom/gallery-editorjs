@@ -436,6 +436,26 @@
   display: block;
 }
 
+.gallery-crop-modal__options {
+  padding: 12px 16px 0;
+  background: var(--ej-bg-muted, #f5f5f5);
+}
+
+.gallery-crop-modal__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ej-text);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gallery-crop-modal__option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
 .gallery-crop-modal__actions {
   display: flex;
   gap: 8px;

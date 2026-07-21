@@ -73,6 +73,7 @@ export default class GalleryTool implements BlockTool {
       mediaHost: config.mediaHost,
       cover: config.cover,
       onMediaRemoved: config.onMediaRemoved,
+      onCropApplied: config.onCropApplied,
     };
 
     this.uploader = new Uploader({
@@ -335,7 +336,11 @@ export default class GalleryTool implements BlockTool {
     if (!url) return;
 
     const existingCrop = item.dataset.crop;
-    const result = await this.cropModal.open(url, existingCrop);
+    const result = await this.cropModal.open(
+      url,
+      existingCrop,
+      item.dataset.showOriginalOnClick === 'true'
+    );
 
     if (result === null) {
       // Cancelled
@@ -344,10 +349,22 @@ export default class GalleryTool implements BlockTool {
 
     if (result.crop === '') {
       // Reset crop
-      this.ui.updateItemAfterCrop(item, undefined, 0, 0);
+      this.ui.updateItemAfterCrop(item, undefined, 0, 0, undefined);
     } else {
       // Apply crop
-      this.ui.updateItemAfterCrop(item, result.crop, result.croppedWidth, result.croppedHeight);
+      this.ui.updateItemAfterCrop(
+        item,
+        result.crop,
+        result.croppedWidth,
+        result.croppedHeight,
+        result.showOriginalOnClick
+      );
+
+      const mediaId = item.dataset.mediaId;
+
+      if (mediaId) {
+        this.config.onCropApplied?.(mediaId, result.crop);
+      }
     }
 
     this.block.dispatchChange();

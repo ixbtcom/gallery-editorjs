@@ -69,7 +69,9 @@ export default class Ui {
     /**
      * Update item DOM after crop operation
      */
-    updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number): void;
+    updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number, showOriginalOnClick: boolean | undefined): void;
+    /** Update an item's effective dimensions badge and aspect ratio. */
+    private updateItemDimensions;
     /**
      * Build imagor preview URL with crop + fit-in resize.
      * Mirrors ImageService::url() logic using imagorPath (normalized short URL).

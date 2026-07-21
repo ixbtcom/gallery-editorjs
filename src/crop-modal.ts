@@ -12,15 +12,21 @@ export default class CropModal {
   private cropper: Cropper | null = null;
   private escHandler: ((e: KeyboardEvent) => void) | null = null;
   private resolvePromise: ((result: CropResult | null) => void) | null = null;
+  private showOriginalOnClickInput: HTMLInputElement | null = null;
 
   /**
    * Открывает модальное окно кадрирования.
    *
    * @param imageUrl - URL изображения для кадрирования
    * @param existingCrop - существующая строка кадрирования "AxB:CxD" для восстановления области
+   * @param existingShowOriginalOnClick - сохранённое поведение lightbox
    * @returns Promise с результатом кадрирования или null при отмене
    */
-  public open(imageUrl: string, existingCrop?: string): Promise<CropResult | null> {
+  public open(
+    imageUrl: string,
+    existingCrop?: string,
+    existingShowOriginalOnClick = false
+  ): Promise<CropResult | null> {
     if (this.overlay) {
       this.destroy();
     }
@@ -28,7 +34,7 @@ export default class CropModal {
     return new Promise<CropResult | null>((resolve) => {
       this.resolvePromise = resolve;
 
-      this.overlay = this.createOverlay();
+      this.overlay = this.createOverlay(existingShowOriginalOnClick);
 
       const imageWrapper = this.overlay.querySelector('.gallery-crop-modal__image-wrapper');
       if (!imageWrapper) {
@@ -96,6 +102,7 @@ export default class CropModal {
     }
 
     this.resolvePromise = null;
+    this.showOriginalOnClickInput = null;
   }
 
   /**
@@ -110,7 +117,7 @@ export default class CropModal {
   /**
    * Создает DOM-структуру оверлея с кнопками управления.
    */
-  private createOverlay(): HTMLElement {
+  private createOverlay(existingShowOriginalOnClick: boolean): HTMLElement {
     const overlay = make('div', 'gallery-crop-modal');
     overlay.addEventListener('click', () => this.close(null));
 
@@ -119,12 +126,28 @@ export default class CropModal {
 
     const imageWrapper = make('div', 'gallery-crop-modal__image-wrapper');
 
+    const options = make('div', 'gallery-crop-modal__options');
+    const showOriginalLabel = make('label', 'gallery-crop-modal__option');
+
+    this.showOriginalOnClickInput = make('input', null, { type: 'checkbox' }) as HTMLInputElement;
+    this.showOriginalOnClickInput.checked = existingShowOriginalOnClick;
+    showOriginalLabel.append(
+      this.showOriginalOnClickInput,
+      document.createTextNode('Показывать необрезанное изображение по клику')
+    );
+    options.appendChild(showOriginalLabel);
+
     const actions = make('div', 'gallery-crop-modal__actions');
 
     const resetBtn = make('button', ['gallery-crop-modal__btn', 'gallery-crop-modal__btn--danger']);
     resetBtn.textContent = 'Сбросить';
     resetBtn.addEventListener('click', () => {
-      this.close({ crop: '', croppedWidth: 0, croppedHeight: 0 });
+      this.close({
+        crop: '',
+        croppedWidth: 0,
+        croppedHeight: 0,
+        showOriginalOnClick: false,
+      });
     });
 
     const cancelBtn = make('button', 'gallery-crop-modal__btn');
@@ -140,6 +163,7 @@ export default class CropModal {
     actions.appendChild(applyBtn);
 
     container.appendChild(imageWrapper);
+    container.appendChild(options);
     container.appendChild(actions);
 
     overlay.appendChild(container);
@@ -160,7 +184,10 @@ export default class CropModal {
     const data = this.cropper.getData(true);
     const img = this.cropper.getImageData();
     const result = this.cropDataToString(data, img.naturalWidth, img.naturalHeight);
-    this.close(result);
+    this.close({
+      ...result,
+      showOriginalOnClick: this.showOriginalOnClickInput?.checked ?? false,
+    });
   }
 
   /**
@@ -203,6 +230,7 @@ export default class CropModal {
       crop,
       croppedWidth: Math.round(data.width),
       croppedHeight: Math.round(data.height),
+      showOriginalOnClick: false,
     };
   }
 

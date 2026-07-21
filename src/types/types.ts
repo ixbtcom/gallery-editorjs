@@ -33,6 +33,8 @@ export interface CropResult {
   croppedWidth: number;
   /** Cropped region height in pixels */
   croppedHeight: number;
+  /** Whether a click should open the original instead of the cropped image. */
+  showOriginalOnClick: boolean;
 }
 
 /**
@@ -57,6 +59,8 @@ export interface GalleryItemData {
   croppedWidth?: number;
   /** Cropped region height in pixels */
   croppedHeight?: number;
+  /** Whether a click should open the original instead of the cropped image. */
+  showOriginalOnClick?: boolean;
 }
 
 /**
@@ -97,6 +101,7 @@ export interface GalleryConfig {
   /** Base URL for imagor/thumbor service (e.g. 'https://media.ixbt.site') */
   mediaHost?: string;
   onMediaRemoved?: (mediaId: string) => void;
+  onCropApplied?: (mediaId: string, crop: string) => void;
   /** Локальный выбор базовой обложки, provided by filament-editorjs. */
   cover?: {
     enabled?: boolean;

@@ -160,6 +160,12 @@ export default class Ui {
       ? this.buildPreviewUrl(data.imagorPath, data.crop)
       : data.url;
     const img = make('img', null, { src: imgSrc }) as HTMLImageElement;
+    const displayWidth = data.crop && data.croppedWidth ? data.croppedWidth : data.width;
+    const displayHeight = data.crop && data.croppedHeight ? data.croppedHeight : data.height;
+
+    if (displayWidth && displayHeight) {
+      img.style.aspectRatio = `${displayWidth} / ${displayHeight}`;
+    }
 
     // Mark item as cropped
     if (data.crop) {
@@ -191,9 +197,9 @@ export default class Ui {
     imageContainer.appendChild(img);
 
     // Add dimensions badge if available
-    if (data.width && data.height) {
+    if (displayWidth && displayHeight) {
       const dimensions = make('div', [this.CSS.itemDimensions]);
-      dimensions.textContent = `${data.width} × ${data.height}`;
+      dimensions.textContent = `${displayWidth} × ${displayHeight}`;
       imageContainer.appendChild(dimensions);
     }
 
@@ -223,6 +229,9 @@ export default class Ui {
     if (data.crop) item.dataset.crop = data.crop;
     if (data.croppedWidth) item.dataset.croppedWidth = String(data.croppedWidth);
     if (data.croppedHeight) item.dataset.croppedHeight = String(data.croppedHeight);
+    if (typeof data.showOriginalOnClick === 'boolean') {
+      item.dataset.showOriginalOnClick = String(data.showOriginalOnClick);
+    }
 
     this.nodes.itemsContainer.appendChild(item);
     this.toggleState(UiState.Filled);
@@ -343,9 +352,30 @@ export default class Ui {
       const crop = el.dataset.crop || undefined;
       const croppedWidth = el.dataset.croppedWidth ? parseInt(el.dataset.croppedWidth, 10) : undefined;
       const croppedHeight = el.dataset.croppedHeight ? parseInt(el.dataset.croppedHeight, 10) : undefined;
+      const showOriginalOnClick = el.dataset.showOriginalOnClick === undefined
+        ? undefined
+        : el.dataset.showOriginalOnClick === 'true';
       const media_id = el.dataset.mediaId || undefined;
 
-      data.push({ url, media_id, imagorPath, caption, source, sourceLink, width, height, crop, croppedWidth, croppedHeight });
+      const itemData: GalleryItemData = {
+        url,
+        media_id,
+        imagorPath,
+        caption,
+        source,
+        sourceLink,
+        width,
+        height,
+        crop,
+        croppedWidth,
+        croppedHeight,
+      };
+
+      if (showOriginalOnClick !== undefined) {
+        itemData.showOriginalOnClick = showOriginalOnClick;
+      }
+
+      data.push(itemData);
     });
 
     return data;
@@ -354,7 +384,13 @@ export default class Ui {
   /**
    * Update item DOM after crop operation
    */
-  public updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number): void {
+  public updateItemAfterCrop(
+    item: HTMLElement,
+    crop: string | undefined,
+    croppedWidth: number,
+    croppedHeight: number,
+    showOriginalOnClick: boolean | undefined
+  ): void {
     const img = item.querySelector(`.${this.CSS.itemImage} img`) as HTMLImageElement | null;
     if (!img) return;
 
@@ -363,20 +399,58 @@ export default class Ui {
       item.dataset.crop = crop;
       item.dataset.croppedWidth = String(croppedWidth);
       item.dataset.croppedHeight = String(croppedHeight);
+      item.dataset.showOriginalOnClick = String(showOriginalOnClick ?? false);
       item.classList.add(this.CSS.itemCropped);
 
       const imagorPath = item.dataset.imagorPath;
       if (imagorPath) {
         img.src = this.buildPreviewUrl(imagorPath, crop);
       }
+      this.updateItemDimensions(item, croppedWidth, croppedHeight);
     } else {
       // Reset crop
       delete item.dataset.crop;
       delete item.dataset.croppedWidth;
       delete item.dataset.croppedHeight;
+      delete item.dataset.showOriginalOnClick;
       item.classList.remove(this.CSS.itemCropped);
 
       img.src = item.dataset.url || '';
+      this.updateItemDimensions(
+        item,
+        item.dataset.width ? parseInt(item.dataset.width, 10) : undefined,
+        item.dataset.height ? parseInt(item.dataset.height, 10) : undefined
+      );
+    }
+  }
+
+  /** Update an item's effective dimensions badge and aspect ratio. */
+  private updateItemDimensions(item: HTMLElement, width?: number, height?: number): void {
+    const imageContainer = item.querySelector<HTMLElement>(`.${this.CSS.itemImage}`);
+    const image = imageContainer?.querySelector<HTMLImageElement>('img');
+    const hasDimensions = Number.isFinite(width) && Number.isFinite(height)
+      && (width ?? 0) > 0 && (height ?? 0) > 0;
+    let dimensions = imageContainer?.querySelector<HTMLElement>(`.${this.CSS.itemDimensions}`) ?? null;
+
+    if (!hasDimensions) {
+      dimensions?.remove();
+      if (image) {
+        image.style.aspectRatio = '';
+      }
+
+      return;
+    }
+
+    if (dimensions === null && imageContainer !== null) {
+      dimensions = make('div', [this.CSS.itemDimensions]);
+      imageContainer.appendChild(dimensions);
+    }
+
+    if (dimensions !== null) {
+      dimensions.textContent = `${width} × ${height}`;
+    }
+    if (image) {
+      image.style.aspectRatio = `${width} / ${height}`;
     }
   }
 
@@ -569,8 +643,8 @@ export default class Ui {
 
     const cropBtn = make('button', [this.CSS.itemCrop], { type: 'button' });
     cropBtn.innerHTML = IconCrop;
-    cropBtn.title = this.api.i18n.t('Редактировать изображение');
-    cropBtn.setAttribute('aria-label', this.api.i18n.t('Редактировать изображение'));
+    cropBtn.title = this.api.i18n.t('Обрезать изображение');
+    cropBtn.setAttribute('aria-label', this.api.i18n.t('Обрезать изображение'));
     cropBtn.addEventListener('click', () => this.onCropImage(item));
 
     controls.appendChild(moveLeftBtn);
