@@ -66,7 +66,7 @@ export interface GalleryToolData {
   items: GalleryItemData[];
   layout: 'grid' | 'carousel' | 'masonry';
   columns: number;
-  /** Растянуть на всю ширину (обложка) */
+  /** Legacy layout flag kept for previously saved publications. */
   stretched?: boolean;
 }
 

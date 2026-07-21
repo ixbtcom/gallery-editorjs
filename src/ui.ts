@@ -537,6 +537,8 @@ export default class Ui {
 
     const removeBtn = make('button', [this.CSS.itemRemove], { type: 'button' });
     removeBtn.innerHTML = '×';
+    removeBtn.title = this.api.i18n.t('Удалить изображение');
+    removeBtn.setAttribute('aria-label', this.api.i18n.t('Удалить изображение'));
     removeBtn.addEventListener('click', () => {
       // Сохраняем ссылку до удаления DOM-элемента для фонового удаления Media.
       const imageUrl = item.dataset.url;
@@ -567,6 +569,8 @@ export default class Ui {
 
     const cropBtn = make('button', [this.CSS.itemCrop], { type: 'button' });
     cropBtn.innerHTML = IconCrop;
+    cropBtn.title = this.api.i18n.t('Редактировать изображение');
+    cropBtn.setAttribute('aria-label', this.api.i18n.t('Редактировать изображение'));
     cropBtn.addEventListener('click', () => this.onCropImage(item));
 
     controls.appendChild(moveLeftBtn);
@@ -577,6 +581,8 @@ export default class Ui {
       const coverBtn = make('button', ['gallery-tool__item-cover'], { type: 'button' });
       coverBtn.innerHTML = '★';
       coverBtn.title = this.api.i18n.t('Сделать обложкой');
+      coverBtn.setAttribute('aria-label', this.api.i18n.t('Сделать обложкой'));
+      coverBtn.setAttribute('aria-pressed', String(item.hasAttribute('data-cover')));
       coverBtn.addEventListener('click', () => this.onSetCover(item));
       controls.appendChild(coverBtn);
     }
@@ -619,6 +625,8 @@ export default class Ui {
       const item = el as HTMLElement;
       const isCover = !!coverUuid && item.dataset.mediaId === coverUuid;
       item.toggleAttribute('data-cover', isCover);
+      item.querySelector('[aria-label="Сделать обложкой"]')
+        ?.setAttribute('aria-pressed', String(isCover));
     });
   }
 
@@ -650,25 +658,5 @@ export default class Ui {
    */
   public applyTune(tuneName: string, status: boolean): void {
     this.nodes.wrapper.classList.toggle(`gallery-tool--${tuneName}`, status);
-
-    // Show/hide stretched badge
-    if (tuneName === 'stretched') {
-      this.updateStretchedBadge(status);
-    }
-  }
-
-  /**
-   * Update stretched badge visibility
-   */
-  private updateStretchedBadge(isStretched: boolean): void {
-    const existingBadge = this.nodes.wrapper.querySelector('.gallery-tool__stretched-badge');
-
-    if (isStretched && !existingBadge) {
-      const badge = make('div', ['gallery-tool__stretched-badge']);
-      badge.textContent = 'Обложка';
-      this.nodes.wrapper.insertBefore(badge, this.nodes.wrapper.firstChild);
-    } else if (!isStretched && existingBadge) {
-      existingBadge.remove();
-    }
   }
 }

@@ -360,18 +360,6 @@
   max-height: none;
 }
 
-/* Stretched badge */
-.gallery-tool__stretched-badge {
-  display: inline-block;
-  margin-bottom: 8px;
-  padding: 4px 10px;
-  background: var(--ej-primary);
-  color: var(--ej-text-on-primary);
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: var(--ej-radius-md);
-}
-
 /* Crop button in controls */
 .gallery-tool__item-crop {
   width: 32px;
@@ -535,4 +523,9 @@
   border-radius: 4px;
   pointer-events: none;
   z-index: 3;
+}
+
+.gallery-tool__item[data-cover][data-cover-overridden]::after {
+  content: 'Обложка · перекрыта вручную';
+  background: rgba(75, 85, 99, 0.95);
 }

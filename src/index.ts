@@ -22,7 +22,7 @@ import './index.css';
 import Ui from './ui';
 import Uploader from './uploader';
 import CropModal from './crop-modal';
-import { IconPicture, IconStretch } from '@codexteam/icons';
+import { IconPicture } from '@codexteam/icons';
 import type { UploadResponseFormat, GalleryToolData, GalleryConfig, GalleryItemData } from './types/types';
 
 /**
@@ -124,14 +124,7 @@ export default class GalleryTool implements BlockTool {
    * Available gallery tunes
    */
   public static get tunes(): Array<ActionConfig> {
-    return [
-      {
-        name: 'stretched',
-        icon: IconStretch,
-        title: 'Stretch image',
-        toggle: true,
-      },
-    ];
+    return [];
   }
 
   /**
@@ -159,13 +152,9 @@ export default class GalleryTool implements BlockTool {
   public render(): HTMLElement {
     const wrapper = this.ui.render(this._data.items, this._data.columns);
 
-    // Apply saved tunes
-    GalleryTool.tunes.forEach(({ name }) => {
-      const value = this._data[name as keyof GalleryToolData] as boolean;
-      if (value) {
-        this.setTune(name, value);
-      }
-    });
+    if (this._data.stretched) {
+      this.setTune('stretched', true);
+    }
 
     return wrapper;
   }
@@ -206,18 +195,6 @@ export default class GalleryTool implements BlockTool {
    * Returns configuration for block tunes
    */
   public renderSettings(): TunesMenuConfig {
-    // Tunes (withBorder, stretched, withBackground)
-    const tunes = GalleryTool.tunes.map(tune => ({
-      icon: tune.icon,
-      label: this.api.i18n.t(tune.title),
-      name: tune.name,
-      toggle: tune.toggle,
-      isActive: this._data[tune.name as keyof GalleryToolData] as boolean,
-      onActivate: () => {
-        this.tuneToggled(tune.name);
-      },
-    }));
-
     // Layouts (grid, carousel, masonry)
     const layouts = [
       { name: 'grid', title: 'Grid', icon: this.getGridIcon() },
@@ -236,7 +213,7 @@ export default class GalleryTool implements BlockTool {
       },
     }));
 
-    return [...tunes, ...layoutItems];
+    return layoutItems;
   }
 
   /**
@@ -415,14 +392,6 @@ export default class GalleryTool implements BlockTool {
     const wrapper = this.ui.nodes.wrapper;
     wrapper.classList.remove('gallery-tool--grid', 'gallery-tool--carousel', 'gallery-tool--masonry');
     wrapper.classList.add(`gallery-tool--${this._data.layout}`);
-  }
-
-  /**
-   * Callback fired when Block Tune is activated
-   */
-  private tuneToggled(tuneName: string): void {
-    const currentValue = this._data[tuneName as keyof GalleryToolData] as boolean;
-    this.setTune(tuneName, !currentValue);
   }
 
   /**

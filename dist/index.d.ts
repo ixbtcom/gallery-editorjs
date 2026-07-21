@@ -105,10 +105,6 @@ export default class GalleryTool implements BlockTool {
      */
     private updateLayoutClass;
     /**
-     * Callback fired when Block Tune is activated
-     */
-    private tuneToggled;
-    /**
      * Set one tune
      */
     private setTune;

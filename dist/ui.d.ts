@@ -113,9 +113,5 @@ export default class Ui {
      * Apply tune to wrapper
      */
     applyTune(tuneName: string, status: boolean): void;
-    /**
-     * Update stretched badge visibility
-     */
-    private updateStretchedBadge;
 }
 export {};
