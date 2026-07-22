@@ -5,6 +5,9 @@ import { make } from './utils/dom';
 
 const clampCropCoordinate = (value: number): number => Math.min(1, Math.max(0, value));
 
+type CropAspectRatio = CropResult['cropAspectRatio'];
+const defaultCropAspectRatio: CropAspectRatio = '3:2';
+
 /**
  * Модальное окно кадрирования изображения на основе cropper.js.
  * Возвращает координаты обрезки в формате imagor (нормализованные 0-1).
@@ -15,6 +18,7 @@ export default class CropModal {
   private escHandler: ((e: KeyboardEvent) => void) | null = null;
   private resolvePromise: ((result: CropResult | null) => void) | null = null;
   private showOriginalOnClickInput: HTMLInputElement | null = null;
+  private aspectRatioInputs: HTMLInputElement[] = [];
 
   /**
    * Открывает модальное окно кадрирования.
@@ -22,12 +26,14 @@ export default class CropModal {
    * @param imageUrl - URL изображения для кадрирования
    * @param existingCrop - существующая строка кадрирования "AxB:CxD" для восстановления области
    * @param existingShowOriginalOnClick - сохранённое поведение lightbox
+   * @param existingCropAspectRatio - сохранённое фиксированное соотношение сторон
    * @returns Promise с результатом кадрирования или null при отмене
    */
   public open(
     imageUrl: string,
     existingCrop?: string,
-    existingShowOriginalOnClick = false
+    existingShowOriginalOnClick = false,
+    existingCropAspectRatio: CropAspectRatio = defaultCropAspectRatio
   ): Promise<CropResult | null> {
     if (this.overlay) {
       this.destroy();
@@ -36,7 +42,9 @@ export default class CropModal {
     return new Promise<CropResult | null>((resolve) => {
       this.resolvePromise = resolve;
 
-      this.overlay = this.createOverlay(existingShowOriginalOnClick);
+      const cropAspectRatio = this.normalizeCropAspectRatio(existingCropAspectRatio);
+
+      this.overlay = this.createOverlay(existingShowOriginalOnClick, cropAspectRatio);
 
       const imageWrapper = this.overlay.querySelector('.gallery-crop-modal__image-wrapper');
       if (!imageWrapper) {
@@ -57,7 +65,7 @@ export default class CropModal {
         this.cropper = new Cropper(img, {
           viewMode: 1,
           autoCropArea: 1,
-          aspectRatio: NaN,
+          aspectRatio: this.numericAspectRatio(cropAspectRatio),
           responsive: true,
           restore: true,
           guides: true,
@@ -105,6 +113,7 @@ export default class CropModal {
 
     this.resolvePromise = null;
     this.showOriginalOnClickInput = null;
+    this.aspectRatioInputs = [];
   }
 
   /**
@@ -119,7 +128,7 @@ export default class CropModal {
   /**
    * Создает DOM-структуру оверлея с кнопками управления.
    */
-  private createOverlay(existingShowOriginalOnClick: boolean): HTMLElement {
+  private createOverlay(existingShowOriginalOnClick: boolean, cropAspectRatio: CropAspectRatio): HTMLElement {
     const overlay = make('div', 'gallery-crop-modal');
     overlay.addEventListener('click', () => this.close(null));
 
@@ -138,6 +147,7 @@ export default class CropModal {
       document.createTextNode('Показывать необрезанное изображение по клику')
     );
     options.appendChild(showOriginalLabel);
+    options.appendChild(this.createAspectRatioOptions(cropAspectRatio));
 
     const actions = make('div', 'gallery-crop-modal__actions');
 
@@ -149,6 +159,7 @@ export default class CropModal {
         croppedWidth: 0,
         croppedHeight: 0,
         showOriginalOnClick: false,
+        cropAspectRatio: defaultCropAspectRatio,
       });
     });
 
@@ -189,6 +200,7 @@ export default class CropModal {
     this.close({
       ...result,
       showOriginalOnClick: this.showOriginalOnClickInput?.checked ?? false,
+      cropAspectRatio: this.selectedCropAspectRatio(),
     });
   }
 
@@ -233,6 +245,7 @@ export default class CropModal {
       croppedWidth: Math.round(data.width),
       croppedHeight: Math.round(data.height),
       showOriginalOnClick: false,
+      cropAspectRatio: this.selectedCropAspectRatio(),
     };
   }
 
@@ -255,5 +268,56 @@ export default class CropModal {
       width: (parsed.x2 - parsed.x1) * naturalWidth,
       height: (parsed.y2 - parsed.y1) * naturalHeight,
     });
+  }
+
+  private createAspectRatioOptions(selectedAspectRatio: CropAspectRatio): HTMLElement {
+    const fieldset = make('fieldset', 'gallery-crop-modal__aspect-ratios') as HTMLFieldSetElement;
+    const legend = make('legend', 'gallery-crop-modal__aspect-ratios-label');
+
+    legend.textContent = 'Соотношение сторон';
+    fieldset.appendChild(legend);
+
+    (['16:9', '3:2', '1:1'] as CropAspectRatio[]).forEach((ratio) => {
+      const label = make('label', 'gallery-crop-modal__aspect-ratio');
+      const input = make('input', null, { type: 'radio' }) as HTMLInputElement;
+      const text = make('span', 'gallery-crop-modal__aspect-ratio-label');
+
+      input.name = 'gallery-crop-aspect-ratio';
+      input.value = ratio;
+      input.checked = ratio === selectedAspectRatio;
+      input.addEventListener('change', () => {
+        if (input.checked) {
+          this.cropper?.setAspectRatio(this.numericAspectRatio(ratio));
+        }
+      });
+      text.textContent = ratio;
+      label.append(input, text);
+      fieldset.appendChild(label);
+      this.aspectRatioInputs.push(input);
+    });
+
+    return fieldset;
+  }
+
+  private selectedCropAspectRatio(): CropAspectRatio {
+    const selected = this.aspectRatioInputs.find(input => input.checked)?.value;
+
+    return this.normalizeCropAspectRatio(selected);
+  }
+
+  private normalizeCropAspectRatio(value: unknown): CropAspectRatio {
+    return value === '16:9' || value === '1:1' ? value : defaultCropAspectRatio;
+  }
+
+  private numericAspectRatio(value: CropAspectRatio): number {
+    if (value === '16:9') {
+      return 16 / 9;
+    }
+
+    if (value === '1:1') {
+      return 1;
+    }
+
+    return 3 / 2;
   }
 }

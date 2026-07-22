@@ -22,6 +22,7 @@ import './index.css';
 import Ui from './ui';
 import Uploader from './uploader';
 import CropModal from './crop-modal';
+import AiGenerationController from './ai-generation-controller';
 import { IconPicture } from '@codexteam/icons';
 import type { UploadResponseFormat, GalleryToolData, GalleryConfig, GalleryItemData } from './types/types';
 
@@ -48,6 +49,7 @@ export default class GalleryTool implements BlockTool {
   private uploader: Uploader;
   private ui: Ui;
   private cropModal: CropModal;
+  private aiGenerationController: AiGenerationController | null = null;
   private _data: GalleryToolData;
   private currentLoadingItem: HTMLElement | null = null;
 
@@ -74,7 +76,19 @@ export default class GalleryTool implements BlockTool {
       cover: config.cover,
       onMediaRemoved: config.onMediaRemoved,
       onCropApplied: config.onCropApplied,
+      generation: config.generation,
     };
+
+    this._data = {
+      items: data?.items ?? [],
+      layout: data?.layout ?? 'grid',
+      columns: data?.columns ?? 3,
+      stretched: data?.stretched ?? false,
+    };
+
+    if (this.isPendingAiGeneration(data?.aiGeneration)) {
+      this._data.aiGeneration = data.aiGeneration;
+    }
 
     this.uploader = new Uploader({
       config: this.config,
@@ -92,16 +106,19 @@ export default class GalleryTool implements BlockTool {
       onColumnsChange: (columns: number) => this.onColumnsChange(columns),
       onRemoveImage: (url: string, mediaId?: string) => this.onRemoveImage(url, mediaId),
       onCropImage: (item: HTMLElement) => this.handleCropImage(item),
+      onOpenAi: () => this.aiGenerationController?.open(),
       readOnly,
     });
 
-    // Мержим данные с defaults чтобы не терять layout при загрузке старых данных
-    this._data = {
-      items: data?.items ?? [],
-      layout: data?.layout ?? 'grid',
-      columns: data?.columns ?? 3,
-      stretched: data?.stretched ?? false,
-    };
+    if (this.config.generation !== undefined && !this.readOnly) {
+      this.aiGenerationController = new AiGenerationController({
+        blockId: this.block.id,
+        config: this.config.generation,
+        initialPending: this._data.aiGeneration,
+        onChange: () => this.block.dispatchChange(),
+        onFinalized: item => this.onAiFinalized(item),
+      });
+    }
   }
 
   /**
@@ -153,6 +170,13 @@ export default class GalleryTool implements BlockTool {
   public render(): HTMLElement {
     const wrapper = this.ui.render(this._data.items, this._data.columns);
 
+    if (this.aiGenerationController !== null && !wrapper.contains(this.aiGenerationController.element)) {
+      wrapper.appendChild(this.aiGenerationController.element);
+    }
+    if (this._data.aiGeneration !== undefined) {
+      this.aiGenerationController?.open();
+    }
+
     if (this._data.stretched) {
       this.setTune('stretched', true);
     }
@@ -172,7 +196,7 @@ export default class GalleryTool implements BlockTool {
    * Validate data
    */
   public validate(savedData: GalleryToolData): boolean {
-    return savedData.items.length > 0;
+    return savedData.items.length > 0 || this.isPendingAiGeneration(savedData.aiGeneration);
   }
 
   /**
@@ -181,15 +205,34 @@ export default class GalleryTool implements BlockTool {
   public save(): GalleryToolData {
     this._data.items = this.ui.getItemsData();
     this._data.columns = this.ui.getColumns();
+    const pending = this.aiGenerationController?.getPendingData();
+
+    if (pending === undefined) {
+      delete this._data.aiGeneration;
+    } else {
+      this._data.aiGeneration = pending;
+    }
+
     return this._data;
   }
 
   public removed(): void {
+    if (this.aiGenerationController?.getPendingData() !== undefined) {
+      this.aiGenerationController.destroy();
+
+      return;
+    }
+
     const mediaIds = this.ui.getItemsData()
       .map(item => item.media_id)
       .filter((mediaId): mediaId is string => Boolean(mediaId));
 
     new Set(mediaIds).forEach(mediaId => this.config.onMediaRemoved?.(mediaId));
+  }
+
+  public destroy(): void {
+    this.aiGenerationController?.destroy();
+    this.cropModal.destroy();
   }
 
   /**
@@ -304,6 +347,34 @@ export default class GalleryTool implements BlockTool {
     }
   }
 
+  private onAiFinalized(itemData: GalleryItemData): void {
+    const item = this.ui.addItem(itemData);
+    const image = item.querySelector<HTMLImageElement>('img');
+
+    delete this._data.aiGeneration;
+    if (image !== null) {
+      const scrollToImage = (): void => {
+        item.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+      };
+
+      if (image.complete) {
+        requestAnimationFrame(scrollToImage);
+      } else {
+        image.addEventListener('load', scrollToImage, { once: true });
+      }
+    }
+  }
+
+  private isPendingAiGeneration(value: unknown): value is NonNullable<GalleryToolData['aiGeneration']> {
+    return typeof value === 'object'
+      && value !== null
+      && 'pending' in value
+      && value.pending === true
+      && 'sessionId' in value
+      && typeof value.sessionId === 'string'
+      && value.sessionId !== '';
+  }
+
   /**
    * Handle upload errors
    */
@@ -339,7 +410,10 @@ export default class GalleryTool implements BlockTool {
     const result = await this.cropModal.open(
       url,
       existingCrop,
-      item.dataset.showOriginalOnClick === 'true'
+      item.dataset.showOriginalOnClick === 'true',
+      item.dataset.cropAspectRatio === '16:9' || item.dataset.cropAspectRatio === '1:1'
+        ? item.dataset.cropAspectRatio
+        : '3:2'
     );
 
     if (result === null) {
@@ -349,7 +423,7 @@ export default class GalleryTool implements BlockTool {
 
     if (result.crop === '') {
       // Reset crop
-      this.ui.updateItemAfterCrop(item, undefined, 0, 0, undefined);
+      this.ui.updateItemAfterCrop(item, undefined, 0, 0, undefined, undefined);
     } else {
       // Apply crop
       this.ui.updateItemAfterCrop(
@@ -357,7 +431,8 @@ export default class GalleryTool implements BlockTool {
         result.crop,
         result.croppedWidth,
         result.croppedHeight,
-        result.showOriginalOnClick
+        result.showOriginalOnClick,
+        result.cropAspectRatio
       );
 
       const mediaId = item.dataset.mediaId;

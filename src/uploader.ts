@@ -119,47 +119,47 @@ export default class Uploader {
    */
   public uploadByFile(file: Blob, { onPreview }: UploadOptions): void {
     const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = (e) => {
-      onPreview((e.target as FileReader).result as string);
+    reader.onload = (event) => {
+      onPreview((event.target as FileReader).result as string);
+
+      let upload: Promise<UploadResponseFormat>;
+
+      if (this.config.uploader?.uploadByFile) {
+        upload = this.config.uploader.uploadByFile(file);
+
+        if (!isPromise(upload)) {
+          console.warn('Custom uploader method uploadByFile should return a Promise');
+        }
+      } else {
+        if (!this.config.endpoints.byFile) {
+          this.onError('Upload endpoint (byFile) is not configured');
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append(this.config.field ?? 'image', file);
+
+        if (this.config.additionalRequestData) {
+          Object.entries(this.config.additionalRequestData).forEach(([name, value]) => {
+            formData.append(name, value as string);
+          });
+        }
+
+        upload = ajax.post({
+          url: this.config.endpoints.byFile,
+          data: formData,
+          type: ajax.contentType.JSON,
+          headers: this.config.additionalRequestHeaders as Record<string, string>,
+        }).then((response: AjaxResponse) => response.body as UploadResponseFormat);
+      }
+
+      upload
+        .then((response) => this.onUpload(response))
+        .catch((error: string) => this.onError(error));
     };
     reader.onerror = () => {
       this.onError('Failed to read file');
     };
-
-    let upload: Promise<UploadResponseFormat>;
-
-    if (this.config.uploader?.uploadByFile) {
-      upload = this.config.uploader.uploadByFile(file);
-
-      if (!isPromise(upload)) {
-        console.warn('Custom uploader method uploadByFile should return a Promise');
-      }
-    } else {
-      if (!this.config.endpoints.byFile) {
-        this.onError('Upload endpoint (byFile) is not configured');
-        return;
-      }
-
-      const formData = new FormData();
-      formData.append(this.config.field ?? 'image', file);
-
-      if (this.config.additionalRequestData) {
-        Object.entries(this.config.additionalRequestData).forEach(([name, value]) => {
-          formData.append(name, value as string);
-        });
-      }
-
-      upload = ajax.post({
-        url: this.config.endpoints.byFile,
-        data: formData,
-        type: ajax.contentType.JSON,
-        headers: this.config.additionalRequestHeaders as Record<string, string>,
-      }).then((response: AjaxResponse) => response.body as UploadResponseFormat);
-    }
-
-    upload
-      .then((response) => this.onUpload(response))
-      .catch((error: string) => this.onError(error));
+    reader.readAsDataURL(file);
   }
 }

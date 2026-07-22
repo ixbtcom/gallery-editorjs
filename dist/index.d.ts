@@ -23,6 +23,7 @@ export default class GalleryTool implements BlockTool {
     private uploader;
     private ui;
     private cropModal;
+    private aiGenerationController;
     private _data;
     private currentLoadingItem;
     constructor({ data, config: cfg, api, readOnly, block }: GalleryToolConstructorOptions);
@@ -60,6 +61,7 @@ export default class GalleryTool implements BlockTool {
      */
     save(): GalleryToolData;
     removed(): void;
+    destroy(): void;
     /**
      * Returns configuration for block tunes
      */
@@ -84,6 +86,8 @@ export default class GalleryTool implements BlockTool {
      * File upload callback
      */
     private onUpload;
+    private onAiFinalized;
+    private isPendingAiGeneration;
     /**
      * Handle upload errors
      */

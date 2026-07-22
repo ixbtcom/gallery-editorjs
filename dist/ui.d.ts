@@ -9,6 +9,7 @@ interface Nodes {
     itemsContainer: HTMLElement;
     addButtons: HTMLElement;
     fileButton: HTMLElement;
+    aiButton: HTMLButtonElement;
     urlButton: HTMLElement;
     urlInput: HTMLElement;
     columnsControl: HTMLElement;
@@ -21,6 +22,7 @@ interface UiParams {
     onColumnsChange: (columns: number) => void;
     onRemoveImage: (url: string, mediaId?: string) => void;
     onCropImage: (item: HTMLElement) => void;
+    onOpenAi?: () => void;
     readOnly: boolean;
 }
 /**
@@ -39,12 +41,13 @@ export default class Ui {
     private onColumnsChange;
     private onRemoveImage;
     private onCropImage;
+    private onOpenAi;
     private readOnly;
     private currentColumns;
     private previousColumns;
     private isRendering;
     private columnsLocked;
-    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, readOnly }: UiParams);
+    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onOpenAi, readOnly }: UiParams);
     private get CSS();
     /**
      * Render the gallery UI
@@ -69,7 +72,7 @@ export default class Ui {
     /**
      * Update item DOM after crop operation
      */
-    updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number, showOriginalOnClick: boolean | undefined): void;
+    updateItemAfterCrop(item: HTMLElement, crop: string | undefined, croppedWidth: number, croppedHeight: number, showOriginalOnClick: boolean | undefined, cropAspectRatio: GalleryItemData['cropAspectRatio'] | undefined): void;
     /** Update an item's effective dimensions badge and aspect ratio. */
     private updateItemDimensions;
     /**
@@ -82,6 +85,8 @@ export default class Ui {
      */
     getColumns(): number;
     private createFileButton;
+    private createAiButton;
+    private createAiBadge;
     private createUrlInput;
     /**
      * Process URL from input field

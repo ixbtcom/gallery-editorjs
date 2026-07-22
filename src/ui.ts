@@ -7,6 +7,8 @@ import type { GalleryConfig, GalleryItemData } from './types/types';
  * Crop icon SVG
  */
 const IconCrop = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>';
+const IconAi = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>';
+const AI_CREATED_TOOLTIP = 'Создано с помощью Ai';
 
 /**
  * UI state enumeration
@@ -25,6 +27,7 @@ interface Nodes {
   itemsContainer: HTMLElement;
   addButtons: HTMLElement;
   fileButton: HTMLElement;
+  aiButton: HTMLButtonElement;
   urlButton: HTMLElement;
   urlInput: HTMLElement;
   columnsControl: HTMLElement;
@@ -38,6 +41,7 @@ interface UiParams {
   onColumnsChange: (columns: number) => void;
   onRemoveImage: (url: string, mediaId?: string) => void;
   onCropImage: (item: HTMLElement) => void;
+  onOpenAi?: () => void;
   readOnly: boolean;
 }
 
@@ -58,13 +62,14 @@ export default class Ui {
   private onColumnsChange: (columns: number) => void;
   private onRemoveImage: (url: string, mediaId?: string) => void;
   private onCropImage: (item: HTMLElement) => void;
+  private onOpenAi: () => void;
   private readOnly: boolean;
   private currentColumns: number = 1;
   private previousColumns: number = 1;
   private isRendering: boolean = false;
   private columnsLocked: boolean = false;
 
-  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, readOnly }: UiParams) {
+  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onOpenAi, readOnly }: UiParams) {
     this.api = api;
     this.config = config;
     this.onSelectFile = onSelectFile;
@@ -72,6 +77,7 @@ export default class Ui {
     this.onColumnsChange = onColumnsChange;
     this.onRemoveImage = onRemoveImage;
     this.onCropImage = onCropImage;
+    this.onOpenAi = onOpenAi ?? (() => undefined);
     this.readOnly = readOnly;
 
     this.nodes = {
@@ -79,12 +85,16 @@ export default class Ui {
       itemsContainer: make('div', [this.CSS.itemsContainer]),
       addButtons: make('div', [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
+      aiButton: this.createAiButton(),
       urlButton: make('div'), // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
       columnsControl: this.createColumnsControl(),
     };
 
     this.nodes.addButtons.appendChild(this.nodes.fileButton);
+    if (this.config.generation !== undefined && !this.readOnly) {
+      this.nodes.addButtons.appendChild(this.nodes.aiButton);
+    }
     this.nodes.addButtons.appendChild(this.nodes.urlInput);
     this.nodes.addButtons.appendChild(this.nodes.columnsControl);
 
@@ -100,6 +110,7 @@ export default class Ui {
       itemImage: 'gallery-tool__item-image',
       itemPreloader: 'gallery-tool__item-preloader',
       itemDimensions: 'gallery-tool__item-dimensions',
+      itemAiBadge: 'gallery-tool__item-ai-badge',
       itemCaption: 'gallery-tool__item-caption',
       itemSource: 'gallery-tool__item-source',
       itemSourceLink: 'gallery-tool__item-source-link',
@@ -117,6 +128,7 @@ export default class Ui {
       columnsControl: 'gallery-tool__columns-control',
       columnsButton: 'gallery-tool__columns-button',
       columnsDisplay: 'gallery-tool__columns-display',
+      aiButton: 'gallery-tool__ai-button',
     };
   }
 
@@ -205,6 +217,10 @@ export default class Ui {
       imageContainer.appendChild(dimensions);
     }
 
+    if (data.isAiGenerated) {
+      imageContainer.appendChild(this.createAiBadge());
+    }
+
     img.onload = () => {
       preloader.style.display = 'none';
     };
@@ -231,9 +247,11 @@ export default class Ui {
     if (data.crop) item.dataset.crop = data.crop;
     if (data.croppedWidth) item.dataset.croppedWidth = String(data.croppedWidth);
     if (data.croppedHeight) item.dataset.croppedHeight = String(data.croppedHeight);
+    if (data.cropAspectRatio) item.dataset.cropAspectRatio = data.cropAspectRatio;
     if (typeof data.showOriginalOnClick === 'boolean') {
       item.dataset.showOriginalOnClick = String(data.showOriginalOnClick);
     }
+    if (data.isAiGenerated) item.dataset.aiGenerated = 'true';
 
     this.nodes.itemsContainer.appendChild(item);
     this.toggleState(UiState.Filled);
@@ -316,6 +334,10 @@ export default class Ui {
     if (data.width) item.dataset.width = String(data.width);
     if (data.height) item.dataset.height = String(data.height);
     if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
+    if (data.isAiGenerated) {
+      item.dataset.aiGenerated = 'true';
+      imageContainer.appendChild(this.createAiBadge());
+    }
 
     if (!this.readOnly) {
       const controls = this.createItemControls(item);
@@ -354,10 +376,16 @@ export default class Ui {
       const crop = el.dataset.crop || undefined;
       const croppedWidth = el.dataset.croppedWidth ? parseInt(el.dataset.croppedWidth, 10) : undefined;
       const croppedHeight = el.dataset.croppedHeight ? parseInt(el.dataset.croppedHeight, 10) : undefined;
+      const cropAspectRatio = el.dataset.cropAspectRatio === '16:9' || el.dataset.cropAspectRatio === '1:1'
+        ? el.dataset.cropAspectRatio
+        : el.dataset.cropAspectRatio === '3:2'
+          ? '3:2'
+          : undefined;
       const showOriginalOnClick = el.dataset.showOriginalOnClick === undefined
         ? undefined
         : el.dataset.showOriginalOnClick === 'true';
       const media_id = el.dataset.mediaId || undefined;
+      const isAiGenerated = el.dataset.aiGenerated === 'true';
 
       const itemData: GalleryItemData = {
         url,
@@ -373,8 +401,14 @@ export default class Ui {
         croppedHeight,
       };
 
+      if (cropAspectRatio !== undefined) {
+        itemData.cropAspectRatio = cropAspectRatio;
+      }
       if (showOriginalOnClick !== undefined) {
         itemData.showOriginalOnClick = showOriginalOnClick;
+      }
+      if (isAiGenerated) {
+        itemData.isAiGenerated = true;
       }
 
       data.push(itemData);
@@ -391,7 +425,8 @@ export default class Ui {
     crop: string | undefined,
     croppedWidth: number,
     croppedHeight: number,
-    showOriginalOnClick: boolean | undefined
+    showOriginalOnClick: boolean | undefined,
+    cropAspectRatio: GalleryItemData['cropAspectRatio'] | undefined
   ): void {
     const img = item.querySelector(`.${this.CSS.itemImage} img`) as HTMLImageElement | null;
     if (!img) return;
@@ -402,6 +437,7 @@ export default class Ui {
       item.dataset.croppedWidth = String(croppedWidth);
       item.dataset.croppedHeight = String(croppedHeight);
       item.dataset.showOriginalOnClick = String(showOriginalOnClick ?? false);
+      item.dataset.cropAspectRatio = cropAspectRatio ?? '3:2';
       item.classList.add(this.CSS.itemCropped);
 
       const imagorPath = item.dataset.imagorPath;
@@ -417,6 +453,7 @@ export default class Ui {
       delete item.dataset.croppedWidth;
       delete item.dataset.croppedHeight;
       delete item.dataset.showOriginalOnClick;
+      delete item.dataset.cropAspectRatio;
       item.classList.remove(this.CSS.itemCropped);
 
       img.src = item.dataset.url || '';
@@ -486,6 +523,25 @@ export default class Ui {
     button.innerHTML = `${IconPicture} ${this.config.buttonContent}`;
     button.addEventListener('click', () => this.onSelectFile());
     return button;
+  }
+
+  private createAiButton(): HTMLButtonElement {
+    const button = make('button', [this.CSS.button, this.CSS.aiButton], { type: 'button' }) as HTMLButtonElement;
+    button.innerHTML = `${IconAi}<span>Генерация</span>`;
+    button.setAttribute('aria-label', 'Генерация');
+    button.addEventListener('click', () => this.onOpenAi());
+
+    return button;
+  }
+
+  private createAiBadge(): HTMLElement {
+    const badge = make('span', [this.CSS.itemAiBadge], {
+      title: AI_CREATED_TOOLTIP,
+    });
+    badge.innerHTML = IconAi;
+    badge.setAttribute('aria-label', AI_CREATED_TOOLTIP);
+
+    return badge;
   }
 
   private createUrlInput(): HTMLElement {
