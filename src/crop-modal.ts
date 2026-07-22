@@ -3,6 +3,8 @@ import 'cropperjs/dist/cropper.css';
 import type { CropResult } from './types/types';
 import { make } from './utils/dom';
 
+const clampCropCoordinate = (value: number): number => Math.min(1, Math.max(0, value));
+
 /**
  * Модальное окно кадрирования изображения на основе cropper.js.
  * Возвращает координаты обрезки в формате imagor (нормализованные 0-1).
@@ -219,10 +221,10 @@ export default class CropModal {
    * @param naturalHeight - натуральная высота изображения
    */
   private cropDataToString(data: Cropper.Data, naturalWidth: number, naturalHeight: number): CropResult {
-    const topLeftX = data.x / naturalWidth;
-    const topLeftY = data.y / naturalHeight;
-    const bottomRightX = (data.x + data.width) / naturalWidth;
-    const bottomRightY = (data.y + data.height) / naturalHeight;
+    const topLeftX = clampCropCoordinate(data.x / naturalWidth);
+    const topLeftY = clampCropCoordinate(data.y / naturalHeight);
+    const bottomRightX = clampCropCoordinate((data.x + data.width) / naturalWidth);
+    const bottomRightY = clampCropCoordinate((data.y + data.height) / naturalHeight);
 
     const crop = `${topLeftX.toFixed(4)}x${topLeftY.toFixed(4)}:${bottomRightX.toFixed(4)}x${bottomRightY.toFixed(4)}`;
 

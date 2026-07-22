@@ -169,6 +169,8 @@ export default class Ui {
 
     // Mark item as cropped
     if (data.crop) {
+      img.style.width = '100%';
+      img.style.maxHeight = 'none';
       item.classList.add(this.CSS.itemCropped);
     }
 
@@ -406,6 +408,8 @@ export default class Ui {
       if (imagorPath) {
         img.src = this.buildPreviewUrl(imagorPath, crop);
       }
+      img.style.width = '100%';
+      img.style.maxHeight = 'none';
       this.updateItemDimensions(item, croppedWidth, croppedHeight);
     } else {
       // Reset crop
@@ -416,6 +420,8 @@ export default class Ui {
       item.classList.remove(this.CSS.itemCropped);
 
       img.src = item.dataset.url || '';
+      img.style.width = '';
+      img.style.maxHeight = '';
       this.updateItemDimensions(
         item,
         item.dataset.width ? parseInt(item.dataset.width, 10) : undefined,
@@ -499,7 +505,7 @@ export default class Ui {
     });
 
     // Handle paste - auto-submit URL
-    input.addEventListener('paste', (e: ClipboardEvent) => {
+    input.addEventListener('paste', () => {
       // Small delay to get pasted value
       setTimeout(() => {
         this.handleUrlInput(input);

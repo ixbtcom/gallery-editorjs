@@ -15,9 +15,7 @@
 ## Установка
 
 ```bash
-npm install @ixbtcom/gallery-editorjs
-# или
-yarn add @ixbtcom/gallery-editorjs
+pnpm add @ixbtcom/gallery-editorjs
 ```
 
 ## Использование
@@ -204,13 +202,13 @@ const editor = new EditorJS({
 
 ```bash
 # Установка зависимостей
-npm install
+pnpm install
 
 # Сборка
-npm run build
+pnpm run build
 
 # Сборка с watch
-npm run dev
+pnpm run dev
 ```
 
 ## Требования

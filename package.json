@@ -1,6 +1,7 @@
 {
   "name": "@ixbtcom/gallery-editorjs",
-  "version": "2.0.0",
+  "version": "2.0.1",
+  "packageManager": "pnpm@11.1.2",
   "keywords": [
     "codex editor",
     "gallery",
@@ -27,20 +28,23 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "vitest run",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
   "devDependencies": {
     "@codexteam/ajax": "^4.2.0",
     "@editorjs/editorjs": "^2.30.8",
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^9.39.5",
+    "eslint-config-codex": "^2.0.3",
+    "jsdom": "^24.1.0",
     "postcss": "^8.4.41",
     "postcss-nested": "^6.0.1",
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
     "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vite-plugin-dts": "^3.9.1"
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
   },
   "dependencies": {
     "@codexteam/icons": "^0.3.0",
