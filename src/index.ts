@@ -24,7 +24,13 @@ import Uploader from './uploader';
 import CropModal from './crop-modal';
 import AiGenerationController from './ai-generation-controller';
 import { IconPicture } from '@codexteam/icons';
-import type { UploadResponseFormat, GalleryToolData, GalleryConfig, GalleryItemData } from './types/types';
+import type {
+  CropAspectRatioMode,
+  GalleryConfig,
+  GalleryItemData,
+  GalleryToolData,
+  UploadResponseFormat,
+} from './types/types';
 
 /**
  * Tune configuration
@@ -411,9 +417,7 @@ export default class GalleryTool implements BlockTool {
       url,
       existingCrop,
       item.dataset.showOriginalOnClick === 'true',
-      item.dataset.cropAspectRatio === '16:9' || item.dataset.cropAspectRatio === '1:1'
-        ? item.dataset.cropAspectRatio
-        : '3:2'
+      this.normalizeCropAspectRatioMode(item.dataset.cropAspectRatio)
     );
 
     if (result === null) {
@@ -475,6 +479,12 @@ export default class GalleryTool implements BlockTool {
       .catch((error) => {
         console.error('Gallery Tool: failed to delete image', error);
       });
+  }
+
+  private normalizeCropAspectRatioMode(value: unknown): CropAspectRatioMode {
+    return value === '16:9' || value === '3:2' || value === '1:1' || value === 'free'
+      ? value
+      : '3:2';
   }
 
   /**

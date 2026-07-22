@@ -380,7 +380,9 @@ export default class Ui {
         ? el.dataset.cropAspectRatio
         : el.dataset.cropAspectRatio === '3:2'
           ? '3:2'
-          : undefined;
+          : el.dataset.cropAspectRatio === 'free'
+            ? 'free'
+            : undefined;
       const showOriginalOnClick = el.dataset.showOriginalOnClick === undefined
         ? undefined
         : el.dataset.showOriginalOnClick === 'true';

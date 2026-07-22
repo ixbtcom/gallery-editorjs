@@ -1,12 +1,12 @@
 import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css';
-import type { CropResult } from './types/types';
+import type { CropAspectRatio, CropAspectRatioMode, CropResult } from './types/types';
 import { make } from './utils/dom';
 
 const clampCropCoordinate = (value: number): number => Math.min(1, Math.max(0, value));
 
-type CropAspectRatio = CropResult['cropAspectRatio'];
-const defaultCropAspectRatio: CropAspectRatio = '3:2';
+const fixedCropAspectRatios: CropAspectRatio[] = ['16:9', '3:2', '1:1'];
+const defaultCropAspectRatio: CropAspectRatioMode = '3:2';
 
 /**
  * Модальное окно кадрирования изображения на основе cropper.js.
@@ -26,14 +26,14 @@ export default class CropModal {
    * @param imageUrl - URL изображения для кадрирования
    * @param existingCrop - существующая строка кадрирования "AxB:CxD" для восстановления области
    * @param existingShowOriginalOnClick - сохранённое поведение lightbox
-   * @param existingCropAspectRatio - сохранённое фиксированное соотношение сторон
+   * @param existingCropAspectRatio - сохранённый режим соотношения сторон
    * @returns Promise с результатом кадрирования или null при отмене
    */
   public open(
     imageUrl: string,
     existingCrop?: string,
     existingShowOriginalOnClick = false,
-    existingCropAspectRatio: CropAspectRatio = defaultCropAspectRatio
+    existingCropAspectRatio: CropAspectRatioMode = defaultCropAspectRatio
   ): Promise<CropResult | null> {
     if (this.overlay) {
       this.destroy();
@@ -128,7 +128,7 @@ export default class CropModal {
   /**
    * Создает DOM-структуру оверлея с кнопками управления.
    */
-  private createOverlay(existingShowOriginalOnClick: boolean, cropAspectRatio: CropAspectRatio): HTMLElement {
+  private createOverlay(existingShowOriginalOnClick: boolean, cropAspectRatio: CropAspectRatioMode): HTMLElement {
     const overlay = make('div', 'gallery-crop-modal');
     overlay.addEventListener('click', () => this.close(null));
 
@@ -270,14 +270,19 @@ export default class CropModal {
     });
   }
 
-  private createAspectRatioOptions(selectedAspectRatio: CropAspectRatio): HTMLElement {
+  private createAspectRatioOptions(selectedAspectRatio: CropAspectRatioMode): HTMLElement {
     const fieldset = make('fieldset', 'gallery-crop-modal__aspect-ratios') as HTMLFieldSetElement;
     const legend = make('legend', 'gallery-crop-modal__aspect-ratios-label');
 
     legend.textContent = 'Соотношение сторон';
     fieldset.appendChild(legend);
 
-    (['16:9', '3:2', '1:1'] as CropAspectRatio[]).forEach((ratio) => {
+    const options: Array<{ label: string; value: CropAspectRatioMode }> = [
+      { label: 'Любое', value: 'free' },
+      ...fixedCropAspectRatios.map((ratio) => ({ label: ratio, value: ratio })),
+    ];
+
+    options.forEach(({ label: optionLabel, value: ratio }) => {
       const label = make('label', 'gallery-crop-modal__aspect-ratio');
       const input = make('input', null, { type: 'radio' }) as HTMLInputElement;
       const text = make('span', 'gallery-crop-modal__aspect-ratio-label');
@@ -290,7 +295,7 @@ export default class CropModal {
           this.cropper?.setAspectRatio(this.numericAspectRatio(ratio));
         }
       });
-      text.textContent = ratio;
+      text.textContent = optionLabel;
       label.append(input, text);
       fieldset.appendChild(label);
       this.aspectRatioInputs.push(input);
@@ -299,17 +304,25 @@ export default class CropModal {
     return fieldset;
   }
 
-  private selectedCropAspectRatio(): CropAspectRatio {
+  private selectedCropAspectRatio(): CropAspectRatioMode {
     const selected = this.aspectRatioInputs.find(input => input.checked)?.value;
 
     return this.normalizeCropAspectRatio(selected);
   }
 
-  private normalizeCropAspectRatio(value: unknown): CropAspectRatio {
-    return value === '16:9' || value === '1:1' ? value : defaultCropAspectRatio;
+  private normalizeCropAspectRatio(value: unknown): CropAspectRatioMode {
+    if (value === 'free' || fixedCropAspectRatios.includes(value as CropAspectRatio)) {
+      return value as CropAspectRatioMode;
+    }
+
+    return defaultCropAspectRatio;
   }
 
-  private numericAspectRatio(value: CropAspectRatio): number {
+  private numericAspectRatio(value: CropAspectRatioMode): number {
+    if (value === 'free') {
+      return Number.NaN;
+    }
+
     if (value === '16:9') {
       return 16 / 9;
     }

@@ -1,6 +1,6 @@
 import { ToolboxConfig, BlockToolConstructorOptions, BlockTool, PasteConfig, PasteEvent } from '@editorjs/editorjs';
 import { TunesMenuConfig } from '@editorjs/editorjs/types/tools';
-import { GalleryToolData, GalleryConfig } from './types/types';
+import { GalleryConfig, GalleryToolData } from './types/types';
 
 /**
  * Tune configuration
@@ -104,6 +104,7 @@ export default class GalleryTool implements BlockTool {
      * Handle image removal - delete from S3
      */
     private onRemoveImage;
+    private normalizeCropAspectRatioMode;
     /**
      * Update layout class on wrapper
      */

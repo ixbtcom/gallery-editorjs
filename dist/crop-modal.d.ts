@@ -1,6 +1,5 @@
-import { CropResult } from './types/types';
+import { CropAspectRatioMode, CropResult } from './types/types';
 
-type CropAspectRatio = CropResult['cropAspectRatio'];
 /**
  * Модальное окно кадрирования изображения на основе cropper.js.
  * Возвращает координаты обрезки в формате imagor (нормализованные 0-1).
@@ -18,10 +17,10 @@ export default class CropModal {
      * @param imageUrl - URL изображения для кадрирования
      * @param existingCrop - существующая строка кадрирования "AxB:CxD" для восстановления области
      * @param existingShowOriginalOnClick - сохранённое поведение lightbox
-     * @param existingCropAspectRatio - сохранённое фиксированное соотношение сторон
+     * @param existingCropAspectRatio - сохранённый режим соотношения сторон
      * @returns Promise с результатом кадрирования или null при отмене
      */
-    open(imageUrl: string, existingCrop?: string, existingShowOriginalOnClick?: boolean, existingCropAspectRatio?: CropAspectRatio): Promise<CropResult | null>;
+    open(imageUrl: string, existingCrop?: string, existingShowOriginalOnClick?: boolean, existingCropAspectRatio?: CropAspectRatioMode): Promise<CropResult | null>;
     /**
      * Полностью уничтожает модальное окно и освобождает ресурсы.
      */
@@ -68,4 +67,3 @@ export default class CropModal {
     private normalizeCropAspectRatio;
     private numericAspectRatio;
 }
-export {};
