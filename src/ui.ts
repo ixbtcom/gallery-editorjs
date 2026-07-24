@@ -1,5 +1,6 @@
 import { IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
+import { resizeDisplayUrl } from './utils/resize-display-url';
 import type { API } from '@editorjs/editorjs';
 import type { GalleryConfig, GalleryItemData } from './types/types';
 
@@ -167,10 +168,12 @@ export default class Ui {
     const imageContainer = make('div', [this.CSS.itemImage]);
     const preloader = make('div', [this.CSS.itemPreloader]);
 
-    // Determine image src: use crop preview if available, otherwise original
+    // Determine image src: use crop preview if available, otherwise original.
+    // Оригинал прогоняем через resizeDisplayUrl (920x/webp) только для показа;
+    // imagor-превью кропа уже ресайзнуто, его не трогаем.
     const imgSrc = (data.crop && data.imagorPath)
       ? this.buildPreviewUrl(data.imagorPath, data.crop)
-      : data.url;
+      : resizeDisplayUrl(data.url);
     const img = make('img', null, { src: imgSrc }) as HTMLImageElement;
     const displayWidth = data.crop && data.croppedWidth ? data.croppedWidth : data.width;
     const displayHeight = data.crop && data.croppedHeight ? data.croppedHeight : data.height;
@@ -271,7 +274,7 @@ export default class Ui {
     const preloader = make('div', [this.CSS.itemPreloader]);
 
     if (previewSrc) {
-      preloader.style.backgroundImage = `url(${previewSrc})`;
+      preloader.style.backgroundImage = `url(${resizeDisplayUrl(previewSrc)})`;
     }
 
     imageContainer.appendChild(preloader);
@@ -310,7 +313,7 @@ export default class Ui {
     const imageContainer = item.querySelector(`.${this.CSS.itemImage}`) as HTMLElement;
     const preloader = item.querySelector(`.${this.CSS.itemPreloader}`) as HTMLElement;
 
-    const img = make('img', null, { src: data.url }) as HTMLImageElement;
+    const img = make('img', null, { src: resizeDisplayUrl(data.url) }) as HTMLImageElement;
     img.onload = () => {
       if (preloader) {
         preloader.style.display = 'none';
@@ -458,7 +461,7 @@ export default class Ui {
       delete item.dataset.cropAspectRatio;
       item.classList.remove(this.CSS.itemCropped);
 
-      img.src = item.dataset.url || '';
+      img.src = resizeDisplayUrl(item.dataset.url || '');
       img.style.width = '';
       img.style.maxHeight = '';
       this.updateItemDimensions(
