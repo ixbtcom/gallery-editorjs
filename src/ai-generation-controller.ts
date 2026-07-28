@@ -81,8 +81,10 @@ export default class AiGenerationController {
       && typeof config.getPublicationContext === 'function';
 
     this.ui = new AiGenerationUi({
+      onAdoptSession: sessionId => this.adoptSession(sessionId),
       onAssistPrompt: (action, prompt) => this.assistPrompt(action, prompt),
       onCancel: () => this.cancel(),
+      onCloseSession: sessionId => this.closeSession(sessionId),
       onFinalize: () => this.finalizeSelectedCandidate(),
       onGenerate: (prompt, generateCaption, aspectRatio) => this.generate(prompt, generateCaption, aspectRatio),
       onRefine: prompt => this.refine(prompt),
@@ -108,6 +110,97 @@ export default class AiGenerationController {
     }
 
     this.ui.open();
+    this.refreshActiveSessions();
+  }
+
+  /**
+   * Показать незакрытые генерации редактора: сессия живёт сутки и занимает
+   * слот, поэтому решение — продолжить её или закрыть — принимает он сам.
+   */
+  private refreshActiveSessions(): void {
+    void this.client.listSessions(this.blockId)
+      .then((sessions) => {
+        if (!this.isDestroyed) {
+          this.ui.showActiveSessions(sessions);
+        }
+      })
+      .catch(() => undefined);
+  }
+
+  private adoptSession(sessionId: string): void {
+    if (this.isDestroyed || this.isGenerationRequestRunning) {
+      return;
+    }
+
+    void this.runAdoptSession(sessionId);
+  }
+
+  private async runAdoptSession(sessionId: string): Promise<void> {
+    const controller = this.replacePollController();
+
+    this.ui.showGenerationError('');
+    this.isGenerationRequestRunning = true;
+    this.ui.setGenerationBusy(true);
+
+    try {
+      const session = await this.client.adopt({ blockId: this.blockId, sessionId }, controller.signal);
+
+      this.candidates.clear();
+      this.history = [];
+      this.selectedCandidateId = null;
+      this.sessionId = sessionId;
+      this.hasCancelledPendingGeneration = false;
+      this.onChange();
+      this.ui.hideActiveSessions();
+      this.applySession(session);
+
+      if (session.status === 'queued' || session.status === 'generating' || session.status === 'refining') {
+        this.applySession(await this.client.poll({
+          blockId: this.blockId,
+          onStatus: current => this.applySession(current),
+          sessionId,
+          signal: controller.signal,
+        }));
+      }
+    } catch (error: unknown) {
+      this.handleOperationError(error, 'Не удалось продолжить эту генерацию.', () => undefined);
+      this.refreshActiveSessions();
+    } finally {
+      this.finishGenerationRequest(controller);
+    }
+  }
+
+  private closeSession(sessionId: string): void {
+    if (this.isDestroyed) {
+      return;
+    }
+
+    const isCurrent = sessionId === this.sessionId;
+
+    if (isCurrent) {
+      this.hasCancelledPendingGeneration = true;
+    }
+
+    void this.client.cancel({ blockId: this.blockId, sessionId })
+      .catch(() => undefined)
+      .then(() => {
+        if (this.isDestroyed) {
+          return;
+        }
+
+        // Закрыли сессию этого блока — панель возвращается к чистому промпту,
+        // но уже с новым идентификатором, иначе генерация упрётся в отменённую.
+        if (isCurrent) {
+          this.resetSession();
+          this.sessionId = globalThis.crypto.randomUUID();
+          this.hasCancelledPendingGeneration = false;
+          this.ui.close();
+          this.ui.open();
+          this.onChange();
+        }
+
+        this.refreshActiveSessions();
+      });
   }
 
   public getPendingData(): AiGenerationPendingData | undefined {

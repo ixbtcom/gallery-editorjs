@@ -1,4 +1,4 @@
-(function(){"use strict";try{if(typeof document<"u"){var o=document.createElement("style");o.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__ai-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 5px;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:#111827;color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;line-height:1;box-shadow:0 2px 8px #00000047;box-sizing:border-box}.gallery-tool__item-ai-badge{position:absolute;right:8px;bottom:8px;z-index:6;display:inline-flex;cursor:help}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__add-buttons .gallery-tool__ai-button{gap:8px}.gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark{min-width:22px;height:22px;font-size:10px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item[data-ai-generated].gallery-tool__item--cropped .gallery-tool__item-image:after{right:44px}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__options{display:flex;flex-direction:column;gap:12px;padding:12px 16px 0;background:var(--ej-bg-muted, #f5f5f5)}.gallery-crop-modal__option{display:inline-flex;align-items:center;gap:8px;color:var(--ej-text);cursor:pointer;font-size:14px}.gallery-crop-modal__option input{width:18px;height:18px;margin:0}.gallery-crop-modal__aspect-ratios{display:flex;flex-wrap:wrap;gap:8px;padding:0;border:0;margin:0}.gallery-crop-modal__aspect-ratios-label{width:100%;color:var(--ej-text-secondary);font-size:13px;font-weight:500}.gallery-crop-modal__aspect-ratio{display:inline-flex;position:relative;cursor:pointer}.gallery-crop-modal__aspect-ratio input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.gallery-crop-modal__aspect-ratio-label{min-width:52px;padding:6px 10px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-surface);color:var(--ej-text);font-size:13px;line-height:1;text-align:center}.gallery-crop-modal__aspect-ratio input:checked+.gallery-crop-modal__aspect-ratio-label{border-color:var(--ej-primary);background:var(--ej-primary-light);color:var(--ej-primary)}.gallery-crop-modal__aspect-ratio input:focus-visible+.gallery-crop-modal__aspect-ratio-label{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}.gallery-tool__item[data-cover][data-cover-overridden]:after{content:"Обложка · перекрыта вручную";background:#4b5563f2}.ai-image-tool__generator{display:grid;gap:14px;margin-top:14px;padding:16px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-lg);background:var(--ej-bg-muted);color:var(--ej-text)}.ai-image-tool__generator [hidden]{display:none}.ai-image-tool__prompt-section,.ai-image-tool__selection,.ai-image-tool__generated-caption{display:grid;gap:10px}.ai-image-tool__prompt-actions,.ai-image-tool__history{display:flex;flex-wrap:wrap;gap:8px}.ai-image-tool__aspect-ratios{display:inline-flex;width:fit-content;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-input)}.ai-image-tool__aspect-ratio-option{position:relative;min-width:58px;cursor:pointer;color:var(--ej-text-secondary);font-size:13px;font-weight:600;text-align:center}.ai-image-tool__aspect-ratio-option span{display:block;padding:8px 12px}.ai-image-tool__aspect-ratio-input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.ai-image-tool__aspect-ratio-input:checked+span{background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__aspect-ratio-input:focus-visible+span{outline:2px solid var(--ej-ring-focus);outline-offset:-2px}.ai-image-tool__aspect-ratio-input:disabled+span{cursor:not-allowed;opacity:.65}.ai-image-tool__caption-option{display:inline-flex;align-items:center;width:fit-content;min-height:44px;gap:9px;cursor:pointer;color:var(--ej-text);font-size:14px}.ai-image-tool__caption-checkbox{width:18px;height:18px;margin:0;accent-color:var(--ej-primary)}.ai-image-tool__label{color:var(--ej-text);font-size:14px;font-weight:600}.ai-image-tool__prompt{box-sizing:border-box;width:100%;min-height:88px;padding:10px 12px;resize:vertical;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);outline:none;background:var(--ej-bg-input);color:var(--ej-text);font:inherit;line-height:1.5;transition:border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__prompt:focus-visible,.ai-image-tool__caption-checkbox:focus-visible,.ai-image-tool__action:focus-visible,.ai-image-tool__candidate:focus-visible,.ai-image-tool__history-item:focus-visible{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.ai-image-tool__action,.ai-image-tool__history-item{min-height:44px;padding:9px 14px;border:1px solid transparent;border-radius:var(--ej-radius-md);cursor:pointer;font:inherit;font-weight:600;transition:background-color var(--ej-transition),border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__action{justify-self:start;background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__action:hover:not(:disabled){background:var(--ej-primary-hover)}.ai-image-tool__action--secondary,.ai-image-tool__history-item{border-color:var(--ej-border);background:var(--ej-bg-surface);color:var(--ej-text)}.ai-image-tool__action--secondary:hover:not(:disabled),.ai-image-tool__history-item:hover,.ai-image-tool__history-item[aria-current=true]{border-color:var(--ej-primary);background:var(--ej-primary-muted)}.ai-image-tool__action:disabled,.ai-image-tool__prompt:disabled{cursor:not-allowed;opacity:.6}.ai-image-tool__status,.ai-image-tool__caption-status,.ai-image-tool__history-status{min-height:21px;color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__error:not([hidden]){padding:10px 12px;border:1px solid var(--ej-danger-border);border-radius:var(--ej-radius-md);background:var(--ej-danger-bg);color:var(--ej-danger-text);font-size:14px}.ai-image-tool__candidates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}.ai-image-tool__candidate{position:relative;min-width:0;padding:3px;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);cursor:pointer;background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-sm)}.ai-image-tool__candidate:hover,.ai-image-tool__candidate[aria-pressed=true]{border-color:var(--ej-primary)}.ai-image-tool__candidate[aria-pressed=true]{box-shadow:0 0 0 2px var(--ej-primary-muted)}.ai-image-tool__candidate[aria-pressed=true]:after{content:"Выбрано";position:absolute;right:8px;bottom:8px;padding:4px 7px;border-radius:var(--ej-radius-sm);background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:600}.ai-image-tool__candidate-image,.ai-image-tool__selected-preview{display:block;width:100%;aspect-ratio:16 / 9;border-radius:calc(var(--ej-radius-md) - 3px);object-fit:cover}.ai-image-tool__caption-status[data-error]{color:var(--ej-danger-text)}.ai-image-tool__history-item[aria-current=true]{box-shadow:inset 0 0 0 1px var(--ej-primary);font-weight:700}@media (min-width: 640px){.ai-image-tool__generator{padding:20px}.ai-image-tool__selection{grid-template-columns:1fr auto}.ai-image-tool__selection>:not(.ai-image-tool__action){grid-column:1 / -1}}@media (prefers-reduced-motion: reduce){.ai-image-tool__action,.ai-image-tool__candidate,.ai-image-tool__history-item,.ai-image-tool__prompt{transition-duration:.01ms}}/*!
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__ai-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 5px;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:#111827;color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;line-height:1;box-shadow:0 2px 8px #00000047;box-sizing:border-box}.gallery-tool__item-ai-badge{position:absolute;right:8px;bottom:8px;z-index:6;display:inline-flex;cursor:help}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__add-buttons .gallery-tool__ai-button{gap:8px}.gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark{min-width:22px;height:22px;font-size:10px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item[data-ai-generated].gallery-tool__item--cropped .gallery-tool__item-image:after{right:44px}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__options{display:flex;flex-direction:column;gap:12px;padding:12px 16px 0;background:var(--ej-bg-muted, #f5f5f5)}.gallery-crop-modal__option{display:inline-flex;align-items:center;gap:8px;color:var(--ej-text);cursor:pointer;font-size:14px}.gallery-crop-modal__option input{width:18px;height:18px;margin:0}.gallery-crop-modal__aspect-ratios{display:flex;flex-wrap:wrap;gap:8px;padding:0;border:0;margin:0}.gallery-crop-modal__aspect-ratios-label{width:100%;color:var(--ej-text-secondary);font-size:13px;font-weight:500}.gallery-crop-modal__aspect-ratio{display:inline-flex;position:relative;cursor:pointer}.gallery-crop-modal__aspect-ratio input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.gallery-crop-modal__aspect-ratio-label{min-width:52px;padding:6px 10px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-surface);color:var(--ej-text);font-size:13px;line-height:1;text-align:center}.gallery-crop-modal__aspect-ratio input:checked+.gallery-crop-modal__aspect-ratio-label{border-color:var(--ej-primary);background:var(--ej-primary-light);color:var(--ej-primary)}.gallery-crop-modal__aspect-ratio input:focus-visible+.gallery-crop-modal__aspect-ratio-label{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}.gallery-tool__item[data-cover][data-cover-overridden]:after{content:"Обложка · перекрыта вручную";background:#4b5563f2}.ai-image-tool__generator{display:grid;gap:14px;margin-top:14px;padding:16px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-lg);background:var(--ej-bg-muted);color:var(--ej-text)}.ai-image-tool__generator [hidden]{display:none}.ai-image-tool__prompt-section,.ai-image-tool__selection,.ai-image-tool__generated-caption{display:grid;gap:10px}.ai-image-tool__sessions{display:grid;gap:8px;padding:12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface)}.ai-image-tool__sessions-title{color:var(--ej-text-secondary);font-size:12px;font-weight:600}.ai-image-tool__sessions-list{display:grid;gap:8px}.ai-image-tool__session{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:8px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-muted)}.ai-image-tool__session-preview{display:flex;align-items:center;justify-content:center;width:64px;height:44px;overflow:hidden;border-radius:var(--ej-radius-sm);background:var(--ej-bg-input)}.ai-image-tool__session-thumb{width:100%;height:100%;object-fit:cover}.ai-image-tool__session-body{display:grid;gap:2px;min-width:0}.ai-image-tool__session-title{overflow:hidden;color:var(--ej-text);font-size:13px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}a.ai-image-tool__session-title{color:var(--ej-primary);text-decoration:none}a.ai-image-tool__session-title:hover{text-decoration:underline}.ai-image-tool__session-meta{color:var(--ej-text-secondary);font-size:12px}.ai-image-tool__session-prompt{overflow:hidden;color:var(--ej-text-muted);font-size:12px;text-overflow:ellipsis;white-space:nowrap}.ai-image-tool__session-actions{display:flex;align-items:center;gap:6px}.ai-image-tool__session-close{width:28px;height:28px;padding:0;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-input);color:var(--ej-text-secondary);font-size:16px;line-height:1;cursor:pointer;transition:background var(--ej-transition),color var(--ej-transition)}.ai-image-tool__session-close:hover{background:var(--ej-danger-bg);border-color:var(--ej-danger-border);color:var(--ej-danger-text)}.ai-image-tool__prompt-actions,.ai-image-tool__history{display:flex;flex-wrap:wrap;gap:8px}.ai-image-tool__aspect-ratios{display:inline-flex;width:fit-content;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-input)}.ai-image-tool__aspect-ratio-option{position:relative;min-width:58px;cursor:pointer;color:var(--ej-text-secondary);font-size:13px;font-weight:600;text-align:center}.ai-image-tool__aspect-ratio-option span{display:block;padding:8px 12px}.ai-image-tool__aspect-ratio-input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.ai-image-tool__aspect-ratio-input:checked+span{background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__aspect-ratio-input:focus-visible+span{outline:2px solid var(--ej-ring-focus);outline-offset:-2px}.ai-image-tool__aspect-ratio-input:disabled+span{cursor:not-allowed;opacity:.65}.ai-image-tool__caption-option{display:inline-flex;align-items:center;width:fit-content;min-height:44px;gap:9px;cursor:pointer;color:var(--ej-text);font-size:14px}.ai-image-tool__caption-checkbox{width:18px;height:18px;margin:0;accent-color:var(--ej-primary)}.ai-image-tool__label{color:var(--ej-text);font-size:14px;font-weight:600}.ai-image-tool__prompt{box-sizing:border-box;width:100%;min-height:88px;padding:10px 12px;resize:vertical;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);outline:none;background:var(--ej-bg-input);color:var(--ej-text);font:inherit;line-height:1.5;transition:border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__prompt:focus-visible,.ai-image-tool__caption-checkbox:focus-visible,.ai-image-tool__action:focus-visible,.ai-image-tool__candidate:focus-visible,.ai-image-tool__history-item:focus-visible{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.ai-image-tool__action,.ai-image-tool__history-item{min-height:44px;padding:9px 14px;border:1px solid transparent;border-radius:var(--ej-radius-md);cursor:pointer;font:inherit;font-weight:600;transition:background-color var(--ej-transition),border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__action{justify-self:start;background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__action:hover:not(:disabled){background:var(--ej-primary-hover)}.ai-image-tool__action--secondary,.ai-image-tool__history-item{border-color:var(--ej-border);background:var(--ej-bg-surface);color:var(--ej-text)}.ai-image-tool__action--secondary:hover:not(:disabled),.ai-image-tool__history-item:hover,.ai-image-tool__history-item[aria-current=true]{border-color:var(--ej-primary);background:var(--ej-primary-muted)}.ai-image-tool__action:disabled,.ai-image-tool__prompt:disabled{cursor:not-allowed;opacity:.6}.ai-image-tool__status,.ai-image-tool__caption-status,.ai-image-tool__history-status{min-height:21px;color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__error:not([hidden]){padding:10px 12px;border:1px solid var(--ej-danger-border);border-radius:var(--ej-radius-md);background:var(--ej-danger-bg);color:var(--ej-danger-text);font-size:14px}.ai-image-tool__candidates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}.ai-image-tool__candidate{position:relative;min-width:0;padding:3px;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);cursor:pointer;background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-sm)}.ai-image-tool__candidate:hover,.ai-image-tool__candidate[aria-pressed=true]{border-color:var(--ej-primary)}.ai-image-tool__candidate[aria-pressed=true]{box-shadow:0 0 0 2px var(--ej-primary-muted)}.ai-image-tool__candidate[aria-pressed=true]:after{content:"Выбрано";position:absolute;right:8px;bottom:8px;padding:4px 7px;border-radius:var(--ej-radius-sm);background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:600}.ai-image-tool__candidate-image,.ai-image-tool__selected-preview{display:block;width:100%;aspect-ratio:16 / 9;border-radius:calc(var(--ej-radius-md) - 3px);object-fit:cover}.ai-image-tool__caption-status[data-error]{color:var(--ej-danger-text)}.ai-image-tool__history-item[aria-current=true]{box-shadow:inset 0 0 0 1px var(--ej-primary);font-weight:700}@media (min-width: 640px){.ai-image-tool__generator{padding:20px}.ai-image-tool__selection{grid-template-columns:1fr auto}.ai-image-tool__selection>:not(.ai-image-tool__action){grid-column:1 / -1}}@media (prefers-reduced-motion: reduce){.ai-image-tool__action,.ai-image-tool__candidate,.ai-image-tool__history-item,.ai-image-tool__prompt{transition-duration:.01ms}}/*!
  * Cropper.js v1.6.2
  * https://fengyuanchen.github.io/cropperjs
  *
@@ -6,40 +6,40 @@
  * Released under the MIT license
  *
  * Date: 2024-04-21T07:43:02.731Z
- */.cropper-container{direction:ltr;font-size:0;line-height:0;position:relative;-ms-touch-action:none;touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cropper-container img{backface-visibility:hidden;display:block;height:100%;image-orientation:0deg;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;width:100%}.cropper-wrap-box,.cropper-canvas,.cropper-drag-box,.cropper-crop-box,.cropper-modal{bottom:0;left:0;position:absolute;right:0;top:0}.cropper-wrap-box,.cropper-canvas{overflow:hidden}.cropper-drag-box{background-color:#fff;opacity:0}.cropper-modal{background-color:#000;opacity:.5}.cropper-view-box{display:block;height:100%;outline:1px solid #39f;outline-color:#3399ffbf;overflow:hidden;width:100%}.cropper-dashed{border:0 dashed #eee;display:block;opacity:.5;position:absolute}.cropper-dashed.dashed-h{border-bottom-width:1px;border-top-width:1px;height:calc(100% / 3);left:0;top:calc(100% / 3);width:100%}.cropper-dashed.dashed-v{border-left-width:1px;border-right-width:1px;height:100%;left:calc(100% / 3);top:0;width:calc(100% / 3)}.cropper-center{display:block;height:0;left:50%;opacity:.75;position:absolute;top:50%;width:0}.cropper-center:before,.cropper-center:after{background-color:#eee;content:" ";display:block;position:absolute}.cropper-center:before{height:1px;left:-3px;top:0;width:7px}.cropper-center:after{height:7px;left:0;top:-3px;width:1px}.cropper-face,.cropper-line,.cropper-point{display:block;height:100%;opacity:.1;position:absolute;width:100%}.cropper-face{background-color:#fff;left:0;top:0}.cropper-line{background-color:#39f}.cropper-line.line-e{cursor:ew-resize;right:-3px;top:0;width:5px}.cropper-line.line-n{cursor:ns-resize;height:5px;left:0;top:-3px}.cropper-line.line-w{cursor:ew-resize;left:-3px;top:0;width:5px}.cropper-line.line-s{bottom:-3px;cursor:ns-resize;height:5px;left:0}.cropper-point{background-color:#39f;height:5px;opacity:.75;width:5px}.cropper-point.point-e{cursor:ew-resize;margin-top:-3px;right:-3px;top:50%}.cropper-point.point-n{cursor:ns-resize;left:50%;margin-left:-3px;top:-3px}.cropper-point.point-w{cursor:ew-resize;left:-3px;margin-top:-3px;top:50%}.cropper-point.point-s{bottom:-3px;cursor:s-resize;left:50%;margin-left:-3px}.cropper-point.point-ne{cursor:nesw-resize;right:-3px;top:-3px}.cropper-point.point-nw{cursor:nwse-resize;left:-3px;top:-3px}.cropper-point.point-sw{bottom:-3px;cursor:nesw-resize;left:-3px}.cropper-point.point-se{bottom:-3px;cursor:nwse-resize;height:20px;opacity:1;right:-3px;width:20px}@media (min-width: 768px){.cropper-point.point-se{height:15px;width:15px}}@media (min-width: 992px){.cropper-point.point-se{height:10px;width:10px}}@media (min-width: 1200px){.cropper-point.point-se{height:5px;opacity:.75;width:5px}}.cropper-point.point-se:before{background-color:#39f;bottom:-50%;content:" ";display:block;height:200%;opacity:0;position:absolute;right:-50%;width:200%}.cropper-invisible{opacity:0}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-hide{display:block;height:0;position:absolute;width:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-drag-box,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}`)),document.head.appendChild(o)}}catch(e){console.error("vite-plugin-css-injected-by-js",e)}})();
-const ce = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
-function y(s, t = null, e = {}) {
-  const i = document.createElement(s);
+ */.cropper-container{direction:ltr;font-size:0;line-height:0;position:relative;-ms-touch-action:none;touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cropper-container img{backface-visibility:hidden;display:block;height:100%;image-orientation:0deg;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;width:100%}.cropper-wrap-box,.cropper-canvas,.cropper-drag-box,.cropper-crop-box,.cropper-modal{bottom:0;left:0;position:absolute;right:0;top:0}.cropper-wrap-box,.cropper-canvas{overflow:hidden}.cropper-drag-box{background-color:#fff;opacity:0}.cropper-modal{background-color:#000;opacity:.5}.cropper-view-box{display:block;height:100%;outline:1px solid #39f;outline-color:#3399ffbf;overflow:hidden;width:100%}.cropper-dashed{border:0 dashed #eee;display:block;opacity:.5;position:absolute}.cropper-dashed.dashed-h{border-bottom-width:1px;border-top-width:1px;height:calc(100% / 3);left:0;top:calc(100% / 3);width:100%}.cropper-dashed.dashed-v{border-left-width:1px;border-right-width:1px;height:100%;left:calc(100% / 3);top:0;width:calc(100% / 3)}.cropper-center{display:block;height:0;left:50%;opacity:.75;position:absolute;top:50%;width:0}.cropper-center:before,.cropper-center:after{background-color:#eee;content:" ";display:block;position:absolute}.cropper-center:before{height:1px;left:-3px;top:0;width:7px}.cropper-center:after{height:7px;left:0;top:-3px;width:1px}.cropper-face,.cropper-line,.cropper-point{display:block;height:100%;opacity:.1;position:absolute;width:100%}.cropper-face{background-color:#fff;left:0;top:0}.cropper-line{background-color:#39f}.cropper-line.line-e{cursor:ew-resize;right:-3px;top:0;width:5px}.cropper-line.line-n{cursor:ns-resize;height:5px;left:0;top:-3px}.cropper-line.line-w{cursor:ew-resize;left:-3px;top:0;width:5px}.cropper-line.line-s{bottom:-3px;cursor:ns-resize;height:5px;left:0}.cropper-point{background-color:#39f;height:5px;opacity:.75;width:5px}.cropper-point.point-e{cursor:ew-resize;margin-top:-3px;right:-3px;top:50%}.cropper-point.point-n{cursor:ns-resize;left:50%;margin-left:-3px;top:-3px}.cropper-point.point-w{cursor:ew-resize;left:-3px;margin-top:-3px;top:50%}.cropper-point.point-s{bottom:-3px;cursor:s-resize;left:50%;margin-left:-3px}.cropper-point.point-ne{cursor:nesw-resize;right:-3px;top:-3px}.cropper-point.point-nw{cursor:nwse-resize;left:-3px;top:-3px}.cropper-point.point-sw{bottom:-3px;cursor:nesw-resize;left:-3px}.cropper-point.point-se{bottom:-3px;cursor:nwse-resize;height:20px;opacity:1;right:-3px;width:20px}@media (min-width: 768px){.cropper-point.point-se{height:15px;width:15px}}@media (min-width: 992px){.cropper-point.point-se{height:10px;width:10px}}@media (min-width: 1200px){.cropper-point.point-se{height:5px;opacity:.75;width:5px}}.cropper-point.point-se:before{background-color:#39f;bottom:-50%;content:" ";display:block;height:200%;opacity:0;position:absolute;right:-50%;width:200%}.cropper-invisible{opacity:0}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-hide{display:block;height:0;position:absolute;width:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-drag-box,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}`)),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
+const me = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
+function g(r, t = null, e = {}) {
+  const i = document.createElement(r);
   Array.isArray(t) ? i.classList.add(...t) : t !== null && i.classList.add(t);
   for (const o in e)
     Object.prototype.hasOwnProperty.call(e, o) && (i[o] = e[o]);
   return i;
 }
-const Me = "media.ixbt.site", Oe = "920x/webp", Te = /^\d+x\d*$/;
-function Ct(s) {
-  if (!s)
-    return s;
+const Me = "media.ixbt.site", Pe = "920x/webp", Le = /^\d+x\d*$/;
+function St(r) {
+  if (!r)
+    return r;
   let t;
   try {
-    t = new URL(s);
+    t = new URL(r);
   } catch {
-    return s;
+    return r;
   }
   if (t.hostname !== Me)
-    return s;
+    return r;
   const e = t.pathname.split("/").filter(Boolean);
-  return e.length === 0 || Te.test(e[0]) ? s : (t.pathname = `/${Oe}/${e.join("/")}`, t.toString());
+  return e.length === 0 || Le.test(e[0]) ? r : (t.pathname = `/${Pe}/${e.join("/")}`, t.toString());
 }
-const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', Wt = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', Xt = "Создано с помощью Ai", V = class V {
-  constructor({ api: t, config: e, onSelectFile: i, onSelectUrl: o, onColumnsChange: n, onRemoveImage: a, onCropImage: r, onOpenAi: h, readOnly: l }) {
-    this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onSelectUrl = o, this.onColumnsChange = n, this.onRemoveImage = a, this.onCropImage = r, this.onOpenAi = h ?? (() => {
+const Be = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', Jt = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', Zt = "Создано с помощью Ai", K = class K {
+  constructor({ api: t, config: e, onSelectFile: i, onSelectUrl: o, onColumnsChange: n, onRemoveImage: s, onCropImage: a, onOpenAi: h, readOnly: l }) {
+    this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onSelectUrl = o, this.onColumnsChange = n, this.onRemoveImage = s, this.onCropImage = a, this.onOpenAi = h ?? (() => {
     }), this.readOnly = l, this.nodes = {
-      wrapper: y("div", [this.CSS.wrapper]),
-      itemsContainer: y("div", [this.CSS.itemsContainer]),
-      addButtons: y("div", [this.CSS.addButtons]),
+      wrapper: g("div", [this.CSS.wrapper]),
+      itemsContainer: g("div", [this.CSS.itemsContainer]),
+      addButtons: g("div", [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
       aiButton: this.createAiButton(),
-      urlButton: y("div"),
+      urlButton: g("div"),
       // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
       columnsControl: this.createColumnsControl()
@@ -97,30 +97,30 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    */
   addItem(t) {
     var p, C, b;
-    const e = y("div", [this.CSS.item]), i = y("div", [this.CSS.itemImage]), o = y("div", [this.CSS.itemPreloader]), n = t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : Ct(t.url), a = y("img", null, { src: n }), r = t.crop && t.croppedWidth ? t.croppedWidth : t.width, h = t.crop && t.croppedHeight ? t.croppedHeight : t.height;
-    r && h && (a.style.aspectRatio = `${r} / ${h}`), t.crop && (a.style.width = "100%", a.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped));
-    const l = y("div", [this.CSS.itemCaption, this.CSS.input], {
+    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]), n = t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : St(t.url), s = g("img", null, { src: n }), a = t.crop && t.croppedWidth ? t.croppedWidth : t.width, h = t.crop && t.croppedHeight ? t.croppedHeight : t.height;
+    a && h && (s.style.aspectRatio = `${a} / ${h}`), t.crop && (s.style.width = "100%", s.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped));
+    const l = g("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
     l.dataset.placeholder = this.config.captionPlaceholder ?? "Caption", l.textContent = t.caption || "";
-    const d = y("div", [this.CSS.itemSource, this.CSS.input], {
+    const c = g("div", [this.CSS.itemSource, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    d.dataset.placeholder = this.config.sourcePlaceholder ?? "Source", d.textContent = t.source || "";
-    const c = y("div", [this.CSS.itemSourceLink, this.CSS.input], {
+    c.dataset.placeholder = this.config.sourcePlaceholder ?? "Source", c.textContent = t.source || "";
+    const d = g("div", [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    if (c.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", c.textContent = t.sourceLink || "", i.appendChild(o), i.appendChild(a), r && h) {
-      const u = y("div", [this.CSS.itemDimensions]);
-      u.textContent = `${r} × ${h}`, i.appendChild(u);
+    if (d.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", d.textContent = t.sourceLink || "", i.appendChild(o), i.appendChild(s), a && h) {
+      const u = g("div", [this.CSS.itemDimensions]);
+      u.textContent = `${a} × ${h}`, i.appendChild(u);
     }
-    if (t.isAiGenerated && i.appendChild(this.createAiBadge()), a.onload = () => {
+    if (t.isAiGenerated && i.appendChild(this.createAiBadge()), s.onload = () => {
       o.style.display = "none";
     }, !this.readOnly) {
       const u = this.createItemControls(e);
       e.appendChild(u);
     }
-    return e.appendChild(i), e.appendChild(l), e.appendChild(d), e.appendChild(c), e.dataset.url = t.url, t.media_id && (e.dataset.mediaId = t.media_id), (p = this.config.cover) != null && p.enabled && t.media_id && ((b = (C = this.config.cover).coverUuid) == null ? void 0 : b.call(C)) === t.media_id && e.setAttribute("data-cover", ""), t.width && (e.dataset.width = String(t.width)), t.height && (e.dataset.height = String(t.height)), t.imagorPath && (e.dataset.imagorPath = t.imagorPath), t.crop && (e.dataset.crop = t.crop), t.croppedWidth && (e.dataset.croppedWidth = String(t.croppedWidth)), t.croppedHeight && (e.dataset.croppedHeight = String(t.croppedHeight)), t.cropAspectRatio && (e.dataset.cropAspectRatio = t.cropAspectRatio), typeof t.showOriginalOnClick == "boolean" && (e.dataset.showOriginalOnClick = String(t.showOriginalOnClick)), t.isAiGenerated && (e.dataset.aiGenerated = "true"), this.nodes.itemsContainer.appendChild(e), this.toggleState(
+    return e.appendChild(i), e.appendChild(l), e.appendChild(c), e.appendChild(d), e.dataset.url = t.url, t.media_id && (e.dataset.mediaId = t.media_id), (p = this.config.cover) != null && p.enabled && t.media_id && ((b = (C = this.config.cover).coverUuid) == null ? void 0 : b.call(C)) === t.media_id && e.setAttribute("data-cover", ""), t.width && (e.dataset.width = String(t.width)), t.height && (e.dataset.height = String(t.height)), t.imagorPath && (e.dataset.imagorPath = t.imagorPath), t.crop && (e.dataset.crop = t.crop), t.croppedWidth && (e.dataset.croppedWidth = String(t.croppedWidth)), t.croppedHeight && (e.dataset.croppedHeight = String(t.croppedHeight)), t.cropAspectRatio && (e.dataset.cropAspectRatio = t.cropAspectRatio), typeof t.showOriginalOnClick == "boolean" && (e.dataset.showOriginalOnClick = String(t.showOriginalOnClick)), t.isAiGenerated && (e.dataset.aiGenerated = "true"), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "filled"
       /* Filled */
     ), this.autoAdjustColumns(), e;
@@ -129,20 +129,20 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Create a placeholder item for loading state
    */
   createLoadingItem(t) {
-    const e = y("div", [this.CSS.item]), i = y("div", [this.CSS.itemImage]), o = y("div", [this.CSS.itemPreloader]);
-    t && (o.style.backgroundImage = `url(${Ct(t)})`), i.appendChild(o), e.appendChild(i);
-    const n = y("div", [this.CSS.itemCaption, this.CSS.input], {
+    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]);
+    t && (o.style.backgroundImage = `url(${St(t)})`), i.appendChild(o), e.appendChild(i);
+    const n = g("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
     n.dataset.placeholder = this.config.captionPlaceholder ?? "Caption";
-    const a = y("div", [this.CSS.itemSource, this.CSS.input], {
+    const s = g("div", [this.CSS.itemSource, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    a.dataset.placeholder = this.config.sourcePlaceholder ?? "Source";
-    const r = y("div", [this.CSS.itemSourceLink, this.CSS.input], {
+    s.dataset.placeholder = this.config.sourcePlaceholder ?? "Source";
+    const a = g("div", [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    return r.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", e.appendChild(n), e.appendChild(a), e.appendChild(r), this.nodes.itemsContainer.appendChild(e), this.toggleState(
+    return a.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", e.appendChild(n), e.appendChild(s), e.appendChild(a), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "loading"
       /* Loading */
     ), e;
@@ -151,15 +151,15 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Update loading item with uploaded image
    */
   fillLoadingItem(t, e) {
-    var a, r, h;
-    const i = t.querySelector(`.${this.CSS.itemImage}`), o = t.querySelector(`.${this.CSS.itemPreloader}`), n = y("img", null, { src: Ct(e.url) });
+    var s, a, h;
+    const i = t.querySelector(`.${this.CSS.itemImage}`), o = t.querySelector(`.${this.CSS.itemPreloader}`), n = g("img", null, { src: St(e.url) });
     if (n.onload = () => {
       o && (o.style.display = "none");
     }, i.appendChild(n), e.width && e.height) {
-      const l = y("div", [this.CSS.itemDimensions]);
+      const l = g("div", [this.CSS.itemDimensions]);
       l.textContent = `${e.width} × ${e.height}`, i.appendChild(l);
     }
-    if (t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (a = this.config.cover) != null && a.enabled && e.media_id && ((h = (r = this.config.cover).coverUuid) == null ? void 0 : h.call(r)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), e.isAiGenerated && (t.dataset.aiGenerated = "true", i.appendChild(this.createAiBadge())), !this.readOnly) {
+    if (t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (s = this.config.cover) != null && s.enabled && e.media_id && ((h = (a = this.config.cover).coverUuid) == null ? void 0 : h.call(a)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), e.isAiGenerated && (t.dataset.aiGenerated = "true", i.appendChild(this.createAiBadge())), !this.readOnly) {
       const l = this.createItemControls(t);
       t.insertBefore(l, t.firstChild);
     }
@@ -177,15 +177,15 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
       var x, S, m;
       const o = i, n = o.dataset.url;
       if (!n) return;
-      const a = ((x = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : x.textContent) || "", r = ((S = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : S.textContent) || "", h = ((m = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : m.textContent) || "", l = o.dataset.width ? parseInt(o.dataset.width, 10) : void 0, d = o.dataset.height ? parseInt(o.dataset.height, 10) : void 0, c = o.dataset.imagorPath || void 0, p = o.dataset.crop || void 0, C = o.dataset.croppedWidth ? parseInt(o.dataset.croppedWidth, 10) : void 0, b = o.dataset.croppedHeight ? parseInt(o.dataset.croppedHeight, 10) : void 0, u = o.dataset.cropAspectRatio === "16:9" || o.dataset.cropAspectRatio === "1:1" ? o.dataset.cropAspectRatio : o.dataset.cropAspectRatio === "3:2" ? "3:2" : o.dataset.cropAspectRatio === "free" ? "free" : void 0, f = o.dataset.showOriginalOnClick === void 0 ? void 0 : o.dataset.showOriginalOnClick === "true", g = o.dataset.mediaId || void 0, v = o.dataset.aiGenerated === "true", w = {
+      const s = ((x = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : x.textContent) || "", a = ((S = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : S.textContent) || "", h = ((m = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : m.textContent) || "", l = o.dataset.width ? parseInt(o.dataset.width, 10) : void 0, c = o.dataset.height ? parseInt(o.dataset.height, 10) : void 0, d = o.dataset.imagorPath || void 0, p = o.dataset.crop || void 0, C = o.dataset.croppedWidth ? parseInt(o.dataset.croppedWidth, 10) : void 0, b = o.dataset.croppedHeight ? parseInt(o.dataset.croppedHeight, 10) : void 0, u = o.dataset.cropAspectRatio === "16:9" || o.dataset.cropAspectRatio === "1:1" ? o.dataset.cropAspectRatio : o.dataset.cropAspectRatio === "3:2" ? "3:2" : o.dataset.cropAspectRatio === "free" ? "free" : void 0, f = o.dataset.showOriginalOnClick === void 0 ? void 0 : o.dataset.showOriginalOnClick === "true", y = o.dataset.mediaId || void 0, v = o.dataset.aiGenerated === "true", w = {
         url: n,
-        media_id: g,
-        imagorPath: c,
-        caption: a,
-        source: r,
+        media_id: y,
+        imagorPath: d,
+        caption: s,
+        source: a,
         sourceLink: h,
         width: l,
-        height: d,
+        height: c,
         crop: p,
         croppedWidth: C,
         croppedHeight: b
@@ -196,15 +196,15 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   /**
    * Update item DOM after crop operation
    */
-  updateItemAfterCrop(t, e, i, o, n, a) {
-    const r = t.querySelector(`.${this.CSS.itemImage} img`);
-    if (r)
+  updateItemAfterCrop(t, e, i, o, n, s) {
+    const a = t.querySelector(`.${this.CSS.itemImage} img`);
+    if (a)
       if (e) {
-        t.dataset.crop = e, t.dataset.croppedWidth = String(i), t.dataset.croppedHeight = String(o), t.dataset.showOriginalOnClick = String(n ?? !1), t.dataset.cropAspectRatio = a ?? "3:2", t.classList.add(this.CSS.itemCropped);
+        t.dataset.crop = e, t.dataset.croppedWidth = String(i), t.dataset.croppedHeight = String(o), t.dataset.showOriginalOnClick = String(n ?? !1), t.dataset.cropAspectRatio = s ?? "3:2", t.classList.add(this.CSS.itemCropped);
         const h = t.dataset.imagorPath;
-        h && (r.src = this.buildPreviewUrl(h, e)), r.style.width = "100%", r.style.maxHeight = "none", this.updateItemDimensions(t, i, o);
+        h && (a.src = this.buildPreviewUrl(h, e)), a.style.width = "100%", a.style.maxHeight = "none", this.updateItemDimensions(t, i, o);
       } else
-        delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), r.src = Ct(t.dataset.url || ""), r.style.width = "", r.style.maxHeight = "", this.updateItemDimensions(
+        delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), a.src = St(t.dataset.url || ""), a.style.width = "", a.style.maxHeight = "", this.updateItemDimensions(
           t,
           t.dataset.width ? parseInt(t.dataset.width, 10) : void 0,
           t.dataset.height ? parseInt(t.dataset.height, 10) : void 0
@@ -212,13 +212,13 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   }
   /** Update an item's effective dimensions badge and aspect ratio. */
   updateItemDimensions(t, e, i) {
-    const o = t.querySelector(`.${this.CSS.itemImage}`), n = o == null ? void 0 : o.querySelector("img"), a = Number.isFinite(e) && Number.isFinite(i) && (e ?? 0) > 0 && (i ?? 0) > 0;
-    let r = (o == null ? void 0 : o.querySelector(`.${this.CSS.itemDimensions}`)) ?? null;
-    if (!a) {
-      r == null || r.remove(), n && (n.style.aspectRatio = "");
+    const o = t.querySelector(`.${this.CSS.itemImage}`), n = o == null ? void 0 : o.querySelector("img"), s = Number.isFinite(e) && Number.isFinite(i) && (e ?? 0) > 0 && (i ?? 0) > 0;
+    let a = (o == null ? void 0 : o.querySelector(`.${this.CSS.itemDimensions}`)) ?? null;
+    if (!s) {
+      a == null || a.remove(), n && (n.style.aspectRatio = "");
       return;
     }
-    r === null && o !== null && (r = y("div", [this.CSS.itemDimensions]), o.appendChild(r)), r !== null && (r.textContent = `${e} × ${i}`), n && (n.style.aspectRatio = `${e} / ${i}`);
+    a === null && o !== null && (a = g("div", [this.CSS.itemDimensions]), o.appendChild(a)), a !== null && (a.textContent = `${e} × ${i}`), n && (n.style.aspectRatio = `${e} / ${i}`);
   }
   /**
    * Build imagor preview URL with crop + fit-in resize.
@@ -237,21 +237,21 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     return this.currentColumns;
   }
   createFileButton() {
-    const t = y("div", [this.CSS.button]);
-    return t.innerHTML = `${ce} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
+    const t = g("div", [this.CSS.button]);
+    return t.innerHTML = `${me} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
   }
   createAiButton() {
-    const t = y("button", [this.CSS.button, this.CSS.aiButton], { type: "button" });
-    return t.innerHTML = `${Wt}<span>Генерация</span>`, t.setAttribute("aria-label", "Генерация"), t.addEventListener("click", () => this.onOpenAi()), t;
+    const t = g("button", [this.CSS.button, this.CSS.aiButton], { type: "button" });
+    return t.innerHTML = `${Jt}<span>Генерация</span>`, t.setAttribute("aria-label", "Генерация"), t.addEventListener("click", () => this.onOpenAi()), t;
   }
   createAiBadge() {
-    const t = y("span", [this.CSS.itemAiBadge], {
-      title: Xt
+    const t = g("span", [this.CSS.itemAiBadge], {
+      title: Zt
     });
-    return t.innerHTML = Wt, t.setAttribute("aria-label", Xt), t;
+    return t.innerHTML = Jt, t.setAttribute("aria-label", Zt), t;
   }
   createUrlInput() {
-    const t = y("div", [this.CSS.urlInputWrapper]), e = y("input", [this.CSS.urlInput, this.CSS.input], {
+    const t = g("div", [this.CSS.urlInputWrapper]), e = g("input", [this.CSS.urlInput, this.CSS.input], {
       type: "text"
     });
     return e.placeholder = this.config.urlInputPlaceholder ?? "Вставьте ссылку на изображение", e.addEventListener("keydown", (i) => {
@@ -270,15 +270,15 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     e && this.isValidImageUrl(e) && (this.onSelectUrl(e), t.value = "");
   }
   createColumnsControl() {
-    const t = y("div", [this.CSS.columnsControl]), e = y("button", [this.CSS.columnsButton], { type: "button" });
+    const t = g("div", [this.CSS.columnsControl]), e = g("button", [this.CSS.columnsButton], { type: "button" });
     e.innerHTML = "−", e.addEventListener("click", () => this.changeColumns(-1));
-    const i = y("span", [this.CSS.columnsDisplay]);
+    const i = g("span", [this.CSS.columnsDisplay]);
     i.textContent = `${this.currentColumns} col`;
-    const o = y("button", [this.CSS.columnsButton], { type: "button" });
+    const o = g("button", [this.CSS.columnsButton], { type: "button" });
     return o.innerHTML = "+", o.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(i), t.appendChild(o), t;
   }
   changeColumns(t) {
-    const e = Math.min(V.MAX_COLUMNS, Math.max(V.MIN_COLUMNS, this.currentColumns + t));
+    const e = Math.min(K.MAX_COLUMNS, Math.max(K.MIN_COLUMNS, this.currentColumns + t));
     e !== this.currentColumns && (this.columnsLocked = !0, this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   updateColumnsClass() {
@@ -286,7 +286,7 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     if (this.nodes.wrapper.classList.contains(t))
       this.nodes.wrapper.classList.replace(t, e);
     else {
-      for (let i = V.MIN_COLUMNS; i <= V.MAX_COLUMNS; i++)
+      for (let i = K.MIN_COLUMNS; i <= K.MAX_COLUMNS; i++)
         this.nodes.wrapper.classList.remove(`gallery-tool--columns-${i}`);
       this.nodes.wrapper.classList.add(e);
     }
@@ -311,8 +311,8 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     e !== this.currentColumns && (this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   createItemControls(t) {
-    var r;
-    const e = y("div", [this.CSS.itemControls]), i = y("button", [this.CSS.itemRemove], { type: "button" });
+    var a;
+    const e = g("div", [this.CSS.itemControls]), i = g("button", [this.CSS.itemRemove], { type: "button" });
     i.innerHTML = "×", i.title = this.api.i18n.t("Удалить изображение"), i.setAttribute("aria-label", this.api.i18n.t("Удалить изображение")), i.addEventListener("click", () => {
       const h = t.dataset.url, l = t.dataset.mediaId;
       t.remove(), this.nodes.itemsContainer.children.length === 0 && (this.toggleState(
@@ -320,13 +320,13 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
         /* Empty */
       ), this.columnsLocked = !1), this.autoAdjustColumns(), (h || l) && this.onRemoveImage(h ?? "", l);
     });
-    const o = y("button", [this.CSS.itemMoveLeft], { type: "button" });
+    const o = g("button", [this.CSS.itemMoveLeft], { type: "button" });
     o.innerHTML = "←", o.addEventListener("click", () => this.moveItem(t, -1));
-    const n = y("button", [this.CSS.itemMoveRight], { type: "button" });
+    const n = g("button", [this.CSS.itemMoveRight], { type: "button" });
     n.innerHTML = "→", n.addEventListener("click", () => this.moveItem(t, 1));
-    const a = y("button", [this.CSS.itemCrop], { type: "button" });
-    if (a.innerHTML = ke, a.title = this.api.i18n.t("Обрезать изображение"), a.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), a.addEventListener("click", () => this.onCropImage(t)), e.appendChild(o), e.appendChild(a), (r = this.config.cover) != null && r.enabled) {
-      const h = y("button", ["gallery-tool__item-cover"], { type: "button" });
+    const s = g("button", [this.CSS.itemCrop], { type: "button" });
+    if (s.innerHTML = Be, s.title = this.api.i18n.t("Обрезать изображение"), s.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), s.addEventListener("click", () => this.onCropImage(t)), e.appendChild(o), e.appendChild(s), (a = this.config.cover) != null && a.enabled) {
+      const h = g("button", ["gallery-tool__item-cover"], { type: "button" });
       h.innerHTML = "★", h.title = this.api.i18n.t("Сделать обложкой"), h.setAttribute("aria-label", this.api.i18n.t("Сделать обложкой")), h.setAttribute("aria-pressed", String(t.hasAttribute("data-cover"))), h.addEventListener("click", () => this.onSetCover(t)), e.appendChild(h);
     }
     return e.appendChild(i), e.appendChild(n), e;
@@ -347,9 +347,9 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    */
   markCover(t) {
     this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`).forEach((i) => {
-      var a;
+      var s;
       const o = i, n = !!t && o.dataset.mediaId === t;
-      o.toggleAttribute("data-cover", n), (a = o.querySelector('[aria-label="Сделать обложкой"]')) == null || a.setAttribute("aria-pressed", String(n));
+      o.toggleAttribute("data-cover", n), (s = o.querySelector('[aria-label="Сделать обложкой"]')) == null || s.setAttribute("aria-pressed", String(n));
     });
   }
   moveItem(t, e) {
@@ -370,43 +370,43 @@ const ke = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     this.nodes.wrapper.classList.toggle(`gallery-tool--${t}`, e);
   }
 };
-V.MIN_COLUMNS = 1, V.MAX_COLUMNS = 5;
-let Dt = V;
-function Pe(s) {
-  return s && s.__esModule && Object.prototype.hasOwnProperty.call(s, "default") ? s.default : s;
+K.MIN_COLUMNS = 1, K.MAX_COLUMNS = 5;
+let Mt = K;
+function Ge(r) {
+  return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-var de = { exports: {} };
-(function(s, t) {
+var ge = { exports: {} };
+(function(r, t) {
   (function(e, i) {
-    s.exports = i();
+    r.exports = i();
   })(window, function() {
     return function(e) {
       var i = {};
       function o(n) {
         if (i[n]) return i[n].exports;
-        var a = i[n] = { i: n, l: !1, exports: {} };
-        return e[n].call(a.exports, a, a.exports, o), a.l = !0, a.exports;
+        var s = i[n] = { i: n, l: !1, exports: {} };
+        return e[n].call(s.exports, s, s.exports, o), s.l = !0, s.exports;
       }
-      return o.m = e, o.c = i, o.d = function(n, a, r) {
-        o.o(n, a) || Object.defineProperty(n, a, { enumerable: !0, get: r });
+      return o.m = e, o.c = i, o.d = function(n, s, a) {
+        o.o(n, s) || Object.defineProperty(n, s, { enumerable: !0, get: a });
       }, o.r = function(n) {
         typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(n, "__esModule", { value: !0 });
-      }, o.t = function(n, a) {
-        if (1 & a && (n = o(n)), 8 & a || 4 & a && typeof n == "object" && n && n.__esModule) return n;
-        var r = /* @__PURE__ */ Object.create(null);
-        if (o.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: n }), 2 & a && typeof n != "string") for (var h in n) o.d(r, h, (function(l) {
+      }, o.t = function(n, s) {
+        if (1 & s && (n = o(n)), 8 & s || 4 & s && typeof n == "object" && n && n.__esModule) return n;
+        var a = /* @__PURE__ */ Object.create(null);
+        if (o.r(a), Object.defineProperty(a, "default", { enumerable: !0, value: n }), 2 & s && typeof n != "string") for (var h in n) o.d(a, h, (function(l) {
           return n[l];
         }).bind(null, h));
-        return r;
+        return a;
       }, o.n = function(n) {
-        var a = n && n.__esModule ? function() {
+        var s = n && n.__esModule ? function() {
           return n.default;
         } : function() {
           return n;
         };
-        return o.d(a, "a", a), a;
-      }, o.o = function(n, a) {
-        return Object.prototype.hasOwnProperty.call(n, a);
+        return o.d(s, "a", s), s;
+      }, o.o = function(n, s) {
+        return Object.prototype.hasOwnProperty.call(n, s);
       }, o.p = "", o(o.s = 3);
     }([function(e, i) {
       var o;
@@ -421,7 +421,7 @@ var de = { exports: {} };
       e.exports = o;
     }, function(e, i, o) {
       (function(n) {
-        var a = o(2), r = setTimeout;
+        var s = o(2), a = setTimeout;
         function h() {
         }
         function l(f) {
@@ -429,83 +429,83 @@ var de = { exports: {} };
           if (typeof f != "function") throw new TypeError("not a function");
           this._state = 0, this._handled = !1, this._value = void 0, this._deferreds = [], u(f, this);
         }
-        function d(f, g) {
+        function c(f, y) {
           for (; f._state === 3; ) f = f._value;
           f._state !== 0 ? (f._handled = !0, l._immediateFn(function() {
-            var v = f._state === 1 ? g.onFulfilled : g.onRejected;
+            var v = f._state === 1 ? y.onFulfilled : y.onRejected;
             if (v !== null) {
               var w;
               try {
                 w = v(f._value);
               } catch (x) {
-                return void p(g.promise, x);
+                return void p(y.promise, x);
               }
-              c(g.promise, w);
-            } else (f._state === 1 ? c : p)(g.promise, f._value);
-          })) : f._deferreds.push(g);
+              d(y.promise, w);
+            } else (f._state === 1 ? d : p)(y.promise, f._value);
+          })) : f._deferreds.push(y);
         }
-        function c(f, g) {
+        function d(f, y) {
           try {
-            if (g === f) throw new TypeError("A promise cannot be resolved with itself.");
-            if (g && (typeof g == "object" || typeof g == "function")) {
-              var v = g.then;
-              if (g instanceof l) return f._state = 3, f._value = g, void C(f);
-              if (typeof v == "function") return void u((w = v, x = g, function() {
+            if (y === f) throw new TypeError("A promise cannot be resolved with itself.");
+            if (y && (typeof y == "object" || typeof y == "function")) {
+              var v = y.then;
+              if (y instanceof l) return f._state = 3, f._value = y, void C(f);
+              if (typeof v == "function") return void u((w = v, x = y, function() {
                 w.apply(x, arguments);
               }), f);
             }
-            f._state = 1, f._value = g, C(f);
+            f._state = 1, f._value = y, C(f);
           } catch (S) {
             p(f, S);
           }
           var w, x;
         }
-        function p(f, g) {
-          f._state = 2, f._value = g, C(f);
+        function p(f, y) {
+          f._state = 2, f._value = y, C(f);
         }
         function C(f) {
           f._state === 2 && f._deferreds.length === 0 && l._immediateFn(function() {
             f._handled || l._unhandledRejectionFn(f._value);
           });
-          for (var g = 0, v = f._deferreds.length; g < v; g++) d(f, f._deferreds[g]);
+          for (var y = 0, v = f._deferreds.length; y < v; y++) c(f, f._deferreds[y]);
           f._deferreds = null;
         }
-        function b(f, g, v) {
-          this.onFulfilled = typeof f == "function" ? f : null, this.onRejected = typeof g == "function" ? g : null, this.promise = v;
+        function b(f, y, v) {
+          this.onFulfilled = typeof f == "function" ? f : null, this.onRejected = typeof y == "function" ? y : null, this.promise = v;
         }
-        function u(f, g) {
+        function u(f, y) {
           var v = !1;
           try {
             f(function(w) {
-              v || (v = !0, c(g, w));
+              v || (v = !0, d(y, w));
             }, function(w) {
-              v || (v = !0, p(g, w));
+              v || (v = !0, p(y, w));
             });
           } catch (w) {
             if (v) return;
-            v = !0, p(g, w);
+            v = !0, p(y, w);
           }
         }
         l.prototype.catch = function(f) {
           return this.then(null, f);
-        }, l.prototype.then = function(f, g) {
+        }, l.prototype.then = function(f, y) {
           var v = new this.constructor(h);
-          return d(this, new b(f, g, v)), v;
-        }, l.prototype.finally = a.a, l.all = function(f) {
-          return new l(function(g, v) {
+          return c(this, new b(f, y, v)), v;
+        }, l.prototype.finally = s.a, l.all = function(f) {
+          return new l(function(y, v) {
             if (!f || f.length === void 0) throw new TypeError("Promise.all accepts an array");
             var w = Array.prototype.slice.call(f);
-            if (w.length === 0) return g([]);
+            if (w.length === 0) return y([]);
             var x = w.length;
-            function S(I, _) {
+            function S(_, I) {
               try {
-                if (_ && (typeof _ == "object" || typeof _ == "function")) {
-                  var A = _.then;
-                  if (typeof A == "function") return void A.call(_, function(O) {
-                    S(I, O);
+                if (I && (typeof I == "object" || typeof I == "function")) {
+                  var E = I.then;
+                  if (typeof E == "function") return void E.call(I, function(O) {
+                    S(_, O);
                   }, v);
                 }
-                w[I] = _, --x == 0 && g(w);
+                w[_] = I, --x == 0 && y(w);
               } catch (O) {
                 v(O);
               }
@@ -513,35 +513,35 @@ var de = { exports: {} };
             for (var m = 0; m < w.length; m++) S(m, w[m]);
           });
         }, l.resolve = function(f) {
-          return f && typeof f == "object" && f.constructor === l ? f : new l(function(g) {
-            g(f);
+          return f && typeof f == "object" && f.constructor === l ? f : new l(function(y) {
+            y(f);
           });
         }, l.reject = function(f) {
-          return new l(function(g, v) {
+          return new l(function(y, v) {
             v(f);
           });
         }, l.race = function(f) {
-          return new l(function(g, v) {
-            for (var w = 0, x = f.length; w < x; w++) f[w].then(g, v);
+          return new l(function(y, v) {
+            for (var w = 0, x = f.length; w < x; w++) f[w].then(y, v);
           });
         }, l._immediateFn = typeof n == "function" && function(f) {
           n(f);
         } || function(f) {
-          r(f, 0);
+          a(f, 0);
         }, l._unhandledRejectionFn = function(f) {
           typeof console < "u" && console && console.warn("Possible Unhandled Promise Rejection:", f);
         }, i.a = l;
       }).call(this, o(5).setImmediate);
     }, function(e, i, o) {
       i.a = function(n) {
-        var a = this.constructor;
-        return this.then(function(r) {
-          return a.resolve(n()).then(function() {
-            return r;
+        var s = this.constructor;
+        return this.then(function(a) {
+          return s.resolve(n()).then(function() {
+            return a;
           });
-        }, function(r) {
-          return a.resolve(n()).then(function() {
-            return a.reject(r);
+        }, function(a) {
+          return s.resolve(n()).then(function() {
+            return s.reject(a);
           });
         });
       };
@@ -554,9 +554,9 @@ var de = { exports: {} };
         })(u);
       }
       o(4);
-      var a, r, h, l, d, c, p, C = o(8), b = (r = function(u) {
-        return new Promise(function(f, g) {
-          u = l(u), (u = d(u)).beforeSend && u.beforeSend();
+      var s, a, h, l, c, d, p, C = o(8), b = (a = function(u) {
+        return new Promise(function(f, y) {
+          u = l(u), (u = c(u)).beforeSend && u.beforeSend();
           var v = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
           v.open(u.method, u.url), v.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(u.headers).forEach(function(x) {
             var S = u.headers[x];
@@ -577,18 +577,18 @@ var de = { exports: {} };
               } catch {
               }
               var S = C.parseHeaders(v.getAllResponseHeaders()), m = { body: x, code: v.status, headers: S };
-              p(v.status) ? f(m) : g(m);
+              p(v.status) ? f(m) : y(m);
             }
           }, v.send(u.data);
         });
       }, h = function(u) {
-        return u.method = "POST", r(u);
+        return u.method = "POST", a(u);
       }, l = function() {
         var u = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         if (u.url && typeof u.url != "string") throw new Error("Url must be a string");
         if (u.url = u.url || "", u.method && typeof u.method != "string") throw new Error("`method` must be a string or null");
         if (u.method = u.method ? u.method.toUpperCase() : "GET", u.headers && n(u.headers) !== "object") throw new Error("`headers` must be an object or null");
-        if (u.headers = u.headers || {}, u.type && (typeof u.type != "string" || !Object.values(a).includes(u.type))) throw new Error("`type` must be taken from module's «contentType» library");
+        if (u.headers = u.headers || {}, u.type && (typeof u.type != "string" || !Object.values(s).includes(u.type))) throw new Error("`type` must be taken from module's «contentType» library");
         if (u.progress && typeof u.progress != "function") throw new Error("`progress` must be a function or null");
         if (u.progress = u.progress || function(f) {
         }, u.beforeSend = u.beforeSend || function(f) {
@@ -598,49 +598,49 @@ var de = { exports: {} };
         if (u.accept = u.accept || "*/*", u.multiple && typeof u.multiple != "boolean") throw new Error("`multiple` must be a true or false");
         if (u.multiple = u.multiple || !1, u.fieldName && typeof u.fieldName != "string") throw new Error("`fieldName` must be a string");
         return u.fieldName = u.fieldName || "files", u;
-      }, d = function(u) {
+      }, c = function(u) {
         switch (u.method) {
           case "GET":
-            var f = c(u.data, a.URLENCODED);
+            var f = d(u.data, s.URLENCODED);
             delete u.data, u.url = /\?/.test(u.url) ? u.url + "&" + f : u.url + "?" + f;
             break;
           case "POST":
           case "PUT":
           case "DELETE":
           case "UPDATE":
-            var g = function() {
-              return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}).type || a.JSON;
+            var y = function() {
+              return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}).type || s.JSON;
             }(u);
-            (C.isFormData(u.data) || C.isFormElement(u.data)) && (g = a.FORM), u.data = c(u.data, g), g !== b.contentType.FORM && (u.headers["content-type"] = g);
+            (C.isFormData(u.data) || C.isFormElement(u.data)) && (y = s.FORM), u.data = d(u.data, y), y !== b.contentType.FORM && (u.headers["content-type"] = y);
         }
         return u;
-      }, c = function() {
+      }, d = function() {
         var u = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         switch (arguments.length > 1 ? arguments[1] : void 0) {
-          case a.URLENCODED:
+          case s.URLENCODED:
             return C.urlEncode(u);
-          case a.JSON:
+          case s.JSON:
             return C.jsonEncode(u);
-          case a.FORM:
+          case s.FORM:
             return C.formEncode(u);
           default:
             return u;
         }
       }, p = function(u) {
         return u >= 200 && u < 300;
-      }, { contentType: a = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: r, get: function(u) {
-        return u.method = "GET", r(u);
+      }, { contentType: s = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: a, get: function(u) {
+        return u.method = "GET", a(u);
       }, post: h, transport: function(u) {
         return u = l(u), C.selectFiles(u).then(function(f) {
-          for (var g = new FormData(), v = 0; v < f.length; v++) g.append(u.fieldName, f[v], f[v].name);
+          for (var y = new FormData(), v = 0; v < f.length; v++) y.append(u.fieldName, f[v], f[v].name);
           C.isObject(u.data) && Object.keys(u.data).forEach(function(x) {
             var S = u.data[x];
-            g.append(x, S);
+            y.append(x, S);
           });
           var w = u.beforeSend;
           return u.beforeSend = function() {
             return w(f);
-          }, u.data = g, h(u);
+          }, u.data = y, h(u);
         });
       }, selectFiles: function(u) {
         return delete (u = l(u)).beforeSend, C.selectFiles(u);
@@ -652,67 +652,67 @@ var de = { exports: {} };
       window.Promise = window.Promise || n.a;
     }, function(e, i, o) {
       (function(n) {
-        var a = n !== void 0 && n || typeof self < "u" && self || window, r = Function.prototype.apply;
-        function h(l, d) {
-          this._id = l, this._clearFn = d;
+        var s = n !== void 0 && n || typeof self < "u" && self || window, a = Function.prototype.apply;
+        function h(l, c) {
+          this._id = l, this._clearFn = c;
         }
         i.setTimeout = function() {
-          return new h(r.call(setTimeout, a, arguments), clearTimeout);
+          return new h(a.call(setTimeout, s, arguments), clearTimeout);
         }, i.setInterval = function() {
-          return new h(r.call(setInterval, a, arguments), clearInterval);
+          return new h(a.call(setInterval, s, arguments), clearInterval);
         }, i.clearTimeout = i.clearInterval = function(l) {
           l && l.close();
         }, h.prototype.unref = h.prototype.ref = function() {
         }, h.prototype.close = function() {
-          this._clearFn.call(a, this._id);
-        }, i.enroll = function(l, d) {
-          clearTimeout(l._idleTimeoutId), l._idleTimeout = d;
+          this._clearFn.call(s, this._id);
+        }, i.enroll = function(l, c) {
+          clearTimeout(l._idleTimeoutId), l._idleTimeout = c;
         }, i.unenroll = function(l) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = -1;
         }, i._unrefActive = i.active = function(l) {
           clearTimeout(l._idleTimeoutId);
-          var d = l._idleTimeout;
-          d >= 0 && (l._idleTimeoutId = setTimeout(function() {
+          var c = l._idleTimeout;
+          c >= 0 && (l._idleTimeoutId = setTimeout(function() {
             l._onTimeout && l._onTimeout();
-          }, d));
+          }, c));
         }, o(6), i.setImmediate = typeof self < "u" && self.setImmediate || n !== void 0 && n.setImmediate || this && this.setImmediate, i.clearImmediate = typeof self < "u" && self.clearImmediate || n !== void 0 && n.clearImmediate || this && this.clearImmediate;
       }).call(this, o(0));
     }, function(e, i, o) {
-      (function(n, a) {
-        (function(r, h) {
-          if (!r.setImmediate) {
-            var l, d, c, p, C, b = 1, u = {}, f = !1, g = r.document, v = Object.getPrototypeOf && Object.getPrototypeOf(r);
-            v = v && v.setTimeout ? v : r, {}.toString.call(r.process) === "[object process]" ? l = function(S) {
-              a.nextTick(function() {
+      (function(n, s) {
+        (function(a, h) {
+          if (!a.setImmediate) {
+            var l, c, d, p, C, b = 1, u = {}, f = !1, y = a.document, v = Object.getPrototypeOf && Object.getPrototypeOf(a);
+            v = v && v.setTimeout ? v : a, {}.toString.call(a.process) === "[object process]" ? l = function(S) {
+              s.nextTick(function() {
                 x(S);
               });
             } : function() {
-              if (r.postMessage && !r.importScripts) {
-                var S = !0, m = r.onmessage;
-                return r.onmessage = function() {
+              if (a.postMessage && !a.importScripts) {
+                var S = !0, m = a.onmessage;
+                return a.onmessage = function() {
                   S = !1;
-                }, r.postMessage("", "*"), r.onmessage = m, S;
+                }, a.postMessage("", "*"), a.onmessage = m, S;
               }
             }() ? (p = "setImmediate$" + Math.random() + "$", C = function(S) {
-              S.source === r && typeof S.data == "string" && S.data.indexOf(p) === 0 && x(+S.data.slice(p.length));
-            }, r.addEventListener ? r.addEventListener("message", C, !1) : r.attachEvent("onmessage", C), l = function(S) {
-              r.postMessage(p + S, "*");
-            }) : r.MessageChannel ? ((c = new MessageChannel()).port1.onmessage = function(S) {
+              S.source === a && typeof S.data == "string" && S.data.indexOf(p) === 0 && x(+S.data.slice(p.length));
+            }, a.addEventListener ? a.addEventListener("message", C, !1) : a.attachEvent("onmessage", C), l = function(S) {
+              a.postMessage(p + S, "*");
+            }) : a.MessageChannel ? ((d = new MessageChannel()).port1.onmessage = function(S) {
               x(S.data);
             }, l = function(S) {
-              c.port2.postMessage(S);
-            }) : g && "onreadystatechange" in g.createElement("script") ? (d = g.documentElement, l = function(S) {
-              var m = g.createElement("script");
+              d.port2.postMessage(S);
+            }) : y && "onreadystatechange" in y.createElement("script") ? (c = y.documentElement, l = function(S) {
+              var m = y.createElement("script");
               m.onreadystatechange = function() {
-                x(S), m.onreadystatechange = null, d.removeChild(m), m = null;
-              }, d.appendChild(m);
+                x(S), m.onreadystatechange = null, c.removeChild(m), m = null;
+              }, c.appendChild(m);
             }) : l = function(S) {
               setTimeout(x, 0, S);
             }, v.setImmediate = function(S) {
               typeof S != "function" && (S = new Function("" + S));
-              for (var m = new Array(arguments.length - 1), I = 0; I < m.length; I++) m[I] = arguments[I + 1];
-              var _ = { callback: S, args: m };
-              return u[b] = _, l(b), b++;
+              for (var m = new Array(arguments.length - 1), _ = 0; _ < m.length; _++) m[_] = arguments[_ + 1];
+              var I = { callback: S, args: m };
+              return u[b] = I, l(b), b++;
             }, v.clearImmediate = w;
           }
           function w(S) {
@@ -725,23 +725,23 @@ var de = { exports: {} };
               if (m) {
                 f = !0;
                 try {
-                  (function(I) {
-                    var _ = I.callback, A = I.args;
-                    switch (A.length) {
+                  (function(_) {
+                    var I = _.callback, E = _.args;
+                    switch (E.length) {
                       case 0:
-                        _();
+                        I();
                         break;
                       case 1:
-                        _(A[0]);
+                        I(E[0]);
                         break;
                       case 2:
-                        _(A[0], A[1]);
+                        I(E[0], E[1]);
                         break;
                       case 3:
-                        _(A[0], A[1], A[2]);
+                        I(E[0], E[1], E[2]);
                         break;
                       default:
-                        _.apply(h, A);
+                        I.apply(h, E);
                     }
                   })(m);
                 } finally {
@@ -753,8 +753,8 @@ var de = { exports: {} };
         })(typeof self > "u" ? n === void 0 ? this : n : self);
       }).call(this, o(0), o(7));
     }, function(e, i) {
-      var o, n, a = e.exports = {};
-      function r() {
+      var o, n, s = e.exports = {};
+      function a() {
         throw new Error("setTimeout has not been defined");
       }
       function h() {
@@ -762,7 +762,7 @@ var de = { exports: {} };
       }
       function l(v) {
         if (o === setTimeout) return setTimeout(v, 0);
-        if ((o === r || !o) && setTimeout) return o = setTimeout, setTimeout(v, 0);
+        if ((o === a || !o) && setTimeout) return o = setTimeout, setTimeout(v, 0);
         try {
           return o(v, 0);
         } catch {
@@ -775,9 +775,9 @@ var de = { exports: {} };
       }
       (function() {
         try {
-          o = typeof setTimeout == "function" ? setTimeout : r;
+          o = typeof setTimeout == "function" ? setTimeout : a;
         } catch {
-          o = r;
+          o = a;
         }
         try {
           n = typeof clearTimeout == "function" ? clearTimeout : h;
@@ -785,19 +785,19 @@ var de = { exports: {} };
           n = h;
         }
       })();
-      var d, c = [], p = !1, C = -1;
+      var c, d = [], p = !1, C = -1;
       function b() {
-        p && d && (p = !1, d.length ? c = d.concat(c) : C = -1, c.length && u());
+        p && c && (p = !1, c.length ? d = c.concat(d) : C = -1, d.length && u());
       }
       function u() {
         if (!p) {
           var v = l(b);
           p = !0;
-          for (var w = c.length; w; ) {
-            for (d = c, c = []; ++C < w; ) d && d[C].run();
-            C = -1, w = c.length;
+          for (var w = d.length; w; ) {
+            for (c = d, d = []; ++C < w; ) c && c[C].run();
+            C = -1, w = d.length;
           }
-          d = null, p = !1, function(x) {
+          c = null, p = !1, function(x) {
             if (n === clearTimeout) return clearTimeout(x);
             if ((n === h || !n) && clearTimeout) return n = clearTimeout, clearTimeout(x);
             try {
@@ -815,106 +815,106 @@ var de = { exports: {} };
       function f(v, w) {
         this.fun = v, this.array = w;
       }
-      function g() {
+      function y() {
       }
-      a.nextTick = function(v) {
+      s.nextTick = function(v) {
         var w = new Array(arguments.length - 1);
         if (arguments.length > 1) for (var x = 1; x < arguments.length; x++) w[x - 1] = arguments[x];
-        c.push(new f(v, w)), c.length !== 1 || p || l(u);
+        d.push(new f(v, w)), d.length !== 1 || p || l(u);
       }, f.prototype.run = function() {
         this.fun.apply(null, this.array);
-      }, a.title = "browser", a.browser = !0, a.env = {}, a.argv = [], a.version = "", a.versions = {}, a.on = g, a.addListener = g, a.once = g, a.off = g, a.removeListener = g, a.removeAllListeners = g, a.emit = g, a.prependListener = g, a.prependOnceListener = g, a.listeners = function(v) {
+      }, s.title = "browser", s.browser = !0, s.env = {}, s.argv = [], s.version = "", s.versions = {}, s.on = y, s.addListener = y, s.once = y, s.off = y, s.removeListener = y, s.removeAllListeners = y, s.emit = y, s.prependListener = y, s.prependOnceListener = y, s.listeners = function(v) {
         return [];
-      }, a.binding = function(v) {
+      }, s.binding = function(v) {
         throw new Error("process.binding is not supported");
-      }, a.cwd = function() {
+      }, s.cwd = function() {
         return "/";
-      }, a.chdir = function(v) {
+      }, s.chdir = function(v) {
         throw new Error("process.chdir is not supported");
-      }, a.umask = function() {
+      }, s.umask = function() {
         return 0;
       };
     }, function(e, i, o) {
-      function n(r, h) {
+      function n(a, h) {
         for (var l = 0; l < h.length; l++) {
-          var d = h[l];
-          d.enumerable = d.enumerable || !1, d.configurable = !0, "value" in d && (d.writable = !0), Object.defineProperty(r, d.key, d);
+          var c = h[l];
+          c.enumerable = c.enumerable || !1, c.configurable = !0, "value" in c && (c.writable = !0), Object.defineProperty(a, c.key, c);
         }
       }
-      var a = o(9);
+      var s = o(9);
       e.exports = function() {
-        function r() {
-          (function(c, p) {
-            if (!(c instanceof p)) throw new TypeError("Cannot call a class as a function");
-          })(this, r);
+        function a() {
+          (function(d, p) {
+            if (!(d instanceof p)) throw new TypeError("Cannot call a class as a function");
+          })(this, a);
         }
-        var h, l, d;
-        return h = r, d = [{ key: "urlEncode", value: function(c) {
-          return a(c);
-        } }, { key: "jsonEncode", value: function(c) {
-          return JSON.stringify(c);
-        } }, { key: "formEncode", value: function(c) {
-          if (this.isFormData(c)) return c;
-          if (this.isFormElement(c)) return new FormData(c);
-          if (this.isObject(c)) {
+        var h, l, c;
+        return h = a, c = [{ key: "urlEncode", value: function(d) {
+          return s(d);
+        } }, { key: "jsonEncode", value: function(d) {
+          return JSON.stringify(d);
+        } }, { key: "formEncode", value: function(d) {
+          if (this.isFormData(d)) return d;
+          if (this.isFormElement(d)) return new FormData(d);
+          if (this.isObject(d)) {
             var p = new FormData();
-            return Object.keys(c).forEach(function(C) {
-              var b = c[C];
+            return Object.keys(d).forEach(function(C) {
+              var b = d[C];
               p.append(C, b);
             }), p;
           }
           throw new Error("`data` must be an instance of Object, FormData or <FORM> HTMLElement");
-        } }, { key: "isObject", value: function(c) {
-          return Object.prototype.toString.call(c) === "[object Object]";
-        } }, { key: "isFormData", value: function(c) {
-          return c instanceof FormData;
-        } }, { key: "isFormElement", value: function(c) {
-          return c instanceof HTMLFormElement;
+        } }, { key: "isObject", value: function(d) {
+          return Object.prototype.toString.call(d) === "[object Object]";
+        } }, { key: "isFormData", value: function(d) {
+          return d instanceof FormData;
+        } }, { key: "isFormElement", value: function(d) {
+          return d instanceof HTMLFormElement;
         } }, { key: "selectFiles", value: function() {
-          var c = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+          var d = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
           return new Promise(function(p, C) {
             var b = document.createElement("INPUT");
-            b.type = "file", c.multiple && b.setAttribute("multiple", "multiple"), c.accept && b.setAttribute("accept", c.accept), b.style.display = "none", document.body.appendChild(b), b.addEventListener("change", function(u) {
+            b.type = "file", d.multiple && b.setAttribute("multiple", "multiple"), d.accept && b.setAttribute("accept", d.accept), b.style.display = "none", document.body.appendChild(b), b.addEventListener("change", function(u) {
               var f = u.target.files;
               p(f), document.body.removeChild(b);
             }, !1), b.click();
           });
-        } }, { key: "parseHeaders", value: function(c) {
-          var p = c.trim().split(/[\r\n]+/), C = {};
+        } }, { key: "parseHeaders", value: function(d) {
+          var p = d.trim().split(/[\r\n]+/), C = {};
           return p.forEach(function(b) {
-            var u = b.split(": "), f = u.shift(), g = u.join(": ");
-            f && (C[f] = g);
+            var u = b.split(": "), f = u.shift(), y = u.join(": ");
+            f && (C[f] = y);
           }), C;
-        } }], (l = null) && n(h.prototype, l), d && n(h, d), r;
+        } }], (l = null) && n(h.prototype, l), c && n(h, c), a;
       }();
     }, function(e, i) {
-      var o = function(a) {
-        return encodeURIComponent(a).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
-      }, n = function(a, r, h, l) {
-        return r = r || null, h = h || "&", l = l || null, a ? function(d) {
-          for (var c = new Array(), p = 0; p < d.length; p++) d[p] && c.push(d[p]);
-          return c;
-        }(Object.keys(a).map(function(d) {
-          var c, p, C = d;
-          if (l && (C = l + "[" + C + "]"), typeof a[d] == "object" && a[d] !== null) c = n(a[d], null, h, C);
+      var o = function(s) {
+        return encodeURIComponent(s).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
+      }, n = function(s, a, h, l) {
+        return a = a || null, h = h || "&", l = l || null, s ? function(c) {
+          for (var d = new Array(), p = 0; p < c.length; p++) c[p] && d.push(c[p]);
+          return d;
+        }(Object.keys(s).map(function(c) {
+          var d, p, C = c;
+          if (l && (C = l + "[" + C + "]"), typeof s[c] == "object" && s[c] !== null) d = n(s[c], null, h, C);
           else {
-            r && (p = C, C = !isNaN(parseFloat(p)) && isFinite(p) ? r + Number(C) : C);
-            var b = a[d];
-            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", c = o(C) + "=" + o(b);
+            a && (p = C, C = !isNaN(parseFloat(p)) && isFinite(p) ? a + Number(C) : C);
+            var b = s[c];
+            b = (b = (b = (b = b === !0 ? "1" : b) === !1 ? "0" : b) === 0 ? "0" : b) || "", d = o(C) + "=" + o(b);
           }
-          return c;
+          return d;
         })).join(h).replace(/[!'()*]/g, "") : "";
       };
       e.exports = n;
     }]);
   });
-})(de);
-var Le = de.exports;
-const at = /* @__PURE__ */ Pe(Le);
-function _t(s) {
-  return s !== void 0 && typeof s.then == "function";
+})(ge);
+var Ne = ge.exports;
+const lt = /* @__PURE__ */ Ge(Ne);
+function Dt(r) {
+  return r !== void 0 && typeof r.then == "function";
 }
-class Be {
+class Ue {
   constructor({ config: t, onUpload: e, onError: i }) {
     this.config = t, this.onUpload = e, this.onError = i;
   }
@@ -924,28 +924,28 @@ class Be {
   uploadSelectedFile({ onPreview: t }) {
     var o;
     const e = (n) => {
-      const a = new FileReader();
-      a.readAsDataURL(n), a.onload = (r) => {
-        t(r.target.result);
-      }, a.onerror = () => {
+      const s = new FileReader();
+      s.readAsDataURL(n), s.onload = (a) => {
+        t(a.target.result);
+      }, s.onerror = () => {
         this.onError("Failed to read file");
       };
     };
     let i;
     if ((o = this.config.uploader) != null && o.uploadByFile)
-      i = at.selectFiles({ accept: this.config.types ?? "image/*" }).then((n) => {
+      i = lt.selectFiles({ accept: this.config.types ?? "image/*" }).then((n) => {
         if (!n || n.length === 0)
           throw new Error("No file selected");
         e(n[0]);
-        const a = this.config.uploader.uploadByFile(n[0]);
-        return _t(a) || console.warn("Custom uploader method uploadByFile should return a Promise"), a;
+        const s = this.config.uploader.uploadByFile(n[0]);
+        return Dt(s) || console.warn("Custom uploader method uploadByFile should return a Promise"), s;
       });
     else {
       if (!this.config.endpoints.byFile) {
         this.onError("Upload endpoint (byFile) is not configured");
         return;
       }
-      i = at.transport({
+      i = lt.transport({
         url: this.config.endpoints.byFile,
         data: this.config.additionalRequestData,
         accept: this.config.types ?? "image/*",
@@ -965,19 +965,19 @@ class Be {
     var i;
     let e;
     if ((i = this.config.uploader) != null && i.uploadByUrl)
-      e = this.config.uploader.uploadByUrl(t), _t(e) || console.warn("Custom uploader method uploadByUrl should return a Promise");
+      e = this.config.uploader.uploadByUrl(t), Dt(e) || console.warn("Custom uploader method uploadByUrl should return a Promise");
     else {
       if (!this.config.endpoints.byUrl) {
         this.onError("Upload endpoint (byUrl) is not configured");
         return;
       }
-      e = at.post({
+      e = lt.post({
         url: this.config.endpoints.byUrl,
         data: {
           url: t,
           ...this.config.additionalRequestData
         },
-        type: at.contentType.JSON,
+        type: lt.contentType.JSON,
         headers: this.config.additionalRequestHeaders
       }).then((o) => o.body);
     }
@@ -989,27 +989,27 @@ class Be {
   uploadByFile(t, { onPreview: e }) {
     const i = new FileReader();
     i.onload = (o) => {
-      var a;
+      var s;
       e(o.target.result);
       let n;
-      if ((a = this.config.uploader) != null && a.uploadByFile)
-        n = this.config.uploader.uploadByFile(t), _t(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
+      if ((s = this.config.uploader) != null && s.uploadByFile)
+        n = this.config.uploader.uploadByFile(t), Dt(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
       else {
         if (!this.config.endpoints.byFile) {
           this.onError("Upload endpoint (byFile) is not configured");
           return;
         }
-        const r = new FormData();
-        r.append(this.config.field ?? "image", t), this.config.additionalRequestData && Object.entries(this.config.additionalRequestData).forEach(([h, l]) => {
-          r.append(h, l);
-        }), n = at.post({
+        const a = new FormData();
+        a.append(this.config.field ?? "image", t), this.config.additionalRequestData && Object.entries(this.config.additionalRequestData).forEach(([h, l]) => {
+          a.append(h, l);
+        }), n = lt.post({
           url: this.config.endpoints.byFile,
-          data: r,
-          type: at.contentType.JSON,
+          data: a,
+          type: lt.contentType.JSON,
           headers: this.config.additionalRequestHeaders
         }).then((h) => h.body);
       }
-      n.then((r) => this.onUpload(r)).catch((r) => this.onError(r));
+      n.then((a) => this.onUpload(a)).catch((a) => this.onError(a));
     }, i.onerror = () => {
       this.onError("Failed to read file");
     }, i.readAsDataURL(t);
@@ -1024,104 +1024,104 @@ class Be {
  *
  * Date: 2024-04-21T07:43:05.335Z
  */
-function qt(s, t) {
-  var e = Object.keys(s);
+function Kt(r, t) {
+  var e = Object.keys(r);
   if (Object.getOwnPropertySymbols) {
-    var i = Object.getOwnPropertySymbols(s);
+    var i = Object.getOwnPropertySymbols(r);
     t && (i = i.filter(function(o) {
-      return Object.getOwnPropertyDescriptor(s, o).enumerable;
+      return Object.getOwnPropertyDescriptor(r, o).enumerable;
     })), e.push.apply(e, i);
   }
   return e;
 }
-function ue(s) {
+function ve(r) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? qt(Object(e), !0).forEach(function(i) {
-      Ue(s, i, e[i]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(s, Object.getOwnPropertyDescriptors(e)) : qt(Object(e)).forEach(function(i) {
-      Object.defineProperty(s, i, Object.getOwnPropertyDescriptor(e, i));
+    t % 2 ? Kt(Object(e), !0).forEach(function(i) {
+      ze(r, i, e[i]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(e)) : Kt(Object(e)).forEach(function(i) {
+      Object.defineProperty(r, i, Object.getOwnPropertyDescriptor(e, i));
     });
   }
-  return s;
+  return r;
 }
-function Ne(s, t) {
-  if (typeof s != "object" || !s) return s;
-  var e = s[Symbol.toPrimitive];
+function He(r, t) {
+  if (typeof r != "object" || !r) return r;
+  var e = r[Symbol.toPrimitive];
   if (e !== void 0) {
-    var i = e.call(s, t);
+    var i = e.call(r, t);
     if (typeof i != "object") return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return String(s);
+  return String(r);
 }
-function pe(s) {
-  var t = Ne(s, "string");
+function ye(r) {
+  var t = He(r, "string");
   return typeof t == "symbol" ? t : t + "";
 }
-function Mt(s) {
+function Pt(r) {
   "@babel/helpers - typeof";
-  return Mt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
+  return Pt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
     return typeof t;
   } : function(t) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-  }, Mt(s);
+  }, Pt(r);
 }
-function Ge(s, t) {
-  if (!(s instanceof t))
+function Fe(r, t) {
+  if (!(r instanceof t))
     throw new TypeError("Cannot call a class as a function");
 }
-function Yt(s, t) {
+function Qt(r, t) {
   for (var e = 0; e < t.length; e++) {
     var i = t[e];
-    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(s, pe(i.key), i);
+    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, ye(i.key), i);
   }
 }
-function He(s, t, e) {
-  return t && Yt(s.prototype, t), e && Yt(s, e), Object.defineProperty(s, "prototype", {
+function je(r, t, e) {
+  return t && Qt(r.prototype, t), e && Qt(r, e), Object.defineProperty(r, "prototype", {
     writable: !1
-  }), s;
+  }), r;
 }
-function Ue(s, t, e) {
-  return t = pe(t), t in s ? Object.defineProperty(s, t, {
+function ze(r, t, e) {
+  return t = ye(t), t in r ? Object.defineProperty(r, t, {
     value: e,
     enumerable: !0,
     configurable: !0,
     writable: !0
-  }) : s[t] = e, s;
+  }) : r[t] = e, r;
 }
-function fe(s) {
-  return Fe(s) || je(s) || ze(s) || $e();
+function Ce(r) {
+  return $e(r) || We(r) || qe(r) || Xe();
 }
-function Fe(s) {
-  if (Array.isArray(s)) return Ot(s);
+function $e(r) {
+  if (Array.isArray(r)) return Lt(r);
 }
-function je(s) {
-  if (typeof Symbol < "u" && s[Symbol.iterator] != null || s["@@iterator"] != null) return Array.from(s);
+function We(r) {
+  if (typeof Symbol < "u" && r[Symbol.iterator] != null || r["@@iterator"] != null) return Array.from(r);
 }
-function ze(s, t) {
-  if (s) {
-    if (typeof s == "string") return Ot(s, t);
-    var e = Object.prototype.toString.call(s).slice(8, -1);
-    if (e === "Object" && s.constructor && (e = s.constructor.name), e === "Map" || e === "Set") return Array.from(s);
-    if (e === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)) return Ot(s, t);
+function qe(r, t) {
+  if (r) {
+    if (typeof r == "string") return Lt(r, t);
+    var e = Object.prototype.toString.call(r).slice(8, -1);
+    if (e === "Object" && r.constructor && (e = r.constructor.name), e === "Map" || e === "Set") return Array.from(r);
+    if (e === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)) return Lt(r, t);
   }
 }
-function Ot(s, t) {
-  (t == null || t > s.length) && (t = s.length);
-  for (var e = 0, i = new Array(t); e < t; e++) i[e] = s[e];
+function Lt(r, t) {
+  (t == null || t > r.length) && (t = r.length);
+  for (var e = 0, i = new Array(t); e < t; e++) i[e] = r[e];
   return i;
 }
-function $e() {
+function Xe() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var It = typeof window < "u" && typeof window.document < "u", X = It ? window : {}, Ut = It && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, Ft = It ? "PointerEvent" in X : !1, R = "cropper", jt = "all", me = "crop", ge = "move", ve = "zoom", et = "e", it = "w", rt = "s", Y = "n", ut = "ne", pt = "nw", ft = "se", mt = "sw", Tt = "".concat(R, "-crop"), Vt = "".concat(R, "-disabled"), N = "".concat(R, "-hidden"), Jt = "".concat(R, "-hide"), We = "".concat(R, "-invisible"), xt = "".concat(R, "-modal"), kt = "".concat(R, "-move"), vt = "".concat(R, "Action"), bt = "".concat(R, "Preview"), zt = "crop", ye = "move", Ce = "none", Pt = "crop", Lt = "cropend", Bt = "cropmove", Nt = "cropstart", Zt = "dblclick", Xe = Ut ? "touchstart" : "mousedown", qe = Ut ? "touchmove" : "mousemove", Ye = Ut ? "touchend touchcancel" : "mouseup", Kt = Ft ? "pointerdown" : Xe, Qt = Ft ? "pointermove" : qe, te = Ft ? "pointerup pointercancel" : Ye, ee = "ready", ie = "resize", ne = "wheel", Gt = "zoom", oe = "image/jpeg", Ve = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, Je = /^data:/, Ze = /^data:image\/jpeg;base64,/, Ke = /^img|canvas$/i, be = 200, we = 100, ae = {
+var Et = typeof window < "u" && typeof window.document < "u", W = Et ? window : {}, $t = Et && W.document.documentElement ? "ontouchstart" in W.document.documentElement : !1, Wt = Et ? "PointerEvent" in W : !1, R = "cropper", qt = "all", be = "crop", we = "move", Se = "zoom", et = "e", it = "w", ht = "s", Z = "n", ft = "ne", mt = "nw", gt = "se", vt = "sw", Bt = "".concat(R, "-crop"), te = "".concat(R, "-disabled"), B = "".concat(R, "-hidden"), ee = "".concat(R, "-hide"), Ye = "".concat(R, "-invisible"), At = "".concat(R, "-modal"), Gt = "".concat(R, "-move"), Ct = "".concat(R, "Action"), xt = "".concat(R, "Preview"), Xt = "crop", xe = "move", _e = "none", Nt = "crop", Ut = "cropend", Ht = "cropmove", Ft = "cropstart", ie = "dblclick", Ve = $t ? "touchstart" : "mousedown", Je = $t ? "touchmove" : "mousemove", Ze = $t ? "touchend touchcancel" : "mouseup", ne = Wt ? "pointerdown" : Ve, oe = Wt ? "pointermove" : Je, se = Wt ? "pointerup pointercancel" : Ze, ae = "ready", re = "resize", le = "wheel", jt = "zoom", he = "image/jpeg", Ke = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, Qe = /^data:/, ti = /^data:image\/jpeg;base64,/, ei = /^img|canvas$/i, Ie = 200, Ae = 100, ce = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
   // Define the dragging mode of the cropper
-  dragMode: zt,
+  dragMode: Xt,
   // 'crop', 'move' or 'none'
   // Define the initial aspect ratio of the crop box
   initialAspectRatio: NaN,
@@ -1178,8 +1178,8 @@ var It = typeof window < "u" && typeof window.document < "u", X = It ? window : 
   minCanvasHeight: 0,
   minCropBoxWidth: 0,
   minCropBoxHeight: 0,
-  minContainerWidth: be,
-  minContainerHeight: we,
+  minContainerWidth: Ie,
+  minContainerHeight: Ae,
   // Shortcuts of events
   ready: null,
   cropstart: null,
@@ -1187,142 +1187,142 @@ var It = typeof window < "u" && typeof window.document < "u", X = It ? window : 
   cropend: null,
   crop: null,
   zoom: null
-}, Qe = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', ti = Number.isNaN || X.isNaN;
-function E(s) {
-  return typeof s == "number" && !ti(s);
+}, ii = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', ni = Number.isNaN || W.isNaN;
+function A(r) {
+  return typeof r == "number" && !ni(r);
 }
-var re = function(t) {
+var de = function(t) {
   return t > 0 && t < 1 / 0;
 };
-function Et(s) {
-  return typeof s > "u";
+function Tt(r) {
+  return typeof r > "u";
 }
-function nt(s) {
-  return Mt(s) === "object" && s !== null;
+function nt(r) {
+  return Pt(r) === "object" && r !== null;
 }
-var ei = Object.prototype.hasOwnProperty;
-function st(s) {
-  if (!nt(s))
+var oi = Object.prototype.hasOwnProperty;
+function ct(r) {
+  if (!nt(r))
     return !1;
   try {
-    var t = s.constructor, e = t.prototype;
-    return t && e && ei.call(e, "isPrototypeOf");
+    var t = r.constructor, e = t.prototype;
+    return t && e && oi.call(e, "isPrototypeOf");
   } catch {
     return !1;
   }
 }
-function B(s) {
-  return typeof s == "function";
+function L(r) {
+  return typeof r == "function";
 }
-var ii = Array.prototype.slice;
-function Se(s) {
-  return Array.from ? Array.from(s) : ii.call(s);
+var si = Array.prototype.slice;
+function Ee(r) {
+  return Array.from ? Array.from(r) : si.call(r);
 }
-function M(s, t) {
-  return s && B(t) && (Array.isArray(s) || E(s.length) ? Se(s).forEach(function(e, i) {
-    t.call(s, e, i, s);
-  }) : nt(s) && Object.keys(s).forEach(function(e) {
-    t.call(s, s[e], e, s);
-  })), s;
+function k(r, t) {
+  return r && L(t) && (Array.isArray(r) || A(r.length) ? Ee(r).forEach(function(e, i) {
+    t.call(r, e, i, r);
+  }) : nt(r) && Object.keys(r).forEach(function(e) {
+    t.call(r, r[e], e, r);
+  })), r;
 }
 var D = Object.assign || function(t) {
   for (var e = arguments.length, i = new Array(e > 1 ? e - 1 : 0), o = 1; o < e; o++)
     i[o - 1] = arguments[o];
   return nt(t) && i.length > 0 && i.forEach(function(n) {
-    nt(n) && Object.keys(n).forEach(function(a) {
-      t[a] = n[a];
+    nt(n) && Object.keys(n).forEach(function(s) {
+      t[s] = n[s];
     });
   }), t;
-}, ni = /\.\d*(?:0|9){12}\d*$/;
-function ht(s) {
+}, ai = /\.\d*(?:0|9){12}\d*$/;
+function ut(r) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
-  return ni.test(s) ? Math.round(s * t) / t : s;
+  return ai.test(r) ? Math.round(r * t) / t : r;
 }
-var oi = /^width|height|left|top|marginLeft|marginTop$/;
-function J(s, t) {
-  var e = s.style;
-  M(t, function(i, o) {
-    oi.test(o) && E(i) && (i = "".concat(i, "px")), e[o] = i;
+var ri = /^width|height|left|top|marginLeft|marginTop$/;
+function Q(r, t) {
+  var e = r.style;
+  k(t, function(i, o) {
+    ri.test(o) && A(i) && (i = "".concat(i, "px")), e[o] = i;
   });
 }
-function ai(s, t) {
-  return s.classList ? s.classList.contains(t) : s.className.indexOf(t) > -1;
+function li(r, t) {
+  return r.classList ? r.classList.contains(t) : r.className.indexOf(t) > -1;
 }
-function k(s, t) {
+function M(r, t) {
   if (t) {
-    if (E(s.length)) {
-      M(s, function(i) {
-        k(i, t);
+    if (A(r.length)) {
+      k(r, function(i) {
+        M(i, t);
       });
       return;
     }
-    if (s.classList) {
-      s.classList.add(t);
+    if (r.classList) {
+      r.classList.add(t);
       return;
     }
-    var e = s.className.trim();
-    e ? e.indexOf(t) < 0 && (s.className = "".concat(e, " ").concat(t)) : s.className = t;
+    var e = r.className.trim();
+    e ? e.indexOf(t) < 0 && (r.className = "".concat(e, " ").concat(t)) : r.className = t;
   }
 }
-function W(s, t) {
+function $(r, t) {
   if (t) {
-    if (E(s.length)) {
-      M(s, function(e) {
-        W(e, t);
+    if (A(r.length)) {
+      k(r, function(e) {
+        $(e, t);
       });
       return;
     }
-    if (s.classList) {
-      s.classList.remove(t);
+    if (r.classList) {
+      r.classList.remove(t);
       return;
     }
-    s.className.indexOf(t) >= 0 && (s.className = s.className.replace(t, ""));
+    r.className.indexOf(t) >= 0 && (r.className = r.className.replace(t, ""));
   }
 }
-function lt(s, t, e) {
+function dt(r, t, e) {
   if (t) {
-    if (E(s.length)) {
-      M(s, function(i) {
-        lt(i, t, e);
+    if (A(r.length)) {
+      k(r, function(i) {
+        dt(i, t, e);
       });
       return;
     }
-    e ? k(s, t) : W(s, t);
+    e ? M(r, t) : $(r, t);
   }
 }
-var ri = /([a-z\d])([A-Z])/g;
-function $t(s) {
-  return s.replace(ri, "$1-$2").toLowerCase();
+var hi = /([a-z\d])([A-Z])/g;
+function Yt(r) {
+  return r.replace(hi, "$1-$2").toLowerCase();
 }
-function Ht(s, t) {
-  return nt(s[t]) ? s[t] : s.dataset ? s.dataset[t] : s.getAttribute("data-".concat($t(t)));
+function zt(r, t) {
+  return nt(r[t]) ? r[t] : r.dataset ? r.dataset[t] : r.getAttribute("data-".concat(Yt(t)));
 }
-function yt(s, t, e) {
-  nt(e) ? s[t] = e : s.dataset ? s.dataset[t] = e : s.setAttribute("data-".concat($t(t)), e);
+function bt(r, t, e) {
+  nt(e) ? r[t] = e : r.dataset ? r.dataset[t] = e : r.setAttribute("data-".concat(Yt(t)), e);
 }
-function si(s, t) {
-  if (nt(s[t]))
+function ci(r, t) {
+  if (nt(r[t]))
     try {
-      delete s[t];
+      delete r[t];
     } catch {
-      s[t] = void 0;
+      r[t] = void 0;
     }
-  else if (s.dataset)
+  else if (r.dataset)
     try {
-      delete s.dataset[t];
+      delete r.dataset[t];
     } catch {
-      s.dataset[t] = void 0;
+      r.dataset[t] = void 0;
     }
   else
-    s.removeAttribute("data-".concat($t(t)));
+    r.removeAttribute("data-".concat(Yt(t)));
 }
-var xe = /\s\s*/, Ie = function() {
-  var s = !1;
-  if (It) {
+var Re = /\s\s*/, De = function() {
+  var r = !1;
+  if (Et) {
     var t = !1, e = function() {
     }, i = Object.defineProperty({}, "once", {
       get: function() {
-        return s = !0, t;
+        return r = !0, t;
       },
       /**
        * This setter can fix a `TypeError` in strict mode
@@ -1333,186 +1333,186 @@ var xe = /\s\s*/, Ie = function() {
         t = n;
       }
     });
-    X.addEventListener("test", e, i), X.removeEventListener("test", e, i);
+    W.addEventListener("test", e, i), W.removeEventListener("test", e, i);
   }
-  return s;
+  return r;
 }();
-function z(s, t, e) {
+function j(r, t, e) {
   var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, o = e;
-  t.trim().split(xe).forEach(function(n) {
-    if (!Ie) {
-      var a = s.listeners;
-      a && a[n] && a[n][e] && (o = a[n][e], delete a[n][e], Object.keys(a[n]).length === 0 && delete a[n], Object.keys(a).length === 0 && delete s.listeners);
+  t.trim().split(Re).forEach(function(n) {
+    if (!De) {
+      var s = r.listeners;
+      s && s[n] && s[n][e] && (o = s[n][e], delete s[n][e], Object.keys(s[n]).length === 0 && delete s[n], Object.keys(s).length === 0 && delete r.listeners);
     }
-    s.removeEventListener(n, o, i);
+    r.removeEventListener(n, o, i);
   });
 }
-function U(s, t, e) {
+function H(r, t, e) {
   var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, o = e;
-  t.trim().split(xe).forEach(function(n) {
-    if (i.once && !Ie) {
-      var a = s.listeners, r = a === void 0 ? {} : a;
+  t.trim().split(Re).forEach(function(n) {
+    if (i.once && !De) {
+      var s = r.listeners, a = s === void 0 ? {} : s;
       o = function() {
-        delete r[n][e], s.removeEventListener(n, o, i);
-        for (var l = arguments.length, d = new Array(l), c = 0; c < l; c++)
-          d[c] = arguments[c];
-        e.apply(s, d);
-      }, r[n] || (r[n] = {}), r[n][e] && s.removeEventListener(n, r[n][e], i), r[n][e] = o, s.listeners = r;
+        delete a[n][e], r.removeEventListener(n, o, i);
+        for (var l = arguments.length, c = new Array(l), d = 0; d < l; d++)
+          c[d] = arguments[d];
+        e.apply(r, c);
+      }, a[n] || (a[n] = {}), a[n][e] && r.removeEventListener(n, a[n][e], i), a[n][e] = o, r.listeners = a;
     }
-    s.addEventListener(n, o, i);
+    r.addEventListener(n, o, i);
   });
 }
-function ct(s, t, e) {
+function pt(r, t, e) {
   var i;
-  return B(Event) && B(CustomEvent) ? i = new CustomEvent(t, {
+  return L(Event) && L(CustomEvent) ? i = new CustomEvent(t, {
     detail: e,
     bubbles: !0,
     cancelable: !0
-  }) : (i = document.createEvent("CustomEvent"), i.initCustomEvent(t, !0, !0, e)), s.dispatchEvent(i);
+  }) : (i = document.createEvent("CustomEvent"), i.initCustomEvent(t, !0, !0, e)), r.dispatchEvent(i);
 }
-function _e(s) {
-  var t = s.getBoundingClientRect();
+function Te(r) {
+  var t = r.getBoundingClientRect();
   return {
     left: t.left + (window.pageXOffset - document.documentElement.clientLeft),
     top: t.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
-var At = X.location, li = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
-function se(s) {
-  var t = s.match(li);
-  return t !== null && (t[1] !== At.protocol || t[2] !== At.hostname || t[3] !== At.port);
+var kt = W.location, di = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
+function ue(r) {
+  var t = r.match(di);
+  return t !== null && (t[1] !== kt.protocol || t[2] !== kt.hostname || t[3] !== kt.port);
 }
-function le(s) {
+function pe(r) {
   var t = "timestamp=".concat((/* @__PURE__ */ new Date()).getTime());
-  return s + (s.indexOf("?") === -1 ? "?" : "&") + t;
+  return r + (r.indexOf("?") === -1 ? "?" : "&") + t;
 }
-function gt(s) {
-  var t = s.rotate, e = s.scaleX, i = s.scaleY, o = s.translateX, n = s.translateY, a = [];
-  E(o) && o !== 0 && a.push("translateX(".concat(o, "px)")), E(n) && n !== 0 && a.push("translateY(".concat(n, "px)")), E(t) && t !== 0 && a.push("rotate(".concat(t, "deg)")), E(e) && e !== 1 && a.push("scaleX(".concat(e, ")")), E(i) && i !== 1 && a.push("scaleY(".concat(i, ")"));
-  var r = a.length ? a.join(" ") : "none";
+function yt(r) {
+  var t = r.rotate, e = r.scaleX, i = r.scaleY, o = r.translateX, n = r.translateY, s = [];
+  A(o) && o !== 0 && s.push("translateX(".concat(o, "px)")), A(n) && n !== 0 && s.push("translateY(".concat(n, "px)")), A(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), A(e) && e !== 1 && s.push("scaleX(".concat(e, ")")), A(i) && i !== 1 && s.push("scaleY(".concat(i, ")"));
+  var a = s.length ? s.join(" ") : "none";
   return {
-    WebkitTransform: r,
-    msTransform: r,
-    transform: r
+    WebkitTransform: a,
+    msTransform: a,
+    transform: a
   };
 }
-function hi(s) {
-  var t = ue({}, s), e = 0;
-  return M(s, function(i, o) {
-    delete t[o], M(t, function(n) {
-      var a = Math.abs(i.startX - n.startX), r = Math.abs(i.startY - n.startY), h = Math.abs(i.endX - n.endX), l = Math.abs(i.endY - n.endY), d = Math.sqrt(a * a + r * r), c = Math.sqrt(h * h + l * l), p = (c - d) / d;
+function ui(r) {
+  var t = ve({}, r), e = 0;
+  return k(r, function(i, o) {
+    delete t[o], k(t, function(n) {
+      var s = Math.abs(i.startX - n.startX), a = Math.abs(i.startY - n.startY), h = Math.abs(i.endX - n.endX), l = Math.abs(i.endY - n.endY), c = Math.sqrt(s * s + a * a), d = Math.sqrt(h * h + l * l), p = (d - c) / c;
       Math.abs(p) > Math.abs(e) && (e = p);
     });
   }), e;
 }
-function wt(s, t) {
-  var e = s.pageX, i = s.pageY, o = {
+function _t(r, t) {
+  var e = r.pageX, i = r.pageY, o = {
     endX: e,
     endY: i
   };
-  return t ? o : ue({
+  return t ? o : ve({
     startX: e,
     startY: i
   }, o);
 }
-function ci(s) {
+function pi(r) {
   var t = 0, e = 0, i = 0;
-  return M(s, function(o) {
-    var n = o.startX, a = o.startY;
-    t += n, e += a, i += 1;
+  return k(r, function(o) {
+    var n = o.startX, s = o.startY;
+    t += n, e += s, i += 1;
   }), t /= i, e /= i, {
     pageX: t,
     pageY: e
   };
 }
-function Z(s) {
-  var t = s.aspectRatio, e = s.height, i = s.width, o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", n = re(i), a = re(e);
-  if (n && a) {
-    var r = e * t;
-    o === "contain" && r > i || o === "cover" && r < i ? e = i / t : i = e * t;
-  } else n ? e = i / t : a && (i = e * t);
+function tt(r) {
+  var t = r.aspectRatio, e = r.height, i = r.width, o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", n = de(i), s = de(e);
+  if (n && s) {
+    var a = e * t;
+    o === "contain" && a > i || o === "cover" && a < i ? e = i / t : i = e * t;
+  } else n ? e = i / t : s && (i = e * t);
   return {
     width: i,
     height: e
   };
 }
-function di(s) {
-  var t = s.width, e = s.height, i = s.degree;
+function fi(r) {
+  var t = r.width, e = r.height, i = r.degree;
   if (i = Math.abs(i) % 180, i === 90)
     return {
       width: e,
       height: t
     };
-  var o = i % 90 * Math.PI / 180, n = Math.sin(o), a = Math.cos(o), r = t * a + e * n, h = t * n + e * a;
+  var o = i % 90 * Math.PI / 180, n = Math.sin(o), s = Math.cos(o), a = t * s + e * n, h = t * n + e * s;
   return i > 90 ? {
     width: h,
-    height: r
+    height: a
   } : {
-    width: r,
+    width: a,
     height: h
   };
 }
-function ui(s, t, e, i) {
-  var o = t.aspectRatio, n = t.naturalWidth, a = t.naturalHeight, r = t.rotate, h = r === void 0 ? 0 : r, l = t.scaleX, d = l === void 0 ? 1 : l, c = t.scaleY, p = c === void 0 ? 1 : c, C = e.aspectRatio, b = e.naturalWidth, u = e.naturalHeight, f = i.fillColor, g = f === void 0 ? "transparent" : f, v = i.imageSmoothingEnabled, w = v === void 0 ? !0 : v, x = i.imageSmoothingQuality, S = x === void 0 ? "low" : x, m = i.maxWidth, I = m === void 0 ? 1 / 0 : m, _ = i.maxHeight, A = _ === void 0 ? 1 / 0 : _, O = i.minWidth, F = O === void 0 ? 0 : O, H = i.minHeight, G = H === void 0 ? 0 : H, P = document.createElement("canvas"), T = P.getContext("2d"), L = Z({
+function mi(r, t, e, i) {
+  var o = t.aspectRatio, n = t.naturalWidth, s = t.naturalHeight, a = t.rotate, h = a === void 0 ? 0 : a, l = t.scaleX, c = l === void 0 ? 1 : l, d = t.scaleY, p = d === void 0 ? 1 : d, C = e.aspectRatio, b = e.naturalWidth, u = e.naturalHeight, f = i.fillColor, y = f === void 0 ? "transparent" : f, v = i.imageSmoothingEnabled, w = v === void 0 ? !0 : v, x = i.imageSmoothingQuality, S = x === void 0 ? "low" : x, m = i.maxWidth, _ = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, O = i.minWidth, G = O === void 0 ? 0 : O, N = i.minHeight, U = N === void 0 ? 0 : N, P = document.createElement("canvas"), T = P.getContext("2d"), F = tt({
     aspectRatio: C,
-    width: I,
-    height: A
-  }), q = Z({
+    width: _,
+    height: E
+  }), q = tt({
     aspectRatio: C,
-    width: F,
-    height: G
-  }, "cover"), K = Math.min(L.width, Math.max(q.width, b)), j = Math.min(L.height, Math.max(q.height, u)), Q = Z({
+    width: G,
+    height: U
+  }, "cover"), V = Math.min(F.width, Math.max(q.width, b)), J = Math.min(F.height, Math.max(q.height, u)), ot = tt({
     aspectRatio: o,
-    width: I,
-    height: A
-  }), tt = Z({
+    width: _,
+    height: E
+  }), X = tt({
     aspectRatio: o,
-    width: F,
-    height: G
-  }, "cover"), dt = Math.min(Q.width, Math.max(tt.width, n)), ot = Math.min(Q.height, Math.max(tt.height, a)), Re = [-dt / 2, -ot / 2, dt, ot];
-  return P.width = ht(K), P.height = ht(j), T.fillStyle = g, T.fillRect(0, 0, K, j), T.save(), T.translate(K / 2, j / 2), T.rotate(h * Math.PI / 180), T.scale(d, p), T.imageSmoothingEnabled = w, T.imageSmoothingQuality = S, T.drawImage.apply(T, [s].concat(fe(Re.map(function(De) {
-    return Math.floor(ht(De));
+    width: G,
+    height: U
+  }, "cover"), st = Math.min(ot.width, Math.max(X.width, n)), at = Math.min(ot.height, Math.max(X.height, s)), Y = [-st / 2, -at / 2, st, at];
+  return P.width = ut(V), P.height = ut(J), T.fillStyle = y, T.fillRect(0, 0, V, J), T.save(), T.translate(V / 2, J / 2), T.rotate(h * Math.PI / 180), T.scale(c, p), T.imageSmoothingEnabled = w, T.imageSmoothingQuality = S, T.drawImage.apply(T, [r].concat(Ce(Y.map(function(rt) {
+    return Math.floor(ut(rt));
   })))), T.restore(), P;
 }
-var Ee = String.fromCharCode;
-function pi(s, t, e) {
+var ke = String.fromCharCode;
+function gi(r, t, e) {
   var i = "";
   e += t;
   for (var o = t; o < e; o += 1)
-    i += Ee(s.getUint8(o));
+    i += ke(r.getUint8(o));
   return i;
 }
-var fi = /^data:.*,/;
-function mi(s) {
-  var t = s.replace(fi, ""), e = atob(t), i = new ArrayBuffer(e.length), o = new Uint8Array(i);
-  return M(o, function(n, a) {
-    o[a] = e.charCodeAt(a);
+var vi = /^data:.*,/;
+function yi(r) {
+  var t = r.replace(vi, ""), e = atob(t), i = new ArrayBuffer(e.length), o = new Uint8Array(i);
+  return k(o, function(n, s) {
+    o[s] = e.charCodeAt(s);
   }), i;
 }
-function gi(s, t) {
-  for (var e = [], i = 8192, o = new Uint8Array(s); o.length > 0; )
-    e.push(Ee.apply(null, Se(o.subarray(0, i)))), o = o.subarray(i);
+function Ci(r, t) {
+  for (var e = [], i = 8192, o = new Uint8Array(r); o.length > 0; )
+    e.push(ke.apply(null, Ee(o.subarray(0, i)))), o = o.subarray(i);
   return "data:".concat(t, ";base64,").concat(btoa(e.join("")));
 }
-function vi(s) {
-  var t = new DataView(s), e;
+function bi(r) {
+  var t = new DataView(r), e;
   try {
     var i, o, n;
     if (t.getUint8(0) === 255 && t.getUint8(1) === 216)
-      for (var a = t.byteLength, r = 2; r + 1 < a; ) {
-        if (t.getUint8(r) === 255 && t.getUint8(r + 1) === 225) {
-          o = r;
+      for (var s = t.byteLength, a = 2; a + 1 < s; ) {
+        if (t.getUint8(a) === 255 && t.getUint8(a + 1) === 225) {
+          o = a;
           break;
         }
-        r += 1;
+        a += 1;
       }
     if (o) {
       var h = o + 4, l = o + 10;
-      if (pi(t, h, 4) === "Exif") {
-        var d = t.getUint16(l);
-        if (i = d === 18761, (i || d === 19789) && t.getUint16(l + 2, i) === 42) {
-          var c = t.getUint32(l + 4, i);
-          c >= 8 && (n = l + c);
+      if (gi(t, h, 4) === "Exif") {
+        var c = t.getUint16(l);
+        if (i = c === 18761, (i || c === 19789) && t.getUint16(l + 2, i) === 42) {
+          var d = t.getUint32(l + 4, i);
+          d >= 8 && (n = l + d);
         }
       }
     }
@@ -1529,9 +1529,9 @@ function vi(s) {
   }
   return e;
 }
-function yi(s) {
+function wi(r) {
   var t = 0, e = 1, i = 1;
-  switch (s) {
+  switch (r) {
     case 2:
       e = -1;
       break;
@@ -1560,68 +1560,68 @@ function yi(s) {
     scaleY: i
   };
 }
-var Ci = {
+var Si = {
   render: function() {
     this.initContainer(), this.initCanvas(), this.initCropBox(), this.renderCanvas(), this.cropped && this.renderCropBox();
   },
   initContainer: function() {
-    var t = this.element, e = this.options, i = this.container, o = this.cropper, n = Number(e.minContainerWidth), a = Number(e.minContainerHeight);
-    k(o, N), W(t, N);
-    var r = {
-      width: Math.max(i.offsetWidth, n >= 0 ? n : be),
-      height: Math.max(i.offsetHeight, a >= 0 ? a : we)
+    var t = this.element, e = this.options, i = this.container, o = this.cropper, n = Number(e.minContainerWidth), s = Number(e.minContainerHeight);
+    M(o, B), $(t, B);
+    var a = {
+      width: Math.max(i.offsetWidth, n >= 0 ? n : Ie),
+      height: Math.max(i.offsetHeight, s >= 0 ? s : Ae)
     };
-    this.containerData = r, J(o, {
-      width: r.width,
-      height: r.height
-    }), k(t, N), W(o, N);
+    this.containerData = a, Q(o, {
+      width: a.width,
+      height: a.height
+    }), M(t, B), $(o, B);
   },
   // Canvas (image wrapper)
   initCanvas: function() {
-    var t = this.containerData, e = this.imageData, i = this.options.viewMode, o = Math.abs(e.rotate) % 180 === 90, n = o ? e.naturalHeight : e.naturalWidth, a = o ? e.naturalWidth : e.naturalHeight, r = n / a, h = t.width, l = t.height;
-    t.height * r > t.width ? i === 3 ? h = t.height * r : l = t.width / r : i === 3 ? l = t.width / r : h = t.height * r;
-    var d = {
-      aspectRatio: r,
+    var t = this.containerData, e = this.imageData, i = this.options.viewMode, o = Math.abs(e.rotate) % 180 === 90, n = o ? e.naturalHeight : e.naturalWidth, s = o ? e.naturalWidth : e.naturalHeight, a = n / s, h = t.width, l = t.height;
+    t.height * a > t.width ? i === 3 ? h = t.height * a : l = t.width / a : i === 3 ? l = t.width / a : h = t.height * a;
+    var c = {
+      aspectRatio: a,
       naturalWidth: n,
-      naturalHeight: a,
+      naturalHeight: s,
       width: h,
       height: l
     };
-    this.canvasData = d, this.limited = i === 1 || i === 2, this.limitCanvas(!0, !0), d.width = Math.min(Math.max(d.width, d.minWidth), d.maxWidth), d.height = Math.min(Math.max(d.height, d.minHeight), d.maxHeight), d.left = (t.width - d.width) / 2, d.top = (t.height - d.height) / 2, d.oldLeft = d.left, d.oldTop = d.top, this.initialCanvasData = D({}, d);
+    this.canvasData = c, this.limited = i === 1 || i === 2, this.limitCanvas(!0, !0), c.width = Math.min(Math.max(c.width, c.minWidth), c.maxWidth), c.height = Math.min(Math.max(c.height, c.minHeight), c.maxHeight), c.left = (t.width - c.width) / 2, c.top = (t.height - c.height) / 2, c.oldLeft = c.left, c.oldTop = c.top, this.initialCanvasData = D({}, c);
   },
   limitCanvas: function(t, e) {
-    var i = this.options, o = this.containerData, n = this.canvasData, a = this.cropBoxData, r = i.viewMode, h = n.aspectRatio, l = this.cropped && a;
+    var i = this.options, o = this.containerData, n = this.canvasData, s = this.cropBoxData, a = i.viewMode, h = n.aspectRatio, l = this.cropped && s;
     if (t) {
-      var d = Number(i.minCanvasWidth) || 0, c = Number(i.minCanvasHeight) || 0;
-      r > 1 ? (d = Math.max(d, o.width), c = Math.max(c, o.height), r === 3 && (c * h > d ? d = c * h : c = d / h)) : r > 0 && (d ? d = Math.max(d, l ? a.width : 0) : c ? c = Math.max(c, l ? a.height : 0) : l && (d = a.width, c = a.height, c * h > d ? d = c * h : c = d / h));
-      var p = Z({
+      var c = Number(i.minCanvasWidth) || 0, d = Number(i.minCanvasHeight) || 0;
+      a > 1 ? (c = Math.max(c, o.width), d = Math.max(d, o.height), a === 3 && (d * h > c ? c = d * h : d = c / h)) : a > 0 && (c ? c = Math.max(c, l ? s.width : 0) : d ? d = Math.max(d, l ? s.height : 0) : l && (c = s.width, d = s.height, d * h > c ? c = d * h : d = c / h));
+      var p = tt({
         aspectRatio: h,
-        width: d,
-        height: c
+        width: c,
+        height: d
       });
-      d = p.width, c = p.height, n.minWidth = d, n.minHeight = c, n.maxWidth = 1 / 0, n.maxHeight = 1 / 0;
+      c = p.width, d = p.height, n.minWidth = c, n.minHeight = d, n.maxWidth = 1 / 0, n.maxHeight = 1 / 0;
     }
     if (e)
-      if (r > (l ? 0 : 1)) {
+      if (a > (l ? 0 : 1)) {
         var C = o.width - n.width, b = o.height - n.height;
-        n.minLeft = Math.min(0, C), n.minTop = Math.min(0, b), n.maxLeft = Math.max(0, C), n.maxTop = Math.max(0, b), l && this.limited && (n.minLeft = Math.min(a.left, a.left + (a.width - n.width)), n.minTop = Math.min(a.top, a.top + (a.height - n.height)), n.maxLeft = a.left, n.maxTop = a.top, r === 2 && (n.width >= o.width && (n.minLeft = Math.min(0, C), n.maxLeft = Math.max(0, C)), n.height >= o.height && (n.minTop = Math.min(0, b), n.maxTop = Math.max(0, b))));
+        n.minLeft = Math.min(0, C), n.minTop = Math.min(0, b), n.maxLeft = Math.max(0, C), n.maxTop = Math.max(0, b), l && this.limited && (n.minLeft = Math.min(s.left, s.left + (s.width - n.width)), n.minTop = Math.min(s.top, s.top + (s.height - n.height)), n.maxLeft = s.left, n.maxTop = s.top, a === 2 && (n.width >= o.width && (n.minLeft = Math.min(0, C), n.maxLeft = Math.max(0, C)), n.height >= o.height && (n.minTop = Math.min(0, b), n.maxTop = Math.max(0, b))));
       } else
         n.minLeft = -n.width, n.minTop = -n.height, n.maxLeft = o.width, n.maxTop = o.height;
   },
   renderCanvas: function(t, e) {
     var i = this.canvasData, o = this.imageData;
     if (e) {
-      var n = di({
+      var n = fi({
         width: o.naturalWidth * Math.abs(o.scaleX || 1),
         height: o.naturalHeight * Math.abs(o.scaleY || 1),
         degree: o.rotate || 0
-      }), a = n.width, r = n.height, h = i.width * (a / i.naturalWidth), l = i.height * (r / i.naturalHeight);
-      i.left -= (h - i.width) / 2, i.top -= (l - i.height) / 2, i.width = h, i.height = l, i.aspectRatio = a / r, i.naturalWidth = a, i.naturalHeight = r, this.limitCanvas(!0, !1);
+      }), s = n.width, a = n.height, h = i.width * (s / i.naturalWidth), l = i.height * (a / i.naturalHeight);
+      i.left -= (h - i.width) / 2, i.top -= (l - i.height) / 2, i.width = h, i.height = l, i.aspectRatio = s / a, i.naturalWidth = s, i.naturalHeight = a, this.limitCanvas(!0, !1);
     }
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, J(this.canvas, D({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, Q(this.canvas, D({
       width: i.width,
       height: i.height
-    }, gt({
+    }, yt({
       translateX: i.left,
       translateY: i.top
     }))), this.renderImage(t), this.cropped && this.limited && this.limitCropBox(!0, !0);
@@ -1633,10 +1633,10 @@ var Ci = {
       height: n,
       left: (e.width - o) / 2,
       top: (e.height - n) / 2
-    }), J(this.image, D({
+    }), Q(this.image, D({
       width: i.width,
       height: i.height
-    }, gt(D({
+    }, yt(D({
       translateX: i.left,
       translateY: i.top
     }, i)))), t && this.output();
@@ -1649,34 +1649,34 @@ var Ci = {
     i && (e.height * i > e.width ? n.height = n.width / i : n.width = n.height * i), this.cropBoxData = n, this.limitCropBox(!0, !0), n.width = Math.min(Math.max(n.width, n.minWidth), n.maxWidth), n.height = Math.min(Math.max(n.height, n.minHeight), n.maxHeight), n.width = Math.max(n.minWidth, n.width * o), n.height = Math.max(n.minHeight, n.height * o), n.left = e.left + (e.width - n.width) / 2, n.top = e.top + (e.height - n.height) / 2, n.oldLeft = n.left, n.oldTop = n.top, this.initialCropBoxData = D({}, n);
   },
   limitCropBox: function(t, e) {
-    var i = this.options, o = this.containerData, n = this.canvasData, a = this.cropBoxData, r = this.limited, h = i.aspectRatio;
+    var i = this.options, o = this.containerData, n = this.canvasData, s = this.cropBoxData, a = this.limited, h = i.aspectRatio;
     if (t) {
-      var l = Number(i.minCropBoxWidth) || 0, d = Number(i.minCropBoxHeight) || 0, c = r ? Math.min(o.width, n.width, n.width + n.left, o.width - n.left) : o.width, p = r ? Math.min(o.height, n.height, n.height + n.top, o.height - n.top) : o.height;
-      l = Math.min(l, o.width), d = Math.min(d, o.height), h && (l && d ? d * h > l ? d = l / h : l = d * h : l ? d = l / h : d && (l = d * h), p * h > c ? p = c / h : c = p * h), a.minWidth = Math.min(l, c), a.minHeight = Math.min(d, p), a.maxWidth = c, a.maxHeight = p;
+      var l = Number(i.minCropBoxWidth) || 0, c = Number(i.minCropBoxHeight) || 0, d = a ? Math.min(o.width, n.width, n.width + n.left, o.width - n.left) : o.width, p = a ? Math.min(o.height, n.height, n.height + n.top, o.height - n.top) : o.height;
+      l = Math.min(l, o.width), c = Math.min(c, o.height), h && (l && c ? c * h > l ? c = l / h : l = c * h : l ? c = l / h : c && (l = c * h), p * h > d ? p = d / h : d = p * h), s.minWidth = Math.min(l, d), s.minHeight = Math.min(c, p), s.maxWidth = d, s.maxHeight = p;
     }
-    e && (r ? (a.minLeft = Math.max(0, n.left), a.minTop = Math.max(0, n.top), a.maxLeft = Math.min(o.width, n.left + n.width) - a.width, a.maxTop = Math.min(o.height, n.top + n.height) - a.height) : (a.minLeft = 0, a.minTop = 0, a.maxLeft = o.width - a.width, a.maxTop = o.height - a.height));
+    e && (a ? (s.minLeft = Math.max(0, n.left), s.minTop = Math.max(0, n.top), s.maxLeft = Math.min(o.width, n.left + n.width) - s.width, s.maxTop = Math.min(o.height, n.top + n.height) - s.height) : (s.minLeft = 0, s.minTop = 0, s.maxLeft = o.width - s.width, s.maxTop = o.height - s.height));
   },
   renderCropBox: function() {
     var t = this.options, e = this.containerData, i = this.cropBoxData;
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && yt(this.face, vt, i.width >= e.width && i.height >= e.height ? ge : jt), J(this.cropBox, D({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && bt(this.face, Ct, i.width >= e.width && i.height >= e.height ? we : qt), Q(this.cropBox, D({
       width: i.width,
       height: i.height
-    }, gt({
+    }, yt({
       translateX: i.left,
       translateY: i.top
     }))), this.cropped && this.limited && this.limitCanvas(!0, !0), this.disabled || this.output();
   },
   output: function() {
-    this.preview(), ct(this.element, Pt, this.getData());
+    this.preview(), pt(this.element, Nt, this.getData());
   }
-}, bi = {
+}, xi = {
   initPreview: function() {
-    var t = this.element, e = this.crossOrigin, i = this.options.preview, o = e ? this.crossOriginUrl : this.url, n = t.alt || "The image to preview", a = document.createElement("img");
-    if (e && (a.crossOrigin = e), a.src = o, a.alt = n, this.viewBox.appendChild(a), this.viewBoxImage = a, !!i) {
-      var r = i;
-      typeof i == "string" ? r = t.ownerDocument.querySelectorAll(i) : i.querySelector && (r = [i]), this.previews = r, M(r, function(h) {
+    var t = this.element, e = this.crossOrigin, i = this.options.preview, o = e ? this.crossOriginUrl : this.url, n = t.alt || "The image to preview", s = document.createElement("img");
+    if (e && (s.crossOrigin = e), s.src = o, s.alt = n, this.viewBox.appendChild(s), this.viewBoxImage = s, !!i) {
+      var a = i;
+      typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, k(a, function(h) {
         var l = document.createElement("img");
-        yt(h, bt, {
+        bt(h, xt, {
           width: h.offsetWidth,
           height: h.offsetHeight,
           html: h.innerHTML
@@ -1685,67 +1685,67 @@ var Ci = {
     }
   },
   resetPreview: function() {
-    M(this.previews, function(t) {
-      var e = Ht(t, bt);
-      J(t, {
+    k(this.previews, function(t) {
+      var e = zt(t, xt);
+      Q(t, {
         width: e.width,
         height: e.height
-      }), t.innerHTML = e.html, si(t, bt);
+      }), t.innerHTML = e.html, ci(t, xt);
     });
   },
   preview: function() {
-    var t = this.imageData, e = this.canvasData, i = this.cropBoxData, o = i.width, n = i.height, a = t.width, r = t.height, h = i.left - e.left - t.left, l = i.top - e.top - t.top;
-    !this.cropped || this.disabled || (J(this.viewBoxImage, D({
-      width: a,
-      height: r
-    }, gt(D({
+    var t = this.imageData, e = this.canvasData, i = this.cropBoxData, o = i.width, n = i.height, s = t.width, a = t.height, h = i.left - e.left - t.left, l = i.top - e.top - t.top;
+    !this.cropped || this.disabled || (Q(this.viewBoxImage, D({
+      width: s,
+      height: a
+    }, yt(D({
       translateX: -h,
       translateY: -l
-    }, t)))), M(this.previews, function(d) {
-      var c = Ht(d, bt), p = c.width, C = c.height, b = p, u = C, f = 1;
-      o && (f = p / o, u = n * f), n && u > C && (f = C / n, b = o * f, u = C), J(d, {
+    }, t)))), k(this.previews, function(c) {
+      var d = zt(c, xt), p = d.width, C = d.height, b = p, u = C, f = 1;
+      o && (f = p / o, u = n * f), n && u > C && (f = C / n, b = o * f, u = C), Q(c, {
         width: b,
         height: u
-      }), J(d.getElementsByTagName("img")[0], D({
-        width: a * f,
-        height: r * f
-      }, gt(D({
+      }), Q(c.getElementsByTagName("img")[0], D({
+        width: s * f,
+        height: a * f
+      }, yt(D({
         translateX: -h * f,
         translateY: -l * f
       }, t))));
     }));
   }
-}, wi = {
+}, _i = {
   bind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    B(e.cropstart) && U(t, Nt, e.cropstart), B(e.cropmove) && U(t, Bt, e.cropmove), B(e.cropend) && U(t, Lt, e.cropend), B(e.crop) && U(t, Pt, e.crop), B(e.zoom) && U(t, Gt, e.zoom), U(i, Kt, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && U(i, ne, this.onWheel = this.wheel.bind(this), {
+    L(e.cropstart) && H(t, Ft, e.cropstart), L(e.cropmove) && H(t, Ht, e.cropmove), L(e.cropend) && H(t, Ut, e.cropend), L(e.crop) && H(t, Nt, e.crop), L(e.zoom) && H(t, jt, e.zoom), H(i, ne, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && H(i, le, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && U(i, Zt, this.onDblclick = this.dblclick.bind(this)), U(t.ownerDocument, Qt, this.onCropMove = this.cropMove.bind(this)), U(t.ownerDocument, te, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && U(window, ie, this.onResize = this.resize.bind(this));
+    }), e.toggleDragModeOnDblclick && H(i, ie, this.onDblclick = this.dblclick.bind(this)), H(t.ownerDocument, oe, this.onCropMove = this.cropMove.bind(this)), H(t.ownerDocument, se, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && H(window, re, this.onResize = this.resize.bind(this));
   },
   unbind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    B(e.cropstart) && z(t, Nt, e.cropstart), B(e.cropmove) && z(t, Bt, e.cropmove), B(e.cropend) && z(t, Lt, e.cropend), B(e.crop) && z(t, Pt, e.crop), B(e.zoom) && z(t, Gt, e.zoom), z(i, Kt, this.onCropStart), e.zoomable && e.zoomOnWheel && z(i, ne, this.onWheel, {
+    L(e.cropstart) && j(t, Ft, e.cropstart), L(e.cropmove) && j(t, Ht, e.cropmove), L(e.cropend) && j(t, Ut, e.cropend), L(e.crop) && j(t, Nt, e.crop), L(e.zoom) && j(t, jt, e.zoom), j(i, ne, this.onCropStart), e.zoomable && e.zoomOnWheel && j(i, le, this.onWheel, {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && z(i, Zt, this.onDblclick), z(t.ownerDocument, Qt, this.onCropMove), z(t.ownerDocument, te, this.onCropEnd), e.responsive && z(window, ie, this.onResize);
+    }), e.toggleDragModeOnDblclick && j(i, ie, this.onDblclick), j(t.ownerDocument, oe, this.onCropMove), j(t.ownerDocument, se, this.onCropEnd), e.responsive && j(window, re, this.onResize);
   }
-}, Si = {
+}, Ii = {
   resize: function() {
     if (!this.disabled) {
-      var t = this.options, e = this.container, i = this.containerData, o = e.offsetWidth / i.width, n = e.offsetHeight / i.height, a = Math.abs(o - 1) > Math.abs(n - 1) ? o : n;
-      if (a !== 1) {
-        var r, h;
-        t.restore && (r = this.getCanvasData(), h = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(M(r, function(l, d) {
-          r[d] = l * a;
-        })), this.setCropBoxData(M(h, function(l, d) {
-          h[d] = l * a;
+      var t = this.options, e = this.container, i = this.containerData, o = e.offsetWidth / i.width, n = e.offsetHeight / i.height, s = Math.abs(o - 1) > Math.abs(n - 1) ? o : n;
+      if (s !== 1) {
+        var a, h;
+        t.restore && (a = this.getCanvasData(), h = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(k(a, function(l, c) {
+          a[c] = l * s;
+        })), this.setCropBoxData(k(h, function(l, c) {
+          h[c] = l * s;
         })));
       }
     }
   },
   dblclick: function() {
-    this.disabled || this.options.dragMode === Ce || this.setDragMode(ai(this.dragBox, Tt) ? ye : zt);
+    this.disabled || this.options.dragMode === _e || this.setDragMode(li(this.dragBox, Bt) ? xe : Xt);
   },
   wheel: function(t) {
     var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, o = 1;
@@ -1756,160 +1756,160 @@ var Ci = {
   cropStart: function(t) {
     var e = t.buttons, i = t.button;
     if (!(this.disabled || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
-    (E(e) && e !== 1 || E(i) && i !== 0 || t.ctrlKey))) {
-      var o = this.options, n = this.pointers, a;
-      t.changedTouches ? M(t.changedTouches, function(r) {
-        n[r.identifier] = wt(r);
-      }) : n[t.pointerId || 0] = wt(t), Object.keys(n).length > 1 && o.zoomable && o.zoomOnTouch ? a = ve : a = Ht(t.target, vt), Ve.test(a) && ct(this.element, Nt, {
+    (A(e) && e !== 1 || A(i) && i !== 0 || t.ctrlKey))) {
+      var o = this.options, n = this.pointers, s;
+      t.changedTouches ? k(t.changedTouches, function(a) {
+        n[a.identifier] = _t(a);
+      }) : n[t.pointerId || 0] = _t(t), Object.keys(n).length > 1 && o.zoomable && o.zoomOnTouch ? s = Se : s = zt(t.target, Ct), Ke.test(s) && pt(this.element, Ft, {
         originalEvent: t,
-        action: a
-      }) !== !1 && (t.preventDefault(), this.action = a, this.cropping = !1, a === me && (this.cropping = !0, k(this.dragBox, xt)));
+        action: s
+      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === be && (this.cropping = !0, M(this.dragBox, At)));
     }
   },
   cropMove: function(t) {
     var e = this.action;
     if (!(this.disabled || !e)) {
       var i = this.pointers;
-      t.preventDefault(), ct(this.element, Bt, {
+      t.preventDefault(), pt(this.element, Ht, {
         originalEvent: t,
         action: e
-      }) !== !1 && (t.changedTouches ? M(t.changedTouches, function(o) {
-        D(i[o.identifier] || {}, wt(o, !0));
-      }) : D(i[t.pointerId || 0] || {}, wt(t, !0)), this.change(t));
+      }) !== !1 && (t.changedTouches ? k(t.changedTouches, function(o) {
+        D(i[o.identifier] || {}, _t(o, !0));
+      }) : D(i[t.pointerId || 0] || {}, _t(t, !0)), this.change(t));
     }
   },
   cropEnd: function(t) {
     if (!this.disabled) {
       var e = this.action, i = this.pointers;
-      t.changedTouches ? M(t.changedTouches, function(o) {
+      t.changedTouches ? k(t.changedTouches, function(o) {
         delete i[o.identifier];
-      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, lt(this.dragBox, xt, this.cropped && this.options.modal)), ct(this.element, Lt, {
+      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, dt(this.dragBox, At, this.cropped && this.options.modal)), pt(this.element, Ut, {
         originalEvent: t,
         action: e
       }));
     }
   }
-}, xi = {
+}, Ai = {
   change: function(t) {
-    var e = this.options, i = this.canvasData, o = this.containerData, n = this.cropBoxData, a = this.pointers, r = this.action, h = e.aspectRatio, l = n.left, d = n.top, c = n.width, p = n.height, C = l + c, b = d + p, u = 0, f = 0, g = o.width, v = o.height, w = !0, x;
-    !h && t.shiftKey && (h = c && p ? c / p : 1), this.limited && (u = n.minLeft, f = n.minTop, g = u + Math.min(o.width, i.width, i.left + i.width), v = f + Math.min(o.height, i.height, i.top + i.height));
-    var S = a[Object.keys(a)[0]], m = {
+    var e = this.options, i = this.canvasData, o = this.containerData, n = this.cropBoxData, s = this.pointers, a = this.action, h = e.aspectRatio, l = n.left, c = n.top, d = n.width, p = n.height, C = l + d, b = c + p, u = 0, f = 0, y = o.width, v = o.height, w = !0, x;
+    !h && t.shiftKey && (h = d && p ? d / p : 1), this.limited && (u = n.minLeft, f = n.minTop, y = u + Math.min(o.width, i.width, i.left + i.width), v = f + Math.min(o.height, i.height, i.top + i.height));
+    var S = s[Object.keys(s)[0]], m = {
       x: S.endX - S.startX,
       y: S.endY - S.startY
-    }, I = function(A) {
-      switch (A) {
+    }, _ = function(E) {
+      switch (E) {
         case et:
-          C + m.x > g && (m.x = g - C);
+          C + m.x > y && (m.x = y - C);
           break;
         case it:
           l + m.x < u && (m.x = u - l);
           break;
-        case Y:
-          d + m.y < f && (m.y = f - d);
+        case Z:
+          c + m.y < f && (m.y = f - c);
           break;
-        case rt:
+        case ht:
           b + m.y > v && (m.y = v - b);
           break;
       }
     };
-    switch (r) {
-      case jt:
-        l += m.x, d += m.y;
+    switch (a) {
+      case qt:
+        l += m.x, c += m.y;
         break;
       case et:
-        if (m.x >= 0 && (C >= g || h && (d <= f || b >= v))) {
+        if (m.x >= 0 && (C >= y || h && (c <= f || b >= v))) {
           w = !1;
           break;
         }
-        I(et), c += m.x, c < 0 && (r = it, c = -c, l -= c), h && (p = c / h, d += (n.height - p) / 2);
+        _(et), d += m.x, d < 0 && (a = it, d = -d, l -= d), h && (p = d / h, c += (n.height - p) / 2);
         break;
-      case Y:
-        if (m.y <= 0 && (d <= f || h && (l <= u || C >= g))) {
+      case Z:
+        if (m.y <= 0 && (c <= f || h && (l <= u || C >= y))) {
           w = !1;
           break;
         }
-        I(Y), p -= m.y, d += m.y, p < 0 && (r = rt, p = -p, d -= p), h && (c = p * h, l += (n.width - c) / 2);
+        _(Z), p -= m.y, c += m.y, p < 0 && (a = ht, p = -p, c -= p), h && (d = p * h, l += (n.width - d) / 2);
         break;
       case it:
-        if (m.x <= 0 && (l <= u || h && (d <= f || b >= v))) {
+        if (m.x <= 0 && (l <= u || h && (c <= f || b >= v))) {
           w = !1;
           break;
         }
-        I(it), c -= m.x, l += m.x, c < 0 && (r = et, c = -c, l -= c), h && (p = c / h, d += (n.height - p) / 2);
+        _(it), d -= m.x, l += m.x, d < 0 && (a = et, d = -d, l -= d), h && (p = d / h, c += (n.height - p) / 2);
         break;
-      case rt:
-        if (m.y >= 0 && (b >= v || h && (l <= u || C >= g))) {
+      case ht:
+        if (m.y >= 0 && (b >= v || h && (l <= u || C >= y))) {
           w = !1;
           break;
         }
-        I(rt), p += m.y, p < 0 && (r = Y, p = -p, d -= p), h && (c = p * h, l += (n.width - c) / 2);
+        _(ht), p += m.y, p < 0 && (a = Z, p = -p, c -= p), h && (d = p * h, l += (n.width - d) / 2);
         break;
-      case ut:
+      case ft:
         if (h) {
-          if (m.y <= 0 && (d <= f || C >= g)) {
+          if (m.y <= 0 && (c <= f || C >= y)) {
             w = !1;
             break;
           }
-          I(Y), p -= m.y, d += m.y, c = p * h;
+          _(Z), p -= m.y, c += m.y, d = p * h;
         } else
-          I(Y), I(et), m.x >= 0 ? C < g ? c += m.x : m.y <= 0 && d <= f && (w = !1) : c += m.x, m.y <= 0 ? d > f && (p -= m.y, d += m.y) : (p -= m.y, d += m.y);
-        c < 0 && p < 0 ? (r = mt, p = -p, c = -c, d -= p, l -= c) : c < 0 ? (r = pt, c = -c, l -= c) : p < 0 && (r = ft, p = -p, d -= p);
-        break;
-      case pt:
-        if (h) {
-          if (m.y <= 0 && (d <= f || l <= u)) {
-            w = !1;
-            break;
-          }
-          I(Y), p -= m.y, d += m.y, c = p * h, l += n.width - c;
-        } else
-          I(Y), I(it), m.x <= 0 ? l > u ? (c -= m.x, l += m.x) : m.y <= 0 && d <= f && (w = !1) : (c -= m.x, l += m.x), m.y <= 0 ? d > f && (p -= m.y, d += m.y) : (p -= m.y, d += m.y);
-        c < 0 && p < 0 ? (r = ft, p = -p, c = -c, d -= p, l -= c) : c < 0 ? (r = ut, c = -c, l -= c) : p < 0 && (r = mt, p = -p, d -= p);
+          _(Z), _(et), m.x >= 0 ? C < y ? d += m.x : m.y <= 0 && c <= f && (w = !1) : d += m.x, m.y <= 0 ? c > f && (p -= m.y, c += m.y) : (p -= m.y, c += m.y);
+        d < 0 && p < 0 ? (a = vt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = mt, d = -d, l -= d) : p < 0 && (a = gt, p = -p, c -= p);
         break;
       case mt:
+        if (h) {
+          if (m.y <= 0 && (c <= f || l <= u)) {
+            w = !1;
+            break;
+          }
+          _(Z), p -= m.y, c += m.y, d = p * h, l += n.width - d;
+        } else
+          _(Z), _(it), m.x <= 0 ? l > u ? (d -= m.x, l += m.x) : m.y <= 0 && c <= f && (w = !1) : (d -= m.x, l += m.x), m.y <= 0 ? c > f && (p -= m.y, c += m.y) : (p -= m.y, c += m.y);
+        d < 0 && p < 0 ? (a = gt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = ft, d = -d, l -= d) : p < 0 && (a = vt, p = -p, c -= p);
+        break;
+      case vt:
         if (h) {
           if (m.x <= 0 && (l <= u || b >= v)) {
             w = !1;
             break;
           }
-          I(it), c -= m.x, l += m.x, p = c / h;
+          _(it), d -= m.x, l += m.x, p = d / h;
         } else
-          I(rt), I(it), m.x <= 0 ? l > u ? (c -= m.x, l += m.x) : m.y >= 0 && b >= v && (w = !1) : (c -= m.x, l += m.x), m.y >= 0 ? b < v && (p += m.y) : p += m.y;
-        c < 0 && p < 0 ? (r = ut, p = -p, c = -c, d -= p, l -= c) : c < 0 ? (r = ft, c = -c, l -= c) : p < 0 && (r = pt, p = -p, d -= p);
+          _(ht), _(it), m.x <= 0 ? l > u ? (d -= m.x, l += m.x) : m.y >= 0 && b >= v && (w = !1) : (d -= m.x, l += m.x), m.y >= 0 ? b < v && (p += m.y) : p += m.y;
+        d < 0 && p < 0 ? (a = ft, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = gt, d = -d, l -= d) : p < 0 && (a = mt, p = -p, c -= p);
         break;
-      case ft:
+      case gt:
         if (h) {
-          if (m.x >= 0 && (C >= g || b >= v)) {
+          if (m.x >= 0 && (C >= y || b >= v)) {
             w = !1;
             break;
           }
-          I(et), c += m.x, p = c / h;
+          _(et), d += m.x, p = d / h;
         } else
-          I(rt), I(et), m.x >= 0 ? C < g ? c += m.x : m.y >= 0 && b >= v && (w = !1) : c += m.x, m.y >= 0 ? b < v && (p += m.y) : p += m.y;
-        c < 0 && p < 0 ? (r = pt, p = -p, c = -c, d -= p, l -= c) : c < 0 ? (r = mt, c = -c, l -= c) : p < 0 && (r = ut, p = -p, d -= p);
+          _(ht), _(et), m.x >= 0 ? C < y ? d += m.x : m.y >= 0 && b >= v && (w = !1) : d += m.x, m.y >= 0 ? b < v && (p += m.y) : p += m.y;
+        d < 0 && p < 0 ? (a = mt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = vt, d = -d, l -= d) : p < 0 && (a = ft, p = -p, c -= p);
         break;
-      case ge:
+      case we:
         this.move(m.x, m.y), w = !1;
         break;
-      case ve:
-        this.zoom(hi(a), t), w = !1;
+      case Se:
+        this.zoom(ui(s), t), w = !1;
         break;
-      case me:
+      case be:
         if (!m.x || !m.y) {
           w = !1;
           break;
         }
-        x = _e(this.cropper), l = S.startX - x.left, d = S.startY - x.top, c = n.minWidth, p = n.minHeight, m.x > 0 ? r = m.y > 0 ? ft : ut : m.x < 0 && (l -= c, r = m.y > 0 ? mt : pt), m.y < 0 && (d -= p), this.cropped || (W(this.cropBox, N), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
+        x = Te(this.cropper), l = S.startX - x.left, c = S.startY - x.top, d = n.minWidth, p = n.minHeight, m.x > 0 ? a = m.y > 0 ? gt : ft : m.x < 0 && (l -= d, a = m.y > 0 ? vt : mt), m.y < 0 && (c -= p), this.cropped || ($(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
         break;
     }
-    w && (n.width = c, n.height = p, n.left = l, n.top = d, this.action = r, this.renderCropBox()), M(a, function(_) {
-      _.startX = _.endX, _.startY = _.endY;
+    w && (n.width = d, n.height = p, n.left = l, n.top = c, this.action = a, this.renderCropBox()), k(s, function(I) {
+      I.startX = I.endX, I.startY = I.endY;
     });
   }
-}, Ii = {
+}, Ei = {
   // Show the crop box manually
   crop: function() {
-    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && k(this.dragBox, xt), W(this.cropBox, N), this.setCropBoxData(this.initialCropBoxData)), this;
+    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && M(this.dragBox, At), $(this.cropBox, B), this.setCropBoxData(this.initialCropBoxData)), this;
   },
   // Reset the image and crop box to their initial states
   reset: function() {
@@ -1922,7 +1922,7 @@ var Ci = {
       top: 0,
       width: 0,
       height: 0
-    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), W(this.dragBox, xt), k(this.cropBox, N)), this;
+    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), $(this.dragBox, At), M(this.cropBox, B)), this;
   },
   /**
    * Replace the image's src and rebuild the cropper
@@ -1932,17 +1932,17 @@ var Ci = {
    */
   replace: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
-    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, M(this.previews, function(i) {
+    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, k(this.previews, function(i) {
       i.getElementsByTagName("img")[0].src = t;
     }))) : (this.isImg && (this.replaced = !0), this.options.data = null, this.uncreate(), this.load(t))), this;
   },
   // Enable (unfreeze) the cropper
   enable: function() {
-    return this.ready && this.disabled && (this.disabled = !1, W(this.cropper, Vt)), this;
+    return this.ready && this.disabled && (this.disabled = !1, $(this.cropper, te)), this;
   },
   // Disable (freeze) the cropper
   disable: function() {
-    return this.ready && !this.disabled && (this.disabled = !0, k(this.cropper, Vt)), this;
+    return this.ready && !this.disabled && (this.disabled = !0, M(this.cropper, te)), this;
   },
   /**
    * Destroy the cropper and remove the instance from the image
@@ -1960,7 +1960,7 @@ var Ci = {
    */
   move: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, o = i.left, n = i.top;
-    return this.moveTo(Et(t) ? t : o + Number(t), Et(e) ? e : n + Number(e));
+    return this.moveTo(Tt(t) ? t : o + Number(t), Tt(e) ? e : n + Number(e));
   },
   /**
    * Move the canvas to an absolute point
@@ -1970,7 +1970,7 @@ var Ci = {
    */
   moveTo: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, o = !1;
-    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.movable && (E(t) && (i.left = t, o = !0), E(e) && (i.top = e, o = !0), o && this.renderCanvas(!0)), this;
+    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.movable && (A(t) && (i.left = t, o = !0), A(e) && (i.top = e, o = !0), o && this.renderCanvas(!0)), this;
   },
   /**
    * Zoom the canvas with a relative ratio
@@ -1990,23 +1990,23 @@ var Ci = {
    * @returns {Cropper} this
    */
   zoomTo: function(t, e, i) {
-    var o = this.options, n = this.canvasData, a = n.width, r = n.height, h = n.naturalWidth, l = n.naturalHeight;
+    var o = this.options, n = this.canvasData, s = n.width, a = n.height, h = n.naturalWidth, l = n.naturalHeight;
     if (t = Number(t), t >= 0 && this.ready && !this.disabled && o.zoomable) {
-      var d = h * t, c = l * t;
-      if (ct(this.element, Gt, {
+      var c = h * t, d = l * t;
+      if (pt(this.element, jt, {
         ratio: t,
-        oldRatio: a / h,
+        oldRatio: s / h,
         originalEvent: i
       }) === !1)
         return this;
       if (i) {
-        var p = this.pointers, C = _e(this.cropper), b = p && Object.keys(p).length ? ci(p) : {
+        var p = this.pointers, C = Te(this.cropper), b = p && Object.keys(p).length ? pi(p) : {
           pageX: i.pageX,
           pageY: i.pageY
         };
-        n.left -= (d - a) * ((b.pageX - C.left - n.left) / a), n.top -= (c - r) * ((b.pageY - C.top - n.top) / r);
-      } else st(e) && E(e.x) && E(e.y) ? (n.left -= (d - a) * ((e.x - n.left) / a), n.top -= (c - r) * ((e.y - n.top) / r)) : (n.left -= (d - a) / 2, n.top -= (c - r) / 2);
-      n.width = d, n.height = c, this.renderCanvas(!0);
+        n.left -= (c - s) * ((b.pageX - C.left - n.left) / s), n.top -= (d - a) * ((b.pageY - C.top - n.top) / a);
+      } else ct(e) && A(e.x) && A(e.y) ? (n.left -= (c - s) * ((e.x - n.left) / s), n.top -= (d - a) * ((e.y - n.top) / a)) : (n.left -= (c - s) / 2, n.top -= (d - a) / 2);
+      n.width = c, n.height = d, this.renderCanvas(!0);
     }
     return this;
   },
@@ -2024,7 +2024,7 @@ var Ci = {
    * @returns {Cropper} this
    */
   rotateTo: function(t) {
-    return t = Number(t), E(t) && this.ready && !this.disabled && this.options.rotatable && (this.imageData.rotate = t % 360, this.renderCanvas(!0, !0)), this;
+    return t = Number(t), A(t) && this.ready && !this.disabled && this.options.rotatable && (this.imageData.rotate = t % 360, this.renderCanvas(!0, !0)), this;
   },
   /**
    * Scale the image on the x-axis.
@@ -2033,7 +2033,7 @@ var Ci = {
    */
   scaleX: function(t) {
     var e = this.imageData.scaleY;
-    return this.scale(t, E(e) ? e : 1);
+    return this.scale(t, A(e) ? e : 1);
   },
   /**
    * Scale the image on the y-axis.
@@ -2042,7 +2042,7 @@ var Ci = {
    */
   scaleY: function(t) {
     var e = this.imageData.scaleX;
-    return this.scale(E(e) ? e : 1, t);
+    return this.scale(A(e) ? e : 1, t);
   },
   /**
    * Scale the image
@@ -2052,7 +2052,7 @@ var Ci = {
    */
   scale: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.imageData, o = !1;
-    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.scalable && (E(t) && (i.scaleX = t, o = !0), E(e) && (i.scaleY = e, o = !0), o && this.renderCanvas(!0, !0)), this;
+    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.scalable && (A(t) && (i.scaleX = t, o = !0), A(e) && (i.scaleY = e, o = !0), o && this.renderCanvas(!0, !0)), this;
   },
   /**
    * Get the cropped area position and size data (base on the original image)
@@ -2060,29 +2060,29 @@ var Ci = {
    * @returns {Object} The result cropped data.
    */
   getData: function() {
-    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.options, i = this.imageData, o = this.canvasData, n = this.cropBoxData, a;
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.options, i = this.imageData, o = this.canvasData, n = this.cropBoxData, s;
     if (this.ready && this.cropped) {
-      a = {
+      s = {
         x: n.left - o.left,
         y: n.top - o.top,
         width: n.width,
         height: n.height
       };
-      var r = i.width / i.naturalWidth;
-      if (M(a, function(d, c) {
-        a[c] = d / r;
+      var a = i.width / i.naturalWidth;
+      if (k(s, function(c, d) {
+        s[d] = c / a;
       }), t) {
-        var h = Math.round(a.y + a.height), l = Math.round(a.x + a.width);
-        a.x = Math.round(a.x), a.y = Math.round(a.y), a.width = l - a.x, a.height = h - a.y;
+        var h = Math.round(s.y + s.height), l = Math.round(s.x + s.width);
+        s.x = Math.round(s.x), s.y = Math.round(s.y), s.width = l - s.x, s.height = h - s.y;
       }
     } else
-      a = {
+      s = {
         x: 0,
         y: 0,
         width: 0,
         height: 0
       };
-    return e.rotatable && (a.rotate = i.rotate || 0), e.scalable && (a.scaleX = i.scaleX || 1, a.scaleY = i.scaleY || 1), a;
+    return e.rotatable && (s.rotate = i.rotate || 0), e.scalable && (s.scaleX = i.scaleX || 1, s.scaleY = i.scaleY || 1), s;
   },
   /**
    * Set the cropped area position and size with new data
@@ -2091,11 +2091,11 @@ var Ci = {
    */
   setData: function(t) {
     var e = this.options, i = this.imageData, o = this.canvasData, n = {};
-    if (this.ready && !this.disabled && st(t)) {
-      var a = !1;
-      e.rotatable && E(t.rotate) && t.rotate !== i.rotate && (i.rotate = t.rotate, a = !0), e.scalable && (E(t.scaleX) && t.scaleX !== i.scaleX && (i.scaleX = t.scaleX, a = !0), E(t.scaleY) && t.scaleY !== i.scaleY && (i.scaleY = t.scaleY, a = !0)), a && this.renderCanvas(!0, !0);
-      var r = i.width / i.naturalWidth;
-      E(t.x) && (n.left = t.x * r + o.left), E(t.y) && (n.top = t.y * r + o.top), E(t.width) && (n.width = t.width * r), E(t.height) && (n.height = t.height * r), this.setCropBoxData(n);
+    if (this.ready && !this.disabled && ct(t)) {
+      var s = !1;
+      e.rotatable && A(t.rotate) && t.rotate !== i.rotate && (i.rotate = t.rotate, s = !0), e.scalable && (A(t.scaleX) && t.scaleX !== i.scaleX && (i.scaleX = t.scaleX, s = !0), A(t.scaleY) && t.scaleY !== i.scaleY && (i.scaleY = t.scaleY, s = !0)), s && this.renderCanvas(!0, !0);
+      var a = i.width / i.naturalWidth;
+      A(t.x) && (n.left = t.x * a + o.left), A(t.y) && (n.top = t.y * a + o.top), A(t.width) && (n.width = t.width * a), A(t.height) && (n.height = t.height * a), this.setCropBoxData(n);
     }
     return this;
   },
@@ -2119,7 +2119,7 @@ var Ci = {
    */
   getCanvasData: function() {
     var t = this.canvasData, e = {};
-    return this.ready && M(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
+    return this.ready && k(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
       e[i] = t[i];
     }), e;
   },
@@ -2130,7 +2130,7 @@ var Ci = {
    */
   setCanvasData: function(t) {
     var e = this.canvasData, i = e.aspectRatio;
-    return this.ready && !this.disabled && st(t) && (E(t.left) && (e.left = t.left), E(t.top) && (e.top = t.top), E(t.width) ? (e.width = t.width, e.height = t.width / i) : E(t.height) && (e.height = t.height, e.width = t.height * i), this.renderCanvas(!0)), this;
+    return this.ready && !this.disabled && ct(t) && (A(t.left) && (e.left = t.left), A(t.top) && (e.top = t.top), A(t.width) ? (e.width = t.width, e.height = t.width / i) : A(t.height) && (e.height = t.height, e.width = t.height * i), this.renderCanvas(!0)), this;
   },
   /**
    * Get the crop box position and size data.
@@ -2152,7 +2152,7 @@ var Ci = {
    */
   setCropBoxData: function(t) {
     var e = this.cropBoxData, i = this.options.aspectRatio, o, n;
-    return this.ready && this.cropped && !this.disabled && st(t) && (E(t.left) && (e.left = t.left), E(t.top) && (e.top = t.top), E(t.width) && t.width !== e.width && (o = !0, e.width = t.width), E(t.height) && t.height !== e.height && (n = !0, e.height = t.height), i && (o ? e.height = e.width / i : n && (e.width = e.height * i)), this.renderCropBox()), this;
+    return this.ready && this.cropped && !this.disabled && ct(t) && (A(t.left) && (e.left = t.left), A(t.top) && (e.top = t.top), A(t.width) && t.width !== e.width && (o = !0, e.width = t.width), A(t.height) && t.height !== e.height && (n = !0, e.height = t.height), i && (o ? e.height = e.width / i : n && (e.width = e.height * i)), this.renderCropBox()), this;
   },
   /**
    * Get a canvas drawn the cropped image.
@@ -2163,38 +2163,38 @@ var Ci = {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     if (!this.ready || !window.HTMLCanvasElement)
       return null;
-    var e = this.canvasData, i = ui(this.image, this.imageData, e, t);
+    var e = this.canvasData, i = mi(this.image, this.imageData, e, t);
     if (!this.cropped)
       return i;
-    var o = this.getData(t.rounded), n = o.x, a = o.y, r = o.width, h = o.height, l = i.width / Math.floor(e.naturalWidth);
-    l !== 1 && (n *= l, a *= l, r *= l, h *= l);
-    var d = r / h, c = Z({
-      aspectRatio: d,
+    var o = this.getData(t.rounded), n = o.x, s = o.y, a = o.width, h = o.height, l = i.width / Math.floor(e.naturalWidth);
+    l !== 1 && (n *= l, s *= l, a *= l, h *= l);
+    var c = a / h, d = tt({
+      aspectRatio: c,
       width: t.maxWidth || 1 / 0,
       height: t.maxHeight || 1 / 0
-    }), p = Z({
-      aspectRatio: d,
+    }), p = tt({
+      aspectRatio: c,
       width: t.minWidth || 0,
       height: t.minHeight || 0
-    }, "cover"), C = Z({
-      aspectRatio: d,
-      width: t.width || (l !== 1 ? i.width : r),
+    }, "cover"), C = tt({
+      aspectRatio: c,
+      width: t.width || (l !== 1 ? i.width : a),
       height: t.height || (l !== 1 ? i.height : h)
     }), b = C.width, u = C.height;
-    b = Math.min(c.width, Math.max(p.width, b)), u = Math.min(c.height, Math.max(p.height, u));
-    var f = document.createElement("canvas"), g = f.getContext("2d");
-    f.width = ht(b), f.height = ht(u), g.fillStyle = t.fillColor || "transparent", g.fillRect(0, 0, b, u);
+    b = Math.min(d.width, Math.max(p.width, b)), u = Math.min(d.height, Math.max(p.height, u));
+    var f = document.createElement("canvas"), y = f.getContext("2d");
+    f.width = ut(b), f.height = ut(u), y.fillStyle = t.fillColor || "transparent", y.fillRect(0, 0, b, u);
     var v = t.imageSmoothingEnabled, w = v === void 0 ? !0 : v, x = t.imageSmoothingQuality;
-    g.imageSmoothingEnabled = w, x && (g.imageSmoothingQuality = x);
-    var S = i.width, m = i.height, I = n, _ = a, A, O, F, H, G, P;
-    I <= -r || I > S ? (I = 0, A = 0, F = 0, G = 0) : I <= 0 ? (F = -I, I = 0, A = Math.min(S, r + I), G = A) : I <= S && (F = 0, A = Math.min(r, S - I), G = A), A <= 0 || _ <= -h || _ > m ? (_ = 0, O = 0, H = 0, P = 0) : _ <= 0 ? (H = -_, _ = 0, O = Math.min(m, h + _), P = O) : _ <= m && (H = 0, O = Math.min(h, m - _), P = O);
-    var T = [I, _, A, O];
-    if (G > 0 && P > 0) {
-      var L = b / r;
-      T.push(F * L, H * L, G * L, P * L);
+    y.imageSmoothingEnabled = w, x && (y.imageSmoothingQuality = x);
+    var S = i.width, m = i.height, _ = n, I = s, E, O, G, N, U, P;
+    _ <= -a || _ > S ? (_ = 0, E = 0, G = 0, U = 0) : _ <= 0 ? (G = -_, _ = 0, E = Math.min(S, a + _), U = E) : _ <= S && (G = 0, E = Math.min(a, S - _), U = E), E <= 0 || I <= -h || I > m ? (I = 0, O = 0, N = 0, P = 0) : I <= 0 ? (N = -I, I = 0, O = Math.min(m, h + I), P = O) : I <= m && (N = 0, O = Math.min(h, m - I), P = O);
+    var T = [_, I, E, O];
+    if (U > 0 && P > 0) {
+      var F = b / a;
+      T.push(G * F, N * F, U * F, P * F);
     }
-    return g.drawImage.apply(g, [i].concat(fe(T.map(function(q) {
-      return Math.floor(ht(q));
+    return y.drawImage.apply(y, [i].concat(Ce(T.map(function(q) {
+      return Math.floor(ut(q));
     })))), f;
   },
   /**
@@ -2204,7 +2204,7 @@ var Ci = {
    */
   setAspectRatio: function(t) {
     var e = this.options;
-    return !this.disabled && !Et(t) && (e.aspectRatio = Math.max(0, t) || NaN, this.ready && (this.initCropBox(), this.cropped && this.renderCropBox())), this;
+    return !this.disabled && !Tt(t) && (e.aspectRatio = Math.max(0, t) || NaN, this.ready && (this.initCropBox(), this.cropped && this.renderCropBox())), this;
   },
   /**
    * Change the drag mode.
@@ -2214,19 +2214,19 @@ var Ci = {
   setDragMode: function(t) {
     var e = this.options, i = this.dragBox, o = this.face;
     if (this.ready && !this.disabled) {
-      var n = t === zt, a = e.movable && t === ye;
-      t = n || a ? t : Ce, e.dragMode = t, yt(i, vt, t), lt(i, Tt, n), lt(i, kt, a), e.cropBoxMovable || (yt(o, vt, t), lt(o, Tt, n), lt(o, kt, a));
+      var n = t === Xt, s = e.movable && t === xe;
+      t = n || s ? t : _e, e.dragMode = t, bt(i, Ct, t), dt(i, Bt, n), dt(i, Gt, s), e.cropBoxMovable || (bt(o, Ct, t), dt(o, Bt, n), dt(o, Gt, s));
     }
     return this;
   }
-}, _i = X.Cropper, Ae = /* @__PURE__ */ function() {
-  function s(t) {
+}, Ri = W.Cropper, Oe = /* @__PURE__ */ function() {
+  function r(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (Ge(this, s), !t || !Ke.test(t.tagName))
+    if (Fe(this, r), !t || !ei.test(t.tagName))
       throw new Error("The first argument is required and must be an <img> or <canvas> element.");
-    this.element = t, this.options = D({}, ae, st(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
+    this.element = t, this.options = D({}, ce, ct(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
   }
-  return He(s, [{
+  return je(r, [{
     key: "init",
     value: function() {
       var e = this.element, i = e.tagName.toLowerCase(), o;
@@ -2250,59 +2250,59 @@ var Ci = {
           this.clone();
           return;
         }
-        if (Je.test(e)) {
-          Ze.test(e) ? this.read(mi(e)) : this.clone();
+        if (Qe.test(e)) {
+          ti.test(e) ? this.read(yi(e)) : this.clone();
           return;
         }
-        var a = new XMLHttpRequest(), r = this.clone.bind(this);
-        this.reloading = !0, this.xhr = a, a.onabort = r, a.onerror = r, a.ontimeout = r, a.onprogress = function() {
-          a.getResponseHeader("content-type") !== oe && a.abort();
-        }, a.onload = function() {
-          i.read(a.response);
-        }, a.onloadend = function() {
+        var s = new XMLHttpRequest(), a = this.clone.bind(this);
+        this.reloading = !0, this.xhr = s, s.onabort = a, s.onerror = a, s.ontimeout = a, s.onprogress = function() {
+          s.getResponseHeader("content-type") !== he && s.abort();
+        }, s.onload = function() {
+          i.read(s.response);
+        }, s.onloadend = function() {
           i.reloading = !1, i.xhr = null;
-        }, n.checkCrossOrigin && se(e) && o.crossOrigin && (e = le(e)), a.open("GET", e, !0), a.responseType = "arraybuffer", a.withCredentials = o.crossOrigin === "use-credentials", a.send();
+        }, n.checkCrossOrigin && ue(e) && o.crossOrigin && (e = pe(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = o.crossOrigin === "use-credentials", s.send();
       }
     }
   }, {
     key: "read",
     value: function(e) {
-      var i = this.options, o = this.imageData, n = vi(e), a = 0, r = 1, h = 1;
+      var i = this.options, o = this.imageData, n = bi(e), s = 0, a = 1, h = 1;
       if (n > 1) {
-        this.url = gi(e, oe);
-        var l = yi(n);
-        a = l.rotate, r = l.scaleX, h = l.scaleY;
+        this.url = Ci(e, he);
+        var l = wi(n);
+        s = l.rotate, a = l.scaleX, h = l.scaleY;
       }
-      i.rotatable && (o.rotate = a), i.scalable && (o.scaleX = r, o.scaleY = h), this.clone();
+      i.rotatable && (o.rotate = s), i.scalable && (o.scaleX = a, o.scaleY = h), this.clone();
     }
   }, {
     key: "clone",
     value: function() {
       var e = this.element, i = this.url, o = e.crossOrigin, n = i;
-      this.options.checkCrossOrigin && se(i) && (o || (o = "anonymous"), n = le(i)), this.crossOrigin = o, this.crossOriginUrl = n;
-      var a = document.createElement("img");
-      o && (a.crossOrigin = o), a.src = n || i, a.alt = e.alt || "The image to crop", this.image = a, a.onload = this.start.bind(this), a.onerror = this.stop.bind(this), k(a, Jt), e.parentNode.insertBefore(a, e.nextSibling);
+      this.options.checkCrossOrigin && ue(i) && (o || (o = "anonymous"), n = pe(i)), this.crossOrigin = o, this.crossOriginUrl = n;
+      var s = document.createElement("img");
+      o && (s.crossOrigin = o), s.src = n || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), M(s, ee), e.parentNode.insertBefore(s, e.nextSibling);
     }
   }, {
     key: "start",
     value: function() {
       var e = this, i = this.image;
       i.onload = null, i.onerror = null, this.sizing = !0;
-      var o = X.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(X.navigator.userAgent), n = function(l, d) {
+      var o = W.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(W.navigator.userAgent), n = function(l, c) {
         D(e.imageData, {
           naturalWidth: l,
-          naturalHeight: d,
-          aspectRatio: l / d
+          naturalHeight: c,
+          aspectRatio: l / c
         }), e.initialImageData = D({}, e.imageData), e.sizing = !1, e.sized = !0, e.build();
       };
       if (i.naturalWidth && !o) {
         n(i.naturalWidth, i.naturalHeight);
         return;
       }
-      var a = document.createElement("img"), r = document.body || document.documentElement;
-      this.sizingImage = a, a.onload = function() {
-        n(a.width, a.height), o || r.removeChild(a);
-      }, a.src = i.src, o || (a.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", r.appendChild(a));
+      var s = document.createElement("img"), a = document.body || document.documentElement;
+      this.sizingImage = s, s.onload = function() {
+        n(s.width, s.height), o || a.removeChild(s);
+      }, s.src = i.src, o || (s.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", a.appendChild(s));
     }
   }, {
     key: "stop",
@@ -2314,12 +2314,12 @@ var Ci = {
     key: "build",
     value: function() {
       if (!(!this.sized || this.ready)) {
-        var e = this.element, i = this.options, o = this.image, n = e.parentNode, a = document.createElement("div");
-        a.innerHTML = Qe;
-        var r = a.querySelector(".".concat(R, "-container")), h = r.querySelector(".".concat(R, "-canvas")), l = r.querySelector(".".concat(R, "-drag-box")), d = r.querySelector(".".concat(R, "-crop-box")), c = d.querySelector(".".concat(R, "-face"));
-        this.container = n, this.cropper = r, this.canvas = h, this.dragBox = l, this.cropBox = d, this.viewBox = r.querySelector(".".concat(R, "-view-box")), this.face = c, h.appendChild(o), k(e, N), n.insertBefore(r, e.nextSibling), W(o, Jt), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, k(d, N), i.guides || k(d.getElementsByClassName("".concat(R, "-dashed")), N), i.center || k(d.getElementsByClassName("".concat(R, "-center")), N), i.background && k(r, "".concat(R, "-bg")), i.highlight || k(c, We), i.cropBoxMovable && (k(c, kt), yt(c, vt, jt)), i.cropBoxResizable || (k(d.getElementsByClassName("".concat(R, "-line")), N), k(d.getElementsByClassName("".concat(R, "-point")), N)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), B(i.ready) && U(e, ee, i.ready, {
+        var e = this.element, i = this.options, o = this.image, n = e.parentNode, s = document.createElement("div");
+        s.innerHTML = ii;
+        var a = s.querySelector(".".concat(R, "-container")), h = a.querySelector(".".concat(R, "-canvas")), l = a.querySelector(".".concat(R, "-drag-box")), c = a.querySelector(".".concat(R, "-crop-box")), d = c.querySelector(".".concat(R, "-face"));
+        this.container = n, this.cropper = a, this.canvas = h, this.dragBox = l, this.cropBox = c, this.viewBox = a.querySelector(".".concat(R, "-view-box")), this.face = d, h.appendChild(o), M(e, B), n.insertBefore(a, e.nextSibling), $(o, ee), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, M(c, B), i.guides || M(c.getElementsByClassName("".concat(R, "-dashed")), B), i.center || M(c.getElementsByClassName("".concat(R, "-center")), B), i.background && M(a, "".concat(R, "-bg")), i.highlight || M(d, Ye), i.cropBoxMovable && (M(d, Gt), bt(d, Ct, qt)), i.cropBoxResizable || (M(c.getElementsByClassName("".concat(R, "-line")), B), M(c.getElementsByClassName("".concat(R, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), L(i.ready) && H(e, ae, i.ready, {
           once: !0
-        }), ct(e, ee);
+        }), pt(e, ae);
       }
     }
   }, {
@@ -2328,7 +2328,7 @@ var Ci = {
       if (this.ready) {
         this.ready = !1, this.unbind(), this.resetPreview();
         var e = this.cropper.parentNode;
-        e && e.removeChild(this.cropper), W(this.element, N);
+        e && e.removeChild(this.cropper), $(this.element, B);
       }
     }
   }, {
@@ -2343,7 +2343,7 @@ var Ci = {
   }], [{
     key: "noConflict",
     value: function() {
-      return window.Cropper = _i, s;
+      return window.Cropper = Ri, r;
     }
     /**
      * Change the default options.
@@ -2352,13 +2352,13 @@ var Ci = {
   }, {
     key: "setDefaults",
     value: function(e) {
-      D(ae, st(e) && e);
+      D(ce, ct(e) && e);
     }
   }]);
 }();
-D(Ae.prototype, Ci, bi, wi, Si, xi, Ii);
-const St = (s) => Math.min(1, Math.max(0, s)), he = ["16:9", "3:2", "1:1"], Rt = "3:2";
-class Ei {
+D(Oe.prototype, Si, xi, _i, Ii, Ai, Ei);
+const It = (r) => Math.min(1, Math.max(0, r)), fe = ["16:9", "3:2", "1:1"], Ot = "3:2";
+class Di {
   constructor() {
     this.overlay = null, this.cropper = null, this.escHandler = null, this.resolvePromise = null, this.showOriginalOnClickInput = null, this.aspectRatioInputs = [];
   }
@@ -2371,24 +2371,24 @@ class Ei {
    * @param existingCropAspectRatio - сохранённый режим соотношения сторон
    * @returns Promise с результатом кадрирования или null при отмене
    */
-  open(t, e, i = !1, o = Rt) {
+  open(t, e, i = !1, o = Ot) {
     return this.overlay && this.destroy(), new Promise((n) => {
       this.resolvePromise = n;
-      const a = this.normalizeCropAspectRatio(o);
-      this.overlay = this.createOverlay(i, a);
-      const r = this.overlay.querySelector(".gallery-crop-modal__image-wrapper");
-      if (!r) {
+      const s = this.normalizeCropAspectRatio(o);
+      this.overlay = this.createOverlay(i, s);
+      const a = this.overlay.querySelector(".gallery-crop-modal__image-wrapper");
+      if (!a) {
         this.close(null);
         return;
       }
-      const h = y("img", null, {
+      const h = g("img", null, {
         src: t
       });
-      h.style.maxWidth = "100%", h.style.display = "block", r.appendChild(h), document.body.appendChild(this.overlay), h.onload = () => {
-        this.cropper = new Ae(h, {
+      h.style.maxWidth = "100%", h.style.display = "block", a.appendChild(h), document.body.appendChild(this.overlay), h.onload = () => {
+        this.cropper = new Oe(h, {
           viewMode: 1,
           autoCropArea: 1,
-          aspectRatio: this.numericAspectRatio(a),
+          aspectRatio: this.numericAspectRatio(s),
           responsive: !0,
           restore: !0,
           guides: !0,
@@ -2429,29 +2429,29 @@ class Ei {
    * Создает DOM-структуру оверлея с кнопками управления.
    */
   createOverlay(t, e) {
-    const i = y("div", "gallery-crop-modal");
+    const i = g("div", "gallery-crop-modal");
     i.addEventListener("click", () => this.close(null));
-    const o = y("div", "gallery-crop-modal__container");
+    const o = g("div", "gallery-crop-modal__container");
     o.addEventListener("click", (p) => p.stopPropagation());
-    const n = y("div", "gallery-crop-modal__image-wrapper"), a = y("div", "gallery-crop-modal__options"), r = y("label", "gallery-crop-modal__option");
-    this.showOriginalOnClickInput = y("input", null, { type: "checkbox" }), this.showOriginalOnClickInput.checked = t, r.append(
+    const n = g("div", "gallery-crop-modal__image-wrapper"), s = g("div", "gallery-crop-modal__options"), a = g("label", "gallery-crop-modal__option");
+    this.showOriginalOnClickInput = g("input", null, { type: "checkbox" }), this.showOriginalOnClickInput.checked = t, a.append(
       this.showOriginalOnClickInput,
       document.createTextNode("Показывать необрезанное изображение по клику")
-    ), a.appendChild(r), a.appendChild(this.createAspectRatioOptions(e));
-    const h = y("div", "gallery-crop-modal__actions"), l = y("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--danger"]);
+    ), s.appendChild(a), s.appendChild(this.createAspectRatioOptions(e));
+    const h = g("div", "gallery-crop-modal__actions"), l = g("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--danger"]);
     l.textContent = "Сбросить", l.addEventListener("click", () => {
       this.close({
         crop: "",
         croppedWidth: 0,
         croppedHeight: 0,
         showOriginalOnClick: !1,
-        cropAspectRatio: Rt
+        cropAspectRatio: Ot
       });
     });
-    const d = y("button", "gallery-crop-modal__btn");
-    d.textContent = "Отмена", d.addEventListener("click", () => this.close(null));
-    const c = y("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--primary"]);
-    return c.textContent = "Применить", c.addEventListener("click", () => this.handleApply()), h.appendChild(l), h.appendChild(d), h.appendChild(c), o.appendChild(n), o.appendChild(a), o.appendChild(h), i.appendChild(o), i;
+    const c = g("button", "gallery-crop-modal__btn");
+    c.textContent = "Отмена", c.addEventListener("click", () => this.close(null));
+    const d = g("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--primary"]);
+    return d.textContent = "Применить", d.addEventListener("click", () => this.handleApply()), h.appendChild(l), h.appendChild(c), h.appendChild(d), o.appendChild(n), o.appendChild(s), o.appendChild(h), i.appendChild(o), i;
   }
   /**
    * Обрабатывает нажатие кнопки "Применить" — собирает данные кадрирования
@@ -2494,9 +2494,9 @@ class Ei {
    * @param naturalHeight - натуральная высота изображения
    */
   cropDataToString(t, e, i) {
-    const o = St(t.x / e), n = St(t.y / i), a = St((t.x + t.width) / e), r = St((t.y + t.height) / i);
+    const o = It(t.x / e), n = It(t.y / i), s = It((t.x + t.width) / e), a = It((t.y + t.height) / i);
     return {
-      crop: `${o.toFixed(4)}x${n.toFixed(4)}:${a.toFixed(4)}x${r.toFixed(4)}`,
+      crop: `${o.toFixed(4)}x${n.toFixed(4)}:${s.toFixed(4)}x${a.toFixed(4)}`,
       croppedWidth: Math.round(t.width),
       croppedHeight: Math.round(t.height),
       showOriginalOnClick: !1,
@@ -2521,16 +2521,16 @@ class Ei {
     }));
   }
   createAspectRatioOptions(t) {
-    const e = y("fieldset", "gallery-crop-modal__aspect-ratios"), i = y("legend", "gallery-crop-modal__aspect-ratios-label");
+    const e = g("fieldset", "gallery-crop-modal__aspect-ratios"), i = g("legend", "gallery-crop-modal__aspect-ratios-label");
     return i.textContent = "Соотношение сторон", e.appendChild(i), [
       { label: "Любое", value: "free" },
-      ...he.map((n) => ({ label: n, value: n }))
-    ].forEach(({ label: n, value: a }) => {
-      const r = y("label", "gallery-crop-modal__aspect-ratio"), h = y("input", null, { type: "radio" }), l = y("span", "gallery-crop-modal__aspect-ratio-label");
-      h.name = "gallery-crop-aspect-ratio", h.value = a, h.checked = a === t, h.addEventListener("change", () => {
-        var d;
-        h.checked && ((d = this.cropper) == null || d.setAspectRatio(this.numericAspectRatio(a)));
-      }), l.textContent = n, r.append(h, l), e.appendChild(r), this.aspectRatioInputs.push(h);
+      ...fe.map((n) => ({ label: n, value: n }))
+    ].forEach(({ label: n, value: s }) => {
+      const a = g("label", "gallery-crop-modal__aspect-ratio"), h = g("input", null, { type: "radio" }), l = g("span", "gallery-crop-modal__aspect-ratio-label");
+      h.name = "gallery-crop-aspect-ratio", h.value = s, h.checked = s === t, h.addEventListener("change", () => {
+        var c;
+        h.checked && ((c = this.cropper) == null || c.setAspectRatio(this.numericAspectRatio(s)));
+      }), l.textContent = n, a.append(h, l), e.appendChild(a), this.aspectRatioInputs.push(h);
     }), e;
   }
   selectedCropAspectRatio() {
@@ -2539,14 +2539,14 @@ class Ei {
     return this.normalizeCropAspectRatio(t);
   }
   normalizeCropAspectRatio(t) {
-    return t === "free" || he.includes(t) ? t : Rt;
+    return t === "free" || fe.includes(t) ? t : Ot;
   }
   numericAspectRatio(t) {
     return t === "free" ? Number.NaN : t === "16:9" ? 16 / 9 : t === "1:1" ? 1 : 3 / 2;
   }
 }
-const Ai = 12e4, Ri = 5e3, Di = 1e3, Mi = 1.5, Oi = 200;
-class $ extends Error {
+const Ti = 12e4, ki = 5e3, Oi = 1e3, Mi = 1.5, Pi = 200;
+class z extends Error {
   /**
    * Create a safe workflow error.
    * @param code - stable application error code
@@ -2557,7 +2557,7 @@ class $ extends Error {
     super(e), this.name = "AiImageClientError", this.code = t, this.status = i;
   }
 }
-class Ti {
+class Li {
   /**
    * Create the host client.
    * @param config - host endpoints, headers and resource identity
@@ -2638,19 +2638,56 @@ class Ti {
     }, e);
   }
   /**
+   * List the editor's own unfinished sessions and the slot limit.
+   * @param blockId - current Editor.js block identifier
+   * @param signal - optional cancellation signal
+   */
+  async listSessions(t, e) {
+    const i = await this.request(this.config.endpoints.sessions, {
+      body: JSON.stringify({
+        block_id: t,
+        context: this.config.context
+      }),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        ...this.config.headers
+      },
+      method: "POST",
+      signal: e
+    }, {
+      invalidResponse: "Некорректный ответ сервера со списком генераций.",
+      networkError: "Не удалось получить список активных генераций.",
+      requestFailed: "Сервер не смог вернуть список активных генераций."
+    });
+    return this.normalizeActiveSessions(i);
+  }
+  /**
+   * Move a session started elsewhere into the current block.
+   * @param request - session and block identity
+   * @param signal - optional cancellation signal
+   */
+  async adopt(t, e) {
+    return this.mutate(this.resolveEndpoint(this.config.endpoints.adopt, { sessionId: t.sessionId }), {
+      block_id: t.blockId,
+      context: this.config.context,
+      session_id: t.sessionId
+    }, e);
+  }
+  /**
    * Poll until the host reports a terminal state.
    * @param request - session identity, observer and cancellation signal
    */
   async poll(t) {
-    var a;
-    const e = Date.now(), i = this.config.pollTimeoutMs ?? Ai, o = this.config.pollMaxIntervalMs ?? Ri;
-    let n = this.config.pollIntervalMs ?? Di;
+    var s;
+    const e = Date.now(), i = this.config.pollTimeoutMs ?? Ti, o = this.config.pollMaxIntervalMs ?? ki;
+    let n = this.config.pollIntervalMs ?? Oi;
     for (; ; ) {
-      const r = await this.status(t.sessionId, t.blockId, t.signal);
-      if ((a = t.onStatus) == null || a.call(t, r), this.isTerminal(r.status))
-        return r;
+      const a = await this.status(t.sessionId, t.blockId, t.signal);
+      if ((s = t.onStatus) == null || s.call(t, a), this.isTerminal(a.status))
+        return a;
       if (Date.now() - e >= i)
-        throw new $(
+        throw new z(
           "poll_timeout",
           "Превышено время ожидания генерации изображения.",
           0
@@ -2666,9 +2703,9 @@ class Ti {
    */
   async status(t, e, i) {
     const o = this.resolveEndpoint(this.config.endpoints.status, { sessionId: t }), n = new URLSearchParams({ block_id: e });
-    for (const [r, h] of Object.entries(this.config.context))
-      h !== null && n.set(`context[${r}]`, String(h));
-    const a = await this.request(`${o}${o.includes("?") ? "&" : "?"}${n.toString()}`, {
+    for (const [a, h] of Object.entries(this.config.context))
+      h !== null && n.set(`context[${a}]`, String(h));
+    const s = await this.request(`${o}${o.includes("?") ? "&" : "?"}${n.toString()}`, {
       headers: {
         Accept: "application/json",
         ...this.config.headers
@@ -2676,7 +2713,7 @@ class Ti {
       method: "GET",
       signal: i
     });
-    return this.normalizeSession(a);
+    return this.normalizeSession(s);
   }
   /**
    * Execute one prompt-assistance action and return its text field.
@@ -2685,14 +2722,14 @@ class Ti {
    * @param signal - optional cancellation signal
    */
   async requestAssistanceText(t, e, i) {
-    const o = this.config.endpoints.prompt, n = this.config.publicationContext, a = e === "caption";
+    const o = this.config.endpoints.prompt, n = this.config.publicationContext, s = e === "caption";
     if (typeof o != "string" || o === "" || n === void 0)
-      throw new $(
+      throw new z(
         "prompt_unavailable",
-        a ? "Генерация описания недоступна." : "Помощь с промптом недоступна.",
+        s ? "Генерация описания недоступна." : "Помощь с промптом недоступна.",
         0
       );
-    const r = {
+    const a = {
       action: t.action,
       action_id: t.actionId,
       block_id: t.blockId,
@@ -2700,9 +2737,9 @@ class Ti {
       publication: t.publication,
       publicationContext: n
     };
-    t.action !== "generate" && (r.draft = t.draft);
+    t.action !== "generate" && (a.draft = t.draft);
     const l = (await this.request(o, {
-      body: JSON.stringify(r),
+      body: JSON.stringify(a),
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -2711,15 +2748,15 @@ class Ti {
       method: "POST",
       signal: i
     }, {
-      invalidResponse: a ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
-      networkError: a ? "Не удалось связаться с сервером подготовки описания." : "Не удалось связаться с сервером подготовки промпта.",
-      requestFailed: a ? "Сервер не смог подготовить описание изображения." : "Сервер не смог подготовить промпт для изображения."
+      invalidResponse: s ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
+      networkError: s ? "Не удалось связаться с сервером подготовки описания." : "Не удалось связаться с сервером подготовки промпта.",
+      requestFailed: s ? "Сервер не смог подготовить описание изображения." : "Сервер не смог подготовить промпт для изображения."
     }))[e];
     if (typeof l != "string" || l.trim() === "")
-      throw new $(
+      throw new z(
         "invalid_response",
-        a ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
-        Oi
+        s ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
+        Pi
       );
     return l;
   }
@@ -2737,8 +2774,8 @@ class Ti {
     let o;
     try {
       o = await fetch(t, e);
-    } catch (a) {
-      throw a instanceof DOMException && a.name === "AbortError" ? a : new $(
+    } catch (s) {
+      throw s instanceof DOMException && s.name === "AbortError" ? s : new z(
         "network_error",
         i.networkError,
         0
@@ -2747,18 +2784,18 @@ class Ti {
     const n = await o.json().catch(() => null);
     if (!o.ok) {
       if (this.isRecord(n) && this.isRecord(n.error)) {
-        const a = n.error.code, r = n.error.message;
-        if (typeof a == "string" && typeof r == "string")
-          throw new $(a, r, o.status);
+        const s = n.error.code, a = n.error.message;
+        if (typeof s == "string" && typeof a == "string")
+          throw new z(s, a, o.status);
       }
-      throw new $(
+      throw new z(
         "request_failed",
         i.requestFailed,
         o.status
       );
     }
     if (!this.isRecord(n) || !this.isRecord(n.data))
-      throw new $(
+      throw new z(
         "invalid_response",
         i.invalidResponse,
         o.status
@@ -2818,6 +2855,36 @@ class Ti {
     };
   }
   /**
+   * Normalize the unfinished-session list and drop malformed rows.
+   * @param data - host response data
+   */
+  normalizeActiveSessions(t) {
+    const e = typeof t.limit == "number" && Number.isFinite(t.limit) ? t.limit : 1, i = [];
+    if (Array.isArray(t.sessions))
+      for (const o of t.sessions) {
+        if (!this.isRecord(o) || typeof o.session_id != "string" || o.session_id === "")
+          continue;
+        const n = this.isRecord(o.owner) ? o.owner : {}, s = typeof o.preview_candidate_id == "string" ? o.preview_candidate_id : null;
+        i.push({
+          candidateCount: typeof o.candidate_count == "number" ? o.candidate_count : 0,
+          createdAt: typeof o.created_at == "string" ? o.created_at : null,
+          isCurrentBlock: o.is_current_block === !0,
+          owner: {
+            title: typeof n.title == "string" && n.title !== "" ? n.title : "Публикация",
+            url: typeof n.url == "string" && n.url !== "" ? n.url : null
+          },
+          previewUrl: s === null ? null : this.resolveEndpoint(this.config.endpoints.candidate, {
+            candidateId: s,
+            sessionId: o.session_id
+          }),
+          prompt: typeof o.prompt == "string" && o.prompt !== "" ? o.prompt : null,
+          sessionId: o.session_id,
+          status: typeof o.status == "string" ? o.status : "queued"
+        });
+      }
+    return { limit: e, sessions: i };
+  }
+  /**
    * Replace encoded identifiers in a host endpoint template.
    * @param template - URL containing named placeholders
    * @param values - placeholder values
@@ -2845,12 +2912,12 @@ class Ti {
       throw new DOMException("The operation was aborted.", "AbortError");
     t <= 0 || await new Promise((i, o) => {
       let n;
-      const a = () => {
+      const s = () => {
         clearTimeout(n), o(new DOMException("The operation was aborted.", "AbortError"));
       };
       n = setTimeout(() => {
-        e == null || e.removeEventListener("abort", a), i();
-      }, t), e == null || e.addEventListener("abort", a, { once: !0 });
+        e == null || e.removeEventListener("abort", s), i();
+      }, t), e == null || e.addEventListener("abort", s, { once: !0 });
     });
   }
   /**
@@ -2861,7 +2928,7 @@ class Ti {
   requiredString(t, e) {
     const i = t[e];
     if (typeof i != "string" || i === "")
-      throw new $(
+      throw new z(
         "invalid_response",
         "Некорректный ответ сервера генерации изображений.",
         0
@@ -2876,54 +2943,59 @@ class Ti {
     return typeof t == "object" && t !== null && !Array.isArray(t);
   }
 }
-class ki {
+class Bi {
   constructor({
-    onAssistPrompt: t,
-    onCancel: e,
-    onFinalize: i,
-    onGenerate: o,
-    onRefine: n,
-    onSelectCandidate: a,
-    onSelectHistory: r,
-    promptAssistanceEnabled: h,
-    promptId: l,
-    aspectRatio: d,
-    aspectRatios: c
+    onAdoptSession: t,
+    onAssistPrompt: e,
+    onCancel: i,
+    onCloseSession: o,
+    onFinalize: n,
+    onGenerate: s,
+    onRefine: a,
+    onSelectCandidate: h,
+    onSelectHistory: l,
+    promptAssistanceEnabled: c,
+    promptId: d,
+    aspectRatio: p,
+    aspectRatios: C
   }) {
-    this.isGenerationBusy = !1, this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.promptAssistanceEnabled = h, this.onSelectCandidate = a, this.onSelectHistory = r;
-    const p = y("div", ["ai-image-tool__generator"]), C = y("div", ["ai-image-tool__prompt-section"]), b = y("label", ["ai-image-tool__label"]), u = y("textarea", ["ai-image-tool__prompt"]), f = y("label", ["ai-image-tool__caption-option"]), g = y("input", ["ai-image-tool__caption-checkbox"]), v = y("span"), w = y("div", ["ai-image-tool__aspect-ratios"]), x = y("div", ["ai-image-tool__prompt-actions"]), S = y("button", ["ai-image-tool__action"], { type: "button" }), m = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), I = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), _ = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), A = y("div", ["ai-image-tool__status"]), O = y("div", ["ai-image-tool__error"]), F = y("div", ["ai-image-tool__candidates"]), H = y("div", ["ai-image-tool__selection"]), G = y("img", ["ai-image-tool__selected-preview"]), P = y("div", ["ai-image-tool__generated-caption"]), T = y("label", ["ai-image-tool__label"]), L = y("textarea", ["ai-image-tool__prompt"]), q = y("div", ["ai-image-tool__caption-status"]), K = y("label", ["ai-image-tool__label"]), j = y("textarea", ["ai-image-tool__prompt"]), Q = y("button", ["ai-image-tool__action"], { type: "button" }), tt = y("button", ["ai-image-tool__action"], { type: "button" }), dt = y("div", ["ai-image-tool__history"]), ot = y("div", ["ai-image-tool__history-status"]);
-    u.id = l, u.rows = 3, u.placeholder = "Опишите изображение, которое нужно создать", b.htmlFor = l, b.textContent = "Введите промпт", S.textContent = "Отправить", m.textContent = "Сгенерировать на основе публикации", I.textContent = "Улучшить промпт", _.textContent = "Отменить", m.hidden = !h, I.hidden = !h, g.type = "checkbox", g.id = `${l}-generate-caption`, v.textContent = "Также сгенерировать описание", f.htmlFor = g.id, f.hidden = !h, f.append(g, v), w.setAttribute("role", "radiogroup"), w.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(w, c, d, l), x.append(S, m, I, _), C.append(b, u, f, w, x), G.alt = "Выбранный вариант", G.dataset.selectedPreview = "", L.id = `${l}-caption`, L.rows = 2, L.dataset.generatedCaption = "", T.htmlFor = L.id, T.textContent = "Подпись к изображению", q.setAttribute("aria-live", "polite"), P.hidden = !0, P.append(T, L, q), j.id = `${l}-refinement`, j.rows = 2, j.dataset.refinementPrompt = "", K.htmlFor = j.id, K.textContent = "Как доработать изображение", Q.textContent = "Доработать", tt.textContent = "Использовать изображение", H.hidden = !0, H.append(
-      G,
-      P,
-      K,
-      j,
-      Q,
-      tt,
-      dt,
-      ot
-    ), A.setAttribute("aria-live", "polite"), O.setAttribute("aria-live", "assertive"), O.setAttribute("role", "alert"), O.hidden = !0, ot.setAttribute("aria-live", "polite"), F.hidden = !0, p.hidden = !0, p.append(C, A, O, F, H), S.addEventListener("click", () => o(u.value, g.checked, this.selectedAspectRatio())), m.addEventListener("click", () => t("generate", u.value)), I.addEventListener("click", () => t("improve", u.value)), _.addEventListener("click", e), Q.addEventListener("click", () => n(j.value)), tt.addEventListener("click", i), u.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
-      wrapper: p,
-      promptSection: C,
-      prompt: u,
-      generateButton: S,
-      generateFromPublicationButton: m,
-      improvePromptButton: I,
-      generateCaptionCheckbox: g,
-      aspectRatioOptions: w,
-      generationStatus: A,
-      generationError: O,
+    this.isGenerationBusy = !1, this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = c, this.onAdoptSession = t, this.onCloseSession = o, this.onSelectCandidate = h, this.onSelectHistory = l;
+    const b = g("div", ["ai-image-tool__generator"]), u = g("div", ["ai-image-tool__sessions"]), f = g("div", ["ai-image-tool__sessions-title"]), y = g("div", ["ai-image-tool__sessions-list"]), v = g("div", ["ai-image-tool__prompt-section"]), w = g("label", ["ai-image-tool__label"]), x = g("textarea", ["ai-image-tool__prompt"]), S = g("label", ["ai-image-tool__caption-option"]), m = g("input", ["ai-image-tool__caption-checkbox"]), _ = g("span"), I = g("div", ["ai-image-tool__aspect-ratios"]), E = g("div", ["ai-image-tool__prompt-actions"]), O = g("button", ["ai-image-tool__action"], { type: "button" }), G = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), N = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), U = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), P = g("div", ["ai-image-tool__status"]), T = g("div", ["ai-image-tool__error"]), F = g("div", ["ai-image-tool__candidates"]), q = g("div", ["ai-image-tool__selection"]), V = g("img", ["ai-image-tool__selected-preview"]), J = g("div", ["ai-image-tool__generated-caption"]), ot = g("label", ["ai-image-tool__label"]), X = g("textarea", ["ai-image-tool__prompt"]), st = g("div", ["ai-image-tool__caption-status"]), at = g("label", ["ai-image-tool__label"]), Y = g("textarea", ["ai-image-tool__prompt"]), rt = g("button", ["ai-image-tool__action"], { type: "button" }), wt = g("button", ["ai-image-tool__action"], { type: "button" }), Vt = g("div", ["ai-image-tool__history"]), Rt = g("div", ["ai-image-tool__history-status"]);
+    x.id = d, x.rows = 3, x.placeholder = "Опишите изображение, которое нужно создать", w.htmlFor = d, w.textContent = "Введите промпт", O.textContent = "Отправить", G.textContent = "Сгенерировать на основе публикации", N.textContent = "Улучшить промпт", U.textContent = "Отменить", G.hidden = !c, N.hidden = !c, m.type = "checkbox", m.id = `${d}-generate-caption`, _.textContent = "Также сгенерировать описание", S.htmlFor = m.id, S.hidden = !c, S.append(m, _), I.setAttribute("role", "radiogroup"), I.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(I, C, p, d), E.append(O, G, N, U), v.append(w, x, S, I, E), V.alt = "Выбранный вариант", V.dataset.selectedPreview = "", X.id = `${d}-caption`, X.rows = 2, X.dataset.generatedCaption = "", ot.htmlFor = X.id, ot.textContent = "Подпись к изображению", st.setAttribute("aria-live", "polite"), J.hidden = !0, J.append(ot, X, st), Y.id = `${d}-refinement`, Y.rows = 2, Y.dataset.refinementPrompt = "", at.htmlFor = Y.id, at.textContent = "Как доработать изображение", rt.textContent = "Доработать", wt.textContent = "Использовать изображение", q.hidden = !0, q.append(
+      V,
+      J,
+      at,
+      Y,
+      rt,
+      wt,
+      Vt,
+      Rt
+    ), P.setAttribute("aria-live", "polite"), T.setAttribute("aria-live", "assertive"), T.setAttribute("role", "alert"), T.hidden = !0, Rt.setAttribute("aria-live", "polite"), F.hidden = !0, b.hidden = !0, u.hidden = !0, u.append(f, y), b.append(u, v, P, T, F, q), O.addEventListener("click", () => s(x.value, m.checked, this.selectedAspectRatio())), G.addEventListener("click", () => e("generate", x.value)), N.addEventListener("click", () => e("improve", x.value)), U.addEventListener("click", i), rt.addEventListener("click", () => a(Y.value)), wt.addEventListener("click", n), x.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
+      wrapper: b,
+      sessionsSection: u,
+      sessionsTitle: f,
+      sessionsList: y,
+      promptSection: v,
+      prompt: x,
+      generateButton: O,
+      generateFromPublicationButton: G,
+      improvePromptButton: N,
+      generateCaptionCheckbox: m,
+      aspectRatioOptions: I,
+      generationStatus: P,
+      generationError: T,
       candidates: F,
-      selection: H,
-      selectedPreview: G,
-      generatedCaptionSection: P,
-      generatedCaption: L,
-      generatedCaptionStatus: q,
-      refinementPrompt: j,
-      refineButton: Q,
-      finalizeButton: tt,
-      cancelButton: _,
-      history: dt,
-      historyStatus: ot
+      selection: q,
+      selectedPreview: V,
+      generatedCaptionSection: J,
+      generatedCaption: X,
+      generatedCaptionStatus: st,
+      refinementPrompt: Y,
+      refineButton: rt,
+      finalizeButton: wt,
+      cancelButton: U,
+      history: Vt,
+      historyStatus: Rt
     }, this.updatePromptControls();
   }
   open() {
@@ -2931,6 +3003,81 @@ class ki {
   }
   close() {
     this.nodes.wrapper.hidden = !0, this.reset();
+  }
+  /**
+   * Show the editor's unfinished sessions above the prompt: each one can be
+   * continued here, opened in its own publication, or closed to free a slot.
+   */
+  showActiveSessions(t) {
+    const { limit: e, sessions: i } = t;
+    if (this.hasFreeSessionSlot = i.length < e, this.nodes.sessionsList.replaceChildren(), i.length === 0) {
+      this.nodes.sessionsSection.hidden = !0, this.updatePromptControls();
+      return;
+    }
+    this.nodes.sessionsTitle.textContent = this.hasFreeSessionSlot ? `Незакрытые генерации: ${i.length} из ${e}` : `Все слоты заняты (${i.length} из ${e}) — продолжите одну или закройте лишние`;
+    for (const o of i)
+      this.nodes.sessionsList.appendChild(this.buildSessionCard(o));
+    this.nodes.sessionsSection.hidden = !1, this.updatePromptControls();
+  }
+  hideActiveSessions() {
+    this.hasFreeSessionSlot = !0, this.nodes.sessionsSection.hidden = !0, this.nodes.sessionsList.replaceChildren(), this.updatePromptControls();
+  }
+  buildSessionCard(t) {
+    const e = g("div", ["ai-image-tool__session"], { "data-session-id": t.sessionId }), i = g("div", ["ai-image-tool__session-preview"]);
+    if (t.previewUrl !== null) {
+      const c = g("img", ["ai-image-tool__session-thumb"], {
+        alt: "",
+        loading: "lazy",
+        src: t.previewUrl
+      });
+      i.appendChild(c);
+    }
+    const o = g("div", ["ai-image-tool__session-body"]), n = t.owner.url === null ? g("span", ["ai-image-tool__session-title"]) : g("a", ["ai-image-tool__session-title"], {
+      href: t.owner.url,
+      rel: "noopener",
+      target: "_blank"
+    });
+    n.textContent = t.owner.title;
+    const s = g("div", ["ai-image-tool__session-meta"]);
+    if (s.textContent = [
+      t.isCurrentBlock ? "этот блок" : null,
+      this.sessionStatusLabel(t.status),
+      t.candidateCount > 0 ? `${t.candidateCount} вар.` : null,
+      this.sessionTimeLabel(t.createdAt)
+    ].filter((c) => c !== null).join(" · "), o.append(n, s), t.prompt !== null) {
+      const c = g("div", ["ai-image-tool__session-prompt"]);
+      c.textContent = t.prompt, o.appendChild(c);
+    }
+    const a = g("div", ["ai-image-tool__session-actions"]), h = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], {
+      type: "button"
+    });
+    h.textContent = t.isCurrentBlock ? "Продолжить" : "Продолжить здесь", h.addEventListener("click", () => this.onAdoptSession(t.sessionId));
+    const l = g("button", ["ai-image-tool__session-close"], {
+      title: "Закрыть генерацию и освободить слот",
+      type: "button"
+    });
+    return l.setAttribute("aria-label", "Закрыть генерацию"), l.textContent = "×", l.addEventListener("click", () => this.onCloseSession(t.sessionId)), a.append(h, l), e.append(i, o, a), e;
+  }
+  sessionStatusLabel(t) {
+    return {
+      failed: "ошибка",
+      finalizing: "вставляется",
+      generating: "генерируется",
+      queued: "в очереди",
+      ready: "варианты готовы",
+      refining: "дорабатывается"
+    }[t] ?? t;
+  }
+  sessionTimeLabel(t) {
+    if (t === null)
+      return null;
+    const e = new Date(t);
+    return Number.isNaN(e.getTime()) ? null : e.toLocaleString("ru-RU", {
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      month: "2-digit"
+    });
   }
   setPromptValue(t) {
     this.nodes.prompt.value = t, this.updatePromptControls();
@@ -2986,15 +3133,15 @@ class ki {
   showCandidates(t) {
     var e;
     this.nodes.candidates.replaceChildren(), t.forEach((i, o) => {
-      const n = y("button", ["ai-image-tool__candidate"], { type: "button" }), a = y("img", ["ai-image-tool__candidate-image"]);
-      n.dataset.candidateId = i.id, n.setAttribute("aria-label", `Выбрать вариант ${o + 1}`), n.setAttribute("aria-pressed", "false"), n.addEventListener("click", () => this.selectCandidate(i.id)), a.alt = `Вариант ${o + 1}`, a.src = i.previewUrl, n.appendChild(a), this.nodes.candidates.appendChild(n);
+      const n = g("button", ["ai-image-tool__candidate"], { type: "button" }), s = g("img", ["ai-image-tool__candidate-image"]);
+      n.dataset.candidateId = i.id, n.setAttribute("aria-label", `Выбрать вариант ${o + 1}`), n.setAttribute("aria-pressed", "false"), n.addEventListener("click", () => this.selectCandidate(i.id)), s.alt = `Вариант ${o + 1}`, s.src = i.previewUrl, n.appendChild(s), this.nodes.candidates.appendChild(n);
     }), this.nodes.promptSection.hidden = !0, this.nodes.candidates.hidden = !1, this.showGenerationStatus("ready"), (e = this.nodes.candidates.querySelector("[data-candidate-id]")) == null || e.focus();
   }
   showSelectedCandidate(t, e) {
     this.nodes.candidates.querySelectorAll("[data-candidate-id]").forEach((i) => {
       i.setAttribute("aria-pressed", String(i.dataset.candidateId === t.id));
     }), this.nodes.selectedPreview.src = t.previewUrl, this.nodes.selection.hidden = !1, this.nodes.history.replaceChildren(), e.forEach((i, o) => {
-      const n = y("button", ["ai-image-tool__history-item"], { type: "button" });
+      const n = g("button", ["ai-image-tool__history-item"], { type: "button" });
       n.dataset.historyCandidateId = i.id, n.textContent = `Версия ${o + 1}`, n.setAttribute("aria-current", i.id === t.id ? "true" : "false"), n.addEventListener("click", () => this.selectHistory(i.id)), this.nodes.history.appendChild(n);
     });
   }
@@ -3012,7 +3159,7 @@ class ki {
   }
   updatePromptControls() {
     const t = this.isGenerationBusy || this.isPromptAssistanceBusy;
-    this.nodes.wrapper.setAttribute("aria-busy", String(t)), this.nodes.prompt.disabled = t, this.nodes.generateButton.disabled = t, this.nodes.generateFromPublicationButton.disabled = t || !this.promptAssistanceEnabled, this.nodes.generateCaptionCheckbox.disabled = t || !this.promptAssistanceEnabled, this.nodes.aspectRatioOptions.querySelectorAll('input[type="radio"]').forEach((e) => {
+    this.nodes.wrapper.setAttribute("aria-busy", String(t)), this.nodes.prompt.disabled = t, this.nodes.generateButton.disabled = t || !this.hasFreeSessionSlot, this.nodes.generateFromPublicationButton.disabled = t || !this.promptAssistanceEnabled, this.nodes.generateCaptionCheckbox.disabled = t || !this.promptAssistanceEnabled, this.nodes.aspectRatioOptions.querySelectorAll('input[type="radio"]').forEach((e) => {
       e.disabled = t;
     }), this.nodes.improvePromptButton.disabled = t || !this.promptAssistanceEnabled || this.nodes.prompt.value.trim() === "";
   }
@@ -3021,9 +3168,9 @@ class ki {
   }
   createAspectRatioOptions(t, e, i, o) {
     const n = e.includes(i) ? i : e[0] ?? "3:2";
-    e.forEach((a) => {
-      const r = y("label", ["ai-image-tool__aspect-ratio-option"]), h = y("input", ["ai-image-tool__aspect-ratio-input"]), l = y("span");
-      h.type = "radio", h.name = `${o}-aspect-ratio`, h.value = a, h.checked = a === n, l.textContent = a, r.append(h, l), t.appendChild(r);
+    e.forEach((s) => {
+      const a = g("label", ["ai-image-tool__aspect-ratio-option"]), h = g("input", ["ai-image-tool__aspect-ratio-input"]), l = g("span");
+      h.type = "radio", h.name = `${o}-aspect-ratio`, h.value = s, h.checked = s === n, l.textContent = s, a.append(h, l), t.appendChild(a);
     });
   }
   selectedAspectRatio() {
@@ -3032,7 +3179,7 @@ class ki {
     return t === "16:9" || t === "1:1" ? t : "3:2";
   }
 }
-class Pi {
+class Gi {
   constructor({
     blockId: t,
     config: e,
@@ -3040,24 +3187,66 @@ class Pi {
     onChange: o,
     onFinalized: n
   }) {
-    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.shouldUseGeneratedCaption = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new Ti(e), this.config = e, this.onChange = o, this.onFinalized = n, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
-    const a = typeof e.endpoints.prompt == "string" && e.endpoints.prompt.trim() !== "" && e.publicationContext !== void 0 && typeof e.getPublicationContext == "function";
-    this.ui = new ki({
-      onAssistPrompt: (r, h) => this.assistPrompt(r, h),
+    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.shouldUseGeneratedCaption = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new Li(e), this.config = e, this.onChange = o, this.onFinalized = n, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
+    const s = typeof e.endpoints.prompt == "string" && e.endpoints.prompt.trim() !== "" && e.publicationContext !== void 0 && typeof e.getPublicationContext == "function";
+    this.ui = new Bi({
+      onAdoptSession: (a) => this.adoptSession(a),
+      onAssistPrompt: (a, h) => this.assistPrompt(a, h),
       onCancel: () => this.cancel(),
+      onCloseSession: (a) => this.closeSession(a),
       onFinalize: () => this.finalizeSelectedCandidate(),
-      onGenerate: (r, h, l) => this.generate(r, h, l),
-      onRefine: (r) => this.refine(r),
-      onSelectCandidate: (r) => this.selectCandidate(r),
-      onSelectHistory: (r) => this.selectCandidate(r),
+      onGenerate: (a, h, l) => this.generate(a, h, l),
+      onRefine: (a) => this.refine(a),
+      onSelectCandidate: (a) => this.selectCandidate(a),
+      onSelectHistory: (a) => this.selectCandidate(a),
       aspectRatio: this.defaultAspectRatio(e.aspectRatio),
       aspectRatios: this.availableAspectRatios(e.aspectRatios),
-      promptAssistanceEnabled: a,
+      promptAssistanceEnabled: s,
       promptId: `gallery-ai-prompt-${t}`
     }), this.element = this.ui.nodes.wrapper;
   }
   open() {
-    this.isDestroyed || (this.sessionId === null && (this.sessionId = globalThis.crypto.randomUUID(), this.hasCancelledPendingGeneration = !1, this.onChange()), this.ui.open());
+    this.isDestroyed || (this.sessionId === null && (this.sessionId = globalThis.crypto.randomUUID(), this.hasCancelledPendingGeneration = !1, this.onChange()), this.ui.open(), this.refreshActiveSessions());
+  }
+  /**
+   * Показать незакрытые генерации редактора: сессия живёт сутки и занимает
+   * слот, поэтому решение — продолжить её или закрыть — принимает он сам.
+   */
+  refreshActiveSessions() {
+    this.client.listSessions(this.blockId).then((t) => {
+      this.isDestroyed || this.ui.showActiveSessions(t);
+    }).catch(() => {
+    });
+  }
+  adoptSession(t) {
+    this.isDestroyed || this.isGenerationRequestRunning || this.runAdoptSession(t);
+  }
+  async runAdoptSession(t) {
+    const e = this.replacePollController();
+    this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.ui.setGenerationBusy(!0);
+    try {
+      const i = await this.client.adopt({ blockId: this.blockId, sessionId: t }, e.signal);
+      this.candidates.clear(), this.history = [], this.selectedCandidateId = null, this.sessionId = t, this.hasCancelledPendingGeneration = !1, this.onChange(), this.ui.hideActiveSessions(), this.applySession(i), (i.status === "queued" || i.status === "generating" || i.status === "refining") && this.applySession(await this.client.poll({
+        blockId: this.blockId,
+        onStatus: (o) => this.applySession(o),
+        sessionId: t,
+        signal: e.signal
+      }));
+    } catch (i) {
+      this.handleOperationError(i, "Не удалось продолжить эту генерацию.", () => {
+      }), this.refreshActiveSessions();
+    } finally {
+      this.finishGenerationRequest(e);
+    }
+  }
+  closeSession(t) {
+    if (this.isDestroyed)
+      return;
+    const e = t === this.sessionId;
+    e && (this.hasCancelledPendingGeneration = !0), this.client.cancel({ blockId: this.blockId, sessionId: t }).catch(() => {
+    }).then(() => {
+      this.isDestroyed || (e && (this.resetSession(), this.sessionId = globalThis.crypto.randomUUID(), this.hasCancelledPendingGeneration = !1, this.ui.close(), this.ui.open(), this.onChange()), this.refreshActiveSessions());
+    });
   }
   getPendingData() {
     if (this.sessionId !== null)
@@ -3106,25 +3295,25 @@ class Pi {
   }
   async runPromptAssistance(t, e, i, o, n) {
     try {
-      const a = await i();
+      const s = await i();
       if (!this.isCurrentPromptAssistance(n, o))
         return;
-      this.assertPublicationHasText(a, "В публикации нет текста для подготовки промпта.");
-      const r = t === "generate" ? {
+      this.assertPublicationHasText(s, "В публикации нет текста для подготовки промпта.");
+      const a = t === "generate" ? {
         action: t,
         actionId: globalThis.crypto.randomUUID(),
         blockId: this.blockId,
-        publication: a
+        publication: s
       } : {
         action: t,
         actionId: globalThis.crypto.randomUUID(),
         blockId: this.blockId,
         draft: e,
-        publication: a
-      }, h = await this.client.assistPrompt(r, o.signal);
+        publication: s
+      }, h = await this.client.assistPrompt(a, o.signal);
       this.isCurrentPromptAssistance(n, o) && (this.ui.setPromptValue(h), this.ui.showPromptAssistanceStatus("Промпт готов — проверьте и при необходимости отредактируйте"));
-    } catch (a) {
-      this.isCurrentPromptAssistance(n, o) && !this.isAbortError(a) && (this.ui.showPromptAssistanceStatus(""), this.ui.showGenerationError(this.errorMessage(a, "Не удалось подготовить промпт для изображения.")));
+    } catch (s) {
+      this.isCurrentPromptAssistance(n, o) && !this.isAbortError(s) && (this.ui.showPromptAssistanceStatus(""), this.ui.showGenerationError(this.errorMessage(s, "Не удалось подготовить промпт для изображения.")));
     } finally {
       this.isCurrentPromptAssistance(n, o) && (this.isPromptAssistanceRunning = !1, this.promptAssistanceController = null, this.ui.setPromptAssistanceBusy(!1));
     }
@@ -3148,14 +3337,14 @@ class Pi {
       if (!this.isCurrentCaptionRequest(o, i))
         return;
       this.assertPublicationHasText(n, "В публикации нет текста для подготовки описания.");
-      const a = await this.client.generateCaption({
+      const s = await this.client.generateCaption({
         action: "caption",
         actionId: globalThis.crypto.randomUUID(),
         blockId: this.blockId,
         draft: t,
         publication: n
       }, i.signal);
-      this.isCurrentCaptionRequest(o, i) && this.ui.completeGeneratedCaption(a);
+      this.isCurrentCaptionRequest(o, i) && this.ui.completeGeneratedCaption(s);
     } catch (n) {
       this.isCurrentCaptionRequest(o, i) && !this.isAbortError(n) && this.ui.failGeneratedCaption(`${this.errorMessage(n, "Не удалось подготовить описание изображения.")} Можно ввести подпись вручную.`);
     } finally {
@@ -3174,31 +3363,31 @@ class Pi {
     if (this.isGenerationRequestRunning || this.sessionId === null)
       return;
     this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.generationActionId ?? (this.generationActionId = globalThis.crypto.randomUUID());
-    const n = this.generationActionId, a = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "generation_submitting"), this.shouldUseGeneratedCaption = e, e ? this.startCaptionGeneration(o) : (this.abortCaptionGeneration(), this.ui.resetGeneratedCaption()), this.runGeneration(o, i, n, a);
+    const n = this.generationActionId, s = this.replacePollController();
+    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "generation_submitting"), this.shouldUseGeneratedCaption = e, e ? this.startCaptionGeneration(o) : (this.abortCaptionGeneration(), this.ui.resetGeneratedCaption()), this.runGeneration(o, i, n, s);
   }
   async runGeneration(t, e, i, o) {
     if (this.sessionId === null)
       return;
     const n = this.sessionId;
     try {
-      const a = await this.client.generate({
+      const s = await this.client.generate({
         actionId: i,
         aspectRatio: e,
         blockId: this.blockId,
         prompt: t,
         sessionId: n
       }, o.signal);
-      this.generationActionId = null, this.applySession(a);
-      const r = a.status === "ready" ? a : await this.client.poll({
+      this.generationActionId = null, this.applySession(s);
+      const a = s.status === "ready" ? s : await this.client.poll({
         blockId: this.blockId,
         onStatus: (h) => this.applySession(h),
         sessionId: n,
         signal: o.signal
       });
-      this.applySession(r);
-    } catch (a) {
-      this.handleOperationError(a, "Не удалось сгенерировать изображение.", () => {
+      this.applySession(a);
+    } catch (s) {
+      this.handleOperationError(s, "Не удалось сгенерировать изображение.", () => {
         this.generationActionId = null;
       });
     } finally {
@@ -3222,23 +3411,23 @@ class Pi {
       return;
     const n = this.sessionId;
     try {
-      const a = await this.client.refine({
+      const s = await this.client.refine({
         actionId: i,
         blockId: this.blockId,
         candidateId: e,
         prompt: t,
         sessionId: n
       }, o.signal);
-      this.refinementActionId = null, this.applySession(a);
-      const r = a.status === "ready" ? a : await this.client.poll({
+      this.refinementActionId = null, this.applySession(s);
+      const a = s.status === "ready" ? s : await this.client.poll({
         blockId: this.blockId,
         onStatus: (h) => this.applySession(h),
         sessionId: n,
         signal: o.signal
       });
-      this.applySession(r), this.ui.clearRefinementPrompt();
-    } catch (a) {
-      this.handleOperationError(a, "Не удалось доработать изображение.", () => {
+      this.applySession(a), this.ui.clearRefinementPrompt();
+    } catch (s) {
+      this.handleOperationError(s, "Не удалось доработать изображение.", () => {
         this.refinementActionId = null;
       });
     } finally {
@@ -3257,25 +3446,25 @@ class Pi {
       return;
     const n = this.sessionId;
     try {
-      const a = await this.client.finalize({
+      const s = await this.client.finalize({
         actionId: e,
         blockId: this.blockId,
         candidateId: t,
         sessionId: n
       }, i.signal);
-      this.finalizationActionId = null, this.applySession(a);
-      const r = a.status === "completed" ? a : await this.client.poll({
+      this.finalizationActionId = null, this.applySession(s);
+      const a = s.status === "completed" ? s : await this.client.poll({
         blockId: this.blockId,
         onStatus: (l) => this.applySession(l),
         sessionId: n,
         signal: i.signal
       });
-      if (r.image === void 0 || !this.isStandardImageData(r.image))
-        throw new $("invalid_final_image", "Сервер вернул некорректные данные изображения.", 0);
-      const h = this.mapImageToGalleryItem(r.image, o);
+      if (a.image === void 0 || !this.isStandardImageData(a.image))
+        throw new z("invalid_final_image", "Сервер вернул некорректные данные изображения.", 0);
+      const h = this.mapImageToGalleryItem(a.image, o);
       this.resetSession(), this.ui.close(), this.onFinalized(h), this.onChange();
-    } catch (a) {
-      this.handleOperationError(a, "Не удалось сохранить изображение.", () => {
+    } catch (s) {
+      this.handleOperationError(s, "Не удалось сохранить изображение.", () => {
         this.finalizationActionId = null;
       });
     } finally {
@@ -3310,7 +3499,7 @@ class Pi {
     this.pollController === t && (this.isGenerationRequestRunning = !1, this.ui.setGenerationBusy(!1));
   }
   handleOperationError(t, e, i) {
-    this.isAbortError(t) || (t instanceof $ && t.status > 0 && i(), this.ui.showGenerationError(this.errorMessage(t, e)));
+    this.isAbortError(t) || (t instanceof z && t.status > 0 && i(), this.ui.showGenerationError(this.errorMessage(t, e)));
   }
   isStandardImageData(t) {
     const e = t.file;
@@ -3356,55 +3545,55 @@ class Pi {
  * @author iXBT
  * @license MIT
  */
-class Li {
+class Ni {
   constructor({ data: t, config: e, api: i, readOnly: o, block: n }) {
     this.aiGenerationController = null, this.currentLoadingItem = null, this.api = i, this.readOnly = o, this.block = n;
-    const a = e ?? {};
+    const s = e ?? {};
     this.config = {
-      endpoints: a.endpoints ?? {},
-      additionalRequestData: a.additionalRequestData,
-      additionalRequestHeaders: a.additionalRequestHeaders,
-      field: a.field ?? "image",
-      types: a.types ?? "image/*",
-      captionPlaceholder: this.api.i18n.t(a.captionPlaceholder ?? "Caption"),
-      sourcePlaceholder: this.api.i18n.t(a.sourcePlaceholder ?? "Source"),
-      sourceLinkPlaceholder: this.api.i18n.t(a.sourceLinkPlaceholder ?? "Source link"),
-      buttonContent: a.buttonContent ?? this.api.i18n.t("Add Image"),
-      urlButtonContent: a.urlButtonContent ?? this.api.i18n.t("Add from URL"),
-      uploader: a.uploader,
-      mediaHost: a.mediaHost,
-      cover: a.cover,
-      onMediaRemoved: a.onMediaRemoved,
-      onCropApplied: a.onCropApplied,
-      generation: a.generation
+      endpoints: s.endpoints ?? {},
+      additionalRequestData: s.additionalRequestData,
+      additionalRequestHeaders: s.additionalRequestHeaders,
+      field: s.field ?? "image",
+      types: s.types ?? "image/*",
+      captionPlaceholder: this.api.i18n.t(s.captionPlaceholder ?? "Caption"),
+      sourcePlaceholder: this.api.i18n.t(s.sourcePlaceholder ?? "Source"),
+      sourceLinkPlaceholder: this.api.i18n.t(s.sourceLinkPlaceholder ?? "Source link"),
+      buttonContent: s.buttonContent ?? this.api.i18n.t("Add Image"),
+      urlButtonContent: s.urlButtonContent ?? this.api.i18n.t("Add from URL"),
+      uploader: s.uploader,
+      mediaHost: s.mediaHost,
+      cover: s.cover,
+      onMediaRemoved: s.onMediaRemoved,
+      onCropApplied: s.onCropApplied,
+      generation: s.generation
     }, this._data = {
       items: (t == null ? void 0 : t.items) ?? [],
       layout: (t == null ? void 0 : t.layout) ?? "grid",
       columns: (t == null ? void 0 : t.columns) ?? 3,
       stretched: (t == null ? void 0 : t.stretched) ?? !1
-    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new Be({
+    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new Ue({
       config: this.config,
-      onUpload: (r) => this.onUpload(r),
-      onError: (r) => this.uploadingFailed(r)
-    }), this.cropModal = new Ei(), this.ui = new Dt({
+      onUpload: (a) => this.onUpload(a),
+      onError: (a) => this.uploadingFailed(a)
+    }), this.cropModal = new Di(), this.ui = new Mt({
       api: i,
       config: this.config,
       onSelectFile: () => this.selectFile(),
-      onSelectUrl: (r) => this.uploadFromUrl(r),
-      onColumnsChange: (r) => this.onColumnsChange(r),
-      onRemoveImage: (r, h) => this.onRemoveImage(r, h),
-      onCropImage: (r) => this.handleCropImage(r),
+      onSelectUrl: (a) => this.uploadFromUrl(a),
+      onColumnsChange: (a) => this.onColumnsChange(a),
+      onRemoveImage: (a, h) => this.onRemoveImage(a, h),
+      onCropImage: (a) => this.handleCropImage(a),
       onOpenAi: () => {
-        var r;
-        return (r = this.aiGenerationController) == null ? void 0 : r.open();
+        var a;
+        return (a = this.aiGenerationController) == null ? void 0 : a.open();
       },
       readOnly: o
-    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new Pi({
+    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new Gi({
       blockId: this.block.id,
       config: this.config.generation,
       initialPending: this._data.aiGeneration,
       onChange: () => this.block.dispatchChange(),
-      onFinalized: (r) => this.onAiFinalized(r)
+      onFinalized: (a) => this.onAiFinalized(a)
     }));
   }
   /**
@@ -3418,7 +3607,7 @@ class Li {
    */
   static get toolbox() {
     return {
-      icon: ce,
+      icon: me,
       title: "Gallery"
     };
   }
@@ -3453,13 +3642,6 @@ class Li {
     var e;
     const t = this.ui.render(this._data.items, this._data.columns);
     return this.aiGenerationController !== null && !t.contains(this.aiGenerationController.element) && t.appendChild(this.aiGenerationController.element), this._data.aiGeneration !== void 0 && ((e = this.aiGenerationController) == null || e.open()), this._data.stretched && this.setTune("stretched", !0), t;
-  }
-  /**
-   * Fires after clicks on the Toolbox Gallery Icon
-   * Initiates click on the Select File button to immediately open file dialog
-   */
-  appendCallback() {
-    this.ui.nodes.fileButton.click();
   }
   /**
    * Validate data
@@ -3612,7 +3794,7 @@ class Li {
    * Handle crop image request
    */
   async handleCropImage(t) {
-    var n, a;
+    var n, s;
     const e = t.dataset.url;
     if (!e) return;
     const i = t.dataset.crop, o = await this.cropModal.open(
@@ -3633,8 +3815,8 @@ class Li {
           o.showOriginalOnClick,
           o.cropAspectRatio
         );
-        const r = t.dataset.mediaId;
-        r && ((a = (n = this.config).onCropApplied) == null || a.call(n, r, o.crop));
+        const a = t.dataset.mediaId;
+        a && ((s = (n = this.config).onCropApplied) == null || s.call(n, a, o.crop));
       }
       this.block.dispatchChange();
     }
@@ -3656,8 +3838,8 @@ class Li {
         ...this.config.additionalRequestHeaders || {}
       },
       body: JSON.stringify({ url: t })
-    }).then((a) => a.json()).catch((a) => {
-      console.error("Gallery Tool: failed to delete image", a);
+    }).then((s) => s.json()).catch((s) => {
+      console.error("Gallery Tool: failed to delete image", s);
     });
   }
   normalizeCropAspectRatioMode(t) {
@@ -3691,5 +3873,5 @@ class Li {
   }
 }
 export {
-  Li as default
+  Ni as default
 };

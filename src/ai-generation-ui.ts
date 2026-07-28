@@ -1,11 +1,18 @@
-import type { AiImageAspectRatio, AiImageCandidate } from './ai-image-client';
+import type {
+  AiImageActiveSession,
+  AiImageActiveSessions,
+  AiImageAspectRatio,
+  AiImageCandidate,
+} from './ai-image-client';
 import { make } from './utils/dom';
 
 export type PromptAssistanceAction = 'generate' | 'improve';
 
 interface AiGenerationUiParams {
+  onAdoptSession: (sessionId: string) => void;
   onAssistPrompt: (action: PromptAssistanceAction, prompt: string) => void;
   onCancel: () => void;
+  onCloseSession: (sessionId: string) => void;
   onFinalize: () => void;
   onGenerate: (prompt: string, generateCaption: boolean, aspectRatio: AiImageAspectRatio) => void;
   onRefine: (prompt: string) => void;
@@ -19,6 +26,9 @@ interface AiGenerationUiParams {
 
 interface AiGenerationNodes {
   wrapper: HTMLElement;
+  sessionsSection: HTMLElement;
+  sessionsTitle: HTMLElement;
+  sessionsList: HTMLElement;
   promptSection: HTMLElement;
   prompt: HTMLTextAreaElement;
   generateButton: HTMLButtonElement;
@@ -46,15 +56,20 @@ export default class AiGenerationUi {
   public readonly nodes: AiGenerationNodes;
 
   private readonly promptAssistanceEnabled: boolean;
+  private readonly onAdoptSession: (sessionId: string) => void;
+  private readonly onCloseSession: (sessionId: string) => void;
   private readonly onSelectCandidate: (candidateId: string) => void;
   private readonly onSelectHistory: (candidateId: string) => void;
   private isGenerationBusy = false;
   private isPromptAssistanceBusy = false;
   private isGeneratedCaptionBusy = false;
+  private hasFreeSessionSlot = true;
 
   constructor({
+    onAdoptSession,
     onAssistPrompt,
     onCancel,
+    onCloseSession,
     onFinalize,
     onGenerate,
     onRefine,
@@ -66,10 +81,15 @@ export default class AiGenerationUi {
     aspectRatios,
   }: AiGenerationUiParams) {
     this.promptAssistanceEnabled = promptAssistanceEnabled;
+    this.onAdoptSession = onAdoptSession;
+    this.onCloseSession = onCloseSession;
     this.onSelectCandidate = onSelectCandidate;
     this.onSelectHistory = onSelectHistory;
 
     const wrapper = make('div', ['ai-image-tool__generator']);
+    const sessionsSection = make('div', ['ai-image-tool__sessions']);
+    const sessionsTitle = make('div', ['ai-image-tool__sessions-title']);
+    const sessionsList = make('div', ['ai-image-tool__sessions-list']);
     const promptSection = make('div', ['ai-image-tool__prompt-section']);
     const promptLabel = make('label', ['ai-image-tool__label']) as HTMLLabelElement;
     const prompt = make('textarea', ['ai-image-tool__prompt']) as HTMLTextAreaElement;
@@ -157,7 +177,9 @@ export default class AiGenerationUi {
     historyStatus.setAttribute('aria-live', 'polite');
     candidates.hidden = true;
     wrapper.hidden = true;
-    wrapper.append(promptSection, generationStatus, generationError, candidates, selection);
+    sessionsSection.hidden = true;
+    sessionsSection.append(sessionsTitle, sessionsList);
+    wrapper.append(sessionsSection, promptSection, generationStatus, generationError, candidates, selection);
 
     generateButton.addEventListener('click', () => onGenerate(prompt.value, generateCaptionCheckbox.checked, this.selectedAspectRatio()));
     generateFromPublicationButton.addEventListener('click', () => onAssistPrompt('generate', prompt.value));
@@ -169,6 +191,9 @@ export default class AiGenerationUi {
 
     this.nodes = {
       wrapper,
+      sessionsSection,
+      sessionsTitle,
+      sessionsList,
       promptSection,
       prompt,
       generateButton,
@@ -203,6 +228,138 @@ export default class AiGenerationUi {
   public close(): void {
     this.nodes.wrapper.hidden = true;
     this.reset();
+  }
+
+  /**
+   * Show the editor's unfinished sessions above the prompt: each one can be
+   * continued here, opened in its own publication, or closed to free a slot.
+   */
+  public showActiveSessions(data: AiImageActiveSessions): void {
+    const { limit, sessions } = data;
+
+    this.hasFreeSessionSlot = sessions.length < limit;
+    this.nodes.sessionsList.replaceChildren();
+
+    if (sessions.length === 0) {
+      this.nodes.sessionsSection.hidden = true;
+      this.updatePromptControls();
+
+      return;
+    }
+
+    this.nodes.sessionsTitle.textContent = this.hasFreeSessionSlot
+      ? `Незакрытые генерации: ${sessions.length} из ${limit}`
+      : `Все слоты заняты (${sessions.length} из ${limit}) — продолжите одну или закройте лишние`;
+
+    for (const session of sessions) {
+      this.nodes.sessionsList.appendChild(this.buildSessionCard(session));
+    }
+
+    this.nodes.sessionsSection.hidden = false;
+    this.updatePromptControls();
+  }
+
+  public hideActiveSessions(): void {
+    this.hasFreeSessionSlot = true;
+    this.nodes.sessionsSection.hidden = true;
+    this.nodes.sessionsList.replaceChildren();
+    this.updatePromptControls();
+  }
+
+  private buildSessionCard(session: AiImageActiveSession): HTMLElement {
+    const card = make('div', ['ai-image-tool__session'], { 'data-session-id': session.sessionId });
+    const preview = make('div', ['ai-image-tool__session-preview']);
+
+    if (session.previewUrl !== null) {
+      const image = make('img', ['ai-image-tool__session-thumb'], {
+        alt: '',
+        loading: 'lazy',
+        src: session.previewUrl,
+      });
+
+      preview.appendChild(image);
+    }
+
+    const body = make('div', ['ai-image-tool__session-body']);
+    const title = session.owner.url === null
+      ? make('span', ['ai-image-tool__session-title'])
+      : make('a', ['ai-image-tool__session-title'], {
+          href: session.owner.url,
+          rel: 'noopener',
+          target: '_blank',
+        });
+
+    title.textContent = session.owner.title;
+
+    const meta = make('div', ['ai-image-tool__session-meta']);
+
+    meta.textContent = [
+      session.isCurrentBlock ? 'этот блок' : null,
+      this.sessionStatusLabel(session.status),
+      session.candidateCount > 0 ? `${session.candidateCount} вар.` : null,
+      this.sessionTimeLabel(session.createdAt),
+    ].filter((part): part is string => part !== null).join(' · ');
+
+    body.append(title, meta);
+
+    if (session.prompt !== null) {
+      const prompt = make('div', ['ai-image-tool__session-prompt']);
+
+      prompt.textContent = session.prompt;
+      body.appendChild(prompt);
+    }
+
+    const actions = make('div', ['ai-image-tool__session-actions']);
+    const adoptButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--secondary'], {
+      type: 'button',
+    }) as HTMLButtonElement;
+
+    adoptButton.textContent = session.isCurrentBlock ? 'Продолжить' : 'Продолжить здесь';
+    adoptButton.addEventListener('click', () => this.onAdoptSession(session.sessionId));
+
+    const closeButton = make('button', ['ai-image-tool__session-close'], {
+      title: 'Закрыть генерацию и освободить слот',
+      type: 'button',
+    }) as HTMLButtonElement;
+
+    closeButton.setAttribute('aria-label', 'Закрыть генерацию');
+    closeButton.textContent = '×';
+    closeButton.addEventListener('click', () => this.onCloseSession(session.sessionId));
+
+    actions.append(adoptButton, closeButton);
+    card.append(preview, body, actions);
+
+    return card;
+  }
+
+  private sessionStatusLabel(status: string): string {
+    return {
+      failed: 'ошибка',
+      finalizing: 'вставляется',
+      generating: 'генерируется',
+      queued: 'в очереди',
+      ready: 'варианты готовы',
+      refining: 'дорабатывается',
+    }[status] ?? status;
+  }
+
+  private sessionTimeLabel(createdAt: string | null): string | null {
+    if (createdAt === null) {
+      return null;
+    }
+
+    const startedAt = new Date(createdAt);
+
+    if (Number.isNaN(startedAt.getTime())) {
+      return null;
+    }
+
+    return startedAt.toLocaleString('ru-RU', {
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      month: '2-digit',
+    });
   }
 
   public setPromptValue(prompt: string): void {
@@ -369,7 +526,9 @@ export default class AiGenerationUi {
 
     this.nodes.wrapper.setAttribute('aria-busy', String(isBusy));
     this.nodes.prompt.disabled = isBusy;
-    this.nodes.generateButton.disabled = isBusy;
+    // Свободных слотов нет — новую генерацию не начать, пока редактор сам не
+    // разберётся со списком выше.
+    this.nodes.generateButton.disabled = isBusy || !this.hasFreeSessionSlot;
     this.nodes.generateFromPublicationButton.disabled = isBusy || !this.promptAssistanceEnabled;
     this.nodes.generateCaptionCheckbox.disabled = isBusy || !this.promptAssistanceEnabled;
     this.nodes.aspectRatioOptions.querySelectorAll<HTMLInputElement>('input[type="radio"]')

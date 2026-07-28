@@ -36,6 +36,14 @@ export default class AiGenerationController {
     private selectedCandidateId;
     constructor({ blockId, config, initialPending, onChange, onFinalized, }: AiGenerationControllerParams);
     open(): void;
+    /**
+     * Показать незакрытые генерации редактора: сессия живёт сутки и занимает
+     * слот, поэтому решение — продолжить её или закрыть — принимает он сам.
+     */
+    private refreshActiveSessions;
+    private adoptSession;
+    private runAdoptSession;
+    private closeSession;
     getPendingData(): AiGenerationPendingData | undefined;
     destroy(): void;
     private cancel;

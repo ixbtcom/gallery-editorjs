@@ -14,11 +14,13 @@ const generationConfig: AiImageClientConfig = {
     statePath: 'content.ru.blocks',
   },
   endpoints: {
+    adopt: '/admin/ai-images/{sessionId}/adopt',
     cancel: '/admin/ai-images/{sessionId}/cancel',
     candidate: '/admin/ai-images/{sessionId}/candidates/{candidateId}',
     finalize: '/admin/ai-images/{sessionId}/finalize',
     generate: '/admin/ai-images/generate',
     refine: '/admin/ai-images/{sessionId}/refine',
+    sessions: '/admin/ai-images/sessions',
     status: '/admin/ai-images/{sessionId}',
   },
   pollIntervalMs: 0,
@@ -89,6 +91,10 @@ function createTool(
     data,
     readOnly: false,
   } as BlockToolConstructorOptions<GalleryToolData, GalleryConfig>);
+}
+
+function cancelRequests(fetchMock: ReturnType<typeof vi.fn>): unknown[][] {
+  return fetchMock.mock.calls.filter(call => String(call[0]).endsWith('/cancel'));
 }
 
 function findButton(wrapper: HTMLElement, label: string): HTMLButtonElement {
@@ -254,7 +260,9 @@ describe('Gallery-owned AI generation', () => {
     findButton(wrapper, 'Отменить').click();
 
     await vi.waitFor(() => {
-      expect(fetchMock).toHaveBeenCalledOnce();
+      // Открытие панели дополнительно запрашивает список активных генераций,
+      // поэтому считаем именно запросы отмены.
+      expect(cancelRequests(fetchMock)).toHaveLength(1);
     });
     expect(tool.save()).toEqual({
       columns: 1,
@@ -267,6 +275,77 @@ describe('Gallery-owned AI generation', () => {
       layout: 'grid',
       stretched: false,
     });
+  });
+
+  it('lists unfinished sessions and continues the chosen one in the current block', async () => {
+    vi.spyOn(globalThis.crypto, 'randomUUID')
+      .mockReturnValue('00000000-0000-4000-8000-000000000401');
+    const abandonedId = '00000000-0000-4000-8000-000000000499';
+    const fetchMock = vi.fn(async (url: string | URL | Request): Promise<Response> => {
+      const requestUrl = String(url);
+      let data: Record<string, unknown>;
+
+      if (requestUrl.endsWith('/sessions')) {
+        data = {
+          limit: 3,
+          sessions: [{
+            candidate_count: 3,
+            created_at: '2026-07-28T14:15:08+03:00',
+            is_current_block: false,
+            owner: {
+              title: 'Зарплаты в Узбекистане',
+              url: 'https://admin.ixbt.test/admin/uz/publications/425212/edit',
+            },
+            preview_candidate_id: 'candidate-9',
+            prompt: 'Стопки монет в виде диаграммы',
+            session_id: abandonedId,
+            status: 'ready',
+          }],
+        };
+      } else if (requestUrl.endsWith('/adopt')) {
+        data = {
+          candidates: [{ id: 'candidate-9', parent_id: null }],
+          session_id: abandonedId,
+          status: 'ready',
+        };
+      } else {
+        data = {};
+      }
+
+      return new Response(JSON.stringify({ data }), {
+        headers: { 'Content-Type': 'application/json' },
+        status: 200,
+      });
+    });
+
+    vi.stubGlobal('fetch', fetchMock);
+    const tool = createTool();
+    const wrapper = tool.render();
+
+    findButton(wrapper, 'Генерация').click();
+
+    await vi.waitFor(() => {
+      expect(wrapper.querySelector('.ai-image-tool__session')).not.toBeNull();
+    });
+
+    const link = wrapper.querySelector<HTMLAnchorElement>('.ai-image-tool__session-title');
+
+    expect(link?.href).toBe('https://admin.ixbt.test/admin/uz/publications/425212/edit');
+    expect(link?.target).toBe('_blank');
+    expect(wrapper.querySelector('.ai-image-tool__sessions-title')?.textContent)
+      .toContain('Незакрытые генерации: 1 из 3');
+
+    findButton(wrapper, 'Продолжить здесь').click();
+
+    await vi.waitFor(() => {
+      expect(wrapper.querySelectorAll('[data-candidate-id]')).toHaveLength(1);
+    });
+
+    const adoptCall = fetchMock.mock.calls.find(call => String(call[0]).endsWith('/adopt'));
+
+    expect(String(adoptCall?.[0])).toContain(abandonedId);
+    expect(wrapper.querySelector<HTMLElement>('.ai-image-tool__sessions')?.hidden).toBe(true);
+    expect(tool.save().aiGeneration).toEqual({ pending: true, sessionId: abandonedId });
   });
 
   it('keeps prompt assistance, optional caption and refinement history inside Gallery', async () => {

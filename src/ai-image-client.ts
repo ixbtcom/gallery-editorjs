@@ -11,6 +11,8 @@ export interface AiImageClientContext {
 
 /** Host routes used by the AI image workflow. */
 export interface AiImageClientEndpoints {
+  /** Move an existing session into the current block. */
+  adopt: string;
   /** Cancel a session. */
   cancel: string;
   /** Read a private candidate preview. */
@@ -23,8 +25,43 @@ export interface AiImageClientEndpoints {
   prompt?: string;
   /** Refine a selected candidate. */
   refine: string;
+  /** List the editor's unfinished sessions. */
+  sessions: string;
   /** Poll current session state. */
   status: string;
+}
+
+/** One unfinished session of the current editor. */
+export interface AiImageActiveSession {
+  /** Number of generated variants waiting in this session. */
+  candidateCount: number;
+  /** Session start time in ISO-8601, when the host reported one. */
+  createdAt: string | null;
+  /** Whether the session already belongs to the current editor block. */
+  isCurrentBlock: boolean;
+  /** Publication the session was started from. */
+  owner: {
+    /** Publication title shown in the list. */
+    title: string;
+    /** Edit-page URL, opened in a new tab. */
+    url: string | null;
+  };
+  /** Authenticated preview URL of the variant shown as a thumbnail. */
+  previewUrl: string | null;
+  /** Prompt of the latest operation. */
+  prompt: string | null;
+  /** Opaque session identifier. */
+  sessionId: string;
+  /** Server workflow state. */
+  status: string;
+}
+
+/** Editor's unfinished sessions together with the configured slot limit. */
+export interface AiImageActiveSessions {
+  /** Maximum number of simultaneously active sessions. */
+  limit: number;
+  /** Unfinished sessions, newest first. */
+  sessions: AiImageActiveSession[];
 }
 
 /** Minimal active-locale publication text supplied by the host callback. */
@@ -327,6 +364,46 @@ export class AiImageClient {
   }
 
   /**
+   * List the editor's own unfinished sessions and the slot limit.
+   * @param blockId - current Editor.js block identifier
+   * @param signal - optional cancellation signal
+   */
+  public async listSessions(blockId: string, signal?: AbortSignal): Promise<AiImageActiveSessions> {
+    const data = await this.request(this.config.endpoints.sessions, {
+      body: JSON.stringify({
+        block_id: blockId,
+        context: this.config.context,
+      }),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        ...this.config.headers,
+      },
+      method: 'POST',
+      signal,
+    }, {
+      invalidResponse: 'Некорректный ответ сервера со списком генераций.',
+      networkError: 'Не удалось получить список активных генераций.',
+      requestFailed: 'Сервер не смог вернуть список активных генераций.',
+    });
+
+    return this.normalizeActiveSessions(data);
+  }
+
+  /**
+   * Move a session started elsewhere into the current block.
+   * @param request - session and block identity
+   * @param signal - optional cancellation signal
+   */
+  public async adopt(request: AiImageCancelRequest, signal?: AbortSignal): Promise<AiImageSession> {
+    return this.mutate(this.resolveEndpoint(this.config.endpoints.adopt, { sessionId: request.sessionId }), {
+      block_id: request.blockId,
+      context: this.config.context,
+      session_id: request.sessionId,
+    }, signal);
+  }
+
+  /**
    * Poll until the host reports a terminal state.
    * @param request - session identity, observer and cancellation signal
    */
@@ -592,6 +669,49 @@ export class AiImageClient {
       sessionId,
       status: this.requiredString(data, 'status'),
     };
+  }
+
+  /**
+   * Normalize the unfinished-session list and drop malformed rows.
+   * @param data - host response data
+   */
+  private normalizeActiveSessions(data: JsonRecord): AiImageActiveSessions {
+    const limit = typeof data.limit === 'number' && Number.isFinite(data.limit) ? data.limit : 1;
+    const sessions: AiImageActiveSession[] = [];
+
+    if (Array.isArray(data.sessions)) {
+      for (const session of data.sessions as unknown[]) {
+        if (!this.isRecord(session) || typeof session.session_id !== 'string' || session.session_id === '') {
+          continue;
+        }
+
+        const owner = this.isRecord(session.owner) ? session.owner : {};
+        const previewCandidateId = typeof session.preview_candidate_id === 'string'
+          ? session.preview_candidate_id
+          : null;
+
+        sessions.push({
+          candidateCount: typeof session.candidate_count === 'number' ? session.candidate_count : 0,
+          createdAt: typeof session.created_at === 'string' ? session.created_at : null,
+          isCurrentBlock: session.is_current_block === true,
+          owner: {
+            title: typeof owner.title === 'string' && owner.title !== '' ? owner.title : 'Публикация',
+            url: typeof owner.url === 'string' && owner.url !== '' ? owner.url : null,
+          },
+          previewUrl: previewCandidateId === null
+            ? null
+            : this.resolveEndpoint(this.config.endpoints.candidate, {
+                candidateId: previewCandidateId,
+                sessionId: session.session_id,
+              }),
+          prompt: typeof session.prompt === 'string' && session.prompt !== '' ? session.prompt : null,
+          sessionId: session.session_id,
+          status: typeof session.status === 'string' ? session.status : 'queued',
+        });
+      }
+    }
+
+    return { limit, sessions };
   }
 
   /**

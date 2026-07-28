@@ -4,6 +4,8 @@ export interface AiImageClientContext {
 }
 /** Host routes used by the AI image workflow. */
 export interface AiImageClientEndpoints {
+    /** Move an existing session into the current block. */
+    adopt: string;
     /** Cancel a session. */
     cancel: string;
     /** Read a private candidate preview. */
@@ -16,8 +18,41 @@ export interface AiImageClientEndpoints {
     prompt?: string;
     /** Refine a selected candidate. */
     refine: string;
+    /** List the editor's unfinished sessions. */
+    sessions: string;
     /** Poll current session state. */
     status: string;
+}
+/** One unfinished session of the current editor. */
+export interface AiImageActiveSession {
+    /** Number of generated variants waiting in this session. */
+    candidateCount: number;
+    /** Session start time in ISO-8601, when the host reported one. */
+    createdAt: string | null;
+    /** Whether the session already belongs to the current editor block. */
+    isCurrentBlock: boolean;
+    /** Publication the session was started from. */
+    owner: {
+        /** Publication title shown in the list. */
+        title: string;
+        /** Edit-page URL, opened in a new tab. */
+        url: string | null;
+    };
+    /** Authenticated preview URL of the variant shown as a thumbnail. */
+    previewUrl: string | null;
+    /** Prompt of the latest operation. */
+    prompt: string | null;
+    /** Opaque session identifier. */
+    sessionId: string;
+    /** Server workflow state. */
+    status: string;
+}
+/** Editor's unfinished sessions together with the configured slot limit. */
+export interface AiImageActiveSessions {
+    /** Maximum number of simultaneously active sessions. */
+    limit: number;
+    /** Unfinished sessions, newest first. */
+    sessions: AiImageActiveSession[];
 }
 /** Minimal active-locale publication text supplied by the host callback. */
 export interface AiImagePublicationContext {
@@ -238,6 +273,18 @@ export declare class AiImageClient {
      */
     cancel(request: AiImageCancelRequest, signal?: AbortSignal): Promise<AiImageSession>;
     /**
+     * List the editor's own unfinished sessions and the slot limit.
+     * @param blockId - current Editor.js block identifier
+     * @param signal - optional cancellation signal
+     */
+    listSessions(blockId: string, signal?: AbortSignal): Promise<AiImageActiveSessions>;
+    /**
+     * Move a session started elsewhere into the current block.
+     * @param request - session and block identity
+     * @param signal - optional cancellation signal
+     */
+    adopt(request: AiImageCancelRequest, signal?: AbortSignal): Promise<AiImageSession>;
+    /**
      * Poll until the host reports a terminal state.
      * @param request - session identity, observer and cancellation signal
      */
@@ -275,6 +322,11 @@ export declare class AiImageClient {
      * @param data - host response data
      */
     private normalizeSession;
+    /**
+     * Normalize the unfinished-session list and drop malformed rows.
+     * @param data - host response data
+     */
+    private normalizeActiveSessions;
     /**
      * Replace encoded identifiers in a host endpoint template.
      * @param template - URL containing named placeholders

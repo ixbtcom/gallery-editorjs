@@ -1,9 +1,11 @@
-import { AiImageAspectRatio, AiImageCandidate } from './ai-image-client';
+import { AiImageActiveSessions, AiImageAspectRatio, AiImageCandidate } from './ai-image-client';
 
 export type PromptAssistanceAction = 'generate' | 'improve';
 interface AiGenerationUiParams {
+    onAdoptSession: (sessionId: string) => void;
     onAssistPrompt: (action: PromptAssistanceAction, prompt: string) => void;
     onCancel: () => void;
+    onCloseSession: (sessionId: string) => void;
     onFinalize: () => void;
     onGenerate: (prompt: string, generateCaption: boolean, aspectRatio: AiImageAspectRatio) => void;
     onRefine: (prompt: string) => void;
@@ -16,6 +18,9 @@ interface AiGenerationUiParams {
 }
 interface AiGenerationNodes {
     wrapper: HTMLElement;
+    sessionsSection: HTMLElement;
+    sessionsTitle: HTMLElement;
+    sessionsList: HTMLElement;
     promptSection: HTMLElement;
     prompt: HTMLTextAreaElement;
     generateButton: HTMLButtonElement;
@@ -41,14 +46,26 @@ interface AiGenerationNodes {
 export default class AiGenerationUi {
     readonly nodes: AiGenerationNodes;
     private readonly promptAssistanceEnabled;
+    private readonly onAdoptSession;
+    private readonly onCloseSession;
     private readonly onSelectCandidate;
     private readonly onSelectHistory;
     private isGenerationBusy;
     private isPromptAssistanceBusy;
     private isGeneratedCaptionBusy;
-    constructor({ onAssistPrompt, onCancel, onFinalize, onGenerate, onRefine, onSelectCandidate, onSelectHistory, promptAssistanceEnabled, promptId, aspectRatio, aspectRatios, }: AiGenerationUiParams);
+    private hasFreeSessionSlot;
+    constructor({ onAdoptSession, onAssistPrompt, onCancel, onCloseSession, onFinalize, onGenerate, onRefine, onSelectCandidate, onSelectHistory, promptAssistanceEnabled, promptId, aspectRatio, aspectRatios, }: AiGenerationUiParams);
     open(): void;
     close(): void;
+    /**
+     * Show the editor's unfinished sessions above the prompt: each one can be
+     * continued here, opened in its own publication, or closed to free a slot.
+     */
+    showActiveSessions(data: AiImageActiveSessions): void;
+    hideActiveSessions(): void;
+    private buildSessionCard;
+    private sessionStatusLabel;
+    private sessionTimeLabel;
     setPromptValue(prompt: string): void;
     showPromptAssistanceStatus(message: string): void;
     setPromptAssistanceBusy(isBusy: boolean): void;

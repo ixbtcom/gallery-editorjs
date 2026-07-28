@@ -673,6 +673,117 @@
   gap: 10px;
 }
 
+.ai-image-tool__sessions {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--ej-border);
+  border-radius: var(--ej-radius-md);
+  background: var(--ej-bg-surface);
+}
+
+.ai-image-tool__sessions-title {
+  color: var(--ej-text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ai-image-tool__sessions-list {
+  display: grid;
+  gap: 8px;
+}
+
+.ai-image-tool__session {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid var(--ej-border);
+  border-radius: var(--ej-radius-md);
+  background: var(--ej-bg-muted);
+}
+
+.ai-image-tool__session-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: var(--ej-radius-sm);
+  background: var(--ej-bg-input);
+}
+
+.ai-image-tool__session-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ai-image-tool__session-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ai-image-tool__session-title {
+  overflow: hidden;
+  color: var(--ej-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.ai-image-tool__session-title {
+  color: var(--ej-primary);
+  text-decoration: none;
+}
+
+a.ai-image-tool__session-title:hover {
+  text-decoration: underline;
+}
+
+.ai-image-tool__session-meta {
+  color: var(--ej-text-secondary);
+  font-size: 12px;
+}
+
+.ai-image-tool__session-prompt {
+  overflow: hidden;
+  color: var(--ej-text-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ai-image-tool__session-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-image-tool__session-close {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--ej-border);
+  border-radius: var(--ej-radius-sm);
+  background: var(--ej-bg-input);
+  color: var(--ej-text-secondary);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--ej-transition), color var(--ej-transition);
+}
+
+.ai-image-tool__session-close:hover {
+  background: var(--ej-danger-bg);
+  border-color: var(--ej-danger-border);
+  color: var(--ej-danger-text);
+}
+
 .ai-image-tool__prompt-actions,
 .ai-image-tool__history {
   display: flex;
