@@ -111,11 +111,12 @@ export default class AiGenerationUi {
     const generateCaptionOption = make('label', ['ai-image-tool__caption-option']) as HTMLLabelElement;
     const generateCaptionCheckbox = make('input', ['ai-image-tool__caption-checkbox']) as HTMLInputElement;
     const generateCaptionText = make('span');
+    const promptAssistance = make('div', ['ai-image-tool__prompt-assistance']);
     const aspectRatioField = make('div', ['ai-image-tool__aspect-ratio-field']);
     const aspectRatioLabel = make('span', ['ai-image-tool__aspect-ratio-label']);
     const aspectRatioOptions = make('div', ['ai-image-tool__aspect-ratios']);
     const promptActions = make('div', ['ai-image-tool__prompt-actions']);
-    const generateButton = make('button', ['ai-image-tool__action'], { type: 'button' }) as HTMLButtonElement;
+    const generateButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--generate'], { type: 'button' }) as HTMLButtonElement;
     const generateFromPublicationButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--secondary'], { type: 'button' }) as HTMLButtonElement;
     const improvePromptButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--secondary'], { type: 'button' }) as HTMLButtonElement;
     const cancelButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--secondary'], { type: 'button' }) as HTMLButtonElement;
@@ -141,7 +142,7 @@ export default class AiGenerationUi {
     prompt.placeholder = 'Опишите изображение, которое нужно создать';
     promptLabel.htmlFor = promptId;
     promptLabel.textContent = 'Введите промпт';
-    generateButton.textContent = 'Генерация изображения';
+    generateButton.textContent = 'Генерировать';
     generateFromPublicationButton.textContent = 'Промпт по публикации';
     improvePromptButton.textContent = 'Улучшить промпт';
     cancelButton.textContent = 'Отменить';
@@ -153,13 +154,14 @@ export default class AiGenerationUi {
     generateCaptionOption.htmlFor = generateCaptionCheckbox.id;
     generateCaptionOption.hidden = !promptAssistanceEnabled;
     generateCaptionOption.append(generateCaptionCheckbox, generateCaptionText);
+    promptAssistance.append(generateCaptionOption, improvePromptButton);
     aspectRatioOptions.setAttribute('role', 'radiogroup');
     aspectRatioOptions.setAttribute('aria-label', 'Соотношение сторон');
     this.createAspectRatioOptions(aspectRatioOptions, aspectRatios, aspectRatio, promptId);
     aspectRatioLabel.textContent = 'Соотношение сторон:';
     aspectRatioField.append(aspectRatioLabel, aspectRatioOptions);
-    promptActions.append(generateButton, generateFromPublicationButton, cancelButton);
-    promptSection.append(promptLabel, prompt, improvePromptButton, generateCaptionOption, aspectRatioField, promptActions);
+    promptActions.append(generateFromPublicationButton, cancelButton, generateButton);
+    promptSection.append(promptLabel, prompt, promptAssistance, aspectRatioField, promptActions);
 
     selectedPreview.alt = 'Выбранный вариант';
     selectedPreview.dataset.selectedPreview = '';

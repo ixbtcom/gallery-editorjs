@@ -178,8 +178,8 @@ describe('Gallery-owned AI generation', () => {
     const aspectRatio = wrapper.querySelector<HTMLInputElement>('input[name="gallery-ai-prompt-gallery-block-1-aspect-ratio"][value="3:2"]');
 
     expect(aspectRatio?.checked).toBe(true);
-    findButton(wrapper, 'Генерация изображения').click();
-    findButton(wrapper, 'Генерация изображения').click();
+    findButton(wrapper, 'Генерировать').click();
+    findButton(wrapper, 'Генерировать').click();
 
     await vi.waitFor(() => {
       expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
@@ -404,7 +404,7 @@ describe('Gallery-owned AI generation', () => {
     document.body.appendChild(wrapper);
     findButton(wrapper, 'Генерация').click();
     wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!.value = 'Редакционная иллюстрация';
-    findButton(wrapper, 'Генерация изображения').click();
+    findButton(wrapper, 'Генерировать').click();
 
     await vi.waitFor(() => {
       expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
@@ -468,7 +468,7 @@ describe('Gallery-owned AI generation', () => {
     document.body.appendChild(wrapper);
     findButton(wrapper, 'Генерация').click();
     wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!.value = 'Редакционная иллюстрация';
-    findButton(wrapper, 'Генерация изображения').click();
+    findButton(wrapper, 'Генерировать').click();
 
     await vi.waitFor(() => {
       expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
@@ -585,8 +585,16 @@ describe('Gallery-owned AI generation', () => {
 
     const prompt = wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!;
     const improvePromptButton = findButton(wrapper, 'Улучшить промпт');
+    const generateCaptionOption = wrapper.querySelector<HTMLLabelElement>('.ai-image-tool__caption-option')!;
+    const promptAssistance = wrapper.querySelector<HTMLElement>('.ai-image-tool__prompt-assistance')!;
+    const promptActions = wrapper.querySelector<HTMLElement>('.ai-image-tool__prompt-actions')!;
+    const generateButton = findButton(wrapper, 'Генерировать');
 
-    expect(prompt.nextElementSibling).toBe(improvePromptButton);
+    expect(prompt.nextElementSibling).toBe(promptAssistance);
+    expect(promptAssistance.firstElementChild).toBe(generateCaptionOption);
+    expect(promptAssistance.lastElementChild).toBe(improvePromptButton);
+    expect(promptActions.lastElementChild).toBe(generateButton);
+    expect(generateButton.classList.contains('ai-image-tool__action--generate')).toBe(true);
     expect(wrapper.querySelector('.ai-image-tool__aspect-ratio-field')?.textContent)
       .toContain('Соотношение сторон:');
     findButton(wrapper, 'Промпт по публикации').click();
@@ -595,7 +603,7 @@ describe('Gallery-owned AI generation', () => {
       expect(prompt.value).toBe('Подробный редакционный промпт');
     });
     wrapper.querySelector<HTMLInputElement>('#gallery-ai-prompt-gallery-block-1-generate-caption')!.click();
-    findButton(wrapper, 'Генерация изображения').click();
+    findButton(wrapper, 'Генерировать').click();
 
     await vi.waitFor(() => {
       expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();

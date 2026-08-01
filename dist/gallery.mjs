@@ -1,4 +1,4 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__ai-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 5px;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:#111827;color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;line-height:1;box-shadow:0 2px 8px #00000047;box-sizing:border-box}.gallery-tool__item-ai-badge{position:absolute;right:8px;bottom:8px;z-index:6;display:inline-flex;cursor:help}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__add-buttons .gallery-tool__ai-button{gap:8px}.gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark{min-width:22px;height:22px;font-size:10px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item[data-ai-generated].gallery-tool__item--cropped .gallery-tool__item-image:after{right:44px}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__options{display:flex;flex-direction:column;gap:12px;padding:12px 16px 0;background:var(--ej-bg-muted, #f5f5f5)}.gallery-crop-modal__option{display:inline-flex;align-items:center;gap:8px;color:var(--ej-text);cursor:pointer;font-size:14px}.gallery-crop-modal__option input{width:18px;height:18px;margin:0}.gallery-crop-modal__aspect-ratios{display:flex;flex-wrap:wrap;gap:8px;padding:0;border:0;margin:0}.gallery-crop-modal__aspect-ratios-label{width:100%;color:var(--ej-text-secondary);font-size:13px;font-weight:500}.gallery-crop-modal__aspect-ratio{display:inline-flex;position:relative;cursor:pointer}.gallery-crop-modal__aspect-ratio input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.gallery-crop-modal__aspect-ratio-label{min-width:52px;padding:6px 10px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-surface);color:var(--ej-text);font-size:13px;line-height:1;text-align:center}.gallery-crop-modal__aspect-ratio input:checked+.gallery-crop-modal__aspect-ratio-label{border-color:var(--ej-primary);background:var(--ej-primary-light);color:var(--ej-primary)}.gallery-crop-modal__aspect-ratio input:focus-visible+.gallery-crop-modal__aspect-ratio-label{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}.gallery-tool__item[data-cover][data-cover-overridden]:after{content:"Обложка · перекрыта вручную";background:#4b5563f2}.ai-image-tool__generator{display:grid;gap:14px;margin-top:14px;padding:16px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-lg);background:var(--ej-bg-muted);color:var(--ej-text)}.ai-image-tool__generator [hidden]{display:none}.ai-image-tool__prompt-section,.ai-image-tool__selection,.ai-image-tool__metadata{display:grid;gap:10px}.ai-image-tool__sessions{display:grid;gap:8px;padding:12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface)}.ai-image-tool__sessions-title{color:var(--ej-text-secondary);font-size:12px;font-weight:600}.ai-image-tool__sessions-list{display:grid;gap:8px}.ai-image-tool__session{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:8px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-muted)}.ai-image-tool__session-preview{display:flex;align-items:center;justify-content:center;width:64px;height:44px;overflow:hidden;border-radius:var(--ej-radius-sm);background:var(--ej-bg-input)}.ai-image-tool__session-thumb{width:100%;height:100%;object-fit:cover}.ai-image-tool__session-body{display:grid;gap:2px;min-width:0}.ai-image-tool__session-title{overflow:hidden;color:var(--ej-text);font-size:13px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}a.ai-image-tool__session-title{color:var(--ej-primary);text-decoration:none}a.ai-image-tool__session-title:hover{text-decoration:underline}.ai-image-tool__session-meta{color:var(--ej-text-secondary);font-size:12px}.ai-image-tool__session-prompt{overflow:hidden;color:var(--ej-text-muted);font-size:12px;text-overflow:ellipsis;white-space:nowrap}.ai-image-tool__session-actions{display:flex;align-items:center;gap:6px}.ai-image-tool__session-close{width:28px;height:28px;padding:0;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-input);color:var(--ej-text-secondary);font-size:16px;line-height:1;cursor:pointer;transition:background var(--ej-transition),color var(--ej-transition)}.ai-image-tool__session-close:hover{background:var(--ej-danger-bg);border-color:var(--ej-danger-border);color:var(--ej-danger-text)}.ai-image-tool__prompt-actions,.ai-image-tool__history{display:flex;flex-wrap:wrap;gap:8px}.ai-image-tool__aspect-ratio-field{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ai-image-tool__aspect-ratio-label{color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__aspect-ratios{display:inline-flex;width:fit-content;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-input)}.ai-image-tool__aspect-ratio-option{position:relative;min-width:58px;cursor:pointer;color:var(--ej-text-secondary);font-size:13px;font-weight:600;text-align:center}.ai-image-tool__aspect-ratio-option span{display:block;padding:8px 12px}.ai-image-tool__aspect-ratio-input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.ai-image-tool__aspect-ratio-input:checked+span{background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__aspect-ratio-input:focus-visible+span{outline:2px solid var(--ej-ring-focus);outline-offset:-2px}.ai-image-tool__aspect-ratio-input:disabled+span{cursor:not-allowed;opacity:.65}.ai-image-tool__caption-option{display:inline-flex;align-items:center;width:fit-content;min-height:44px;gap:9px;cursor:pointer;color:var(--ej-text);font-size:14px}.ai-image-tool__caption-checkbox{width:18px;height:18px;margin:0;accent-color:var(--ej-primary)}.ai-image-tool__label{color:var(--ej-text);font-size:14px;font-weight:600}.ai-image-tool__prompt,.ai-image-tool__metadata-input{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);outline:none;background:var(--ej-bg-input);color:var(--ej-text);font:inherit;line-height:1.5;transition:border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__prompt{min-height:88px;resize:vertical}.ai-image-tool__metadata-input{min-height:44px}.ai-image-tool__metadata-caption{resize:vertical}.ai-image-tool__prompt:focus-visible,.ai-image-tool__metadata-input:focus-visible,.ai-image-tool__caption-checkbox:focus-visible,.ai-image-tool__action:focus-visible,.ai-image-tool__candidate:focus-visible,.ai-image-tool__history-item:focus-visible{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.ai-image-tool__action,.ai-image-tool__history-item{min-height:44px;padding:9px 14px;border:1px solid transparent;border-radius:var(--ej-radius-md);cursor:pointer;font:inherit;font-weight:600;transition:background-color var(--ej-transition),border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__action{justify-self:start;background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__action:hover:not(:disabled){background:var(--ej-primary-hover)}.ai-image-tool__action--secondary,.ai-image-tool__history-item{border-color:var(--ej-border);background:var(--ej-bg-surface);color:var(--ej-text)}.ai-image-tool__action--secondary:hover:not(:disabled),.ai-image-tool__history-item:hover,.ai-image-tool__history-item[aria-current=true]{border-color:var(--ej-primary);background:var(--ej-primary-muted)}.ai-image-tool__action:disabled,.ai-image-tool__prompt:disabled,.ai-image-tool__metadata-input:disabled{cursor:not-allowed;opacity:.6}.ai-image-tool__status,.ai-image-tool__caption-status,.ai-image-tool__history-status{min-height:21px;color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__error:not([hidden]){padding:10px 12px;border:1px solid var(--ej-danger-border);border-radius:var(--ej-radius-md);background:var(--ej-danger-bg);color:var(--ej-danger-text);font-size:14px}.ai-image-tool__candidates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}.ai-image-tool__candidate{position:relative;min-width:0;padding:3px;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);cursor:pointer;background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-sm)}.ai-image-tool__candidate:hover,.ai-image-tool__candidate[aria-pressed=true]{border-color:var(--ej-primary)}.ai-image-tool__candidate[aria-pressed=true]{box-shadow:0 0 0 2px var(--ej-primary-muted)}.ai-image-tool__candidate[aria-pressed=true]:after{content:"Выбрано";position:absolute;right:8px;bottom:8px;padding:4px 7px;border-radius:var(--ej-radius-sm);background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:600}.ai-image-tool__candidate-image,.ai-image-tool__selected-preview{display:block;width:100%;aspect-ratio:16 / 9;border-radius:calc(var(--ej-radius-md) - 3px);object-fit:cover}.ai-image-tool__caption-status[data-error]{color:var(--ej-danger-text)}.ai-image-tool__history-item[aria-current=true]{box-shadow:inset 0 0 0 1px var(--ej-primary);font-weight:700}@media (min-width: 640px){.ai-image-tool__generator{padding:20px}.ai-image-tool__selection{grid-template-columns:1fr auto}.ai-image-tool__selection>:not(.ai-image-tool__action){grid-column:1 / -1}}@media (prefers-reduced-motion: reduce){.ai-image-tool__action,.ai-image-tool__candidate,.ai-image-tool__history-item,.ai-image-tool__prompt,.ai-image-tool__metadata-input{transition-duration:.01ms}}/*!
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__ai-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 5px;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:#111827;color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;line-height:1;box-shadow:0 2px 8px #00000047;box-sizing:border-box}.gallery-tool__item-ai-badge{position:absolute;right:8px;bottom:8px;z-index:6;display:inline-flex;cursor:help}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__add-buttons .gallery-tool__ai-button{gap:8px}.gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark{min-width:22px;height:22px;font-size:10px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item[data-ai-generated].gallery-tool__item--cropped .gallery-tool__item-image:after{right:44px}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__options{display:flex;flex-direction:column;gap:12px;padding:12px 16px 0;background:var(--ej-bg-muted, #f5f5f5)}.gallery-crop-modal__option{display:inline-flex;align-items:center;gap:8px;color:var(--ej-text);cursor:pointer;font-size:14px}.gallery-crop-modal__option input{width:18px;height:18px;margin:0}.gallery-crop-modal__aspect-ratios{display:flex;flex-wrap:wrap;gap:8px;padding:0;border:0;margin:0}.gallery-crop-modal__aspect-ratios-label{width:100%;color:var(--ej-text-secondary);font-size:13px;font-weight:500}.gallery-crop-modal__aspect-ratio{display:inline-flex;position:relative;cursor:pointer}.gallery-crop-modal__aspect-ratio input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.gallery-crop-modal__aspect-ratio-label{min-width:52px;padding:6px 10px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-surface);color:var(--ej-text);font-size:13px;line-height:1;text-align:center}.gallery-crop-modal__aspect-ratio input:checked+.gallery-crop-modal__aspect-ratio-label{border-color:var(--ej-primary);background:var(--ej-primary-light);color:var(--ej-primary)}.gallery-crop-modal__aspect-ratio input:focus-visible+.gallery-crop-modal__aspect-ratio-label{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}.gallery-tool__item[data-cover][data-cover-overridden]:after{content:"Обложка · перекрыта вручную";background:#4b5563f2}.ai-image-tool__generator{display:grid;gap:14px;margin-top:14px;padding:16px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-lg);background:var(--ej-bg-muted);color:var(--ej-text)}.ai-image-tool__generator [hidden]{display:none}.ai-image-tool__prompt-section,.ai-image-tool__selection,.ai-image-tool__metadata{display:grid;gap:10px}.ai-image-tool__sessions{display:grid;gap:8px;padding:12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface)}.ai-image-tool__sessions-title{color:var(--ej-text-secondary);font-size:12px;font-weight:600}.ai-image-tool__sessions-list{display:grid;gap:8px}.ai-image-tool__session{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:8px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-muted)}.ai-image-tool__session-preview{display:flex;align-items:center;justify-content:center;width:64px;height:44px;overflow:hidden;border-radius:var(--ej-radius-sm);background:var(--ej-bg-input)}.ai-image-tool__session-thumb{width:100%;height:100%;object-fit:cover}.ai-image-tool__session-body{display:grid;gap:2px;min-width:0}.ai-image-tool__session-title{overflow:hidden;color:var(--ej-text);font-size:13px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}a.ai-image-tool__session-title{color:var(--ej-primary);text-decoration:none}a.ai-image-tool__session-title:hover{text-decoration:underline}.ai-image-tool__session-meta{color:var(--ej-text-secondary);font-size:12px}.ai-image-tool__session-prompt{overflow:hidden;color:var(--ej-text-muted);font-size:12px;text-overflow:ellipsis;white-space:nowrap}.ai-image-tool__session-actions{display:flex;align-items:center;gap:6px}.ai-image-tool__session-close{width:28px;height:28px;padding:0;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-input);color:var(--ej-text-secondary);font-size:16px;line-height:1;cursor:pointer;transition:background var(--ej-transition),color var(--ej-transition)}.ai-image-tool__session-close:hover{background:var(--ej-danger-bg);border-color:var(--ej-danger-border);color:var(--ej-danger-text)}.ai-image-tool__prompt-actions,.ai-image-tool__history{display:flex;flex-wrap:wrap;gap:8px}.ai-image-tool__prompt-assistance{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ai-image-tool__prompt-assistance .ai-image-tool__action,.ai-image-tool__action--generate{margin-inline-start:auto}.ai-image-tool__aspect-ratio-field{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ai-image-tool__aspect-ratio-label{color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__aspect-ratios{display:inline-flex;width:fit-content;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-input)}.ai-image-tool__aspect-ratio-option{position:relative;min-width:58px;cursor:pointer;color:var(--ej-text-secondary);font-size:13px;font-weight:600;text-align:center}.ai-image-tool__aspect-ratio-option span{display:block;padding:8px 12px}.ai-image-tool__aspect-ratio-input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.ai-image-tool__aspect-ratio-input:checked+span{background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__aspect-ratio-input:focus-visible+span{outline:2px solid var(--ej-ring-focus);outline-offset:-2px}.ai-image-tool__aspect-ratio-input:disabled+span{cursor:not-allowed;opacity:.65}.ai-image-tool__caption-option{display:inline-flex;align-items:center;width:fit-content;min-height:44px;gap:9px;cursor:pointer;color:var(--ej-text);font-size:14px}.ai-image-tool__caption-checkbox{width:18px;height:18px;margin:0;accent-color:var(--ej-primary)}.ai-image-tool__label{color:var(--ej-text);font-size:14px;font-weight:600}.ai-image-tool__prompt,.ai-image-tool__metadata-input{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);outline:none;background:var(--ej-bg-input);color:var(--ej-text);font:inherit;line-height:1.5;transition:border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__prompt{min-height:88px;resize:vertical}.ai-image-tool__metadata-input{min-height:44px}.ai-image-tool__metadata-caption{resize:vertical}.ai-image-tool__prompt:focus-visible,.ai-image-tool__metadata-input:focus-visible,.ai-image-tool__caption-checkbox:focus-visible,.ai-image-tool__action:focus-visible,.ai-image-tool__candidate:focus-visible,.ai-image-tool__history-item:focus-visible{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.ai-image-tool__action,.ai-image-tool__history-item{min-height:44px;padding:9px 14px;border:1px solid transparent;border-radius:var(--ej-radius-md);cursor:pointer;font:inherit;font-weight:600;transition:background-color var(--ej-transition),border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__action{justify-self:start;background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__action:hover:not(:disabled){background:var(--ej-primary-hover)}.ai-image-tool__action--secondary,.ai-image-tool__history-item{border-color:var(--ej-border);background:var(--ej-bg-surface);color:var(--ej-text)}.ai-image-tool__action--secondary:hover:not(:disabled),.ai-image-tool__history-item:hover,.ai-image-tool__history-item[aria-current=true]{border-color:var(--ej-primary);background:var(--ej-primary-muted)}.ai-image-tool__action:disabled,.ai-image-tool__prompt:disabled,.ai-image-tool__metadata-input:disabled{cursor:not-allowed;opacity:.6}.ai-image-tool__status,.ai-image-tool__caption-status,.ai-image-tool__history-status{min-height:21px;color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__error:not([hidden]){padding:10px 12px;border:1px solid var(--ej-danger-border);border-radius:var(--ej-radius-md);background:var(--ej-danger-bg);color:var(--ej-danger-text);font-size:14px}.ai-image-tool__candidates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}.ai-image-tool__candidate{position:relative;min-width:0;padding:3px;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);cursor:pointer;background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-sm)}.ai-image-tool__candidate:hover,.ai-image-tool__candidate[aria-pressed=true]{border-color:var(--ej-primary)}.ai-image-tool__candidate[aria-pressed=true]{box-shadow:0 0 0 2px var(--ej-primary-muted)}.ai-image-tool__candidate[aria-pressed=true]:after{content:"Выбрано";position:absolute;right:8px;bottom:8px;padding:4px 7px;border-radius:var(--ej-radius-sm);background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:600}.ai-image-tool__candidate-image,.ai-image-tool__selected-preview{display:block;width:100%;aspect-ratio:16 / 9;border-radius:calc(var(--ej-radius-md) - 3px);object-fit:cover}.ai-image-tool__caption-status[data-error]{color:var(--ej-danger-text)}.ai-image-tool__history-item[aria-current=true]{box-shadow:inset 0 0 0 1px var(--ej-primary);font-weight:700}@media (min-width: 640px){.ai-image-tool__generator{padding:20px}.ai-image-tool__selection{grid-template-columns:1fr auto}.ai-image-tool__selection>:not(.ai-image-tool__action){grid-column:1 / -1}}@media (prefers-reduced-motion: reduce){.ai-image-tool__action,.ai-image-tool__candidate,.ai-image-tool__history-item,.ai-image-tool__prompt,.ai-image-tool__metadata-input{transition-duration:.01ms}}/*!
  * Cropper.js v1.6.2
  * https://fengyuanchen.github.io/cropperjs
  *
@@ -7,7 +7,7 @@
  *
  * Date: 2024-04-21T07:43:02.731Z
  */.cropper-container{direction:ltr;font-size:0;line-height:0;position:relative;-ms-touch-action:none;touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cropper-container img{backface-visibility:hidden;display:block;height:100%;image-orientation:0deg;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;width:100%}.cropper-wrap-box,.cropper-canvas,.cropper-drag-box,.cropper-crop-box,.cropper-modal{bottom:0;left:0;position:absolute;right:0;top:0}.cropper-wrap-box,.cropper-canvas{overflow:hidden}.cropper-drag-box{background-color:#fff;opacity:0}.cropper-modal{background-color:#000;opacity:.5}.cropper-view-box{display:block;height:100%;outline:1px solid #39f;outline-color:#3399ffbf;overflow:hidden;width:100%}.cropper-dashed{border:0 dashed #eee;display:block;opacity:.5;position:absolute}.cropper-dashed.dashed-h{border-bottom-width:1px;border-top-width:1px;height:calc(100% / 3);left:0;top:calc(100% / 3);width:100%}.cropper-dashed.dashed-v{border-left-width:1px;border-right-width:1px;height:100%;left:calc(100% / 3);top:0;width:calc(100% / 3)}.cropper-center{display:block;height:0;left:50%;opacity:.75;position:absolute;top:50%;width:0}.cropper-center:before,.cropper-center:after{background-color:#eee;content:" ";display:block;position:absolute}.cropper-center:before{height:1px;left:-3px;top:0;width:7px}.cropper-center:after{height:7px;left:0;top:-3px;width:1px}.cropper-face,.cropper-line,.cropper-point{display:block;height:100%;opacity:.1;position:absolute;width:100%}.cropper-face{background-color:#fff;left:0;top:0}.cropper-line{background-color:#39f}.cropper-line.line-e{cursor:ew-resize;right:-3px;top:0;width:5px}.cropper-line.line-n{cursor:ns-resize;height:5px;left:0;top:-3px}.cropper-line.line-w{cursor:ew-resize;left:-3px;top:0;width:5px}.cropper-line.line-s{bottom:-3px;cursor:ns-resize;height:5px;left:0}.cropper-point{background-color:#39f;height:5px;opacity:.75;width:5px}.cropper-point.point-e{cursor:ew-resize;margin-top:-3px;right:-3px;top:50%}.cropper-point.point-n{cursor:ns-resize;left:50%;margin-left:-3px;top:-3px}.cropper-point.point-w{cursor:ew-resize;left:-3px;margin-top:-3px;top:50%}.cropper-point.point-s{bottom:-3px;cursor:s-resize;left:50%;margin-left:-3px}.cropper-point.point-ne{cursor:nesw-resize;right:-3px;top:-3px}.cropper-point.point-nw{cursor:nwse-resize;left:-3px;top:-3px}.cropper-point.point-sw{bottom:-3px;cursor:nesw-resize;left:-3px}.cropper-point.point-se{bottom:-3px;cursor:nwse-resize;height:20px;opacity:1;right:-3px;width:20px}@media (min-width: 768px){.cropper-point.point-se{height:15px;width:15px}}@media (min-width: 992px){.cropper-point.point-se{height:10px;width:10px}}@media (min-width: 1200px){.cropper-point.point-se{height:5px;opacity:.75;width:5px}}.cropper-point.point-se:before{background-color:#39f;bottom:-50%;content:" ";display:block;height:200%;opacity:0;position:absolute;right:-50%;width:200%}.cropper-invisible{opacity:0}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-hide{display:block;height:0;position:absolute;width:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-drag-box,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}`)),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
-const be = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
+const we = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
 function g(r, t = null, e = {}) {
   const i = document.createElement(r);
   Array.isArray(t) ? i.classList.add(...t) : t !== null && i.classList.add(t);
@@ -15,8 +15,8 @@ function g(r, t = null, e = {}) {
     Object.prototype.hasOwnProperty.call(e, o) && (i[o] = e[o]);
   return i;
 }
-const Ge = "media.ixbt.site", Ue = "920x/webp", He = /^\d+x\d*$/;
-function It(r) {
+const Ue = "media.ixbt.site", He = "920x/webp", Fe = /^\d+x\d*$/;
+function At(r) {
   if (!r)
     return r;
   let t;
@@ -25,12 +25,12 @@ function It(r) {
   } catch {
     return r;
   }
-  if (t.hostname !== Ge)
+  if (t.hostname !== Ue)
     return r;
   const e = t.pathname.split("/").filter(Boolean);
-  return e.length === 0 || He.test(e[0]) ? r : (t.pathname = `/${Ue}/${e.join("/")}`, t.toString());
+  return e.length === 0 || Fe.test(e[0]) ? r : (t.pathname = `/${He}/${e.join("/")}`, t.toString());
 }
-const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', ee = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', ie = "Создано с помощью Ai", K = class K {
+const je = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', ie = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', ne = "Создано с помощью Ai", Q = class Q {
   constructor({ api: t, config: e, onSelectFile: i, onSelectUrl: o, onColumnsChange: n, onRemoveImage: s, onCropImage: a, onOpenAi: h, readOnly: l }) {
     this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onSelectUrl = o, this.onColumnsChange = n, this.onRemoveImage = s, this.onCropImage = a, this.onOpenAi = h ?? (() => {
     }), this.readOnly = l, this.nodes = {
@@ -97,7 +97,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    */
   addItem(t) {
     var p, b, C;
-    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]), n = t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : It(t.url), s = g("img", null, { src: n }), a = t.crop && t.croppedWidth ? t.croppedWidth : t.width, h = t.crop && t.croppedHeight ? t.croppedHeight : t.height;
+    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]), n = t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : At(t.url), s = g("img", null, { src: n }), a = t.crop && t.croppedWidth ? t.croppedWidth : t.width, h = t.crop && t.croppedHeight ? t.croppedHeight : t.height;
     a && h && (s.style.aspectRatio = `${a} / ${h}`), t.crop && (s.style.width = "100%", s.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped));
     const l = g("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
@@ -130,7 +130,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    */
   createLoadingItem(t) {
     const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]);
-    t && (o.style.backgroundImage = `url(${It(t)})`), i.appendChild(o), e.appendChild(i);
+    t && (o.style.backgroundImage = `url(${At(t)})`), i.appendChild(o), e.appendChild(i);
     const n = g("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
@@ -152,7 +152,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    */
   fillLoadingItem(t, e) {
     var s, a, h;
-    const i = t.querySelector(`.${this.CSS.itemImage}`), o = t.querySelector(`.${this.CSS.itemPreloader}`), n = g("img", null, { src: It(e.url) });
+    const i = t.querySelector(`.${this.CSS.itemImage}`), o = t.querySelector(`.${this.CSS.itemPreloader}`), n = g("img", null, { src: At(e.url) });
     if (n.onload = () => {
       o && (o.style.display = "none");
     }, i.appendChild(n), e.width && e.height) {
@@ -204,7 +204,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
         const h = t.dataset.imagorPath;
         h && (a.src = this.buildPreviewUrl(h, e)), a.style.width = "100%", a.style.maxHeight = "none", this.updateItemDimensions(t, i, o);
       } else
-        delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), a.src = It(t.dataset.url || ""), a.style.width = "", a.style.maxHeight = "", this.updateItemDimensions(
+        delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), a.src = At(t.dataset.url || ""), a.style.width = "", a.style.maxHeight = "", this.updateItemDimensions(
           t,
           t.dataset.width ? parseInt(t.dataset.width, 10) : void 0,
           t.dataset.height ? parseInt(t.dataset.height, 10) : void 0
@@ -238,17 +238,17 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   }
   createFileButton() {
     const t = g("div", [this.CSS.button]);
-    return t.innerHTML = `${be} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
+    return t.innerHTML = `${we} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
   }
   createAiButton() {
     const t = g("button", [this.CSS.button, this.CSS.aiButton], { type: "button" });
-    return t.innerHTML = `${ee}<span>Генерация</span>`, t.setAttribute("aria-label", "Генерация"), t.addEventListener("click", () => this.onOpenAi()), t;
+    return t.innerHTML = `${ie}<span>Генерация</span>`, t.setAttribute("aria-label", "Генерация"), t.addEventListener("click", () => this.onOpenAi()), t;
   }
   createAiBadge() {
     const t = g("span", [this.CSS.itemAiBadge], {
-      title: ie
+      title: ne
     });
-    return t.innerHTML = ee, t.setAttribute("aria-label", ie), t;
+    return t.innerHTML = ie, t.setAttribute("aria-label", ne), t;
   }
   createUrlInput() {
     const t = g("div", [this.CSS.urlInputWrapper]), e = g("input", [this.CSS.urlInput, this.CSS.input], {
@@ -278,7 +278,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     return o.innerHTML = "+", o.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(i), t.appendChild(o), t;
   }
   changeColumns(t) {
-    const e = Math.min(K.MAX_COLUMNS, Math.max(K.MIN_COLUMNS, this.currentColumns + t));
+    const e = Math.min(Q.MAX_COLUMNS, Math.max(Q.MIN_COLUMNS, this.currentColumns + t));
     e !== this.currentColumns && (this.columnsLocked = !0, this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   updateColumnsClass() {
@@ -286,7 +286,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     if (this.nodes.wrapper.classList.contains(t))
       this.nodes.wrapper.classList.replace(t, e);
     else {
-      for (let i = K.MIN_COLUMNS; i <= K.MAX_COLUMNS; i++)
+      for (let i = Q.MIN_COLUMNS; i <= Q.MAX_COLUMNS; i++)
         this.nodes.wrapper.classList.remove(`gallery-tool--columns-${i}`);
       this.nodes.wrapper.classList.add(e);
     }
@@ -325,7 +325,7 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const n = g("button", [this.CSS.itemMoveRight], { type: "button" });
     n.innerHTML = "→", n.addEventListener("click", () => this.moveItem(t, 1));
     const s = g("button", [this.CSS.itemCrop], { type: "button" });
-    if (s.innerHTML = Fe, s.title = this.api.i18n.t("Обрезать изображение"), s.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), s.addEventListener("click", () => this.onCropImage(t)), e.appendChild(o), e.appendChild(s), (a = this.config.cover) != null && a.enabled) {
+    if (s.innerHTML = je, s.title = this.api.i18n.t("Обрезать изображение"), s.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), s.addEventListener("click", () => this.onCropImage(t)), e.appendChild(o), e.appendChild(s), (a = this.config.cover) != null && a.enabled) {
       const h = g("button", ["gallery-tool__item-cover"], { type: "button" });
       h.innerHTML = "★", h.title = this.api.i18n.t("Сделать обложкой"), h.setAttribute("aria-label", this.api.i18n.t("Сделать обложкой")), h.setAttribute("aria-pressed", String(t.hasAttribute("data-cover"))), h.addEventListener("click", () => this.onSetCover(t)), e.appendChild(h);
     }
@@ -370,12 +370,12 @@ const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     this.nodes.wrapper.classList.toggle(`gallery-tool--${t}`, e);
   }
 };
-K.MIN_COLUMNS = 1, K.MAX_COLUMNS = 5;
-let Gt = K;
-function je(r) {
+Q.MIN_COLUMNS = 1, Q.MAX_COLUMNS = 5;
+let Ut = Q;
+function ze(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-var we = { exports: {} };
+var Se = { exports: {} };
 (function(r, t) {
   (function(e, i) {
     r.exports = i();
@@ -908,13 +908,13 @@ var we = { exports: {} };
       e.exports = n;
     }]);
   });
-})(we);
-var ze = we.exports;
-const ct = /* @__PURE__ */ je(ze);
-function Pt(r) {
+})(Se);
+var $e = Se.exports;
+const ct = /* @__PURE__ */ ze($e);
+function Lt(r) {
   return r !== void 0 && typeof r.then == "function";
 }
-class $e {
+class We {
   constructor({ config: t, onUpload: e, onError: i }) {
     this.config = t, this.onUpload = e, this.onError = i;
   }
@@ -938,7 +938,7 @@ class $e {
           throw new Error("No file selected");
         e(n[0]);
         const s = this.config.uploader.uploadByFile(n[0]);
-        return Pt(s) || console.warn("Custom uploader method uploadByFile should return a Promise"), s;
+        return Lt(s) || console.warn("Custom uploader method uploadByFile should return a Promise"), s;
       });
     else {
       if (!this.config.endpoints.byFile) {
@@ -965,7 +965,7 @@ class $e {
     var i;
     let e;
     if ((i = this.config.uploader) != null && i.uploadByUrl)
-      e = this.config.uploader.uploadByUrl(t), Pt(e) || console.warn("Custom uploader method uploadByUrl should return a Promise");
+      e = this.config.uploader.uploadByUrl(t), Lt(e) || console.warn("Custom uploader method uploadByUrl should return a Promise");
     else {
       if (!this.config.endpoints.byUrl) {
         this.onError("Upload endpoint (byUrl) is not configured");
@@ -993,7 +993,7 @@ class $e {
       e(o.target.result);
       let n;
       if ((s = this.config.uploader) != null && s.uploadByFile)
-        n = this.config.uploader.uploadByFile(t), Pt(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
+        n = this.config.uploader.uploadByFile(t), Lt(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
       else {
         if (!this.config.endpoints.byFile) {
           this.onError("Upload endpoint (byFile) is not configured");
@@ -1024,7 +1024,7 @@ class $e {
  *
  * Date: 2024-04-21T07:43:05.335Z
  */
-function ne(r, t) {
+function oe(r, t) {
   var e = Object.keys(r);
   if (Object.getOwnPropertySymbols) {
     var i = Object.getOwnPropertySymbols(r);
@@ -1034,18 +1034,18 @@ function ne(r, t) {
   }
   return e;
 }
-function Se(r) {
+function _e(r) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? ne(Object(e), !0).forEach(function(i) {
-      Ye(r, i, e[i]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(e)) : ne(Object(e)).forEach(function(i) {
+    t % 2 ? oe(Object(e), !0).forEach(function(i) {
+      Ve(r, i, e[i]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(e)) : oe(Object(e)).forEach(function(i) {
       Object.defineProperty(r, i, Object.getOwnPropertyDescriptor(e, i));
     });
   }
   return r;
 }
-function We(r, t) {
+function qe(r, t) {
   if (typeof r != "object" || !r) return r;
   var e = r[Symbol.toPrimitive];
   if (e !== void 0) {
@@ -1055,73 +1055,73 @@ function We(r, t) {
   }
   return String(r);
 }
-function _e(r) {
-  var t = We(r, "string");
+function xe(r) {
+  var t = qe(r, "string");
   return typeof t == "symbol" ? t : t + "";
 }
-function Ut(r) {
+function Ht(r) {
   "@babel/helpers - typeof";
-  return Ut = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
+  return Ht = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
     return typeof t;
   } : function(t) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-  }, Ut(r);
+  }, Ht(r);
 }
-function qe(r, t) {
+function Xe(r, t) {
   if (!(r instanceof t))
     throw new TypeError("Cannot call a class as a function");
 }
-function oe(r, t) {
+function se(r, t) {
   for (var e = 0; e < t.length; e++) {
     var i = t[e];
-    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, _e(i.key), i);
+    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, xe(i.key), i);
   }
 }
-function Xe(r, t, e) {
-  return t && oe(r.prototype, t), e && oe(r, e), Object.defineProperty(r, "prototype", {
+function Ye(r, t, e) {
+  return t && se(r.prototype, t), e && se(r, e), Object.defineProperty(r, "prototype", {
     writable: !1
   }), r;
 }
-function Ye(r, t, e) {
-  return t = _e(t), t in r ? Object.defineProperty(r, t, {
+function Ve(r, t, e) {
+  return t = xe(t), t in r ? Object.defineProperty(r, t, {
     value: e,
     enumerable: !0,
     configurable: !0,
     writable: !0
   }) : r[t] = e, r;
 }
-function xe(r) {
-  return Ve(r) || Je(r) || Ze(r) || Ke();
-}
-function Ve(r) {
-  if (Array.isArray(r)) return Ht(r);
+function Ie(r) {
+  return Je(r) || Ze(r) || Ke(r) || Qe();
 }
 function Je(r) {
+  if (Array.isArray(r)) return Ft(r);
+}
+function Ze(r) {
   if (typeof Symbol < "u" && r[Symbol.iterator] != null || r["@@iterator"] != null) return Array.from(r);
 }
-function Ze(r, t) {
+function Ke(r, t) {
   if (r) {
-    if (typeof r == "string") return Ht(r, t);
+    if (typeof r == "string") return Ft(r, t);
     var e = Object.prototype.toString.call(r).slice(8, -1);
     if (e === "Object" && r.constructor && (e = r.constructor.name), e === "Map" || e === "Set") return Array.from(r);
-    if (e === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)) return Ht(r, t);
+    if (e === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)) return Ft(r, t);
   }
 }
-function Ht(r, t) {
+function Ft(r, t) {
   (t == null || t > r.length) && (t = r.length);
   for (var e = 0, i = new Array(t); e < t; e++) i[e] = r[e];
   return i;
 }
-function Ke() {
+function Qe() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var kt = typeof window < "u" && typeof window.document < "u", X = kt ? window : {}, Vt = kt && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, Jt = kt ? "PointerEvent" in X : !1, R = "cropper", Zt = "all", Ie = "crop", Ae = "move", Ee = "zoom", st = "e", at = "w", dt = "s", Z = "n", gt = "ne", vt = "nw", yt = "se", Ct = "sw", Ft = "".concat(R, "-crop"), se = "".concat(R, "-disabled"), B = "".concat(R, "-hidden"), ae = "".concat(R, "-hide"), Qe = "".concat(R, "-invisible"), Dt = "".concat(R, "-modal"), jt = "".concat(R, "-move"), wt = "".concat(R, "Action"), At = "".concat(R, "Preview"), Kt = "crop", Re = "move", De = "none", zt = "crop", $t = "cropend", Wt = "cropmove", qt = "cropstart", re = "dblclick", ti = Vt ? "touchstart" : "mousedown", ei = Vt ? "touchmove" : "mousemove", ii = Vt ? "touchend touchcancel" : "mouseup", le = Jt ? "pointerdown" : ti, he = Jt ? "pointermove" : ei, ce = Jt ? "pointerup pointercancel" : ii, de = "ready", ue = "resize", pe = "wheel", Xt = "zoom", fe = "image/jpeg", ni = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, oi = /^data:/, si = /^data:image\/jpeg;base64,/, ai = /^img|canvas$/i, ke = 200, Me = 100, me = {
+var Mt = typeof window < "u" && typeof window.document < "u", X = Mt ? window : {}, Jt = Mt && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, Zt = Mt ? "PointerEvent" in X : !1, R = "cropper", Kt = "all", Ae = "crop", Ee = "move", Re = "zoom", at = "e", rt = "w", dt = "s", K = "n", vt = "ne", yt = "nw", Ct = "se", bt = "sw", jt = "".concat(R, "-crop"), ae = "".concat(R, "-disabled"), B = "".concat(R, "-hidden"), re = "".concat(R, "-hide"), ti = "".concat(R, "-invisible"), kt = "".concat(R, "-modal"), zt = "".concat(R, "-move"), St = "".concat(R, "Action"), Et = "".concat(R, "Preview"), Qt = "crop", De = "move", ke = "none", $t = "crop", Wt = "cropend", qt = "cropmove", Xt = "cropstart", le = "dblclick", ei = Jt ? "touchstart" : "mousedown", ii = Jt ? "touchmove" : "mousemove", ni = Jt ? "touchend touchcancel" : "mouseup", he = Zt ? "pointerdown" : ei, ce = Zt ? "pointermove" : ii, de = Zt ? "pointerup pointercancel" : ni, ue = "ready", pe = "resize", fe = "wheel", Yt = "zoom", me = "image/jpeg", oi = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, si = /^data:/, ai = /^data:image\/jpeg;base64,/, ri = /^img|canvas$/i, Me = 200, Te = 100, ge = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
   // Define the dragging mode of the cropper
-  dragMode: Kt,
+  dragMode: Qt,
   // 'crop', 'move' or 'none'
   // Define the initial aspect ratio of the crop box
   initialAspectRatio: NaN,
@@ -1178,8 +1178,8 @@ var kt = typeof window < "u" && typeof window.document < "u", X = kt ? window : 
   minCanvasHeight: 0,
   minCropBoxWidth: 0,
   minCropBoxHeight: 0,
-  minContainerWidth: ke,
-  minContainerHeight: Me,
+  minContainerWidth: Me,
+  minContainerHeight: Te,
   // Shortcuts of events
   ready: null,
   cropstart: null,
@@ -1187,26 +1187,26 @@ var kt = typeof window < "u" && typeof window.document < "u", X = kt ? window : 
   cropend: null,
   crop: null,
   zoom: null
-}, ri = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', li = Number.isNaN || X.isNaN;
+}, li = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', hi = Number.isNaN || X.isNaN;
 function A(r) {
-  return typeof r == "number" && !li(r);
+  return typeof r == "number" && !hi(r);
 }
-var ge = function(t) {
+var ve = function(t) {
   return t > 0 && t < 1 / 0;
 };
-function Lt(r) {
+function Bt(r) {
   return typeof r > "u";
 }
-function rt(r) {
-  return Ut(r) === "object" && r !== null;
+function lt(r) {
+  return Ht(r) === "object" && r !== null;
 }
-var hi = Object.prototype.hasOwnProperty;
+var ci = Object.prototype.hasOwnProperty;
 function ut(r) {
-  if (!rt(r))
+  if (!lt(r))
     return !1;
   try {
     var t = r.constructor, e = t.prototype;
-    return t && e && hi.call(e, "isPrototypeOf");
+    return t && e && ci.call(e, "isPrototypeOf");
   } catch {
     return !1;
   }
@@ -1214,44 +1214,44 @@ function ut(r) {
 function L(r) {
   return typeof r == "function";
 }
-var ci = Array.prototype.slice;
-function Te(r) {
-  return Array.from ? Array.from(r) : ci.call(r);
+var di = Array.prototype.slice;
+function Oe(r) {
+  return Array.from ? Array.from(r) : di.call(r);
 }
-function M(r, t) {
-  return r && L(t) && (Array.isArray(r) || A(r.length) ? Te(r).forEach(function(e, i) {
+function k(r, t) {
+  return r && L(t) && (Array.isArray(r) || A(r.length) ? Oe(r).forEach(function(e, i) {
     t.call(r, e, i, r);
-  }) : rt(r) && Object.keys(r).forEach(function(e) {
+  }) : lt(r) && Object.keys(r).forEach(function(e) {
     t.call(r, r[e], e, r);
   })), r;
 }
 var D = Object.assign || function(t) {
   for (var e = arguments.length, i = new Array(e > 1 ? e - 1 : 0), o = 1; o < e; o++)
     i[o - 1] = arguments[o];
-  return rt(t) && i.length > 0 && i.forEach(function(n) {
-    rt(n) && Object.keys(n).forEach(function(s) {
+  return lt(t) && i.length > 0 && i.forEach(function(n) {
+    lt(n) && Object.keys(n).forEach(function(s) {
       t[s] = n[s];
     });
   }), t;
-}, di = /\.\d*(?:0|9){12}\d*$/;
+}, ui = /\.\d*(?:0|9){12}\d*$/;
 function ft(r) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
-  return di.test(r) ? Math.round(r * t) / t : r;
+  return ui.test(r) ? Math.round(r * t) / t : r;
 }
-var ui = /^width|height|left|top|marginLeft|marginTop$/;
-function Q(r, t) {
+var pi = /^width|height|left|top|marginLeft|marginTop$/;
+function tt(r, t) {
   var e = r.style;
-  M(t, function(i, o) {
-    ui.test(o) && A(i) && (i = "".concat(i, "px")), e[o] = i;
+  k(t, function(i, o) {
+    pi.test(o) && A(i) && (i = "".concat(i, "px")), e[o] = i;
   });
 }
-function pi(r, t) {
+function fi(r, t) {
   return r.classList ? r.classList.contains(t) : r.className.indexOf(t) > -1;
 }
 function T(r, t) {
   if (t) {
     if (A(r.length)) {
-      M(r, function(i) {
+      k(r, function(i) {
         T(i, t);
       });
       return;
@@ -1267,7 +1267,7 @@ function T(r, t) {
 function q(r, t) {
   if (t) {
     if (A(r.length)) {
-      M(r, function(e) {
+      k(r, function(e) {
         q(e, t);
       });
       return;
@@ -1282,7 +1282,7 @@ function q(r, t) {
 function pt(r, t, e) {
   if (t) {
     if (A(r.length)) {
-      M(r, function(i) {
+      k(r, function(i) {
         pt(i, t, e);
       });
       return;
@@ -1290,18 +1290,18 @@ function pt(r, t, e) {
     e ? T(r, t) : q(r, t);
   }
 }
-var fi = /([a-z\d])([A-Z])/g;
-function Qt(r) {
-  return r.replace(fi, "$1-$2").toLowerCase();
+var mi = /([a-z\d])([A-Z])/g;
+function te(r) {
+  return r.replace(mi, "$1-$2").toLowerCase();
 }
-function Yt(r, t) {
-  return rt(r[t]) ? r[t] : r.dataset ? r.dataset[t] : r.getAttribute("data-".concat(Qt(t)));
+function Vt(r, t) {
+  return lt(r[t]) ? r[t] : r.dataset ? r.dataset[t] : r.getAttribute("data-".concat(te(t)));
 }
-function St(r, t, e) {
-  rt(e) ? r[t] = e : r.dataset ? r.dataset[t] = e : r.setAttribute("data-".concat(Qt(t)), e);
+function _t(r, t, e) {
+  lt(e) ? r[t] = e : r.dataset ? r.dataset[t] = e : r.setAttribute("data-".concat(te(t)), e);
 }
-function mi(r, t) {
-  if (rt(r[t]))
+function gi(r, t) {
+  if (lt(r[t]))
     try {
       delete r[t];
     } catch {
@@ -1314,11 +1314,11 @@ function mi(r, t) {
       r.dataset[t] = void 0;
     }
   else
-    r.removeAttribute("data-".concat(Qt(t)));
+    r.removeAttribute("data-".concat(te(t)));
 }
-var Oe = /\s\s*/, Pe = function() {
+var Pe = /\s\s*/, Le = function() {
   var r = !1;
-  if (kt) {
+  if (Mt) {
     var t = !1, e = function() {
     }, i = Object.defineProperty({}, "once", {
       get: function() {
@@ -1337,10 +1337,10 @@ var Oe = /\s\s*/, Pe = function() {
   }
   return r;
 }();
-function F(r, t, e) {
+function H(r, t, e) {
   var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, o = e;
-  t.trim().split(Oe).forEach(function(n) {
-    if (!Pe) {
+  t.trim().split(Pe).forEach(function(n) {
+    if (!Le) {
       var s = r.listeners;
       s && s[n] && s[n][e] && (o = s[n][e], delete s[n][e], Object.keys(s[n]).length === 0 && delete s[n], Object.keys(s).length === 0 && delete r.listeners);
     }
@@ -1349,8 +1349,8 @@ function F(r, t, e) {
 }
 function U(r, t, e) {
   var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, o = e;
-  t.trim().split(Oe).forEach(function(n) {
-    if (i.once && !Pe) {
+  t.trim().split(Pe).forEach(function(n) {
+    if (i.once && !Le) {
       var s = r.listeners, a = s === void 0 ? {} : s;
       o = function() {
         delete a[n][e], r.removeEventListener(n, o, i);
@@ -1370,23 +1370,23 @@ function mt(r, t, e) {
     cancelable: !0
   }) : (i = document.createEvent("CustomEvent"), i.initCustomEvent(t, !0, !0, e)), r.dispatchEvent(i);
 }
-function Le(r) {
+function Be(r) {
   var t = r.getBoundingClientRect();
   return {
     left: t.left + (window.pageXOffset - document.documentElement.clientLeft),
     top: t.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
-var Bt = X.location, gi = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
-function ve(r) {
-  var t = r.match(gi);
-  return t !== null && (t[1] !== Bt.protocol || t[2] !== Bt.hostname || t[3] !== Bt.port);
-}
+var Nt = X.location, vi = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
 function ye(r) {
+  var t = r.match(vi);
+  return t !== null && (t[1] !== Nt.protocol || t[2] !== Nt.hostname || t[3] !== Nt.port);
+}
+function Ce(r) {
   var t = "timestamp=".concat((/* @__PURE__ */ new Date()).getTime());
   return r + (r.indexOf("?") === -1 ? "?" : "&") + t;
 }
-function bt(r) {
+function wt(r) {
   var t = r.rotate, e = r.scaleX, i = r.scaleY, o = r.translateX, n = r.translateY, s = [];
   A(o) && o !== 0 && s.push("translateX(".concat(o, "px)")), A(n) && n !== 0 && s.push("translateY(".concat(n, "px)")), A(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), A(e) && e !== 1 && s.push("scaleX(".concat(e, ")")), A(i) && i !== 1 && s.push("scaleY(".concat(i, ")"));
   var a = s.length ? s.join(" ") : "none";
@@ -1396,28 +1396,28 @@ function bt(r) {
     transform: a
   };
 }
-function vi(r) {
-  var t = Se({}, r), e = 0;
-  return M(r, function(i, o) {
-    delete t[o], M(t, function(n) {
+function yi(r) {
+  var t = _e({}, r), e = 0;
+  return k(r, function(i, o) {
+    delete t[o], k(t, function(n) {
       var s = Math.abs(i.startX - n.startX), a = Math.abs(i.startY - n.startY), h = Math.abs(i.endX - n.endX), l = Math.abs(i.endY - n.endY), c = Math.sqrt(s * s + a * a), d = Math.sqrt(h * h + l * l), p = (d - c) / c;
       Math.abs(p) > Math.abs(e) && (e = p);
     });
   }), e;
 }
-function Et(r, t) {
+function Rt(r, t) {
   var e = r.pageX, i = r.pageY, o = {
     endX: e,
     endY: i
   };
-  return t ? o : Se({
+  return t ? o : _e({
     startX: e,
     startY: i
   }, o);
 }
-function yi(r) {
+function Ci(r) {
   var t = 0, e = 0, i = 0;
-  return M(r, function(o) {
+  return k(r, function(o) {
     var n = o.startX, s = o.startY;
     t += n, e += s, i += 1;
   }), t /= i, e /= i, {
@@ -1425,8 +1425,8 @@ function yi(r) {
     pageY: e
   };
 }
-function tt(r) {
-  var t = r.aspectRatio, e = r.height, i = r.width, o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", n = ge(i), s = ge(e);
+function et(r) {
+  var t = r.aspectRatio, e = r.height, i = r.width, o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", n = ve(i), s = ve(e);
   if (n && s) {
     var a = e * t;
     o === "contain" && a > i || o === "cover" && a < i ? e = i / t : i = e * t;
@@ -1436,7 +1436,7 @@ function tt(r) {
     height: e
   };
 }
-function Ci(r) {
+function bi(r) {
   var t = r.width, e = r.height, i = r.degree;
   if (i = Math.abs(i) % 180, i === 90)
     return {
@@ -1452,49 +1452,49 @@ function Ci(r) {
     height: h
   };
 }
-function bi(r, t, e, i) {
-  var o = t.aspectRatio, n = t.naturalWidth, s = t.naturalHeight, a = t.rotate, h = a === void 0 ? 0 : a, l = t.scaleX, c = l === void 0 ? 1 : l, d = t.scaleY, p = d === void 0 ? 1 : d, b = e.aspectRatio, C = e.naturalWidth, u = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, y = i.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = i.imageSmoothingQuality, S = _ === void 0 ? "low" : _, m = i.maxWidth, x = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, O = i.minWidth, z = O === void 0 ? 0 : O, N = i.minHeight, H = N === void 0 ? 0 : N, P = document.createElement("canvas"), k = P.getContext("2d"), G = tt({
+function wi(r, t, e, i) {
+  var o = t.aspectRatio, n = t.naturalWidth, s = t.naturalHeight, a = t.rotate, h = a === void 0 ? 0 : a, l = t.scaleX, c = l === void 0 ? 1 : l, d = t.scaleY, p = d === void 0 ? 1 : d, b = e.aspectRatio, C = e.naturalWidth, u = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, y = i.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = i.imageSmoothingQuality, S = _ === void 0 ? "low" : _, m = i.maxWidth, x = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, O = i.minWidth, j = O === void 0 ? 0 : O, z = i.minHeight, P = z === void 0 ? 0 : z, N = document.createElement("canvas"), M = N.getContext("2d"), G = et({
     aspectRatio: b,
     width: x,
     height: E
-  }), Y = tt({
+  }), $ = et({
     aspectRatio: b,
-    width: z,
-    height: H
-  }, "cover"), et = Math.min(G.width, Math.max(Y.width, C)), V = Math.min(G.height, Math.max(Y.height, u)), lt = tt({
+    width: j,
+    height: P
+  }, "cover"), Y = Math.min(G.width, Math.max($.width, C)), it = Math.min(G.height, Math.max($.height, u)), V = et({
     aspectRatio: o,
     width: x,
     height: E
-  }), it = tt({
+  }), ht = et({
     aspectRatio: o,
-    width: z,
-    height: H
-  }, "cover"), nt = Math.min(lt.width, Math.max(it.width, n)), ht = Math.min(lt.height, Math.max(it.height, s)), $ = [-nt / 2, -ht / 2, nt, ht];
-  return P.width = ft(et), P.height = ft(V), k.fillStyle = v, k.fillRect(0, 0, et, V), k.save(), k.translate(et / 2, V / 2), k.rotate(h * Math.PI / 180), k.scale(c, p), k.imageSmoothingEnabled = w, k.imageSmoothingQuality = S, k.drawImage.apply(k, [r].concat(xe($.map(function(W) {
+    width: j,
+    height: P
+  }, "cover"), nt = Math.min(V.width, Math.max(ht.width, n)), ot = Math.min(V.height, Math.max(ht.height, s)), gt = [-nt / 2, -ot / 2, nt, ot];
+  return N.width = ft(Y), N.height = ft(it), M.fillStyle = v, M.fillRect(0, 0, Y, it), M.save(), M.translate(Y / 2, it / 2), M.rotate(h * Math.PI / 180), M.scale(c, p), M.imageSmoothingEnabled = w, M.imageSmoothingQuality = S, M.drawImage.apply(M, [r].concat(Ie(gt.map(function(W) {
     return Math.floor(ft(W));
-  })))), k.restore(), P;
+  })))), M.restore(), N;
 }
-var Be = String.fromCharCode;
-function wi(r, t, e) {
+var Ne = String.fromCharCode;
+function Si(r, t, e) {
   var i = "";
   e += t;
   for (var o = t; o < e; o += 1)
-    i += Be(r.getUint8(o));
+    i += Ne(r.getUint8(o));
   return i;
 }
-var Si = /^data:.*,/;
-function _i(r) {
-  var t = r.replace(Si, ""), e = atob(t), i = new ArrayBuffer(e.length), o = new Uint8Array(i);
-  return M(o, function(n, s) {
+var _i = /^data:.*,/;
+function xi(r) {
+  var t = r.replace(_i, ""), e = atob(t), i = new ArrayBuffer(e.length), o = new Uint8Array(i);
+  return k(o, function(n, s) {
     o[s] = e.charCodeAt(s);
   }), i;
 }
-function xi(r, t) {
+function Ii(r, t) {
   for (var e = [], i = 8192, o = new Uint8Array(r); o.length > 0; )
-    e.push(Be.apply(null, Te(o.subarray(0, i)))), o = o.subarray(i);
+    e.push(Ne.apply(null, Oe(o.subarray(0, i)))), o = o.subarray(i);
   return "data:".concat(t, ";base64,").concat(btoa(e.join("")));
 }
-function Ii(r) {
+function Ai(r) {
   var t = new DataView(r), e;
   try {
     var i, o, n;
@@ -1508,7 +1508,7 @@ function Ii(r) {
       }
     if (o) {
       var h = o + 4, l = o + 10;
-      if (wi(t, h, 4) === "Exif") {
+      if (Si(t, h, 4) === "Exif") {
         var c = t.getUint16(l);
         if (i = c === 18761, (i || c === 19789) && t.getUint16(l + 2, i) === 42) {
           var d = t.getUint32(l + 4, i);
@@ -1529,7 +1529,7 @@ function Ii(r) {
   }
   return e;
 }
-function Ai(r) {
+function Ei(r) {
   var t = 0, e = 1, i = 1;
   switch (r) {
     case 2:
@@ -1560,7 +1560,7 @@ function Ai(r) {
     scaleY: i
   };
 }
-var Ei = {
+var Ri = {
   render: function() {
     this.initContainer(), this.initCanvas(), this.initCropBox(), this.renderCanvas(), this.cropped && this.renderCropBox();
   },
@@ -1568,10 +1568,10 @@ var Ei = {
     var t = this.element, e = this.options, i = this.container, o = this.cropper, n = Number(e.minContainerWidth), s = Number(e.minContainerHeight);
     T(o, B), q(t, B);
     var a = {
-      width: Math.max(i.offsetWidth, n >= 0 ? n : ke),
-      height: Math.max(i.offsetHeight, s >= 0 ? s : Me)
+      width: Math.max(i.offsetWidth, n >= 0 ? n : Me),
+      height: Math.max(i.offsetHeight, s >= 0 ? s : Te)
     };
-    this.containerData = a, Q(o, {
+    this.containerData = a, tt(o, {
       width: a.width,
       height: a.height
     }), T(t, B), q(o, B);
@@ -1594,7 +1594,7 @@ var Ei = {
     if (t) {
       var c = Number(i.minCanvasWidth) || 0, d = Number(i.minCanvasHeight) || 0;
       a > 1 ? (c = Math.max(c, o.width), d = Math.max(d, o.height), a === 3 && (d * h > c ? c = d * h : d = c / h)) : a > 0 && (c ? c = Math.max(c, l ? s.width : 0) : d ? d = Math.max(d, l ? s.height : 0) : l && (c = s.width, d = s.height, d * h > c ? c = d * h : d = c / h));
-      var p = tt({
+      var p = et({
         aspectRatio: h,
         width: c,
         height: d
@@ -1611,17 +1611,17 @@ var Ei = {
   renderCanvas: function(t, e) {
     var i = this.canvasData, o = this.imageData;
     if (e) {
-      var n = Ci({
+      var n = bi({
         width: o.naturalWidth * Math.abs(o.scaleX || 1),
         height: o.naturalHeight * Math.abs(o.scaleY || 1),
         degree: o.rotate || 0
       }), s = n.width, a = n.height, h = i.width * (s / i.naturalWidth), l = i.height * (a / i.naturalHeight);
       i.left -= (h - i.width) / 2, i.top -= (l - i.height) / 2, i.width = h, i.height = l, i.aspectRatio = s / a, i.naturalWidth = s, i.naturalHeight = a, this.limitCanvas(!0, !1);
     }
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, Q(this.canvas, D({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, tt(this.canvas, D({
       width: i.width,
       height: i.height
-    }, bt({
+    }, wt({
       translateX: i.left,
       translateY: i.top
     }))), this.renderImage(t), this.cropped && this.limited && this.limitCropBox(!0, !0);
@@ -1633,10 +1633,10 @@ var Ei = {
       height: n,
       left: (e.width - o) / 2,
       top: (e.height - n) / 2
-    }), Q(this.image, D({
+    }), tt(this.image, D({
       width: i.width,
       height: i.height
-    }, bt(D({
+    }, wt(D({
       translateX: i.left,
       translateY: i.top
     }, i)))), t && this.output();
@@ -1658,25 +1658,25 @@ var Ei = {
   },
   renderCropBox: function() {
     var t = this.options, e = this.containerData, i = this.cropBoxData;
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && St(this.face, wt, i.width >= e.width && i.height >= e.height ? Ae : Zt), Q(this.cropBox, D({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && _t(this.face, St, i.width >= e.width && i.height >= e.height ? Ee : Kt), tt(this.cropBox, D({
       width: i.width,
       height: i.height
-    }, bt({
+    }, wt({
       translateX: i.left,
       translateY: i.top
     }))), this.cropped && this.limited && this.limitCanvas(!0, !0), this.disabled || this.output();
   },
   output: function() {
-    this.preview(), mt(this.element, zt, this.getData());
+    this.preview(), mt(this.element, $t, this.getData());
   }
-}, Ri = {
+}, Di = {
   initPreview: function() {
     var t = this.element, e = this.crossOrigin, i = this.options.preview, o = e ? this.crossOriginUrl : this.url, n = t.alt || "The image to preview", s = document.createElement("img");
     if (e && (s.crossOrigin = e), s.src = o, s.alt = n, this.viewBox.appendChild(s), this.viewBoxImage = s, !!i) {
       var a = i;
-      typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, M(a, function(h) {
+      typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, k(a, function(h) {
         var l = document.createElement("img");
-        St(h, At, {
+        _t(h, Et, {
           width: h.offsetWidth,
           height: h.offsetHeight,
           html: h.innerHTML
@@ -1685,67 +1685,67 @@ var Ei = {
     }
   },
   resetPreview: function() {
-    M(this.previews, function(t) {
-      var e = Yt(t, At);
-      Q(t, {
+    k(this.previews, function(t) {
+      var e = Vt(t, Et);
+      tt(t, {
         width: e.width,
         height: e.height
-      }), t.innerHTML = e.html, mi(t, At);
+      }), t.innerHTML = e.html, gi(t, Et);
     });
   },
   preview: function() {
     var t = this.imageData, e = this.canvasData, i = this.cropBoxData, o = i.width, n = i.height, s = t.width, a = t.height, h = i.left - e.left - t.left, l = i.top - e.top - t.top;
-    !this.cropped || this.disabled || (Q(this.viewBoxImage, D({
+    !this.cropped || this.disabled || (tt(this.viewBoxImage, D({
       width: s,
       height: a
-    }, bt(D({
+    }, wt(D({
       translateX: -h,
       translateY: -l
-    }, t)))), M(this.previews, function(c) {
-      var d = Yt(c, At), p = d.width, b = d.height, C = p, u = b, f = 1;
-      o && (f = p / o, u = n * f), n && u > b && (f = b / n, C = o * f, u = b), Q(c, {
+    }, t)))), k(this.previews, function(c) {
+      var d = Vt(c, Et), p = d.width, b = d.height, C = p, u = b, f = 1;
+      o && (f = p / o, u = n * f), n && u > b && (f = b / n, C = o * f, u = b), tt(c, {
         width: C,
         height: u
-      }), Q(c.getElementsByTagName("img")[0], D({
+      }), tt(c.getElementsByTagName("img")[0], D({
         width: s * f,
         height: a * f
-      }, bt(D({
+      }, wt(D({
         translateX: -h * f,
         translateY: -l * f
       }, t))));
     }));
   }
-}, Di = {
+}, ki = {
   bind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    L(e.cropstart) && U(t, qt, e.cropstart), L(e.cropmove) && U(t, Wt, e.cropmove), L(e.cropend) && U(t, $t, e.cropend), L(e.crop) && U(t, zt, e.crop), L(e.zoom) && U(t, Xt, e.zoom), U(i, le, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && U(i, pe, this.onWheel = this.wheel.bind(this), {
+    L(e.cropstart) && U(t, Xt, e.cropstart), L(e.cropmove) && U(t, qt, e.cropmove), L(e.cropend) && U(t, Wt, e.cropend), L(e.crop) && U(t, $t, e.crop), L(e.zoom) && U(t, Yt, e.zoom), U(i, he, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && U(i, fe, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && U(i, re, this.onDblclick = this.dblclick.bind(this)), U(t.ownerDocument, he, this.onCropMove = this.cropMove.bind(this)), U(t.ownerDocument, ce, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && U(window, ue, this.onResize = this.resize.bind(this));
+    }), e.toggleDragModeOnDblclick && U(i, le, this.onDblclick = this.dblclick.bind(this)), U(t.ownerDocument, ce, this.onCropMove = this.cropMove.bind(this)), U(t.ownerDocument, de, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && U(window, pe, this.onResize = this.resize.bind(this));
   },
   unbind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    L(e.cropstart) && F(t, qt, e.cropstart), L(e.cropmove) && F(t, Wt, e.cropmove), L(e.cropend) && F(t, $t, e.cropend), L(e.crop) && F(t, zt, e.crop), L(e.zoom) && F(t, Xt, e.zoom), F(i, le, this.onCropStart), e.zoomable && e.zoomOnWheel && F(i, pe, this.onWheel, {
+    L(e.cropstart) && H(t, Xt, e.cropstart), L(e.cropmove) && H(t, qt, e.cropmove), L(e.cropend) && H(t, Wt, e.cropend), L(e.crop) && H(t, $t, e.crop), L(e.zoom) && H(t, Yt, e.zoom), H(i, he, this.onCropStart), e.zoomable && e.zoomOnWheel && H(i, fe, this.onWheel, {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && F(i, re, this.onDblclick), F(t.ownerDocument, he, this.onCropMove), F(t.ownerDocument, ce, this.onCropEnd), e.responsive && F(window, ue, this.onResize);
+    }), e.toggleDragModeOnDblclick && H(i, le, this.onDblclick), H(t.ownerDocument, ce, this.onCropMove), H(t.ownerDocument, de, this.onCropEnd), e.responsive && H(window, pe, this.onResize);
   }
-}, ki = {
+}, Mi = {
   resize: function() {
     if (!this.disabled) {
       var t = this.options, e = this.container, i = this.containerData, o = e.offsetWidth / i.width, n = e.offsetHeight / i.height, s = Math.abs(o - 1) > Math.abs(n - 1) ? o : n;
       if (s !== 1) {
         var a, h;
-        t.restore && (a = this.getCanvasData(), h = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(M(a, function(l, c) {
+        t.restore && (a = this.getCanvasData(), h = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(k(a, function(l, c) {
           a[c] = l * s;
-        })), this.setCropBoxData(M(h, function(l, c) {
+        })), this.setCropBoxData(k(h, function(l, c) {
           h[c] = l * s;
         })));
       }
     }
   },
   dblclick: function() {
-    this.disabled || this.options.dragMode === De || this.setDragMode(pi(this.dragBox, Ft) ? Re : Kt);
+    this.disabled || this.options.dragMode === ke || this.setDragMode(fi(this.dragBox, jt) ? De : Qt);
   },
   wheel: function(t) {
     var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, o = 1;
@@ -1758,38 +1758,38 @@ var Ei = {
     if (!(this.disabled || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
     (A(e) && e !== 1 || A(i) && i !== 0 || t.ctrlKey))) {
       var o = this.options, n = this.pointers, s;
-      t.changedTouches ? M(t.changedTouches, function(a) {
-        n[a.identifier] = Et(a);
-      }) : n[t.pointerId || 0] = Et(t), Object.keys(n).length > 1 && o.zoomable && o.zoomOnTouch ? s = Ee : s = Yt(t.target, wt), ni.test(s) && mt(this.element, qt, {
+      t.changedTouches ? k(t.changedTouches, function(a) {
+        n[a.identifier] = Rt(a);
+      }) : n[t.pointerId || 0] = Rt(t), Object.keys(n).length > 1 && o.zoomable && o.zoomOnTouch ? s = Re : s = Vt(t.target, St), oi.test(s) && mt(this.element, Xt, {
         originalEvent: t,
         action: s
-      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Ie && (this.cropping = !0, T(this.dragBox, Dt)));
+      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Ae && (this.cropping = !0, T(this.dragBox, kt)));
     }
   },
   cropMove: function(t) {
     var e = this.action;
     if (!(this.disabled || !e)) {
       var i = this.pointers;
-      t.preventDefault(), mt(this.element, Wt, {
+      t.preventDefault(), mt(this.element, qt, {
         originalEvent: t,
         action: e
-      }) !== !1 && (t.changedTouches ? M(t.changedTouches, function(o) {
-        D(i[o.identifier] || {}, Et(o, !0));
-      }) : D(i[t.pointerId || 0] || {}, Et(t, !0)), this.change(t));
+      }) !== !1 && (t.changedTouches ? k(t.changedTouches, function(o) {
+        D(i[o.identifier] || {}, Rt(o, !0));
+      }) : D(i[t.pointerId || 0] || {}, Rt(t, !0)), this.change(t));
     }
   },
   cropEnd: function(t) {
     if (!this.disabled) {
       var e = this.action, i = this.pointers;
-      t.changedTouches ? M(t.changedTouches, function(o) {
+      t.changedTouches ? k(t.changedTouches, function(o) {
         delete i[o.identifier];
-      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, pt(this.dragBox, Dt, this.cropped && this.options.modal)), mt(this.element, $t, {
+      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, pt(this.dragBox, kt, this.cropped && this.options.modal)), mt(this.element, Wt, {
         originalEvent: t,
         action: e
       }));
     }
   }
-}, Mi = {
+}, Ti = {
   change: function(t) {
     var e = this.options, i = this.canvasData, o = this.containerData, n = this.cropBoxData, s = this.pointers, a = this.action, h = e.aspectRatio, l = n.left, c = n.top, d = n.width, p = n.height, b = l + d, C = c + p, u = 0, f = 0, v = o.width, y = o.height, w = !0, _;
     !h && t.shiftKey && (h = d && p ? d / p : 1), this.limited && (u = n.minLeft, f = n.minTop, v = u + Math.min(o.width, i.width, i.left + i.width), y = f + Math.min(o.height, i.height, i.top + i.height));
@@ -1798,13 +1798,13 @@ var Ei = {
       y: S.endY - S.startY
     }, x = function(E) {
       switch (E) {
-        case st:
+        case at:
           b + m.x > v && (m.x = v - b);
           break;
-        case at:
+        case rt:
           l + m.x < u && (m.x = u - l);
           break;
-        case Z:
+        case K:
           c + m.y < f && (m.y = f - c);
           break;
         case dt:
@@ -1813,103 +1813,103 @@ var Ei = {
       }
     };
     switch (a) {
-      case Zt:
+      case Kt:
         l += m.x, c += m.y;
         break;
-      case st:
+      case at:
         if (m.x >= 0 && (b >= v || h && (c <= f || C >= y))) {
           w = !1;
           break;
         }
-        x(st), d += m.x, d < 0 && (a = at, d = -d, l -= d), h && (p = d / h, c += (n.height - p) / 2);
+        x(at), d += m.x, d < 0 && (a = rt, d = -d, l -= d), h && (p = d / h, c += (n.height - p) / 2);
         break;
-      case Z:
+      case K:
         if (m.y <= 0 && (c <= f || h && (l <= u || b >= v))) {
           w = !1;
           break;
         }
-        x(Z), p -= m.y, c += m.y, p < 0 && (a = dt, p = -p, c -= p), h && (d = p * h, l += (n.width - d) / 2);
+        x(K), p -= m.y, c += m.y, p < 0 && (a = dt, p = -p, c -= p), h && (d = p * h, l += (n.width - d) / 2);
         break;
-      case at:
+      case rt:
         if (m.x <= 0 && (l <= u || h && (c <= f || C >= y))) {
           w = !1;
           break;
         }
-        x(at), d -= m.x, l += m.x, d < 0 && (a = st, d = -d, l -= d), h && (p = d / h, c += (n.height - p) / 2);
+        x(rt), d -= m.x, l += m.x, d < 0 && (a = at, d = -d, l -= d), h && (p = d / h, c += (n.height - p) / 2);
         break;
       case dt:
         if (m.y >= 0 && (C >= y || h && (l <= u || b >= v))) {
           w = !1;
           break;
         }
-        x(dt), p += m.y, p < 0 && (a = Z, p = -p, c -= p), h && (d = p * h, l += (n.width - d) / 2);
+        x(dt), p += m.y, p < 0 && (a = K, p = -p, c -= p), h && (d = p * h, l += (n.width - d) / 2);
         break;
-      case gt:
+      case vt:
         if (h) {
           if (m.y <= 0 && (c <= f || b >= v)) {
             w = !1;
             break;
           }
-          x(Z), p -= m.y, c += m.y, d = p * h;
+          x(K), p -= m.y, c += m.y, d = p * h;
         } else
-          x(Z), x(st), m.x >= 0 ? b < v ? d += m.x : m.y <= 0 && c <= f && (w = !1) : d += m.x, m.y <= 0 ? c > f && (p -= m.y, c += m.y) : (p -= m.y, c += m.y);
-        d < 0 && p < 0 ? (a = Ct, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = vt, d = -d, l -= d) : p < 0 && (a = yt, p = -p, c -= p);
+          x(K), x(at), m.x >= 0 ? b < v ? d += m.x : m.y <= 0 && c <= f && (w = !1) : d += m.x, m.y <= 0 ? c > f && (p -= m.y, c += m.y) : (p -= m.y, c += m.y);
+        d < 0 && p < 0 ? (a = bt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = yt, d = -d, l -= d) : p < 0 && (a = Ct, p = -p, c -= p);
         break;
-      case vt:
+      case yt:
         if (h) {
           if (m.y <= 0 && (c <= f || l <= u)) {
             w = !1;
             break;
           }
-          x(Z), p -= m.y, c += m.y, d = p * h, l += n.width - d;
+          x(K), p -= m.y, c += m.y, d = p * h, l += n.width - d;
         } else
-          x(Z), x(at), m.x <= 0 ? l > u ? (d -= m.x, l += m.x) : m.y <= 0 && c <= f && (w = !1) : (d -= m.x, l += m.x), m.y <= 0 ? c > f && (p -= m.y, c += m.y) : (p -= m.y, c += m.y);
-        d < 0 && p < 0 ? (a = yt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = gt, d = -d, l -= d) : p < 0 && (a = Ct, p = -p, c -= p);
+          x(K), x(rt), m.x <= 0 ? l > u ? (d -= m.x, l += m.x) : m.y <= 0 && c <= f && (w = !1) : (d -= m.x, l += m.x), m.y <= 0 ? c > f && (p -= m.y, c += m.y) : (p -= m.y, c += m.y);
+        d < 0 && p < 0 ? (a = Ct, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = vt, d = -d, l -= d) : p < 0 && (a = bt, p = -p, c -= p);
         break;
-      case Ct:
+      case bt:
         if (h) {
           if (m.x <= 0 && (l <= u || C >= y)) {
             w = !1;
             break;
           }
-          x(at), d -= m.x, l += m.x, p = d / h;
+          x(rt), d -= m.x, l += m.x, p = d / h;
         } else
-          x(dt), x(at), m.x <= 0 ? l > u ? (d -= m.x, l += m.x) : m.y >= 0 && C >= y && (w = !1) : (d -= m.x, l += m.x), m.y >= 0 ? C < y && (p += m.y) : p += m.y;
-        d < 0 && p < 0 ? (a = gt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = yt, d = -d, l -= d) : p < 0 && (a = vt, p = -p, c -= p);
+          x(dt), x(rt), m.x <= 0 ? l > u ? (d -= m.x, l += m.x) : m.y >= 0 && C >= y && (w = !1) : (d -= m.x, l += m.x), m.y >= 0 ? C < y && (p += m.y) : p += m.y;
+        d < 0 && p < 0 ? (a = vt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = Ct, d = -d, l -= d) : p < 0 && (a = yt, p = -p, c -= p);
         break;
-      case yt:
+      case Ct:
         if (h) {
           if (m.x >= 0 && (b >= v || C >= y)) {
             w = !1;
             break;
           }
-          x(st), d += m.x, p = d / h;
+          x(at), d += m.x, p = d / h;
         } else
-          x(dt), x(st), m.x >= 0 ? b < v ? d += m.x : m.y >= 0 && C >= y && (w = !1) : d += m.x, m.y >= 0 ? C < y && (p += m.y) : p += m.y;
-        d < 0 && p < 0 ? (a = vt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = Ct, d = -d, l -= d) : p < 0 && (a = gt, p = -p, c -= p);
-        break;
-      case Ae:
-        this.move(m.x, m.y), w = !1;
+          x(dt), x(at), m.x >= 0 ? b < v ? d += m.x : m.y >= 0 && C >= y && (w = !1) : d += m.x, m.y >= 0 ? C < y && (p += m.y) : p += m.y;
+        d < 0 && p < 0 ? (a = yt, p = -p, d = -d, c -= p, l -= d) : d < 0 ? (a = bt, d = -d, l -= d) : p < 0 && (a = vt, p = -p, c -= p);
         break;
       case Ee:
-        this.zoom(vi(s), t), w = !1;
+        this.move(m.x, m.y), w = !1;
         break;
-      case Ie:
+      case Re:
+        this.zoom(yi(s), t), w = !1;
+        break;
+      case Ae:
         if (!m.x || !m.y) {
           w = !1;
           break;
         }
-        _ = Le(this.cropper), l = S.startX - _.left, c = S.startY - _.top, d = n.minWidth, p = n.minHeight, m.x > 0 ? a = m.y > 0 ? yt : gt : m.x < 0 && (l -= d, a = m.y > 0 ? Ct : vt), m.y < 0 && (c -= p), this.cropped || (q(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
+        _ = Be(this.cropper), l = S.startX - _.left, c = S.startY - _.top, d = n.minWidth, p = n.minHeight, m.x > 0 ? a = m.y > 0 ? Ct : vt : m.x < 0 && (l -= d, a = m.y > 0 ? bt : yt), m.y < 0 && (c -= p), this.cropped || (q(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
         break;
     }
-    w && (n.width = d, n.height = p, n.left = l, n.top = c, this.action = a, this.renderCropBox()), M(s, function(I) {
+    w && (n.width = d, n.height = p, n.left = l, n.top = c, this.action = a, this.renderCropBox()), k(s, function(I) {
       I.startX = I.endX, I.startY = I.endY;
     });
   }
-}, Ti = {
+}, Oi = {
   // Show the crop box manually
   crop: function() {
-    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && T(this.dragBox, Dt), q(this.cropBox, B), this.setCropBoxData(this.initialCropBoxData)), this;
+    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && T(this.dragBox, kt), q(this.cropBox, B), this.setCropBoxData(this.initialCropBoxData)), this;
   },
   // Reset the image and crop box to their initial states
   reset: function() {
@@ -1922,7 +1922,7 @@ var Ei = {
       top: 0,
       width: 0,
       height: 0
-    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), q(this.dragBox, Dt), T(this.cropBox, B)), this;
+    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), q(this.dragBox, kt), T(this.cropBox, B)), this;
   },
   /**
    * Replace the image's src and rebuild the cropper
@@ -1932,17 +1932,17 @@ var Ei = {
    */
   replace: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
-    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, M(this.previews, function(i) {
+    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, k(this.previews, function(i) {
       i.getElementsByTagName("img")[0].src = t;
     }))) : (this.isImg && (this.replaced = !0), this.options.data = null, this.uncreate(), this.load(t))), this;
   },
   // Enable (unfreeze) the cropper
   enable: function() {
-    return this.ready && this.disabled && (this.disabled = !1, q(this.cropper, se)), this;
+    return this.ready && this.disabled && (this.disabled = !1, q(this.cropper, ae)), this;
   },
   // Disable (freeze) the cropper
   disable: function() {
-    return this.ready && !this.disabled && (this.disabled = !0, T(this.cropper, se)), this;
+    return this.ready && !this.disabled && (this.disabled = !0, T(this.cropper, ae)), this;
   },
   /**
    * Destroy the cropper and remove the instance from the image
@@ -1960,7 +1960,7 @@ var Ei = {
    */
   move: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, o = i.left, n = i.top;
-    return this.moveTo(Lt(t) ? t : o + Number(t), Lt(e) ? e : n + Number(e));
+    return this.moveTo(Bt(t) ? t : o + Number(t), Bt(e) ? e : n + Number(e));
   },
   /**
    * Move the canvas to an absolute point
@@ -1993,14 +1993,14 @@ var Ei = {
     var o = this.options, n = this.canvasData, s = n.width, a = n.height, h = n.naturalWidth, l = n.naturalHeight;
     if (t = Number(t), t >= 0 && this.ready && !this.disabled && o.zoomable) {
       var c = h * t, d = l * t;
-      if (mt(this.element, Xt, {
+      if (mt(this.element, Yt, {
         ratio: t,
         oldRatio: s / h,
         originalEvent: i
       }) === !1)
         return this;
       if (i) {
-        var p = this.pointers, b = Le(this.cropper), C = p && Object.keys(p).length ? yi(p) : {
+        var p = this.pointers, b = Be(this.cropper), C = p && Object.keys(p).length ? Ci(p) : {
           pageX: i.pageX,
           pageY: i.pageY
         };
@@ -2069,7 +2069,7 @@ var Ei = {
         height: n.height
       };
       var a = i.width / i.naturalWidth;
-      if (M(s, function(c, d) {
+      if (k(s, function(c, d) {
         s[d] = c / a;
       }), t) {
         var h = Math.round(s.y + s.height), l = Math.round(s.x + s.width);
@@ -2119,7 +2119,7 @@ var Ei = {
    */
   getCanvasData: function() {
     var t = this.canvasData, e = {};
-    return this.ready && M(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
+    return this.ready && k(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
       e[i] = t[i];
     }), e;
   },
@@ -2163,20 +2163,20 @@ var Ei = {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     if (!this.ready || !window.HTMLCanvasElement)
       return null;
-    var e = this.canvasData, i = bi(this.image, this.imageData, e, t);
+    var e = this.canvasData, i = wi(this.image, this.imageData, e, t);
     if (!this.cropped)
       return i;
     var o = this.getData(t.rounded), n = o.x, s = o.y, a = o.width, h = o.height, l = i.width / Math.floor(e.naturalWidth);
     l !== 1 && (n *= l, s *= l, a *= l, h *= l);
-    var c = a / h, d = tt({
+    var c = a / h, d = et({
       aspectRatio: c,
       width: t.maxWidth || 1 / 0,
       height: t.maxHeight || 1 / 0
-    }), p = tt({
+    }), p = et({
       aspectRatio: c,
       width: t.minWidth || 0,
       height: t.minHeight || 0
-    }, "cover"), b = tt({
+    }, "cover"), b = et({
       aspectRatio: c,
       width: t.width || (l !== 1 ? i.width : a),
       height: t.height || (l !== 1 ? i.height : h)
@@ -2186,15 +2186,15 @@ var Ei = {
     f.width = ft(C), f.height = ft(u), v.fillStyle = t.fillColor || "transparent", v.fillRect(0, 0, C, u);
     var y = t.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = t.imageSmoothingQuality;
     v.imageSmoothingEnabled = w, _ && (v.imageSmoothingQuality = _);
-    var S = i.width, m = i.height, x = n, I = s, E, O, z, N, H, P;
-    x <= -a || x > S ? (x = 0, E = 0, z = 0, H = 0) : x <= 0 ? (z = -x, x = 0, E = Math.min(S, a + x), H = E) : x <= S && (z = 0, E = Math.min(a, S - x), H = E), E <= 0 || I <= -h || I > m ? (I = 0, O = 0, N = 0, P = 0) : I <= 0 ? (N = -I, I = 0, O = Math.min(m, h + I), P = O) : I <= m && (N = 0, O = Math.min(h, m - I), P = O);
-    var k = [x, I, E, O];
-    if (H > 0 && P > 0) {
+    var S = i.width, m = i.height, x = n, I = s, E, O, j, z, P, N;
+    x <= -a || x > S ? (x = 0, E = 0, j = 0, P = 0) : x <= 0 ? (j = -x, x = 0, E = Math.min(S, a + x), P = E) : x <= S && (j = 0, E = Math.min(a, S - x), P = E), E <= 0 || I <= -h || I > m ? (I = 0, O = 0, z = 0, N = 0) : I <= 0 ? (z = -I, I = 0, O = Math.min(m, h + I), N = O) : I <= m && (z = 0, O = Math.min(h, m - I), N = O);
+    var M = [x, I, E, O];
+    if (P > 0 && N > 0) {
       var G = C / a;
-      k.push(z * G, N * G, H * G, P * G);
+      M.push(j * G, z * G, P * G, N * G);
     }
-    return v.drawImage.apply(v, [i].concat(xe(k.map(function(Y) {
-      return Math.floor(ft(Y));
+    return v.drawImage.apply(v, [i].concat(Ie(M.map(function($) {
+      return Math.floor(ft($));
     })))), f;
   },
   /**
@@ -2204,7 +2204,7 @@ var Ei = {
    */
   setAspectRatio: function(t) {
     var e = this.options;
-    return !this.disabled && !Lt(t) && (e.aspectRatio = Math.max(0, t) || NaN, this.ready && (this.initCropBox(), this.cropped && this.renderCropBox())), this;
+    return !this.disabled && !Bt(t) && (e.aspectRatio = Math.max(0, t) || NaN, this.ready && (this.initCropBox(), this.cropped && this.renderCropBox())), this;
   },
   /**
    * Change the drag mode.
@@ -2214,19 +2214,19 @@ var Ei = {
   setDragMode: function(t) {
     var e = this.options, i = this.dragBox, o = this.face;
     if (this.ready && !this.disabled) {
-      var n = t === Kt, s = e.movable && t === Re;
-      t = n || s ? t : De, e.dragMode = t, St(i, wt, t), pt(i, Ft, n), pt(i, jt, s), e.cropBoxMovable || (St(o, wt, t), pt(o, Ft, n), pt(o, jt, s));
+      var n = t === Qt, s = e.movable && t === De;
+      t = n || s ? t : ke, e.dragMode = t, _t(i, St, t), pt(i, jt, n), pt(i, zt, s), e.cropBoxMovable || (_t(o, St, t), pt(o, jt, n), pt(o, zt, s));
     }
     return this;
   }
-}, Oi = X.Cropper, Ne = /* @__PURE__ */ function() {
+}, Pi = X.Cropper, Ge = /* @__PURE__ */ function() {
   function r(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (qe(this, r), !t || !ai.test(t.tagName))
+    if (Xe(this, r), !t || !ri.test(t.tagName))
       throw new Error("The first argument is required and must be an <img> or <canvas> element.");
-    this.element = t, this.options = D({}, me, ut(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
+    this.element = t, this.options = D({}, ge, ut(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
   }
-  return Xe(r, [{
+  return Ye(r, [{
     key: "init",
     value: function() {
       var e = this.element, i = e.tagName.toLowerCase(), o;
@@ -2250,27 +2250,27 @@ var Ei = {
           this.clone();
           return;
         }
-        if (oi.test(e)) {
-          si.test(e) ? this.read(_i(e)) : this.clone();
+        if (si.test(e)) {
+          ai.test(e) ? this.read(xi(e)) : this.clone();
           return;
         }
         var s = new XMLHttpRequest(), a = this.clone.bind(this);
         this.reloading = !0, this.xhr = s, s.onabort = a, s.onerror = a, s.ontimeout = a, s.onprogress = function() {
-          s.getResponseHeader("content-type") !== fe && s.abort();
+          s.getResponseHeader("content-type") !== me && s.abort();
         }, s.onload = function() {
           i.read(s.response);
         }, s.onloadend = function() {
           i.reloading = !1, i.xhr = null;
-        }, n.checkCrossOrigin && ve(e) && o.crossOrigin && (e = ye(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = o.crossOrigin === "use-credentials", s.send();
+        }, n.checkCrossOrigin && ye(e) && o.crossOrigin && (e = Ce(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = o.crossOrigin === "use-credentials", s.send();
       }
     }
   }, {
     key: "read",
     value: function(e) {
-      var i = this.options, o = this.imageData, n = Ii(e), s = 0, a = 1, h = 1;
+      var i = this.options, o = this.imageData, n = Ai(e), s = 0, a = 1, h = 1;
       if (n > 1) {
-        this.url = xi(e, fe);
-        var l = Ai(n);
+        this.url = Ii(e, me);
+        var l = Ei(n);
         s = l.rotate, a = l.scaleX, h = l.scaleY;
       }
       i.rotatable && (o.rotate = s), i.scalable && (o.scaleX = a, o.scaleY = h), this.clone();
@@ -2279,9 +2279,9 @@ var Ei = {
     key: "clone",
     value: function() {
       var e = this.element, i = this.url, o = e.crossOrigin, n = i;
-      this.options.checkCrossOrigin && ve(i) && (o || (o = "anonymous"), n = ye(i)), this.crossOrigin = o, this.crossOriginUrl = n;
+      this.options.checkCrossOrigin && ye(i) && (o || (o = "anonymous"), n = Ce(i)), this.crossOrigin = o, this.crossOriginUrl = n;
       var s = document.createElement("img");
-      o && (s.crossOrigin = o), s.src = n || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), T(s, ae), e.parentNode.insertBefore(s, e.nextSibling);
+      o && (s.crossOrigin = o), s.src = n || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), T(s, re), e.parentNode.insertBefore(s, e.nextSibling);
     }
   }, {
     key: "start",
@@ -2315,11 +2315,11 @@ var Ei = {
     value: function() {
       if (!(!this.sized || this.ready)) {
         var e = this.element, i = this.options, o = this.image, n = e.parentNode, s = document.createElement("div");
-        s.innerHTML = ri;
+        s.innerHTML = li;
         var a = s.querySelector(".".concat(R, "-container")), h = a.querySelector(".".concat(R, "-canvas")), l = a.querySelector(".".concat(R, "-drag-box")), c = a.querySelector(".".concat(R, "-crop-box")), d = c.querySelector(".".concat(R, "-face"));
-        this.container = n, this.cropper = a, this.canvas = h, this.dragBox = l, this.cropBox = c, this.viewBox = a.querySelector(".".concat(R, "-view-box")), this.face = d, h.appendChild(o), T(e, B), n.insertBefore(a, e.nextSibling), q(o, ae), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, T(c, B), i.guides || T(c.getElementsByClassName("".concat(R, "-dashed")), B), i.center || T(c.getElementsByClassName("".concat(R, "-center")), B), i.background && T(a, "".concat(R, "-bg")), i.highlight || T(d, Qe), i.cropBoxMovable && (T(d, jt), St(d, wt, Zt)), i.cropBoxResizable || (T(c.getElementsByClassName("".concat(R, "-line")), B), T(c.getElementsByClassName("".concat(R, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), L(i.ready) && U(e, de, i.ready, {
+        this.container = n, this.cropper = a, this.canvas = h, this.dragBox = l, this.cropBox = c, this.viewBox = a.querySelector(".".concat(R, "-view-box")), this.face = d, h.appendChild(o), T(e, B), n.insertBefore(a, e.nextSibling), q(o, re), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, T(c, B), i.guides || T(c.getElementsByClassName("".concat(R, "-dashed")), B), i.center || T(c.getElementsByClassName("".concat(R, "-center")), B), i.background && T(a, "".concat(R, "-bg")), i.highlight || T(d, ti), i.cropBoxMovable && (T(d, zt), _t(d, St, Kt)), i.cropBoxResizable || (T(c.getElementsByClassName("".concat(R, "-line")), B), T(c.getElementsByClassName("".concat(R, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), L(i.ready) && U(e, ue, i.ready, {
           once: !0
-        }), mt(e, de);
+        }), mt(e, ue);
       }
     }
   }, {
@@ -2343,7 +2343,7 @@ var Ei = {
   }], [{
     key: "noConflict",
     value: function() {
-      return window.Cropper = Oi, r;
+      return window.Cropper = Pi, r;
     }
     /**
      * Change the default options.
@@ -2352,13 +2352,13 @@ var Ei = {
   }, {
     key: "setDefaults",
     value: function(e) {
-      D(me, ut(e) && e);
+      D(ge, ut(e) && e);
     }
   }]);
 }();
-D(Ne.prototype, Ei, Ri, Di, ki, Mi, Ti);
-const Rt = (r) => Math.min(1, Math.max(0, r)), Ce = ["16:9", "3:2", "1:1"], Nt = "3:2";
-class Pi {
+D(Ge.prototype, Ri, Di, ki, Mi, Ti, Oi);
+const Dt = (r) => Math.min(1, Math.max(0, r)), be = ["16:9", "3:2", "1:1"], Gt = "3:2";
+class Li {
   constructor() {
     this.overlay = null, this.cropper = null, this.escHandler = null, this.resolvePromise = null, this.showOriginalOnClickInput = null, this.aspectRatioInputs = [];
   }
@@ -2371,7 +2371,7 @@ class Pi {
    * @param existingCropAspectRatio - сохранённый режим соотношения сторон
    * @returns Promise с результатом кадрирования или null при отмене
    */
-  open(t, e, i = !1, o = Nt) {
+  open(t, e, i = !1, o = Gt) {
     return this.overlay && this.destroy(), new Promise((n) => {
       this.resolvePromise = n;
       const s = this.normalizeCropAspectRatio(o);
@@ -2385,7 +2385,7 @@ class Pi {
         src: t
       });
       h.style.maxWidth = "100%", h.style.display = "block", a.appendChild(h), document.body.appendChild(this.overlay), h.onload = () => {
-        this.cropper = new Ne(h, {
+        this.cropper = new Ge(h, {
           viewMode: 1,
           autoCropArea: 1,
           aspectRatio: this.numericAspectRatio(s),
@@ -2445,7 +2445,7 @@ class Pi {
         croppedWidth: 0,
         croppedHeight: 0,
         showOriginalOnClick: !1,
-        cropAspectRatio: Nt
+        cropAspectRatio: Gt
       });
     });
     const c = g("button", "gallery-crop-modal__btn");
@@ -2494,7 +2494,7 @@ class Pi {
    * @param naturalHeight - натуральная высота изображения
    */
   cropDataToString(t, e, i) {
-    const o = Rt(t.x / e), n = Rt(t.y / i), s = Rt((t.x + t.width) / e), a = Rt((t.y + t.height) / i);
+    const o = Dt(t.x / e), n = Dt(t.y / i), s = Dt((t.x + t.width) / e), a = Dt((t.y + t.height) / i);
     return {
       crop: `${o.toFixed(4)}x${n.toFixed(4)}:${s.toFixed(4)}x${a.toFixed(4)}`,
       croppedWidth: Math.round(t.width),
@@ -2524,7 +2524,7 @@ class Pi {
     const e = g("fieldset", "gallery-crop-modal__aspect-ratios"), i = g("legend", "gallery-crop-modal__aspect-ratios-label");
     return i.textContent = "Соотношение сторон", e.appendChild(i), [
       { label: "Любое", value: "free" },
-      ...Ce.map((n) => ({ label: n, value: n }))
+      ...be.map((n) => ({ label: n, value: n }))
     ].forEach(({ label: n, value: s }) => {
       const a = g("label", "gallery-crop-modal__aspect-ratio"), h = g("input", null, { type: "radio" }), l = g("span", "gallery-crop-modal__aspect-ratio-label");
       h.name = "gallery-crop-aspect-ratio", h.value = s, h.checked = s === t, h.addEventListener("change", () => {
@@ -2539,14 +2539,14 @@ class Pi {
     return this.normalizeCropAspectRatio(t);
   }
   normalizeCropAspectRatio(t) {
-    return t === "free" || Ce.includes(t) ? t : Nt;
+    return t === "free" || be.includes(t) ? t : Gt;
   }
   numericAspectRatio(t) {
     return t === "free" ? Number.NaN : t === "16:9" ? 16 / 9 : t === "1:1" ? 1 : 3 / 2;
   }
 }
-const Li = 12e4, Bi = 5e3, Ni = 1e3, Gi = 1.5, Ui = 200;
-class j extends Error {
+const Bi = 12e4, Ni = 5e3, Gi = 1e3, Ui = 1.5, Hi = 200;
+class F extends Error {
   /**
    * Create a safe workflow error.
    * @param code - stable application error code
@@ -2557,7 +2557,7 @@ class j extends Error {
     super(e), this.name = "AiImageClientError", this.code = t, this.status = i;
   }
 }
-class Hi {
+class Fi {
   /**
    * Create the host client.
    * @param config - host endpoints, headers and resource identity
@@ -2680,19 +2680,19 @@ class Hi {
    */
   async poll(t) {
     var s;
-    const e = Date.now(), i = this.config.pollTimeoutMs ?? Li, o = this.config.pollMaxIntervalMs ?? Bi;
-    let n = this.config.pollIntervalMs ?? Ni;
+    const e = Date.now(), i = this.config.pollTimeoutMs ?? Bi, o = this.config.pollMaxIntervalMs ?? Ni;
+    let n = this.config.pollIntervalMs ?? Gi;
     for (; ; ) {
       const a = await this.status(t.sessionId, t.blockId, t.signal);
       if ((s = t.onStatus) == null || s.call(t, a), this.isTerminal(a.status))
         return a;
       if (Date.now() - e >= i)
-        throw new j(
+        throw new F(
           "poll_timeout",
           "Превышено время ожидания генерации изображения.",
           0
         );
-      await this.wait(n, t.signal), n = Math.min(Math.ceil(n * Gi), o);
+      await this.wait(n, t.signal), n = Math.min(Math.ceil(n * Ui), o);
     }
   }
   /**
@@ -2724,7 +2724,7 @@ class Hi {
   async requestAssistanceText(t, e, i) {
     const o = this.config.endpoints.prompt, n = this.config.publicationContext, s = e === "caption";
     if (typeof o != "string" || o === "" || n === void 0)
-      throw new j(
+      throw new F(
         "prompt_unavailable",
         s ? "Генерация описания недоступна." : "Помощь с промптом недоступна.",
         0
@@ -2753,10 +2753,10 @@ class Hi {
       requestFailed: s ? "Сервер не смог подготовить описание изображения." : "Сервер не смог подготовить промпт для изображения."
     }))[e];
     if (typeof l != "string" || l.trim() === "")
-      throw new j(
+      throw new F(
         "invalid_response",
         s ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
-        Ui
+        Hi
       );
     return l;
   }
@@ -2775,7 +2775,7 @@ class Hi {
     try {
       o = await fetch(t, e);
     } catch (s) {
-      throw s instanceof DOMException && s.name === "AbortError" ? s : new j(
+      throw s instanceof DOMException && s.name === "AbortError" ? s : new F(
         "network_error",
         i.networkError,
         0
@@ -2786,16 +2786,16 @@ class Hi {
       if (this.isRecord(n) && this.isRecord(n.error)) {
         const s = n.error.code, a = n.error.message;
         if (typeof s == "string" && typeof a == "string")
-          throw new j(s, a, o.status);
+          throw new F(s, a, o.status);
       }
-      throw new j(
+      throw new F(
         "request_failed",
         i.requestFailed,
         o.status
       );
     }
     if (!this.isRecord(n) || !this.isRecord(n.data))
-      throw new j(
+      throw new F(
         "invalid_response",
         i.invalidResponse,
         o.status
@@ -2928,7 +2928,7 @@ class Hi {
   requiredString(t, e) {
     const i = t[e];
     if (typeof i != "string" || i === "")
-      throw new j(
+      throw new F(
         "invalid_response",
         "Некорректный ответ сервера генерации изображений.",
         0
@@ -2943,7 +2943,7 @@ class Hi {
     return typeof t == "object" && t !== null && !Array.isArray(t);
   }
 }
-class Fi {
+class ji {
   constructor({
     onAdoptSession: t,
     onAssistPrompt: e,
@@ -2962,44 +2962,44 @@ class Fi {
     source: u
   }) {
     this.isGenerationBusy = !1, this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = c, this.onAdoptSession = t, this.onCloseSession = o, this.onSelectCandidate = h, this.onSelectHistory = l;
-    const f = g("div", ["ai-image-tool__generator"]), v = g("div", ["ai-image-tool__sessions"]), y = g("div", ["ai-image-tool__sessions-title"]), w = g("div", ["ai-image-tool__sessions-list"]), _ = g("div", ["ai-image-tool__prompt-section"]), S = g("label", ["ai-image-tool__label"]), m = g("textarea", ["ai-image-tool__prompt"]), x = g("label", ["ai-image-tool__caption-option"]), I = g("input", ["ai-image-tool__caption-checkbox"]), E = g("span"), O = g("div", ["ai-image-tool__aspect-ratio-field"]), z = g("span", ["ai-image-tool__aspect-ratio-label"]), N = g("div", ["ai-image-tool__aspect-ratios"]), H = g("div", ["ai-image-tool__prompt-actions"]), P = g("button", ["ai-image-tool__action"], { type: "button" }), k = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), G = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), Y = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), et = g("div", ["ai-image-tool__status"]), V = g("div", ["ai-image-tool__error"]), lt = g("div", ["ai-image-tool__candidates"]), it = g("div", ["ai-image-tool__selection"]), nt = g("img", ["ai-image-tool__selected-preview"]), ht = g("div", ["ai-image-tool__metadata"]), $ = g("textarea", ["ai-image-tool__metadata-input", "ai-image-tool__metadata-caption"]), W = g("input", ["ai-image-tool__metadata-input"]), J = g("input", ["ai-image-tool__metadata-input"]), Mt = g("div", ["ai-image-tool__caption-status"]), Tt = g("label", ["ai-image-tool__label"]), ot = g("textarea", ["ai-image-tool__prompt"]), _t = g("button", ["ai-image-tool__action"], { type: "button" }), xt = g("button", ["ai-image-tool__action"], { type: "button" }), te = g("div", ["ai-image-tool__history"]), Ot = g("div", ["ai-image-tool__history-status"]);
-    m.id = d, m.rows = 3, m.placeholder = "Опишите изображение, которое нужно создать", S.htmlFor = d, S.textContent = "Введите промпт", P.textContent = "Генерация изображения", k.textContent = "Промпт по публикации", G.textContent = "Улучшить промпт", Y.textContent = "Отменить", k.hidden = !c, G.hidden = !c, I.type = "checkbox", I.id = `${d}-generate-caption`, E.textContent = "Также сгенерировать описание", x.htmlFor = I.id, x.hidden = !c, x.append(I, E), N.setAttribute("role", "radiogroup"), N.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(N, b, p, d), z.textContent = "Соотношение сторон:", O.append(z, N), H.append(P, k, Y), _.append(S, m, G, x, O, H), nt.alt = "Выбранный вариант", nt.dataset.selectedPreview = "", $.id = `${d}-caption`, $.rows = 2, $.dataset.generatedCaption = "", $.dataset.aiImageMetadata = "", $.placeholder = C.caption, $.setAttribute("aria-label", C.caption), W.type = "text", W.dataset.aiImageMetadata = "", W.placeholder = C.source, W.setAttribute("aria-label", C.source), W.defaultValue = u.name, W.value = u.name, J.type = "url", J.dataset.aiImageMetadata = "", J.placeholder = C.sourceLink, J.setAttribute("aria-label", C.sourceLink), J.defaultValue = u.url, J.value = u.url, Mt.setAttribute("aria-live", "polite"), ht.append($, W, J, Mt), ot.id = `${d}-refinement`, ot.rows = 2, ot.dataset.refinementPrompt = "", Tt.htmlFor = ot.id, Tt.textContent = "Как доработать изображение", _t.textContent = "Доработать", xt.textContent = "Использовать изображение", it.hidden = !0, it.append(
-      nt,
-      ht,
-      Tt,
+    const f = g("div", ["ai-image-tool__generator"]), v = g("div", ["ai-image-tool__sessions"]), y = g("div", ["ai-image-tool__sessions-title"]), w = g("div", ["ai-image-tool__sessions-list"]), _ = g("div", ["ai-image-tool__prompt-section"]), S = g("label", ["ai-image-tool__label"]), m = g("textarea", ["ai-image-tool__prompt"]), x = g("label", ["ai-image-tool__caption-option"]), I = g("input", ["ai-image-tool__caption-checkbox"]), E = g("span"), O = g("div", ["ai-image-tool__prompt-assistance"]), j = g("div", ["ai-image-tool__aspect-ratio-field"]), z = g("span", ["ai-image-tool__aspect-ratio-label"]), P = g("div", ["ai-image-tool__aspect-ratios"]), N = g("div", ["ai-image-tool__prompt-actions"]), M = g("button", ["ai-image-tool__action", "ai-image-tool__action--generate"], { type: "button" }), G = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), $ = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), Y = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), it = g("div", ["ai-image-tool__status"]), V = g("div", ["ai-image-tool__error"]), ht = g("div", ["ai-image-tool__candidates"]), nt = g("div", ["ai-image-tool__selection"]), ot = g("img", ["ai-image-tool__selected-preview"]), gt = g("div", ["ai-image-tool__metadata"]), W = g("textarea", ["ai-image-tool__metadata-input", "ai-image-tool__metadata-caption"]), J = g("input", ["ai-image-tool__metadata-input"]), Z = g("input", ["ai-image-tool__metadata-input"]), Tt = g("div", ["ai-image-tool__caption-status"]), Ot = g("label", ["ai-image-tool__label"]), st = g("textarea", ["ai-image-tool__prompt"]), xt = g("button", ["ai-image-tool__action"], { type: "button" }), It = g("button", ["ai-image-tool__action"], { type: "button" }), ee = g("div", ["ai-image-tool__history"]), Pt = g("div", ["ai-image-tool__history-status"]);
+    m.id = d, m.rows = 3, m.placeholder = "Опишите изображение, которое нужно создать", S.htmlFor = d, S.textContent = "Введите промпт", M.textContent = "Генерировать", G.textContent = "Промпт по публикации", $.textContent = "Улучшить промпт", Y.textContent = "Отменить", G.hidden = !c, $.hidden = !c, I.type = "checkbox", I.id = `${d}-generate-caption`, E.textContent = "Также сгенерировать описание", x.htmlFor = I.id, x.hidden = !c, x.append(I, E), O.append(x, $), P.setAttribute("role", "radiogroup"), P.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(P, b, p, d), z.textContent = "Соотношение сторон:", j.append(z, P), N.append(G, Y, M), _.append(S, m, O, j, N), ot.alt = "Выбранный вариант", ot.dataset.selectedPreview = "", W.id = `${d}-caption`, W.rows = 2, W.dataset.generatedCaption = "", W.dataset.aiImageMetadata = "", W.placeholder = C.caption, W.setAttribute("aria-label", C.caption), J.type = "text", J.dataset.aiImageMetadata = "", J.placeholder = C.source, J.setAttribute("aria-label", C.source), J.defaultValue = u.name, J.value = u.name, Z.type = "url", Z.dataset.aiImageMetadata = "", Z.placeholder = C.sourceLink, Z.setAttribute("aria-label", C.sourceLink), Z.defaultValue = u.url, Z.value = u.url, Tt.setAttribute("aria-live", "polite"), gt.append(W, J, Z, Tt), st.id = `${d}-refinement`, st.rows = 2, st.dataset.refinementPrompt = "", Ot.htmlFor = st.id, Ot.textContent = "Как доработать изображение", xt.textContent = "Доработать", It.textContent = "Использовать изображение", nt.hidden = !0, nt.append(
       ot,
-      _t,
+      gt,
+      Ot,
+      st,
       xt,
-      te,
-      Ot
-    ), et.setAttribute("aria-live", "polite"), V.setAttribute("aria-live", "assertive"), V.setAttribute("role", "alert"), V.hidden = !0, Ot.setAttribute("aria-live", "polite"), lt.hidden = !0, f.hidden = !0, v.hidden = !0, v.append(y, w), f.append(v, _, et, V, lt, it), P.addEventListener("click", () => s(m.value, I.checked, this.selectedAspectRatio())), k.addEventListener("click", () => e("generate", m.value)), G.addEventListener("click", () => e("improve", m.value)), Y.addEventListener("click", i), _t.addEventListener("click", () => a(ot.value)), xt.addEventListener("click", n), m.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
+      It,
+      ee,
+      Pt
+    ), it.setAttribute("aria-live", "polite"), V.setAttribute("aria-live", "assertive"), V.setAttribute("role", "alert"), V.hidden = !0, Pt.setAttribute("aria-live", "polite"), ht.hidden = !0, f.hidden = !0, v.hidden = !0, v.append(y, w), f.append(v, _, it, V, ht, nt), M.addEventListener("click", () => s(m.value, I.checked, this.selectedAspectRatio())), G.addEventListener("click", () => e("generate", m.value)), $.addEventListener("click", () => e("improve", m.value)), Y.addEventListener("click", i), xt.addEventListener("click", () => a(st.value)), It.addEventListener("click", n), m.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
       wrapper: f,
       sessionsSection: v,
       sessionsTitle: y,
       sessionsList: w,
       promptSection: _,
       prompt: m,
-      generateButton: P,
-      generateFromPublicationButton: k,
-      improvePromptButton: G,
+      generateButton: M,
+      generateFromPublicationButton: G,
+      improvePromptButton: $,
       generateCaptionCheckbox: I,
-      aspectRatioOptions: N,
-      generationStatus: et,
+      aspectRatioOptions: P,
+      generationStatus: it,
       generationError: V,
-      candidates: lt,
-      selection: it,
-      selectedPreview: nt,
-      metadataSection: ht,
-      generatedCaption: $,
-      generatedCaptionStatus: Mt,
-      sourceName: W,
-      sourceUrl: J,
-      refinementPrompt: ot,
-      refineButton: _t,
-      finalizeButton: xt,
+      candidates: ht,
+      selection: nt,
+      selectedPreview: ot,
+      metadataSection: gt,
+      generatedCaption: W,
+      generatedCaptionStatus: Tt,
+      sourceName: J,
+      sourceUrl: Z,
+      refinementPrompt: st,
+      refineButton: xt,
+      finalizeButton: It,
       cancelButton: Y,
-      history: te,
-      historyStatus: Ot
+      history: ee,
+      historyStatus: Pt
     }, this.updatePromptControls();
   }
   open() {
@@ -3187,7 +3187,7 @@ class Fi {
     return t === "16:9" || t === "1:1" ? t : "3:2";
   }
 }
-class ji {
+class zi {
   constructor({
     blockId: t,
     config: e,
@@ -3196,9 +3196,9 @@ class ji {
     onChange: n,
     onFinalized: s
   }) {
-    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new Hi(e), this.config = e, this.onChange = n, this.onFinalized = s, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
+    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new Fi(e), this.config = e, this.onChange = n, this.onFinalized = s, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
     const a = typeof e.endpoints.prompt == "string" && e.endpoints.prompt.trim() !== "" && e.publicationContext !== void 0 && typeof e.getPublicationContext == "function";
-    this.ui = new Fi({
+    this.ui = new ji({
       onAdoptSession: (h) => this.adoptSession(h),
       onAssistPrompt: (h, l) => this.assistPrompt(h, l),
       onCancel: () => this.cancel(),
@@ -3471,9 +3471,9 @@ class ji {
         signal: i.signal
       });
       if (a.error !== void 0)
-        throw new j(a.error.code, a.error.message, 0);
+        throw new F(a.error.code, a.error.message, 0);
       if (a.image === void 0 || !this.isStandardImageData(a.image))
-        throw new j("invalid_final_image", "Сервер вернул некорректные данные изображения.", 0);
+        throw new F("invalid_final_image", "Сервер вернул некорректные данные изображения.", 0);
       const h = this.mapImageToGalleryItem(a.image, o);
       this.resetSession(), this.ui.close(), this.onFinalized(h), this.onChange();
     } catch (s) {
@@ -3512,7 +3512,7 @@ class ji {
     this.pollController === t && (this.isGenerationRequestRunning = !1, this.ui.setGenerationBusy(!1));
   }
   handleOperationError(t, e, i) {
-    this.isAbortError(t) || (t instanceof j && t.status > 0 && i(), this.ui.showGenerationError(this.errorMessage(t, e)));
+    this.isAbortError(t) || (t instanceof F && t.status > 0 && i(), this.ui.showGenerationError(this.errorMessage(t, e)));
   }
   isStandardImageData(t) {
     const e = t.file;
@@ -3558,7 +3558,7 @@ class ji {
  * @author iXBT
  * @license MIT
  */
-class zi {
+class $i {
   constructor({ data: t, config: e, api: i, readOnly: o, block: n }) {
     this.aiGenerationController = null, this.currentLoadingItem = null, this.api = i, this.readOnly = o, this.block = n;
     const s = e ?? {};
@@ -3584,11 +3584,11 @@ class zi {
       layout: (t == null ? void 0 : t.layout) ?? "grid",
       columns: (t == null ? void 0 : t.columns) ?? 3,
       stretched: (t == null ? void 0 : t.stretched) ?? !1
-    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new $e({
+    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new We({
       config: this.config,
       onUpload: (a) => this.onUpload(a),
       onError: (a) => this.uploadingFailed(a)
-    }), this.cropModal = new Pi(), this.ui = new Gt({
+    }), this.cropModal = new Li(), this.ui = new Ut({
       api: i,
       config: this.config,
       onSelectFile: () => this.selectFile(),
@@ -3601,7 +3601,7 @@ class zi {
         return (a = this.aiGenerationController) == null ? void 0 : a.open();
       },
       readOnly: o
-    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new ji({
+    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new zi({
       blockId: this.block.id,
       config: this.config.generation,
       initialPending: this._data.aiGeneration,
@@ -3625,7 +3625,7 @@ class zi {
    */
   static get toolbox() {
     return {
-      icon: be,
+      icon: we,
       title: "Gallery"
     };
   }
@@ -3891,5 +3891,5 @@ class zi {
   }
 }
 export {
-  zi as default
+  $i as default
 };

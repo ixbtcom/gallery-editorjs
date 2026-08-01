@@ -791,6 +791,21 @@ a.ai-image-tool__session-title:hover {
   gap: 8px;
 }
 
+.ai-image-tool__prompt-assistance {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-image-tool__prompt-assistance .ai-image-tool__action {
+  margin-inline-start: auto;
+}
+
+.ai-image-tool__action--generate {
+  margin-inline-start: auto;
+}
+
 .ai-image-tool__aspect-ratio-field {
   display: flex;
   flex-wrap: wrap;
