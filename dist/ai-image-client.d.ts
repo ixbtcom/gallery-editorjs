@@ -107,6 +107,11 @@ export interface AiImageClientConfig {
     aspectRatio?: AiImageAspectRatio;
     /** Aspect ratios available for image generation. */
     aspectRatios?: AiImageAspectRatio[];
+    /** Attribution displayed to the editor and stored with generated images. */
+    source?: {
+        name: string;
+        url: string;
+    };
 }
 export type AiImageAspectRatio = '16:9' | '3:2' | '1:1';
 /** Fields shared by publication-aware text actions. */

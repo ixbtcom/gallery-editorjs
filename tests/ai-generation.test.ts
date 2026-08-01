@@ -25,6 +25,10 @@ const generationConfig: AiImageClientConfig = {
   },
   pollIntervalMs: 0,
   pollTimeoutMs: 100,
+  source: {
+    name: 'Grok Imagine',
+    url: 'https://x.ai/grok/use-cases/image-generation',
+  },
 };
 
 const publication = {
@@ -84,8 +88,11 @@ function createTool(
     block,
     config: {
       buttonContent: 'Загрузить',
+      captionPlaceholder: 'Подпись к изображению',
       endpoints: {},
       generation: generationConfig,
+      sourceLinkPlaceholder: 'Ссылка на источник',
+      sourcePlaceholder: 'Источник',
       ...config,
     },
     data,
@@ -171,8 +178,8 @@ describe('Gallery-owned AI generation', () => {
     const aspectRatio = wrapper.querySelector<HTMLInputElement>('input[name="gallery-ai-prompt-gallery-block-1-aspect-ratio"][value="3:2"]');
 
     expect(aspectRatio?.checked).toBe(true);
-    findButton(wrapper, 'Отправить').click();
-    findButton(wrapper, 'Отправить').click();
+    findButton(wrapper, 'Генерация изображения').click();
+    findButton(wrapper, 'Генерация изображения').click();
 
     await vi.waitFor(() => {
       expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
@@ -348,6 +355,171 @@ describe('Gallery-owned AI generation', () => {
     expect(tool.save().aiGeneration).toEqual({ pending: true, sessionId: abandonedId });
   });
 
+  it('shows the finalization workflow error instead of reporting a malformed image payload', async () => {
+    const sessionId = '00000000-0000-4000-8000-000000000201';
+
+    vi.spyOn(globalThis.crypto, 'randomUUID')
+      .mockReturnValueOnce(sessionId)
+      .mockReturnValueOnce('00000000-0000-4000-8000-000000000202')
+      .mockReturnValueOnce('00000000-0000-4000-8000-000000000203');
+
+    const fetchMock = vi.fn(async (url: string | URL | Request): Promise<Response> => {
+      const requestUrl = String(url);
+      let data: Record<string, unknown>;
+
+      if (requestUrl.endsWith('/generate')) {
+        data = {
+          candidates: [{ id: 'candidate-1', parent_id: null }],
+          session_id: sessionId,
+          status: 'ready',
+        };
+      } else if (requestUrl.endsWith('/finalize')) {
+        data = {
+          session_id: sessionId,
+          status: 'finalizing',
+        };
+      } else if (requestUrl.includes(`/admin/ai-images/${sessionId}?`)) {
+        data = {
+          error: {
+            code: 'media_store_failed',
+            message: 'Не удалось сохранить изображение в медиатеке.',
+          },
+          session_id: sessionId,
+          status: 'ready',
+        };
+      } else {
+        throw new Error(`Unexpected request: ${requestUrl}`);
+      }
+
+      return new Response(JSON.stringify({ data }), {
+        headers: { 'Content-Type': 'application/json' },
+        status: 200,
+      });
+    });
+
+    vi.stubGlobal('fetch', fetchMock);
+    const tool = createTool();
+    const wrapper = tool.render();
+
+    document.body.appendChild(wrapper);
+    findButton(wrapper, 'Генерация').click();
+    wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!.value = 'Редакционная иллюстрация';
+    findButton(wrapper, 'Генерация изображения').click();
+
+    await vi.waitFor(() => {
+      expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
+    });
+
+    wrapper.querySelector<HTMLButtonElement>('[data-candidate-id="candidate-1"]')!.click();
+    findButton(wrapper, 'Использовать изображение').click();
+
+    await vi.waitFor(() => {
+      expect(wrapper.querySelector('.ai-image-tool__error')?.textContent)
+        .toBe('Не удалось сохранить изображение в медиатеке.');
+    });
+
+    expect(wrapper.querySelector('.ai-image-tool__error')?.textContent)
+      .not.toContain('Сервер вернул некорректные данные изображения.');
+    expect(tool.save().items).toHaveLength(0);
+  });
+
+  it('shows and stores editable image metadata before finalization', async () => {
+    const sessionId = '00000000-0000-4000-8000-000000000211';
+
+    vi.spyOn(globalThis.crypto, 'randomUUID')
+      .mockReturnValueOnce(sessionId)
+      .mockReturnValueOnce('00000000-0000-4000-8000-000000000212')
+      .mockReturnValueOnce('00000000-0000-4000-8000-000000000213');
+
+    const fetchMock = vi.fn(async (url: string | URL | Request): Promise<Response> => {
+      const requestUrl = String(url);
+      const data = requestUrl.endsWith('/generate')
+        ? {
+            candidates: [{ id: 'candidate-1', parent_id: null }],
+            session_id: sessionId,
+            status: 'ready',
+          }
+        : {
+            image: {
+              alt: 'Серверный источник',
+              caption: '',
+              file: {
+                height: 720,
+                media_id: 'media-uuid',
+                url: 'https://media.example.test/generated/final.webp',
+                width: 1280,
+              },
+              link: 'https://server.example.test/source',
+            },
+            session_id: sessionId,
+            status: 'completed',
+          };
+
+      return new Response(JSON.stringify({ data }), {
+        headers: { 'Content-Type': 'application/json' },
+        status: 200,
+      });
+    });
+
+    vi.stubGlobal('fetch', fetchMock);
+    const tool = createTool();
+    const wrapper = tool.render();
+
+    document.body.appendChild(wrapper);
+    findButton(wrapper, 'Генерация').click();
+    wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!.value = 'Редакционная иллюстрация';
+    findButton(wrapper, 'Генерация изображения').click();
+
+    await vi.waitFor(() => {
+      expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
+    });
+
+    wrapper.querySelector<HTMLButtonElement>('[data-candidate-id="candidate-1"]')!.click();
+
+    const metadataFields = Array.from(wrapper.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-ai-image-metadata]'));
+
+    expect(metadataFields.map(field => field.placeholder)).toEqual([
+      'Подпись к изображению',
+      'Источник',
+      'Ссылка на источник',
+    ]);
+    expect(metadataFields.map(field => field.value)).toEqual([
+      '',
+      'Grok Imagine',
+      'https://x.ai/grok/use-cases/image-generation',
+    ]);
+
+    metadataFields[0]!.value = 'Отредактированная подпись';
+    metadataFields[1]!.value = 'Редакционный AI';
+    metadataFields[2]!.value = 'https://example.test/ai-source';
+    findButton(wrapper, 'Использовать изображение').click();
+
+    await vi.waitFor(() => {
+      expect(tool.save().items).toHaveLength(1);
+    });
+
+    expect(tool.save().items[0]).toMatchObject({
+      caption: 'Отредактированная подпись',
+      source: 'Редакционный AI',
+      sourceLink: 'https://example.test/ai-source',
+    });
+  });
+
+  it('keeps generation configs without source backward compatible', () => {
+    const { source: _source, ...legacyGenerationConfig } = generationConfig;
+    const tool = createTool({}, {
+      generation: legacyGenerationConfig as AiImageClientConfig,
+    });
+    const wrapper = tool.render();
+
+    document.body.appendChild(wrapper);
+    findButton(wrapper, 'Генерация').click();
+
+    const metadataFields = Array.from(wrapper.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('[data-ai-image-metadata]'));
+
+    expect(metadataFields.map(field => field.value)).toEqual(['', '', '']);
+  });
+
   it('keeps prompt assistance, optional caption and refinement history inside Gallery', async () => {
     vi.spyOn(globalThis.crypto, 'randomUUID')
       .mockReturnValueOnce('00000000-0000-4000-8000-000000000301')
@@ -410,15 +582,20 @@ describe('Gallery-owned AI generation', () => {
     document.body.appendChild(wrapper);
     findButton(wrapper, 'Генерация').click();
     wrapper.querySelector<HTMLInputElement>('input[name="gallery-ai-prompt-gallery-block-1-aspect-ratio"][value="1:1"]')!.click();
-    findButton(wrapper, 'Сгенерировать на основе публикации').click();
 
     const prompt = wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!;
+    const improvePromptButton = findButton(wrapper, 'Улучшить промпт');
+
+    expect(prompt.nextElementSibling).toBe(improvePromptButton);
+    expect(wrapper.querySelector('.ai-image-tool__aspect-ratio-field')?.textContent)
+      .toContain('Соотношение сторон:');
+    findButton(wrapper, 'Промпт по публикации').click();
 
     await vi.waitFor(() => {
       expect(prompt.value).toBe('Подробный редакционный промпт');
     });
     wrapper.querySelector<HTMLInputElement>('#gallery-ai-prompt-gallery-block-1-generate-caption')!.click();
-    findButton(wrapper, 'Отправить').click();
+    findButton(wrapper, 'Генерация изображения').click();
 
     await vi.waitFor(() => {
       expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();

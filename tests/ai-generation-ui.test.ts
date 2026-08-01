@@ -12,8 +12,15 @@ describe('Gallery AI generation UI', () => {
   const makeUi = (overrides: Partial<ConstructorParameters<typeof AiGenerationUi>[0]> = {}): AiGenerationUi => new AiGenerationUi({
     aspectRatio: '3:2',
     aspectRatios: ['16:9', '3:2', '1:1'],
+    metadataPlaceholders: {
+      caption: 'Подпись к изображению',
+      source: 'Источник',
+      sourceLink: 'Ссылка на источник',
+    },
+    onAdoptSession: vi.fn(),
     onAssistPrompt: vi.fn(),
     onCancel: vi.fn(),
+    onCloseSession: vi.fn(),
     onFinalize: vi.fn(),
     onGenerate: vi.fn(),
     onRefine: vi.fn(),
@@ -21,6 +28,10 @@ describe('Gallery AI generation UI', () => {
     onSelectHistory: vi.fn(),
     promptAssistanceEnabled: true,
     promptId: 'gallery-ai-prompt',
+    source: {
+      name: 'Grok Imagine',
+      url: 'https://x.ai/grok/use-cases/image-generation',
+    },
     ...overrides,
   });
 
@@ -60,13 +71,17 @@ describe('Gallery AI generation UI', () => {
 
     ui.prepareGeneratedCaption();
 
-    expect(ui.nodes.generatedCaptionSection.hidden).toBe(false);
+    expect(ui.nodes.metadataSection.hidden).toBe(false);
     expect(ui.nodes.generatedCaptionStatus.textContent).toBe('Генерируем описание...');
     expect(ui.nodes.finalizeButton.disabled).toBe(true);
 
     ui.completeGeneratedCaption('Редакционная подпись');
 
-    expect(ui.getGeneratedCaption()).toBe('Редакционная подпись');
+    expect(ui.getImageMetadata()).toEqual({
+      caption: 'Редакционная подпись',
+      source: 'Grok Imagine',
+      sourceLink: 'https://x.ai/grok/use-cases/image-generation',
+    });
     expect(ui.nodes.finalizeButton.disabled).toBe(false);
   });
 });

@@ -121,6 +121,11 @@ export default class GalleryTool implements BlockTool {
         blockId: this.block.id,
         config: this.config.generation,
         initialPending: this._data.aiGeneration,
+        metadataPlaceholders: {
+          caption: this.config.captionPlaceholder ?? 'Caption',
+          source: this.config.sourcePlaceholder ?? 'Source',
+          sourceLink: this.config.sourceLinkPlaceholder ?? 'Source link',
+        },
         onChange: () => this.block.dispatchChange(),
         onFinalized: item => this.onAiFinalized(item),
       });

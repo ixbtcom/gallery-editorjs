@@ -8,6 +8,12 @@ import { make } from './utils/dom';
 
 export type PromptAssistanceAction = 'generate' | 'improve';
 
+export interface AiImageEditorialMetadata {
+  caption: string;
+  source: string;
+  sourceLink: string;
+}
+
 interface AiGenerationUiParams {
   onAdoptSession: (sessionId: string) => void;
   onAssistPrompt: (action: PromptAssistanceAction, prompt: string) => void;
@@ -22,6 +28,11 @@ interface AiGenerationUiParams {
   promptId: string;
   aspectRatio: AiImageAspectRatio;
   aspectRatios: AiImageAspectRatio[];
+  metadataPlaceholders: AiImageEditorialMetadata;
+  source: {
+    name: string;
+    url: string;
+  };
 }
 
 interface AiGenerationNodes {
@@ -41,9 +52,11 @@ interface AiGenerationNodes {
   candidates: HTMLElement;
   selection: HTMLElement;
   selectedPreview: HTMLImageElement;
-  generatedCaptionSection: HTMLElement;
+  metadataSection: HTMLElement;
   generatedCaption: HTMLTextAreaElement;
   generatedCaptionStatus: HTMLElement;
+  sourceName: HTMLInputElement;
+  sourceUrl: HTMLInputElement;
   refinementPrompt: HTMLTextAreaElement;
   refineButton: HTMLButtonElement;
   finalizeButton: HTMLButtonElement;
@@ -79,6 +92,8 @@ export default class AiGenerationUi {
     promptId,
     aspectRatio,
     aspectRatios,
+    metadataPlaceholders,
+    source,
   }: AiGenerationUiParams) {
     this.promptAssistanceEnabled = promptAssistanceEnabled;
     this.onAdoptSession = onAdoptSession;
@@ -96,6 +111,8 @@ export default class AiGenerationUi {
     const generateCaptionOption = make('label', ['ai-image-tool__caption-option']) as HTMLLabelElement;
     const generateCaptionCheckbox = make('input', ['ai-image-tool__caption-checkbox']) as HTMLInputElement;
     const generateCaptionText = make('span');
+    const aspectRatioField = make('div', ['ai-image-tool__aspect-ratio-field']);
+    const aspectRatioLabel = make('span', ['ai-image-tool__aspect-ratio-label']);
     const aspectRatioOptions = make('div', ['ai-image-tool__aspect-ratios']);
     const promptActions = make('div', ['ai-image-tool__prompt-actions']);
     const generateButton = make('button', ['ai-image-tool__action'], { type: 'button' }) as HTMLButtonElement;
@@ -107,9 +124,10 @@ export default class AiGenerationUi {
     const candidates = make('div', ['ai-image-tool__candidates']);
     const selection = make('div', ['ai-image-tool__selection']);
     const selectedPreview = make('img', ['ai-image-tool__selected-preview']) as HTMLImageElement;
-    const generatedCaptionSection = make('div', ['ai-image-tool__generated-caption']);
-    const generatedCaptionLabel = make('label', ['ai-image-tool__label']) as HTMLLabelElement;
-    const generatedCaption = make('textarea', ['ai-image-tool__prompt']) as HTMLTextAreaElement;
+    const metadataSection = make('div', ['ai-image-tool__metadata']);
+    const generatedCaption = make('textarea', ['ai-image-tool__metadata-input', 'ai-image-tool__metadata-caption']) as HTMLTextAreaElement;
+    const sourceName = make('input', ['ai-image-tool__metadata-input']) as HTMLInputElement;
+    const sourceUrl = make('input', ['ai-image-tool__metadata-input']) as HTMLInputElement;
     const generatedCaptionStatus = make('div', ['ai-image-tool__caption-status']);
     const refinementLabel = make('label', ['ai-image-tool__label']) as HTMLLabelElement;
     const refinementPrompt = make('textarea', ['ai-image-tool__prompt']) as HTMLTextAreaElement;
@@ -123,8 +141,8 @@ export default class AiGenerationUi {
     prompt.placeholder = 'Опишите изображение, которое нужно создать';
     promptLabel.htmlFor = promptId;
     promptLabel.textContent = 'Введите промпт';
-    generateButton.textContent = 'Отправить';
-    generateFromPublicationButton.textContent = 'Сгенерировать на основе публикации';
+    generateButton.textContent = 'Генерация изображения';
+    generateFromPublicationButton.textContent = 'Промпт по публикации';
     improvePromptButton.textContent = 'Улучшить промпт';
     cancelButton.textContent = 'Отменить';
     generateFromPublicationButton.hidden = !promptAssistanceEnabled;
@@ -138,19 +156,33 @@ export default class AiGenerationUi {
     aspectRatioOptions.setAttribute('role', 'radiogroup');
     aspectRatioOptions.setAttribute('aria-label', 'Соотношение сторон');
     this.createAspectRatioOptions(aspectRatioOptions, aspectRatios, aspectRatio, promptId);
-    promptActions.append(generateButton, generateFromPublicationButton, improvePromptButton, cancelButton);
-    promptSection.append(promptLabel, prompt, generateCaptionOption, aspectRatioOptions, promptActions);
+    aspectRatioLabel.textContent = 'Соотношение сторон:';
+    aspectRatioField.append(aspectRatioLabel, aspectRatioOptions);
+    promptActions.append(generateButton, generateFromPublicationButton, cancelButton);
+    promptSection.append(promptLabel, prompt, improvePromptButton, generateCaptionOption, aspectRatioField, promptActions);
 
     selectedPreview.alt = 'Выбранный вариант';
     selectedPreview.dataset.selectedPreview = '';
     generatedCaption.id = `${promptId}-caption`;
     generatedCaption.rows = 2;
     generatedCaption.dataset.generatedCaption = '';
-    generatedCaptionLabel.htmlFor = generatedCaption.id;
-    generatedCaptionLabel.textContent = 'Подпись к изображению';
+    generatedCaption.dataset.aiImageMetadata = '';
+    generatedCaption.placeholder = metadataPlaceholders.caption;
+    generatedCaption.setAttribute('aria-label', metadataPlaceholders.caption);
+    sourceName.type = 'text';
+    sourceName.dataset.aiImageMetadata = '';
+    sourceName.placeholder = metadataPlaceholders.source;
+    sourceName.setAttribute('aria-label', metadataPlaceholders.source);
+    sourceName.defaultValue = source.name;
+    sourceName.value = source.name;
+    sourceUrl.type = 'url';
+    sourceUrl.dataset.aiImageMetadata = '';
+    sourceUrl.placeholder = metadataPlaceholders.sourceLink;
+    sourceUrl.setAttribute('aria-label', metadataPlaceholders.sourceLink);
+    sourceUrl.defaultValue = source.url;
+    sourceUrl.value = source.url;
     generatedCaptionStatus.setAttribute('aria-live', 'polite');
-    generatedCaptionSection.hidden = true;
-    generatedCaptionSection.append(generatedCaptionLabel, generatedCaption, generatedCaptionStatus);
+    metadataSection.append(generatedCaption, sourceName, sourceUrl, generatedCaptionStatus);
     refinementPrompt.id = `${promptId}-refinement`;
     refinementPrompt.rows = 2;
     refinementPrompt.dataset.refinementPrompt = '';
@@ -161,7 +193,7 @@ export default class AiGenerationUi {
     selection.hidden = true;
     selection.append(
       selectedPreview,
-      generatedCaptionSection,
+      metadataSection,
       refinementLabel,
       refinementPrompt,
       refineButton,
@@ -206,9 +238,11 @@ export default class AiGenerationUi {
       candidates,
       selection,
       selectedPreview,
-      generatedCaptionSection,
+      metadataSection,
       generatedCaption,
       generatedCaptionStatus,
+      sourceName,
+      sourceUrl,
       refinementPrompt,
       refineButton,
       finalizeButton,
@@ -384,7 +418,6 @@ export default class AiGenerationUi {
 
   public prepareGeneratedCaption(): void {
     this.isGeneratedCaptionBusy = true;
-    this.nodes.generatedCaptionSection.hidden = false;
     this.nodes.generatedCaption.value = '';
     this.nodes.generatedCaptionStatus.textContent = 'Генерируем описание...';
     delete this.nodes.generatedCaptionStatus.dataset.error;
@@ -393,7 +426,6 @@ export default class AiGenerationUi {
 
   public completeGeneratedCaption(caption: string): void {
     this.isGeneratedCaptionBusy = false;
-    this.nodes.generatedCaptionSection.hidden = false;
     this.nodes.generatedCaption.value = caption;
     this.nodes.generatedCaptionStatus.textContent = 'Описание готово — можно отредактировать.';
     delete this.nodes.generatedCaptionStatus.dataset.error;
@@ -402,7 +434,6 @@ export default class AiGenerationUi {
 
   public failGeneratedCaption(message: string): void {
     this.isGeneratedCaptionBusy = false;
-    this.nodes.generatedCaptionSection.hidden = false;
     this.nodes.generatedCaptionStatus.textContent = message;
     this.nodes.generatedCaptionStatus.dataset.error = '';
     this.updateSelectionControls();
@@ -410,15 +441,20 @@ export default class AiGenerationUi {
 
   public resetGeneratedCaption(): void {
     this.isGeneratedCaptionBusy = false;
-    this.nodes.generatedCaptionSection.hidden = true;
     this.nodes.generatedCaption.value = '';
+    this.nodes.sourceName.value = this.nodes.sourceName.defaultValue;
+    this.nodes.sourceUrl.value = this.nodes.sourceUrl.defaultValue;
     this.nodes.generatedCaptionStatus.textContent = '';
     delete this.nodes.generatedCaptionStatus.dataset.error;
     this.updateSelectionControls();
   }
 
-  public getGeneratedCaption(): string {
-    return this.nodes.generatedCaption.value;
+  public getImageMetadata(): AiImageEditorialMetadata {
+    return {
+      caption: this.nodes.generatedCaption.value,
+      source: this.nodes.sourceName.value,
+      sourceLink: this.nodes.sourceUrl.value,
+    };
   }
 
   public showGenerationStatus(status: string, progress?: string): void {
@@ -545,6 +581,8 @@ export default class AiGenerationUi {
     this.nodes.refineButton.disabled = this.isGenerationBusy;
     this.nodes.finalizeButton.disabled = this.isGenerationBusy || this.isGeneratedCaptionBusy;
     this.nodes.generatedCaption.disabled = this.isGenerationBusy || this.isGeneratedCaptionBusy;
+    this.nodes.sourceName.disabled = this.isGenerationBusy;
+    this.nodes.sourceUrl.disabled = this.isGenerationBusy;
   }
 
   private createAspectRatioOptions(

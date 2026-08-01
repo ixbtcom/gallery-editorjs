@@ -1,6 +1,11 @@
 import { AiImageActiveSessions, AiImageAspectRatio, AiImageCandidate } from './ai-image-client';
 
 export type PromptAssistanceAction = 'generate' | 'improve';
+export interface AiImageEditorialMetadata {
+    caption: string;
+    source: string;
+    sourceLink: string;
+}
 interface AiGenerationUiParams {
     onAdoptSession: (sessionId: string) => void;
     onAssistPrompt: (action: PromptAssistanceAction, prompt: string) => void;
@@ -15,6 +20,11 @@ interface AiGenerationUiParams {
     promptId: string;
     aspectRatio: AiImageAspectRatio;
     aspectRatios: AiImageAspectRatio[];
+    metadataPlaceholders: AiImageEditorialMetadata;
+    source: {
+        name: string;
+        url: string;
+    };
 }
 interface AiGenerationNodes {
     wrapper: HTMLElement;
@@ -33,9 +43,11 @@ interface AiGenerationNodes {
     candidates: HTMLElement;
     selection: HTMLElement;
     selectedPreview: HTMLImageElement;
-    generatedCaptionSection: HTMLElement;
+    metadataSection: HTMLElement;
     generatedCaption: HTMLTextAreaElement;
     generatedCaptionStatus: HTMLElement;
+    sourceName: HTMLInputElement;
+    sourceUrl: HTMLInputElement;
     refinementPrompt: HTMLTextAreaElement;
     refineButton: HTMLButtonElement;
     finalizeButton: HTMLButtonElement;
@@ -54,7 +66,7 @@ export default class AiGenerationUi {
     private isPromptAssistanceBusy;
     private isGeneratedCaptionBusy;
     private hasFreeSessionSlot;
-    constructor({ onAdoptSession, onAssistPrompt, onCancel, onCloseSession, onFinalize, onGenerate, onRefine, onSelectCandidate, onSelectHistory, promptAssistanceEnabled, promptId, aspectRatio, aspectRatios, }: AiGenerationUiParams);
+    constructor({ onAdoptSession, onAssistPrompt, onCancel, onCloseSession, onFinalize, onGenerate, onRefine, onSelectCandidate, onSelectHistory, promptAssistanceEnabled, promptId, aspectRatio, aspectRatios, metadataPlaceholders, source, }: AiGenerationUiParams);
     open(): void;
     close(): void;
     /**
@@ -74,7 +86,7 @@ export default class AiGenerationUi {
     completeGeneratedCaption(caption: string): void;
     failGeneratedCaption(message: string): void;
     resetGeneratedCaption(): void;
-    getGeneratedCaption(): string;
+    getImageMetadata(): AiImageEditorialMetadata;
     showGenerationStatus(status: string, progress?: string): void;
     showGenerationError(message: string): void;
     showCandidates(candidates: AiImageCandidate[]): void;

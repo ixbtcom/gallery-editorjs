@@ -668,7 +668,7 @@
 
 .ai-image-tool__prompt-section,
 .ai-image-tool__selection,
-.ai-image-tool__generated-caption {
+.ai-image-tool__metadata {
   display: grid;
   gap: 10px;
 }
@@ -791,6 +791,18 @@ a.ai-image-tool__session-title:hover {
   gap: 8px;
 }
 
+.ai-image-tool__aspect-ratio-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-image-tool__aspect-ratio-label {
+  color: var(--ej-text-secondary);
+  font-size: 14px;
+}
+
 .ai-image-tool__aspect-ratios {
   display: inline-flex;
   width: fit-content;
@@ -865,12 +877,11 @@ a.ai-image-tool__session-title:hover {
   font-weight: 600;
 }
 
-.ai-image-tool__prompt {
+.ai-image-tool__prompt,
+.ai-image-tool__metadata-input {
   box-sizing: border-box;
   width: 100%;
-  min-height: 88px;
   padding: 10px 12px;
-  resize: vertical;
   border: 1px solid var(--ej-border);
   border-radius: var(--ej-radius-md);
   outline: none;
@@ -881,7 +892,21 @@ a.ai-image-tool__session-title:hover {
   transition: border-color var(--ej-transition), box-shadow var(--ej-transition);
 }
 
+.ai-image-tool__prompt {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.ai-image-tool__metadata-input {
+  min-height: 44px;
+}
+
+.ai-image-tool__metadata-caption {
+  resize: vertical;
+}
+
 .ai-image-tool__prompt:focus-visible,
+.ai-image-tool__metadata-input:focus-visible,
 .ai-image-tool__caption-checkbox:focus-visible,
 .ai-image-tool__action:focus-visible,
 .ai-image-tool__candidate:focus-visible,
@@ -927,7 +952,8 @@ a.ai-image-tool__session-title:hover {
 }
 
 .ai-image-tool__action:disabled,
-.ai-image-tool__prompt:disabled {
+.ai-image-tool__prompt:disabled,
+.ai-image-tool__metadata-input:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
@@ -1025,7 +1051,8 @@ a.ai-image-tool__session-title:hover {
   .ai-image-tool__action,
   .ai-image-tool__candidate,
   .ai-image-tool__history-item,
-  .ai-image-tool__prompt {
+  .ai-image-tool__prompt,
+  .ai-image-tool__metadata-input {
     transition-duration: 0.01ms;
   }
 }

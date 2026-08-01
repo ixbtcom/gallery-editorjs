@@ -7,13 +7,14 @@ import type {
   AiImageSession,
 } from './ai-image-client';
 import AiGenerationUi from './ai-generation-ui';
-import type { PromptAssistanceAction } from './ai-generation-ui';
+import type { AiImageEditorialMetadata, PromptAssistanceAction } from './ai-generation-ui';
 import type { AiGenerationPendingData, GalleryItemData } from './types/types';
 
 interface AiGenerationControllerParams {
   blockId: string;
   config: AiImageClientConfig;
   initialPending?: AiGenerationPendingData;
+  metadataPlaceholders: AiImageEditorialMetadata;
   onChange: () => void;
   onFinalized: (item: GalleryItemData) => void;
 }
@@ -49,7 +50,6 @@ export default class AiGenerationController {
   private isGenerationRequestRunning = false;
   private isPromptAssistanceRunning = false;
   private isCaptionRequestRunning = false;
-  private shouldUseGeneratedCaption = false;
   private isDestroyed = false;
   private hasCancelledPendingGeneration = false;
   private pollController: AbortController | null = null;
@@ -65,6 +65,7 @@ export default class AiGenerationController {
     blockId,
     config,
     initialPending,
+    metadataPlaceholders,
     onChange,
     onFinalized,
   }: AiGenerationControllerParams) {
@@ -92,8 +93,10 @@ export default class AiGenerationController {
       onSelectHistory: candidateId => this.selectCandidate(candidateId),
       aspectRatio: this.defaultAspectRatio(config.aspectRatio),
       aspectRatios: this.availableAspectRatios(config.aspectRatios),
+      metadataPlaceholders,
       promptAssistanceEnabled,
       promptId: `gallery-ai-prompt-${blockId}`,
+      source: config.source ?? { name: '', url: '' },
     });
     this.element = this.ui.nodes.wrapper;
   }
@@ -250,7 +253,6 @@ export default class AiGenerationController {
     this.refinementActionId = null;
     this.finalizationActionId = null;
     this.isGenerationRequestRunning = false;
-    this.shouldUseGeneratedCaption = false;
     this.selectedCandidateId = null;
     this.candidates.clear();
     this.history = [];
@@ -430,7 +432,6 @@ export default class AiGenerationController {
 
     this.ui.setGenerationBusy(true);
     this.ui.showGenerationStatus('queued', 'generation_submitting');
-    this.shouldUseGeneratedCaption = generateCaption;
     if (generateCaption) {
       this.startCaptionGeneration(normalizedPrompt);
     } else {
@@ -562,21 +563,19 @@ export default class AiGenerationController {
     this.finalizationActionId ??= globalThis.crypto.randomUUID();
     const actionId = this.finalizationActionId;
     const candidateId = this.selectedCandidateId;
-    const generatedCaption = this.shouldUseGeneratedCaption
-      ? this.ui.getGeneratedCaption().trim()
-      : null;
+    const metadata = this.ui.getImageMetadata();
     const controller = this.replacePollController();
 
     this.ui.setGenerationBusy(true);
     this.ui.showGenerationStatus('finalizing', 'finalization_submitting');
-    void this.runFinalization(candidateId, actionId, controller, generatedCaption);
+    void this.runFinalization(candidateId, actionId, controller, metadata);
   }
 
   private async runFinalization(
     candidateId: string,
     actionId: string,
     controller: AbortController,
-    generatedCaption: string | null,
+    metadata: AiImageEditorialMetadata,
   ): Promise<void> {
     if (this.sessionId === null) {
       return;
@@ -602,11 +601,15 @@ export default class AiGenerationController {
             signal: controller.signal,
           });
 
+      if (result.error !== undefined) {
+        throw new AiImageClientError(result.error.code, result.error.message, 0);
+      }
+
       if (result.image === undefined || !this.isStandardImageData(result.image)) {
         throw new AiImageClientError('invalid_final_image', 'Сервер вернул некорректные данные изображения.', 0);
       }
 
-      const item = this.mapImageToGalleryItem(result.image, generatedCaption);
+      const item = this.mapImageToGalleryItem(result.image, metadata);
 
       this.resetSession();
       this.ui.close();
@@ -631,7 +634,7 @@ export default class AiGenerationController {
         this.applyRefinementCandidate(session.selectedCandidateId);
       }
     }
-    if ((session.status === 'failed' || session.status === 'expired') && session.error !== undefined) {
+    if (session.error !== undefined) {
       this.ui.showGenerationError(session.error.message);
     }
   }
@@ -709,14 +712,14 @@ export default class AiGenerationController {
       && typeof data.alt === 'string';
   }
 
-  private mapImageToGalleryItem(image: StandardImageData, generatedCaption: string | null): GalleryItemData {
+  private mapImageToGalleryItem(image: StandardImageData, metadata: AiImageEditorialMetadata): GalleryItemData {
     return {
-      caption: generatedCaption ?? image.caption,
+      caption: metadata.caption,
       height: image.file.height,
       imagorPath: image.file.imagor_path,
       media_id: image.file.media_id,
-      source: image.alt,
-      sourceLink: image.link,
+      source: metadata.source,
+      sourceLink: metadata.sourceLink,
       url: image.file.url,
       width: image.file.width,
       isAiGenerated: true,

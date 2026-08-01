@@ -23,6 +23,10 @@ const config = {
   },
   pollIntervalMs: 0,
   pollTimeoutMs: 100,
+  source: {
+    name: 'Grok Imagine',
+    url: 'https://x.ai/grok/use-cases/image-generation',
+  },
   publicationContext: {
     signature: 'a'.repeat(64),
     statePaths: {
