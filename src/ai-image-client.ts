@@ -70,6 +70,8 @@ export interface AiImagePublicationContext {
   announce: string;
   /** Text extracted from allowlisted Editor.js blocks. */
   body: string;
+  /** Current publication tags, when the form provides them. */
+  tags?: string[];
   /** Publication subtitle. */
   subtitle: string;
   /** Publication title. */
@@ -86,6 +88,8 @@ export interface AiImagePublicationContextEnvelope {
     announce: string;
     /** Editor.js blocks field path. */
     blocks: string;
+    /** Publication tags field path. */
+    tags?: string;
     /** Subtitle field path. */
     subtitle: string;
     /** Title field path. */
