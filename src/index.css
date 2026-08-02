@@ -53,6 +53,11 @@
   box-shadow: var(--ej-shadow-md);
 }
 
+.gallery-tool__item--plain,
+.gallery-tool__item--plain:hover {
+  border-radius: 0;
+}
+
 /* Image container */
 .gallery-tool__item-image {
   position: relative;
@@ -68,6 +73,10 @@
   object-fit: contain;
   max-height: 400px;
   max-width: 100%;
+}
+
+.gallery-tool__item--unlimited-height .gallery-tool__item-image img {
+  max-height: none;
 }
 
 /* Preloader */
@@ -196,7 +205,8 @@
 
 .gallery-tool__item-remove,
 .gallery-tool__item-move-left,
-.gallery-tool__item-move-right {
+.gallery-tool__item-move-right,
+.gallery-tool__item-settings {
   width: 32px;
   height: 32px;
   border: none;
@@ -213,7 +223,8 @@
 
 .gallery-tool__item-remove:hover,
 .gallery-tool__item-move-left:hover,
-.gallery-tool__item-move-right:hover {
+.gallery-tool__item-move-right:hover,
+.gallery-tool__item-settings:hover {
   background: var(--ej-control-hover);
 }
 
@@ -242,6 +253,10 @@
 
 .gallery-tool__add-buttons .gallery-tool__ai-button {
   gap: 8px;
+}
+
+.gallery-tool__add-buttons .gallery-tool__clipboard-button {
+  gap: 6px;
 }
 
 .gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark {
@@ -350,6 +365,10 @@
   max-height: 280px;
 }
 
+.gallery-tool--carousel .gallery-tool__item--unlimited-height .gallery-tool__item-image img {
+  max-height: none;
+}
+
 /* Layout: Masonry */
 .gallery-tool--masonry .gallery-tool__items {
   display: block;
@@ -416,6 +435,54 @@
 
 .gallery-tool__item-crop:hover {
   background: var(--ej-control-hover);
+}
+
+.gallery-tool__item-crop:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.gallery-tool__item-settings-wrapper {
+  position: relative;
+}
+
+.gallery-tool__item-settings-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  min-width: 240px;
+  padding: 8px;
+  border: 1px solid var(--ej-border);
+  border-radius: var(--ej-radius-md);
+  background: var(--ej-bg-surface);
+  box-shadow: var(--ej-shadow-md);
+}
+
+.gallery-tool__item-settings-panel[hidden] {
+  display: none;
+}
+
+.gallery-tool__item-setting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 8px;
+  color: var(--ej-text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.gallery-tool__item-setting:hover {
+  background: var(--ej-bg-muted);
+}
+
+.gallery-tool__item-setting input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
 /* Cropped state indicator */

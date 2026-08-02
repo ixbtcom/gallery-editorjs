@@ -108,10 +108,12 @@ export default class GalleryTool implements BlockTool {
       api,
       config: this.config,
       onSelectFile: () => this.selectFile(),
+      onPasteFile: (file: Blob) => this.uploadFile(file),
       onSelectUrl: (url: string) => this.uploadFromUrl(url),
       onColumnsChange: (columns: number) => this.onColumnsChange(columns),
       onRemoveImage: (url: string, mediaId?: string) => this.onRemoveImage(url, mediaId),
       onCropImage: (item: HTMLElement) => this.handleCropImage(item),
+      onItemSettingsChange: () => this.block.dispatchChange(),
       onOpenAi: () => this.aiGenerationController?.open(),
       readOnly,
     });
@@ -406,6 +408,10 @@ export default class GalleryTool implements BlockTool {
    * Handle crop image request
    */
   private async handleCropImage(item: HTMLElement): Promise<void> {
+    if (item.dataset.disableOptimization === 'true') {
+      return;
+    }
+
     const url = item.dataset.url;
     if (!url) return;
 

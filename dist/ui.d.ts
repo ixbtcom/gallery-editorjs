@@ -10,6 +10,7 @@ interface Nodes {
     addButtons: HTMLElement;
     fileButton: HTMLElement;
     aiButton: HTMLButtonElement;
+    clipboardButton: HTMLButtonElement;
     urlButton: HTMLElement;
     urlInput: HTMLElement;
     columnsControl: HTMLElement;
@@ -18,10 +19,12 @@ interface UiParams {
     api: API;
     config: GalleryConfig;
     onSelectFile: () => void;
+    onPasteFile?: (file: Blob) => void;
     onSelectUrl: (url: string) => void;
     onColumnsChange: (columns: number) => void;
     onRemoveImage: (url: string, mediaId?: string) => void;
     onCropImage: (item: HTMLElement) => void;
+    onItemSettingsChange?: () => void;
     onOpenAi?: () => void;
     readOnly: boolean;
 }
@@ -37,17 +40,19 @@ export default class Ui {
     private api;
     private config;
     private onSelectFile;
+    private onPasteFile;
     private onSelectUrl;
     private onColumnsChange;
     private onRemoveImage;
     private onCropImage;
+    private onItemSettingsChange;
     private onOpenAi;
     private readOnly;
     private currentColumns;
     private previousColumns;
     private isRendering;
     private columnsLocked;
-    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onOpenAi, readOnly }: UiParams);
+    constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, onOpenAi, readOnly }: UiParams);
     private get CSS();
     /**
      * Render the gallery UI
@@ -57,6 +62,7 @@ export default class Ui {
      * Add a new item to the gallery
      */
     addItem(data: GalleryItemData): HTMLElement;
+    private storeItemData;
     /**
      * Create a placeholder item for loading state
      */
@@ -85,9 +91,13 @@ export default class Ui {
      */
     getColumns(): number;
     private createFileButton;
+    private createClipboardButton;
     private createAiButton;
     private createAiBadge;
     private createUrlInput;
+    private imageFromClipboardData;
+    private pasteFromClipboard;
+    private showClipboardError;
     /**
      * Process URL from input field
      */
@@ -106,6 +116,7 @@ export default class Ui {
      */
     private autoAdjustColumns;
     private createItemControls;
+    private updateItemSetting;
     /**
      * Выбрать элемент gallery базовой обложкой в состоянии формы.
      */

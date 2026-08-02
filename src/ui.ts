@@ -1,5 +1,6 @@
-import { IconPicture } from '@codexteam/icons';
+import { IconClipboard, IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
+import { createItemSettings, type GalleryItemSetting } from './item-settings';
 import { resizeDisplayUrl } from './utils/resize-display-url';
 import type { API } from '@editorjs/editorjs';
 import type { GalleryConfig, GalleryItemData } from './types/types';
@@ -29,6 +30,7 @@ interface Nodes {
   addButtons: HTMLElement;
   fileButton: HTMLElement;
   aiButton: HTMLButtonElement;
+  clipboardButton: HTMLButtonElement;
   urlButton: HTMLElement;
   urlInput: HTMLElement;
   columnsControl: HTMLElement;
@@ -38,10 +40,12 @@ interface UiParams {
   api: API;
   config: GalleryConfig;
   onSelectFile: () => void;
+  onPasteFile?: (file: Blob) => void;
   onSelectUrl: (url: string) => void;
   onColumnsChange: (columns: number) => void;
   onRemoveImage: (url: string, mediaId?: string) => void;
   onCropImage: (item: HTMLElement) => void;
+  onItemSettingsChange?: () => void;
   onOpenAi?: () => void;
   readOnly: boolean;
 }
@@ -59,10 +63,12 @@ export default class Ui {
   private api: API;
   private config: GalleryConfig;
   private onSelectFile: () => void;
+  private onPasteFile: (file: Blob) => void;
   private onSelectUrl: (url: string) => void;
   private onColumnsChange: (columns: number) => void;
   private onRemoveImage: (url: string, mediaId?: string) => void;
   private onCropImage: (item: HTMLElement) => void;
+  private onItemSettingsChange: () => void;
   private onOpenAi: () => void;
   private readOnly: boolean;
   private currentColumns: number = 1;
@@ -70,14 +76,16 @@ export default class Ui {
   private isRendering: boolean = false;
   private columnsLocked: boolean = false;
 
-  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onOpenAi, readOnly }: UiParams) {
+  constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, onOpenAi, readOnly }: UiParams) {
     this.api = api;
     this.config = config;
     this.onSelectFile = onSelectFile;
+    this.onPasteFile = onPasteFile ?? (() => undefined);
     this.onSelectUrl = onSelectUrl;
     this.onColumnsChange = onColumnsChange;
     this.onRemoveImage = onRemoveImage;
     this.onCropImage = onCropImage;
+    this.onItemSettingsChange = onItemSettingsChange ?? (() => undefined);
     this.onOpenAi = onOpenAi ?? (() => undefined);
     this.readOnly = readOnly;
 
@@ -87,6 +95,7 @@ export default class Ui {
       addButtons: make('div', [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
       aiButton: this.createAiButton(),
+      clipboardButton: this.createClipboardButton(),
       urlButton: make('div'), // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
       columnsControl: this.createColumnsControl(),
@@ -96,6 +105,7 @@ export default class Ui {
     if (this.config.generation !== undefined && !this.readOnly) {
       this.nodes.addButtons.appendChild(this.nodes.aiButton);
     }
+    this.nodes.addButtons.appendChild(this.nodes.clipboardButton);
     this.nodes.addButtons.appendChild(this.nodes.urlInput);
     this.nodes.addButtons.appendChild(this.nodes.columnsControl);
 
@@ -120,7 +130,13 @@ export default class Ui {
       itemMoveLeft: 'gallery-tool__item-move-left',
       itemMoveRight: 'gallery-tool__item-move-right',
       itemCrop: 'gallery-tool__item-crop',
+      itemSettings: 'gallery-tool__item-settings',
+      itemSettingsWrapper: 'gallery-tool__item-settings-wrapper',
+      itemSettingsPanel: 'gallery-tool__item-settings-panel',
+      itemSetting: 'gallery-tool__item-setting',
       itemCropped: 'gallery-tool__item--cropped',
+      itemUnlimitedHeight: 'gallery-tool__item--unlimited-height',
+      itemPlain: 'gallery-tool__item--plain',
       addButtons: 'gallery-tool__add-buttons',
       button: this.api.styles.button,
       input: this.api.styles.input,
@@ -130,6 +146,7 @@ export default class Ui {
       columnsButton: 'gallery-tool__columns-button',
       columnsDisplay: 'gallery-tool__columns-display',
       aiButton: 'gallery-tool__ai-button',
+      clipboardButton: 'gallery-tool__clipboard-button',
     };
   }
 
@@ -168,25 +185,31 @@ export default class Ui {
     const imageContainer = make('div', [this.CSS.itemImage]);
     const preloader = make('div', [this.CSS.itemPreloader]);
 
-    // Determine image src: use crop preview if available, otherwise original.
-    // Оригинал прогоняем через resizeDisplayUrl (920x/webp) только для показа;
-    // imagor-превью кропа уже ресайзнуто, его не трогаем.
-    const imgSrc = (data.crop && data.imagorPath)
+    const hasCrop = Boolean(data.crop && data.imagorPath && !data.disableOptimization);
+    const imgSrc = data.disableOptimization
+      ? data.url
+      : (hasCrop && data.crop && data.imagorPath)
       ? this.buildPreviewUrl(data.imagorPath, data.crop)
       : resizeDisplayUrl(data.url);
     const img = make('img', null, { src: imgSrc }) as HTMLImageElement;
-    const displayWidth = data.crop && data.croppedWidth ? data.croppedWidth : data.width;
-    const displayHeight = data.crop && data.croppedHeight ? data.croppedHeight : data.height;
+    const displayWidth = hasCrop && data.croppedWidth ? data.croppedWidth : data.width;
+    const displayHeight = hasCrop && data.croppedHeight ? data.croppedHeight : data.height;
 
     if (displayWidth && displayHeight) {
       img.style.aspectRatio = `${displayWidth} / ${displayHeight}`;
     }
 
-    // Mark item as cropped
-    if (data.crop) {
+    if (hasCrop) {
       img.style.width = '100%';
       img.style.maxHeight = 'none';
       item.classList.add(this.CSS.itemCropped);
+    }
+    if (data.disableHeightLimit) {
+      img.style.maxHeight = 'none';
+      item.classList.add(this.CSS.itemUnlimitedHeight);
+    }
+    if (data.disableDecoration) {
+      item.classList.add(this.CSS.itemPlain);
     }
 
     const caption = make('div', [this.CSS.itemCaption, this.CSS.input], {
@@ -228,33 +251,16 @@ export default class Ui {
       preloader.style.display = 'none';
     };
 
-    if (!this.readOnly) {
-      const controls = this.createItemControls(item);
-      item.appendChild(controls);
-    }
-
     item.appendChild(imageContainer);
     item.appendChild(caption);
     item.appendChild(source);
     item.appendChild(sourceLink);
 
-    // Store data in dataset
-    item.dataset.url = data.url;
-    if (data.media_id) item.dataset.mediaId = data.media_id;
-    if (this.config.cover?.enabled && data.media_id && this.config.cover.coverUuid?.() === data.media_id) {
-      item.setAttribute('data-cover', '');
+    this.storeItemData(item, data);
+
+    if (!this.readOnly) {
+      item.insertBefore(this.createItemControls(item), item.firstChild);
     }
-    if (data.width) item.dataset.width = String(data.width);
-    if (data.height) item.dataset.height = String(data.height);
-    if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
-    if (data.crop) item.dataset.crop = data.crop;
-    if (data.croppedWidth) item.dataset.croppedWidth = String(data.croppedWidth);
-    if (data.croppedHeight) item.dataset.croppedHeight = String(data.croppedHeight);
-    if (data.cropAspectRatio) item.dataset.cropAspectRatio = data.cropAspectRatio;
-    if (typeof data.showOriginalOnClick === 'boolean') {
-      item.dataset.showOriginalOnClick = String(data.showOriginalOnClick);
-    }
-    if (data.isAiGenerated) item.dataset.aiGenerated = 'true';
 
     this.nodes.itemsContainer.appendChild(item);
     this.toggleState(UiState.Filled);
@@ -263,6 +269,28 @@ export default class Ui {
     this.autoAdjustColumns();
 
     return item;
+  }
+
+  private storeItemData(item: HTMLElement, data: GalleryItemData): void {
+    item.dataset.url = data.url;
+    if (data.media_id) item.dataset.mediaId = data.media_id;
+    if (this.config.cover?.enabled && data.media_id && this.config.cover.coverUuid?.() === data.media_id) {
+      item.setAttribute('data-cover', '');
+    }
+    if (data.width) item.dataset.width = String(data.width);
+    if (data.height) item.dataset.height = String(data.height);
+    if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
+    if (data.crop && !data.disableOptimization) item.dataset.crop = data.crop;
+    if (data.croppedWidth && !data.disableOptimization) item.dataset.croppedWidth = String(data.croppedWidth);
+    if (data.croppedHeight && !data.disableOptimization) item.dataset.croppedHeight = String(data.croppedHeight);
+    if (data.cropAspectRatio && !data.disableOptimization) item.dataset.cropAspectRatio = data.cropAspectRatio;
+    if (typeof data.showOriginalOnClick === 'boolean' && !data.disableOptimization) {
+      item.dataset.showOriginalOnClick = String(data.showOriginalOnClick);
+    }
+    if (data.isAiGenerated) item.dataset.aiGenerated = 'true';
+    if (data.disableHeightLimit) item.dataset.disableHeightLimit = 'true';
+    if (data.disableOptimization) item.dataset.disableOptimization = 'true';
+    if (data.disableDecoration) item.dataset.disableDecoration = 'true';
   }
 
   /**
@@ -313,7 +341,19 @@ export default class Ui {
     const imageContainer = item.querySelector(`.${this.CSS.itemImage}`) as HTMLElement;
     const preloader = item.querySelector(`.${this.CSS.itemPreloader}`) as HTMLElement;
 
-    const img = make('img', null, { src: resizeDisplayUrl(data.url) }) as HTMLImageElement;
+    const img = make('img', null, {
+      src: data.disableOptimization ? data.url : resizeDisplayUrl(data.url),
+    }) as HTMLImageElement;
+    if (data.width && data.height) {
+      img.style.aspectRatio = `${data.width} / ${data.height}`;
+    }
+    if (data.disableHeightLimit) {
+      img.style.maxHeight = 'none';
+      item.classList.add(this.CSS.itemUnlimitedHeight);
+    }
+    if (data.disableDecoration) {
+      item.classList.add(this.CSS.itemPlain);
+    }
     img.onload = () => {
       if (preloader) {
         preloader.style.display = 'none';
@@ -329,16 +369,8 @@ export default class Ui {
       imageContainer.appendChild(dimensions);
     }
 
-    item.dataset.url = data.url;
-    if (data.media_id) item.dataset.mediaId = data.media_id;
-    if (this.config.cover?.enabled && data.media_id && this.config.cover.coverUuid?.() === data.media_id) {
-      item.setAttribute('data-cover', '');
-    }
-    if (data.width) item.dataset.width = String(data.width);
-    if (data.height) item.dataset.height = String(data.height);
-    if (data.imagorPath) item.dataset.imagorPath = data.imagorPath;
+    this.storeItemData(item, data);
     if (data.isAiGenerated) {
-      item.dataset.aiGenerated = 'true';
       imageContainer.appendChild(this.createAiBadge());
     }
 
@@ -374,19 +406,26 @@ export default class Ui {
       const width = el.dataset.width ? parseInt(el.dataset.width, 10) : undefined;
       const height = el.dataset.height ? parseInt(el.dataset.height, 10) : undefined;
 
-      // Read crop data (undefined = omitted from JSON)
+      const disableHeightLimit = el.dataset.disableHeightLimit === 'true';
+      const disableOptimization = el.dataset.disableOptimization === 'true';
+      const disableDecoration = el.dataset.disableDecoration === 'true';
+
       const imagorPath = el.dataset.imagorPath || undefined;
-      const crop = el.dataset.crop || undefined;
-      const croppedWidth = el.dataset.croppedWidth ? parseInt(el.dataset.croppedWidth, 10) : undefined;
-      const croppedHeight = el.dataset.croppedHeight ? parseInt(el.dataset.croppedHeight, 10) : undefined;
-      const cropAspectRatio = el.dataset.cropAspectRatio === '16:9' || el.dataset.cropAspectRatio === '1:1'
+      const crop = disableOptimization ? undefined : el.dataset.crop || undefined;
+      const croppedWidth = !disableOptimization && el.dataset.croppedWidth
+        ? parseInt(el.dataset.croppedWidth, 10)
+        : undefined;
+      const croppedHeight = !disableOptimization && el.dataset.croppedHeight
+        ? parseInt(el.dataset.croppedHeight, 10)
+        : undefined;
+      const cropAspectRatio = !disableOptimization && (el.dataset.cropAspectRatio === '16:9' || el.dataset.cropAspectRatio === '1:1')
         ? el.dataset.cropAspectRatio
-        : el.dataset.cropAspectRatio === '3:2'
+        : !disableOptimization && el.dataset.cropAspectRatio === '3:2'
           ? '3:2'
-          : el.dataset.cropAspectRatio === 'free'
+          : !disableOptimization && el.dataset.cropAspectRatio === 'free'
             ? 'free'
             : undefined;
-      const showOriginalOnClick = el.dataset.showOriginalOnClick === undefined
+      const showOriginalOnClick = disableOptimization || el.dataset.showOriginalOnClick === undefined
         ? undefined
         : el.dataset.showOriginalOnClick === 'true';
       const media_id = el.dataset.mediaId || undefined;
@@ -415,6 +454,15 @@ export default class Ui {
       if (isAiGenerated) {
         itemData.isAiGenerated = true;
       }
+      if (disableHeightLimit) {
+        itemData.disableHeightLimit = true;
+      }
+      if (disableOptimization) {
+        itemData.disableOptimization = true;
+      }
+      if (disableDecoration) {
+        itemData.disableDecoration = true;
+      }
 
       data.push(itemData);
     });
@@ -435,6 +483,7 @@ export default class Ui {
   ): void {
     const img = item.querySelector(`.${this.CSS.itemImage} img`) as HTMLImageElement | null;
     if (!img) return;
+    if (crop && item.dataset.disableOptimization === 'true') return;
 
     if (crop) {
       // Apply crop
@@ -461,9 +510,11 @@ export default class Ui {
       delete item.dataset.cropAspectRatio;
       item.classList.remove(this.CSS.itemCropped);
 
-      img.src = resizeDisplayUrl(item.dataset.url || '');
+      img.src = item.dataset.disableOptimization === 'true'
+        ? item.dataset.url || ''
+        : resizeDisplayUrl(item.dataset.url || '');
       img.style.width = '';
-      img.style.maxHeight = '';
+      img.style.maxHeight = item.dataset.disableHeightLimit === 'true' ? 'none' : '';
       this.updateItemDimensions(
         item,
         item.dataset.width ? parseInt(item.dataset.width, 10) : undefined,
@@ -530,6 +581,17 @@ export default class Ui {
     return button;
   }
 
+  private createClipboardButton(): HTMLButtonElement {
+    const button = make('button', [this.CSS.button, this.CSS.clipboardButton], { type: 'button' }) as HTMLButtonElement;
+    button.innerHTML = `${IconClipboard}<span>${this.api.i18n.t('Вставить из буфера')}</span>`;
+    button.setAttribute('aria-label', this.api.i18n.t('Вставить изображение из буфера'));
+    button.addEventListener('click', () => {
+      void this.pasteFromClipboard();
+    });
+
+    return button;
+  }
+
   private createAiButton(): HTMLButtonElement {
     const button = make('button', [this.CSS.button, this.CSS.aiButton], { type: 'button' }) as HTMLButtonElement;
     button.innerHTML = `${IconAi}<span>Генерация</span>`;
@@ -565,9 +627,18 @@ export default class Ui {
       }
     });
 
-    // Handle paste - auto-submit URL
-    input.addEventListener('paste', () => {
-      // Small delay to get pasted value
+    input.addEventListener('paste', (event: ClipboardEvent) => {
+      const image = this.imageFromClipboardData(event.clipboardData);
+      if (image) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        input.value = '';
+        this.onPasteFile(image);
+
+        return;
+      }
+
       setTimeout(() => {
         this.handleUrlInput(input);
       }, 50);
@@ -575,6 +646,50 @@ export default class Ui {
 
     wrapper.appendChild(input);
     return wrapper;
+  }
+
+  private imageFromClipboardData(data: DataTransfer | null): Blob | null {
+    if (!data) return null;
+
+    const file = Array.from(data.files).find(candidate => candidate.type.startsWith('image/'));
+    if (file) return file;
+
+    for (const item of Array.from(data.items)) {
+      if (item.kind === 'file' && item.type.startsWith('image/')) {
+        return item.getAsFile();
+      }
+    }
+
+    return null;
+  }
+
+  private async pasteFromClipboard(): Promise<void> {
+    if (!navigator.clipboard || typeof navigator.clipboard.read !== 'function') {
+      this.showClipboardError('Не удалось прочитать буфер. Нажмите Ctrl/Cmd+V в поле ссылки.');
+
+      return;
+    }
+
+    try {
+      const clipboardItems = await navigator.clipboard.read();
+
+      for (const clipboardItem of clipboardItems) {
+        const imageType = clipboardItem.types.find(type => type.startsWith('image/'));
+        if (imageType) {
+          this.onPasteFile(await clipboardItem.getType(imageType));
+
+          return;
+        }
+      }
+
+      this.showClipboardError('В буфере обмена нет изображения.');
+    } catch {
+      this.showClipboardError('Не удалось прочитать буфер. Нажмите Ctrl/Cmd+V в поле ссылки.');
+    }
+  }
+
+  private showClipboardError(message: string): void {
+    this.api.notifier.show({ message: this.api.i18n.t(message), style: 'error' });
   }
 
   /**
@@ -708,14 +823,28 @@ export default class Ui {
     moveRightBtn.innerHTML = '→';
     moveRightBtn.addEventListener('click', () => this.moveItem(item, 1));
 
-    const cropBtn = make('button', [this.CSS.itemCrop], { type: 'button' });
+    const cropBtn = make('button', [this.CSS.itemCrop], { type: 'button' }) as HTMLButtonElement;
     cropBtn.innerHTML = IconCrop;
     cropBtn.title = this.api.i18n.t('Обрезать изображение');
     cropBtn.setAttribute('aria-label', this.api.i18n.t('Обрезать изображение'));
+    cropBtn.disabled = item.dataset.disableOptimization === 'true';
     cropBtn.addEventListener('click', () => this.onCropImage(item));
+
+    const settings = createItemSettings({
+      item,
+      classes: {
+        button: this.CSS.itemSettings,
+        wrapper: this.CSS.itemSettingsWrapper,
+        panel: this.CSS.itemSettingsPanel,
+        option: this.CSS.itemSetting,
+      },
+      translate: message => this.api.i18n.t(message),
+      onChange: (setting, enabled) => this.updateItemSetting(item, setting, enabled),
+    });
 
     controls.appendChild(moveLeftBtn);
     controls.appendChild(cropBtn);
+    controls.appendChild(settings);
 
     // Выбор базовой обложки остаётся доступен и при ручном override.
     if (this.config.cover?.enabled) {
@@ -732,6 +861,39 @@ export default class Ui {
     controls.appendChild(moveRightBtn);
 
     return controls;
+  }
+
+  private updateItemSetting(item: HTMLElement, setting: GalleryItemSetting, enabled: boolean): void {
+    if (enabled) {
+      item.dataset[setting] = 'true';
+    } else {
+      delete item.dataset[setting];
+    }
+
+    const image = item.querySelector<HTMLImageElement>(`.${this.CSS.itemImage} img`);
+    const cropButton = item.querySelector<HTMLButtonElement>(`.${this.CSS.itemCrop}`);
+
+    if (setting === 'disableHeightLimit') {
+      item.classList.toggle(this.CSS.itemUnlimitedHeight, enabled);
+      if (image) {
+        image.style.maxHeight = enabled || item.classList.contains(this.CSS.itemCropped) ? 'none' : '';
+      }
+    }
+
+    if (setting === 'disableOptimization') {
+      cropButton?.toggleAttribute('disabled', enabled);
+      if (enabled) {
+        this.updateItemAfterCrop(item, undefined, 0, 0, undefined, undefined);
+      } else if (image) {
+        image.src = resizeDisplayUrl(item.dataset.url || '');
+      }
+    }
+
+    if (setting === 'disableDecoration') {
+      item.classList.toggle(this.CSS.itemPlain, enabled);
+    }
+
+    this.onItemSettingsChange();
   }
 
   /**
