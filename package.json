@@ -1,6 +1,7 @@
 {
   "name": "@ixbtcom/gallery-editorjs",
   "version": "2.0.1",
+  "type": "module",
   "packageManager": "pnpm@11.1.2",
   "keywords": [
     "codex editor",
@@ -15,13 +16,13 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/gallery.umd.js",
-  "module": "./dist/gallery.mjs",
+  "main": "./dist/gallery.umd.cjs",
+  "module": "./dist/gallery.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/gallery.mjs",
-      "require": "./dist/gallery.umd.js",
+      "import": "./dist/gallery.js",
+      "require": "./dist/gallery.umd.cjs",
       "types": "./dist/index.d.ts"
     }
   },
