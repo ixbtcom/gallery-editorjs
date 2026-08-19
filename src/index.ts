@@ -78,6 +78,7 @@ export default class GalleryTool implements BlockTool {
       buttonContent: config.buttonContent ?? this.api.i18n.t('Add Image'),
       urlButtonContent: config.urlButtonContent ?? this.api.i18n.t('Add from URL'),
       uploader: config.uploader,
+      onNonImageFile: config.onNonImageFile,
       mediaHost: config.mediaHost,
       cover: config.cover,
       onMediaRemoved: config.onMediaRemoved,
@@ -300,6 +301,7 @@ export default class GalleryTool implements BlockTool {
    */
   private selectFile(): void {
     this.uploader.uploadSelectedFile({
+      onNonImageFile: (file: Blob) => this.config.onNonImageFile?.(file) === true,
       onPreview: (src: string) => {
         this.currentLoadingItem = this.ui.createLoadingItem(src);
       },
@@ -310,6 +312,12 @@ export default class GalleryTool implements BlockTool {
    * Upload file from paste/drag-n-drop
    */
   private uploadFile(file: Blob): void {
+    // Не изображение — уходит в собственный блок под галереей, сама галерея
+    // при этом не меняется.
+    if (this.config.onNonImageFile?.(file) === true) {
+      return;
+    }
+
     this.uploader.uploadByFile(file, {
       onPreview: (src: string) => {
         this.currentLoadingItem = this.ui.createLoadingItem(src);

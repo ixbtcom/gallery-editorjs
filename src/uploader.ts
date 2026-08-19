@@ -13,6 +13,9 @@ interface UploaderParams {
  * Module for file uploading
  * Handles: file selection, URL upload, drag-n-drop
  */
+/** Файл ушёл в соседний блок — это не сбой загрузки и сообщать о нём не надо. */
+class DelegatedToAnotherBlock extends Error {}
+
 export default class Uploader {
   private config: GalleryConfig;
   private onUpload: (response: UploadResponseFormat) => void;
@@ -27,7 +30,7 @@ export default class Uploader {
   /**
    * Upload file selected from device
    */
-  public uploadSelectedFile({ onPreview }: UploadOptions): void {
+  public uploadSelectedFile({ onPreview, onNonImageFile }: UploadOptions): void {
     const preparePreview = (file: File): void => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -45,6 +48,11 @@ export default class Uploader {
       upload = ajax.selectFiles({ accept: this.config.types ?? 'image/*' }).then((files: File[]) => {
         if (!files || files.length === 0) {
           throw new Error('No file selected');
+        }
+        // Выбран не-изображение: отдаём соседнему блоку и прекращаем загрузку
+        // в галерею — иначе документ попал бы в сетку картинок.
+        if (onNonImageFile?.(files[0]) === true) {
+          throw new DelegatedToAnotherBlock();
         }
         preparePreview(files[0]);
         const customUpload = this.config.uploader!.uploadByFile!(files[0]);
@@ -77,7 +85,14 @@ export default class Uploader {
 
     upload
       .then((response) => this.onUpload(response))
-      .catch((error: string) => this.onError(error));
+      .catch((error: unknown) => {
+        // Делегирование в соседний блок — штатный исход, не ошибка загрузки.
+        if (error instanceof DelegatedToAnotherBlock) {
+          return;
+        }
+
+        this.onError(error as string);
+      });
   }
 
   /**

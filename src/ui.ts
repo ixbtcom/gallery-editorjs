@@ -651,6 +651,14 @@ export default class Ui {
   private imageFromClipboardData(data: DataTransfer | null): Blob | null {
     if (!data) return null;
 
+    // Не-изображение с известным типом уходит в свой блок; галерея о нём
+    // больше не думает и поле ссылки не трогает.
+    const foreign = Array.from(data.files).find(candidate => candidate.type !== '' && !candidate.type.startsWith('image/'));
+
+    if (foreign && this.config.onNonImageFile?.(foreign) === true) {
+      return null;
+    }
+
     const file = Array.from(data.files).find(candidate => candidate.type.startsWith('image/'));
     if (file) return file;
 
@@ -680,9 +688,22 @@ export default class Ui {
 
           return;
         }
+
+        // В буфере не изображение, но тип известен — отдаём соседнему блоку
+        // вместо отказа: кнопка «Вставить из буфера» обязана принимать
+        // документ и ролик так же, как перетаскивание.
+        const otherType = clipboardItem.types.find(type => type !== 'text/plain' && type !== 'text/html');
+
+        if (otherType && this.config.onNonImageFile !== undefined) {
+          const blob = await clipboardItem.getType(otherType);
+
+          if (this.config.onNonImageFile(blob) === true) {
+            return;
+          }
+        }
       }
 
-      this.showClipboardError('В буфере обмена нет изображения.');
+      this.showClipboardError('В буфере обмена нет файла, который можно вставить.');
     } catch {
       this.showClipboardError('Не удалось прочитать буфер. Нажмите Ctrl/Cmd+V в поле ссылки.');
     }

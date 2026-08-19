@@ -7,6 +7,8 @@ export type CropAspectRatioMode = CropAspectRatio | 'free';
  */
 export interface UploadOptions {
     onPreview: (src: string) => void;
+    /** Возвращает true, если файл принят другим блоком и грузить его сюда не надо. */
+    onNonImageFile?: (file: Blob) => boolean;
 }
 /**
  * Response format from upload endpoint
@@ -117,6 +119,14 @@ export interface GalleryConfig {
     };
     /** Base URL for imagor/thumbor service (e.g. 'https://media.ixbt.site') */
     mediaHost?: string;
+    /**
+     * Файл оказался не изображением. Возвращает true, если он принят соседним
+     * блоком — тогда галерея его не грузит и себя не меняет.
+     *
+     * Галерея намеренно не знает имён блоков-получателей: их подставляет
+     * приложение, а не форк тула.
+     */
+    onNonImageFile?: (file: Blob) => boolean;
     onMediaRemoved?: (mediaId: string) => void;
     onCropApplied?: (mediaId: string, crop: string) => void;
     /** Локальный выбор базовой обложки, provided by filament-editorjs. */

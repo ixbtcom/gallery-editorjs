@@ -7,31 +7,31 @@
  *
  * Date: 2024-04-21T07:43:02.731Z
  */.cropper-container{direction:ltr;font-size:0;line-height:0;position:relative;-ms-touch-action:none;touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cropper-container img{backface-visibility:hidden;display:block;height:100%;image-orientation:0deg;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;width:100%}.cropper-wrap-box,.cropper-canvas,.cropper-drag-box,.cropper-crop-box,.cropper-modal{bottom:0;left:0;position:absolute;right:0;top:0}.cropper-wrap-box,.cropper-canvas{overflow:hidden}.cropper-drag-box{background-color:#fff;opacity:0}.cropper-modal{background-color:#000;opacity:.5}.cropper-view-box{display:block;height:100%;outline:1px solid #39f;outline-color:#3399ffbf;overflow:hidden;width:100%}.cropper-dashed{border:0 dashed #eee;display:block;opacity:.5;position:absolute}.cropper-dashed.dashed-h{border-bottom-width:1px;border-top-width:1px;height:calc(100% / 3);left:0;top:calc(100% / 3);width:100%}.cropper-dashed.dashed-v{border-left-width:1px;border-right-width:1px;height:100%;left:calc(100% / 3);top:0;width:calc(100% / 3)}.cropper-center{display:block;height:0;left:50%;opacity:.75;position:absolute;top:50%;width:0}.cropper-center:before,.cropper-center:after{background-color:#eee;content:" ";display:block;position:absolute}.cropper-center:before{height:1px;left:-3px;top:0;width:7px}.cropper-center:after{height:7px;left:0;top:-3px;width:1px}.cropper-face,.cropper-line,.cropper-point{display:block;height:100%;opacity:.1;position:absolute;width:100%}.cropper-face{background-color:#fff;left:0;top:0}.cropper-line{background-color:#39f}.cropper-line.line-e{cursor:ew-resize;right:-3px;top:0;width:5px}.cropper-line.line-n{cursor:ns-resize;height:5px;left:0;top:-3px}.cropper-line.line-w{cursor:ew-resize;left:-3px;top:0;width:5px}.cropper-line.line-s{bottom:-3px;cursor:ns-resize;height:5px;left:0}.cropper-point{background-color:#39f;height:5px;opacity:.75;width:5px}.cropper-point.point-e{cursor:ew-resize;margin-top:-3px;right:-3px;top:50%}.cropper-point.point-n{cursor:ns-resize;left:50%;margin-left:-3px;top:-3px}.cropper-point.point-w{cursor:ew-resize;left:-3px;margin-top:-3px;top:50%}.cropper-point.point-s{bottom:-3px;cursor:s-resize;left:50%;margin-left:-3px}.cropper-point.point-ne{cursor:nesw-resize;right:-3px;top:-3px}.cropper-point.point-nw{cursor:nwse-resize;left:-3px;top:-3px}.cropper-point.point-sw{bottom:-3px;cursor:nesw-resize;left:-3px}.cropper-point.point-se{bottom:-3px;cursor:nwse-resize;height:20px;opacity:1;right:-3px;width:20px}@media (min-width: 768px){.cropper-point.point-se{height:15px;width:15px}}@media (min-width: 992px){.cropper-point.point-se{height:10px;width:10px}}@media (min-width: 1200px){.cropper-point.point-se{height:5px;opacity:.75;width:5px}}.cropper-point.point-se:before{background-color:#39f;bottom:-50%;content:" ";display:block;height:200%;opacity:0;position:absolute;right:-50%;width:200%}.cropper-invisible{opacity:0}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-hide{display:block;height:0;position:absolute;width:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-drag-box,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}`)),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
-const He = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.42857 7H7.71429C7.25963 7 6.82359 7.15804 6.5021 7.43934C6.18061 7.72064 6 8.10218 6 8.5V17.5C6 17.8978 6.18061 18.2794 6.5021 18.5607C6.82359 18.842 7.25963 19 7.71429 19H16.2857C16.7404 19 17.1764 18.842 17.4979 18.5607C17.8194 18.2794 18 17.8978 18 17.5V8.5C18 8.10218 17.8194 7.72064 17.4979 7.43934C17.1764 7.15804 16.7404 7 16.2857 7H14.5714"/><rect width="5.15789" height="3.36842" x="9.42105" y="5" stroke="currentColor" stroke-width="2" rx="1.5"/></svg>', Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 7.29999H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 12H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 16.7H12"/></svg>', we = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
+const Fe = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.42857 7H7.71429C7.25963 7 6.82359 7.15804 6.5021 7.43934C6.18061 7.72064 6 8.10218 6 8.5V17.5C6 17.8978 6.18061 18.2794 6.5021 18.5607C6.82359 18.842 7.25963 19 7.71429 19H16.2857C16.7404 19 17.1764 18.842 17.4979 18.5607C17.8194 18.2794 18 17.8978 18 17.5V8.5C18 8.10218 17.8194 7.72064 17.4979 7.43934C17.1764 7.15804 16.7404 7 16.2857 7H14.5714"/><rect width="5.15789" height="3.36842" x="9.42105" y="5" stroke="currentColor" stroke-width="2" rx="1.5"/></svg>', Ue = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 7.29999H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 12H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 16.7H12"/></svg>', Se = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
 function g(r, t = null, e = {}) {
   const i = document.createElement(r);
   Array.isArray(t) ? i.classList.add(...t) : t !== null && i.classList.add(t);
-  for (const o in e)
-    Object.prototype.hasOwnProperty.call(e, o) && (i[o] = e[o]);
+  for (const n in e)
+    Object.prototype.hasOwnProperty.call(e, n) && (i[n] = e[n]);
   return i;
 }
-const Ue = [
+const ze = [
   { key: "disableHeightLimit", label: "Не ограничивать по высоте" },
   { key: "disableOptimization", label: "Не оптимизировать" },
   { key: "disableDecoration", label: "Не применять оформление" }
 ];
-function ze({ item: r, classes: t, translate: e, onChange: i }) {
-  const o = g("div", [t.wrapper]), n = g("button", [t.button], { type: "button" }), s = g("div", [t.panel]);
-  n.innerHTML = Fe, n.title = e("Настройки изображения"), n.setAttribute("aria-label", e("Настройки изображения")), n.setAttribute("aria-expanded", "false"), s.hidden = !0, n.addEventListener("click", () => {
-    s.hidden = !s.hidden, n.setAttribute("aria-expanded", String(!s.hidden));
+function je({ item: r, classes: t, translate: e, onChange: i }) {
+  const n = g("div", [t.wrapper]), o = g("button", [t.button], { type: "button" }), s = g("div", [t.panel]);
+  o.innerHTML = Ue, o.title = e("Настройки изображения"), o.setAttribute("aria-label", e("Настройки изображения")), o.setAttribute("aria-expanded", "false"), s.hidden = !0, o.addEventListener("click", () => {
+    s.hidden = !s.hidden, o.setAttribute("aria-expanded", String(!s.hidden));
   });
-  for (const a of Ue) {
+  for (const a of ze) {
     const h = g("label", [t.option]), l = g("input", null, { type: "checkbox" });
     l.checked = r.dataset[a.key] === "true", l.addEventListener("click", () => i(a.key, l.checked)), h.append(l, document.createTextNode(e(a.label))), s.appendChild(h);
   }
-  return o.append(n, s), o;
+  return n.append(o, s), n;
 }
-const je = "media.ixbt.site", $e = "920x/webp", We = /^\d+x\d*$/;
+const $e = "media.ixbt.site", We = "920x/webp", qe = /^\d+x\d*$/;
 function vt(r) {
   if (!r)
     return r;
@@ -41,15 +41,15 @@ function vt(r) {
   } catch {
     return r;
   }
-  if (t.hostname !== je)
+  if (t.hostname !== $e)
     return r;
   const e = t.pathname.split("/").filter(Boolean);
-  return e.length === 0 || We.test(e[0]) ? r : (t.pathname = `/${$e}/${e.join("/")}`, t.toString());
+  return e.length === 0 || qe.test(e[0]) ? r : (t.pathname = `/${We}/${e.join("/")}`, t.toString());
 }
-const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', ie = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', ne = "Создано с помощью Ai", Q = class Q {
-  constructor({ api: t, config: e, onSelectFile: i, onPasteFile: o, onSelectUrl: n, onColumnsChange: s, onRemoveImage: a, onCropImage: h, onItemSettingsChange: l, onOpenAi: c, readOnly: d }) {
-    this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onPasteFile = o ?? (() => {
-    }), this.onSelectUrl = n, this.onColumnsChange = s, this.onRemoveImage = a, this.onCropImage = h, this.onItemSettingsChange = l ?? (() => {
+const Xe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', ie = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', ne = "Создано с помощью Ai", Q = class Q {
+  constructor({ api: t, config: e, onSelectFile: i, onPasteFile: n, onSelectUrl: o, onColumnsChange: s, onRemoveImage: a, onCropImage: h, onItemSettingsChange: l, onOpenAi: c, readOnly: d }) {
+    this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onPasteFile = n ?? (() => {
+    }), this.onSelectUrl = o, this.onColumnsChange = s, this.onRemoveImage = a, this.onCropImage = h, this.onItemSettingsChange = l ?? (() => {
     }), this.onOpenAi = c ?? (() => {
     }), this.readOnly = d, this.nodes = {
       wrapper: g("div", [this.CSS.wrapper]),
@@ -122,8 +122,8 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Add a new item to the gallery
    */
   addItem(t) {
-    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]), n = !!(t.crop && t.imagorPath && !t.disableOptimization), s = t.disableOptimization ? t.url : n && t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : vt(t.url), a = g("img", null, { src: s }), h = n && t.croppedWidth ? t.croppedWidth : t.width, l = n && t.croppedHeight ? t.croppedHeight : t.height;
-    h && l && (a.style.aspectRatio = `${h} / ${l}`), n && (a.style.width = "100%", a.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped)), t.disableHeightLimit && (a.style.maxHeight = "none", e.classList.add(this.CSS.itemUnlimitedHeight)), t.disableDecoration && e.classList.add(this.CSS.itemPlain);
+    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), n = g("div", [this.CSS.itemPreloader]), o = !!(t.crop && t.imagorPath && !t.disableOptimization), s = t.disableOptimization ? t.url : o && t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : vt(t.url), a = g("img", null, { src: s }), h = o && t.croppedWidth ? t.croppedWidth : t.width, l = o && t.croppedHeight ? t.croppedHeight : t.height;
+    h && l && (a.style.aspectRatio = `${h} / ${l}`), o && (a.style.width = "100%", a.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped)), t.disableHeightLimit && (a.style.maxHeight = "none", e.classList.add(this.CSS.itemUnlimitedHeight)), t.disableDecoration && e.classList.add(this.CSS.itemPlain);
     const c = g("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
@@ -135,31 +135,31 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const u = g("div", [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    if (u.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", u.textContent = t.sourceLink || "", i.appendChild(o), i.appendChild(a), h && l) {
+    if (u.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", u.textContent = t.sourceLink || "", i.appendChild(n), i.appendChild(a), h && l) {
       const b = g("div", [this.CSS.itemDimensions]);
       b.textContent = `${h} × ${l}`, i.appendChild(b);
     }
     return t.isAiGenerated && i.appendChild(this.createAiBadge()), a.onload = () => {
-      o.style.display = "none";
+      n.style.display = "none";
     }, e.appendChild(i), e.appendChild(c), e.appendChild(d), e.appendChild(u), this.storeItemData(e, t), this.readOnly || e.insertBefore(this.createItemControls(e), e.firstChild), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "filled"
       /* Filled */
     ), this.autoAdjustColumns(), e;
   }
   storeItemData(t, e) {
-    var i, o, n;
-    t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (i = this.config.cover) != null && i.enabled && e.media_id && ((n = (o = this.config.cover).coverUuid) == null ? void 0 : n.call(o)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), e.crop && !e.disableOptimization && (t.dataset.crop = e.crop), e.croppedWidth && !e.disableOptimization && (t.dataset.croppedWidth = String(e.croppedWidth)), e.croppedHeight && !e.disableOptimization && (t.dataset.croppedHeight = String(e.croppedHeight)), e.cropAspectRatio && !e.disableOptimization && (t.dataset.cropAspectRatio = e.cropAspectRatio), typeof e.showOriginalOnClick == "boolean" && !e.disableOptimization && (t.dataset.showOriginalOnClick = String(e.showOriginalOnClick)), e.isAiGenerated && (t.dataset.aiGenerated = "true"), e.disableHeightLimit && (t.dataset.disableHeightLimit = "true"), e.disableOptimization && (t.dataset.disableOptimization = "true"), e.disableDecoration && (t.dataset.disableDecoration = "true");
+    var i, n, o;
+    t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (i = this.config.cover) != null && i.enabled && e.media_id && ((o = (n = this.config.cover).coverUuid) == null ? void 0 : o.call(n)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), e.crop && !e.disableOptimization && (t.dataset.crop = e.crop), e.croppedWidth && !e.disableOptimization && (t.dataset.croppedWidth = String(e.croppedWidth)), e.croppedHeight && !e.disableOptimization && (t.dataset.croppedHeight = String(e.croppedHeight)), e.cropAspectRatio && !e.disableOptimization && (t.dataset.cropAspectRatio = e.cropAspectRatio), typeof e.showOriginalOnClick == "boolean" && !e.disableOptimization && (t.dataset.showOriginalOnClick = String(e.showOriginalOnClick)), e.isAiGenerated && (t.dataset.aiGenerated = "true"), e.disableHeightLimit && (t.dataset.disableHeightLimit = "true"), e.disableOptimization && (t.dataset.disableOptimization = "true"), e.disableDecoration && (t.dataset.disableDecoration = "true");
   }
   /**
    * Create a placeholder item for loading state
    */
   createLoadingItem(t) {
-    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), o = g("div", [this.CSS.itemPreloader]);
-    t && (o.style.backgroundImage = `url(${vt(t)})`), i.appendChild(o), e.appendChild(i);
-    const n = g("div", [this.CSS.itemCaption, this.CSS.input], {
+    const e = g("div", [this.CSS.item]), i = g("div", [this.CSS.itemImage]), n = g("div", [this.CSS.itemPreloader]);
+    t && (n.style.backgroundImage = `url(${vt(t)})`), i.appendChild(n), e.appendChild(i);
+    const o = g("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    n.dataset.placeholder = this.config.captionPlaceholder ?? "Caption";
+    o.dataset.placeholder = this.config.captionPlaceholder ?? "Caption";
     const s = g("div", [this.CSS.itemSource, this.CSS.input], {
       contentEditable: !this.readOnly
     });
@@ -167,7 +167,7 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const a = g("div", [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    return a.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", e.appendChild(n), e.appendChild(s), e.appendChild(a), this.nodes.itemsContainer.appendChild(e), this.toggleState(
+    return a.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", e.appendChild(o), e.appendChild(s), e.appendChild(a), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "loading"
       /* Loading */
     ), e;
@@ -176,12 +176,12 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Update loading item with uploaded image
    */
   fillLoadingItem(t, e) {
-    const i = t.querySelector(`.${this.CSS.itemImage}`), o = t.querySelector(`.${this.CSS.itemPreloader}`), n = g("img", null, {
+    const i = t.querySelector(`.${this.CSS.itemImage}`), n = t.querySelector(`.${this.CSS.itemPreloader}`), o = g("img", null, {
       src: e.disableOptimization ? e.url : vt(e.url)
     });
-    if (e.width && e.height && (n.style.aspectRatio = `${e.width} / ${e.height}`), e.disableHeightLimit && (n.style.maxHeight = "none", t.classList.add(this.CSS.itemUnlimitedHeight)), e.disableDecoration && t.classList.add(this.CSS.itemPlain), n.onload = () => {
-      o && (o.style.display = "none");
-    }, i.appendChild(n), e.width && e.height) {
+    if (e.width && e.height && (o.style.aspectRatio = `${e.width} / ${e.height}`), e.disableHeightLimit && (o.style.maxHeight = "none", t.classList.add(this.CSS.itemUnlimitedHeight)), e.disableDecoration && t.classList.add(this.CSS.itemPlain), o.onload = () => {
+      n && (n.style.display = "none");
+    }, i.appendChild(o), e.width && e.height) {
       const s = g("div", [this.CSS.itemDimensions]);
       s.textContent = `${e.width} × ${e.height}`, i.appendChild(s);
     }
@@ -201,10 +201,10 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     const t = this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`), e = [];
     return t.forEach((i) => {
       var x, I, E;
-      const o = i, n = o.dataset.url;
-      if (!n) return;
-      const s = ((x = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : x.textContent) || "", a = ((I = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : I.textContent) || "", h = ((E = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : E.textContent) || "", l = o.dataset.width ? parseInt(o.dataset.width, 10) : void 0, c = o.dataset.height ? parseInt(o.dataset.height, 10) : void 0, d = o.dataset.disableHeightLimit === "true", u = o.dataset.disableOptimization === "true", b = o.dataset.disableDecoration === "true", C = o.dataset.imagorPath || void 0, p = u ? void 0 : o.dataset.crop || void 0, f = !u && o.dataset.croppedWidth ? parseInt(o.dataset.croppedWidth, 10) : void 0, v = !u && o.dataset.croppedHeight ? parseInt(o.dataset.croppedHeight, 10) : void 0, y = !u && (o.dataset.cropAspectRatio === "16:9" || o.dataset.cropAspectRatio === "1:1") ? o.dataset.cropAspectRatio : !u && o.dataset.cropAspectRatio === "3:2" ? "3:2" : !u && o.dataset.cropAspectRatio === "free" ? "free" : void 0, w = u || o.dataset.showOriginalOnClick === void 0 ? void 0 : o.dataset.showOriginalOnClick === "true", _ = o.dataset.mediaId || void 0, S = o.dataset.aiGenerated === "true", m = {
-        url: n,
+      const n = i, o = n.dataset.url;
+      if (!o) return;
+      const s = ((x = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : x.textContent) || "", a = ((I = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : I.textContent) || "", h = ((E = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : E.textContent) || "", l = n.dataset.width ? parseInt(n.dataset.width, 10) : void 0, c = n.dataset.height ? parseInt(n.dataset.height, 10) : void 0, d = n.dataset.disableHeightLimit === "true", u = n.dataset.disableOptimization === "true", b = n.dataset.disableDecoration === "true", C = n.dataset.imagorPath || void 0, p = u ? void 0 : n.dataset.crop || void 0, f = !u && n.dataset.croppedWidth ? parseInt(n.dataset.croppedWidth, 10) : void 0, v = !u && n.dataset.croppedHeight ? parseInt(n.dataset.croppedHeight, 10) : void 0, y = !u && (n.dataset.cropAspectRatio === "16:9" || n.dataset.cropAspectRatio === "1:1") ? n.dataset.cropAspectRatio : !u && n.dataset.cropAspectRatio === "3:2" ? "3:2" : !u && n.dataset.cropAspectRatio === "free" ? "free" : void 0, w = u || n.dataset.showOriginalOnClick === void 0 ? void 0 : n.dataset.showOriginalOnClick === "true", _ = n.dataset.mediaId || void 0, S = n.dataset.aiGenerated === "true", m = {
+        url: o,
         media_id: _,
         imagorPath: C,
         caption: s,
@@ -222,13 +222,13 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   /**
    * Update item DOM after crop operation
    */
-  updateItemAfterCrop(t, e, i, o, n, s) {
+  updateItemAfterCrop(t, e, i, n, o, s) {
     const a = t.querySelector(`.${this.CSS.itemImage} img`);
     if (a && !(e && t.dataset.disableOptimization === "true"))
       if (e) {
-        t.dataset.crop = e, t.dataset.croppedWidth = String(i), t.dataset.croppedHeight = String(o), t.dataset.showOriginalOnClick = String(n ?? !1), t.dataset.cropAspectRatio = s ?? "3:2", t.classList.add(this.CSS.itemCropped);
+        t.dataset.crop = e, t.dataset.croppedWidth = String(i), t.dataset.croppedHeight = String(n), t.dataset.showOriginalOnClick = String(o ?? !1), t.dataset.cropAspectRatio = s ?? "3:2", t.classList.add(this.CSS.itemCropped);
         const h = t.dataset.imagorPath;
-        h && (a.src = this.buildPreviewUrl(h, e)), a.style.width = "100%", a.style.maxHeight = "none", this.updateItemDimensions(t, i, o);
+        h && (a.src = this.buildPreviewUrl(h, e)), a.style.width = "100%", a.style.maxHeight = "none", this.updateItemDimensions(t, i, n);
       } else
         delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), a.src = t.dataset.disableOptimization === "true" ? t.dataset.url || "" : vt(t.dataset.url || ""), a.style.width = "", a.style.maxHeight = t.dataset.disableHeightLimit === "true" ? "none" : "", this.updateItemDimensions(
           t,
@@ -238,23 +238,23 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   }
   /** Update an item's effective dimensions badge and aspect ratio. */
   updateItemDimensions(t, e, i) {
-    const o = t.querySelector(`.${this.CSS.itemImage}`), n = o == null ? void 0 : o.querySelector("img"), s = Number.isFinite(e) && Number.isFinite(i) && (e ?? 0) > 0 && (i ?? 0) > 0;
-    let a = (o == null ? void 0 : o.querySelector(`.${this.CSS.itemDimensions}`)) ?? null;
+    const n = t.querySelector(`.${this.CSS.itemImage}`), o = n == null ? void 0 : n.querySelector("img"), s = Number.isFinite(e) && Number.isFinite(i) && (e ?? 0) > 0 && (i ?? 0) > 0;
+    let a = (n == null ? void 0 : n.querySelector(`.${this.CSS.itemDimensions}`)) ?? null;
     if (!s) {
-      a == null || a.remove(), n && (n.style.aspectRatio = "");
+      a == null || a.remove(), o && (o.style.aspectRatio = "");
       return;
     }
-    a === null && o !== null && (a = g("div", [this.CSS.itemDimensions]), o.appendChild(a)), a !== null && (a.textContent = `${e} × ${i}`), n && (n.style.aspectRatio = `${e} / ${i}`);
+    a === null && n !== null && (a = g("div", [this.CSS.itemDimensions]), n.appendChild(a)), a !== null && (a.textContent = `${e} × ${i}`), o && (o.style.aspectRatio = `${e} / ${i}`);
   }
   /**
    * Build imagor preview URL with crop + fit-in resize.
    * Mirrors ImageService::url() logic using imagorPath (normalized short URL).
    */
   buildPreviewUrl(t, e, i = 600) {
-    const o = this.config.mediaHost;
-    if (!o || !t) return "";
-    const n = ["unsafe"];
-    return e && n.push(e), n.push("fit-in", `${i}x0`, t), `${o}/${n.join("/")}`;
+    const n = this.config.mediaHost;
+    if (!n || !t) return "";
+    const o = ["unsafe"];
+    return e && o.push(e), o.push("fit-in", `${i}x0`, t), `${n}/${o.join("/")}`;
   }
   /**
    * Get current columns count
@@ -264,11 +264,11 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   }
   createFileButton() {
     const t = g("div", [this.CSS.button]);
-    return t.innerHTML = `${we} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
+    return t.innerHTML = `${Se} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
   }
   createClipboardButton() {
     const t = g("button", [this.CSS.button, this.CSS.clipboardButton], { type: "button" });
-    return t.innerHTML = `${He}<span>${this.api.i18n.t("Вставить из буфера")}</span>`, t.setAttribute("aria-label", this.api.i18n.t("Вставить изображение из буфера")), t.addEventListener("click", () => {
+    return t.innerHTML = `${Fe}<span>${this.api.i18n.t("Вставить из буфера")}</span>`, t.setAttribute("aria-label", this.api.i18n.t("Вставить изображение из буфера")), t.addEventListener("click", () => {
       this.pasteFromClipboard();
     }), t;
   }
@@ -289,9 +289,9 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     return e.placeholder = this.config.urlInputPlaceholder ?? "Вставьте ссылку на изображение", e.addEventListener("keydown", (i) => {
       i.key === "Enter" && (i.preventDefault(), this.handleUrlInput(e));
     }), e.addEventListener("paste", (i) => {
-      const o = this.imageFromClipboardData(i.clipboardData);
-      if (o) {
-        i.preventDefault(), i.stopPropagation(), i.stopImmediatePropagation(), e.value = "", this.onPasteFile(o);
+      const n = this.imageFromClipboardData(i.clipboardData);
+      if (n) {
+        i.preventDefault(), i.stopPropagation(), i.stopImmediatePropagation(), e.value = "", this.onPasteFile(n);
         return;
       }
       setTimeout(() => {
@@ -300,12 +300,16 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     }), t.appendChild(e), t;
   }
   imageFromClipboardData(t) {
+    var n, o;
     if (!t) return null;
-    const e = Array.from(t.files).find((i) => i.type.startsWith("image/"));
-    if (e) return e;
-    for (const i of Array.from(t.items))
-      if (i.kind === "file" && i.type.startsWith("image/"))
-        return i.getAsFile();
+    const e = Array.from(t.files).find((s) => s.type !== "" && !s.type.startsWith("image/"));
+    if (e && ((o = (n = this.config).onNonImageFile) == null ? void 0 : o.call(n, e)) === !0)
+      return null;
+    const i = Array.from(t.files).find((s) => s.type.startsWith("image/"));
+    if (i) return i;
+    for (const s of Array.from(t.items))
+      if (s.kind === "file" && s.type.startsWith("image/"))
+        return s.getAsFile();
     return null;
   }
   async pasteFromClipboard() {
@@ -321,8 +325,14 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
           this.onPasteFile(await e.getType(i));
           return;
         }
+        const n = e.types.find((o) => o !== "text/plain" && o !== "text/html");
+        if (n && this.config.onNonImageFile !== void 0) {
+          const o = await e.getType(n);
+          if (this.config.onNonImageFile(o) === !0)
+            return;
+        }
       }
-      this.showClipboardError("В буфере обмена нет изображения.");
+      this.showClipboardError("В буфере обмена нет файла, который можно вставить.");
     } catch {
       this.showClipboardError("Не удалось прочитать буфер. Нажмите Ctrl/Cmd+V в поле ссылки.");
     }
@@ -342,8 +352,8 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     e.innerHTML = "−", e.addEventListener("click", () => this.changeColumns(-1));
     const i = g("span", [this.CSS.columnsDisplay]);
     i.textContent = `${this.currentColumns} col`;
-    const o = g("button", [this.CSS.columnsButton], { type: "button" });
-    return o.innerHTML = "+", o.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(i), t.appendChild(o), t;
+    const n = g("button", [this.CSS.columnsButton], { type: "button" });
+    return n.innerHTML = "+", n.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(i), t.appendChild(n), t;
   }
   changeColumns(t) {
     const e = Math.min(Q.MAX_COLUMNS, Math.max(Q.MIN_COLUMNS, this.currentColumns + t));
@@ -388,13 +398,13 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
         /* Empty */
       ), this.columnsLocked = !1), this.autoAdjustColumns(), (l || c) && this.onRemoveImage(l ?? "", c);
     });
-    const o = g("button", [this.CSS.itemMoveLeft], { type: "button" });
-    o.innerHTML = "←", o.addEventListener("click", () => this.moveItem(t, -1));
-    const n = g("button", [this.CSS.itemMoveRight], { type: "button" });
-    n.innerHTML = "→", n.addEventListener("click", () => this.moveItem(t, 1));
+    const n = g("button", [this.CSS.itemMoveLeft], { type: "button" });
+    n.innerHTML = "←", n.addEventListener("click", () => this.moveItem(t, -1));
+    const o = g("button", [this.CSS.itemMoveRight], { type: "button" });
+    o.innerHTML = "→", o.addEventListener("click", () => this.moveItem(t, 1));
     const s = g("button", [this.CSS.itemCrop], { type: "button" });
-    s.innerHTML = qe, s.title = this.api.i18n.t("Обрезать изображение"), s.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), s.disabled = t.dataset.disableOptimization === "true", s.addEventListener("click", () => this.onCropImage(t));
-    const a = ze({
+    s.innerHTML = Xe, s.title = this.api.i18n.t("Обрезать изображение"), s.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), s.disabled = t.dataset.disableOptimization === "true", s.addEventListener("click", () => this.onCropImage(t));
+    const a = je({
       item: t,
       classes: {
         button: this.CSS.itemSettings,
@@ -405,27 +415,27 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
       translate: (l) => this.api.i18n.t(l),
       onChange: (l, c) => this.updateItemSetting(t, l, c)
     });
-    if (e.appendChild(o), e.appendChild(s), e.appendChild(a), (h = this.config.cover) != null && h.enabled) {
+    if (e.appendChild(n), e.appendChild(s), e.appendChild(a), (h = this.config.cover) != null && h.enabled) {
       const l = g("button", ["gallery-tool__item-cover"], { type: "button" });
       l.innerHTML = "★", l.title = this.api.i18n.t("Сделать обложкой"), l.setAttribute("aria-label", this.api.i18n.t("Сделать обложкой")), l.setAttribute("aria-pressed", String(t.hasAttribute("data-cover"))), l.addEventListener("click", () => this.onSetCover(t)), e.appendChild(l);
     }
-    return e.appendChild(i), e.appendChild(n), e;
+    return e.appendChild(i), e.appendChild(o), e;
   }
   updateItemSetting(t, e, i) {
     i ? t.dataset[e] = "true" : delete t.dataset[e];
-    const o = t.querySelector(`.${this.CSS.itemImage} img`), n = t.querySelector(`.${this.CSS.itemCrop}`);
-    e === "disableHeightLimit" && (t.classList.toggle(this.CSS.itemUnlimitedHeight, i), o && (o.style.maxHeight = i || t.classList.contains(this.CSS.itemCropped) ? "none" : "")), e === "disableOptimization" && (n == null || n.toggleAttribute("disabled", i), i ? this.updateItemAfterCrop(t, void 0, 0, 0, void 0, void 0) : o && (o.src = vt(t.dataset.url || ""))), e === "disableDecoration" && t.classList.toggle(this.CSS.itemPlain, i), this.onItemSettingsChange();
+    const n = t.querySelector(`.${this.CSS.itemImage} img`), o = t.querySelector(`.${this.CSS.itemCrop}`);
+    e === "disableHeightLimit" && (t.classList.toggle(this.CSS.itemUnlimitedHeight, i), n && (n.style.maxHeight = i || t.classList.contains(this.CSS.itemCropped) ? "none" : "")), e === "disableOptimization" && (o == null || o.toggleAttribute("disabled", i), i ? this.updateItemAfterCrop(t, void 0, 0, 0, void 0, void 0) : n && (n.src = vt(t.dataset.url || ""))), e === "disableDecoration" && t.classList.toggle(this.CSS.itemPlain, i), this.onItemSettingsChange();
   }
   /**
    * Выбрать элемент gallery базовой обложкой в состоянии формы.
    */
   onSetCover(t) {
-    var o;
+    var n;
     const e = this.config.cover;
     if (!(e != null && e.enabled))
       return !1;
     const i = t.dataset.mediaId;
-    return i ? (this.markCover(i), (o = e.onCoverChanged) == null || o.call(e, i), this.api.notifier.show({ message: this.api.i18n.t("Базовая обложка обновлена") }), !0) : (this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1);
+    return i ? (this.markCover(i), (n = e.onCoverChanged) == null || n.call(e, i), this.api.notifier.show({ message: this.api.i18n.t("Базовая обложка обновлена") }), !0) : (this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1);
   }
   /**
    * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
@@ -433,13 +443,13 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   markCover(t) {
     this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`).forEach((i) => {
       var s;
-      const o = i, n = !!t && o.dataset.mediaId === t;
-      o.toggleAttribute("data-cover", n), (s = o.querySelector('[aria-label="Сделать обложкой"]')) == null || s.setAttribute("aria-pressed", String(n));
+      const n = i, o = !!t && n.dataset.mediaId === t;
+      n.toggleAttribute("data-cover", o), (s = n.querySelector('[aria-label="Сделать обложкой"]')) == null || s.setAttribute("aria-pressed", String(o));
     });
   }
   moveItem(t, e) {
-    const i = Array.from(this.nodes.itemsContainer.children), n = i.indexOf(t) + e;
-    n < 0 || n >= i.length || (e < 0 ? this.nodes.itemsContainer.insertBefore(t, i[n]) : this.nodes.itemsContainer.insertBefore(i[n], t));
+    const i = Array.from(this.nodes.itemsContainer.children), o = i.indexOf(t) + e;
+    o < 0 || o >= i.length || (e < 0 ? this.nodes.itemsContainer.insertBefore(t, i[o]) : this.nodes.itemsContainer.insertBefore(i[o], t));
   }
   toggleState(t) {
     this.nodes.wrapper.classList.remove(
@@ -457,56 +467,56 @@ const qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
 };
 Q.MIN_COLUMNS = 1, Q.MAX_COLUMNS = 5;
 let Ht = Q;
-function Xe(r) {
+function Ye(r) {
   return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
 }
-var Se = { exports: {} };
+var _e = { exports: {} };
 (function(r, t) {
   (function(e, i) {
     r.exports = i();
   })(window, function() {
     return function(e) {
       var i = {};
-      function o(n) {
-        if (i[n]) return i[n].exports;
-        var s = i[n] = { i: n, l: !1, exports: {} };
-        return e[n].call(s.exports, s, s.exports, o), s.l = !0, s.exports;
+      function n(o) {
+        if (i[o]) return i[o].exports;
+        var s = i[o] = { i: o, l: !1, exports: {} };
+        return e[o].call(s.exports, s, s.exports, n), s.l = !0, s.exports;
       }
-      return o.m = e, o.c = i, o.d = function(n, s, a) {
-        o.o(n, s) || Object.defineProperty(n, s, { enumerable: !0, get: a });
-      }, o.r = function(n) {
-        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(n, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(n, "__esModule", { value: !0 });
-      }, o.t = function(n, s) {
-        if (1 & s && (n = o(n)), 8 & s || 4 & s && typeof n == "object" && n && n.__esModule) return n;
+      return n.m = e, n.c = i, n.d = function(o, s, a) {
+        n.o(o, s) || Object.defineProperty(o, s, { enumerable: !0, get: a });
+      }, n.r = function(o) {
+        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(o, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(o, "__esModule", { value: !0 });
+      }, n.t = function(o, s) {
+        if (1 & s && (o = n(o)), 8 & s || 4 & s && typeof o == "object" && o && o.__esModule) return o;
         var a = /* @__PURE__ */ Object.create(null);
-        if (o.r(a), Object.defineProperty(a, "default", { enumerable: !0, value: n }), 2 & s && typeof n != "string") for (var h in n) o.d(a, h, (function(l) {
-          return n[l];
+        if (n.r(a), Object.defineProperty(a, "default", { enumerable: !0, value: o }), 2 & s && typeof o != "string") for (var h in o) n.d(a, h, (function(l) {
+          return o[l];
         }).bind(null, h));
         return a;
-      }, o.n = function(n) {
-        var s = n && n.__esModule ? function() {
-          return n.default;
+      }, n.n = function(o) {
+        var s = o && o.__esModule ? function() {
+          return o.default;
         } : function() {
-          return n;
+          return o;
         };
-        return o.d(s, "a", s), s;
-      }, o.o = function(n, s) {
-        return Object.prototype.hasOwnProperty.call(n, s);
-      }, o.p = "", o(o.s = 3);
+        return n.d(s, "a", s), s;
+      }, n.o = function(o, s) {
+        return Object.prototype.hasOwnProperty.call(o, s);
+      }, n.p = "", n(n.s = 3);
     }([function(e, i) {
-      var o;
-      o = /* @__PURE__ */ function() {
+      var n;
+      n = /* @__PURE__ */ function() {
         return this;
       }();
       try {
-        o = o || new Function("return this")();
+        n = n || new Function("return this")();
       } catch {
-        typeof window == "object" && (o = window);
+        typeof window == "object" && (n = window);
       }
-      e.exports = o;
-    }, function(e, i, o) {
-      (function(n) {
-        var s = o(2), a = setTimeout;
+      e.exports = n;
+    }, function(e, i, n) {
+      (function(o) {
+        var s = n(2), a = setTimeout;
         function h() {
         }
         function l(f) {
@@ -609,37 +619,37 @@ var Se = { exports: {} };
           return new l(function(v, y) {
             for (var w = 0, _ = f.length; w < _; w++) f[w].then(v, y);
           });
-        }, l._immediateFn = typeof n == "function" && function(f) {
-          n(f);
+        }, l._immediateFn = typeof o == "function" && function(f) {
+          o(f);
         } || function(f) {
           a(f, 0);
         }, l._unhandledRejectionFn = function(f) {
           typeof console < "u" && console && console.warn("Possible Unhandled Promise Rejection:", f);
         }, i.a = l;
-      }).call(this, o(5).setImmediate);
-    }, function(e, i, o) {
-      i.a = function(n) {
+      }).call(this, n(5).setImmediate);
+    }, function(e, i, n) {
+      i.a = function(o) {
         var s = this.constructor;
         return this.then(function(a) {
-          return s.resolve(n()).then(function() {
+          return s.resolve(o()).then(function() {
             return a;
           });
         }, function(a) {
-          return s.resolve(n()).then(function() {
+          return s.resolve(o()).then(function() {
             return s.reject(a);
           });
         });
       };
-    }, function(e, i, o) {
-      function n(p) {
-        return (n = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(f) {
+    }, function(e, i, n) {
+      function o(p) {
+        return (o = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(f) {
           return typeof f;
         } : function(f) {
           return f && typeof Symbol == "function" && f.constructor === Symbol && f !== Symbol.prototype ? "symbol" : typeof f;
         })(p);
       }
-      o(4);
-      var s, a, h, l, c, d, u, b = o(8), C = (a = function(p) {
+      n(4);
+      var s, a, h, l, c, d, u, b = n(8), C = (a = function(p) {
         return new Promise(function(f, v) {
           p = l(p), (p = c(p)).beforeSend && p.beforeSend();
           var y = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
@@ -672,7 +682,7 @@ var Se = { exports: {} };
         var p = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         if (p.url && typeof p.url != "string") throw new Error("Url must be a string");
         if (p.url = p.url || "", p.method && typeof p.method != "string") throw new Error("`method` must be a string or null");
-        if (p.method = p.method ? p.method.toUpperCase() : "GET", p.headers && n(p.headers) !== "object") throw new Error("`headers` must be an object or null");
+        if (p.method = p.method ? p.method.toUpperCase() : "GET", p.headers && o(p.headers) !== "object") throw new Error("`headers` must be an object or null");
         if (p.headers = p.headers || {}, p.type && (typeof p.type != "string" || !Object.values(s).includes(p.type))) throw new Error("`type` must be taken from module's «contentType» library");
         if (p.progress && typeof p.progress != "function") throw new Error("`progress` must be a function or null");
         if (p.progress = p.progress || function(f) {
@@ -731,13 +741,13 @@ var Se = { exports: {} };
         return delete (p = l(p)).beforeSend, b.selectFiles(p);
       } });
       e.exports = C;
-    }, function(e, i, o) {
-      o.r(i);
-      var n = o(1);
-      window.Promise = window.Promise || n.a;
-    }, function(e, i, o) {
-      (function(n) {
-        var s = n !== void 0 && n || typeof self < "u" && self || window, a = Function.prototype.apply;
+    }, function(e, i, n) {
+      n.r(i);
+      var o = n(1);
+      window.Promise = window.Promise || o.a;
+    }, function(e, i, n) {
+      (function(o) {
+        var s = o !== void 0 && o || typeof self < "u" && self || window, a = Function.prototype.apply;
         function h(l, c) {
           this._id = l, this._clearFn = c;
         }
@@ -760,10 +770,10 @@ var Se = { exports: {} };
           c >= 0 && (l._idleTimeoutId = setTimeout(function() {
             l._onTimeout && l._onTimeout();
           }, c));
-        }, o(6), i.setImmediate = typeof self < "u" && self.setImmediate || n !== void 0 && n.setImmediate || this && this.setImmediate, i.clearImmediate = typeof self < "u" && self.clearImmediate || n !== void 0 && n.clearImmediate || this && this.clearImmediate;
-      }).call(this, o(0));
-    }, function(e, i, o) {
-      (function(n, s) {
+        }, n(6), i.setImmediate = typeof self < "u" && self.setImmediate || o !== void 0 && o.setImmediate || this && this.setImmediate, i.clearImmediate = typeof self < "u" && self.clearImmediate || o !== void 0 && o.clearImmediate || this && this.clearImmediate;
+      }).call(this, n(0));
+    }, function(e, i, n) {
+      (function(o, s) {
         (function(a, h) {
           if (!a.setImmediate) {
             var l, c, d, u, b, C = 1, p = {}, f = !1, v = a.document, y = Object.getPrototypeOf && Object.getPrototypeOf(a);
@@ -835,10 +845,10 @@ var Se = { exports: {} };
               }
             }
           }
-        })(typeof self > "u" ? n === void 0 ? this : n : self);
-      }).call(this, o(0), o(7));
+        })(typeof self > "u" ? o === void 0 ? this : o : self);
+      }).call(this, n(0), n(7));
     }, function(e, i) {
-      var o, n, s = e.exports = {};
+      var n, o, s = e.exports = {};
       function a() {
         throw new Error("setTimeout has not been defined");
       }
@@ -846,28 +856,28 @@ var Se = { exports: {} };
         throw new Error("clearTimeout has not been defined");
       }
       function l(y) {
-        if (o === setTimeout) return setTimeout(y, 0);
-        if ((o === a || !o) && setTimeout) return o = setTimeout, setTimeout(y, 0);
+        if (n === setTimeout) return setTimeout(y, 0);
+        if ((n === a || !n) && setTimeout) return n = setTimeout, setTimeout(y, 0);
         try {
-          return o(y, 0);
+          return n(y, 0);
         } catch {
           try {
-            return o.call(null, y, 0);
+            return n.call(null, y, 0);
           } catch {
-            return o.call(this, y, 0);
+            return n.call(this, y, 0);
           }
         }
       }
       (function() {
         try {
-          o = typeof setTimeout == "function" ? setTimeout : a;
+          n = typeof setTimeout == "function" ? setTimeout : a;
         } catch {
-          o = a;
+          n = a;
         }
         try {
-          n = typeof clearTimeout == "function" ? clearTimeout : h;
+          o = typeof clearTimeout == "function" ? clearTimeout : h;
         } catch {
-          n = h;
+          o = h;
         }
       })();
       var c, d = [], u = !1, b = -1;
@@ -883,15 +893,15 @@ var Se = { exports: {} };
             b = -1, w = d.length;
           }
           c = null, u = !1, function(_) {
-            if (n === clearTimeout) return clearTimeout(_);
-            if ((n === h || !n) && clearTimeout) return n = clearTimeout, clearTimeout(_);
+            if (o === clearTimeout) return clearTimeout(_);
+            if ((o === h || !o) && clearTimeout) return o = clearTimeout, clearTimeout(_);
             try {
-              n(_);
+              o(_);
             } catch {
               try {
-                return n.call(null, _);
+                return o.call(null, _);
               } catch {
-                return n.call(this, _);
+                return o.call(this, _);
               }
             }
           }(y);
@@ -919,14 +929,14 @@ var Se = { exports: {} };
       }, s.umask = function() {
         return 0;
       };
-    }, function(e, i, o) {
-      function n(a, h) {
+    }, function(e, i, n) {
+      function o(a, h) {
         for (var l = 0; l < h.length; l++) {
           var c = h[l];
           c.enumerable = c.enumerable || !1, c.configurable = !0, "value" in c && (c.writable = !0), Object.defineProperty(a, c.key, c);
         }
       }
-      var s = o(9);
+      var s = n(9);
       e.exports = function() {
         function a() {
           (function(d, u) {
@@ -970,78 +980,84 @@ var Se = { exports: {} };
             var p = C.split(": "), f = p.shift(), v = p.join(": ");
             f && (b[f] = v);
           }), b;
-        } }], (l = null) && n(h.prototype, l), c && n(h, c), a;
+        } }], (l = null) && o(h.prototype, l), c && o(h, c), a;
       }();
     }, function(e, i) {
-      var o = function(s) {
+      var n = function(s) {
         return encodeURIComponent(s).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
-      }, n = function(s, a, h, l) {
+      }, o = function(s, a, h, l) {
         return a = a || null, h = h || "&", l = l || null, s ? function(c) {
           for (var d = new Array(), u = 0; u < c.length; u++) c[u] && d.push(c[u]);
           return d;
         }(Object.keys(s).map(function(c) {
           var d, u, b = c;
-          if (l && (b = l + "[" + b + "]"), typeof s[c] == "object" && s[c] !== null) d = n(s[c], null, h, b);
+          if (l && (b = l + "[" + b + "]"), typeof s[c] == "object" && s[c] !== null) d = o(s[c], null, h, b);
           else {
             a && (u = b, b = !isNaN(parseFloat(u)) && isFinite(u) ? a + Number(b) : b);
             var C = s[c];
-            C = (C = (C = (C = C === !0 ? "1" : C) === !1 ? "0" : C) === 0 ? "0" : C) || "", d = o(b) + "=" + o(C);
+            C = (C = (C = (C = C === !0 ? "1" : C) === !1 ? "0" : C) === 0 ? "0" : C) || "", d = n(b) + "=" + n(C);
           }
           return d;
         })).join(h).replace(/[!'()*]/g, "") : "";
       };
-      e.exports = n;
+      e.exports = o;
     }]);
   });
-})(Se);
-var Ye = Se.exports;
-const ct = /* @__PURE__ */ Xe(Ye);
+})(_e);
+var Ve = _e.exports;
+const ct = /* @__PURE__ */ Ye(Ve);
 function Pt(r) {
   return r !== void 0 && typeof r.then == "function";
 }
-class Ve {
+class oe extends Error {
+}
+class Je {
   constructor({ config: t, onUpload: e, onError: i }) {
     this.config = t, this.onUpload = e, this.onError = i;
   }
   /**
    * Upload file selected from device
    */
-  uploadSelectedFile({ onPreview: t }) {
+  uploadSelectedFile({ onPreview: t, onNonImageFile: e }) {
     var o;
-    const e = (n) => {
-      const s = new FileReader();
-      s.readAsDataURL(n), s.onload = (a) => {
-        t(a.target.result);
-      }, s.onerror = () => {
+    const i = (s) => {
+      const a = new FileReader();
+      a.readAsDataURL(s), a.onload = (h) => {
+        t(h.target.result);
+      }, a.onerror = () => {
         this.onError("Failed to read file");
       };
     };
-    let i;
+    let n;
     if ((o = this.config.uploader) != null && o.uploadByFile)
-      i = ct.selectFiles({ accept: this.config.types ?? "image/*" }).then((n) => {
-        if (!n || n.length === 0)
+      n = ct.selectFiles({ accept: this.config.types ?? "image/*" }).then((s) => {
+        if (!s || s.length === 0)
           throw new Error("No file selected");
-        e(n[0]);
-        const s = this.config.uploader.uploadByFile(n[0]);
-        return Pt(s) || console.warn("Custom uploader method uploadByFile should return a Promise"), s;
+        if ((e == null ? void 0 : e(s[0])) === !0)
+          throw new oe();
+        i(s[0]);
+        const a = this.config.uploader.uploadByFile(s[0]);
+        return Pt(a) || console.warn("Custom uploader method uploadByFile should return a Promise"), a;
       });
     else {
       if (!this.config.endpoints.byFile) {
         this.onError("Upload endpoint (byFile) is not configured");
         return;
       }
-      i = ct.transport({
+      n = ct.transport({
         url: this.config.endpoints.byFile,
         data: this.config.additionalRequestData,
         accept: this.config.types ?? "image/*",
         headers: this.config.additionalRequestHeaders,
-        beforeSend: (n) => {
-          n && n.length > 0 && e(n[0]);
+        beforeSend: (s) => {
+          s && s.length > 0 && i(s[0]);
         },
         fieldName: this.config.field ?? "image"
-      }).then((n) => n.body);
+      }).then((s) => s.body);
     }
-    i.then((n) => this.onUpload(n)).catch((n) => this.onError(n));
+    n.then((s) => this.onUpload(s)).catch((s) => {
+      s instanceof oe || this.onError(s);
+    });
   }
   /**
    * Upload image by URL
@@ -1064,21 +1080,21 @@ class Ve {
         },
         type: ct.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then((o) => o.body);
+      }).then((n) => n.body);
     }
-    e.then((o) => this.onUpload(o)).catch((o) => this.onError(o));
+    e.then((n) => this.onUpload(n)).catch((n) => this.onError(n));
   }
   /**
    * Upload file from drag-n-drop or paste
    */
   uploadByFile(t, { onPreview: e }) {
     const i = new FileReader();
-    i.onload = (o) => {
+    i.onload = (n) => {
       var s;
-      e(o.target.result);
-      let n;
+      e(n.target.result);
+      let o;
       if ((s = this.config.uploader) != null && s.uploadByFile)
-        n = this.config.uploader.uploadByFile(t), Pt(n) || console.warn("Custom uploader method uploadByFile should return a Promise");
+        o = this.config.uploader.uploadByFile(t), Pt(o) || console.warn("Custom uploader method uploadByFile should return a Promise");
       else {
         if (!this.config.endpoints.byFile) {
           this.onError("Upload endpoint (byFile) is not configured");
@@ -1087,14 +1103,14 @@ class Ve {
         const a = new FormData();
         a.append(this.config.field ?? "image", t), this.config.additionalRequestData && Object.entries(this.config.additionalRequestData).forEach(([h, l]) => {
           a.append(h, l);
-        }), n = ct.post({
+        }), o = ct.post({
           url: this.config.endpoints.byFile,
           data: a,
           type: ct.contentType.JSON,
           headers: this.config.additionalRequestHeaders
         }).then((h) => h.body);
       }
-      n.then((a) => this.onUpload(a)).catch((a) => this.onError(a));
+      o.then((a) => this.onUpload(a)).catch((a) => this.onError(a));
     }, i.onerror = () => {
       this.onError("Failed to read file");
     }, i.readAsDataURL(t);
@@ -1109,28 +1125,28 @@ class Ve {
  *
  * Date: 2024-04-21T07:43:05.335Z
  */
-function oe(r, t) {
+function se(r, t) {
   var e = Object.keys(r);
   if (Object.getOwnPropertySymbols) {
     var i = Object.getOwnPropertySymbols(r);
-    t && (i = i.filter(function(o) {
-      return Object.getOwnPropertyDescriptor(r, o).enumerable;
+    t && (i = i.filter(function(n) {
+      return Object.getOwnPropertyDescriptor(r, n).enumerable;
     })), e.push.apply(e, i);
   }
   return e;
 }
-function _e(r) {
+function xe(r) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? oe(Object(e), !0).forEach(function(i) {
-      Qe(r, i, e[i]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(e)) : oe(Object(e)).forEach(function(i) {
+    t % 2 ? se(Object(e), !0).forEach(function(i) {
+      ti(r, i, e[i]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(e)) : se(Object(e)).forEach(function(i) {
       Object.defineProperty(r, i, Object.getOwnPropertyDescriptor(e, i));
     });
   }
   return r;
 }
-function Je(r, t) {
+function Ze(r, t) {
   if (typeof r != "object" || !r) return r;
   var e = r[Symbol.toPrimitive];
   if (e !== void 0) {
@@ -1140,8 +1156,8 @@ function Je(r, t) {
   }
   return String(r);
 }
-function xe(r) {
-  var t = Je(r, "string");
+function Ie(r) {
+  var t = Ze(r, "string");
   return typeof t == "symbol" ? t : t + "";
 }
 function Ft(r) {
@@ -1152,39 +1168,39 @@ function Ft(r) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
   }, Ft(r);
 }
-function Ze(r, t) {
+function Ke(r, t) {
   if (!(r instanceof t))
     throw new TypeError("Cannot call a class as a function");
 }
-function se(r, t) {
+function ae(r, t) {
   for (var e = 0; e < t.length; e++) {
     var i = t[e];
-    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, xe(i.key), i);
+    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, Ie(i.key), i);
   }
 }
-function Ke(r, t, e) {
-  return t && se(r.prototype, t), e && se(r, e), Object.defineProperty(r, "prototype", {
+function Qe(r, t, e) {
+  return t && ae(r.prototype, t), e && ae(r, e), Object.defineProperty(r, "prototype", {
     writable: !1
   }), r;
 }
-function Qe(r, t, e) {
-  return t = xe(t), t in r ? Object.defineProperty(r, t, {
+function ti(r, t, e) {
+  return t = Ie(t), t in r ? Object.defineProperty(r, t, {
     value: e,
     enumerable: !0,
     configurable: !0,
     writable: !0
   }) : r[t] = e, r;
 }
-function Ie(r) {
-  return ti(r) || ei(r) || ii(r) || ni();
-}
-function ti(r) {
-  if (Array.isArray(r)) return Ut(r);
+function Ae(r) {
+  return ei(r) || ii(r) || ni(r) || oi();
 }
 function ei(r) {
+  if (Array.isArray(r)) return Ut(r);
+}
+function ii(r) {
   if (typeof Symbol < "u" && r[Symbol.iterator] != null || r["@@iterator"] != null) return Array.from(r);
 }
-function ii(r, t) {
+function ni(r, t) {
   if (r) {
     if (typeof r == "string") return Ut(r, t);
     var e = Object.prototype.toString.call(r).slice(8, -1);
@@ -1197,11 +1213,11 @@ function Ut(r, t) {
   for (var e = 0, i = new Array(t); e < t; e++) i[e] = r[e];
   return i;
 }
-function ni() {
+function oi() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var Ot = typeof window < "u" && typeof window.document < "u", X = Ot ? window : {}, Jt = Ot && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, Zt = Ot ? "PointerEvent" in X : !1, k = "cropper", Kt = "all", Ae = "crop", Ee = "move", ke = "zoom", at = "e", rt = "w", dt = "s", K = "n", yt = "ne", bt = "nw", Ct = "se", wt = "sw", zt = "".concat(k, "-crop"), ae = "".concat(k, "-disabled"), B = "".concat(k, "-hidden"), re = "".concat(k, "-hide"), oi = "".concat(k, "-invisible"), Dt = "".concat(k, "-modal"), jt = "".concat(k, "-move"), _t = "".concat(k, "Action"), Et = "".concat(k, "Preview"), Qt = "crop", Re = "move", De = "none", $t = "crop", Wt = "cropend", qt = "cropmove", Xt = "cropstart", le = "dblclick", si = Jt ? "touchstart" : "mousedown", ai = Jt ? "touchmove" : "mousemove", ri = Jt ? "touchend touchcancel" : "mouseup", he = Zt ? "pointerdown" : si, ce = Zt ? "pointermove" : ai, de = Zt ? "pointerup pointercancel" : ri, ue = "ready", pe = "resize", fe = "wheel", Yt = "zoom", me = "image/jpeg", li = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, hi = /^data:/, ci = /^data:image\/jpeg;base64,/, di = /^img|canvas$/i, Oe = 200, Te = 100, ge = {
+var Ot = typeof window < "u" && typeof window.document < "u", X = Ot ? window : {}, Jt = Ot && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, Zt = Ot ? "PointerEvent" in X : !1, k = "cropper", Kt = "all", Ee = "crop", ke = "move", Re = "zoom", at = "e", rt = "w", dt = "s", K = "n", yt = "ne", bt = "nw", Ct = "se", wt = "sw", zt = "".concat(k, "-crop"), re = "".concat(k, "-disabled"), B = "".concat(k, "-hidden"), le = "".concat(k, "-hide"), si = "".concat(k, "-invisible"), Dt = "".concat(k, "-modal"), jt = "".concat(k, "-move"), _t = "".concat(k, "Action"), Et = "".concat(k, "Preview"), Qt = "crop", De = "move", Oe = "none", $t = "crop", Wt = "cropend", qt = "cropmove", Xt = "cropstart", he = "dblclick", ai = Jt ? "touchstart" : "mousedown", ri = Jt ? "touchmove" : "mousemove", li = Jt ? "touchend touchcancel" : "mouseup", ce = Zt ? "pointerdown" : ai, de = Zt ? "pointermove" : ri, ue = Zt ? "pointerup pointercancel" : li, pe = "ready", fe = "resize", me = "wheel", Yt = "zoom", ge = "image/jpeg", hi = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, ci = /^data:/, di = /^data:image\/jpeg;base64,/, ui = /^img|canvas$/i, Te = 200, Me = 100, ve = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
@@ -1263,8 +1279,8 @@ var Ot = typeof window < "u" && typeof window.document < "u", X = Ot ? window : 
   minCanvasHeight: 0,
   minCropBoxWidth: 0,
   minCropBoxHeight: 0,
-  minContainerWidth: Oe,
-  minContainerHeight: Te,
+  minContainerWidth: Te,
+  minContainerHeight: Me,
   // Shortcuts of events
   ready: null,
   cropstart: null,
@@ -1272,11 +1288,11 @@ var Ot = typeof window < "u" && typeof window.document < "u", X = Ot ? window : 
   cropend: null,
   crop: null,
   zoom: null
-}, ui = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', pi = Number.isNaN || X.isNaN;
+}, pi = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', fi = Number.isNaN || X.isNaN;
 function A(r) {
-  return typeof r == "number" && !pi(r);
+  return typeof r == "number" && !fi(r);
 }
-var ve = function(t) {
+var ye = function(t) {
   return t > 0 && t < 1 / 0;
 };
 function Bt(r) {
@@ -1285,13 +1301,13 @@ function Bt(r) {
 function lt(r) {
   return Ft(r) === "object" && r !== null;
 }
-var fi = Object.prototype.hasOwnProperty;
+var mi = Object.prototype.hasOwnProperty;
 function ut(r) {
   if (!lt(r))
     return !1;
   try {
     var t = r.constructor, e = t.prototype;
-    return t && e && fi.call(e, "isPrototypeOf");
+    return t && e && mi.call(e, "isPrototypeOf");
   } catch {
     return !1;
   }
@@ -1299,38 +1315,38 @@ function ut(r) {
 function P(r) {
   return typeof r == "function";
 }
-var mi = Array.prototype.slice;
-function Me(r) {
-  return Array.from ? Array.from(r) : mi.call(r);
+var gi = Array.prototype.slice;
+function Le(r) {
+  return Array.from ? Array.from(r) : gi.call(r);
 }
 function D(r, t) {
-  return r && P(t) && (Array.isArray(r) || A(r.length) ? Me(r).forEach(function(e, i) {
+  return r && P(t) && (Array.isArray(r) || A(r.length) ? Le(r).forEach(function(e, i) {
     t.call(r, e, i, r);
   }) : lt(r) && Object.keys(r).forEach(function(e) {
     t.call(r, r[e], e, r);
   })), r;
 }
 var R = Object.assign || function(t) {
-  for (var e = arguments.length, i = new Array(e > 1 ? e - 1 : 0), o = 1; o < e; o++)
-    i[o - 1] = arguments[o];
-  return lt(t) && i.length > 0 && i.forEach(function(n) {
-    lt(n) && Object.keys(n).forEach(function(s) {
-      t[s] = n[s];
+  for (var e = arguments.length, i = new Array(e > 1 ? e - 1 : 0), n = 1; n < e; n++)
+    i[n - 1] = arguments[n];
+  return lt(t) && i.length > 0 && i.forEach(function(o) {
+    lt(o) && Object.keys(o).forEach(function(s) {
+      t[s] = o[s];
     });
   }), t;
-}, gi = /\.\d*(?:0|9){12}\d*$/;
+}, vi = /\.\d*(?:0|9){12}\d*$/;
 function ft(r) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
-  return gi.test(r) ? Math.round(r * t) / t : r;
+  return vi.test(r) ? Math.round(r * t) / t : r;
 }
-var vi = /^width|height|left|top|marginLeft|marginTop$/;
+var yi = /^width|height|left|top|marginLeft|marginTop$/;
 function tt(r, t) {
   var e = r.style;
-  D(t, function(i, o) {
-    vi.test(o) && A(i) && (i = "".concat(i, "px")), e[o] = i;
+  D(t, function(i, n) {
+    yi.test(n) && A(i) && (i = "".concat(i, "px")), e[n] = i;
   });
 }
-function yi(r, t) {
+function bi(r, t) {
   return r.classList ? r.classList.contains(t) : r.className.indexOf(t) > -1;
 }
 function T(r, t) {
@@ -1375,9 +1391,9 @@ function pt(r, t, e) {
     e ? T(r, t) : q(r, t);
   }
 }
-var bi = /([a-z\d])([A-Z])/g;
+var Ci = /([a-z\d])([A-Z])/g;
 function te(r) {
-  return r.replace(bi, "$1-$2").toLowerCase();
+  return r.replace(Ci, "$1-$2").toLowerCase();
 }
 function Vt(r, t) {
   return lt(r[t]) ? r[t] : r.dataset ? r.dataset[t] : r.getAttribute("data-".concat(te(t)));
@@ -1385,7 +1401,7 @@ function Vt(r, t) {
 function xt(r, t, e) {
   lt(e) ? r[t] = e : r.dataset ? r.dataset[t] = e : r.setAttribute("data-".concat(te(t)), e);
 }
-function Ci(r, t) {
+function wi(r, t) {
   if (lt(r[t]))
     try {
       delete r[t];
@@ -1401,7 +1417,7 @@ function Ci(r, t) {
   else
     r.removeAttribute("data-".concat(te(t)));
 }
-var Le = /\s\s*/, Pe = function() {
+var Pe = /\s\s*/, Be = function() {
   var r = !1;
   if (Ot) {
     var t = !1, e = function() {
@@ -1414,8 +1430,8 @@ var Le = /\s\s*/, Pe = function() {
        * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Getter_only}
        * @param {boolean} value - The value to set
        */
-      set: function(n) {
-        t = n;
+      set: function(o) {
+        t = o;
       }
     });
     X.addEventListener("test", e, i), X.removeEventListener("test", e, i);
@@ -1423,28 +1439,28 @@ var Le = /\s\s*/, Pe = function() {
   return r;
 }();
 function F(r, t, e) {
-  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, o = e;
-  t.trim().split(Le).forEach(function(n) {
-    if (!Pe) {
+  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = e;
+  t.trim().split(Pe).forEach(function(o) {
+    if (!Be) {
       var s = r.listeners;
-      s && s[n] && s[n][e] && (o = s[n][e], delete s[n][e], Object.keys(s[n]).length === 0 && delete s[n], Object.keys(s).length === 0 && delete r.listeners);
+      s && s[o] && s[o][e] && (n = s[o][e], delete s[o][e], Object.keys(s[o]).length === 0 && delete s[o], Object.keys(s).length === 0 && delete r.listeners);
     }
-    r.removeEventListener(n, o, i);
+    r.removeEventListener(o, n, i);
   });
 }
 function H(r, t, e) {
-  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, o = e;
-  t.trim().split(Le).forEach(function(n) {
-    if (i.once && !Pe) {
+  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = e;
+  t.trim().split(Pe).forEach(function(o) {
+    if (i.once && !Be) {
       var s = r.listeners, a = s === void 0 ? {} : s;
-      o = function() {
-        delete a[n][e], r.removeEventListener(n, o, i);
+      n = function() {
+        delete a[o][e], r.removeEventListener(o, n, i);
         for (var l = arguments.length, c = new Array(l), d = 0; d < l; d++)
           c[d] = arguments[d];
         e.apply(r, c);
-      }, a[n] || (a[n] = {}), a[n][e] && r.removeEventListener(n, a[n][e], i), a[n][e] = o, r.listeners = a;
+      }, a[o] || (a[o] = {}), a[o][e] && r.removeEventListener(o, a[o][e], i), a[o][e] = n, r.listeners = a;
     }
-    r.addEventListener(n, o, i);
+    r.addEventListener(o, n, i);
   });
 }
 function mt(r, t, e) {
@@ -1455,25 +1471,25 @@ function mt(r, t, e) {
     cancelable: !0
   }) : (i = document.createEvent("CustomEvent"), i.initCustomEvent(t, !0, !0, e)), r.dispatchEvent(i);
 }
-function Be(r) {
+function Ne(r) {
   var t = r.getBoundingClientRect();
   return {
     left: t.left + (window.pageXOffset - document.documentElement.clientLeft),
     top: t.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
-var Nt = X.location, wi = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
-function ye(r) {
-  var t = r.match(wi);
+var Nt = X.location, Si = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
+function be(r) {
+  var t = r.match(Si);
   return t !== null && (t[1] !== Nt.protocol || t[2] !== Nt.hostname || t[3] !== Nt.port);
 }
-function be(r) {
+function Ce(r) {
   var t = "timestamp=".concat((/* @__PURE__ */ new Date()).getTime());
   return r + (r.indexOf("?") === -1 ? "?" : "&") + t;
 }
 function St(r) {
-  var t = r.rotate, e = r.scaleX, i = r.scaleY, o = r.translateX, n = r.translateY, s = [];
-  A(o) && o !== 0 && s.push("translateX(".concat(o, "px)")), A(n) && n !== 0 && s.push("translateY(".concat(n, "px)")), A(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), A(e) && e !== 1 && s.push("scaleX(".concat(e, ")")), A(i) && i !== 1 && s.push("scaleY(".concat(i, ")"));
+  var t = r.rotate, e = r.scaleX, i = r.scaleY, n = r.translateX, o = r.translateY, s = [];
+  A(n) && n !== 0 && s.push("translateX(".concat(n, "px)")), A(o) && o !== 0 && s.push("translateY(".concat(o, "px)")), A(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), A(e) && e !== 1 && s.push("scaleX(".concat(e, ")")), A(i) && i !== 1 && s.push("scaleY(".concat(i, ")"));
   var a = s.length ? s.join(" ") : "none";
   return {
     WebkitTransform: a,
@@ -1481,54 +1497,54 @@ function St(r) {
     transform: a
   };
 }
-function Si(r) {
-  var t = _e({}, r), e = 0;
-  return D(r, function(i, o) {
-    delete t[o], D(t, function(n) {
-      var s = Math.abs(i.startX - n.startX), a = Math.abs(i.startY - n.startY), h = Math.abs(i.endX - n.endX), l = Math.abs(i.endY - n.endY), c = Math.sqrt(s * s + a * a), d = Math.sqrt(h * h + l * l), u = (d - c) / c;
+function _i(r) {
+  var t = xe({}, r), e = 0;
+  return D(r, function(i, n) {
+    delete t[n], D(t, function(o) {
+      var s = Math.abs(i.startX - o.startX), a = Math.abs(i.startY - o.startY), h = Math.abs(i.endX - o.endX), l = Math.abs(i.endY - o.endY), c = Math.sqrt(s * s + a * a), d = Math.sqrt(h * h + l * l), u = (d - c) / c;
       Math.abs(u) > Math.abs(e) && (e = u);
     });
   }), e;
 }
 function kt(r, t) {
-  var e = r.pageX, i = r.pageY, o = {
+  var e = r.pageX, i = r.pageY, n = {
     endX: e,
     endY: i
   };
-  return t ? o : _e({
+  return t ? n : xe({
     startX: e,
     startY: i
-  }, o);
+  }, n);
 }
-function _i(r) {
+function xi(r) {
   var t = 0, e = 0, i = 0;
-  return D(r, function(o) {
-    var n = o.startX, s = o.startY;
-    t += n, e += s, i += 1;
+  return D(r, function(n) {
+    var o = n.startX, s = n.startY;
+    t += o, e += s, i += 1;
   }), t /= i, e /= i, {
     pageX: t,
     pageY: e
   };
 }
 function et(r) {
-  var t = r.aspectRatio, e = r.height, i = r.width, o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", n = ve(i), s = ve(e);
-  if (n && s) {
+  var t = r.aspectRatio, e = r.height, i = r.width, n = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", o = ye(i), s = ye(e);
+  if (o && s) {
     var a = e * t;
-    o === "contain" && a > i || o === "cover" && a < i ? e = i / t : i = e * t;
-  } else n ? e = i / t : s && (i = e * t);
+    n === "contain" && a > i || n === "cover" && a < i ? e = i / t : i = e * t;
+  } else o ? e = i / t : s && (i = e * t);
   return {
     width: i,
     height: e
   };
 }
-function xi(r) {
+function Ii(r) {
   var t = r.width, e = r.height, i = r.degree;
   if (i = Math.abs(i) % 180, i === 90)
     return {
       width: e,
       height: t
     };
-  var o = i % 90 * Math.PI / 180, n = Math.sin(o), s = Math.cos(o), a = t * s + e * n, h = t * n + e * s;
+  var n = i % 90 * Math.PI / 180, o = Math.sin(n), s = Math.cos(n), a = t * s + e * o, h = t * o + e * s;
   return i > 90 ? {
     width: h,
     height: a
@@ -1537,8 +1553,8 @@ function xi(r) {
     height: h
   };
 }
-function Ii(r, t, e, i) {
-  var o = t.aspectRatio, n = t.naturalWidth, s = t.naturalHeight, a = t.rotate, h = a === void 0 ? 0 : a, l = t.scaleX, c = l === void 0 ? 1 : l, d = t.scaleY, u = d === void 0 ? 1 : d, b = e.aspectRatio, C = e.naturalWidth, p = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, y = i.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = i.imageSmoothingQuality, S = _ === void 0 ? "low" : _, m = i.maxWidth, x = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, M = i.minWidth, z = M === void 0 ? 0 : M, j = i.minHeight, L = j === void 0 ? 0 : j, N = document.createElement("canvas"), O = N.getContext("2d"), G = et({
+function Ai(r, t, e, i) {
+  var n = t.aspectRatio, o = t.naturalWidth, s = t.naturalHeight, a = t.rotate, h = a === void 0 ? 0 : a, l = t.scaleX, c = l === void 0 ? 1 : l, d = t.scaleY, u = d === void 0 ? 1 : d, b = e.aspectRatio, C = e.naturalWidth, p = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, y = i.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = i.imageSmoothingQuality, S = _ === void 0 ? "low" : _, m = i.maxWidth, x = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, M = i.minWidth, z = M === void 0 ? 0 : M, j = i.minHeight, L = j === void 0 ? 0 : j, N = document.createElement("canvas"), O = N.getContext("2d"), G = et({
     aspectRatio: b,
     width: x,
     height: E
@@ -1547,64 +1563,64 @@ function Ii(r, t, e, i) {
     width: z,
     height: L
   }, "cover"), Y = Math.min(G.width, Math.max($.width, C)), it = Math.min(G.height, Math.max($.height, p)), V = et({
-    aspectRatio: o,
+    aspectRatio: n,
     width: x,
     height: E
   }), ht = et({
-    aspectRatio: o,
+    aspectRatio: n,
     width: z,
     height: L
-  }, "cover"), nt = Math.min(V.width, Math.max(ht.width, n)), ot = Math.min(V.height, Math.max(ht.height, s)), gt = [-nt / 2, -ot / 2, nt, ot];
-  return N.width = ft(Y), N.height = ft(it), O.fillStyle = v, O.fillRect(0, 0, Y, it), O.save(), O.translate(Y / 2, it / 2), O.rotate(h * Math.PI / 180), O.scale(c, u), O.imageSmoothingEnabled = w, O.imageSmoothingQuality = S, O.drawImage.apply(O, [r].concat(Ie(gt.map(function(W) {
+  }, "cover"), nt = Math.min(V.width, Math.max(ht.width, o)), ot = Math.min(V.height, Math.max(ht.height, s)), gt = [-nt / 2, -ot / 2, nt, ot];
+  return N.width = ft(Y), N.height = ft(it), O.fillStyle = v, O.fillRect(0, 0, Y, it), O.save(), O.translate(Y / 2, it / 2), O.rotate(h * Math.PI / 180), O.scale(c, u), O.imageSmoothingEnabled = w, O.imageSmoothingQuality = S, O.drawImage.apply(O, [r].concat(Ae(gt.map(function(W) {
     return Math.floor(ft(W));
   })))), O.restore(), N;
 }
-var Ne = String.fromCharCode;
-function Ai(r, t, e) {
+var Ge = String.fromCharCode;
+function Ei(r, t, e) {
   var i = "";
   e += t;
-  for (var o = t; o < e; o += 1)
-    i += Ne(r.getUint8(o));
+  for (var n = t; n < e; n += 1)
+    i += Ge(r.getUint8(n));
   return i;
 }
-var Ei = /^data:.*,/;
-function ki(r) {
-  var t = r.replace(Ei, ""), e = atob(t), i = new ArrayBuffer(e.length), o = new Uint8Array(i);
-  return D(o, function(n, s) {
-    o[s] = e.charCodeAt(s);
+var ki = /^data:.*,/;
+function Ri(r) {
+  var t = r.replace(ki, ""), e = atob(t), i = new ArrayBuffer(e.length), n = new Uint8Array(i);
+  return D(n, function(o, s) {
+    n[s] = e.charCodeAt(s);
   }), i;
 }
-function Ri(r, t) {
-  for (var e = [], i = 8192, o = new Uint8Array(r); o.length > 0; )
-    e.push(Ne.apply(null, Me(o.subarray(0, i)))), o = o.subarray(i);
+function Di(r, t) {
+  for (var e = [], i = 8192, n = new Uint8Array(r); n.length > 0; )
+    e.push(Ge.apply(null, Le(n.subarray(0, i)))), n = n.subarray(i);
   return "data:".concat(t, ";base64,").concat(btoa(e.join("")));
 }
-function Di(r) {
+function Oi(r) {
   var t = new DataView(r), e;
   try {
-    var i, o, n;
+    var i, n, o;
     if (t.getUint8(0) === 255 && t.getUint8(1) === 216)
       for (var s = t.byteLength, a = 2; a + 1 < s; ) {
         if (t.getUint8(a) === 255 && t.getUint8(a + 1) === 225) {
-          o = a;
+          n = a;
           break;
         }
         a += 1;
       }
-    if (o) {
-      var h = o + 4, l = o + 10;
-      if (Ai(t, h, 4) === "Exif") {
+    if (n) {
+      var h = n + 4, l = n + 10;
+      if (Ei(t, h, 4) === "Exif") {
         var c = t.getUint16(l);
         if (i = c === 18761, (i || c === 19789) && t.getUint16(l + 2, i) === 42) {
           var d = t.getUint32(l + 4, i);
-          d >= 8 && (n = l + d);
+          d >= 8 && (o = l + d);
         }
       }
     }
-    if (n) {
-      var u = t.getUint16(n, i), b, C;
+    if (o) {
+      var u = t.getUint16(o, i), b, C;
       for (C = 0; C < u; C += 1)
-        if (b = n + C * 12 + 2, t.getUint16(b, i) === 274) {
+        if (b = o + C * 12 + 2, t.getUint16(b, i) === 274) {
           b += 8, e = t.getUint16(b, i), t.setUint16(b, 1, i);
           break;
         }
@@ -1614,7 +1630,7 @@ function Di(r) {
   }
   return e;
 }
-function Oi(r) {
+function Ti(r) {
   var t = 0, e = 1, i = 1;
   switch (r) {
     case 2:
@@ -1645,29 +1661,29 @@ function Oi(r) {
     scaleY: i
   };
 }
-var Ti = {
+var Mi = {
   render: function() {
     this.initContainer(), this.initCanvas(), this.initCropBox(), this.renderCanvas(), this.cropped && this.renderCropBox();
   },
   initContainer: function() {
-    var t = this.element, e = this.options, i = this.container, o = this.cropper, n = Number(e.minContainerWidth), s = Number(e.minContainerHeight);
-    T(o, B), q(t, B);
+    var t = this.element, e = this.options, i = this.container, n = this.cropper, o = Number(e.minContainerWidth), s = Number(e.minContainerHeight);
+    T(n, B), q(t, B);
     var a = {
-      width: Math.max(i.offsetWidth, n >= 0 ? n : Oe),
-      height: Math.max(i.offsetHeight, s >= 0 ? s : Te)
+      width: Math.max(i.offsetWidth, o >= 0 ? o : Te),
+      height: Math.max(i.offsetHeight, s >= 0 ? s : Me)
     };
-    this.containerData = a, tt(o, {
+    this.containerData = a, tt(n, {
       width: a.width,
       height: a.height
-    }), T(t, B), q(o, B);
+    }), T(t, B), q(n, B);
   },
   // Canvas (image wrapper)
   initCanvas: function() {
-    var t = this.containerData, e = this.imageData, i = this.options.viewMode, o = Math.abs(e.rotate) % 180 === 90, n = o ? e.naturalHeight : e.naturalWidth, s = o ? e.naturalWidth : e.naturalHeight, a = n / s, h = t.width, l = t.height;
+    var t = this.containerData, e = this.imageData, i = this.options.viewMode, n = Math.abs(e.rotate) % 180 === 90, o = n ? e.naturalHeight : e.naturalWidth, s = n ? e.naturalWidth : e.naturalHeight, a = o / s, h = t.width, l = t.height;
     t.height * a > t.width ? i === 3 ? h = t.height * a : l = t.width / a : i === 3 ? l = t.width / a : h = t.height * a;
     var c = {
       aspectRatio: a,
-      naturalWidth: n,
+      naturalWidth: o,
       naturalHeight: s,
       width: h,
       height: l
@@ -1675,32 +1691,32 @@ var Ti = {
     this.canvasData = c, this.limited = i === 1 || i === 2, this.limitCanvas(!0, !0), c.width = Math.min(Math.max(c.width, c.minWidth), c.maxWidth), c.height = Math.min(Math.max(c.height, c.minHeight), c.maxHeight), c.left = (t.width - c.width) / 2, c.top = (t.height - c.height) / 2, c.oldLeft = c.left, c.oldTop = c.top, this.initialCanvasData = R({}, c);
   },
   limitCanvas: function(t, e) {
-    var i = this.options, o = this.containerData, n = this.canvasData, s = this.cropBoxData, a = i.viewMode, h = n.aspectRatio, l = this.cropped && s;
+    var i = this.options, n = this.containerData, o = this.canvasData, s = this.cropBoxData, a = i.viewMode, h = o.aspectRatio, l = this.cropped && s;
     if (t) {
       var c = Number(i.minCanvasWidth) || 0, d = Number(i.minCanvasHeight) || 0;
-      a > 1 ? (c = Math.max(c, o.width), d = Math.max(d, o.height), a === 3 && (d * h > c ? c = d * h : d = c / h)) : a > 0 && (c ? c = Math.max(c, l ? s.width : 0) : d ? d = Math.max(d, l ? s.height : 0) : l && (c = s.width, d = s.height, d * h > c ? c = d * h : d = c / h));
+      a > 1 ? (c = Math.max(c, n.width), d = Math.max(d, n.height), a === 3 && (d * h > c ? c = d * h : d = c / h)) : a > 0 && (c ? c = Math.max(c, l ? s.width : 0) : d ? d = Math.max(d, l ? s.height : 0) : l && (c = s.width, d = s.height, d * h > c ? c = d * h : d = c / h));
       var u = et({
         aspectRatio: h,
         width: c,
         height: d
       });
-      c = u.width, d = u.height, n.minWidth = c, n.minHeight = d, n.maxWidth = 1 / 0, n.maxHeight = 1 / 0;
+      c = u.width, d = u.height, o.minWidth = c, o.minHeight = d, o.maxWidth = 1 / 0, o.maxHeight = 1 / 0;
     }
     if (e)
       if (a > (l ? 0 : 1)) {
-        var b = o.width - n.width, C = o.height - n.height;
-        n.minLeft = Math.min(0, b), n.minTop = Math.min(0, C), n.maxLeft = Math.max(0, b), n.maxTop = Math.max(0, C), l && this.limited && (n.minLeft = Math.min(s.left, s.left + (s.width - n.width)), n.minTop = Math.min(s.top, s.top + (s.height - n.height)), n.maxLeft = s.left, n.maxTop = s.top, a === 2 && (n.width >= o.width && (n.minLeft = Math.min(0, b), n.maxLeft = Math.max(0, b)), n.height >= o.height && (n.minTop = Math.min(0, C), n.maxTop = Math.max(0, C))));
+        var b = n.width - o.width, C = n.height - o.height;
+        o.minLeft = Math.min(0, b), o.minTop = Math.min(0, C), o.maxLeft = Math.max(0, b), o.maxTop = Math.max(0, C), l && this.limited && (o.minLeft = Math.min(s.left, s.left + (s.width - o.width)), o.minTop = Math.min(s.top, s.top + (s.height - o.height)), o.maxLeft = s.left, o.maxTop = s.top, a === 2 && (o.width >= n.width && (o.minLeft = Math.min(0, b), o.maxLeft = Math.max(0, b)), o.height >= n.height && (o.minTop = Math.min(0, C), o.maxTop = Math.max(0, C))));
       } else
-        n.minLeft = -n.width, n.minTop = -n.height, n.maxLeft = o.width, n.maxTop = o.height;
+        o.minLeft = -o.width, o.minTop = -o.height, o.maxLeft = n.width, o.maxTop = n.height;
   },
   renderCanvas: function(t, e) {
-    var i = this.canvasData, o = this.imageData;
+    var i = this.canvasData, n = this.imageData;
     if (e) {
-      var n = xi({
-        width: o.naturalWidth * Math.abs(o.scaleX || 1),
-        height: o.naturalHeight * Math.abs(o.scaleY || 1),
-        degree: o.rotate || 0
-      }), s = n.width, a = n.height, h = i.width * (s / i.naturalWidth), l = i.height * (a / i.naturalHeight);
+      var o = Ii({
+        width: n.naturalWidth * Math.abs(n.scaleX || 1),
+        height: n.naturalHeight * Math.abs(n.scaleY || 1),
+        degree: n.rotate || 0
+      }), s = o.width, a = o.height, h = i.width * (s / i.naturalWidth), l = i.height * (a / i.naturalHeight);
       i.left -= (h - i.width) / 2, i.top -= (l - i.height) / 2, i.width = h, i.height = l, i.aspectRatio = s / a, i.naturalWidth = s, i.naturalHeight = a, this.limitCanvas(!0, !1);
     }
     (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, tt(this.canvas, R({
@@ -1712,12 +1728,12 @@ var Ti = {
     }))), this.renderImage(t), this.cropped && this.limited && this.limitCropBox(!0, !0);
   },
   renderImage: function(t) {
-    var e = this.canvasData, i = this.imageData, o = i.naturalWidth * (e.width / e.naturalWidth), n = i.naturalHeight * (e.height / e.naturalHeight);
+    var e = this.canvasData, i = this.imageData, n = i.naturalWidth * (e.width / e.naturalWidth), o = i.naturalHeight * (e.height / e.naturalHeight);
     R(i, {
-      width: o,
-      height: n,
-      left: (e.width - o) / 2,
-      top: (e.height - n) / 2
+      width: n,
+      height: o,
+      left: (e.width - n) / 2,
+      top: (e.height - o) / 2
     }), tt(this.image, R({
       width: i.width,
       height: i.height
@@ -1727,23 +1743,23 @@ var Ti = {
     }, i)))), t && this.output();
   },
   initCropBox: function() {
-    var t = this.options, e = this.canvasData, i = t.aspectRatio || t.initialAspectRatio, o = Number(t.autoCropArea) || 0.8, n = {
+    var t = this.options, e = this.canvasData, i = t.aspectRatio || t.initialAspectRatio, n = Number(t.autoCropArea) || 0.8, o = {
       width: e.width,
       height: e.height
     };
-    i && (e.height * i > e.width ? n.height = n.width / i : n.width = n.height * i), this.cropBoxData = n, this.limitCropBox(!0, !0), n.width = Math.min(Math.max(n.width, n.minWidth), n.maxWidth), n.height = Math.min(Math.max(n.height, n.minHeight), n.maxHeight), n.width = Math.max(n.minWidth, n.width * o), n.height = Math.max(n.minHeight, n.height * o), n.left = e.left + (e.width - n.width) / 2, n.top = e.top + (e.height - n.height) / 2, n.oldLeft = n.left, n.oldTop = n.top, this.initialCropBoxData = R({}, n);
+    i && (e.height * i > e.width ? o.height = o.width / i : o.width = o.height * i), this.cropBoxData = o, this.limitCropBox(!0, !0), o.width = Math.min(Math.max(o.width, o.minWidth), o.maxWidth), o.height = Math.min(Math.max(o.height, o.minHeight), o.maxHeight), o.width = Math.max(o.minWidth, o.width * n), o.height = Math.max(o.minHeight, o.height * n), o.left = e.left + (e.width - o.width) / 2, o.top = e.top + (e.height - o.height) / 2, o.oldLeft = o.left, o.oldTop = o.top, this.initialCropBoxData = R({}, o);
   },
   limitCropBox: function(t, e) {
-    var i = this.options, o = this.containerData, n = this.canvasData, s = this.cropBoxData, a = this.limited, h = i.aspectRatio;
+    var i = this.options, n = this.containerData, o = this.canvasData, s = this.cropBoxData, a = this.limited, h = i.aspectRatio;
     if (t) {
-      var l = Number(i.minCropBoxWidth) || 0, c = Number(i.minCropBoxHeight) || 0, d = a ? Math.min(o.width, n.width, n.width + n.left, o.width - n.left) : o.width, u = a ? Math.min(o.height, n.height, n.height + n.top, o.height - n.top) : o.height;
-      l = Math.min(l, o.width), c = Math.min(c, o.height), h && (l && c ? c * h > l ? c = l / h : l = c * h : l ? c = l / h : c && (l = c * h), u * h > d ? u = d / h : d = u * h), s.minWidth = Math.min(l, d), s.minHeight = Math.min(c, u), s.maxWidth = d, s.maxHeight = u;
+      var l = Number(i.minCropBoxWidth) || 0, c = Number(i.minCropBoxHeight) || 0, d = a ? Math.min(n.width, o.width, o.width + o.left, n.width - o.left) : n.width, u = a ? Math.min(n.height, o.height, o.height + o.top, n.height - o.top) : n.height;
+      l = Math.min(l, n.width), c = Math.min(c, n.height), h && (l && c ? c * h > l ? c = l / h : l = c * h : l ? c = l / h : c && (l = c * h), u * h > d ? u = d / h : d = u * h), s.minWidth = Math.min(l, d), s.minHeight = Math.min(c, u), s.maxWidth = d, s.maxHeight = u;
     }
-    e && (a ? (s.minLeft = Math.max(0, n.left), s.minTop = Math.max(0, n.top), s.maxLeft = Math.min(o.width, n.left + n.width) - s.width, s.maxTop = Math.min(o.height, n.top + n.height) - s.height) : (s.minLeft = 0, s.minTop = 0, s.maxLeft = o.width - s.width, s.maxTop = o.height - s.height));
+    e && (a ? (s.minLeft = Math.max(0, o.left), s.minTop = Math.max(0, o.top), s.maxLeft = Math.min(n.width, o.left + o.width) - s.width, s.maxTop = Math.min(n.height, o.top + o.height) - s.height) : (s.minLeft = 0, s.minTop = 0, s.maxLeft = n.width - s.width, s.maxTop = n.height - s.height));
   },
   renderCropBox: function() {
     var t = this.options, e = this.containerData, i = this.cropBoxData;
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && xt(this.face, _t, i.width >= e.width && i.height >= e.height ? Ee : Kt), tt(this.cropBox, R({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && xt(this.face, _t, i.width >= e.width && i.height >= e.height ? ke : Kt), tt(this.cropBox, R({
       width: i.width,
       height: i.height
     }, St({
@@ -1754,10 +1770,10 @@ var Ti = {
   output: function() {
     this.preview(), mt(this.element, $t, this.getData());
   }
-}, Mi = {
+}, Li = {
   initPreview: function() {
-    var t = this.element, e = this.crossOrigin, i = this.options.preview, o = e ? this.crossOriginUrl : this.url, n = t.alt || "The image to preview", s = document.createElement("img");
-    if (e && (s.crossOrigin = e), s.src = o, s.alt = n, this.viewBox.appendChild(s), this.viewBoxImage = s, !!i) {
+    var t = this.element, e = this.crossOrigin, i = this.options.preview, n = e ? this.crossOriginUrl : this.url, o = t.alt || "The image to preview", s = document.createElement("img");
+    if (e && (s.crossOrigin = e), s.src = n, s.alt = o, this.viewBox.appendChild(s), this.viewBoxImage = s, !!i) {
       var a = i;
       typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, D(a, function(h) {
         var l = document.createElement("img");
@@ -1765,7 +1781,7 @@ var Ti = {
           width: h.offsetWidth,
           height: h.offsetHeight,
           html: h.innerHTML
-        }), e && (l.crossOrigin = e), l.src = o, l.alt = n, l.style.cssText = 'display:block;width:100%;height:auto;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation:0deg!important;"', h.innerHTML = "", h.appendChild(l);
+        }), e && (l.crossOrigin = e), l.src = n, l.alt = o, l.style.cssText = 'display:block;width:100%;height:auto;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation:0deg!important;"', h.innerHTML = "", h.appendChild(l);
       });
     }
   },
@@ -1775,11 +1791,11 @@ var Ti = {
       tt(t, {
         width: e.width,
         height: e.height
-      }), t.innerHTML = e.html, Ci(t, Et);
+      }), t.innerHTML = e.html, wi(t, Et);
     });
   },
   preview: function() {
-    var t = this.imageData, e = this.canvasData, i = this.cropBoxData, o = i.width, n = i.height, s = t.width, a = t.height, h = i.left - e.left - t.left, l = i.top - e.top - t.top;
+    var t = this.imageData, e = this.canvasData, i = this.cropBoxData, n = i.width, o = i.height, s = t.width, a = t.height, h = i.left - e.left - t.left, l = i.top - e.top - t.top;
     !this.cropped || this.disabled || (tt(this.viewBoxImage, R({
       width: s,
       height: a
@@ -1788,7 +1804,7 @@ var Ti = {
       translateY: -l
     }, t)))), D(this.previews, function(c) {
       var d = Vt(c, Et), u = d.width, b = d.height, C = u, p = b, f = 1;
-      o && (f = u / o, p = n * f), n && p > b && (f = b / n, C = o * f, p = b), tt(c, {
+      n && (f = u / n, p = o * f), o && p > b && (f = b / o, C = n * f, p = b), tt(c, {
         width: C,
         height: p
       }), tt(c.getElementsByTagName("img")[0], R({
@@ -1800,25 +1816,25 @@ var Ti = {
       }, t))));
     }));
   }
-}, Li = {
+}, Pi = {
   bind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    P(e.cropstart) && H(t, Xt, e.cropstart), P(e.cropmove) && H(t, qt, e.cropmove), P(e.cropend) && H(t, Wt, e.cropend), P(e.crop) && H(t, $t, e.crop), P(e.zoom) && H(t, Yt, e.zoom), H(i, he, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && H(i, fe, this.onWheel = this.wheel.bind(this), {
+    P(e.cropstart) && H(t, Xt, e.cropstart), P(e.cropmove) && H(t, qt, e.cropmove), P(e.cropend) && H(t, Wt, e.cropend), P(e.crop) && H(t, $t, e.crop), P(e.zoom) && H(t, Yt, e.zoom), H(i, ce, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && H(i, me, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && H(i, le, this.onDblclick = this.dblclick.bind(this)), H(t.ownerDocument, ce, this.onCropMove = this.cropMove.bind(this)), H(t.ownerDocument, de, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && H(window, pe, this.onResize = this.resize.bind(this));
+    }), e.toggleDragModeOnDblclick && H(i, he, this.onDblclick = this.dblclick.bind(this)), H(t.ownerDocument, de, this.onCropMove = this.cropMove.bind(this)), H(t.ownerDocument, ue, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && H(window, fe, this.onResize = this.resize.bind(this));
   },
   unbind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    P(e.cropstart) && F(t, Xt, e.cropstart), P(e.cropmove) && F(t, qt, e.cropmove), P(e.cropend) && F(t, Wt, e.cropend), P(e.crop) && F(t, $t, e.crop), P(e.zoom) && F(t, Yt, e.zoom), F(i, he, this.onCropStart), e.zoomable && e.zoomOnWheel && F(i, fe, this.onWheel, {
+    P(e.cropstart) && F(t, Xt, e.cropstart), P(e.cropmove) && F(t, qt, e.cropmove), P(e.cropend) && F(t, Wt, e.cropend), P(e.crop) && F(t, $t, e.crop), P(e.zoom) && F(t, Yt, e.zoom), F(i, ce, this.onCropStart), e.zoomable && e.zoomOnWheel && F(i, me, this.onWheel, {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && F(i, le, this.onDblclick), F(t.ownerDocument, ce, this.onCropMove), F(t.ownerDocument, de, this.onCropEnd), e.responsive && F(window, pe, this.onResize);
+    }), e.toggleDragModeOnDblclick && F(i, he, this.onDblclick), F(t.ownerDocument, de, this.onCropMove), F(t.ownerDocument, ue, this.onCropEnd), e.responsive && F(window, fe, this.onResize);
   }
-}, Pi = {
+}, Bi = {
   resize: function() {
     if (!this.disabled) {
-      var t = this.options, e = this.container, i = this.containerData, o = e.offsetWidth / i.width, n = e.offsetHeight / i.height, s = Math.abs(o - 1) > Math.abs(n - 1) ? o : n;
+      var t = this.options, e = this.container, i = this.containerData, n = e.offsetWidth / i.width, o = e.offsetHeight / i.height, s = Math.abs(n - 1) > Math.abs(o - 1) ? n : o;
       if (s !== 1) {
         var a, h;
         t.restore && (a = this.getCanvasData(), h = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(D(a, function(l, c) {
@@ -1830,25 +1846,25 @@ var Ti = {
     }
   },
   dblclick: function() {
-    this.disabled || this.options.dragMode === De || this.setDragMode(yi(this.dragBox, zt) ? Re : Qt);
+    this.disabled || this.options.dragMode === Oe || this.setDragMode(bi(this.dragBox, zt) ? De : Qt);
   },
   wheel: function(t) {
-    var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, o = 1;
+    var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, n = 1;
     this.disabled || (t.preventDefault(), !this.wheeling && (this.wheeling = !0, setTimeout(function() {
       e.wheeling = !1;
-    }, 50), t.deltaY ? o = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? o = -t.wheelDelta / 120 : t.detail && (o = t.detail > 0 ? 1 : -1), this.zoom(-o * i, t)));
+    }, 50), t.deltaY ? n = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? n = -t.wheelDelta / 120 : t.detail && (n = t.detail > 0 ? 1 : -1), this.zoom(-n * i, t)));
   },
   cropStart: function(t) {
     var e = t.buttons, i = t.button;
     if (!(this.disabled || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
     (A(e) && e !== 1 || A(i) && i !== 0 || t.ctrlKey))) {
-      var o = this.options, n = this.pointers, s;
+      var n = this.options, o = this.pointers, s;
       t.changedTouches ? D(t.changedTouches, function(a) {
-        n[a.identifier] = kt(a);
-      }) : n[t.pointerId || 0] = kt(t), Object.keys(n).length > 1 && o.zoomable && o.zoomOnTouch ? s = ke : s = Vt(t.target, _t), li.test(s) && mt(this.element, Xt, {
+        o[a.identifier] = kt(a);
+      }) : o[t.pointerId || 0] = kt(t), Object.keys(o).length > 1 && n.zoomable && n.zoomOnTouch ? s = Re : s = Vt(t.target, _t), hi.test(s) && mt(this.element, Xt, {
         originalEvent: t,
         action: s
-      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Ae && (this.cropping = !0, T(this.dragBox, Dt)));
+      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Ee && (this.cropping = !0, T(this.dragBox, Dt)));
     }
   },
   cropMove: function(t) {
@@ -1858,26 +1874,26 @@ var Ti = {
       t.preventDefault(), mt(this.element, qt, {
         originalEvent: t,
         action: e
-      }) !== !1 && (t.changedTouches ? D(t.changedTouches, function(o) {
-        R(i[o.identifier] || {}, kt(o, !0));
+      }) !== !1 && (t.changedTouches ? D(t.changedTouches, function(n) {
+        R(i[n.identifier] || {}, kt(n, !0));
       }) : R(i[t.pointerId || 0] || {}, kt(t, !0)), this.change(t));
     }
   },
   cropEnd: function(t) {
     if (!this.disabled) {
       var e = this.action, i = this.pointers;
-      t.changedTouches ? D(t.changedTouches, function(o) {
-        delete i[o.identifier];
+      t.changedTouches ? D(t.changedTouches, function(n) {
+        delete i[n.identifier];
       }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, pt(this.dragBox, Dt, this.cropped && this.options.modal)), mt(this.element, Wt, {
         originalEvent: t,
         action: e
       }));
     }
   }
-}, Bi = {
+}, Ni = {
   change: function(t) {
-    var e = this.options, i = this.canvasData, o = this.containerData, n = this.cropBoxData, s = this.pointers, a = this.action, h = e.aspectRatio, l = n.left, c = n.top, d = n.width, u = n.height, b = l + d, C = c + u, p = 0, f = 0, v = o.width, y = o.height, w = !0, _;
-    !h && t.shiftKey && (h = d && u ? d / u : 1), this.limited && (p = n.minLeft, f = n.minTop, v = p + Math.min(o.width, i.width, i.left + i.width), y = f + Math.min(o.height, i.height, i.top + i.height));
+    var e = this.options, i = this.canvasData, n = this.containerData, o = this.cropBoxData, s = this.pointers, a = this.action, h = e.aspectRatio, l = o.left, c = o.top, d = o.width, u = o.height, b = l + d, C = c + u, p = 0, f = 0, v = n.width, y = n.height, w = !0, _;
+    !h && t.shiftKey && (h = d && u ? d / u : 1), this.limited && (p = o.minLeft, f = o.minTop, v = p + Math.min(n.width, i.width, i.left + i.width), y = f + Math.min(n.height, i.height, i.top + i.height));
     var S = s[Object.keys(s)[0]], m = {
       x: S.endX - S.startX,
       y: S.endY - S.startY
@@ -1906,28 +1922,28 @@ var Ti = {
           w = !1;
           break;
         }
-        x(at), d += m.x, d < 0 && (a = rt, d = -d, l -= d), h && (u = d / h, c += (n.height - u) / 2);
+        x(at), d += m.x, d < 0 && (a = rt, d = -d, l -= d), h && (u = d / h, c += (o.height - u) / 2);
         break;
       case K:
         if (m.y <= 0 && (c <= f || h && (l <= p || b >= v))) {
           w = !1;
           break;
         }
-        x(K), u -= m.y, c += m.y, u < 0 && (a = dt, u = -u, c -= u), h && (d = u * h, l += (n.width - d) / 2);
+        x(K), u -= m.y, c += m.y, u < 0 && (a = dt, u = -u, c -= u), h && (d = u * h, l += (o.width - d) / 2);
         break;
       case rt:
         if (m.x <= 0 && (l <= p || h && (c <= f || C >= y))) {
           w = !1;
           break;
         }
-        x(rt), d -= m.x, l += m.x, d < 0 && (a = at, d = -d, l -= d), h && (u = d / h, c += (n.height - u) / 2);
+        x(rt), d -= m.x, l += m.x, d < 0 && (a = at, d = -d, l -= d), h && (u = d / h, c += (o.height - u) / 2);
         break;
       case dt:
         if (m.y >= 0 && (C >= y || h && (l <= p || b >= v))) {
           w = !1;
           break;
         }
-        x(dt), u += m.y, u < 0 && (a = K, u = -u, c -= u), h && (d = u * h, l += (n.width - d) / 2);
+        x(dt), u += m.y, u < 0 && (a = K, u = -u, c -= u), h && (d = u * h, l += (o.width - d) / 2);
         break;
       case yt:
         if (h) {
@@ -1946,7 +1962,7 @@ var Ti = {
             w = !1;
             break;
           }
-          x(K), u -= m.y, c += m.y, d = u * h, l += n.width - d;
+          x(K), u -= m.y, c += m.y, d = u * h, l += o.width - d;
         } else
           x(K), x(rt), m.x <= 0 ? l > p ? (d -= m.x, l += m.x) : m.y <= 0 && c <= f && (w = !1) : (d -= m.x, l += m.x), m.y <= 0 ? c > f && (u -= m.y, c += m.y) : (u -= m.y, c += m.y);
         d < 0 && u < 0 ? (a = Ct, u = -u, d = -d, c -= u, l -= d) : d < 0 ? (a = yt, d = -d, l -= d) : u < 0 && (a = wt, u = -u, c -= u);
@@ -1973,25 +1989,25 @@ var Ti = {
           x(dt), x(at), m.x >= 0 ? b < v ? d += m.x : m.y >= 0 && C >= y && (w = !1) : d += m.x, m.y >= 0 ? C < y && (u += m.y) : u += m.y;
         d < 0 && u < 0 ? (a = bt, u = -u, d = -d, c -= u, l -= d) : d < 0 ? (a = wt, d = -d, l -= d) : u < 0 && (a = yt, u = -u, c -= u);
         break;
-      case Ee:
+      case ke:
         this.move(m.x, m.y), w = !1;
         break;
-      case ke:
-        this.zoom(Si(s), t), w = !1;
+      case Re:
+        this.zoom(_i(s), t), w = !1;
         break;
-      case Ae:
+      case Ee:
         if (!m.x || !m.y) {
           w = !1;
           break;
         }
-        _ = Be(this.cropper), l = S.startX - _.left, c = S.startY - _.top, d = n.minWidth, u = n.minHeight, m.x > 0 ? a = m.y > 0 ? Ct : yt : m.x < 0 && (l -= d, a = m.y > 0 ? wt : bt), m.y < 0 && (c -= u), this.cropped || (q(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
+        _ = Ne(this.cropper), l = S.startX - _.left, c = S.startY - _.top, d = o.minWidth, u = o.minHeight, m.x > 0 ? a = m.y > 0 ? Ct : yt : m.x < 0 && (l -= d, a = m.y > 0 ? wt : bt), m.y < 0 && (c -= u), this.cropped || (q(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
         break;
     }
-    w && (n.width = d, n.height = u, n.left = l, n.top = c, this.action = a, this.renderCropBox()), D(s, function(I) {
+    w && (o.width = d, o.height = u, o.left = l, o.top = c, this.action = a, this.renderCropBox()), D(s, function(I) {
       I.startX = I.endX, I.startY = I.endY;
     });
   }
-}, Ni = {
+}, Gi = {
   // Show the crop box manually
   crop: function() {
     return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && T(this.dragBox, Dt), q(this.cropBox, B), this.setCropBoxData(this.initialCropBoxData)), this;
@@ -2023,11 +2039,11 @@ var Ti = {
   },
   // Enable (unfreeze) the cropper
   enable: function() {
-    return this.ready && this.disabled && (this.disabled = !1, q(this.cropper, ae)), this;
+    return this.ready && this.disabled && (this.disabled = !1, q(this.cropper, re)), this;
   },
   // Disable (freeze) the cropper
   disable: function() {
-    return this.ready && !this.disabled && (this.disabled = !0, T(this.cropper, ae)), this;
+    return this.ready && !this.disabled && (this.disabled = !0, T(this.cropper, re)), this;
   },
   /**
    * Destroy the cropper and remove the instance from the image
@@ -2044,8 +2060,8 @@ var Ti = {
    * @returns {Cropper} this
    */
   move: function(t) {
-    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, o = i.left, n = i.top;
-    return this.moveTo(Bt(t) ? t : o + Number(t), Bt(e) ? e : n + Number(e));
+    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, n = i.left, o = i.top;
+    return this.moveTo(Bt(t) ? t : n + Number(t), Bt(e) ? e : o + Number(e));
   },
   /**
    * Move the canvas to an absolute point
@@ -2054,8 +2070,8 @@ var Ti = {
    * @returns {Cropper} this
    */
   moveTo: function(t) {
-    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, o = !1;
-    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.movable && (A(t) && (i.left = t, o = !0), A(e) && (i.top = e, o = !0), o && this.renderCanvas(!0)), this;
+    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, n = !1;
+    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.movable && (A(t) && (i.left = t, n = !0), A(e) && (i.top = e, n = !0), n && this.renderCanvas(!0)), this;
   },
   /**
    * Zoom the canvas with a relative ratio
@@ -2075,8 +2091,8 @@ var Ti = {
    * @returns {Cropper} this
    */
   zoomTo: function(t, e, i) {
-    var o = this.options, n = this.canvasData, s = n.width, a = n.height, h = n.naturalWidth, l = n.naturalHeight;
-    if (t = Number(t), t >= 0 && this.ready && !this.disabled && o.zoomable) {
+    var n = this.options, o = this.canvasData, s = o.width, a = o.height, h = o.naturalWidth, l = o.naturalHeight;
+    if (t = Number(t), t >= 0 && this.ready && !this.disabled && n.zoomable) {
       var c = h * t, d = l * t;
       if (mt(this.element, Yt, {
         ratio: t,
@@ -2085,13 +2101,13 @@ var Ti = {
       }) === !1)
         return this;
       if (i) {
-        var u = this.pointers, b = Be(this.cropper), C = u && Object.keys(u).length ? _i(u) : {
+        var u = this.pointers, b = Ne(this.cropper), C = u && Object.keys(u).length ? xi(u) : {
           pageX: i.pageX,
           pageY: i.pageY
         };
-        n.left -= (c - s) * ((C.pageX - b.left - n.left) / s), n.top -= (d - a) * ((C.pageY - b.top - n.top) / a);
-      } else ut(e) && A(e.x) && A(e.y) ? (n.left -= (c - s) * ((e.x - n.left) / s), n.top -= (d - a) * ((e.y - n.top) / a)) : (n.left -= (c - s) / 2, n.top -= (d - a) / 2);
-      n.width = c, n.height = d, this.renderCanvas(!0);
+        o.left -= (c - s) * ((C.pageX - b.left - o.left) / s), o.top -= (d - a) * ((C.pageY - b.top - o.top) / a);
+      } else ut(e) && A(e.x) && A(e.y) ? (o.left -= (c - s) * ((e.x - o.left) / s), o.top -= (d - a) * ((e.y - o.top) / a)) : (o.left -= (c - s) / 2, o.top -= (d - a) / 2);
+      o.width = c, o.height = d, this.renderCanvas(!0);
     }
     return this;
   },
@@ -2136,8 +2152,8 @@ var Ti = {
    * @returns {Cropper} this
    */
   scale: function(t) {
-    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.imageData, o = !1;
-    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.scalable && (A(t) && (i.scaleX = t, o = !0), A(e) && (i.scaleY = e, o = !0), o && this.renderCanvas(!0, !0)), this;
+    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.imageData, n = !1;
+    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.scalable && (A(t) && (i.scaleX = t, n = !0), A(e) && (i.scaleY = e, n = !0), n && this.renderCanvas(!0, !0)), this;
   },
   /**
    * Get the cropped area position and size data (base on the original image)
@@ -2145,13 +2161,13 @@ var Ti = {
    * @returns {Object} The result cropped data.
    */
   getData: function() {
-    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.options, i = this.imageData, o = this.canvasData, n = this.cropBoxData, s;
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.options, i = this.imageData, n = this.canvasData, o = this.cropBoxData, s;
     if (this.ready && this.cropped) {
       s = {
-        x: n.left - o.left,
-        y: n.top - o.top,
-        width: n.width,
-        height: n.height
+        x: o.left - n.left,
+        y: o.top - n.top,
+        width: o.width,
+        height: o.height
       };
       var a = i.width / i.naturalWidth;
       if (D(s, function(c, d) {
@@ -2175,12 +2191,12 @@ var Ti = {
    * @returns {Cropper} this
    */
   setData: function(t) {
-    var e = this.options, i = this.imageData, o = this.canvasData, n = {};
+    var e = this.options, i = this.imageData, n = this.canvasData, o = {};
     if (this.ready && !this.disabled && ut(t)) {
       var s = !1;
       e.rotatable && A(t.rotate) && t.rotate !== i.rotate && (i.rotate = t.rotate, s = !0), e.scalable && (A(t.scaleX) && t.scaleX !== i.scaleX && (i.scaleX = t.scaleX, s = !0), A(t.scaleY) && t.scaleY !== i.scaleY && (i.scaleY = t.scaleY, s = !0)), s && this.renderCanvas(!0, !0);
       var a = i.width / i.naturalWidth;
-      A(t.x) && (n.left = t.x * a + o.left), A(t.y) && (n.top = t.y * a + o.top), A(t.width) && (n.width = t.width * a), A(t.height) && (n.height = t.height * a), this.setCropBoxData(n);
+      A(t.x) && (o.left = t.x * a + n.left), A(t.y) && (o.top = t.y * a + n.top), A(t.width) && (o.width = t.width * a), A(t.height) && (o.height = t.height * a), this.setCropBoxData(o);
     }
     return this;
   },
@@ -2236,8 +2252,8 @@ var Ti = {
    * @returns {Cropper} this
    */
   setCropBoxData: function(t) {
-    var e = this.cropBoxData, i = this.options.aspectRatio, o, n;
-    return this.ready && this.cropped && !this.disabled && ut(t) && (A(t.left) && (e.left = t.left), A(t.top) && (e.top = t.top), A(t.width) && t.width !== e.width && (o = !0, e.width = t.width), A(t.height) && t.height !== e.height && (n = !0, e.height = t.height), i && (o ? e.height = e.width / i : n && (e.width = e.height * i)), this.renderCropBox()), this;
+    var e = this.cropBoxData, i = this.options.aspectRatio, n, o;
+    return this.ready && this.cropped && !this.disabled && ut(t) && (A(t.left) && (e.left = t.left), A(t.top) && (e.top = t.top), A(t.width) && t.width !== e.width && (n = !0, e.width = t.width), A(t.height) && t.height !== e.height && (o = !0, e.height = t.height), i && (n ? e.height = e.width / i : o && (e.width = e.height * i)), this.renderCropBox()), this;
   },
   /**
    * Get a canvas drawn the cropped image.
@@ -2248,11 +2264,11 @@ var Ti = {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     if (!this.ready || !window.HTMLCanvasElement)
       return null;
-    var e = this.canvasData, i = Ii(this.image, this.imageData, e, t);
+    var e = this.canvasData, i = Ai(this.image, this.imageData, e, t);
     if (!this.cropped)
       return i;
-    var o = this.getData(t.rounded), n = o.x, s = o.y, a = o.width, h = o.height, l = i.width / Math.floor(e.naturalWidth);
-    l !== 1 && (n *= l, s *= l, a *= l, h *= l);
+    var n = this.getData(t.rounded), o = n.x, s = n.y, a = n.width, h = n.height, l = i.width / Math.floor(e.naturalWidth);
+    l !== 1 && (o *= l, s *= l, a *= l, h *= l);
     var c = a / h, d = et({
       aspectRatio: c,
       width: t.maxWidth || 1 / 0,
@@ -2271,14 +2287,14 @@ var Ti = {
     f.width = ft(C), f.height = ft(p), v.fillStyle = t.fillColor || "transparent", v.fillRect(0, 0, C, p);
     var y = t.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = t.imageSmoothingQuality;
     v.imageSmoothingEnabled = w, _ && (v.imageSmoothingQuality = _);
-    var S = i.width, m = i.height, x = n, I = s, E, M, z, j, L, N;
+    var S = i.width, m = i.height, x = o, I = s, E, M, z, j, L, N;
     x <= -a || x > S ? (x = 0, E = 0, z = 0, L = 0) : x <= 0 ? (z = -x, x = 0, E = Math.min(S, a + x), L = E) : x <= S && (z = 0, E = Math.min(a, S - x), L = E), E <= 0 || I <= -h || I > m ? (I = 0, M = 0, j = 0, N = 0) : I <= 0 ? (j = -I, I = 0, M = Math.min(m, h + I), N = M) : I <= m && (j = 0, M = Math.min(h, m - I), N = M);
     var O = [x, I, E, M];
     if (L > 0 && N > 0) {
       var G = C / a;
       O.push(z * G, j * G, L * G, N * G);
     }
-    return v.drawImage.apply(v, [i].concat(Ie(O.map(function($) {
+    return v.drawImage.apply(v, [i].concat(Ae(O.map(function($) {
       return Math.floor(ft($));
     })))), f;
   },
@@ -2297,31 +2313,31 @@ var Ti = {
    * @returns {Cropper} this
    */
   setDragMode: function(t) {
-    var e = this.options, i = this.dragBox, o = this.face;
+    var e = this.options, i = this.dragBox, n = this.face;
     if (this.ready && !this.disabled) {
-      var n = t === Qt, s = e.movable && t === Re;
-      t = n || s ? t : De, e.dragMode = t, xt(i, _t, t), pt(i, zt, n), pt(i, jt, s), e.cropBoxMovable || (xt(o, _t, t), pt(o, zt, n), pt(o, jt, s));
+      var o = t === Qt, s = e.movable && t === De;
+      t = o || s ? t : Oe, e.dragMode = t, xt(i, _t, t), pt(i, zt, o), pt(i, jt, s), e.cropBoxMovable || (xt(n, _t, t), pt(n, zt, o), pt(n, jt, s));
     }
     return this;
   }
-}, Gi = X.Cropper, Ge = /* @__PURE__ */ function() {
+}, Hi = X.Cropper, He = /* @__PURE__ */ function() {
   function r(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (Ze(this, r), !t || !di.test(t.tagName))
+    if (Ke(this, r), !t || !ui.test(t.tagName))
       throw new Error("The first argument is required and must be an <img> or <canvas> element.");
-    this.element = t, this.options = R({}, ge, ut(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
+    this.element = t, this.options = R({}, ve, ut(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
   }
-  return Ke(r, [{
+  return Qe(r, [{
     key: "init",
     value: function() {
-      var e = this.element, i = e.tagName.toLowerCase(), o;
+      var e = this.element, i = e.tagName.toLowerCase(), n;
       if (!e[k]) {
         if (e[k] = this, i === "img") {
-          if (this.isImg = !0, o = e.getAttribute("src") || "", this.originalUrl = o, !o)
+          if (this.isImg = !0, n = e.getAttribute("src") || "", this.originalUrl = n, !n)
             return;
-          o = e.src;
-        } else i === "canvas" && window.HTMLCanvasElement && (o = e.toDataURL());
-        this.load(o);
+          n = e.src;
+        } else i === "canvas" && window.HTMLCanvasElement && (n = e.toDataURL());
+        this.load(n);
       }
     }
   }, {
@@ -2330,64 +2346,64 @@ var Ti = {
       var i = this;
       if (e) {
         this.url = e, this.imageData = {};
-        var o = this.element, n = this.options;
-        if (!n.rotatable && !n.scalable && (n.checkOrientation = !1), !n.checkOrientation || !window.ArrayBuffer) {
+        var n = this.element, o = this.options;
+        if (!o.rotatable && !o.scalable && (o.checkOrientation = !1), !o.checkOrientation || !window.ArrayBuffer) {
           this.clone();
           return;
         }
-        if (hi.test(e)) {
-          ci.test(e) ? this.read(ki(e)) : this.clone();
+        if (ci.test(e)) {
+          di.test(e) ? this.read(Ri(e)) : this.clone();
           return;
         }
         var s = new XMLHttpRequest(), a = this.clone.bind(this);
         this.reloading = !0, this.xhr = s, s.onabort = a, s.onerror = a, s.ontimeout = a, s.onprogress = function() {
-          s.getResponseHeader("content-type") !== me && s.abort();
+          s.getResponseHeader("content-type") !== ge && s.abort();
         }, s.onload = function() {
           i.read(s.response);
         }, s.onloadend = function() {
           i.reloading = !1, i.xhr = null;
-        }, n.checkCrossOrigin && ye(e) && o.crossOrigin && (e = be(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = o.crossOrigin === "use-credentials", s.send();
+        }, o.checkCrossOrigin && be(e) && n.crossOrigin && (e = Ce(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = n.crossOrigin === "use-credentials", s.send();
       }
     }
   }, {
     key: "read",
     value: function(e) {
-      var i = this.options, o = this.imageData, n = Di(e), s = 0, a = 1, h = 1;
-      if (n > 1) {
-        this.url = Ri(e, me);
-        var l = Oi(n);
+      var i = this.options, n = this.imageData, o = Oi(e), s = 0, a = 1, h = 1;
+      if (o > 1) {
+        this.url = Di(e, ge);
+        var l = Ti(o);
         s = l.rotate, a = l.scaleX, h = l.scaleY;
       }
-      i.rotatable && (o.rotate = s), i.scalable && (o.scaleX = a, o.scaleY = h), this.clone();
+      i.rotatable && (n.rotate = s), i.scalable && (n.scaleX = a, n.scaleY = h), this.clone();
     }
   }, {
     key: "clone",
     value: function() {
-      var e = this.element, i = this.url, o = e.crossOrigin, n = i;
-      this.options.checkCrossOrigin && ye(i) && (o || (o = "anonymous"), n = be(i)), this.crossOrigin = o, this.crossOriginUrl = n;
+      var e = this.element, i = this.url, n = e.crossOrigin, o = i;
+      this.options.checkCrossOrigin && be(i) && (n || (n = "anonymous"), o = Ce(i)), this.crossOrigin = n, this.crossOriginUrl = o;
       var s = document.createElement("img");
-      o && (s.crossOrigin = o), s.src = n || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), T(s, re), e.parentNode.insertBefore(s, e.nextSibling);
+      n && (s.crossOrigin = n), s.src = o || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), T(s, le), e.parentNode.insertBefore(s, e.nextSibling);
     }
   }, {
     key: "start",
     value: function() {
       var e = this, i = this.image;
       i.onload = null, i.onerror = null, this.sizing = !0;
-      var o = X.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(X.navigator.userAgent), n = function(l, c) {
+      var n = X.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(X.navigator.userAgent), o = function(l, c) {
         R(e.imageData, {
           naturalWidth: l,
           naturalHeight: c,
           aspectRatio: l / c
         }), e.initialImageData = R({}, e.imageData), e.sizing = !1, e.sized = !0, e.build();
       };
-      if (i.naturalWidth && !o) {
-        n(i.naturalWidth, i.naturalHeight);
+      if (i.naturalWidth && !n) {
+        o(i.naturalWidth, i.naturalHeight);
         return;
       }
       var s = document.createElement("img"), a = document.body || document.documentElement;
       this.sizingImage = s, s.onload = function() {
-        n(s.width, s.height), o || a.removeChild(s);
-      }, s.src = i.src, o || (s.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", a.appendChild(s));
+        o(s.width, s.height), n || a.removeChild(s);
+      }, s.src = i.src, n || (s.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", a.appendChild(s));
     }
   }, {
     key: "stop",
@@ -2399,12 +2415,12 @@ var Ti = {
     key: "build",
     value: function() {
       if (!(!this.sized || this.ready)) {
-        var e = this.element, i = this.options, o = this.image, n = e.parentNode, s = document.createElement("div");
-        s.innerHTML = ui;
+        var e = this.element, i = this.options, n = this.image, o = e.parentNode, s = document.createElement("div");
+        s.innerHTML = pi;
         var a = s.querySelector(".".concat(k, "-container")), h = a.querySelector(".".concat(k, "-canvas")), l = a.querySelector(".".concat(k, "-drag-box")), c = a.querySelector(".".concat(k, "-crop-box")), d = c.querySelector(".".concat(k, "-face"));
-        this.container = n, this.cropper = a, this.canvas = h, this.dragBox = l, this.cropBox = c, this.viewBox = a.querySelector(".".concat(k, "-view-box")), this.face = d, h.appendChild(o), T(e, B), n.insertBefore(a, e.nextSibling), q(o, re), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, T(c, B), i.guides || T(c.getElementsByClassName("".concat(k, "-dashed")), B), i.center || T(c.getElementsByClassName("".concat(k, "-center")), B), i.background && T(a, "".concat(k, "-bg")), i.highlight || T(d, oi), i.cropBoxMovable && (T(d, jt), xt(d, _t, Kt)), i.cropBoxResizable || (T(c.getElementsByClassName("".concat(k, "-line")), B), T(c.getElementsByClassName("".concat(k, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), P(i.ready) && H(e, ue, i.ready, {
+        this.container = o, this.cropper = a, this.canvas = h, this.dragBox = l, this.cropBox = c, this.viewBox = a.querySelector(".".concat(k, "-view-box")), this.face = d, h.appendChild(n), T(e, B), o.insertBefore(a, e.nextSibling), q(n, le), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, T(c, B), i.guides || T(c.getElementsByClassName("".concat(k, "-dashed")), B), i.center || T(c.getElementsByClassName("".concat(k, "-center")), B), i.background && T(a, "".concat(k, "-bg")), i.highlight || T(d, si), i.cropBoxMovable && (T(d, jt), xt(d, _t, Kt)), i.cropBoxResizable || (T(c.getElementsByClassName("".concat(k, "-line")), B), T(c.getElementsByClassName("".concat(k, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), P(i.ready) && H(e, pe, i.ready, {
           once: !0
-        }), mt(e, ue);
+        }), mt(e, pe);
       }
     }
   }, {
@@ -2428,7 +2444,7 @@ var Ti = {
   }], [{
     key: "noConflict",
     value: function() {
-      return window.Cropper = Gi, r;
+      return window.Cropper = Hi, r;
     }
     /**
      * Change the default options.
@@ -2437,13 +2453,13 @@ var Ti = {
   }, {
     key: "setDefaults",
     value: function(e) {
-      R(ge, ut(e) && e);
+      R(ve, ut(e) && e);
     }
   }]);
 }();
-R(Ge.prototype, Ti, Mi, Li, Pi, Bi, Ni);
-const Rt = (r) => Math.min(1, Math.max(0, r)), Ce = ["16:9", "3:2", "1:1"], Gt = "3:2";
-class Hi {
+R(He.prototype, Mi, Li, Pi, Bi, Ni, Gi);
+const Rt = (r) => Math.min(1, Math.max(0, r)), we = ["16:9", "3:2", "1:1"], Gt = "3:2";
+class Fi {
   constructor() {
     this.overlay = null, this.cropper = null, this.escHandler = null, this.resolvePromise = null, this.showOriginalOnClickInput = null, this.aspectRatioInputs = [];
   }
@@ -2456,10 +2472,10 @@ class Hi {
    * @param existingCropAspectRatio - сохранённый режим соотношения сторон
    * @returns Promise с результатом кадрирования или null при отмене
    */
-  open(t, e, i = !1, o = Gt) {
-    return this.overlay && this.destroy(), new Promise((n) => {
-      this.resolvePromise = n;
-      const s = this.normalizeCropAspectRatio(o);
+  open(t, e, i = !1, n = Gt) {
+    return this.overlay && this.destroy(), new Promise((o) => {
+      this.resolvePromise = o;
+      const s = this.normalizeCropAspectRatio(n);
       this.overlay = this.createOverlay(i, s);
       const a = this.overlay.querySelector(".gallery-crop-modal__image-wrapper");
       if (!a) {
@@ -2470,7 +2486,7 @@ class Hi {
         src: t
       });
       h.style.maxWidth = "100%", h.style.display = "block", a.appendChild(h), document.body.appendChild(this.overlay), h.onload = () => {
-        this.cropper = new Ge(h, {
+        this.cropper = new He(h, {
           viewMode: 1,
           autoCropArea: 1,
           aspectRatio: this.numericAspectRatio(s),
@@ -2516,9 +2532,9 @@ class Hi {
   createOverlay(t, e) {
     const i = g("div", "gallery-crop-modal");
     i.addEventListener("click", () => this.close(null));
-    const o = g("div", "gallery-crop-modal__container");
-    o.addEventListener("click", (u) => u.stopPropagation());
-    const n = g("div", "gallery-crop-modal__image-wrapper"), s = g("div", "gallery-crop-modal__options"), a = g("label", "gallery-crop-modal__option");
+    const n = g("div", "gallery-crop-modal__container");
+    n.addEventListener("click", (u) => u.stopPropagation());
+    const o = g("div", "gallery-crop-modal__image-wrapper"), s = g("div", "gallery-crop-modal__options"), a = g("label", "gallery-crop-modal__option");
     this.showOriginalOnClickInput = g("input", null, { type: "checkbox" }), this.showOriginalOnClickInput.checked = t, a.append(
       this.showOriginalOnClickInput,
       document.createTextNode("Показывать необрезанное изображение по клику")
@@ -2536,14 +2552,14 @@ class Hi {
     const c = g("button", "gallery-crop-modal__btn");
     c.textContent = "Отмена", c.addEventListener("click", () => this.close(null));
     const d = g("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--primary"]);
-    return d.textContent = "Применить", d.addEventListener("click", () => this.handleApply()), h.appendChild(l), h.appendChild(c), h.appendChild(d), o.appendChild(n), o.appendChild(s), o.appendChild(h), i.appendChild(o), i;
+    return d.textContent = "Применить", d.addEventListener("click", () => this.handleApply()), h.appendChild(l), h.appendChild(c), h.appendChild(d), n.appendChild(o), n.appendChild(s), n.appendChild(h), i.appendChild(n), i;
   }
   /**
    * Обрабатывает нажатие кнопки "Применить" — собирает данные кадрирования
    * и закрывает модальное окно с результатом.
    */
   handleApply() {
-    var o;
+    var n;
     if (!this.cropper) {
       this.close(null);
       return;
@@ -2551,7 +2567,7 @@ class Hi {
     const t = this.cropper.getData(!0), e = this.cropper.getImageData(), i = this.cropDataToString(t, e.naturalWidth, e.naturalHeight);
     this.close({
       ...i,
-      showOriginalOnClick: ((o = this.showOriginalOnClickInput) == null ? void 0 : o.checked) ?? !1,
+      showOriginalOnClick: ((n = this.showOriginalOnClickInput) == null ? void 0 : n.checked) ?? !1,
       cropAspectRatio: this.selectedCropAspectRatio()
     });
   }
@@ -2579,9 +2595,9 @@ class Hi {
    * @param naturalHeight - натуральная высота изображения
    */
   cropDataToString(t, e, i) {
-    const o = Rt(t.x / e), n = Rt(t.y / i), s = Rt((t.x + t.width) / e), a = Rt((t.y + t.height) / i);
+    const n = Rt(t.x / e), o = Rt(t.y / i), s = Rt((t.x + t.width) / e), a = Rt((t.y + t.height) / i);
     return {
-      crop: `${o.toFixed(4)}x${n.toFixed(4)}:${s.toFixed(4)}x${a.toFixed(4)}`,
+      crop: `${n.toFixed(4)}x${o.toFixed(4)}:${s.toFixed(4)}x${a.toFixed(4)}`,
       croppedWidth: Math.round(t.width),
       croppedHeight: Math.round(t.height),
       showOriginalOnClick: !1,
@@ -2596,26 +2612,26 @@ class Hi {
    * @param naturalHeight - натуральная высота изображения
    */
   restoreCropArea(t, e, i) {
-    var n;
-    const o = this.parseCropString(t);
-    o && ((n = this.cropper) == null || n.setData({
-      x: o.x1 * e,
-      y: o.y1 * i,
-      width: (o.x2 - o.x1) * e,
-      height: (o.y2 - o.y1) * i
+    var o;
+    const n = this.parseCropString(t);
+    n && ((o = this.cropper) == null || o.setData({
+      x: n.x1 * e,
+      y: n.y1 * i,
+      width: (n.x2 - n.x1) * e,
+      height: (n.y2 - n.y1) * i
     }));
   }
   createAspectRatioOptions(t) {
     const e = g("fieldset", "gallery-crop-modal__aspect-ratios"), i = g("legend", "gallery-crop-modal__aspect-ratios-label");
     return i.textContent = "Соотношение сторон", e.appendChild(i), [
       { label: "Любое", value: "free" },
-      ...Ce.map((n) => ({ label: n, value: n }))
-    ].forEach(({ label: n, value: s }) => {
+      ...we.map((o) => ({ label: o, value: o }))
+    ].forEach(({ label: o, value: s }) => {
       const a = g("label", "gallery-crop-modal__aspect-ratio"), h = g("input", null, { type: "radio" }), l = g("span", "gallery-crop-modal__aspect-ratio-label");
       h.name = "gallery-crop-aspect-ratio", h.value = s, h.checked = s === t, h.addEventListener("change", () => {
         var c;
         h.checked && ((c = this.cropper) == null || c.setAspectRatio(this.numericAspectRatio(s)));
-      }), l.textContent = n, a.append(h, l), e.appendChild(a), this.aspectRatioInputs.push(h);
+      }), l.textContent = o, a.append(h, l), e.appendChild(a), this.aspectRatioInputs.push(h);
     }), e;
   }
   selectedCropAspectRatio() {
@@ -2624,13 +2640,13 @@ class Hi {
     return this.normalizeCropAspectRatio(t);
   }
   normalizeCropAspectRatio(t) {
-    return t === "free" || Ce.includes(t) ? t : Gt;
+    return t === "free" || we.includes(t) ? t : Gt;
   }
   numericAspectRatio(t) {
     return t === "free" ? Number.NaN : t === "16:9" ? 16 / 9 : t === "1:1" ? 1 : 3 / 2;
   }
 }
-const Fi = 12e4, Ui = 5e3, zi = 1e3, ji = 1.5, $i = 200;
+const Ui = 12e4, zi = 5e3, ji = 1e3, $i = 1.5, Wi = 200;
 class U extends Error {
   /**
    * Create a safe workflow error.
@@ -2642,7 +2658,7 @@ class U extends Error {
     super(e), this.name = "AiImageClientError", this.code = t, this.status = i;
   }
 }
-class Wi {
+class qi {
   /**
    * Create the host client.
    * @param config - host endpoints, headers and resource identity
@@ -2765,8 +2781,8 @@ class Wi {
    */
   async poll(t) {
     var s;
-    const e = Date.now(), i = this.config.pollTimeoutMs ?? Fi, o = this.config.pollMaxIntervalMs ?? Ui;
-    let n = this.config.pollIntervalMs ?? zi;
+    const e = Date.now(), i = this.config.pollTimeoutMs ?? Ui, n = this.config.pollMaxIntervalMs ?? zi;
+    let o = this.config.pollIntervalMs ?? ji;
     for (; ; ) {
       const a = await this.status(t.sessionId, t.blockId, t.signal);
       if ((s = t.onStatus) == null || s.call(t, a), this.isTerminal(a.status))
@@ -2777,7 +2793,7 @@ class Wi {
           "Превышено время ожидания генерации изображения.",
           0
         );
-      await this.wait(n, t.signal), n = Math.min(Math.ceil(n * ji), o);
+      await this.wait(o, t.signal), o = Math.min(Math.ceil(o * $i), n);
     }
   }
   /**
@@ -2787,10 +2803,10 @@ class Wi {
    * @param signal - optional cancellation signal
    */
   async status(t, e, i) {
-    const o = this.resolveEndpoint(this.config.endpoints.status, { sessionId: t }), n = new URLSearchParams({ block_id: e });
+    const n = this.resolveEndpoint(this.config.endpoints.status, { sessionId: t }), o = new URLSearchParams({ block_id: e });
     for (const [a, h] of Object.entries(this.config.context))
-      h !== null && n.set(`context[${a}]`, String(h));
-    const s = await this.request(`${o}${o.includes("?") ? "&" : "?"}${n.toString()}`, {
+      h !== null && o.set(`context[${a}]`, String(h));
+    const s = await this.request(`${n}${n.includes("?") ? "&" : "?"}${o.toString()}`, {
       headers: {
         Accept: "application/json",
         ...this.config.headers
@@ -2807,8 +2823,8 @@ class Wi {
    * @param signal - optional cancellation signal
    */
   async requestAssistanceText(t, e, i) {
-    const o = this.config.endpoints.prompt, n = this.config.publicationContext, s = e === "caption";
-    if (typeof o != "string" || o === "" || n === void 0)
+    const n = this.config.endpoints.prompt, o = this.config.publicationContext, s = e === "caption";
+    if (typeof n != "string" || n === "" || o === void 0)
       throw new U(
         "prompt_unavailable",
         s ? "Генерация описания недоступна." : "Помощь с промптом недоступна.",
@@ -2820,10 +2836,10 @@ class Wi {
       block_id: t.blockId,
       context: this.config.context,
       publication: t.publication,
-      publicationContext: n
+      publicationContext: o
     };
     t.action !== "generate" && (a.draft = t.draft);
-    const l = (await this.request(o, {
+    const l = (await this.request(n, {
       body: JSON.stringify(a),
       headers: {
         Accept: "application/json",
@@ -2841,7 +2857,7 @@ class Wi {
       throw new U(
         "invalid_response",
         s ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
-        $i
+        Wi
       );
     return l;
   }
@@ -2856,9 +2872,9 @@ class Wi {
     networkError: "Не удалось связаться с сервером генерации изображений.",
     requestFailed: "Сервер не смог выполнить операцию с изображением."
   }) {
-    let o;
+    let n;
     try {
-      o = await fetch(t, e);
+      n = await fetch(t, e);
     } catch (s) {
       throw s instanceof DOMException && s.name === "AbortError" ? s : new U(
         "network_error",
@@ -2866,26 +2882,26 @@ class Wi {
         0
       );
     }
-    const n = await o.json().catch(() => null);
-    if (!o.ok) {
-      if (this.isRecord(n) && this.isRecord(n.error)) {
-        const s = n.error.code, a = n.error.message;
+    const o = await n.json().catch(() => null);
+    if (!n.ok) {
+      if (this.isRecord(o) && this.isRecord(o.error)) {
+        const s = o.error.code, a = o.error.message;
         if (typeof s == "string" && typeof a == "string")
-          throw new U(s, a, o.status);
+          throw new U(s, a, n.status);
       }
       throw new U(
         "request_failed",
         i.requestFailed,
-        o.status
+        n.status
       );
     }
-    if (!this.isRecord(n) || !this.isRecord(n.data))
+    if (!this.isRecord(o) || !this.isRecord(o.data))
       throw new U(
         "invalid_response",
         i.invalidResponse,
-        o.status
+        n.status
       );
-    return n.data;
+    return o.data;
   }
   /**
    * Send a JSON mutation and normalize its session response.
@@ -2894,7 +2910,7 @@ class Wi {
    * @param signal - optional cancellation signal
    */
   async mutate(t, e, i) {
-    const o = await this.request(t, {
+    const n = await this.request(t, {
       body: JSON.stringify(e),
       headers: {
         Accept: "application/json",
@@ -2904,7 +2920,7 @@ class Wi {
       method: "POST",
       signal: i
     });
-    return this.normalizeSession(o);
+    return this.normalizeSession(n);
   }
   /**
    * Normalize the host response and discard provider-only fields.
@@ -2915,23 +2931,23 @@ class Wi {
     let i;
     if (Array.isArray(t.candidates)) {
       i = [];
-      for (const n of t.candidates)
-        !this.isRecord(n) || typeof n.id != "string" || n.id === "" || i.push({
-          id: n.id,
-          parentId: typeof n.parent_id == "string" ? n.parent_id : null,
+      for (const o of t.candidates)
+        !this.isRecord(o) || typeof o.id != "string" || o.id === "" || i.push({
+          id: o.id,
+          parentId: typeof o.parent_id == "string" ? o.parent_id : null,
           previewUrl: this.resolveEndpoint(this.config.endpoints.candidate, {
-            candidateId: n.id,
+            candidateId: o.id,
             sessionId: e
           })
         });
     }
-    const o = this.isRecord(t.error) && typeof t.error.code == "string" && typeof t.error.message == "string" ? {
+    const n = this.isRecord(t.error) && typeof t.error.code == "string" && typeof t.error.message == "string" ? {
       code: t.error.code,
       message: t.error.message
     } : void 0;
     return {
       candidates: i,
-      error: o,
+      error: n,
       image: this.isRecord(t.image) ? t.image : void 0,
       progress: typeof t.progress == "string" ? t.progress : void 0,
       selectedCandidateId: typeof t.selected_candidate_id == "string" ? t.selected_candidate_id : void 0,
@@ -2946,25 +2962,25 @@ class Wi {
   normalizeActiveSessions(t) {
     const e = typeof t.limit == "number" && Number.isFinite(t.limit) ? t.limit : 1, i = [];
     if (Array.isArray(t.sessions))
-      for (const o of t.sessions) {
-        if (!this.isRecord(o) || typeof o.session_id != "string" || o.session_id === "")
+      for (const n of t.sessions) {
+        if (!this.isRecord(n) || typeof n.session_id != "string" || n.session_id === "")
           continue;
-        const n = this.isRecord(o.owner) ? o.owner : {}, s = typeof o.preview_candidate_id == "string" ? o.preview_candidate_id : null;
+        const o = this.isRecord(n.owner) ? n.owner : {}, s = typeof n.preview_candidate_id == "string" ? n.preview_candidate_id : null;
         i.push({
-          candidateCount: typeof o.candidate_count == "number" ? o.candidate_count : 0,
-          createdAt: typeof o.created_at == "string" ? o.created_at : null,
-          isCurrentBlock: o.is_current_block === !0,
+          candidateCount: typeof n.candidate_count == "number" ? n.candidate_count : 0,
+          createdAt: typeof n.created_at == "string" ? n.created_at : null,
+          isCurrentBlock: n.is_current_block === !0,
           owner: {
-            title: typeof n.title == "string" && n.title !== "" ? n.title : "Публикация",
-            url: typeof n.url == "string" && n.url !== "" ? n.url : null
+            title: typeof o.title == "string" && o.title !== "" ? o.title : "Публикация",
+            url: typeof o.url == "string" && o.url !== "" ? o.url : null
           },
           previewUrl: s === null ? null : this.resolveEndpoint(this.config.endpoints.candidate, {
             candidateId: s,
-            sessionId: o.session_id
+            sessionId: n.session_id
           }),
-          prompt: typeof o.prompt == "string" && o.prompt !== "" ? o.prompt : null,
-          sessionId: o.session_id,
-          status: typeof o.status == "string" ? o.status : "queued"
+          prompt: typeof n.prompt == "string" && n.prompt !== "" ? n.prompt : null,
+          sessionId: n.session_id,
+          status: typeof n.status == "string" ? n.status : "queued"
         });
       }
     return { limit: e, sessions: i };
@@ -2976,7 +2992,7 @@ class Wi {
    */
   resolveEndpoint(t, e) {
     return Object.entries(e).reduce(
-      (i, [o, n]) => i.split(`{${o}}`).join(encodeURIComponent(n)),
+      (i, [n, o]) => i.split(`{${n}}`).join(encodeURIComponent(o)),
       t
     );
   }
@@ -2995,12 +3011,12 @@ class Wi {
   async wait(t, e) {
     if ((e == null ? void 0 : e.aborted) === !0)
       throw new DOMException("The operation was aborted.", "AbortError");
-    t <= 0 || await new Promise((i, o) => {
-      let n;
+    t <= 0 || await new Promise((i, n) => {
+      let o;
       const s = () => {
-        clearTimeout(n), o(new DOMException("The operation was aborted.", "AbortError"));
+        clearTimeout(o), n(new DOMException("The operation was aborted.", "AbortError"));
       };
-      n = setTimeout(() => {
+      o = setTimeout(() => {
         e == null || e.removeEventListener("abort", s), i();
       }, t), e == null || e.addEventListener("abort", s, { once: !0 });
     });
@@ -3028,13 +3044,13 @@ class Wi {
     return typeof t == "object" && t !== null && !Array.isArray(t);
   }
 }
-class qi {
+class Xi {
   constructor({
     onAdoptSession: t,
     onAssistPrompt: e,
     onCancel: i,
-    onCloseSession: o,
-    onFinalize: n,
+    onCloseSession: n,
+    onFinalize: o,
     onGenerate: s,
     onRefine: a,
     onSelectCandidate: h,
@@ -3046,7 +3062,7 @@ class qi {
     metadataPlaceholders: C,
     source: p
   }) {
-    this.isGenerationBusy = !1, this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = c, this.onAdoptSession = t, this.onCloseSession = o, this.onSelectCandidate = h, this.onSelectHistory = l;
+    this.isGenerationBusy = !1, this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = c, this.onAdoptSession = t, this.onCloseSession = n, this.onSelectCandidate = h, this.onSelectHistory = l;
     const f = g("div", ["ai-image-tool__generator"]), v = g("div", ["ai-image-tool__sessions"]), y = g("div", ["ai-image-tool__sessions-title"]), w = g("div", ["ai-image-tool__sessions-list"]), _ = g("div", ["ai-image-tool__prompt-section"]), S = g("label", ["ai-image-tool__label"]), m = g("textarea", ["ai-image-tool__prompt"]), x = g("label", ["ai-image-tool__caption-option"]), I = g("input", ["ai-image-tool__caption-checkbox"]), E = g("span"), M = g("div", ["ai-image-tool__prompt-assistance"]), z = g("div", ["ai-image-tool__aspect-ratio-field"]), j = g("span", ["ai-image-tool__aspect-ratio-label"]), L = g("div", ["ai-image-tool__aspect-ratios"]), N = g("div", ["ai-image-tool__prompt-actions"]), O = g("button", ["ai-image-tool__action", "ai-image-tool__action--generate"], { type: "button" }), G = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), $ = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), Y = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), it = g("div", ["ai-image-tool__status"]), V = g("div", ["ai-image-tool__error"]), ht = g("div", ["ai-image-tool__candidates"]), nt = g("div", ["ai-image-tool__selection"]), ot = g("img", ["ai-image-tool__selected-preview"]), gt = g("div", ["ai-image-tool__metadata"]), W = g("textarea", ["ai-image-tool__metadata-input", "ai-image-tool__metadata-caption"]), J = g("input", ["ai-image-tool__metadata-input"]), Z = g("input", ["ai-image-tool__metadata-input"]), Tt = g("div", ["ai-image-tool__caption-status"]), Mt = g("label", ["ai-image-tool__label"]), st = g("textarea", ["ai-image-tool__prompt"]), It = g("button", ["ai-image-tool__action"], { type: "button" }), At = g("button", ["ai-image-tool__action"], { type: "button" }), ee = g("div", ["ai-image-tool__history"]), Lt = g("div", ["ai-image-tool__history-status"]);
     m.id = d, m.rows = 3, m.placeholder = "Опишите изображение, которое нужно создать", S.htmlFor = d, S.textContent = "Введите промпт", O.textContent = "Генерировать", G.textContent = "Промпт по публикации", $.textContent = "Улучшить промпт", Y.textContent = "Отменить", G.hidden = !c, $.hidden = !c, I.type = "checkbox", I.id = `${d}-generate-caption`, E.textContent = "Также сгенерировать описание", x.htmlFor = I.id, x.hidden = !c, x.append(I, E), M.append(x, $), L.setAttribute("role", "radiogroup"), L.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(L, b, u, d), j.textContent = "Соотношение сторон:", z.append(j, L), N.append(G, Y, O), _.append(S, m, M, z, N), ot.alt = "Выбранный вариант", ot.dataset.selectedPreview = "", W.id = `${d}-caption`, W.rows = 2, W.dataset.generatedCaption = "", W.dataset.aiImageMetadata = "", W.placeholder = C.caption, W.setAttribute("aria-label", C.caption), J.type = "text", J.dataset.aiImageMetadata = "", J.placeholder = C.source, J.setAttribute("aria-label", C.source), J.defaultValue = p.name, J.value = p.name, Z.type = "url", Z.dataset.aiImageMetadata = "", Z.placeholder = C.sourceLink, Z.setAttribute("aria-label", C.sourceLink), Z.defaultValue = p.url, Z.value = p.url, Tt.setAttribute("aria-live", "polite"), gt.append(W, J, Z, Tt), st.id = `${d}-refinement`, st.rows = 2, st.dataset.refinementPrompt = "", Mt.htmlFor = st.id, Mt.textContent = "Как доработать изображение", It.textContent = "Доработать", At.textContent = "Использовать изображение", nt.hidden = !0, nt.append(
       ot,
@@ -3057,7 +3073,7 @@ class qi {
       At,
       ee,
       Lt
-    ), it.setAttribute("aria-live", "polite"), V.setAttribute("aria-live", "assertive"), V.setAttribute("role", "alert"), V.hidden = !0, Lt.setAttribute("aria-live", "polite"), ht.hidden = !0, f.hidden = !0, v.hidden = !0, v.append(y, w), f.append(v, _, it, V, ht, nt), O.addEventListener("click", () => s(m.value, I.checked, this.selectedAspectRatio())), G.addEventListener("click", () => e("generate", m.value)), $.addEventListener("click", () => e("improve", m.value)), Y.addEventListener("click", i), It.addEventListener("click", () => a(st.value)), At.addEventListener("click", n), m.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
+    ), it.setAttribute("aria-live", "polite"), V.setAttribute("aria-live", "assertive"), V.setAttribute("role", "alert"), V.hidden = !0, Lt.setAttribute("aria-live", "polite"), ht.hidden = !0, f.hidden = !0, v.hidden = !0, v.append(y, w), f.append(v, _, it, V, ht, nt), O.addEventListener("click", () => s(m.value, I.checked, this.selectedAspectRatio())), G.addEventListener("click", () => e("generate", m.value)), $.addEventListener("click", () => e("improve", m.value)), Y.addEventListener("click", i), It.addEventListener("click", () => a(st.value)), At.addEventListener("click", o), m.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
       wrapper: f,
       sessionsSection: v,
       sessionsTitle: y,
@@ -3104,8 +3120,8 @@ class qi {
       return;
     }
     this.nodes.sessionsTitle.textContent = this.hasFreeSessionSlot ? `Незакрытые генерации: ${i.length} из ${e}` : `Все слоты заняты (${i.length} из ${e}) — продолжите одну или закройте лишние`;
-    for (const o of i)
-      this.nodes.sessionsList.appendChild(this.buildSessionCard(o));
+    for (const n of i)
+      this.nodes.sessionsList.appendChild(this.buildSessionCard(n));
     this.nodes.sessionsSection.hidden = !1, this.updatePromptControls();
   }
   hideActiveSessions() {
@@ -3121,21 +3137,21 @@ class qi {
       });
       i.appendChild(c);
     }
-    const o = g("div", ["ai-image-tool__session-body"]), n = t.owner.url === null ? g("span", ["ai-image-tool__session-title"]) : g("a", ["ai-image-tool__session-title"], {
+    const n = g("div", ["ai-image-tool__session-body"]), o = t.owner.url === null ? g("span", ["ai-image-tool__session-title"]) : g("a", ["ai-image-tool__session-title"], {
       href: t.owner.url,
       rel: "noopener",
       target: "_blank"
     });
-    n.textContent = t.owner.title;
+    o.textContent = t.owner.title;
     const s = g("div", ["ai-image-tool__session-meta"]);
     if (s.textContent = [
       t.isCurrentBlock ? "этот блок" : null,
       this.sessionStatusLabel(t.status),
       t.candidateCount > 0 ? `${t.candidateCount} вар.` : null,
       this.sessionTimeLabel(t.createdAt)
-    ].filter((c) => c !== null).join(" · "), o.append(n, s), t.prompt !== null) {
+    ].filter((c) => c !== null).join(" · "), n.append(o, s), t.prompt !== null) {
       const c = g("div", ["ai-image-tool__session-prompt"]);
-      c.textContent = t.prompt, o.appendChild(c);
+      c.textContent = t.prompt, n.appendChild(c);
     }
     const a = g("div", ["ai-image-tool__session-actions"]), h = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], {
       type: "button"
@@ -3145,7 +3161,7 @@ class qi {
       title: "Закрыть генерацию и освободить слот",
       type: "button"
     });
-    return l.setAttribute("aria-label", "Закрыть генерацию"), l.textContent = "×", l.addEventListener("click", () => this.onCloseSession(t.sessionId)), a.append(h, l), e.append(i, o, a), e;
+    return l.setAttribute("aria-label", "Закрыть генерацию"), l.textContent = "×", l.addEventListener("click", () => this.onCloseSession(t.sessionId)), a.append(h, l), e.append(i, n, a), e;
   }
   sessionStatusLabel(t) {
     return {
@@ -3217,25 +3233,25 @@ class qi {
       refinement_queued: "Доработка поставлена в очередь...",
       refinement_submitting: "Отправляем запрос на доработку...",
       refining: "Нейросеть дорабатывает изображение..."
-    }, o = e ?? t, n = i[o] ?? "";
-    this.nodes.generationStatus.textContent = n, this.nodes.historyStatus.textContent = o.startsWith("refinement_") ? n : "";
+    }, n = e ?? t, o = i[n] ?? "";
+    this.nodes.generationStatus.textContent = o, this.nodes.historyStatus.textContent = n.startsWith("refinement_") ? o : "";
   }
   showGenerationError(t) {
     this.nodes.generationError.textContent = t, this.nodes.generationError.hidden = t === "";
   }
   showCandidates(t) {
     var e;
-    this.nodes.candidates.replaceChildren(), t.forEach((i, o) => {
-      const n = g("button", ["ai-image-tool__candidate"], { type: "button" }), s = g("img", ["ai-image-tool__candidate-image"]);
-      n.dataset.candidateId = i.id, n.setAttribute("aria-label", `Выбрать вариант ${o + 1}`), n.setAttribute("aria-pressed", "false"), n.addEventListener("click", () => this.selectCandidate(i.id)), s.alt = `Вариант ${o + 1}`, s.src = i.previewUrl, n.appendChild(s), this.nodes.candidates.appendChild(n);
+    this.nodes.candidates.replaceChildren(), t.forEach((i, n) => {
+      const o = g("button", ["ai-image-tool__candidate"], { type: "button" }), s = g("img", ["ai-image-tool__candidate-image"]);
+      o.dataset.candidateId = i.id, o.setAttribute("aria-label", `Выбрать вариант ${n + 1}`), o.setAttribute("aria-pressed", "false"), o.addEventListener("click", () => this.selectCandidate(i.id)), s.alt = `Вариант ${n + 1}`, s.src = i.previewUrl, o.appendChild(s), this.nodes.candidates.appendChild(o);
     }), this.nodes.promptSection.hidden = !0, this.nodes.candidates.hidden = !1, this.showGenerationStatus("ready"), (e = this.nodes.candidates.querySelector("[data-candidate-id]")) == null || e.focus();
   }
   showSelectedCandidate(t, e) {
     this.nodes.candidates.querySelectorAll("[data-candidate-id]").forEach((i) => {
       i.setAttribute("aria-pressed", String(i.dataset.candidateId === t.id));
-    }), this.nodes.selectedPreview.src = t.previewUrl, this.nodes.selection.hidden = !1, this.nodes.history.replaceChildren(), e.forEach((i, o) => {
-      const n = g("button", ["ai-image-tool__history-item"], { type: "button" });
-      n.dataset.historyCandidateId = i.id, n.textContent = `Версия ${o + 1}`, n.setAttribute("aria-current", i.id === t.id ? "true" : "false"), n.addEventListener("click", () => this.selectHistory(i.id)), this.nodes.history.appendChild(n);
+    }), this.nodes.selectedPreview.src = t.previewUrl, this.nodes.selection.hidden = !1, this.nodes.history.replaceChildren(), e.forEach((i, n) => {
+      const o = g("button", ["ai-image-tool__history-item"], { type: "button" });
+      o.dataset.historyCandidateId = i.id, o.textContent = `Версия ${n + 1}`, o.setAttribute("aria-current", i.id === t.id ? "true" : "false"), o.addEventListener("click", () => this.selectHistory(i.id)), this.nodes.history.appendChild(o);
     });
   }
   clearRefinementPrompt() {
@@ -3259,11 +3275,11 @@ class qi {
   updateSelectionControls() {
     this.nodes.refinementPrompt.disabled = this.isGenerationBusy, this.nodes.refineButton.disabled = this.isGenerationBusy, this.nodes.finalizeButton.disabled = this.isGenerationBusy || this.isGeneratedCaptionBusy, this.nodes.generatedCaption.disabled = this.isGenerationBusy || this.isGeneratedCaptionBusy, this.nodes.sourceName.disabled = this.isGenerationBusy, this.nodes.sourceUrl.disabled = this.isGenerationBusy;
   }
-  createAspectRatioOptions(t, e, i, o) {
-    const n = e.includes(i) ? i : e[0] ?? "3:2";
+  createAspectRatioOptions(t, e, i, n) {
+    const o = e.includes(i) ? i : e[0] ?? "3:2";
     e.forEach((s) => {
       const a = g("label", ["ai-image-tool__aspect-ratio-option"]), h = g("input", ["ai-image-tool__aspect-ratio-input"]), l = g("span");
-      h.type = "radio", h.name = `${o}-aspect-ratio`, h.value = s, h.checked = s === n, l.textContent = s, a.append(h, l), t.appendChild(a);
+      h.type = "radio", h.name = `${n}-aspect-ratio`, h.value = s, h.checked = s === o, l.textContent = s, a.append(h, l), t.appendChild(a);
     });
   }
   selectedAspectRatio() {
@@ -3272,18 +3288,18 @@ class qi {
     return t === "16:9" || t === "1:1" ? t : "3:2";
   }
 }
-class Xi {
+class Yi {
   constructor({
     blockId: t,
     config: e,
     initialPending: i,
-    metadataPlaceholders: o,
-    onChange: n,
+    metadataPlaceholders: n,
+    onChange: o,
     onFinalized: s
   }) {
-    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new Wi(e), this.config = e, this.onChange = n, this.onFinalized = s, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
+    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new qi(e), this.config = e, this.onChange = o, this.onFinalized = s, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
     const a = typeof e.endpoints.prompt == "string" && e.endpoints.prompt.trim() !== "" && e.publicationContext !== void 0 && typeof e.getPublicationContext == "function";
-    this.ui = new qi({
+    this.ui = new Xi({
       onAdoptSession: (h) => this.adoptSession(h),
       onAssistPrompt: (h, l) => this.assistPrompt(h, l),
       onCancel: () => this.cancel(),
@@ -3295,7 +3311,7 @@ class Xi {
       onSelectHistory: (h) => this.selectCandidate(h),
       aspectRatio: this.defaultAspectRatio(e.aspectRatio),
       aspectRatios: this.availableAspectRatios(e.aspectRatios),
-      metadataPlaceholders: o,
+      metadataPlaceholders: n,
       promptAssistanceEnabled: a,
       promptId: `gallery-ai-prompt-${t}`,
       source: e.source ?? { name: "", url: "" }
@@ -3324,7 +3340,7 @@ class Xi {
       const i = await this.client.adopt({ blockId: this.blockId, sessionId: t }, e.signal);
       this.candidates.clear(), this.history = [], this.selectedCandidateId = null, this.sessionId = t, this.hasCancelledPendingGeneration = !1, this.onChange(), this.ui.hideActiveSessions(), this.applySession(i), (i.status === "queued" || i.status === "generating" || i.status === "refining") && this.applySession(await this.client.poll({
         blockId: this.blockId,
-        onStatus: (o) => this.applySession(o),
+        onStatus: (n) => this.applySession(n),
         sessionId: t,
         signal: e.signal
       }));
@@ -3386,13 +3402,13 @@ class Xi {
       return;
     }
     this.ui.showGenerationError(""), this.isPromptAssistanceRunning = !0;
-    const o = ++this.promptAssistanceRequestToken, n = new AbortController();
-    this.promptAssistanceController = n, this.ui.setPromptAssistanceBusy(!0), this.ui.showPromptAssistanceStatus(t === "generate" ? "Подготавливаем промпт по публикации..." : "Улучшаем промпт с учётом публикации..."), this.runPromptAssistance(t, e, i, n, o);
+    const n = ++this.promptAssistanceRequestToken, o = new AbortController();
+    this.promptAssistanceController = o, this.ui.setPromptAssistanceBusy(!0), this.ui.showPromptAssistanceStatus(t === "generate" ? "Подготавливаем промпт по публикации..." : "Улучшаем промпт с учётом публикации..."), this.runPromptAssistance(t, e, i, o, n);
   }
-  async runPromptAssistance(t, e, i, o, n) {
+  async runPromptAssistance(t, e, i, n, o) {
     try {
       const s = await i();
-      if (!this.isCurrentPromptAssistance(n, o))
+      if (!this.isCurrentPromptAssistance(o, n))
         return;
       this.assertPublicationHasText(s, "В публикации нет текста для подготовки промпта.");
       const a = t === "generate" ? {
@@ -3406,12 +3422,12 @@ class Xi {
         blockId: this.blockId,
         draft: e,
         publication: s
-      }, h = await this.client.assistPrompt(a, o.signal);
-      this.isCurrentPromptAssistance(n, o) && (this.ui.setPromptValue(h), this.ui.showPromptAssistanceStatus("Промпт готов — проверьте и при необходимости отредактируйте"));
+      }, h = await this.client.assistPrompt(a, n.signal);
+      this.isCurrentPromptAssistance(o, n) && (this.ui.setPromptValue(h), this.ui.showPromptAssistanceStatus("Промпт готов — проверьте и при необходимости отредактируйте"));
     } catch (s) {
-      this.isCurrentPromptAssistance(n, o) && !this.isAbortError(s) && (this.ui.showPromptAssistanceStatus(""), this.ui.showGenerationError(this.errorMessage(s, "Не удалось подготовить промпт для изображения.")));
+      this.isCurrentPromptAssistance(o, n) && !this.isAbortError(s) && (this.ui.showPromptAssistanceStatus(""), this.ui.showGenerationError(this.errorMessage(s, "Не удалось подготовить промпт для изображения.")));
     } finally {
-      this.isCurrentPromptAssistance(n, o) && (this.isPromptAssistanceRunning = !1, this.promptAssistanceController = null, this.ui.setPromptAssistanceBusy(!1));
+      this.isCurrentPromptAssistance(o, n) && (this.isPromptAssistanceRunning = !1, this.promptAssistanceController = null, this.ui.setPromptAssistanceBusy(!1));
     }
   }
   isCurrentPromptAssistance(t, e) {
@@ -3424,62 +3440,62 @@ class Xi {
       return;
     }
     this.isCaptionRequestRunning = !0;
-    const i = ++this.captionRequestToken, o = new AbortController();
-    this.captionController = o, this.runCaptionGeneration(t, e, o, i);
+    const i = ++this.captionRequestToken, n = new AbortController();
+    this.captionController = n, this.runCaptionGeneration(t, e, n, i);
   }
-  async runCaptionGeneration(t, e, i, o) {
+  async runCaptionGeneration(t, e, i, n) {
     try {
-      const n = await e();
-      if (!this.isCurrentCaptionRequest(o, i))
+      const o = await e();
+      if (!this.isCurrentCaptionRequest(n, i))
         return;
-      this.assertPublicationHasText(n, "В публикации нет текста для подготовки описания.");
+      this.assertPublicationHasText(o, "В публикации нет текста для подготовки описания.");
       const s = await this.client.generateCaption({
         action: "caption",
         actionId: globalThis.crypto.randomUUID(),
         blockId: this.blockId,
         draft: t,
-        publication: n
+        publication: o
       }, i.signal);
-      this.isCurrentCaptionRequest(o, i) && this.ui.completeGeneratedCaption(s);
-    } catch (n) {
-      this.isCurrentCaptionRequest(o, i) && !this.isAbortError(n) && this.ui.failGeneratedCaption(`${this.errorMessage(n, "Не удалось подготовить описание изображения.")} Можно ввести подпись вручную.`);
+      this.isCurrentCaptionRequest(n, i) && this.ui.completeGeneratedCaption(s);
+    } catch (o) {
+      this.isCurrentCaptionRequest(n, i) && !this.isAbortError(o) && this.ui.failGeneratedCaption(`${this.errorMessage(o, "Не удалось подготовить описание изображения.")} Можно ввести подпись вручную.`);
     } finally {
-      this.isCurrentCaptionRequest(o, i) && (this.isCaptionRequestRunning = !1, this.captionController = null);
+      this.isCurrentCaptionRequest(n, i) && (this.isCaptionRequestRunning = !1, this.captionController = null);
     }
   }
   isCurrentCaptionRequest(t, e) {
     return !this.isDestroyed && this.captionRequestToken === t && this.captionController === e;
   }
   generate(t, e, i) {
-    const o = t.trim();
-    if (o === "") {
+    const n = t.trim();
+    if (n === "") {
       this.ui.showGenerationError("Введите промпт для генерации изображения.");
       return;
     }
     if (this.isGenerationRequestRunning || this.sessionId === null)
       return;
     this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.generationActionId ?? (this.generationActionId = globalThis.crypto.randomUUID());
-    const n = this.generationActionId, s = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "generation_submitting"), e ? this.startCaptionGeneration(o) : (this.abortCaptionGeneration(), this.ui.resetGeneratedCaption()), this.runGeneration(o, i, n, s);
+    const o = this.generationActionId, s = this.replacePollController();
+    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "generation_submitting"), e ? this.startCaptionGeneration(n) : (this.abortCaptionGeneration(), this.ui.resetGeneratedCaption()), this.runGeneration(n, i, o, s);
   }
-  async runGeneration(t, e, i, o) {
+  async runGeneration(t, e, i, n) {
     if (this.sessionId === null)
       return;
-    const n = this.sessionId;
+    const o = this.sessionId;
     try {
       const s = await this.client.generate({
         actionId: i,
         aspectRatio: e,
         blockId: this.blockId,
         prompt: t,
-        sessionId: n
-      }, o.signal);
+        sessionId: o
+      }, n.signal);
       this.generationActionId = null, this.applySession(s);
       const a = s.status === "ready" ? s : await this.client.poll({
         blockId: this.blockId,
         onStatus: (h) => this.applySession(h),
-        sessionId: n,
-        signal: o.signal
+        sessionId: o,
+        signal: n.signal
       });
       this.applySession(a);
     } catch (s) {
@@ -3487,7 +3503,7 @@ class Xi {
         this.generationActionId = null;
       });
     } finally {
-      this.finishGenerationRequest(o);
+      this.finishGenerationRequest(n);
     }
   }
   refine(t) {
@@ -3499,27 +3515,27 @@ class Xi {
     if (this.isGenerationRequestRunning || this.sessionId === null || this.selectedCandidateId === null)
       return;
     this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.refinementActionId ?? (this.refinementActionId = globalThis.crypto.randomUUID());
-    const i = this.refinementActionId, o = this.selectedCandidateId, n = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "refinement_submitting"), this.runRefinement(e, o, i, n);
+    const i = this.refinementActionId, n = this.selectedCandidateId, o = this.replacePollController();
+    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "refinement_submitting"), this.runRefinement(e, n, i, o);
   }
-  async runRefinement(t, e, i, o) {
+  async runRefinement(t, e, i, n) {
     if (this.sessionId === null)
       return;
-    const n = this.sessionId;
+    const o = this.sessionId;
     try {
       const s = await this.client.refine({
         actionId: i,
         blockId: this.blockId,
         candidateId: e,
         prompt: t,
-        sessionId: n
-      }, o.signal);
+        sessionId: o
+      }, n.signal);
       this.refinementActionId = null, this.applySession(s);
       const a = s.status === "ready" ? s : await this.client.poll({
         blockId: this.blockId,
         onStatus: (h) => this.applySession(h),
-        sessionId: n,
-        signal: o.signal
+        sessionId: o,
+        signal: n.signal
       });
       this.applySession(a), this.ui.clearRefinementPrompt();
     } catch (s) {
@@ -3527,39 +3543,39 @@ class Xi {
         this.refinementActionId = null;
       });
     } finally {
-      this.finishGenerationRequest(o);
+      this.finishGenerationRequest(n);
     }
   }
   finalizeSelectedCandidate() {
     if (this.isGenerationRequestRunning || this.isCaptionRequestRunning || this.sessionId === null || this.selectedCandidateId === null)
       return;
     this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.finalizationActionId ?? (this.finalizationActionId = globalThis.crypto.randomUUID());
-    const t = this.finalizationActionId, e = this.selectedCandidateId, i = this.ui.getImageMetadata(), o = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("finalizing", "finalization_submitting"), this.runFinalization(e, t, o, i);
+    const t = this.finalizationActionId, e = this.selectedCandidateId, i = this.ui.getImageMetadata(), n = this.replacePollController();
+    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("finalizing", "finalization_submitting"), this.runFinalization(e, t, n, i);
   }
-  async runFinalization(t, e, i, o) {
+  async runFinalization(t, e, i, n) {
     if (this.sessionId === null)
       return;
-    const n = this.sessionId;
+    const o = this.sessionId;
     try {
       const s = await this.client.finalize({
         actionId: e,
         blockId: this.blockId,
         candidateId: t,
-        sessionId: n
+        sessionId: o
       }, i.signal);
       this.finalizationActionId = null, this.applySession(s);
       const a = s.status === "completed" ? s : await this.client.poll({
         blockId: this.blockId,
         onStatus: (l) => this.applySession(l),
-        sessionId: n,
+        sessionId: o,
         signal: i.signal
       });
       if (a.error !== void 0)
         throw new U(a.error.code, a.error.message, 0);
       if (a.image === void 0 || !this.isStandardImageData(a.image))
         throw new U("invalid_final_image", "Сервер вернул некорректные данные изображения.", 0);
-      const h = this.mapImageToGalleryItem(a.image, o);
+      const h = this.mapImageToGalleryItem(a.image, n);
       this.resetSession(), this.ui.close(), this.onFinalized(h), this.onChange();
     } catch (s) {
       this.handleOperationError(s, "Не удалось сохранить изображение.", () => {
@@ -3576,16 +3592,16 @@ class Xi {
     const e = this.candidates.get(t);
     if (e === void 0)
       return;
-    const i = this.history.findIndex((o) => o.id === e.id);
+    const i = this.history.findIndex((n) => n.id === e.id);
     i < 0 && e.parentId === null ? this.history = [e] : i < 0 && this.history.push(e), this.selectedCandidateId = e.id, this.ui.showSelectedCandidate(e, this.history);
   }
   applyRefinementCandidate(t) {
     const e = this.candidates.get(t);
     if (e === void 0)
       return;
-    if (this.history.findIndex((o) => o.id === e.id) < 0) {
-      const o = this.history.findIndex((n) => n.id === e.parentId);
-      this.history = o >= 0 ? [...this.history.slice(0, o + 1), e] : [e];
+    if (this.history.findIndex((n) => n.id === e.id) < 0) {
+      const n = this.history.findIndex((o) => o.id === e.parentId);
+      this.history = n >= 0 ? [...this.history.slice(0, n + 1), e] : [e];
     }
     this.selectedCandidateId = e.id, this.ui.showSelectedCandidate(e, this.history);
   }
@@ -3643,9 +3659,9 @@ class Xi {
  * @author iXBT
  * @license MIT
  */
-class Yi {
-  constructor({ data: t, config: e, api: i, readOnly: o, block: n }) {
-    this.aiGenerationController = null, this.currentLoadingItem = null, this.api = i, this.readOnly = o, this.block = n;
+class Vi {
+  constructor({ data: t, config: e, api: i, readOnly: n, block: o }) {
+    this.aiGenerationController = null, this.currentLoadingItem = null, this.api = i, this.readOnly = n, this.block = o;
     const s = e ?? {};
     this.config = {
       endpoints: s.endpoints ?? {},
@@ -3659,6 +3675,7 @@ class Yi {
       buttonContent: s.buttonContent ?? this.api.i18n.t("Add Image"),
       urlButtonContent: s.urlButtonContent ?? this.api.i18n.t("Add from URL"),
       uploader: s.uploader,
+      onNonImageFile: s.onNonImageFile,
       mediaHost: s.mediaHost,
       cover: s.cover,
       onMediaRemoved: s.onMediaRemoved,
@@ -3669,11 +3686,11 @@ class Yi {
       layout: (t == null ? void 0 : t.layout) ?? "grid",
       columns: (t == null ? void 0 : t.columns) ?? 3,
       stretched: (t == null ? void 0 : t.stretched) ?? !1
-    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new Ve({
+    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new Je({
       config: this.config,
       onUpload: (a) => this.onUpload(a),
       onError: (a) => this.uploadingFailed(a)
-    }), this.cropModal = new Hi(), this.ui = new Ht({
+    }), this.cropModal = new Fi(), this.ui = new Ht({
       api: i,
       config: this.config,
       onSelectFile: () => this.selectFile(),
@@ -3687,8 +3704,8 @@ class Yi {
         var a;
         return (a = this.aiGenerationController) == null ? void 0 : a.open();
       },
-      readOnly: o
-    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new Xi({
+      readOnly: n
+    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new Yi({
       blockId: this.block.id,
       config: this.config.generation,
       initialPending: this._data.aiGeneration,
@@ -3712,7 +3729,7 @@ class Yi {
    */
   static get toolbox() {
     return {
-      icon: we,
+      icon: Se,
       title: "Gallery"
     };
   }
@@ -3771,8 +3788,8 @@ class Yi {
     }
     const t = this.ui.getItemsData().map((i) => i.media_id).filter((i) => !!i);
     new Set(t).forEach((i) => {
-      var o, n;
-      return (n = (o = this.config).onMediaRemoved) == null ? void 0 : n.call(o, i);
+      var n, o;
+      return (o = (n = this.config).onMediaRemoved) == null ? void 0 : o.call(n, i);
     });
   }
   destroy() {
@@ -3805,8 +3822,8 @@ class Yi {
       case "tag": {
         const e = t.detail.data;
         if (/^blob:/.test(e.src)) {
-          const o = await (await fetch(e.src)).blob();
-          this.uploadFile(o);
+          const n = await (await fetch(e.src)).blob();
+          this.uploadFile(n);
         } else
           this.uploadFromUrl(e.src);
         break;
@@ -3828,6 +3845,10 @@ class Yi {
    */
   selectFile() {
     this.uploader.uploadSelectedFile({
+      onNonImageFile: (t) => {
+        var e, i;
+        return ((i = (e = this.config).onNonImageFile) == null ? void 0 : i.call(e, t)) === !0;
+      },
       onPreview: (t) => {
         this.currentLoadingItem = this.ui.createLoadingItem(t);
       }
@@ -3837,9 +3858,10 @@ class Yi {
    * Upload file from paste/drag-n-drop
    */
   uploadFile(t) {
-    this.uploader.uploadByFile(t, {
-      onPreview: (e) => {
-        this.currentLoadingItem = this.ui.createLoadingItem(e);
+    var e, i;
+    ((i = (e = this.config).onNonImageFile) == null ? void 0 : i.call(e, t)) !== !0 && this.uploader.uploadByFile(t, {
+      onPreview: (n) => {
+        this.currentLoadingItem = this.ui.createLoadingItem(n);
       }
     });
   }
@@ -3871,10 +3893,10 @@ class Yi {
   onAiFinalized(t) {
     const e = this.ui.addItem(t), i = e.querySelector("img");
     if (delete this._data.aiGeneration, i !== null) {
-      const o = () => {
+      const n = () => {
         e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
       };
-      i.complete ? requestAnimationFrame(o) : i.addEventListener("load", o, { once: !0 });
+      i.complete ? requestAnimationFrame(n) : i.addEventListener("load", n, { once: !0 });
     }
   }
   isPendingAiGeneration(t) {
@@ -3899,31 +3921,31 @@ class Yi {
    * Handle crop image request
    */
   async handleCropImage(t) {
-    var n, s;
+    var o, s;
     if (t.dataset.disableOptimization === "true")
       return;
     const e = t.dataset.url;
     if (!e) return;
-    const i = t.dataset.crop, o = await this.cropModal.open(
+    const i = t.dataset.crop, n = await this.cropModal.open(
       e,
       i,
       t.dataset.showOriginalOnClick === "true",
       this.normalizeCropAspectRatioMode(t.dataset.cropAspectRatio)
     );
-    if (o !== null) {
-      if (o.crop === "")
+    if (n !== null) {
+      if (n.crop === "")
         this.ui.updateItemAfterCrop(t, void 0, 0, 0, void 0, void 0);
       else {
         this.ui.updateItemAfterCrop(
           t,
-          o.crop,
-          o.croppedWidth,
-          o.croppedHeight,
-          o.showOriginalOnClick,
-          o.cropAspectRatio
+          n.crop,
+          n.croppedWidth,
+          n.croppedHeight,
+          n.showOriginalOnClick,
+          n.cropAspectRatio
         );
         const a = t.dataset.mediaId;
-        a && ((s = (n = this.config).onCropApplied) == null || s.call(n, a, o.crop));
+        a && ((s = (o = this.config).onCropApplied) == null || s.call(o, a, n.crop));
       }
       this.block.dispatchChange();
     }
@@ -3932,9 +3954,9 @@ class Yi {
    * Handle image removal - delete from S3
    */
   onRemoveImage(t, e) {
-    var o, n;
+    var n, o;
     if (this.block.dispatchChange(), e) {
-      (n = (o = this.config).onMediaRemoved) == null || n.call(o, e);
+      (o = (n = this.config).onMediaRemoved) == null || o.call(n, e);
       return;
     }
     const i = this.config.endpoints.deleteImage;
@@ -3980,5 +4002,5 @@ class Yi {
   }
 }
 export {
-  Yi as default
+  Vi as default
 };

@@ -5,10 +5,6 @@ interface UploaderParams {
     onUpload: (response: UploadResponseFormat) => void;
     onError: (error: string) => void;
 }
-/**
- * Module for file uploading
- * Handles: file selection, URL upload, drag-n-drop
- */
 export default class Uploader {
     private config;
     private onUpload;
@@ -17,7 +13,7 @@ export default class Uploader {
     /**
      * Upload file selected from device
      */
-    uploadSelectedFile({ onPreview }: UploadOptions): void;
+    uploadSelectedFile({ onPreview, onNonImageFile }: UploadOptions): void;
     /**
      * Upload image by URL
      */
