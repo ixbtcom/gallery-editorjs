@@ -59,6 +59,9 @@ export default class Ui {
   /** Maximum number of columns */
   private static readonly MAX_COLUMNS = 5;
 
+  /** Потолок авто-расширения: руками можно и больше. */
+  private static readonly AUTO_MAX_COLUMNS = 4;
+
   public nodes: Nodes;
   private api: API;
   private config: GalleryConfig;
@@ -797,8 +800,10 @@ export default class Ui {
   private autoAdjustColumns(): void {
     if (this.isRendering || this.columnsLocked) return;
 
+    // Колонок — по числу элементов, до четырёх: второй снимок встаёт рядом с
+    // первым, третий и четвёртый расширяют ряд, дальше ряд переносится.
     const itemsCount = this.nodes.itemsContainer.children.length;
-    const targetColumns = itemsCount <= 1 ? 1 : 2;
+    const targetColumns = Math.max(Ui.MIN_COLUMNS, Math.min(itemsCount, Ui.AUTO_MAX_COLUMNS));
 
     if (targetColumns !== this.currentColumns) {
       this.previousColumns = this.currentColumns;
