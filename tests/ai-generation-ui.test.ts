@@ -66,6 +66,33 @@ describe('Gallery AI generation UI', () => {
     expect(onCancel).toHaveBeenCalledOnce();
   });
 
+  it('reports the chosen resolution only when the host offers both 1k and 2k', () => {
+    const onGenerate = vi.fn();
+    const ui = makeUi({ onGenerate, resolution: '1k', resolutions: ['1k', '2k'] });
+
+    document.body.appendChild(ui.nodes.wrapper);
+    ui.open();
+    ui.nodes.prompt.value = 'Иллюстрация';
+    ui.nodes.generateButton.click();
+    ui.nodes.hdResolutionCheckbox.click();
+    ui.nodes.generateButton.click();
+
+    expect(ui.nodes.hdResolutionOption.hidden).toBe(false);
+    expect(onGenerate).toHaveBeenNthCalledWith(1, 'Иллюстрация', false, '3:2', '1k');
+    expect(onGenerate).toHaveBeenNthCalledWith(2, 'Иллюстрация', false, '3:2', '2k');
+
+    // Только одно разрешение у хоста: тумблер скрыт, уходит значение по умолчанию.
+    const singleResolutionUi = makeUi({ onGenerate, resolution: '2k', resolutions: ['2k'] });
+
+    document.body.appendChild(singleResolutionUi.nodes.wrapper);
+    singleResolutionUi.open();
+    singleResolutionUi.nodes.prompt.value = 'Иллюстрация';
+    singleResolutionUi.nodes.generateButton.click();
+
+    expect(singleResolutionUi.nodes.hdResolutionOption.hidden).toBe(true);
+    expect(onGenerate).toHaveBeenLastCalledWith('Иллюстрация', false, '3:2', '2k');
+  });
+
   it('blocks finalization while the optional caption is generated', () => {
     const ui = makeUi({
       promptId: 'gallery-ai-caption',
