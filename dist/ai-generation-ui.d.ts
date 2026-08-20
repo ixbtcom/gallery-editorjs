@@ -1,4 +1,4 @@
-import { AiImageActiveSessions, AiImageAspectRatio, AiImageCandidate } from './ai-image-client';
+import { AiImageActiveSessions, AiImageAspectRatio, AiImageResolution, AiImageCandidate } from './ai-image-client';
 
 export type PromptAssistanceAction = 'generate' | 'improve';
 export interface AiImageEditorialMetadata {
@@ -12,7 +12,7 @@ interface AiGenerationUiParams {
     onCancel: () => void;
     onCloseSession: (sessionId: string) => void;
     onFinalize: () => void;
-    onGenerate: (prompt: string, generateCaption: boolean, aspectRatio: AiImageAspectRatio) => void;
+    onGenerate: (prompt: string, generateCaption: boolean, aspectRatio: AiImageAspectRatio, resolution: AiImageResolution | null) => void;
     onRefine: (prompt: string) => void;
     onSelectCandidate: (candidateId: string) => void;
     onSelectHistory: (candidateId: string) => void;
@@ -20,6 +20,8 @@ interface AiGenerationUiParams {
     promptId: string;
     aspectRatio: AiImageAspectRatio;
     aspectRatios: AiImageAspectRatio[];
+    resolution: AiImageResolution | null;
+    resolutions: AiImageResolution[];
     metadataPlaceholders: AiImageEditorialMetadata;
     source: {
         name: string;
@@ -38,6 +40,8 @@ interface AiGenerationNodes {
     improvePromptButton: HTMLButtonElement;
     generateCaptionCheckbox: HTMLInputElement;
     aspectRatioOptions: HTMLElement;
+    hdResolutionOption: HTMLLabelElement;
+    hdResolutionCheckbox: HTMLInputElement;
     generationStatus: HTMLElement;
     generationError: HTMLElement;
     candidates: HTMLElement;
@@ -58,6 +62,7 @@ interface AiGenerationNodes {
 export default class AiGenerationUi {
     readonly nodes: AiGenerationNodes;
     private readonly promptAssistanceEnabled;
+    private readonly defaultResolution;
     private readonly onAdoptSession;
     private readonly onCloseSession;
     private readonly onSelectCandidate;
@@ -66,7 +71,7 @@ export default class AiGenerationUi {
     private isPromptAssistanceBusy;
     private isGeneratedCaptionBusy;
     private hasFreeSessionSlot;
-    constructor({ onAdoptSession, onAssistPrompt, onCancel, onCloseSession, onFinalize, onGenerate, onRefine, onSelectCandidate, onSelectHistory, promptAssistanceEnabled, promptId, aspectRatio, aspectRatios, metadataPlaceholders, source, }: AiGenerationUiParams);
+    constructor({ onAdoptSession, onAssistPrompt, onCancel, onCloseSession, onFinalize, onGenerate, onRefine, onSelectCandidate, onSelectHistory, promptAssistanceEnabled, promptId, aspectRatio, aspectRatios, resolution, resolutions, metadataPlaceholders, source, }: AiGenerationUiParams);
     open(): void;
     close(): void;
     /**
@@ -99,5 +104,6 @@ export default class AiGenerationUi {
     private updateSelectionControls;
     private createAspectRatioOptions;
     private selectedAspectRatio;
+    private selectedResolution;
 }
 export {};

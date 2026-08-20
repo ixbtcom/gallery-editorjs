@@ -2,6 +2,7 @@ import type {
   AiImageActiveSession,
   AiImageActiveSessions,
   AiImageAspectRatio,
+  AiImageResolution,
   AiImageCandidate,
 } from './ai-image-client';
 import { make } from './utils/dom';
@@ -20,7 +21,12 @@ interface AiGenerationUiParams {
   onCancel: () => void;
   onCloseSession: (sessionId: string) => void;
   onFinalize: () => void;
-  onGenerate: (prompt: string, generateCaption: boolean, aspectRatio: AiImageAspectRatio) => void;
+  onGenerate: (
+    prompt: string,
+    generateCaption: boolean,
+    aspectRatio: AiImageAspectRatio,
+    resolution: AiImageResolution | null,
+  ) => void;
   onRefine: (prompt: string) => void;
   onSelectCandidate: (candidateId: string) => void;
   onSelectHistory: (candidateId: string) => void;
@@ -28,6 +34,8 @@ interface AiGenerationUiParams {
   promptId: string;
   aspectRatio: AiImageAspectRatio;
   aspectRatios: AiImageAspectRatio[];
+  resolution: AiImageResolution | null;
+  resolutions: AiImageResolution[];
   metadataPlaceholders: AiImageEditorialMetadata;
   source: {
     name: string;
@@ -47,6 +55,8 @@ interface AiGenerationNodes {
   improvePromptButton: HTMLButtonElement;
   generateCaptionCheckbox: HTMLInputElement;
   aspectRatioOptions: HTMLElement;
+  hdResolutionOption: HTMLLabelElement;
+  hdResolutionCheckbox: HTMLInputElement;
   generationStatus: HTMLElement;
   generationError: HTMLElement;
   candidates: HTMLElement;
@@ -69,6 +79,7 @@ export default class AiGenerationUi {
   public readonly nodes: AiGenerationNodes;
 
   private readonly promptAssistanceEnabled: boolean;
+  private readonly defaultResolution: AiImageResolution | null;
   private readonly onAdoptSession: (sessionId: string) => void;
   private readonly onCloseSession: (sessionId: string) => void;
   private readonly onSelectCandidate: (candidateId: string) => void;
@@ -92,10 +103,13 @@ export default class AiGenerationUi {
     promptId,
     aspectRatio,
     aspectRatios,
+    resolution,
+    resolutions,
     metadataPlaceholders,
     source,
   }: AiGenerationUiParams) {
     this.promptAssistanceEnabled = promptAssistanceEnabled;
+    this.defaultResolution = resolution;
     this.onAdoptSession = onAdoptSession;
     this.onCloseSession = onCloseSession;
     this.onSelectCandidate = onSelectCandidate;
@@ -115,6 +129,9 @@ export default class AiGenerationUi {
     const aspectRatioField = make('div', ['ai-image-tool__aspect-ratio-field']);
     const aspectRatioLabel = make('span', ['ai-image-tool__aspect-ratio-label']);
     const aspectRatioOptions = make('div', ['ai-image-tool__aspect-ratios']);
+    const hdResolutionOption = make('label', ['ai-image-tool__resolution-option']) as HTMLLabelElement;
+    const hdResolutionCheckbox = make('input', ['ai-image-tool__resolution-checkbox']) as HTMLInputElement;
+    const hdResolutionText = make('span');
     const promptActions = make('div', ['ai-image-tool__prompt-actions']);
     const generateButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--generate'], { type: 'button' }) as HTMLButtonElement;
     const generateFromPublicationButton = make('button', ['ai-image-tool__action', 'ai-image-tool__action--secondary'], { type: 'button' }) as HTMLButtonElement;
@@ -159,7 +176,16 @@ export default class AiGenerationUi {
     aspectRatioOptions.setAttribute('aria-label', 'Соотношение сторон');
     this.createAspectRatioOptions(aspectRatioOptions, aspectRatios, aspectRatio, promptId);
     aspectRatioLabel.textContent = 'Соотношение сторон:';
-    aspectRatioField.append(aspectRatioLabel, aspectRatioOptions);
+    hdResolutionCheckbox.type = 'checkbox';
+    hdResolutionCheckbox.id = `${promptId}-hd-resolution`;
+    hdResolutionCheckbox.checked = resolution === '2k';
+    hdResolutionText.textContent = 'HD 2k';
+    hdResolutionOption.htmlFor = hdResolutionCheckbox.id;
+    hdResolutionOption.title = 'Варианты в 2k: дольше и дороже, зато детальнее';
+    // Тумблер имеет смысл, только когда хост принимает оба разрешения.
+    hdResolutionOption.hidden = !(resolutions.includes('1k') && resolutions.includes('2k'));
+    hdResolutionOption.append(hdResolutionCheckbox, hdResolutionText);
+    aspectRatioField.append(aspectRatioLabel, aspectRatioOptions, hdResolutionOption);
     promptActions.append(generateFromPublicationButton, cancelButton, generateButton);
     promptSection.append(promptLabel, prompt, promptAssistance, aspectRatioField, promptActions);
 
@@ -215,7 +241,12 @@ export default class AiGenerationUi {
     sessionsSection.append(sessionsTitle, sessionsList);
     wrapper.append(sessionsSection, promptSection, generationStatus, generationError, candidates, selection);
 
-    generateButton.addEventListener('click', () => onGenerate(prompt.value, generateCaptionCheckbox.checked, this.selectedAspectRatio()));
+    generateButton.addEventListener('click', () => onGenerate(
+      prompt.value,
+      generateCaptionCheckbox.checked,
+      this.selectedAspectRatio(),
+      this.selectedResolution(),
+    ));
     generateFromPublicationButton.addEventListener('click', () => onAssistPrompt('generate', prompt.value));
     improvePromptButton.addEventListener('click', () => onAssistPrompt('improve', prompt.value));
     cancelButton.addEventListener('click', onCancel);
@@ -235,6 +266,8 @@ export default class AiGenerationUi {
       improvePromptButton,
       generateCaptionCheckbox,
       aspectRatioOptions,
+      hdResolutionOption,
+      hdResolutionCheckbox,
       generationStatus,
       generationError,
       candidates,
@@ -573,6 +606,7 @@ export default class AiGenerationUi {
       .forEach(option => {
         option.disabled = isBusy;
       });
+    this.nodes.hdResolutionCheckbox.disabled = isBusy;
     this.nodes.improvePromptButton.disabled = isBusy
       || !this.promptAssistanceEnabled
       || this.nodes.prompt.value.trim() === '';
@@ -614,5 +648,13 @@ export default class AiGenerationUi {
     const selected = this.nodes.aspectRatioOptions.querySelector<HTMLInputElement>('input[type="radio"]:checked')?.value;
 
     return selected === '16:9' || selected === '1:1' ? selected : '3:2';
+  }
+
+  private selectedResolution(): AiImageResolution | null {
+    if (this.nodes.hdResolutionOption.hidden) {
+      return this.defaultResolution;
+    }
+
+    return this.nodes.hdResolutionCheckbox.checked ? '2k' : '1k';
   }
 }

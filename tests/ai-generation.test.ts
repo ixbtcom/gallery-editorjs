@@ -505,6 +505,65 @@ describe('Gallery-owned AI generation', () => {
     });
   });
 
+  it('offers the HD 2k toggle only when the host allows 2k and sends the chosen resolution', async () => {
+    const fetchMock = vi.fn(async (): Promise<Response> => new Response(JSON.stringify({
+      data: {
+        candidates: [{ id: 'candidate-1', parent_id: null }],
+        session_id: 'session-resolution',
+        status: 'ready',
+      },
+    }), {
+      headers: { 'Content-Type': 'application/json' },
+      status: 200,
+    }));
+    vi.stubGlobal('fetch', fetchMock);
+    const generateCalls = (): unknown[][] => fetchMock.mock.calls.filter(([url]) => String(url).endsWith('/generate'));
+
+    // Хост без списка разрешений: тумблер скрыт, разрешение не отправляется.
+    const plainWrapper = createTool().render();
+
+    document.body.appendChild(plainWrapper);
+    findButton(plainWrapper, 'Генерация').click();
+    expect(plainWrapper.querySelector<HTMLLabelElement>('.ai-image-tool__resolution-option')?.hidden).toBe(true);
+    plainWrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!.value = 'Иллюстрация к обзору';
+    findButton(plainWrapper, 'Генерировать').click();
+
+    await vi.waitFor(() => {
+      expect(plainWrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
+    });
+    expect(generateCalls()).toHaveLength(1);
+    expect(JSON.parse(String(generateCalls()[0][1]?.body))).not.toHaveProperty('resolution');
+
+    // Хост разрешает 1k и 2k: тумблер «HD 2k» виден, по умолчанию выключен, выбор уходит в запрос.
+    const wrapper = createTool({}, {
+      generation: { ...generationConfig, resolution: '1k', resolutions: ['1k', '2k'] },
+    }).render();
+
+    document.body.appendChild(wrapper);
+    findButton(wrapper, 'Генерация').click();
+    const hdToggle = wrapper.querySelector<HTMLInputElement>('#gallery-ai-prompt-gallery-block-1-hd-resolution');
+    const hdOption = wrapper.querySelector<HTMLLabelElement>('.ai-image-tool__resolution-option');
+
+    expect(hdToggle).not.toBeNull();
+    expect(hdToggle!.checked).toBe(false);
+    expect(hdOption?.hidden).toBe(false);
+    expect(hdOption?.textContent).toContain('HD 2k');
+    hdToggle!.click();
+    wrapper.querySelector<HTMLTextAreaElement>('#gallery-ai-prompt-gallery-block-1')!.value = 'Иллюстрация к обзору';
+    findButton(wrapper, 'Генерировать').click();
+
+    await vi.waitFor(() => {
+      expect(wrapper.querySelector('[data-candidate-id="candidate-1"]')).not.toBeNull();
+    });
+    expect(generateCalls()).toHaveLength(2);
+    expect(JSON.parse(String(generateCalls()[1][1]?.body))).toMatchObject({
+      aspect_ratio: '3:2',
+      resolution: '2k',
+    });
+    expect(wrapper.querySelector<HTMLImageElement>('[data-candidate-id="candidate-1"] img')?.src)
+      .toContain('/candidates/candidate-1?variant=preview');
+  });
+
   it('keeps generation configs without source backward compatible', () => {
     const { source: _source, ...legacyGenerationConfig } = generationConfig;
     const tool = createTool({}, {

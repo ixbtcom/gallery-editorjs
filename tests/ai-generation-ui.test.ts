@@ -12,6 +12,8 @@ describe('Gallery AI generation UI', () => {
   const makeUi = (overrides: Partial<ConstructorParameters<typeof AiGenerationUi>[0]> = {}): AiGenerationUi => new AiGenerationUi({
     aspectRatio: '3:2',
     aspectRatios: ['16:9', '3:2', '1:1'],
+    resolution: null,
+    resolutions: [],
     metadataPlaceholders: {
       caption: 'Подпись к изображению',
       source: 'Источник',

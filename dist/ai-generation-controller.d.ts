@@ -78,5 +78,9 @@ export default class AiGenerationController {
     private availableAspectRatios;
     private defaultAspectRatio;
     private isAspectRatio;
+    private availableResolutions;
+    /** Without a host default the first allowed resolution wins; nothing is sent when the host lists none. */
+    private defaultResolution;
+    private isResolution;
 }
 export {};

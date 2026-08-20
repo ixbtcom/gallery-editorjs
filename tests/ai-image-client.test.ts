@@ -244,6 +244,7 @@ describe('AiImageClient', () => {
       aspectRatio: '3:2',
       blockId: 'block-1',
       prompt: 'Ночной город после дождя',
+      resolution: '2k',
       sessionId: 'session-1',
     });
 
@@ -264,8 +265,20 @@ describe('AiImageClient', () => {
       block_id: 'block-1',
       context: config.context,
       prompt: 'Ночной город после дождя',
+      resolution: '2k',
       session_id: 'session-1',
     });
+
+    // Без выбранного разрешения ключ не отправляется: решает настройка сервера.
+    await client.generate({
+      actionId: 'action-2',
+      aspectRatio: '3:2',
+      blockId: 'block-1',
+      prompt: 'Ночной город после дождя',
+      sessionId: 'session-2',
+    });
+
+    expect(JSON.parse(fetchMock.mock.calls[1][1].body)).not.toHaveProperty('resolution');
   });
 
   it('polls observable states and builds candidate previews only from the host endpoint', async () => {
@@ -307,10 +320,44 @@ describe('AiImageClient', () => {
     expect(result.candidates).toEqual([1, 2, 3, 4].map(number => ({
       id: `candidate-${number}`,
       parentId: null,
-      previewUrl: `/admin/ai-images/session-1/candidates/candidate-${number}`,
+      previewUrl: `/admin/ai-images/session-1/candidates/candidate-${number}?variant=preview`,
     })));
     expect(JSON.stringify(result)).not.toContain('provider.example.test');
     expect(JSON.stringify(result)).not.toContain('provider-base64');
+  });
+
+  it('backs off towards a two second ceiling with jitter between status requests', async () => {
+    const statuses = ['queued', 'queued', 'generating', 'generating', 'ready'];
+    const fetchMock = vi.fn(async (): Promise<Response> => new Response(JSON.stringify({
+      data: { session_id: 'session-1', status: statuses.shift() ?? 'ready' },
+    }), {
+      headers: { 'Content-Type': 'application/json' },
+      status: 200,
+    }));
+    const delays: number[] = [];
+    vi.stubGlobal('fetch', fetchMock);
+    vi.stubGlobal('setTimeout', (callback: () => void, delay: number): number => {
+      delays.push(delay);
+      callback();
+
+      return 0;
+    });
+    const random = vi.spyOn(Math, 'random').mockReturnValue(0);
+
+    try {
+      const result = await new AiImageClient({
+        ...config,
+        pollIntervalMs: 1_000,
+        pollTimeoutMs: 60_000,
+      }).poll({ blockId: 'block-1', sessionId: 'session-1' });
+
+      expect(result.status).toBe('ready');
+      expect(fetchMock).toHaveBeenCalledTimes(5);
+      // Math.random = 0 — нижняя граница джиттера (−20 %): 1000→800, 1500→1200, потолок 2000→1600.
+      expect(delays).toEqual([800, 1200, 1600, 1600]);
+    } finally {
+      random.mockRestore();
+    }
   });
 
   it('stops polling immediately when the host cancels the session', async () => {

@@ -2,6 +2,7 @@ import { AiImageClient, AiImageClientError } from './ai-image-client';
 import type {
   AiImageCandidate,
   AiImageAspectRatio,
+  AiImageResolution,
   AiImageClientConfig,
   AiImagePublicationContext,
   AiImageSession,
@@ -81,18 +82,22 @@ export default class AiGenerationController {
       && config.publicationContext !== undefined
       && typeof config.getPublicationContext === 'function';
 
+    const resolutions = this.availableResolutions(config.resolutions);
+
     this.ui = new AiGenerationUi({
       onAdoptSession: sessionId => this.adoptSession(sessionId),
       onAssistPrompt: (action, prompt) => this.assistPrompt(action, prompt),
       onCancel: () => this.cancel(),
       onCloseSession: sessionId => this.closeSession(sessionId),
       onFinalize: () => this.finalizeSelectedCandidate(),
-      onGenerate: (prompt, generateCaption, aspectRatio) => this.generate(prompt, generateCaption, aspectRatio),
+      onGenerate: (prompt, generateCaption, aspectRatio, resolution) => this.generate(prompt, generateCaption, aspectRatio, resolution),
       onRefine: prompt => this.refine(prompt),
       onSelectCandidate: candidateId => this.selectCandidate(candidateId),
       onSelectHistory: candidateId => this.selectCandidate(candidateId),
       aspectRatio: this.defaultAspectRatio(config.aspectRatio),
       aspectRatios: this.availableAspectRatios(config.aspectRatios),
+      resolution: this.defaultResolution(config.resolution, resolutions),
+      resolutions,
       metadataPlaceholders,
       promptAssistanceEnabled,
       promptId: `gallery-ai-prompt-${blockId}`,
@@ -412,7 +417,12 @@ export default class AiGenerationController {
       && this.captionController === controller;
   }
 
-  private generate(prompt: string, generateCaption: boolean, aspectRatio: AiImageAspectRatio): void {
+  private generate(
+    prompt: string,
+    generateCaption: boolean,
+    aspectRatio: AiImageAspectRatio,
+    resolution: AiImageResolution | null,
+  ): void {
     const normalizedPrompt = prompt.trim();
 
     if (normalizedPrompt === '') {
@@ -438,12 +448,13 @@ export default class AiGenerationController {
       this.abortCaptionGeneration();
       this.ui.resetGeneratedCaption();
     }
-    void this.runGeneration(normalizedPrompt, aspectRatio, actionId, controller);
+    void this.runGeneration(normalizedPrompt, aspectRatio, resolution, actionId, controller);
   }
 
   private async runGeneration(
     prompt: string,
     aspectRatio: AiImageAspectRatio,
+    resolution: AiImageResolution | null,
     actionId: string,
     controller: AbortController,
   ): Promise<void> {
@@ -458,6 +469,7 @@ export default class AiGenerationController {
         aspectRatio,
         blockId: this.blockId,
         prompt,
+        resolution: resolution ?? undefined,
         sessionId,
       }, controller.signal);
 
@@ -753,5 +765,25 @@ export default class AiGenerationController {
 
   private isAspectRatio(value: unknown): value is AiImageAspectRatio {
     return value === '16:9' || value === '3:2' || value === '1:1';
+  }
+
+  private availableResolutions(configured?: AiImageResolution[]): AiImageResolution[] {
+    return configured?.filter(resolution => this.isResolution(resolution)) ?? [];
+  }
+
+  /** Without a host default the first allowed resolution wins; nothing is sent when the host lists none. */
+  private defaultResolution(
+    configured: AiImageResolution | undefined,
+    available: AiImageResolution[],
+  ): AiImageResolution | null {
+    if (this.isResolution(configured)) {
+      return configured;
+    }
+
+    return available[0] ?? null;
+  }
+
+  private isResolution(value: unknown): value is AiImageResolution {
+    return value === '1k' || value === '2k';
   }
 }

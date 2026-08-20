@@ -1,7 +1,10 @@
 const defaultPollTimeoutMs = 120_000;
-const defaultPollMaxIntervalMs = 5_000;
+// Потолок 2 с вместо 5: джоб с тремя 1k-вариантами укладывается в ~10 с, и пауза в 5 с
+// добавляла к готовому результату до 4 с ожидания. ±20 % джиттера разводит опрос вкладок.
+const defaultPollMaxIntervalMs = 2_000;
 const defaultPollIntervalMs = 1_000;
 const pollBackoffFactor = 1.5;
+const pollJitterRatio = 0.2;
 const successStatus = 200;
 
 /** Immutable publication and field identity supplied by the host. */
@@ -119,6 +122,10 @@ export interface AiImageClientConfig {
   aspectRatio?: AiImageAspectRatio;
   /** Aspect ratios available for image generation. */
   aspectRatios?: AiImageAspectRatio[];
+  /** Default image resolution selected in the prompt UI. */
+  resolution?: AiImageResolution;
+  /** Resolutions accepted by the host; the «HD 2k» toggle appears only when both 1k and 2k are allowed. */
+  resolutions?: AiImageResolution[];
   /** Attribution displayed to the editor and stored with generated images. */
   source?: {
     name: string;
@@ -127,6 +134,8 @@ export interface AiImageClientConfig {
 }
 
 export type AiImageAspectRatio = '16:9' | '3:2' | '1:1';
+
+export type AiImageResolution = '1k' | '2k';
 
 /** Fields shared by publication-aware text actions. */
 interface AiImagePromptAssistanceRequestBase {
@@ -183,6 +192,8 @@ export interface AiImageGenerateRequest extends AiImageMutationIdentifiers {
   prompt: string;
   /** Requested image aspect ratio. */
   aspectRatio: AiImageAspectRatio;
+  /** Requested image resolution; omitted when the host decides. */
+  resolution?: AiImageResolution;
 }
 
 /** Mutation acting on an existing candidate. */
@@ -325,6 +336,7 @@ export class AiImageClient {
       context: this.config.context,
       prompt: request.prompt,
       session_id: request.sessionId,
+      ...(request.resolution === undefined ? {} : { resolution: request.resolution }),
     }, signal);
   }
 
@@ -439,9 +451,27 @@ export class AiImageClient {
         );
       }
 
-      await this.wait(intervalMs, request.signal);
+      await this.wait(this.jittered(intervalMs), request.signal);
       intervalMs = Math.min(Math.ceil(intervalMs * pollBackoffFactor), maxIntervalMs);
     }
+  }
+
+  /**
+   * Spread a polling delay by ±20 % so several tabs do not hit the status endpoint in lockstep.
+   * @param durationMs - base delay
+   */
+  private jittered(durationMs: number): number {
+    const spread = 1 - pollJitterRatio + Math.random() * pollJitterRatio * 2;
+
+    return Math.round(durationMs * spread);
+  }
+
+  /**
+   * Browser previews use the reduced JPEG variant; the full image stays server-side for finalize and refine.
+   * @param url - resolved candidate endpoint
+   */
+  private previewVariant(url: string): string {
+    return `${url}${url.includes('?') ? '&' : '?'}variant=preview`;
   }
 
   /**
@@ -652,10 +682,10 @@ export class AiImageClient {
         candidates.push({
           id: candidate.id,
           parentId: typeof candidate.parent_id === 'string' ? candidate.parent_id : null,
-          previewUrl: this.resolveEndpoint(this.config.endpoints.candidate, {
+          previewUrl: this.previewVariant(this.resolveEndpoint(this.config.endpoints.candidate, {
             candidateId: candidate.id,
             sessionId,
-          }),
+          })),
         });
       }
     }
@@ -709,10 +739,10 @@ export class AiImageClient {
           },
           previewUrl: previewCandidateId === null
             ? null
-            : this.resolveEndpoint(this.config.endpoints.candidate, {
+            : this.previewVariant(this.resolveEndpoint(this.config.endpoints.candidate, {
                 candidateId: previewCandidateId,
                 sessionId: session.session_id,
-              }),
+              })),
           prompt: typeof session.prompt === 'string' && session.prompt !== '' ? session.prompt : null,
           sessionId: session.session_id,
           status: typeof session.status === 'string' ? session.status : 'queued',

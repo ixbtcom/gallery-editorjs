@@ -935,6 +935,23 @@ a.ai-image-tool__session-title:hover {
   opacity: 0.65;
 }
 
+.ai-image-tool__resolution-option {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--ej-text);
+  font-size: 14px;
+}
+
+.ai-image-tool__resolution-checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--ej-primary);
+}
+
 .ai-image-tool__caption-option {
   display: inline-flex;
   align-items: center;

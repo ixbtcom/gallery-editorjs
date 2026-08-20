@@ -107,6 +107,10 @@ export interface AiImageClientConfig {
     aspectRatio?: AiImageAspectRatio;
     /** Aspect ratios available for image generation. */
     aspectRatios?: AiImageAspectRatio[];
+    /** Default image resolution selected in the prompt UI. */
+    resolution?: AiImageResolution;
+    /** Resolutions accepted by the host; the «HD 2k» toggle appears only when both 1k and 2k are allowed. */
+    resolutions?: AiImageResolution[];
     /** Attribution displayed to the editor and stored with generated images. */
     source?: {
         name: string;
@@ -114,6 +118,7 @@ export interface AiImageClientConfig {
     };
 }
 export type AiImageAspectRatio = '16:9' | '3:2' | '1:1';
+export type AiImageResolution = '1k' | '2k';
 /** Fields shared by publication-aware text actions. */
 interface AiImagePromptAssistanceRequestBase {
     /** Idempotency identifier for this paid prompt action. */
@@ -161,6 +166,8 @@ export interface AiImageGenerateRequest extends AiImageMutationIdentifiers {
     prompt: string;
     /** Requested image aspect ratio. */
     aspectRatio: AiImageAspectRatio;
+    /** Requested image resolution; omitted when the host decides. */
+    resolution?: AiImageResolution;
 }
 /** Mutation acting on an existing candidate. */
 export interface AiImageCandidateMutationRequest extends AiImageMutationIdentifiers {
@@ -298,6 +305,16 @@ export declare class AiImageClient {
      * @param request - session identity, observer and cancellation signal
      */
     poll(request: AiImagePollRequest): Promise<AiImageSession>;
+    /**
+     * Spread a polling delay by ±20 % so several tabs do not hit the status endpoint in lockstep.
+     * @param durationMs - base delay
+     */
+    private jittered;
+    /**
+     * Browser previews use the reduced JPEG variant; the full image stays server-side for finalize and refine.
+     * @param url - resolved candidate endpoint
+     */
+    private previewVariant;
     /**
      * Read the current host session state.
      * @param sessionId - generation session identifier
