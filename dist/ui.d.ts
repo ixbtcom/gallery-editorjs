@@ -36,6 +36,8 @@ export default class Ui {
     private static readonly MIN_COLUMNS;
     /** Maximum number of columns */
     private static readonly MAX_COLUMNS;
+    /** Потолок авто-расширения: руками можно и больше. */
+    private static readonly AUTO_MAX_COLUMNS;
     nodes: Nodes;
     private api;
     private config;
