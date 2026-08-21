@@ -85,6 +85,11 @@ export default class AiGenerationUi {
   private readonly onSelectCandidate: (candidateId: string) => void;
   private readonly onSelectHistory: (candidateId: string) => void;
   private isGenerationBusy = false;
+  private operationStartedAt: number | null = null;
+  private operationElapsedSeconds = 0;
+  private lastOperationSeconds: number | null = null;
+  private operationTicker: ReturnType<typeof setInterval> | null = null;
+  private lastStatusMessage = '';
   private isPromptAssistanceBusy = false;
   private isGeneratedCaptionBusy = false;
   private hasFreeSessionSlot = true;
@@ -447,8 +452,76 @@ export default class AiGenerationUi {
 
   public setGenerationBusy(isBusy: boolean): void {
     this.isGenerationBusy = isBusy;
+
+    if (isBusy) {
+      this.startOperationTimer();
+    } else {
+      this.stopOperationTimer(true);
+      this.renderGenerationStatus();
+    }
+
     this.updatePromptControls();
     this.updateSelectionControls();
+  }
+
+  /** Генерация идёт десяток секунд: рядом с лоадером тикают секунды, в конце - итог. */
+  private startOperationTimer(): void {
+    if (this.operationTicker !== null) {
+      return;
+    }
+
+    this.operationStartedAt = Date.now();
+    this.operationElapsedSeconds = 0;
+    this.lastOperationSeconds = null;
+    this.operationTicker = setInterval(() => {
+      if (this.operationStartedAt === null) {
+        return;
+      }
+
+      this.operationElapsedSeconds = (Date.now() - this.operationStartedAt) / 1000;
+      this.renderGenerationStatus();
+    }, 1000);
+  }
+
+  public stopOperationTimer(keepResult: boolean): void {
+    if (this.operationTicker !== null) {
+      clearInterval(this.operationTicker);
+      this.operationTicker = null;
+    }
+
+    if (keepResult && this.operationStartedAt !== null) {
+      this.lastOperationSeconds = (Date.now() - this.operationStartedAt) / 1000;
+    }
+
+    this.operationStartedAt = null;
+    this.operationElapsedSeconds = 0;
+  }
+
+  private formatSeconds(seconds: number): string {
+    return `${seconds.toFixed(1).replace('.', ',')} с`;
+  }
+
+  private renderGenerationStatus(): void {
+    const message = this.lastStatusMessage;
+
+    if (message === '') {
+      this.nodes.generationStatus.textContent = '';
+      this.nodes.generationStatus.dataset.busy = 'false';
+
+      return;
+    }
+
+    this.nodes.generationStatus.dataset.busy = String(this.operationStartedAt !== null);
+
+    if (this.operationStartedAt !== null) {
+      this.nodes.generationStatus.textContent = `${message} ${this.formatSeconds(this.operationElapsedSeconds)}`;
+
+      return;
+    }
+
+    this.nodes.generationStatus.textContent = this.lastOperationSeconds === null
+      ? message
+      : `${message} (за ${this.formatSeconds(this.lastOperationSeconds)})`;
   }
 
   public prepareGeneratedCaption(): void {
@@ -514,7 +587,8 @@ export default class AiGenerationUi {
     const messageKey = progress ?? status;
     const message = messages[messageKey] ?? '';
 
-    this.nodes.generationStatus.textContent = message;
+    this.lastStatusMessage = message;
+    this.renderGenerationStatus();
     this.nodes.historyStatus.textContent = messageKey.startsWith('refinement_') ? message : '';
   }
 
@@ -585,6 +659,9 @@ export default class AiGenerationUi {
     this.nodes.history.replaceChildren();
     this.nodes.prompt.value = '';
     this.nodes.refinementPrompt.value = '';
+    this.lastStatusMessage = '';
+    this.lastOperationSeconds = null;
+    this.stopOperationTimer(false);
     this.nodes.generationStatus.textContent = '';
     this.showGenerationError('');
     this.resetGeneratedCaption();

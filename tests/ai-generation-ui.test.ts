@@ -93,6 +93,23 @@ describe('Gallery AI generation UI', () => {
     expect(onGenerate).toHaveBeenLastCalledWith('Иллюстрация', false, '3:2', '2k');
   });
 
+  it('counts seconds next to the loader and reports how long the run took', () => {
+    const ui = makeUi();
+
+    document.body.appendChild(ui.nodes.wrapper);
+    ui.open();
+    ui.setGenerationBusy(true);
+    ui.showGenerationStatus('generating');
+
+    expect(ui.nodes.generationStatus.dataset.busy).toBe('true');
+    expect(ui.nodes.generationStatus.textContent).toMatch(/^Нейросеть генерирует варианты\.\.\. \d+,\d с$/);
+
+    ui.setGenerationBusy(false);
+
+    expect(ui.nodes.generationStatus.dataset.busy).toBe('false');
+    expect(ui.nodes.generationStatus.textContent).toMatch(/^Нейросеть генерирует варианты\.\.\. \(за \d+,\d с\)$/);
+  });
+
   it('blocks finalization while the optional caption is generated', () => {
     const ui = makeUi({
       promptId: 'gallery-ai-caption',
