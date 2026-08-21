@@ -200,12 +200,12 @@ const Qe = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   getItemsData() {
     const t = this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`), e = [];
     return t.forEach((i) => {
-      var x, I, E;
+      var _, I, E;
       const n = i, o = n.dataset.url;
       if (!o) return;
-      const s = ((x = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : x.textContent) || "", a = ((I = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : I.textContent) || "", d = ((E = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : E.textContent) || "", l = n.dataset.width ? parseInt(n.dataset.width, 10) : void 0, h = n.dataset.height ? parseInt(n.dataset.height, 10) : void 0, c = n.dataset.disableHeightLimit === "true", u = n.dataset.disableOptimization === "true", b = n.dataset.disableDecoration === "true", C = n.dataset.imagorPath || void 0, p = u ? void 0 : n.dataset.crop || void 0, f = !u && n.dataset.croppedWidth ? parseInt(n.dataset.croppedWidth, 10) : void 0, v = !u && n.dataset.croppedHeight ? parseInt(n.dataset.croppedHeight, 10) : void 0, y = !u && (n.dataset.cropAspectRatio === "16:9" || n.dataset.cropAspectRatio === "1:1") ? n.dataset.cropAspectRatio : !u && n.dataset.cropAspectRatio === "3:2" ? "3:2" : !u && n.dataset.cropAspectRatio === "free" ? "free" : void 0, w = u || n.dataset.showOriginalOnClick === void 0 ? void 0 : n.dataset.showOriginalOnClick === "true", _ = n.dataset.mediaId || void 0, S = n.dataset.aiGenerated === "true", m = {
+      const s = ((_ = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : _.textContent) || "", a = ((I = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : I.textContent) || "", d = ((E = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : E.textContent) || "", l = n.dataset.width ? parseInt(n.dataset.width, 10) : void 0, h = n.dataset.height ? parseInt(n.dataset.height, 10) : void 0, c = n.dataset.disableHeightLimit === "true", u = n.dataset.disableOptimization === "true", b = n.dataset.disableDecoration === "true", C = n.dataset.imagorPath || void 0, p = u ? void 0 : n.dataset.crop || void 0, f = !u && n.dataset.croppedWidth ? parseInt(n.dataset.croppedWidth, 10) : void 0, v = !u && n.dataset.croppedHeight ? parseInt(n.dataset.croppedHeight, 10) : void 0, y = !u && (n.dataset.cropAspectRatio === "16:9" || n.dataset.cropAspectRatio === "1:1") ? n.dataset.cropAspectRatio : !u && n.dataset.cropAspectRatio === "3:2" ? "3:2" : !u && n.dataset.cropAspectRatio === "free" ? "free" : void 0, w = u || n.dataset.showOriginalOnClick === void 0 ? void 0 : n.dataset.showOriginalOnClick === "true", x = n.dataset.mediaId || void 0, S = n.dataset.aiGenerated === "true", m = {
         url: o,
-        media_id: _,
+        media_id: x,
         imagorPath: C,
         caption: s,
         source: a,
@@ -532,8 +532,8 @@ var Re = { exports: {} };
               var w;
               try {
                 w = y(f._value);
-              } catch (_) {
-                return void u(v.promise, _);
+              } catch (x) {
+                return void u(v.promise, x);
               }
               c(v.promise, w);
             } else (f._state === 1 ? c : u)(v.promise, f._value);
@@ -545,15 +545,15 @@ var Re = { exports: {} };
             if (v && (typeof v == "object" || typeof v == "function")) {
               var y = v.then;
               if (v instanceof l) return f._state = 3, f._value = v, void b(f);
-              if (typeof y == "function") return void p((w = y, _ = v, function() {
-                w.apply(_, arguments);
+              if (typeof y == "function") return void p((w = y, x = v, function() {
+                w.apply(x, arguments);
               }), f);
             }
             f._state = 1, f._value = v, b(f);
           } catch (S) {
             u(f, S);
           }
-          var w, _;
+          var w, x;
         }
         function u(f, v) {
           f._state = 2, f._value = v, b(f);
@@ -591,18 +591,18 @@ var Re = { exports: {} };
             if (!f || f.length === void 0) throw new TypeError("Promise.all accepts an array");
             var w = Array.prototype.slice.call(f);
             if (w.length === 0) return v([]);
-            var _ = w.length;
-            function S(x, I) {
+            var x = w.length;
+            function S(_, I) {
               try {
                 if (I && (typeof I == "object" || typeof I == "function")) {
                   var E = I.then;
-                  if (typeof E == "function") return void E.call(I, function(D) {
-                    S(x, D);
+                  if (typeof E == "function") return void E.call(I, function(O) {
+                    S(_, O);
                   }, y);
                 }
-                w[x] = I, --_ == 0 && v(w);
-              } catch (D) {
-                y(D);
+                w[_] = I, --x == 0 && v(w);
+              } catch (O) {
+                y(O);
               }
             }
             for (var m = 0; m < w.length; m++) S(m, w[m]);
@@ -617,7 +617,7 @@ var Re = { exports: {} };
           });
         }, l.race = function(f) {
           return new l(function(v, y) {
-            for (var w = 0, _ = f.length; w < _; w++) f[w].then(v, y);
+            for (var w = 0, x = f.length; w < x; w++) f[w].then(v, y);
           });
         }, l._immediateFn = typeof o == "function" && function(f) {
           o(f);
@@ -653,25 +653,25 @@ var Re = { exports: {} };
         return new Promise(function(f, v) {
           p = l(p), (p = h(p)).beforeSend && p.beforeSend();
           var y = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
-          y.open(p.method, p.url), y.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(p.headers).forEach(function(_) {
-            var S = p.headers[_];
-            y.setRequestHeader(_, S);
+          y.open(p.method, p.url), y.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(p.headers).forEach(function(x) {
+            var S = p.headers[x];
+            y.setRequestHeader(x, S);
           });
           var w = p.ratio;
-          y.upload.addEventListener("progress", function(_) {
-            var S = Math.round(_.loaded / _.total * 100), m = Math.ceil(S * w / 100);
+          y.upload.addEventListener("progress", function(x) {
+            var S = Math.round(x.loaded / x.total * 100), m = Math.ceil(S * w / 100);
             p.progress(Math.min(m, 100));
-          }, !1), y.addEventListener("progress", function(_) {
-            var S = Math.round(_.loaded / _.total * 100), m = Math.ceil(S * (100 - w) / 100) + w;
+          }, !1), y.addEventListener("progress", function(x) {
+            var S = Math.round(x.loaded / x.total * 100), m = Math.ceil(S * (100 - w) / 100) + w;
             p.progress(Math.min(m, 100));
           }, !1), y.onreadystatechange = function() {
             if (y.readyState === 4) {
-              var _ = y.response;
+              var x = y.response;
               try {
-                _ = JSON.parse(_);
+                x = JSON.parse(x);
               } catch {
               }
-              var S = b.parseHeaders(y.getAllResponseHeaders()), m = { body: _, code: y.status, headers: S };
+              var S = b.parseHeaders(y.getAllResponseHeaders()), m = { body: x, code: y.status, headers: S };
               u(y.status) ? f(m) : v(m);
             }
           }, y.send(p.data);
@@ -728,9 +728,9 @@ var Re = { exports: {} };
       }, post: d, transport: function(p) {
         return p = l(p), b.selectFiles(p).then(function(f) {
           for (var v = new FormData(), y = 0; y < f.length; y++) v.append(p.fieldName, f[y], f[y].name);
-          b.isObject(p.data) && Object.keys(p.data).forEach(function(_) {
-            var S = p.data[_];
-            v.append(_, S);
+          b.isObject(p.data) && Object.keys(p.data).forEach(function(x) {
+            var S = p.data[x];
+            v.append(x, S);
           });
           var w = p.beforeSend;
           return p.beforeSend = function() {
@@ -779,7 +779,7 @@ var Re = { exports: {} };
             var l, h, c, u, b, C = 1, p = {}, f = !1, v = a.document, y = Object.getPrototypeOf && Object.getPrototypeOf(a);
             y = y && y.setTimeout ? y : a, {}.toString.call(a.process) === "[object process]" ? l = function(S) {
               s.nextTick(function() {
-                _(S);
+                x(S);
               });
             } : function() {
               if (a.postMessage && !a.importScripts) {
@@ -789,23 +789,23 @@ var Re = { exports: {} };
                 }, a.postMessage("", "*"), a.onmessage = m, S;
               }
             }() ? (u = "setImmediate$" + Math.random() + "$", b = function(S) {
-              S.source === a && typeof S.data == "string" && S.data.indexOf(u) === 0 && _(+S.data.slice(u.length));
+              S.source === a && typeof S.data == "string" && S.data.indexOf(u) === 0 && x(+S.data.slice(u.length));
             }, a.addEventListener ? a.addEventListener("message", b, !1) : a.attachEvent("onmessage", b), l = function(S) {
               a.postMessage(u + S, "*");
             }) : a.MessageChannel ? ((c = new MessageChannel()).port1.onmessage = function(S) {
-              _(S.data);
+              x(S.data);
             }, l = function(S) {
               c.port2.postMessage(S);
             }) : v && "onreadystatechange" in v.createElement("script") ? (h = v.documentElement, l = function(S) {
               var m = v.createElement("script");
               m.onreadystatechange = function() {
-                _(S), m.onreadystatechange = null, h.removeChild(m), m = null;
+                x(S), m.onreadystatechange = null, h.removeChild(m), m = null;
               }, h.appendChild(m);
             }) : l = function(S) {
-              setTimeout(_, 0, S);
+              setTimeout(x, 0, S);
             }, y.setImmediate = function(S) {
               typeof S != "function" && (S = new Function("" + S));
-              for (var m = new Array(arguments.length - 1), x = 0; x < m.length; x++) m[x] = arguments[x + 1];
+              for (var m = new Array(arguments.length - 1), _ = 0; _ < m.length; _++) m[_] = arguments[_ + 1];
               var I = { callback: S, args: m };
               return p[C] = I, l(C), C++;
             }, y.clearImmediate = w;
@@ -813,15 +813,15 @@ var Re = { exports: {} };
           function w(S) {
             delete p[S];
           }
-          function _(S) {
-            if (f) setTimeout(_, 0, S);
+          function x(S) {
+            if (f) setTimeout(x, 0, S);
             else {
               var m = p[S];
               if (m) {
                 f = !0;
                 try {
-                  (function(x) {
-                    var I = x.callback, E = x.args;
+                  (function(_) {
+                    var I = _.callback, E = _.args;
                     switch (E.length) {
                       case 0:
                         I();
@@ -892,16 +892,16 @@ var Re = { exports: {} };
             for (h = c, c = []; ++b < w; ) h && h[b].run();
             b = -1, w = c.length;
           }
-          h = null, u = !1, function(_) {
-            if (o === clearTimeout) return clearTimeout(_);
-            if ((o === d || !o) && clearTimeout) return o = clearTimeout, clearTimeout(_);
+          h = null, u = !1, function(x) {
+            if (o === clearTimeout) return clearTimeout(x);
+            if ((o === d || !o) && clearTimeout) return o = clearTimeout, clearTimeout(x);
             try {
-              o(_);
+              o(x);
             } catch {
               try {
-                return o.call(null, _);
+                return o.call(null, x);
               } catch {
-                return o.call(this, _);
+                return o.call(this, x);
               }
             }
           }(y);
@@ -914,7 +914,7 @@ var Re = { exports: {} };
       }
       s.nextTick = function(y) {
         var w = new Array(arguments.length - 1);
-        if (arguments.length > 1) for (var _ = 1; _ < arguments.length; _++) w[_ - 1] = arguments[_];
+        if (arguments.length > 1) for (var x = 1; x < arguments.length; x++) w[x - 1] = arguments[x];
         c.push(new f(y, w)), c.length !== 1 || u || l(p);
       }, f.prototype.run = function() {
         this.fun.apply(null, this.array);
@@ -1135,7 +1135,7 @@ function ce(r, t) {
   }
   return e;
 }
-function De(r) {
+function Oe(r) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
     t % 2 ? ce(Object(e), !0).forEach(function(i) {
@@ -1156,7 +1156,7 @@ function ni(r, t) {
   }
   return String(r);
 }
-function Oe(r) {
+function De(r) {
   var t = ni(r, "string");
   return typeof t == "symbol" ? t : t + "";
 }
@@ -1175,7 +1175,7 @@ function oi(r, t) {
 function de(r, t) {
   for (var e = 0; e < t.length; e++) {
     var i = t[e];
-    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, Oe(i.key), i);
+    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, De(i.key), i);
   }
 }
 function si(r, t, e) {
@@ -1184,14 +1184,14 @@ function si(r, t, e) {
   }), r;
 }
 function ai(r, t, e) {
-  return t = Oe(t), t in r ? Object.defineProperty(r, t, {
+  return t = De(t), t in r ? Object.defineProperty(r, t, {
     value: e,
     enumerable: !0,
     configurable: !0,
     writable: !0
   }) : r[t] = e, r;
 }
-function Me(r) {
+function Te(r) {
   return ri(r) || li(r) || hi(r) || ci();
 }
 function ri(r) {
@@ -1217,7 +1217,7 @@ function ci() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var Lt = typeof window < "u" && typeof window.document < "u", X = Lt ? window : {}, ee = Lt && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, ie = Lt ? "PointerEvent" in X : !1, k = "cropper", ne = "all", Te = "crop", Le = "move", Pe = "zoom", at = "e", rt = "w", ut = "s", Q = "n", bt = "ne", Ct = "nw", wt = "se", St = "sw", Xt = "".concat(k, "-crop"), ue = "".concat(k, "-disabled"), B = "".concat(k, "-hidden"), pe = "".concat(k, "-hide"), di = "".concat(k, "-invisible"), Tt = "".concat(k, "-modal"), Yt = "".concat(k, "-move"), xt = "".concat(k, "Action"), Dt = "".concat(k, "Preview"), oe = "crop", Be = "move", Ne = "none", Vt = "crop", Jt = "cropend", Zt = "cropmove", Kt = "cropstart", fe = "dblclick", ui = ee ? "touchstart" : "mousedown", pi = ee ? "touchmove" : "mousemove", fi = ee ? "touchend touchcancel" : "mouseup", me = ie ? "pointerdown" : ui, ge = ie ? "pointermove" : pi, ve = ie ? "pointerup pointercancel" : fi, ye = "ready", be = "resize", Ce = "wheel", Qt = "zoom", we = "image/jpeg", mi = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, gi = /^data:/, vi = /^data:image\/jpeg;base64,/, yi = /^img|canvas$/i, Ge = 200, He = 100, Se = {
+var Lt = typeof window < "u" && typeof window.document < "u", X = Lt ? window : {}, ee = Lt && X.document.documentElement ? "ontouchstart" in X.document.documentElement : !1, ie = Lt ? "PointerEvent" in X : !1, k = "cropper", ne = "all", Me = "crop", Le = "move", Pe = "zoom", at = "e", rt = "w", ut = "s", Q = "n", bt = "ne", Ct = "nw", wt = "se", St = "sw", Xt = "".concat(k, "-crop"), ue = "".concat(k, "-disabled"), B = "".concat(k, "-hidden"), pe = "".concat(k, "-hide"), di = "".concat(k, "-invisible"), Mt = "".concat(k, "-modal"), Yt = "".concat(k, "-move"), _t = "".concat(k, "Action"), Ot = "".concat(k, "Preview"), oe = "crop", Be = "move", Ne = "none", Vt = "crop", Jt = "cropend", Zt = "cropmove", Kt = "cropstart", fe = "dblclick", ui = ee ? "touchstart" : "mousedown", pi = ee ? "touchmove" : "mousemove", fi = ee ? "touchend touchcancel" : "mouseup", me = ie ? "pointerdown" : ui, ge = ie ? "pointermove" : pi, ve = ie ? "pointerup pointercancel" : fi, ye = "ready", be = "resize", Ce = "wheel", Qt = "zoom", we = "image/jpeg", mi = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, gi = /^data:/, vi = /^data:image\/jpeg;base64,/, yi = /^img|canvas$/i, Ge = 200, He = 100, Se = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
@@ -1292,7 +1292,7 @@ var Lt = typeof window < "u" && typeof window.document < "u", X = Lt ? window : 
 function A(r) {
   return typeof r == "number" && !Ci(r);
 }
-var _e = function(t) {
+var xe = function(t) {
   return t > 0 && t < 1 / 0;
 };
 function Ut(r) {
@@ -1319,7 +1319,7 @@ var Si = Array.prototype.slice;
 function Fe(r) {
   return Array.from ? Array.from(r) : Si.call(r);
 }
-function M(r, t) {
+function T(r, t) {
   return r && P(t) && (Array.isArray(r) || A(r.length) ? Fe(r).forEach(function(e, i) {
     t.call(r, e, i, r);
   }) : lt(r) && Object.keys(r).forEach(function(e) {
@@ -1334,26 +1334,26 @@ var R = Object.assign || function(t) {
       t[s] = o[s];
     });
   }), t;
-}, _i = /\.\d*(?:0|9){12}\d*$/;
+}, xi = /\.\d*(?:0|9){12}\d*$/;
 function mt(r) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
-  return _i.test(r) ? Math.round(r * t) / t : r;
+  return xi.test(r) ? Math.round(r * t) / t : r;
 }
-var xi = /^width|height|left|top|marginLeft|marginTop$/;
+var _i = /^width|height|left|top|marginLeft|marginTop$/;
 function tt(r, t) {
   var e = r.style;
-  M(t, function(i, n) {
-    xi.test(n) && A(i) && (i = "".concat(i, "px")), e[n] = i;
+  T(t, function(i, n) {
+    _i.test(n) && A(i) && (i = "".concat(i, "px")), e[n] = i;
   });
 }
 function Ii(r, t) {
   return r.classList ? r.classList.contains(t) : r.className.indexOf(t) > -1;
 }
-function T(r, t) {
+function M(r, t) {
   if (t) {
     if (A(r.length)) {
-      M(r, function(i) {
-        T(i, t);
+      T(r, function(i) {
+        M(i, t);
       });
       return;
     }
@@ -1368,7 +1368,7 @@ function T(r, t) {
 function q(r, t) {
   if (t) {
     if (A(r.length)) {
-      M(r, function(e) {
+      T(r, function(e) {
         q(e, t);
       });
       return;
@@ -1383,12 +1383,12 @@ function q(r, t) {
 function ft(r, t, e) {
   if (t) {
     if (A(r.length)) {
-      M(r, function(i) {
+      T(r, function(i) {
         ft(i, t, e);
       });
       return;
     }
-    e ? T(r, t) : q(r, t);
+    e ? M(r, t) : q(r, t);
   }
 }
 var Ai = /([a-z\d])([A-Z])/g;
@@ -1479,7 +1479,7 @@ function je(r) {
   };
 }
 var zt = X.location, ki = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
-function xe(r) {
+function _e(r) {
   var t = r.match(ki);
   return t !== null && (t[1] !== zt.protocol || t[2] !== zt.hostname || t[3] !== zt.port);
 }
@@ -1487,7 +1487,7 @@ function Ie(r) {
   var t = "timestamp=".concat((/* @__PURE__ */ new Date()).getTime());
   return r + (r.indexOf("?") === -1 ? "?" : "&") + t;
 }
-function _t(r) {
+function xt(r) {
   var t = r.rotate, e = r.scaleX, i = r.scaleY, n = r.translateX, o = r.translateY, s = [];
   A(n) && n !== 0 && s.push("translateX(".concat(n, "px)")), A(o) && o !== 0 && s.push("translateY(".concat(o, "px)")), A(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), A(e) && e !== 1 && s.push("scaleX(".concat(e, ")")), A(i) && i !== 1 && s.push("scaleY(".concat(i, ")"));
   var a = s.length ? s.join(" ") : "none";
@@ -1498,27 +1498,27 @@ function _t(r) {
   };
 }
 function Ri(r) {
-  var t = De({}, r), e = 0;
-  return M(r, function(i, n) {
-    delete t[n], M(t, function(o) {
+  var t = Oe({}, r), e = 0;
+  return T(r, function(i, n) {
+    delete t[n], T(t, function(o) {
       var s = Math.abs(i.startX - o.startX), a = Math.abs(i.startY - o.startY), d = Math.abs(i.endX - o.endX), l = Math.abs(i.endY - o.endY), h = Math.sqrt(s * s + a * a), c = Math.sqrt(d * d + l * l), u = (c - h) / h;
       Math.abs(u) > Math.abs(e) && (e = u);
     });
   }), e;
 }
-function Ot(r, t) {
+function Dt(r, t) {
   var e = r.pageX, i = r.pageY, n = {
     endX: e,
     endY: i
   };
-  return t ? n : De({
+  return t ? n : Oe({
     startX: e,
     startY: i
   }, n);
 }
-function Di(r) {
+function Oi(r) {
   var t = 0, e = 0, i = 0;
-  return M(r, function(n) {
+  return T(r, function(n) {
     var o = n.startX, s = n.startY;
     t += o, e += s, i += 1;
   }), t /= i, e /= i, {
@@ -1527,7 +1527,7 @@ function Di(r) {
   };
 }
 function et(r) {
-  var t = r.aspectRatio, e = r.height, i = r.width, n = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", o = _e(i), s = _e(e);
+  var t = r.aspectRatio, e = r.height, i = r.width, n = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", o = xe(i), s = xe(e);
   if (o && s) {
     var a = e * t;
     n === "contain" && a > i || n === "cover" && a < i ? e = i / t : i = e * t;
@@ -1537,7 +1537,7 @@ function et(r) {
     height: e
   };
 }
-function Oi(r) {
+function Di(r) {
   var t = r.width, e = r.height, i = r.degree;
   if (i = Math.abs(i) % 180, i === 90)
     return {
@@ -1553,10 +1553,10 @@ function Oi(r) {
     height: d
   };
 }
-function Mi(r, t, e, i) {
-  var n = t.aspectRatio, o = t.naturalWidth, s = t.naturalHeight, a = t.rotate, d = a === void 0 ? 0 : a, l = t.scaleX, h = l === void 0 ? 1 : l, c = t.scaleY, u = c === void 0 ? 1 : c, b = e.aspectRatio, C = e.naturalWidth, p = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, y = i.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = i.imageSmoothingQuality, S = _ === void 0 ? "low" : _, m = i.maxWidth, x = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, D = i.minWidth, $ = D === void 0 ? 0 : D, W = i.minHeight, H = W === void 0 ? 0 : W, N = document.createElement("canvas"), O = N.getContext("2d"), L = et({
+function Ti(r, t, e, i) {
+  var n = t.aspectRatio, o = t.naturalWidth, s = t.naturalHeight, a = t.rotate, d = a === void 0 ? 0 : a, l = t.scaleX, h = l === void 0 ? 1 : l, c = t.scaleY, u = c === void 0 ? 1 : c, b = e.aspectRatio, C = e.naturalWidth, p = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, y = i.imageSmoothingEnabled, w = y === void 0 ? !0 : y, x = i.imageSmoothingQuality, S = x === void 0 ? "low" : x, m = i.maxWidth, _ = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, O = i.minWidth, $ = O === void 0 ? 0 : O, W = i.minHeight, H = W === void 0 ? 0 : W, N = document.createElement("canvas"), D = N.getContext("2d"), L = et({
     aspectRatio: b,
-    width: x,
+    width: _,
     height: E
   }), F = et({
     aspectRatio: b,
@@ -1564,19 +1564,19 @@ function Mi(r, t, e, i) {
     height: H
   }, "cover"), ht = Math.min(L.width, Math.max(F.width, C)), ct = Math.min(L.height, Math.max(F.height, p)), it = et({
     aspectRatio: n,
-    width: x,
+    width: _,
     height: E
   }), Y = et({
     aspectRatio: n,
     width: $,
     height: H
   }, "cover"), V = Math.min(it.width, Math.max(Y.width, o)), nt = Math.min(it.height, Math.max(Y.height, s)), vt = [-V / 2, -nt / 2, V, nt];
-  return N.width = mt(ht), N.height = mt(ct), O.fillStyle = v, O.fillRect(0, 0, ht, ct), O.save(), O.translate(ht / 2, ct / 2), O.rotate(d * Math.PI / 180), O.scale(h, u), O.imageSmoothingEnabled = w, O.imageSmoothingQuality = S, O.drawImage.apply(O, [r].concat(Me(vt.map(function(ot) {
+  return N.width = mt(ht), N.height = mt(ct), D.fillStyle = v, D.fillRect(0, 0, ht, ct), D.save(), D.translate(ht / 2, ct / 2), D.rotate(d * Math.PI / 180), D.scale(h, u), D.imageSmoothingEnabled = w, D.imageSmoothingQuality = S, D.drawImage.apply(D, [r].concat(Te(vt.map(function(ot) {
     return Math.floor(mt(ot));
-  })))), O.restore(), N;
+  })))), D.restore(), N;
 }
 var $e = String.fromCharCode;
-function Ti(r, t, e) {
+function Mi(r, t, e) {
   var i = "";
   e += t;
   for (var n = t; n < e; n += 1)
@@ -1586,7 +1586,7 @@ function Ti(r, t, e) {
 var Li = /^data:.*,/;
 function Pi(r) {
   var t = r.replace(Li, ""), e = atob(t), i = new ArrayBuffer(e.length), n = new Uint8Array(i);
-  return M(n, function(o, s) {
+  return T(n, function(o, s) {
     n[s] = e.charCodeAt(s);
   }), i;
 }
@@ -1609,7 +1609,7 @@ function Ni(r) {
       }
     if (n) {
       var d = n + 4, l = n + 10;
-      if (Ti(t, d, 4) === "Exif") {
+      if (Mi(t, d, 4) === "Exif") {
         var h = t.getUint16(l);
         if (i = h === 18761, (i || h === 19789) && t.getUint16(l + 2, i) === 42) {
           var c = t.getUint32(l + 4, i);
@@ -1667,7 +1667,7 @@ var Hi = {
   },
   initContainer: function() {
     var t = this.element, e = this.options, i = this.container, n = this.cropper, o = Number(e.minContainerWidth), s = Number(e.minContainerHeight);
-    T(n, B), q(t, B);
+    M(n, B), q(t, B);
     var a = {
       width: Math.max(i.offsetWidth, o >= 0 ? o : Ge),
       height: Math.max(i.offsetHeight, s >= 0 ? s : He)
@@ -1675,7 +1675,7 @@ var Hi = {
     this.containerData = a, tt(n, {
       width: a.width,
       height: a.height
-    }), T(t, B), q(n, B);
+    }), M(t, B), q(n, B);
   },
   // Canvas (image wrapper)
   initCanvas: function() {
@@ -1712,7 +1712,7 @@ var Hi = {
   renderCanvas: function(t, e) {
     var i = this.canvasData, n = this.imageData;
     if (e) {
-      var o = Oi({
+      var o = Di({
         width: n.naturalWidth * Math.abs(n.scaleX || 1),
         height: n.naturalHeight * Math.abs(n.scaleY || 1),
         degree: n.rotate || 0
@@ -1722,7 +1722,7 @@ var Hi = {
     (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, tt(this.canvas, R({
       width: i.width,
       height: i.height
-    }, _t({
+    }, xt({
       translateX: i.left,
       translateY: i.top
     }))), this.renderImage(t), this.cropped && this.limited && this.limitCropBox(!0, !0);
@@ -1737,7 +1737,7 @@ var Hi = {
     }), tt(this.image, R({
       width: i.width,
       height: i.height
-    }, _t(R({
+    }, xt(R({
       translateX: i.left,
       translateY: i.top
     }, i)))), t && this.output();
@@ -1759,10 +1759,10 @@ var Hi = {
   },
   renderCropBox: function() {
     var t = this.options, e = this.containerData, i = this.cropBoxData;
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && It(this.face, xt, i.width >= e.width && i.height >= e.height ? Le : ne), tt(this.cropBox, R({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && It(this.face, _t, i.width >= e.width && i.height >= e.height ? Le : ne), tt(this.cropBox, R({
       width: i.width,
       height: i.height
-    }, _t({
+    }, xt({
       translateX: i.left,
       translateY: i.top
     }))), this.cropped && this.limited && this.limitCanvas(!0, !0), this.disabled || this.output();
@@ -1775,9 +1775,9 @@ var Hi = {
     var t = this.element, e = this.crossOrigin, i = this.options.preview, n = e ? this.crossOriginUrl : this.url, o = t.alt || "The image to preview", s = document.createElement("img");
     if (e && (s.crossOrigin = e), s.src = n, s.alt = o, this.viewBox.appendChild(s), this.viewBoxImage = s, !!i) {
       var a = i;
-      typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, M(a, function(d) {
+      typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, T(a, function(d) {
         var l = document.createElement("img");
-        It(d, Dt, {
+        It(d, Ot, {
           width: d.offsetWidth,
           height: d.offsetHeight,
           html: d.innerHTML
@@ -1786,12 +1786,12 @@ var Hi = {
     }
   },
   resetPreview: function() {
-    M(this.previews, function(t) {
-      var e = te(t, Dt);
+    T(this.previews, function(t) {
+      var e = te(t, Ot);
       tt(t, {
         width: e.width,
         height: e.height
-      }), t.innerHTML = e.html, Ei(t, Dt);
+      }), t.innerHTML = e.html, Ei(t, Ot);
     });
   },
   preview: function() {
@@ -1799,18 +1799,18 @@ var Hi = {
     !this.cropped || this.disabled || (tt(this.viewBoxImage, R({
       width: s,
       height: a
-    }, _t(R({
+    }, xt(R({
       translateX: -d,
       translateY: -l
-    }, t)))), M(this.previews, function(h) {
-      var c = te(h, Dt), u = c.width, b = c.height, C = u, p = b, f = 1;
+    }, t)))), T(this.previews, function(h) {
+      var c = te(h, Ot), u = c.width, b = c.height, C = u, p = b, f = 1;
       n && (f = u / n, p = o * f), o && p > b && (f = b / o, C = n * f, p = b), tt(h, {
         width: C,
         height: p
       }), tt(h.getElementsByTagName("img")[0], R({
         width: s * f,
         height: a * f
-      }, _t(R({
+      }, xt(R({
         translateX: -d * f,
         translateY: -l * f
       }, t))));
@@ -1837,9 +1837,9 @@ var Hi = {
       var t = this.options, e = this.container, i = this.containerData, n = e.offsetWidth / i.width, o = e.offsetHeight / i.height, s = Math.abs(n - 1) > Math.abs(o - 1) ? n : o;
       if (s !== 1) {
         var a, d;
-        t.restore && (a = this.getCanvasData(), d = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(M(a, function(l, h) {
+        t.restore && (a = this.getCanvasData(), d = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(T(a, function(l, h) {
           a[h] = l * s;
-        })), this.setCropBoxData(M(d, function(l, h) {
+        })), this.setCropBoxData(T(d, function(l, h) {
           d[h] = l * s;
         })));
       }
@@ -1859,12 +1859,12 @@ var Hi = {
     if (!(this.disabled || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
     (A(e) && e !== 1 || A(i) && i !== 0 || t.ctrlKey))) {
       var n = this.options, o = this.pointers, s;
-      t.changedTouches ? M(t.changedTouches, function(a) {
-        o[a.identifier] = Ot(a);
-      }) : o[t.pointerId || 0] = Ot(t), Object.keys(o).length > 1 && n.zoomable && n.zoomOnTouch ? s = Pe : s = te(t.target, xt), mi.test(s) && gt(this.element, Kt, {
+      t.changedTouches ? T(t.changedTouches, function(a) {
+        o[a.identifier] = Dt(a);
+      }) : o[t.pointerId || 0] = Dt(t), Object.keys(o).length > 1 && n.zoomable && n.zoomOnTouch ? s = Pe : s = te(t.target, _t), mi.test(s) && gt(this.element, Kt, {
         originalEvent: t,
         action: s
-      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Te && (this.cropping = !0, T(this.dragBox, Tt)));
+      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Me && (this.cropping = !0, M(this.dragBox, Mt)));
     }
   },
   cropMove: function(t) {
@@ -1874,17 +1874,17 @@ var Hi = {
       t.preventDefault(), gt(this.element, Zt, {
         originalEvent: t,
         action: e
-      }) !== !1 && (t.changedTouches ? M(t.changedTouches, function(n) {
-        R(i[n.identifier] || {}, Ot(n, !0));
-      }) : R(i[t.pointerId || 0] || {}, Ot(t, !0)), this.change(t));
+      }) !== !1 && (t.changedTouches ? T(t.changedTouches, function(n) {
+        R(i[n.identifier] || {}, Dt(n, !0));
+      }) : R(i[t.pointerId || 0] || {}, Dt(t, !0)), this.change(t));
     }
   },
   cropEnd: function(t) {
     if (!this.disabled) {
       var e = this.action, i = this.pointers;
-      t.changedTouches ? M(t.changedTouches, function(n) {
+      t.changedTouches ? T(t.changedTouches, function(n) {
         delete i[n.identifier];
-      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, ft(this.dragBox, Tt, this.cropped && this.options.modal)), gt(this.element, Jt, {
+      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, ft(this.dragBox, Mt, this.cropped && this.options.modal)), gt(this.element, Jt, {
         originalEvent: t,
         action: e
       }));
@@ -1892,12 +1892,12 @@ var Hi = {
   }
 }, ji = {
   change: function(t) {
-    var e = this.options, i = this.canvasData, n = this.containerData, o = this.cropBoxData, s = this.pointers, a = this.action, d = e.aspectRatio, l = o.left, h = o.top, c = o.width, u = o.height, b = l + c, C = h + u, p = 0, f = 0, v = n.width, y = n.height, w = !0, _;
+    var e = this.options, i = this.canvasData, n = this.containerData, o = this.cropBoxData, s = this.pointers, a = this.action, d = e.aspectRatio, l = o.left, h = o.top, c = o.width, u = o.height, b = l + c, C = h + u, p = 0, f = 0, v = n.width, y = n.height, w = !0, x;
     !d && t.shiftKey && (d = c && u ? c / u : 1), this.limited && (p = o.minLeft, f = o.minTop, v = p + Math.min(n.width, i.width, i.left + i.width), y = f + Math.min(n.height, i.height, i.top + i.height));
     var S = s[Object.keys(s)[0]], m = {
       x: S.endX - S.startX,
       y: S.endY - S.startY
-    }, x = function(E) {
+    }, _ = function(E) {
       switch (E) {
         case at:
           b + m.x > v && (m.x = v - b);
@@ -1922,28 +1922,28 @@ var Hi = {
           w = !1;
           break;
         }
-        x(at), c += m.x, c < 0 && (a = rt, c = -c, l -= c), d && (u = c / d, h += (o.height - u) / 2);
+        _(at), c += m.x, c < 0 && (a = rt, c = -c, l -= c), d && (u = c / d, h += (o.height - u) / 2);
         break;
       case Q:
         if (m.y <= 0 && (h <= f || d && (l <= p || b >= v))) {
           w = !1;
           break;
         }
-        x(Q), u -= m.y, h += m.y, u < 0 && (a = ut, u = -u, h -= u), d && (c = u * d, l += (o.width - c) / 2);
+        _(Q), u -= m.y, h += m.y, u < 0 && (a = ut, u = -u, h -= u), d && (c = u * d, l += (o.width - c) / 2);
         break;
       case rt:
         if (m.x <= 0 && (l <= p || d && (h <= f || C >= y))) {
           w = !1;
           break;
         }
-        x(rt), c -= m.x, l += m.x, c < 0 && (a = at, c = -c, l -= c), d && (u = c / d, h += (o.height - u) / 2);
+        _(rt), c -= m.x, l += m.x, c < 0 && (a = at, c = -c, l -= c), d && (u = c / d, h += (o.height - u) / 2);
         break;
       case ut:
         if (m.y >= 0 && (C >= y || d && (l <= p || b >= v))) {
           w = !1;
           break;
         }
-        x(ut), u += m.y, u < 0 && (a = Q, u = -u, h -= u), d && (c = u * d, l += (o.width - c) / 2);
+        _(ut), u += m.y, u < 0 && (a = Q, u = -u, h -= u), d && (c = u * d, l += (o.width - c) / 2);
         break;
       case bt:
         if (d) {
@@ -1951,9 +1951,9 @@ var Hi = {
             w = !1;
             break;
           }
-          x(Q), u -= m.y, h += m.y, c = u * d;
+          _(Q), u -= m.y, h += m.y, c = u * d;
         } else
-          x(Q), x(at), m.x >= 0 ? b < v ? c += m.x : m.y <= 0 && h <= f && (w = !1) : c += m.x, m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
+          _(Q), _(at), m.x >= 0 ? b < v ? c += m.x : m.y <= 0 && h <= f && (w = !1) : c += m.x, m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
         c < 0 && u < 0 ? (a = St, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = Ct, c = -c, l -= c) : u < 0 && (a = wt, u = -u, h -= u);
         break;
       case Ct:
@@ -1962,9 +1962,9 @@ var Hi = {
             w = !1;
             break;
           }
-          x(Q), u -= m.y, h += m.y, c = u * d, l += o.width - c;
+          _(Q), u -= m.y, h += m.y, c = u * d, l += o.width - c;
         } else
-          x(Q), x(rt), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y <= 0 && h <= f && (w = !1) : (c -= m.x, l += m.x), m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
+          _(Q), _(rt), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y <= 0 && h <= f && (w = !1) : (c -= m.x, l += m.x), m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
         c < 0 && u < 0 ? (a = wt, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = bt, c = -c, l -= c) : u < 0 && (a = St, u = -u, h -= u);
         break;
       case St:
@@ -1973,9 +1973,9 @@ var Hi = {
             w = !1;
             break;
           }
-          x(rt), c -= m.x, l += m.x, u = c / d;
+          _(rt), c -= m.x, l += m.x, u = c / d;
         } else
-          x(ut), x(rt), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y >= 0 && C >= y && (w = !1) : (c -= m.x, l += m.x), m.y >= 0 ? C < y && (u += m.y) : u += m.y;
+          _(ut), _(rt), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y >= 0 && C >= y && (w = !1) : (c -= m.x, l += m.x), m.y >= 0 ? C < y && (u += m.y) : u += m.y;
         c < 0 && u < 0 ? (a = bt, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = wt, c = -c, l -= c) : u < 0 && (a = Ct, u = -u, h -= u);
         break;
       case wt:
@@ -1984,9 +1984,9 @@ var Hi = {
             w = !1;
             break;
           }
-          x(at), c += m.x, u = c / d;
+          _(at), c += m.x, u = c / d;
         } else
-          x(ut), x(at), m.x >= 0 ? b < v ? c += m.x : m.y >= 0 && C >= y && (w = !1) : c += m.x, m.y >= 0 ? C < y && (u += m.y) : u += m.y;
+          _(ut), _(at), m.x >= 0 ? b < v ? c += m.x : m.y >= 0 && C >= y && (w = !1) : c += m.x, m.y >= 0 ? C < y && (u += m.y) : u += m.y;
         c < 0 && u < 0 ? (a = Ct, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = St, c = -c, l -= c) : u < 0 && (a = bt, u = -u, h -= u);
         break;
       case Le:
@@ -1995,22 +1995,22 @@ var Hi = {
       case Pe:
         this.zoom(Ri(s), t), w = !1;
         break;
-      case Te:
+      case Me:
         if (!m.x || !m.y) {
           w = !1;
           break;
         }
-        _ = je(this.cropper), l = S.startX - _.left, h = S.startY - _.top, c = o.minWidth, u = o.minHeight, m.x > 0 ? a = m.y > 0 ? wt : bt : m.x < 0 && (l -= c, a = m.y > 0 ? St : Ct), m.y < 0 && (h -= u), this.cropped || (q(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
+        x = je(this.cropper), l = S.startX - x.left, h = S.startY - x.top, c = o.minWidth, u = o.minHeight, m.x > 0 ? a = m.y > 0 ? wt : bt : m.x < 0 && (l -= c, a = m.y > 0 ? St : Ct), m.y < 0 && (h -= u), this.cropped || (q(this.cropBox, B), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
         break;
     }
-    w && (o.width = c, o.height = u, o.left = l, o.top = h, this.action = a, this.renderCropBox()), M(s, function(I) {
+    w && (o.width = c, o.height = u, o.left = l, o.top = h, this.action = a, this.renderCropBox()), T(s, function(I) {
       I.startX = I.endX, I.startY = I.endY;
     });
   }
 }, $i = {
   // Show the crop box manually
   crop: function() {
-    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && T(this.dragBox, Tt), q(this.cropBox, B), this.setCropBoxData(this.initialCropBoxData)), this;
+    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && M(this.dragBox, Mt), q(this.cropBox, B), this.setCropBoxData(this.initialCropBoxData)), this;
   },
   // Reset the image and crop box to their initial states
   reset: function() {
@@ -2023,7 +2023,7 @@ var Hi = {
       top: 0,
       width: 0,
       height: 0
-    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), q(this.dragBox, Tt), T(this.cropBox, B)), this;
+    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), q(this.dragBox, Mt), M(this.cropBox, B)), this;
   },
   /**
    * Replace the image's src and rebuild the cropper
@@ -2033,7 +2033,7 @@ var Hi = {
    */
   replace: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
-    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, M(this.previews, function(i) {
+    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, T(this.previews, function(i) {
       i.getElementsByTagName("img")[0].src = t;
     }))) : (this.isImg && (this.replaced = !0), this.options.data = null, this.uncreate(), this.load(t))), this;
   },
@@ -2043,7 +2043,7 @@ var Hi = {
   },
   // Disable (freeze) the cropper
   disable: function() {
-    return this.ready && !this.disabled && (this.disabled = !0, T(this.cropper, ue)), this;
+    return this.ready && !this.disabled && (this.disabled = !0, M(this.cropper, ue)), this;
   },
   /**
    * Destroy the cropper and remove the instance from the image
@@ -2101,7 +2101,7 @@ var Hi = {
       }) === !1)
         return this;
       if (i) {
-        var u = this.pointers, b = je(this.cropper), C = u && Object.keys(u).length ? Di(u) : {
+        var u = this.pointers, b = je(this.cropper), C = u && Object.keys(u).length ? Oi(u) : {
           pageX: i.pageX,
           pageY: i.pageY
         };
@@ -2170,7 +2170,7 @@ var Hi = {
         height: o.height
       };
       var a = i.width / i.naturalWidth;
-      if (M(s, function(h, c) {
+      if (T(s, function(h, c) {
         s[c] = h / a;
       }), t) {
         var d = Math.round(s.y + s.height), l = Math.round(s.x + s.width);
@@ -2220,7 +2220,7 @@ var Hi = {
    */
   getCanvasData: function() {
     var t = this.canvasData, e = {};
-    return this.ready && M(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
+    return this.ready && T(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
       e[i] = t[i];
     }), e;
   },
@@ -2264,7 +2264,7 @@ var Hi = {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     if (!this.ready || !window.HTMLCanvasElement)
       return null;
-    var e = this.canvasData, i = Mi(this.image, this.imageData, e, t);
+    var e = this.canvasData, i = Ti(this.image, this.imageData, e, t);
     if (!this.cropped)
       return i;
     var n = this.getData(t.rounded), o = n.x, s = n.y, a = n.width, d = n.height, l = i.width / Math.floor(e.naturalWidth);
@@ -2285,16 +2285,16 @@ var Hi = {
     C = Math.min(c.width, Math.max(u.width, C)), p = Math.min(c.height, Math.max(u.height, p));
     var f = document.createElement("canvas"), v = f.getContext("2d");
     f.width = mt(C), f.height = mt(p), v.fillStyle = t.fillColor || "transparent", v.fillRect(0, 0, C, p);
-    var y = t.imageSmoothingEnabled, w = y === void 0 ? !0 : y, _ = t.imageSmoothingQuality;
-    v.imageSmoothingEnabled = w, _ && (v.imageSmoothingQuality = _);
-    var S = i.width, m = i.height, x = o, I = s, E, D, $, W, H, N;
-    x <= -a || x > S ? (x = 0, E = 0, $ = 0, H = 0) : x <= 0 ? ($ = -x, x = 0, E = Math.min(S, a + x), H = E) : x <= S && ($ = 0, E = Math.min(a, S - x), H = E), E <= 0 || I <= -d || I > m ? (I = 0, D = 0, W = 0, N = 0) : I <= 0 ? (W = -I, I = 0, D = Math.min(m, d + I), N = D) : I <= m && (W = 0, D = Math.min(d, m - I), N = D);
-    var O = [x, I, E, D];
+    var y = t.imageSmoothingEnabled, w = y === void 0 ? !0 : y, x = t.imageSmoothingQuality;
+    v.imageSmoothingEnabled = w, x && (v.imageSmoothingQuality = x);
+    var S = i.width, m = i.height, _ = o, I = s, E, O, $, W, H, N;
+    _ <= -a || _ > S ? (_ = 0, E = 0, $ = 0, H = 0) : _ <= 0 ? ($ = -_, _ = 0, E = Math.min(S, a + _), H = E) : _ <= S && ($ = 0, E = Math.min(a, S - _), H = E), E <= 0 || I <= -d || I > m ? (I = 0, O = 0, W = 0, N = 0) : I <= 0 ? (W = -I, I = 0, O = Math.min(m, d + I), N = O) : I <= m && (W = 0, O = Math.min(d, m - I), N = O);
+    var D = [_, I, E, O];
     if (H > 0 && N > 0) {
       var L = C / a;
-      O.push($ * L, W * L, H * L, N * L);
+      D.push($ * L, W * L, H * L, N * L);
     }
-    return v.drawImage.apply(v, [i].concat(Me(O.map(function(F) {
+    return v.drawImage.apply(v, [i].concat(Te(D.map(function(F) {
       return Math.floor(mt(F));
     })))), f;
   },
@@ -2316,7 +2316,7 @@ var Hi = {
     var e = this.options, i = this.dragBox, n = this.face;
     if (this.ready && !this.disabled) {
       var o = t === oe, s = e.movable && t === Be;
-      t = o || s ? t : Ne, e.dragMode = t, It(i, xt, t), ft(i, Xt, o), ft(i, Yt, s), e.cropBoxMovable || (It(n, xt, t), ft(n, Xt, o), ft(n, Yt, s));
+      t = o || s ? t : Ne, e.dragMode = t, It(i, _t, t), ft(i, Xt, o), ft(i, Yt, s), e.cropBoxMovable || (It(n, _t, t), ft(n, Xt, o), ft(n, Yt, s));
     }
     return this;
   }
@@ -2362,7 +2362,7 @@ var Hi = {
           i.read(s.response);
         }, s.onloadend = function() {
           i.reloading = !1, i.xhr = null;
-        }, o.checkCrossOrigin && xe(e) && n.crossOrigin && (e = Ie(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = n.crossOrigin === "use-credentials", s.send();
+        }, o.checkCrossOrigin && _e(e) && n.crossOrigin && (e = Ie(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = n.crossOrigin === "use-credentials", s.send();
       }
     }
   }, {
@@ -2380,9 +2380,9 @@ var Hi = {
     key: "clone",
     value: function() {
       var e = this.element, i = this.url, n = e.crossOrigin, o = i;
-      this.options.checkCrossOrigin && xe(i) && (n || (n = "anonymous"), o = Ie(i)), this.crossOrigin = n, this.crossOriginUrl = o;
+      this.options.checkCrossOrigin && _e(i) && (n || (n = "anonymous"), o = Ie(i)), this.crossOrigin = n, this.crossOriginUrl = o;
       var s = document.createElement("img");
-      n && (s.crossOrigin = n), s.src = o || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), T(s, pe), e.parentNode.insertBefore(s, e.nextSibling);
+      n && (s.crossOrigin = n), s.src = o || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), M(s, pe), e.parentNode.insertBefore(s, e.nextSibling);
     }
   }, {
     key: "start",
@@ -2418,7 +2418,7 @@ var Hi = {
         var e = this.element, i = this.options, n = this.image, o = e.parentNode, s = document.createElement("div");
         s.innerHTML = bi;
         var a = s.querySelector(".".concat(k, "-container")), d = a.querySelector(".".concat(k, "-canvas")), l = a.querySelector(".".concat(k, "-drag-box")), h = a.querySelector(".".concat(k, "-crop-box")), c = h.querySelector(".".concat(k, "-face"));
-        this.container = o, this.cropper = a, this.canvas = d, this.dragBox = l, this.cropBox = h, this.viewBox = a.querySelector(".".concat(k, "-view-box")), this.face = c, d.appendChild(n), T(e, B), o.insertBefore(a, e.nextSibling), q(n, pe), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, T(h, B), i.guides || T(h.getElementsByClassName("".concat(k, "-dashed")), B), i.center || T(h.getElementsByClassName("".concat(k, "-center")), B), i.background && T(a, "".concat(k, "-bg")), i.highlight || T(c, di), i.cropBoxMovable && (T(c, Yt), It(c, xt, ne)), i.cropBoxResizable || (T(h.getElementsByClassName("".concat(k, "-line")), B), T(h.getElementsByClassName("".concat(k, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), P(i.ready) && G(e, ye, i.ready, {
+        this.container = o, this.cropper = a, this.canvas = d, this.dragBox = l, this.cropBox = h, this.viewBox = a.querySelector(".".concat(k, "-view-box")), this.face = c, d.appendChild(n), M(e, B), o.insertBefore(a, e.nextSibling), q(n, pe), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, M(h, B), i.guides || M(h.getElementsByClassName("".concat(k, "-dashed")), B), i.center || M(h.getElementsByClassName("".concat(k, "-center")), B), i.background && M(a, "".concat(k, "-bg")), i.highlight || M(c, di), i.cropBoxMovable && (M(c, Yt), It(c, _t, ne)), i.cropBoxResizable || (M(h.getElementsByClassName("".concat(k, "-line")), B), M(h.getElementsByClassName("".concat(k, "-point")), B)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), P(i.ready) && G(e, ye, i.ready, {
           once: !0
         }), gt(e, ye);
       }
@@ -2458,7 +2458,7 @@ var Hi = {
   }]);
 }();
 R(We.prototype, Hi, Fi, Ui, zi, ji, $i);
-const Mt = (r) => Math.min(1, Math.max(0, r)), Ae = ["16:9", "3:2", "1:1"], jt = "3:2";
+const Tt = (r) => Math.min(1, Math.max(0, r)), Ae = ["16:9", "3:2", "1:1"], jt = "3:2";
 class qi {
   constructor() {
     this.overlay = null, this.cropper = null, this.escHandler = null, this.resolvePromise = null, this.showOriginalOnClickInput = null, this.aspectRatioInputs = [];
@@ -2595,7 +2595,7 @@ class qi {
    * @param naturalHeight - натуральная высота изображения
    */
   cropDataToString(t, e, i) {
-    const n = Mt(t.x / e), o = Mt(t.y / i), s = Mt((t.x + t.width) / e), a = Mt((t.y + t.height) / i);
+    const n = Tt(t.x / e), o = Tt(t.y / i), s = Tt((t.x + t.width) / e), a = Tt((t.y + t.height) / i);
     return {
       crop: `${n.toFixed(4)}x${o.toFixed(4)}:${s.toFixed(4)}x${a.toFixed(4)}`,
       croppedWidth: Math.round(t.width),
@@ -3080,9 +3080,9 @@ class Qi {
     metadataPlaceholders: f,
     source: v
   }) {
-    this.isGenerationBusy = !1, this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = h, this.defaultResolution = C, this.onAdoptSession = t, this.onCloseSession = n, this.onSelectCandidate = d, this.onSelectHistory = l;
-    const y = g("div", ["ai-image-tool__generator"]), w = g("div", ["ai-image-tool__sessions"]), _ = g("div", ["ai-image-tool__sessions-title"]), S = g("div", ["ai-image-tool__sessions-list"]), m = g("div", ["ai-image-tool__prompt-section"]), x = g("label", ["ai-image-tool__label"]), I = g("textarea", ["ai-image-tool__prompt"]), E = g("label", ["ai-image-tool__caption-option"]), D = g("input", ["ai-image-tool__caption-checkbox"]), $ = g("span"), W = g("div", ["ai-image-tool__prompt-assistance"]), H = g("div", ["ai-image-tool__aspect-ratio-field"]), N = g("span", ["ai-image-tool__aspect-ratio-label"]), O = g("div", ["ai-image-tool__aspect-ratios"]), L = g("label", ["ai-image-tool__resolution-option"]), F = g("input", ["ai-image-tool__resolution-checkbox"]), ht = g("span"), ct = g("div", ["ai-image-tool__prompt-actions"]), it = g("button", ["ai-image-tool__action", "ai-image-tool__action--generate"], { type: "button" }), Y = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), V = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), nt = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), vt = g("div", ["ai-image-tool__status"]), ot = g("div", ["ai-image-tool__error"]), Pt = g("div", ["ai-image-tool__candidates"]), At = g("div", ["ai-image-tool__selection"]), Et = g("img", ["ai-image-tool__selected-preview"]), Bt = g("div", ["ai-image-tool__metadata"]), J = g("textarea", ["ai-image-tool__metadata-input", "ai-image-tool__metadata-caption"]), Z = g("input", ["ai-image-tool__metadata-input"]), K = g("input", ["ai-image-tool__metadata-input"]), Nt = g("div", ["ai-image-tool__caption-status"]), Gt = g("label", ["ai-image-tool__label"]), st = g("textarea", ["ai-image-tool__prompt"]), kt = g("button", ["ai-image-tool__action"], { type: "button" }), Rt = g("button", ["ai-image-tool__action"], { type: "button" }), ae = g("div", ["ai-image-tool__history"]), Ht = g("div", ["ai-image-tool__history-status"]);
-    I.id = c, I.rows = 3, I.placeholder = "Опишите изображение, которое нужно создать", x.htmlFor = c, x.textContent = "Введите промпт", it.textContent = "Генерировать", Y.textContent = "Промпт по публикации", V.textContent = "Улучшить промпт", nt.textContent = "Отменить", Y.hidden = !h, V.hidden = !h, D.type = "checkbox", D.id = `${c}-generate-caption`, $.textContent = "Также сгенерировать описание", E.htmlFor = D.id, E.hidden = !h, E.append(D, $), W.append(E, V), O.setAttribute("role", "radiogroup"), O.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(O, b, u, c), N.textContent = "Соотношение сторон:", F.type = "checkbox", F.id = `${c}-hd-resolution`, F.checked = C === "2k", ht.textContent = "HD 2k", L.htmlFor = F.id, L.title = "Варианты в 2k: дольше и дороже, зато детальнее", L.hidden = !(p.includes("1k") && p.includes("2k")), L.append(F, ht), H.append(N, O, L), ct.append(Y, nt, it), m.append(x, I, W, H, ct), Et.alt = "Выбранный вариант", Et.dataset.selectedPreview = "", J.id = `${c}-caption`, J.rows = 2, J.dataset.generatedCaption = "", J.dataset.aiImageMetadata = "", J.placeholder = f.caption, J.setAttribute("aria-label", f.caption), Z.type = "text", Z.dataset.aiImageMetadata = "", Z.placeholder = f.source, Z.setAttribute("aria-label", f.source), Z.defaultValue = v.name, Z.value = v.name, K.type = "url", K.dataset.aiImageMetadata = "", K.placeholder = f.sourceLink, K.setAttribute("aria-label", f.sourceLink), K.defaultValue = v.url, K.value = v.url, Nt.setAttribute("aria-live", "polite"), Bt.append(J, Z, K, Nt), st.id = `${c}-refinement`, st.rows = 2, st.dataset.refinementPrompt = "", Gt.htmlFor = st.id, Gt.textContent = "Как доработать изображение", kt.textContent = "Доработать", Rt.textContent = "Использовать изображение", At.hidden = !0, At.append(
+    this.isGenerationBusy = !1, this.operationStartedAt = null, this.operationElapsedSeconds = 0, this.lastOperationSeconds = null, this.operationTicker = null, this.lastStatusMessage = "", this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = h, this.defaultResolution = C, this.onAdoptSession = t, this.onCloseSession = n, this.onSelectCandidate = d, this.onSelectHistory = l;
+    const y = g("div", ["ai-image-tool__generator"]), w = g("div", ["ai-image-tool__sessions"]), x = g("div", ["ai-image-tool__sessions-title"]), S = g("div", ["ai-image-tool__sessions-list"]), m = g("div", ["ai-image-tool__prompt-section"]), _ = g("label", ["ai-image-tool__label"]), I = g("textarea", ["ai-image-tool__prompt"]), E = g("label", ["ai-image-tool__caption-option"]), O = g("input", ["ai-image-tool__caption-checkbox"]), $ = g("span"), W = g("div", ["ai-image-tool__prompt-assistance"]), H = g("div", ["ai-image-tool__aspect-ratio-field"]), N = g("span", ["ai-image-tool__aspect-ratio-label"]), D = g("div", ["ai-image-tool__aspect-ratios"]), L = g("label", ["ai-image-tool__resolution-option"]), F = g("input", ["ai-image-tool__resolution-checkbox"]), ht = g("span"), ct = g("div", ["ai-image-tool__prompt-actions"]), it = g("button", ["ai-image-tool__action", "ai-image-tool__action--generate"], { type: "button" }), Y = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), V = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), nt = g("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), vt = g("div", ["ai-image-tool__status"]), ot = g("div", ["ai-image-tool__error"]), Pt = g("div", ["ai-image-tool__candidates"]), At = g("div", ["ai-image-tool__selection"]), Et = g("img", ["ai-image-tool__selected-preview"]), Bt = g("div", ["ai-image-tool__metadata"]), J = g("textarea", ["ai-image-tool__metadata-input", "ai-image-tool__metadata-caption"]), Z = g("input", ["ai-image-tool__metadata-input"]), K = g("input", ["ai-image-tool__metadata-input"]), Nt = g("div", ["ai-image-tool__caption-status"]), Gt = g("label", ["ai-image-tool__label"]), st = g("textarea", ["ai-image-tool__prompt"]), kt = g("button", ["ai-image-tool__action"], { type: "button" }), Rt = g("button", ["ai-image-tool__action"], { type: "button" }), ae = g("div", ["ai-image-tool__history"]), Ht = g("div", ["ai-image-tool__history-status"]);
+    I.id = c, I.rows = 3, I.placeholder = "Опишите изображение, которое нужно создать", _.htmlFor = c, _.textContent = "Введите промпт", it.textContent = "Генерировать", Y.textContent = "Промпт по публикации", V.textContent = "Улучшить промпт", nt.textContent = "Отменить", Y.hidden = !h, V.hidden = !h, O.type = "checkbox", O.id = `${c}-generate-caption`, $.textContent = "Также сгенерировать описание", E.htmlFor = O.id, E.hidden = !h, E.append(O, $), W.append(E, V), D.setAttribute("role", "radiogroup"), D.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(D, b, u, c), N.textContent = "Соотношение сторон:", F.type = "checkbox", F.id = `${c}-hd-resolution`, F.checked = C === "2k", ht.textContent = "HD 2k", L.htmlFor = F.id, L.title = "Варианты в 2k: дольше и дороже, зато детальнее", L.hidden = !(p.includes("1k") && p.includes("2k")), L.append(F, ht), H.append(N, D, L), ct.append(Y, nt, it), m.append(_, I, W, H, ct), Et.alt = "Выбранный вариант", Et.dataset.selectedPreview = "", J.id = `${c}-caption`, J.rows = 2, J.dataset.generatedCaption = "", J.dataset.aiImageMetadata = "", J.placeholder = f.caption, J.setAttribute("aria-label", f.caption), Z.type = "text", Z.dataset.aiImageMetadata = "", Z.placeholder = f.source, Z.setAttribute("aria-label", f.source), Z.defaultValue = v.name, Z.value = v.name, K.type = "url", K.dataset.aiImageMetadata = "", K.placeholder = f.sourceLink, K.setAttribute("aria-label", f.sourceLink), K.defaultValue = v.url, K.value = v.url, Nt.setAttribute("aria-live", "polite"), Bt.append(J, Z, K, Nt), st.id = `${c}-refinement`, st.rows = 2, st.dataset.refinementPrompt = "", Gt.htmlFor = st.id, Gt.textContent = "Как доработать изображение", kt.textContent = "Доработать", Rt.textContent = "Использовать изображение", At.hidden = !0, At.append(
       Et,
       Bt,
       Gt,
@@ -3091,23 +3091,23 @@ class Qi {
       Rt,
       ae,
       Ht
-    ), vt.setAttribute("aria-live", "polite"), ot.setAttribute("aria-live", "assertive"), ot.setAttribute("role", "alert"), ot.hidden = !0, Ht.setAttribute("aria-live", "polite"), Pt.hidden = !0, y.hidden = !0, w.hidden = !0, w.append(_, S), y.append(w, m, vt, ot, Pt, At), it.addEventListener("click", () => s(
+    ), vt.setAttribute("aria-live", "polite"), ot.setAttribute("aria-live", "assertive"), ot.setAttribute("role", "alert"), ot.hidden = !0, Ht.setAttribute("aria-live", "polite"), Pt.hidden = !0, y.hidden = !0, w.hidden = !0, w.append(x, S), y.append(w, m, vt, ot, Pt, At), it.addEventListener("click", () => s(
       I.value,
-      D.checked,
+      O.checked,
       this.selectedAspectRatio(),
       this.selectedResolution()
     )), Y.addEventListener("click", () => e("generate", I.value)), V.addEventListener("click", () => e("improve", I.value)), nt.addEventListener("click", i), kt.addEventListener("click", () => a(st.value)), Rt.addEventListener("click", o), I.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
       wrapper: y,
       sessionsSection: w,
-      sessionsTitle: _,
+      sessionsTitle: x,
       sessionsList: S,
       promptSection: m,
       prompt: I,
       generateButton: it,
       generateFromPublicationButton: Y,
       improvePromptButton: V,
-      generateCaptionCheckbox: D,
-      aspectRatioOptions: O,
+      generateCaptionCheckbox: O,
+      aspectRatioOptions: D,
       hdResolutionOption: L,
       hdResolutionCheckbox: F,
       generationStatus: vt,
@@ -3219,7 +3219,31 @@ class Qi {
     this.isPromptAssistanceBusy = t, this.updatePromptControls();
   }
   setGenerationBusy(t) {
-    this.isGenerationBusy = t, this.updatePromptControls(), this.updateSelectionControls();
+    this.isGenerationBusy = t, t ? this.startOperationTimer() : (this.stopOperationTimer(!0), this.renderGenerationStatus()), this.updatePromptControls(), this.updateSelectionControls();
+  }
+  /** Генерация идёт десяток секунд: рядом с лоадером тикают секунды, в конце - итог. */
+  startOperationTimer() {
+    this.operationTicker === null && (this.operationStartedAt = Date.now(), this.operationElapsedSeconds = 0, this.lastOperationSeconds = null, this.operationTicker = setInterval(() => {
+      this.operationStartedAt !== null && (this.operationElapsedSeconds = (Date.now() - this.operationStartedAt) / 1e3, this.renderGenerationStatus());
+    }, 1e3));
+  }
+  stopOperationTimer(t) {
+    this.operationTicker !== null && (clearInterval(this.operationTicker), this.operationTicker = null), t && this.operationStartedAt !== null && (this.lastOperationSeconds = (Date.now() - this.operationStartedAt) / 1e3), this.operationStartedAt = null, this.operationElapsedSeconds = 0;
+  }
+  formatSeconds(t) {
+    return `${t.toFixed(1).replace(".", ",")} с`;
+  }
+  renderGenerationStatus() {
+    const t = this.lastStatusMessage;
+    if (t === "") {
+      this.nodes.generationStatus.textContent = "", this.nodes.generationStatus.dataset.busy = "false";
+      return;
+    }
+    if (this.nodes.generationStatus.dataset.busy = String(this.operationStartedAt !== null), this.operationStartedAt !== null) {
+      this.nodes.generationStatus.textContent = `${t} ${this.formatSeconds(this.operationElapsedSeconds)}`;
+      return;
+    }
+    this.nodes.generationStatus.textContent = this.lastOperationSeconds === null ? t : `${t} (за ${this.formatSeconds(this.lastOperationSeconds)})`;
   }
   prepareGeneratedCaption() {
     this.isGeneratedCaptionBusy = !0, this.nodes.generatedCaption.value = "", this.nodes.generatedCaptionStatus.textContent = "Генерируем описание...", delete this.nodes.generatedCaptionStatus.dataset.error, this.updateSelectionControls();
@@ -3259,7 +3283,7 @@ class Qi {
       refinement_submitting: "Отправляем запрос на доработку...",
       refining: "Нейросеть дорабатывает изображение..."
     }, n = e ?? t, o = i[n] ?? "";
-    this.nodes.generationStatus.textContent = o, this.nodes.historyStatus.textContent = n.startsWith("refinement_") ? o : "";
+    this.lastStatusMessage = o, this.renderGenerationStatus(), this.nodes.historyStatus.textContent = n.startsWith("refinement_") ? o : "";
   }
   showGenerationError(t) {
     this.nodes.generationError.textContent = t, this.nodes.generationError.hidden = t === "";
@@ -3289,7 +3313,7 @@ class Qi {
     this.onSelectHistory(t);
   }
   reset() {
-    this.nodes.promptSection.hidden = !1, this.nodes.candidates.hidden = !0, this.nodes.selection.hidden = !0, this.nodes.candidates.replaceChildren(), this.nodes.history.replaceChildren(), this.nodes.prompt.value = "", this.nodes.refinementPrompt.value = "", this.nodes.generationStatus.textContent = "", this.showGenerationError(""), this.resetGeneratedCaption(), this.setGenerationBusy(!1), this.setPromptAssistanceBusy(!1);
+    this.nodes.promptSection.hidden = !1, this.nodes.candidates.hidden = !0, this.nodes.selection.hidden = !0, this.nodes.candidates.replaceChildren(), this.nodes.history.replaceChildren(), this.nodes.prompt.value = "", this.nodes.refinementPrompt.value = "", this.lastStatusMessage = "", this.lastOperationSeconds = null, this.stopOperationTimer(!1), this.nodes.generationStatus.textContent = "", this.showGenerationError(""), this.resetGeneratedCaption(), this.setGenerationBusy(!1), this.setPromptAssistanceBusy(!1);
   }
   updatePromptControls() {
     const t = this.isGenerationBusy || this.isPromptAssistanceBusy;

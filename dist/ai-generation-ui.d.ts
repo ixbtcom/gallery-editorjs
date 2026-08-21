@@ -68,6 +68,11 @@ export default class AiGenerationUi {
     private readonly onSelectCandidate;
     private readonly onSelectHistory;
     private isGenerationBusy;
+    private operationStartedAt;
+    private operationElapsedSeconds;
+    private lastOperationSeconds;
+    private operationTicker;
+    private lastStatusMessage;
     private isPromptAssistanceBusy;
     private isGeneratedCaptionBusy;
     private hasFreeSessionSlot;
@@ -87,6 +92,11 @@ export default class AiGenerationUi {
     showPromptAssistanceStatus(message: string): void;
     setPromptAssistanceBusy(isBusy: boolean): void;
     setGenerationBusy(isBusy: boolean): void;
+    /** Генерация идёт десяток секунд: рядом с лоадером тикают секунды, в конце - итог. */
+    private startOperationTimer;
+    stopOperationTimer(keepResult: boolean): void;
+    private formatSeconds;
+    private renderGenerationStatus;
     prepareGeneratedCaption(): void;
     completeGeneratedCaption(caption: string): void;
     failGeneratedCaption(message: string): void;
