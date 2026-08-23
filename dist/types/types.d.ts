@@ -1,7 +1,7 @@
 import { AiImageClientConfig } from '../ai-image-client';
+import { CropAspectRatio, CropAspectRatioMode, CropResult } from '../../../_shared/image-item/types';
 
-export type CropAspectRatio = '16:9' | '3:2' | '1:1';
-export type CropAspectRatioMode = CropAspectRatio | 'free';
+export type { CropAspectRatio, CropAspectRatioMode, CropResult };
 /**
  * Options for upload callbacks
  */
@@ -26,21 +26,6 @@ export interface UploadResponseFormat {
         /** content_images Media uuid (для cover-тоггла) */
         media_id?: string;
     };
-}
-/**
- * Crop operation result from CropModal
- */
-export interface CropResult {
-    /** Imagor crop string "AxB:CxD" (float 0-1), empty string for reset */
-    crop: string;
-    /** Cropped region width in pixels */
-    croppedWidth: number;
-    /** Cropped region height in pixels */
-    croppedHeight: number;
-    /** Whether a click should open the original instead of the cropped image. */
-    showOriginalOnClick: boolean;
-    /** Aspect ratio mode used by cropper. */
-    cropAspectRatio: CropAspectRatioMode;
 }
 /**
  * Single gallery item data

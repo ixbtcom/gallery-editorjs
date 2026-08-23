@@ -22,7 +22,11 @@ export default {
   plugins: [
     cssInjectedByJsPlugin(),
     dts({
-      tsconfigPath: './tsconfig.json'
+      tsconfigPath: './tsconfig.json',
+      // ⛔ Часть модулей живёт в packages/_shared (общие с блоком media), из-за
+      // чего плагин иначе поднимает общий корень и кладёт объявления в
+      // dist/gallery-editorjs/, а package.json ждёт их в dist/index.d.ts.
+      entryRoot: 'src',
     })
   ],
 };
