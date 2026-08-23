@@ -84,3 +84,24 @@ describe('gallery delegates non-image files', () => {
     expect(uploadByFile).toHaveBeenCalledOnce();
   });
 });
+
+/**
+ * ⛔ Отказ от вставки и выпадение из обработки вставки — разные вещи.
+ * EditorJS кладёт тул с `pasteConfig === false` в `exceptionList` и не
+ * обрабатывает вставку внутри его блока ВООБЩЕ: картинка из буфера при курсоре
+ * в старой галерее уходила бы в никуда вместо нового блока `media`.
+ */
+describe('gallery stays out of the paste exception list', () => {
+  it('pasteConfig — пустой конфиг, а не false', () => {
+    const config = GalleryTool.pasteConfig as unknown as {
+      tags?: unknown[];
+      files?: Record<string, unknown>;
+      patterns?: Record<string, unknown>;
+    };
+
+    expect(config as unknown).not.toBe(false);
+    expect(config.tags ?? []).toEqual([]);
+    expect(config.files ?? {}).toEqual({});
+    expect(config.patterns ?? {}).toEqual({});
+  });
+});
