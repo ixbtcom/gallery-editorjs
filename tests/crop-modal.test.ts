@@ -2,7 +2,7 @@
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import CropModal from '../src/crop-modal';
+import CropModal from '../../_shared/image-item/crop-modal';
 
 interface FakeCropper {
   destroy: ReturnType<typeof vi.fn>;

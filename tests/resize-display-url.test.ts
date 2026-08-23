@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { resizeDisplayUrl } from '../src/utils/resize-display-url';
+import { resizeDisplayUrl } from '../../_shared/image-item/resize-display-url';
 
 describe('resizeDisplayUrl', () => {
   it('вставляет 920x/webp после хоста для оригинального media.ixbt.site URL', () => {

@@ -1,7 +1,8 @@
 import { IconClipboard, IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
-import { createItemSettings, type GalleryItemSetting } from './item-settings';
-import { resizeDisplayUrl } from './utils/resize-display-url';
+import { createItemSettings } from '../../_shared/image-item/item-settings';
+import { resizeDisplayUrl } from '../../_shared/image-item/resize-display-url';
+import type { ImageItemSetting as GalleryItemSetting } from '../../_shared/image-item/types';
 import type { API } from '@editorjs/editorjs';
 import type { GalleryConfig, GalleryItemData } from './types/types';
 
@@ -857,7 +858,7 @@ export default class Ui {
     cropBtn.addEventListener('click', () => this.onCropImage(item));
 
     const settings = createItemSettings({
-      item,
+      isEnabled: (setting) => item.dataset[setting] === 'true',
       classes: {
         button: this.CSS.itemSettings,
         wrapper: this.CSS.itemSettingsWrapper,

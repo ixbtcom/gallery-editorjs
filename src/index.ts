@@ -21,7 +21,7 @@ import './index.css';
 
 import Ui from './ui';
 import Uploader from './uploader';
-import CropModal from './crop-modal';
+import CropModal from '../../_shared/image-item/crop-modal';
 import AiGenerationController from './ai-generation-controller';
 import { IconPicture } from '@codexteam/icons';
 import type {
