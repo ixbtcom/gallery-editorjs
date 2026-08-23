@@ -1,4 +1,4 @@
-(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__options{display:flex;flex-direction:column;gap:12px;padding:12px 16px 0;background:var(--ej-bg-muted, #f5f5f5)}.gallery-crop-modal__option{display:inline-flex;align-items:center;gap:8px;color:var(--ej-text);cursor:pointer;font-size:14px}.gallery-crop-modal__option input{width:18px;height:18px;margin:0}.gallery-crop-modal__aspect-ratios{display:flex;flex-wrap:wrap;gap:8px;padding:0;border:0;margin:0}.gallery-crop-modal__aspect-ratios-label{width:100%;color:var(--ej-text-secondary);font-size:13px;font-weight:500}.gallery-crop-modal__aspect-ratio{display:inline-flex;position:relative;cursor:pointer}.gallery-crop-modal__aspect-ratio input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.gallery-crop-modal__aspect-ratio-label{min-width:52px;padding:6px 10px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-surface);color:var(--ej-text);font-size:13px;line-height:1;text-align:center}.gallery-crop-modal__aspect-ratio input:checked+.gallery-crop-modal__aspect-ratio-label{border-color:var(--ej-primary);background:var(--ej-primary-light);color:var(--ej-primary)}.gallery-crop-modal__aspect-ratio input:focus-visible+.gallery-crop-modal__aspect-ratio-label{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item--plain,.gallery-tool__item--plain:hover{border-radius:0}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item--unlimited-height .gallery-tool__item-image img{max-height:none}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__ai-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 5px;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:#111827;color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;line-height:1;box-shadow:0 2px 8px #00000047;box-sizing:border-box}.gallery-tool__item-ai-badge{position:absolute;right:8px;bottom:8px;z-index:6;display:inline-flex;cursor:help}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right,.gallery-tool__item-settings{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover,.gallery-tool__item-settings:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__add-buttons .gallery-tool__ai-button{gap:8px}.gallery-tool__add-buttons .gallery-tool__clipboard-button{gap:6px}.gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark{min-width:22px;height:22px;font-size:10px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--carousel .gallery-tool__item--unlimited-height .gallery-tool__item-image img{max-height:none}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item-crop:disabled{cursor:not-allowed;opacity:.45}.gallery-tool__item-settings-wrapper{position:relative}.gallery-tool__item-settings-panel{position:absolute;top:calc(100% + 4px);right:0;z-index:20;display:grid;min-width:240px;padding:8px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-md)}.gallery-tool__item-settings-panel[hidden]{display:none}.gallery-tool__item-setting{display:flex;align-items:center;gap:8px;min-height:36px;padding:6px 8px;color:var(--ej-text);font-size:13px;cursor:pointer}.gallery-tool__item-setting:hover{background:var(--ej-bg-muted)}.gallery-tool__item-setting input{width:16px;height:16px;margin:0}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item[data-ai-generated].gallery-tool__item--cropped .gallery-tool__item-image:after{right:44px}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}.gallery-tool__item[data-cover][data-cover-overridden]:after{content:"Обложка · перекрыта вручную";background:#4b5563f2}.ai-image-tool__generator{display:grid;gap:14px;margin-top:14px;padding:16px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-lg);background:var(--ej-bg-muted);color:var(--ej-text)}.ai-image-tool__generator [hidden]{display:none}.ai-image-tool__prompt-section,.ai-image-tool__selection,.ai-image-tool__metadata{display:grid;gap:10px}.ai-image-tool__sessions{display:grid;gap:8px;padding:12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface)}.ai-image-tool__sessions-title{color:var(--ej-text-secondary);font-size:12px;font-weight:600}.ai-image-tool__sessions-list{display:grid;gap:8px}.ai-image-tool__session{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:8px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-muted)}.ai-image-tool__session-preview{display:flex;align-items:center;justify-content:center;width:64px;height:44px;overflow:hidden;border-radius:var(--ej-radius-sm);background:var(--ej-bg-input)}.ai-image-tool__session-thumb{width:100%;height:100%;object-fit:cover}.ai-image-tool__session-body{display:grid;gap:2px;min-width:0}.ai-image-tool__session-title{overflow:hidden;color:var(--ej-text);font-size:13px;font-weight:600;text-overflow:ellipsis;white-space:nowrap}a.ai-image-tool__session-title{color:var(--ej-primary);text-decoration:none}a.ai-image-tool__session-title:hover{text-decoration:underline}.ai-image-tool__session-meta{color:var(--ej-text-secondary);font-size:12px}.ai-image-tool__session-prompt{overflow:hidden;color:var(--ej-text-muted);font-size:12px;text-overflow:ellipsis;white-space:nowrap}.ai-image-tool__session-actions{display:flex;align-items:center;gap:6px}.ai-image-tool__session-close{width:28px;height:28px;padding:0;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-input);color:var(--ej-text-secondary);font-size:16px;line-height:1;cursor:pointer;transition:background var(--ej-transition),color var(--ej-transition)}.ai-image-tool__session-close:hover{background:var(--ej-danger-bg);border-color:var(--ej-danger-border);color:var(--ej-danger-text)}.ai-image-tool__prompt-actions,.ai-image-tool__history{display:flex;flex-wrap:wrap;gap:8px}.ai-image-tool__prompt-assistance{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ai-image-tool__prompt-assistance .ai-image-tool__action,.ai-image-tool__action--generate{margin-inline-start:auto}.ai-image-tool__aspect-ratio-field{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ai-image-tool__aspect-ratio-label{color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__aspect-ratios{display:inline-flex;width:fit-content;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-input)}.ai-image-tool__aspect-ratio-option{position:relative;min-width:58px;cursor:pointer;color:var(--ej-text-secondary);font-size:13px;font-weight:600;text-align:center}.ai-image-tool__aspect-ratio-option span{display:block;padding:8px 12px}.ai-image-tool__aspect-ratio-input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.ai-image-tool__aspect-ratio-input:checked+span{background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__aspect-ratio-input:focus-visible+span{outline:2px solid var(--ej-ring-focus);outline-offset:-2px}.ai-image-tool__aspect-ratio-input:disabled+span{cursor:not-allowed;opacity:.65}.ai-image-tool__resolution-option{display:inline-flex;align-items:center;min-height:44px;gap:8px;cursor:pointer;color:var(--ej-text);font-size:14px}.ai-image-tool__resolution-checkbox{width:18px;height:18px;margin:0;accent-color:var(--ej-primary)}.ai-image-tool__caption-option{display:inline-flex;align-items:center;width:fit-content;min-height:44px;gap:9px;cursor:pointer;color:var(--ej-text);font-size:14px}.ai-image-tool__caption-checkbox{width:18px;height:18px;margin:0;accent-color:var(--ej-primary)}.ai-image-tool__label{color:var(--ej-text);font-size:14px;font-weight:600}.ai-image-tool__prompt,.ai-image-tool__metadata-input{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);outline:none;background:var(--ej-bg-input);color:var(--ej-text);font:inherit;line-height:1.5;transition:border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__prompt{min-height:88px;resize:vertical}.ai-image-tool__metadata-input{min-height:44px}.ai-image-tool__metadata-caption{resize:vertical}.ai-image-tool__prompt:focus-visible,.ai-image-tool__metadata-input:focus-visible,.ai-image-tool__caption-checkbox:focus-visible,.ai-image-tool__action:focus-visible,.ai-image-tool__candidate:focus-visible,.ai-image-tool__history-item:focus-visible{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.ai-image-tool__action,.ai-image-tool__history-item{min-height:44px;padding:9px 14px;border:1px solid transparent;border-radius:var(--ej-radius-md);cursor:pointer;font:inherit;font-weight:600;transition:background-color var(--ej-transition),border-color var(--ej-transition),box-shadow var(--ej-transition)}.ai-image-tool__action{justify-self:start;background:var(--ej-primary);color:var(--ej-text-on-primary)}.ai-image-tool__action:hover:not(:disabled){background:var(--ej-primary-hover)}.ai-image-tool__action--secondary,.ai-image-tool__history-item{border-color:var(--ej-border);background:var(--ej-bg-surface);color:var(--ej-text)}.ai-image-tool__action--secondary:hover:not(:disabled),.ai-image-tool__history-item:hover,.ai-image-tool__history-item[aria-current=true]{border-color:var(--ej-primary);background:var(--ej-primary-muted)}.ai-image-tool__action:disabled,.ai-image-tool__prompt:disabled,.ai-image-tool__metadata-input:disabled{cursor:not-allowed;opacity:.6}.ai-image-tool__status,.ai-image-tool__caption-status,.ai-image-tool__history-status{min-height:21px;color:var(--ej-text-secondary);font-size:14px}.ai-image-tool__error:not([hidden]){padding:10px 12px;border:1px solid var(--ej-danger-border);border-radius:var(--ej-radius-md);background:var(--ej-danger-bg);color:var(--ej-danger-text);font-size:14px}.ai-image-tool__candidates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}.ai-image-tool__candidate{position:relative;min-width:0;padding:3px;overflow:hidden;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);cursor:pointer;background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-sm)}.ai-image-tool__candidate:hover,.ai-image-tool__candidate[aria-pressed=true]{border-color:var(--ej-primary)}.ai-image-tool__candidate[aria-pressed=true]{box-shadow:0 0 0 2px var(--ej-primary-muted)}.ai-image-tool__candidate[aria-pressed=true]:after{content:"Выбрано";position:absolute;right:8px;bottom:8px;padding:4px 7px;border-radius:var(--ej-radius-sm);background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:12px;font-weight:600}.ai-image-tool__candidate-image,.ai-image-tool__selected-preview{display:block;width:100%;aspect-ratio:16 / 9;border-radius:calc(var(--ej-radius-md) - 3px);object-fit:cover}.ai-image-tool__caption-status[data-error]{color:var(--ej-danger-text)}.ai-image-tool__history-item[aria-current=true]{box-shadow:inset 0 0 0 1px var(--ej-primary);font-weight:700}@media (min-width: 640px){.ai-image-tool__generator{padding:20px}.ai-image-tool__selection{grid-template-columns:1fr auto}.ai-image-tool__selection>:not(.ai-image-tool__action){grid-column:1 / -1}}@media (prefers-reduced-motion: reduce){.ai-image-tool__action,.ai-image-tool__candidate,.ai-image-tool__history-item,.ai-image-tool__prompt,.ai-image-tool__metadata-input{transition-duration:.01ms}}/*!
+(function(){"use strict";try{if(typeof document<"u"){var e=document.createElement("style");e.appendChild(document.createTextNode(`:root{--ej-radius-sm: 6px;--ej-radius-md: 8px;--ej-radius-lg: 12px;--ej-bg-page: #fff;--ej-bg-surface: #fff;--ej-bg-muted: var(--gray-50, #f9fafb);--ej-bg-input: #fff;--ej-ring: rgba(3, 7, 18, .1);--ej-ring-focus: var(--primary-600, #2563eb);--ej-border: var(--gray-200, #e5e7eb);--ej-border-strong: rgba(3, 7, 18, .05);--ej-text: var(--gray-950, #030712);--ej-text-secondary: var(--gray-500, #6b7280);--ej-text-muted: var(--gray-400, #9ca3af);--ej-text-on-primary: #fff;--ej-primary: var(--primary-600, #2563eb);--ej-primary-hover: var(--primary-700, #1d4ed8);--ej-primary-light: var(--primary-50, #eff6ff);--ej-primary-muted: var(--primary-100, #dbeafe);--ej-success-bg: var(--success-50, #f0fdf4);--ej-success-border: var(--success-500, #22c55e);--ej-success-text: var(--success-700, #15803d);--ej-warning-bg: var(--warning-50, #fffbeb);--ej-warning-border: var(--warning-500, #f59e0b);--ej-warning-text: var(--warning-700, #b45309);--ej-danger: var(--danger-600, #dc2626);--ej-danger-bg: var(--danger-50, #fef2f2);--ej-danger-border: var(--danger-500, #ef4444);--ej-danger-text: var(--danger-700, #b91c1c);--ej-danger-hover-bg: var(--danger-100, #fee2e2);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .05);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);--ej-transition: 75ms ease;--ej-control-bg: rgba(255, 255, 255, .9);--ej-control-hover: rgba(0, 0, 0, .05);--ej-icon-color: var(--gray-400, #9ca3af)}.dark{--ej-bg-page: var(--gray-900, #111827);--ej-bg-surface: var(--gray-900, #111827);--ej-bg-muted: rgba(255, 255, 255, .05);--ej-bg-input: rgba(255, 255, 255, .05);--ej-ring: rgba(255, 255, 255, .2);--ej-ring-focus: var(--primary-500, #3b82f6);--ej-border: rgba(255, 255, 255, .1);--ej-border-strong: rgba(255, 255, 255, .1);--ej-text: #fff;--ej-text-secondary: var(--gray-400, #9ca3af);--ej-text-muted: var(--gray-500, #6b7280);--ej-text-on-primary: #fff;--ej-control-bg: rgba(30, 30, 30, .9);--ej-control-hover: rgba(255, 255, 255, .1);--ej-icon-color: var(--gray-500, #6b7280);--ej-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, .3);--ej-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .3), 0 2px 4px -2px rgba(0, 0, 0, .2)}@keyframes ej-spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.gallery-crop-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:10000;background:#000000d9;display:flex;align-items:center;justify-content:center;padding:20px}.gallery-crop-modal__container{background:var(--ej-bg-surface, #fff);border-radius:var(--ej-radius-lg);box-shadow:var(--ej-shadow-md);max-width:90vw;max-height:90vh;display:flex;flex-direction:column;overflow:hidden}.gallery-crop-modal__image-wrapper{flex:1;overflow:hidden;max-height:calc(90vh - 80px);display:flex;align-items:center;justify-content:center}.gallery-crop-modal__image-wrapper img{max-width:100%;display:block}.gallery-crop-modal__options{display:flex;flex-direction:column;gap:12px;padding:12px 16px 0;background:var(--ej-bg-muted, #f5f5f5)}.gallery-crop-modal__option{display:inline-flex;align-items:center;gap:8px;color:var(--ej-text);cursor:pointer;font-size:14px}.gallery-crop-modal__option input{width:18px;height:18px;margin:0}.gallery-crop-modal__aspect-ratios{display:flex;flex-wrap:wrap;gap:8px;padding:0;border:0;margin:0}.gallery-crop-modal__aspect-ratios-label{width:100%;color:var(--ej-text-secondary);font-size:13px;font-weight:500}.gallery-crop-modal__aspect-ratio{display:inline-flex;position:relative;cursor:pointer}.gallery-crop-modal__aspect-ratio input{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}.gallery-crop-modal__aspect-ratio-label{min-width:52px;padding:6px 10px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-sm);background:var(--ej-bg-surface);color:var(--ej-text);font-size:13px;line-height:1;text-align:center}.gallery-crop-modal__aspect-ratio input:checked+.gallery-crop-modal__aspect-ratio-label{border-color:var(--ej-primary);background:var(--ej-primary-light);color:var(--ej-primary)}.gallery-crop-modal__aspect-ratio input:focus-visible+.gallery-crop-modal__aspect-ratio-label{outline:2px solid var(--ej-ring-focus);outline-offset:2px}.gallery-crop-modal__actions{display:flex;gap:8px;padding:12px 16px;justify-content:center;background:var(--ej-bg-muted, #f5f5f5);border-top:1px solid var(--ej-border)}.gallery-crop-modal__btn{padding:8px 20px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface, #fff);color:var(--ej-text);font-size:14px;font-weight:500;cursor:pointer;transition:background var(--ej-transition),border-color var(--ej-transition)}.gallery-crop-modal__btn:hover{background:var(--ej-bg-muted)}.gallery-crop-modal__btn--primary{background:var(--ej-primary);color:var(--ej-text-on-primary);border-color:var(--ej-primary)}.gallery-crop-modal__btn--primary:hover{opacity:.9}.gallery-crop-modal__btn--danger{color:var(--ej-danger);border-color:var(--ej-danger)}.gallery-crop-modal__btn--danger:hover{background:var(--ej-danger);color:#fff}.gallery-tool{margin:2rem 0;max-width:100%;box-sizing:border-box;overflow:hidden}.gallery-tool__items{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px;max-width:100%;box-sizing:border-box}.gallery-tool--columns-1 .gallery-tool__item{flex:0 0 100%;max-width:100%}.gallery-tool--columns-2 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}.gallery-tool--columns-3 .gallery-tool__item{flex:0 0 calc(33.333% - 8px);max-width:calc(33.333% - 8px)}.gallery-tool--columns-4 .gallery-tool__item{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(20% - 10px);max-width:calc(20% - 10px)}@media (max-width: 639px){.gallery-tool--columns-3 .gallery-tool__item,.gallery-tool--columns-4 .gallery-tool__item,.gallery-tool--columns-5 .gallery-tool__item{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}.gallery-tool__item{position:relative;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);overflow:hidden;background:var(--ej-bg-muted);box-sizing:border-box;min-width:0;box-shadow:var(--ej-shadow-sm);transition:box-shadow var(--ej-transition)}.gallery-tool__item:hover{box-shadow:var(--ej-shadow-md)}.gallery-tool__item--plain,.gallery-tool__item--plain:hover{border-radius:0}.gallery-tool__item-image{position:relative;min-height:120px;background:var(--ej-bg-muted);overflow:hidden}.gallery-tool__item-image img{width:100%;height:auto;display:block;object-fit:contain;max-height:400px;max-width:100%}.gallery-tool__item--unlimited-height .gallery-tool__item-image img{max-height:none}.gallery-tool__item-preloader{width:50px;height:50px;border-radius:50%;background-size:cover;background-position:center;margin:35px auto;position:relative;background-color:var(--ej-bg-muted)}.gallery-tool__item-preloader:after{content:"";position:absolute;width:60px;height:60px;border-radius:50%;border:2px solid var(--ej-border);border-top-color:var(--ej-primary);left:50%;top:50%;margin:-30px 0 0 -30px;animation:ej-spin 1s infinite linear;box-sizing:border-box}.gallery-tool__item-caption,.gallery-tool__item-source,.gallery-tool__item-source-link{margin:.5rem;width:calc(100% - 1rem);background:#fff;font-weight:500}.gallery-tool__item-source{color:var(--ej-text-secondary)}.gallery-tool__item-source-link{color:var(--ej-primary)}.gallery-tool__item-caption[data-placeholder]:empty:before,.gallery-tool__item-source[data-placeholder]:empty:before,.gallery-tool__item-source-link[data-placeholder]:empty:before{content:attr(data-placeholder);color:var(--ej-text-muted);pointer-events:none}.gallery-tool__item-caption[data-placeholder]:empty:focus:before,.gallery-tool__item-source[data-placeholder]:empty:focus:before,.gallery-tool__item-source-link[data-placeholder]:empty:focus:before{display:none}.gallery-tool__item-dimensions{position:absolute;bottom:8px;left:8px;padding:2px 6px;background:#0009;color:#fff;font-size:11px;font-family:monospace;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__ai-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 5px;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:#111827;color:#fff;font-size:11px;font-weight:700;letter-spacing:-.02em;line-height:1;box-shadow:0 2px 8px #00000047;box-sizing:border-box}.gallery-tool__item-ai-badge{position:absolute;right:8px;bottom:8px;z-index:6;display:inline-flex;cursor:help}.gallery-tool__item-controls{position:absolute;top:8px;right:8px;display:flex;gap:4px;opacity:0;transition:opacity .2s;z-index:10}.gallery-tool__item:hover .gallery-tool__item-controls,.gallery-tool__item:focus-within .gallery-tool__item-controls{opacity:1}.gallery-tool__item-remove,.gallery-tool__item-move-left,.gallery-tool__item-move-right,.gallery-tool__item-settings{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-remove:hover,.gallery-tool__item-move-left:hover,.gallery-tool__item-move-right:hover,.gallery-tool__item-settings:hover{background:var(--ej-control-hover)}.gallery-tool__item-remove{color:var(--ej-danger)}.gallery-tool__add-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.gallery-tool__add-buttons .cdx-button{display:inline-flex;align-items:center;gap:6px}.gallery-tool__add-buttons .cdx-button svg{width:16px;height:16px}.gallery-tool__add-buttons .gallery-tool__ai-button{gap:8px}.gallery-tool__add-buttons .gallery-tool__clipboard-button{gap:6px}.gallery-tool__add-buttons .gallery-tool__ai-button .gallery-tool__ai-mark{min-width:22px;height:22px;font-size:10px}.gallery-tool__url-input-wrapper{flex:1;min-width:200px}.gallery-tool__url-input{width:100%;padding:8px 12px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);font-size:14px;background:var(--ej-bg-input);color:var(--ej-text);transition:border-color var(--ej-transition)}.gallery-tool__url-input:focus{border-color:var(--ej-ring-focus);outline:none;box-shadow:0 0 0 1px var(--ej-ring-focus)}.gallery-tool__columns-control{display:flex;align-items:center;gap:8px;margin-left:auto}.gallery-tool__columns-button{width:32px;height:32px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s;color:var(--ej-text)}.gallery-tool__columns-button:hover{background:var(--ej-bg-muted)}.gallery-tool__columns-display{font-size:13px;color:var(--ej-text-secondary);min-width:45px;text-align:center}.gallery-tool--carousel{max-width:100%;overflow:hidden;box-sizing:border-box}.gallery-tool--carousel .gallery-tool__items{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:12px;padding-bottom:8px;max-width:100%;box-sizing:border-box;scrollbar-width:thin;scrollbar-color:var(--ej-border) transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar{height:6px}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-track{background:transparent}.gallery-tool--carousel .gallery-tool__items::-webkit-scrollbar-thumb{background:var(--ej-border);border-radius:3px}.gallery-tool--carousel .gallery-tool__item{flex:0 0 auto;width:clamp(200px,60vw,280px);max-width:calc(100% - 24px);min-width:200px}.gallery-tool--carousel .gallery-tool__item-image img{max-height:280px}.gallery-tool--carousel .gallery-tool__item--unlimited-height .gallery-tool__item-image img{max-height:none}.gallery-tool--masonry .gallery-tool__items{display:block;column-count:2;column-gap:12px;max-width:100%}.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items{column-count:3}.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items{column-count:4}.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:5}@media (max-width: 639px){.gallery-tool--masonry.gallery-tool--columns-3 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-4 .gallery-tool__items,.gallery-tool--masonry.gallery-tool--columns-5 .gallery-tool__items{column-count:2}}.gallery-tool--masonry .gallery-tool__item{width:100%;max-width:100%;margin-bottom:12px;break-inside:avoid}.gallery-tool--masonry .gallery-tool__item-image img{max-height:none;max-width:100%}.gallery-tool--empty .gallery-tool__items,.gallery-tool--loading .gallery-tool__item-image img{display:none}.gallery-tool--stretched .gallery-tool__item-image img{max-height:none}.gallery-tool__item-crop{width:32px;height:32px;border:none;border-radius:var(--ej-radius-sm);background:var(--ej-control-bg);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ej-text);transition:background .2s}.gallery-tool__item-crop:hover{background:var(--ej-control-hover)}.gallery-tool__item-crop:disabled{cursor:not-allowed;opacity:.45}.gallery-tool__item-settings-wrapper{position:relative}.gallery-tool__item-settings-panel{position:absolute;top:calc(100% + 4px);right:0;z-index:20;display:grid;min-width:240px;padding:8px;border:1px solid var(--ej-border);border-radius:var(--ej-radius-md);background:var(--ej-bg-surface);box-shadow:var(--ej-shadow-md)}.gallery-tool__item-settings-panel[hidden]{display:none}.gallery-tool__item-setting{display:flex;align-items:center;gap:8px;min-height:36px;padding:6px 8px;color:var(--ej-text);font-size:13px;cursor:pointer}.gallery-tool__item-setting:hover{background:var(--ej-bg-muted)}.gallery-tool__item-setting input{width:16px;height:16px;margin:0}.gallery-tool__item--cropped{border-left:3px solid var(--ej-primary)}.gallery-tool__item--cropped .gallery-tool__item-image:after{content:"✂";position:absolute;bottom:8px;right:8px;padding:2px 6px;background:var(--ej-primary);color:var(--ej-text-on-primary);font-size:11px;border-radius:var(--ej-radius-sm);z-index:5;pointer-events:none}.gallery-tool__item[data-ai-generated].gallery-tool__item--cropped .gallery-tool__item-image:after{right:44px}.gallery-tool__item-cover{width:28px;height:28px;border:none;border-radius:6px;background:#0000008c;color:#fbbf24;font-size:15px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}.gallery-tool__item-cover:hover{background:#000000bf}.gallery-tool__item[data-cover]{outline:2px solid #3b82f6;outline-offset:-2px}.gallery-tool__item[data-cover] .gallery-tool__item-cover{color:#3b82f6}.gallery-tool__item[data-cover]:after{content:"Обложка";position:absolute;top:6px;left:6px;background:#3b82f6e6;color:#fff;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;pointer-events:none;z-index:3}.gallery-tool__item[data-cover][data-cover-overridden]:after{content:"Обложка · перекрыта вручную";background:#4b5563f2}/*!
  * Cropper.js v1.6.2
  * https://fengyuanchen.github.io/cropperjs
  *
@@ -7,69 +7,67 @@
  *
  * Date: 2024-04-21T07:43:02.731Z
  */.cropper-container{direction:ltr;font-size:0;line-height:0;position:relative;-ms-touch-action:none;touch-action:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.cropper-container img{backface-visibility:hidden;display:block;height:100%;image-orientation:0deg;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;width:100%}.cropper-wrap-box,.cropper-canvas,.cropper-drag-box,.cropper-crop-box,.cropper-modal{bottom:0;left:0;position:absolute;right:0;top:0}.cropper-wrap-box,.cropper-canvas{overflow:hidden}.cropper-drag-box{background-color:#fff;opacity:0}.cropper-modal{background-color:#000;opacity:.5}.cropper-view-box{display:block;height:100%;outline:1px solid #39f;outline-color:#3399ffbf;overflow:hidden;width:100%}.cropper-dashed{border:0 dashed #eee;display:block;opacity:.5;position:absolute}.cropper-dashed.dashed-h{border-bottom-width:1px;border-top-width:1px;height:calc(100% / 3);left:0;top:calc(100% / 3);width:100%}.cropper-dashed.dashed-v{border-left-width:1px;border-right-width:1px;height:100%;left:calc(100% / 3);top:0;width:calc(100% / 3)}.cropper-center{display:block;height:0;left:50%;opacity:.75;position:absolute;top:50%;width:0}.cropper-center:before,.cropper-center:after{background-color:#eee;content:" ";display:block;position:absolute}.cropper-center:before{height:1px;left:-3px;top:0;width:7px}.cropper-center:after{height:7px;left:0;top:-3px;width:1px}.cropper-face,.cropper-line,.cropper-point{display:block;height:100%;opacity:.1;position:absolute;width:100%}.cropper-face{background-color:#fff;left:0;top:0}.cropper-line{background-color:#39f}.cropper-line.line-e{cursor:ew-resize;right:-3px;top:0;width:5px}.cropper-line.line-n{cursor:ns-resize;height:5px;left:0;top:-3px}.cropper-line.line-w{cursor:ew-resize;left:-3px;top:0;width:5px}.cropper-line.line-s{bottom:-3px;cursor:ns-resize;height:5px;left:0}.cropper-point{background-color:#39f;height:5px;opacity:.75;width:5px}.cropper-point.point-e{cursor:ew-resize;margin-top:-3px;right:-3px;top:50%}.cropper-point.point-n{cursor:ns-resize;left:50%;margin-left:-3px;top:-3px}.cropper-point.point-w{cursor:ew-resize;left:-3px;margin-top:-3px;top:50%}.cropper-point.point-s{bottom:-3px;cursor:s-resize;left:50%;margin-left:-3px}.cropper-point.point-ne{cursor:nesw-resize;right:-3px;top:-3px}.cropper-point.point-nw{cursor:nwse-resize;left:-3px;top:-3px}.cropper-point.point-sw{bottom:-3px;cursor:nesw-resize;left:-3px}.cropper-point.point-se{bottom:-3px;cursor:nwse-resize;height:20px;opacity:1;right:-3px;width:20px}@media (min-width: 768px){.cropper-point.point-se{height:15px;width:15px}}@media (min-width: 992px){.cropper-point.point-se{height:10px;width:10px}}@media (min-width: 1200px){.cropper-point.point-se{height:5px;opacity:.75;width:5px}}.cropper-point.point-se:before{background-color:#39f;bottom:-50%;content:" ";display:block;height:200%;opacity:0;position:absolute;right:-50%;width:200%}.cropper-invisible{opacity:0}.cropper-bg{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC)}.cropper-hide{display:block;height:0;position:absolute;width:0}.cropper-hidden{display:none!important}.cropper-move{cursor:move}.cropper-crop{cursor:crosshair}.cropper-disabled .cropper-drag-box,.cropper-disabled .cropper-face,.cropper-disabled .cropper-line,.cropper-disabled .cropper-point{cursor:not-allowed}`)),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
-const Ye = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.42857 7H7.71429C7.25963 7 6.82359 7.15804 6.5021 7.43934C6.18061 7.72064 6 8.10218 6 8.5V17.5C6 17.8978 6.18061 18.2794 6.5021 18.5607C6.82359 18.842 7.25963 19 7.71429 19H16.2857C16.7404 19 17.1764 18.842 17.4979 18.5607C17.8194 18.2794 18 17.8978 18 17.5V8.5C18 8.10218 17.8194 7.72064 17.4979 7.43934C17.1764 7.15804 16.7404 7 16.2857 7H14.5714"/><rect width="5.15789" height="3.36842" x="9.42105" y="5" stroke="currentColor" stroke-width="2" rx="1.5"/></svg>', Ve = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 7.29999H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 12H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 16.7H12"/></svg>', Oe = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
-function y(r, t = null, e = {}) {
-  const i = document.createElement(r);
+const Ae = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.42857 7H7.71429C7.25963 7 6.82359 7.15804 6.5021 7.43934C6.18061 7.72064 6 8.10218 6 8.5V17.5C6 17.8978 6.18061 18.2794 6.5021 18.5607C6.82359 18.842 7.25963 19 7.71429 19H16.2857C16.7404 19 17.1764 18.842 17.4979 18.5607C17.8194 18.2794 18 17.8978 18 17.5V8.5C18 8.10218 17.8194 7.72064 17.4979 7.43934C17.1764 7.15804 16.7404 7 16.2857 7H14.5714"/><rect width="5.15789" height="3.36842" x="9.42105" y="5" stroke="currentColor" stroke-width="2" rx="1.5"/></svg>', Le = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 7.29999H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 12H12"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2.6" d="M12.01 16.7H12"/></svg>', de = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><rect width="14" height="14" x="5" y="5" stroke="currentColor" stroke-width="2" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.13968 15.32L8.69058 11.5661C9.02934 11.2036 9.48873 11 9.96774 11C10.4467 11 10.9061 11.2036 11.2449 11.5661L15.3871 16M13.5806 14.0664L15.0132 12.533C15.3519 12.1705 15.8113 11.9668 16.2903 11.9668C16.7693 11.9668 17.2287 12.1705 17.5675 12.533L18.841 13.9634"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.7778 9.33331H13.7867"/></svg>';
+function D(o, t = null, e = {}) {
+  const i = document.createElement(o);
   Array.isArray(t) ? i.classList.add(...t) : t !== null && i.classList.add(t);
-  for (const n in e)
-    Object.prototype.hasOwnProperty.call(e, n) && (i[n] = e[n]);
+  for (const r in e)
+    Object.prototype.hasOwnProperty.call(e, r) && (i[r] = e[r]);
   return i;
 }
-const Je = [
+const ke = [
   { key: "disableHeightLimit", label: "Не ограничивать по высоте" },
   { key: "disableOptimization", label: "Не оптимизировать" },
   { key: "disableDecoration", label: "Не применять оформление" }
 ];
-function bt(r, t = null, e = {}) {
-  const i = document.createElement(r);
+function nt(o, t = null, e = {}) {
+  const i = document.createElement(o);
   Array.isArray(t) ? i.classList.add(...t) : t !== null && i.classList.add(t);
-  for (const n in e)
-    Object.prototype.hasOwnProperty.call(e, n) && (i[n] = e[n]);
+  for (const r in e)
+    Object.prototype.hasOwnProperty.call(e, r) && (i[r] = e[r]);
   return i;
 }
-function Ze({ isEnabled: r, classes: t, translate: e, onChange: i }) {
-  const n = bt("div", [t.wrapper]), o = bt("button", [t.button], { type: "button" }), s = bt("div", [t.panel]);
-  o.innerHTML = Ve, o.title = e("Настройки изображения"), o.setAttribute("aria-label", e("Настройки изображения")), o.setAttribute("aria-expanded", "false"), s.hidden = !0, o.addEventListener("click", () => {
-    s.hidden = !s.hidden, o.setAttribute("aria-expanded", String(!s.hidden));
+function Re({ isEnabled: o, classes: t, translate: e, onChange: i }) {
+  const r = nt("div", [t.wrapper]), a = nt("button", [t.button], { type: "button" }), n = nt("div", [t.panel]);
+  a.innerHTML = Le, a.title = e("Настройки изображения"), a.setAttribute("aria-label", e("Настройки изображения")), a.setAttribute("aria-expanded", "false"), n.hidden = !0, a.addEventListener("click", () => {
+    n.hidden = !n.hidden, a.setAttribute("aria-expanded", String(!n.hidden));
   });
-  for (const a of Je) {
-    const d = bt("label", [t.option]), l = bt("input", null, { type: "checkbox" });
-    l.checked = r(a.key), l.addEventListener("click", () => i(a.key, l.checked)), d.append(l, document.createTextNode(e(a.label))), s.appendChild(d);
+  for (const s of ke) {
+    const d = nt("label", [t.option]), l = nt("input", null, { type: "checkbox" });
+    l.checked = o(s.key), l.addEventListener("click", () => i(s.key, l.checked)), d.append(l, document.createTextNode(e(s.label))), n.appendChild(d);
   }
-  return n.append(o, s), n;
+  return r.append(a, n), r;
 }
-const Ke = "media.ixbt.site", Qe = "920x/webp", ti = /^\d+x\d*$/;
-function Ct(r) {
-  if (!r)
-    return r;
+const Ne = "media.ixbt.site", Pe = "920x/webp", Be = /^\d+x\d*$/;
+function ot(o) {
+  if (!o)
+    return o;
   let t;
   try {
-    t = new URL(r);
+    t = new URL(o);
   } catch {
-    return r;
+    return o;
   }
-  if (t.hostname !== Ke)
-    return r;
+  if (t.hostname !== Ne)
+    return o;
   const e = t.pathname.split("/").filter(Boolean);
-  return e.length === 0 || ti.test(e[0]) ? r : (t.pathname = `/${Qe}/${e.join("/")}`, t.toString());
+  return e.length === 0 || Be.test(e[0]) ? o : (t.pathname = `/${Pe}/${e.join("/")}`, t.toString());
 }
-const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', he = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', ce = "Создано с помощью Ai", j = class j {
-  constructor({ api: t, config: e, onSelectFile: i, onPasteFile: n, onSelectUrl: o, onColumnsChange: s, onRemoveImage: a, onCropImage: d, onItemSettingsChange: l, onOpenAi: h, readOnly: c }) {
-    this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onPasteFile = n ?? (() => {
-    }), this.onSelectUrl = o, this.onColumnsChange = s, this.onRemoveImage = a, this.onCropImage = d, this.onItemSettingsChange = l ?? (() => {
-    }), this.onOpenAi = h ?? (() => {
-    }), this.readOnly = c, this.nodes = {
-      wrapper: y("div", [this.CSS.wrapper]),
-      itemsContainer: y("div", [this.CSS.itemsContainer]),
-      addButtons: y("div", [this.CSS.addButtons]),
+const He = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v4"/><path d="M6 6h12a2 2 0 0 1 2 2v8"/><path d="M18 22v-4"/><path d="M18 18H6a2 2 0 0 1-2-2V8"/></svg>', Fe = '<span class="gallery-tool__ai-mark" aria-hidden="true">Ai</span>', Yt = "Создано с помощью Ai", F = class F {
+  constructor({ api: t, config: e, onSelectFile: i, onPasteFile: r, onSelectUrl: a, onColumnsChange: n, onRemoveImage: s, onCropImage: d, onItemSettingsChange: l, readOnly: h }) {
+    this.currentColumns = 1, this.previousColumns = 1, this.isRendering = !1, this.columnsLocked = !1, this.api = t, this.config = e, this.onSelectFile = i, this.onPasteFile = r ?? (() => {
+    }), this.onSelectUrl = a, this.onColumnsChange = n, this.onRemoveImage = s, this.onCropImage = d, this.onItemSettingsChange = l ?? (() => {
+    }), this.readOnly = h, this.nodes = {
+      wrapper: D("div", [this.CSS.wrapper]),
+      itemsContainer: D("div", [this.CSS.itemsContainer]),
+      addButtons: D("div", [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
-      aiButton: this.createAiButton(),
       clipboardButton: this.createClipboardButton(),
-      urlButton: y("div"),
+      urlButton: D("div"),
       // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
       columnsControl: this.createColumnsControl()
-    }, this.nodes.addButtons.appendChild(this.nodes.fileButton), this.config.generation !== void 0 && !this.readOnly && this.nodes.addButtons.appendChild(this.nodes.aiButton), this.nodes.addButtons.appendChild(this.nodes.clipboardButton), this.nodes.addButtons.appendChild(this.nodes.urlInput), this.nodes.addButtons.appendChild(this.nodes.columnsControl), this.nodes.wrapper.appendChild(this.nodes.itemsContainer), this.nodes.wrapper.appendChild(this.nodes.addButtons);
+    }, this.nodes.addButtons.appendChild(this.nodes.fileButton), this.nodes.addButtons.appendChild(this.nodes.clipboardButton), this.nodes.addButtons.appendChild(this.nodes.urlInput), this.nodes.addButtons.appendChild(this.nodes.columnsControl), this.nodes.wrapper.appendChild(this.nodes.itemsContainer), this.nodes.wrapper.appendChild(this.nodes.addButtons);
   }
   get CSS() {
     return {
@@ -103,7 +101,6 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
       columnsControl: "gallery-tool__columns-control",
       columnsButton: "gallery-tool__columns-button",
       columnsDisplay: "gallery-tool__columns-display",
-      aiButton: "gallery-tool__ai-button",
       clipboardButton: "gallery-tool__clipboard-button"
     };
   }
@@ -129,52 +126,52 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Add a new item to the gallery
    */
   addItem(t) {
-    const e = y("div", [this.CSS.item]), i = y("div", [this.CSS.itemImage]), n = y("div", [this.CSS.itemPreloader]), o = !!(t.crop && t.imagorPath && !t.disableOptimization), s = t.disableOptimization ? t.url : o && t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : Ct(t.url), a = y("img", null, { src: s }), d = o && t.croppedWidth ? t.croppedWidth : t.width, l = o && t.croppedHeight ? t.croppedHeight : t.height;
-    d && l && (a.style.aspectRatio = `${d} / ${l}`), o && (a.style.width = "100%", a.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped)), t.disableHeightLimit && (a.style.maxHeight = "none", e.classList.add(this.CSS.itemUnlimitedHeight)), t.disableDecoration && e.classList.add(this.CSS.itemPlain);
-    const h = y("div", [this.CSS.itemCaption, this.CSS.input], {
+    const e = D("div", [this.CSS.item]), i = D("div", [this.CSS.itemImage]), r = D("div", [this.CSS.itemPreloader]), a = !!(t.crop && t.imagorPath && !t.disableOptimization), n = t.disableOptimization ? t.url : a && t.crop && t.imagorPath ? this.buildPreviewUrl(t.imagorPath, t.crop) : ot(t.url), s = D("img", null, { src: n }), d = a && t.croppedWidth ? t.croppedWidth : t.width, l = a && t.croppedHeight ? t.croppedHeight : t.height;
+    d && l && (s.style.aspectRatio = `${d} / ${l}`), a && (s.style.width = "100%", s.style.maxHeight = "none", e.classList.add(this.CSS.itemCropped)), t.disableHeightLimit && (s.style.maxHeight = "none", e.classList.add(this.CSS.itemUnlimitedHeight)), t.disableDecoration && e.classList.add(this.CSS.itemPlain);
+    const h = D("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
     h.dataset.placeholder = this.config.captionPlaceholder ?? "Caption", h.textContent = t.caption || "";
-    const c = y("div", [this.CSS.itemSource, this.CSS.input], {
+    const c = D("div", [this.CSS.itemSource, this.CSS.input], {
       contentEditable: !this.readOnly
     });
     c.dataset.placeholder = this.config.sourcePlaceholder ?? "Source", c.textContent = t.source || "";
-    const u = y("div", [this.CSS.itemSourceLink, this.CSS.input], {
+    const u = D("div", [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    if (u.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", u.textContent = t.sourceLink || "", i.appendChild(n), i.appendChild(a), d && l) {
-      const b = y("div", [this.CSS.itemDimensions]);
-      b.textContent = `${d} × ${l}`, i.appendChild(b);
+    if (u.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", u.textContent = t.sourceLink || "", i.appendChild(r), i.appendChild(s), d && l) {
+      const y = D("div", [this.CSS.itemDimensions]);
+      y.textContent = `${d} × ${l}`, i.appendChild(y);
     }
-    return t.isAiGenerated && i.appendChild(this.createAiBadge()), a.onload = () => {
-      n.style.display = "none";
+    return t.isAiGenerated && i.appendChild(this.createAiBadge()), s.onload = () => {
+      r.style.display = "none";
     }, e.appendChild(i), e.appendChild(h), e.appendChild(c), e.appendChild(u), this.storeItemData(e, t), this.readOnly || e.insertBefore(this.createItemControls(e), e.firstChild), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "filled"
       /* Filled */
     ), this.autoAdjustColumns(), e;
   }
   storeItemData(t, e) {
-    var i, n, o;
-    t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (i = this.config.cover) != null && i.enabled && e.media_id && ((o = (n = this.config.cover).coverUuid) == null ? void 0 : o.call(n)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), e.crop && !e.disableOptimization && (t.dataset.crop = e.crop), e.croppedWidth && !e.disableOptimization && (t.dataset.croppedWidth = String(e.croppedWidth)), e.croppedHeight && !e.disableOptimization && (t.dataset.croppedHeight = String(e.croppedHeight)), e.cropAspectRatio && !e.disableOptimization && (t.dataset.cropAspectRatio = e.cropAspectRatio), typeof e.showOriginalOnClick == "boolean" && !e.disableOptimization && (t.dataset.showOriginalOnClick = String(e.showOriginalOnClick)), e.isAiGenerated && (t.dataset.aiGenerated = "true"), e.disableHeightLimit && (t.dataset.disableHeightLimit = "true"), e.disableOptimization && (t.dataset.disableOptimization = "true"), e.disableDecoration && (t.dataset.disableDecoration = "true");
+    var i, r, a;
+    t.dataset.url = e.url, e.media_id && (t.dataset.mediaId = e.media_id), (i = this.config.cover) != null && i.enabled && e.media_id && ((a = (r = this.config.cover).coverUuid) == null ? void 0 : a.call(r)) === e.media_id && t.setAttribute("data-cover", ""), e.width && (t.dataset.width = String(e.width)), e.height && (t.dataset.height = String(e.height)), e.imagorPath && (t.dataset.imagorPath = e.imagorPath), e.crop && !e.disableOptimization && (t.dataset.crop = e.crop), e.croppedWidth && !e.disableOptimization && (t.dataset.croppedWidth = String(e.croppedWidth)), e.croppedHeight && !e.disableOptimization && (t.dataset.croppedHeight = String(e.croppedHeight)), e.cropAspectRatio && !e.disableOptimization && (t.dataset.cropAspectRatio = e.cropAspectRatio), typeof e.showOriginalOnClick == "boolean" && !e.disableOptimization && (t.dataset.showOriginalOnClick = String(e.showOriginalOnClick)), e.isAiGenerated && (t.dataset.aiGenerated = "true"), e.disableHeightLimit && (t.dataset.disableHeightLimit = "true"), e.disableOptimization && (t.dataset.disableOptimization = "true"), e.disableDecoration && (t.dataset.disableDecoration = "true");
   }
   /**
    * Create a placeholder item for loading state
    */
   createLoadingItem(t) {
-    const e = y("div", [this.CSS.item]), i = y("div", [this.CSS.itemImage]), n = y("div", [this.CSS.itemPreloader]);
-    t && (n.style.backgroundImage = `url(${Ct(t)})`), i.appendChild(n), e.appendChild(i);
-    const o = y("div", [this.CSS.itemCaption, this.CSS.input], {
+    const e = D("div", [this.CSS.item]), i = D("div", [this.CSS.itemImage]), r = D("div", [this.CSS.itemPreloader]);
+    t && (r.style.backgroundImage = `url(${ot(t)})`), i.appendChild(r), e.appendChild(i);
+    const a = D("div", [this.CSS.itemCaption, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    o.dataset.placeholder = this.config.captionPlaceholder ?? "Caption";
-    const s = y("div", [this.CSS.itemSource, this.CSS.input], {
+    a.dataset.placeholder = this.config.captionPlaceholder ?? "Caption";
+    const n = D("div", [this.CSS.itemSource, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    s.dataset.placeholder = this.config.sourcePlaceholder ?? "Source";
-    const a = y("div", [this.CSS.itemSourceLink, this.CSS.input], {
+    n.dataset.placeholder = this.config.sourcePlaceholder ?? "Source";
+    const s = D("div", [this.CSS.itemSourceLink, this.CSS.input], {
       contentEditable: !this.readOnly
     });
-    return a.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", e.appendChild(o), e.appendChild(s), e.appendChild(a), this.nodes.itemsContainer.appendChild(e), this.toggleState(
+    return s.dataset.placeholder = this.config.sourceLinkPlaceholder ?? "Source link", e.appendChild(a), e.appendChild(n), e.appendChild(s), this.nodes.itemsContainer.appendChild(e), this.toggleState(
       "loading"
       /* Loading */
     ), e;
@@ -183,18 +180,18 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    * Update loading item with uploaded image
    */
   fillLoadingItem(t, e) {
-    const i = t.querySelector(`.${this.CSS.itemImage}`), n = t.querySelector(`.${this.CSS.itemPreloader}`), o = y("img", null, {
-      src: e.disableOptimization ? e.url : Ct(e.url)
+    const i = t.querySelector(`.${this.CSS.itemImage}`), r = t.querySelector(`.${this.CSS.itemPreloader}`), a = D("img", null, {
+      src: e.disableOptimization ? e.url : ot(e.url)
     });
-    if (e.width && e.height && (o.style.aspectRatio = `${e.width} / ${e.height}`), e.disableHeightLimit && (o.style.maxHeight = "none", t.classList.add(this.CSS.itemUnlimitedHeight)), e.disableDecoration && t.classList.add(this.CSS.itemPlain), o.onload = () => {
-      n && (n.style.display = "none");
-    }, i.appendChild(o), e.width && e.height) {
-      const s = y("div", [this.CSS.itemDimensions]);
-      s.textContent = `${e.width} × ${e.height}`, i.appendChild(s);
+    if (e.width && e.height && (a.style.aspectRatio = `${e.width} / ${e.height}`), e.disableHeightLimit && (a.style.maxHeight = "none", t.classList.add(this.CSS.itemUnlimitedHeight)), e.disableDecoration && t.classList.add(this.CSS.itemPlain), a.onload = () => {
+      r && (r.style.display = "none");
+    }, i.appendChild(a), e.width && e.height) {
+      const n = D("div", [this.CSS.itemDimensions]);
+      n.textContent = `${e.width} × ${e.height}`, i.appendChild(n);
     }
     if (this.storeItemData(t, e), e.isAiGenerated && i.appendChild(this.createAiBadge()), !this.readOnly) {
-      const s = this.createItemControls(t);
-      t.insertBefore(s, t.firstChild);
+      const n = this.createItemControls(t);
+      t.insertBefore(n, t.firstChild);
     }
     this.toggleState(
       "filled"
@@ -207,37 +204,37 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   getItemsData() {
     const t = this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`), e = [];
     return t.forEach((i) => {
-      var _, I, E;
-      const n = i, o = n.dataset.url;
-      if (!o) return;
-      const s = ((_ = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : _.textContent) || "", a = ((I = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : I.textContent) || "", d = ((E = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : E.textContent) || "", l = n.dataset.width ? parseInt(n.dataset.width, 10) : void 0, h = n.dataset.height ? parseInt(n.dataset.height, 10) : void 0, c = n.dataset.disableHeightLimit === "true", u = n.dataset.disableOptimization === "true", b = n.dataset.disableDecoration === "true", C = n.dataset.imagorPath || void 0, p = u ? void 0 : n.dataset.crop || void 0, f = !u && n.dataset.croppedWidth ? parseInt(n.dataset.croppedWidth, 10) : void 0, g = !u && n.dataset.croppedHeight ? parseInt(n.dataset.croppedHeight, 10) : void 0, v = !u && (n.dataset.cropAspectRatio === "16:9" || n.dataset.cropAspectRatio === "1:1") ? n.dataset.cropAspectRatio : !u && n.dataset.cropAspectRatio === "3:2" ? "3:2" : !u && n.dataset.cropAspectRatio === "free" ? "free" : void 0, w = u || n.dataset.showOriginalOnClick === void 0 ? void 0 : n.dataset.showOriginalOnClick === "true", x = n.dataset.mediaId || void 0, S = n.dataset.aiGenerated === "true", m = {
-        url: o,
-        media_id: x,
-        imagorPath: C,
-        caption: s,
-        source: a,
+      var x, E, M;
+      const r = i, a = r.dataset.url;
+      if (!a) return;
+      const n = ((x = i.querySelector(`.${this.CSS.itemCaption}`)) == null ? void 0 : x.textContent) || "", s = ((E = i.querySelector(`.${this.CSS.itemSource}`)) == null ? void 0 : E.textContent) || "", d = ((M = i.querySelector(`.${this.CSS.itemSourceLink}`)) == null ? void 0 : M.textContent) || "", l = r.dataset.width ? parseInt(r.dataset.width, 10) : void 0, h = r.dataset.height ? parseInt(r.dataset.height, 10) : void 0, c = r.dataset.disableHeightLimit === "true", u = r.dataset.disableOptimization === "true", y = r.dataset.disableDecoration === "true", w = r.dataset.imagorPath || void 0, p = u ? void 0 : r.dataset.crop || void 0, f = !u && r.dataset.croppedWidth ? parseInt(r.dataset.croppedWidth, 10) : void 0, v = !u && r.dataset.croppedHeight ? parseInt(r.dataset.croppedHeight, 10) : void 0, g = !u && (r.dataset.cropAspectRatio === "16:9" || r.dataset.cropAspectRatio === "1:1") ? r.dataset.cropAspectRatio : !u && r.dataset.cropAspectRatio === "3:2" ? "3:2" : !u && r.dataset.cropAspectRatio === "free" ? "free" : void 0, b = u || r.dataset.showOriginalOnClick === void 0 ? void 0 : r.dataset.showOriginalOnClick === "true", S = r.dataset.mediaId || void 0, C = r.dataset.aiGenerated === "true", m = {
+        url: a,
+        media_id: S,
+        imagorPath: w,
+        caption: n,
+        source: s,
         sourceLink: d,
         width: l,
         height: h,
         crop: p,
         croppedWidth: f,
-        croppedHeight: g
+        croppedHeight: v
       };
-      v !== void 0 && (m.cropAspectRatio = v), w !== void 0 && (m.showOriginalOnClick = w), S && (m.isAiGenerated = !0), c && (m.disableHeightLimit = !0), u && (m.disableOptimization = !0), b && (m.disableDecoration = !0), e.push(m);
+      g !== void 0 && (m.cropAspectRatio = g), b !== void 0 && (m.showOriginalOnClick = b), C && (m.isAiGenerated = !0), c && (m.disableHeightLimit = !0), u && (m.disableOptimization = !0), y && (m.disableDecoration = !0), e.push(m);
     }), e;
   }
   /**
    * Update item DOM after crop operation
    */
-  updateItemAfterCrop(t, e, i, n, o, s) {
-    const a = t.querySelector(`.${this.CSS.itemImage} img`);
-    if (a && !(e && t.dataset.disableOptimization === "true"))
+  updateItemAfterCrop(t, e, i, r, a, n) {
+    const s = t.querySelector(`.${this.CSS.itemImage} img`);
+    if (s && !(e && t.dataset.disableOptimization === "true"))
       if (e) {
-        t.dataset.crop = e, t.dataset.croppedWidth = String(i), t.dataset.croppedHeight = String(n), t.dataset.showOriginalOnClick = String(o ?? !1), t.dataset.cropAspectRatio = s ?? "3:2", t.classList.add(this.CSS.itemCropped);
+        t.dataset.crop = e, t.dataset.croppedWidth = String(i), t.dataset.croppedHeight = String(r), t.dataset.showOriginalOnClick = String(a ?? !1), t.dataset.cropAspectRatio = n ?? "3:2", t.classList.add(this.CSS.itemCropped);
         const d = t.dataset.imagorPath;
-        d && (a.src = this.buildPreviewUrl(d, e)), a.style.width = "100%", a.style.maxHeight = "none", this.updateItemDimensions(t, i, n);
+        d && (s.src = this.buildPreviewUrl(d, e)), s.style.width = "100%", s.style.maxHeight = "none", this.updateItemDimensions(t, i, r);
       } else
-        delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), a.src = t.dataset.disableOptimization === "true" ? t.dataset.url || "" : Ct(t.dataset.url || ""), a.style.width = "", a.style.maxHeight = t.dataset.disableHeightLimit === "true" ? "none" : "", this.updateItemDimensions(
+        delete t.dataset.crop, delete t.dataset.croppedWidth, delete t.dataset.croppedHeight, delete t.dataset.showOriginalOnClick, delete t.dataset.cropAspectRatio, t.classList.remove(this.CSS.itemCropped), s.src = t.dataset.disableOptimization === "true" ? t.dataset.url || "" : ot(t.dataset.url || ""), s.style.width = "", s.style.maxHeight = t.dataset.disableHeightLimit === "true" ? "none" : "", this.updateItemDimensions(
           t,
           t.dataset.width ? parseInt(t.dataset.width, 10) : void 0,
           t.dataset.height ? parseInt(t.dataset.height, 10) : void 0
@@ -245,23 +242,23 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
   }
   /** Update an item's effective dimensions badge and aspect ratio. */
   updateItemDimensions(t, e, i) {
-    const n = t.querySelector(`.${this.CSS.itemImage}`), o = n == null ? void 0 : n.querySelector("img"), s = Number.isFinite(e) && Number.isFinite(i) && (e ?? 0) > 0 && (i ?? 0) > 0;
-    let a = (n == null ? void 0 : n.querySelector(`.${this.CSS.itemDimensions}`)) ?? null;
-    if (!s) {
-      a == null || a.remove(), o && (o.style.aspectRatio = "");
+    const r = t.querySelector(`.${this.CSS.itemImage}`), a = r == null ? void 0 : r.querySelector("img"), n = Number.isFinite(e) && Number.isFinite(i) && (e ?? 0) > 0 && (i ?? 0) > 0;
+    let s = (r == null ? void 0 : r.querySelector(`.${this.CSS.itemDimensions}`)) ?? null;
+    if (!n) {
+      s == null || s.remove(), a && (a.style.aspectRatio = "");
       return;
     }
-    a === null && n !== null && (a = y("div", [this.CSS.itemDimensions]), n.appendChild(a)), a !== null && (a.textContent = `${e} × ${i}`), o && (o.style.aspectRatio = `${e} / ${i}`);
+    s === null && r !== null && (s = D("div", [this.CSS.itemDimensions]), r.appendChild(s)), s !== null && (s.textContent = `${e} × ${i}`), a && (a.style.aspectRatio = `${e} / ${i}`);
   }
   /**
    * Build imagor preview URL with crop + fit-in resize.
    * Mirrors ImageService::url() logic using imagorPath (normalized short URL).
    */
   buildPreviewUrl(t, e, i = 600) {
-    const n = this.config.mediaHost;
-    if (!n || !t) return "";
-    const o = ["unsafe"];
-    return e && o.push(e), o.push("fit-in", `${i}x0`, t), `${n}/${o.join("/")}`;
+    const r = this.config.mediaHost;
+    if (!r || !t) return "";
+    const a = ["unsafe"];
+    return e && a.push(e), a.push("fit-in", `${i}x0`, t), `${r}/${a.join("/")}`;
   }
   /**
    * Get current columns count
@@ -270,35 +267,31 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     return this.currentColumns;
   }
   createFileButton() {
-    const t = y("div", [this.CSS.button]);
-    return t.innerHTML = `${Oe} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
+    const t = D("div", [this.CSS.button]);
+    return t.innerHTML = `${de} ${this.config.buttonContent}`, t.addEventListener("click", () => this.onSelectFile()), t;
   }
   createClipboardButton() {
-    const t = y("button", [this.CSS.button, this.CSS.clipboardButton], { type: "button" });
-    return t.innerHTML = `${Ye}<span>${this.api.i18n.t("Вставить из буфера")}</span>`, t.setAttribute("aria-label", this.api.i18n.t("Вставить изображение из буфера")), t.addEventListener("click", () => {
+    const t = D("button", [this.CSS.button, this.CSS.clipboardButton], { type: "button" });
+    return t.innerHTML = `${Ae}<span>${this.api.i18n.t("Вставить из буфера")}</span>`, t.setAttribute("aria-label", this.api.i18n.t("Вставить изображение из буфера")), t.addEventListener("click", () => {
       this.pasteFromClipboard();
     }), t;
   }
-  createAiButton() {
-    const t = y("button", [this.CSS.button, this.CSS.aiButton], { type: "button" });
-    return t.innerHTML = `${he}<span>Генерация</span>`, t.setAttribute("aria-label", "Генерация"), t.addEventListener("click", () => this.onOpenAi()), t;
-  }
   createAiBadge() {
-    const t = y("span", [this.CSS.itemAiBadge], {
-      title: ce
+    const t = D("span", [this.CSS.itemAiBadge], {
+      title: Yt
     });
-    return t.innerHTML = he, t.setAttribute("aria-label", ce), t;
+    return t.innerHTML = Fe, t.setAttribute("aria-label", Yt), t;
   }
   createUrlInput() {
-    const t = y("div", [this.CSS.urlInputWrapper]), e = y("input", [this.CSS.urlInput, this.CSS.input], {
+    const t = D("div", [this.CSS.urlInputWrapper]), e = D("input", [this.CSS.urlInput, this.CSS.input], {
       type: "text"
     });
     return e.placeholder = this.config.urlInputPlaceholder ?? "Вставьте ссылку на изображение", e.addEventListener("keydown", (i) => {
       i.key === "Enter" && (i.preventDefault(), this.handleUrlInput(e));
     }), e.addEventListener("paste", (i) => {
-      const n = this.imageFromClipboardData(i.clipboardData);
-      if (n) {
-        i.preventDefault(), i.stopPropagation(), i.stopImmediatePropagation(), e.value = "", this.onPasteFile(n);
+      const r = this.imageFromClipboardData(i.clipboardData);
+      if (r) {
+        i.preventDefault(), i.stopPropagation(), i.stopImmediatePropagation(), e.value = "", this.onPasteFile(r);
         return;
       }
       setTimeout(() => {
@@ -307,16 +300,16 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     }), t.appendChild(e), t;
   }
   imageFromClipboardData(t) {
-    var n, o;
+    var r, a;
     if (!t) return null;
-    const e = Array.from(t.files).find((s) => s.type !== "" && !s.type.startsWith("image/"));
-    if (e && ((o = (n = this.config).onNonImageFile) == null ? void 0 : o.call(n, e)) === !0)
+    const e = Array.from(t.files).find((n) => n.type !== "" && !n.type.startsWith("image/"));
+    if (e && ((a = (r = this.config).onNonImageFile) == null ? void 0 : a.call(r, e)) === !0)
       return null;
-    const i = Array.from(t.files).find((s) => s.type.startsWith("image/"));
+    const i = Array.from(t.files).find((n) => n.type.startsWith("image/"));
     if (i) return i;
-    for (const s of Array.from(t.items))
-      if (s.kind === "file" && s.type.startsWith("image/"))
-        return s.getAsFile();
+    for (const n of Array.from(t.items))
+      if (n.kind === "file" && n.type.startsWith("image/"))
+        return n.getAsFile();
     return null;
   }
   async pasteFromClipboard() {
@@ -327,15 +320,15 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     try {
       const t = await navigator.clipboard.read();
       for (const e of t) {
-        const i = e.types.find((o) => o.startsWith("image/"));
+        const i = e.types.find((a) => a.startsWith("image/"));
         if (i) {
           this.onPasteFile(await e.getType(i));
           return;
         }
-        const n = e.types.find((o) => o !== "text/plain" && o !== "text/html");
-        if (n && this.config.onNonImageFile !== void 0) {
-          const o = await e.getType(n);
-          if (this.config.onNonImageFile(o) === !0)
+        const r = e.types.find((a) => a !== "text/plain" && a !== "text/html");
+        if (r && this.config.onNonImageFile !== void 0) {
+          const a = await e.getType(r);
+          if (this.config.onNonImageFile(a) === !0)
             return;
         }
       }
@@ -355,15 +348,15 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     e && this.isValidImageUrl(e) && (this.onSelectUrl(e), t.value = "");
   }
   createColumnsControl() {
-    const t = y("div", [this.CSS.columnsControl]), e = y("button", [this.CSS.columnsButton], { type: "button" });
+    const t = D("div", [this.CSS.columnsControl]), e = D("button", [this.CSS.columnsButton], { type: "button" });
     e.innerHTML = "−", e.addEventListener("click", () => this.changeColumns(-1));
-    const i = y("span", [this.CSS.columnsDisplay]);
+    const i = D("span", [this.CSS.columnsDisplay]);
     i.textContent = `${this.currentColumns} col`;
-    const n = y("button", [this.CSS.columnsButton], { type: "button" });
-    return n.innerHTML = "+", n.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(i), t.appendChild(n), t;
+    const r = D("button", [this.CSS.columnsButton], { type: "button" });
+    return r.innerHTML = "+", r.addEventListener("click", () => this.changeColumns(1)), t.appendChild(e), t.appendChild(i), t.appendChild(r), t;
   }
   changeColumns(t) {
-    const e = Math.min(j.MAX_COLUMNS, Math.max(j.MIN_COLUMNS, this.currentColumns + t));
+    const e = Math.min(F.MAX_COLUMNS, Math.max(F.MIN_COLUMNS, this.currentColumns + t));
     e !== this.currentColumns && (this.columnsLocked = !0, this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   updateColumnsClass() {
@@ -371,7 +364,7 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     if (this.nodes.wrapper.classList.contains(t))
       this.nodes.wrapper.classList.replace(t, e);
     else {
-      for (let i = j.MIN_COLUMNS; i <= j.MAX_COLUMNS; i++)
+      for (let i = F.MIN_COLUMNS; i <= F.MAX_COLUMNS; i++)
         this.nodes.wrapper.classList.remove(`gallery-tool--columns-${i}`);
       this.nodes.wrapper.classList.add(e);
     }
@@ -392,12 +385,12 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
    */
   autoAdjustColumns() {
     if (this.isRendering || this.columnsLocked) return;
-    const t = this.nodes.itemsContainer.children.length, e = Math.max(j.MIN_COLUMNS, Math.min(t, j.AUTO_MAX_COLUMNS));
+    const t = this.nodes.itemsContainer.children.length, e = Math.max(F.MIN_COLUMNS, Math.min(t, F.AUTO_MAX_COLUMNS));
     e !== this.currentColumns && (this.previousColumns = this.currentColumns, this.currentColumns = e, this.updateColumnsClass(), this.updateColumnsDisplay(), this.onColumnsChange(e));
   }
   createItemControls(t) {
     var d;
-    const e = y("div", [this.CSS.itemControls]), i = y("button", [this.CSS.itemRemove], { type: "button" });
+    const e = D("div", [this.CSS.itemControls]), i = D("button", [this.CSS.itemRemove], { type: "button" });
     i.innerHTML = "×", i.title = this.api.i18n.t("Удалить изображение"), i.setAttribute("aria-label", this.api.i18n.t("Удалить изображение")), i.addEventListener("click", () => {
       const l = t.dataset.url, h = t.dataset.mediaId;
       t.remove(), this.nodes.itemsContainer.children.length === 0 && (this.toggleState(
@@ -405,13 +398,13 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
         /* Empty */
       ), this.columnsLocked = !1), this.autoAdjustColumns(), (l || h) && this.onRemoveImage(l ?? "", h);
     });
-    const n = y("button", [this.CSS.itemMoveLeft], { type: "button" });
-    n.innerHTML = "←", n.addEventListener("click", () => this.moveItem(t, -1));
-    const o = y("button", [this.CSS.itemMoveRight], { type: "button" });
-    o.innerHTML = "→", o.addEventListener("click", () => this.moveItem(t, 1));
-    const s = y("button", [this.CSS.itemCrop], { type: "button" });
-    s.innerHTML = ei, s.title = this.api.i18n.t("Обрезать изображение"), s.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), s.disabled = t.dataset.disableOptimization === "true", s.addEventListener("click", () => this.onCropImage(t));
-    const a = Ze({
+    const r = D("button", [this.CSS.itemMoveLeft], { type: "button" });
+    r.innerHTML = "←", r.addEventListener("click", () => this.moveItem(t, -1));
+    const a = D("button", [this.CSS.itemMoveRight], { type: "button" });
+    a.innerHTML = "→", a.addEventListener("click", () => this.moveItem(t, 1));
+    const n = D("button", [this.CSS.itemCrop], { type: "button" });
+    n.innerHTML = He, n.title = this.api.i18n.t("Обрезать изображение"), n.setAttribute("aria-label", this.api.i18n.t("Обрезать изображение")), n.disabled = t.dataset.disableOptimization === "true", n.addEventListener("click", () => this.onCropImage(t));
+    const s = Re({
       isEnabled: (l) => t.dataset[l] === "true",
       classes: {
         button: this.CSS.itemSettings,
@@ -422,41 +415,41 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
       translate: (l) => this.api.i18n.t(l),
       onChange: (l, h) => this.updateItemSetting(t, l, h)
     });
-    if (e.appendChild(n), e.appendChild(s), e.appendChild(a), (d = this.config.cover) != null && d.enabled) {
-      const l = y("button", ["gallery-tool__item-cover"], { type: "button" });
+    if (e.appendChild(r), e.appendChild(n), e.appendChild(s), (d = this.config.cover) != null && d.enabled) {
+      const l = D("button", ["gallery-tool__item-cover"], { type: "button" });
       l.innerHTML = "★", l.title = this.api.i18n.t("Сделать обложкой"), l.setAttribute("aria-label", this.api.i18n.t("Сделать обложкой")), l.setAttribute("aria-pressed", String(t.hasAttribute("data-cover"))), l.addEventListener("click", () => this.onSetCover(t)), e.appendChild(l);
     }
-    return e.appendChild(i), e.appendChild(o), e;
+    return e.appendChild(i), e.appendChild(a), e;
   }
   updateItemSetting(t, e, i) {
     i ? t.dataset[e] = "true" : delete t.dataset[e];
-    const n = t.querySelector(`.${this.CSS.itemImage} img`), o = t.querySelector(`.${this.CSS.itemCrop}`);
-    e === "disableHeightLimit" && (t.classList.toggle(this.CSS.itemUnlimitedHeight, i), n && (n.style.maxHeight = i || t.classList.contains(this.CSS.itemCropped) ? "none" : "")), e === "disableOptimization" && (o == null || o.toggleAttribute("disabled", i), i ? this.updateItemAfterCrop(t, void 0, 0, 0, void 0, void 0) : n && (n.src = Ct(t.dataset.url || ""))), e === "disableDecoration" && t.classList.toggle(this.CSS.itemPlain, i), this.onItemSettingsChange();
+    const r = t.querySelector(`.${this.CSS.itemImage} img`), a = t.querySelector(`.${this.CSS.itemCrop}`);
+    e === "disableHeightLimit" && (t.classList.toggle(this.CSS.itemUnlimitedHeight, i), r && (r.style.maxHeight = i || t.classList.contains(this.CSS.itemCropped) ? "none" : "")), e === "disableOptimization" && (a == null || a.toggleAttribute("disabled", i), i ? this.updateItemAfterCrop(t, void 0, 0, 0, void 0, void 0) : r && (r.src = ot(t.dataset.url || ""))), e === "disableDecoration" && t.classList.toggle(this.CSS.itemPlain, i), this.onItemSettingsChange();
   }
   /**
    * Выбрать элемент gallery базовой обложкой в состоянии формы.
    */
   onSetCover(t) {
-    var n;
+    var r;
     const e = this.config.cover;
     if (!(e != null && e.enabled))
       return !1;
     const i = t.dataset.mediaId;
-    return i ? (this.markCover(i), (n = e.onCoverChanged) == null || n.call(e, i), this.api.notifier.show({ message: this.api.i18n.t("Базовая обложка обновлена") }), !0) : (this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1);
+    return i ? (this.markCover(i), (r = e.onCoverChanged) == null || r.call(e, i), this.api.notifier.show({ message: this.api.i18n.t("Базовая обложка обновлена") }), !0) : (this.api.notifier.show({ message: this.api.i18n.t("Сначала дождитесь загрузки картинки"), style: "error" }), !1);
   }
   /**
    * Подсветить элемент-обложку (по media uuid), снять метку с остальных.
    */
   markCover(t) {
     this.nodes.itemsContainer.querySelectorAll(`.${this.CSS.item}`).forEach((i) => {
-      var s;
-      const n = i, o = !!t && n.dataset.mediaId === t;
-      n.toggleAttribute("data-cover", o), (s = n.querySelector('[aria-label="Сделать обложкой"]')) == null || s.setAttribute("aria-pressed", String(o));
+      var n;
+      const r = i, a = !!t && r.dataset.mediaId === t;
+      r.toggleAttribute("data-cover", a), (n = r.querySelector('[aria-label="Сделать обложкой"]')) == null || n.setAttribute("aria-pressed", String(a));
     });
   }
   moveItem(t, e) {
-    const i = Array.from(this.nodes.itemsContainer.children), o = i.indexOf(t) + e;
-    o < 0 || o >= i.length || (e < 0 ? this.nodes.itemsContainer.insertBefore(t, i[o]) : this.nodes.itemsContainer.insertBefore(i[o], t));
+    const i = Array.from(this.nodes.itemsContainer.children), a = i.indexOf(t) + e;
+    a < 0 || a >= i.length || (e < 0 ? this.nodes.itemsContainer.insertBefore(t, i[a]) : this.nodes.itemsContainer.insertBefore(i[a], t));
   }
   toggleState(t) {
     this.nodes.wrapper.classList.remove(
@@ -472,58 +465,58 @@ const ei = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewB
     this.nodes.wrapper.classList.toggle(`gallery-tool--${t}`, e);
   }
 };
-j.MIN_COLUMNS = 1, j.MAX_COLUMNS = 5, j.AUTO_MAX_COLUMNS = 4;
-let qt = j;
-function ii(r) {
-  return r && r.__esModule && Object.prototype.hasOwnProperty.call(r, "default") ? r.default : r;
+F.MIN_COLUMNS = 1, F.MAX_COLUMNS = 5, F.AUTO_MAX_COLUMNS = 4;
+let Ot = F;
+function Ue(o) {
+  return o && o.__esModule && Object.prototype.hasOwnProperty.call(o, "default") ? o.default : o;
 }
-var De = { exports: {} };
-(function(r, t) {
+var ue = { exports: {} };
+(function(o, t) {
   (function(e, i) {
-    r.exports = i();
+    o.exports = i();
   })(window, function() {
     return function(e) {
       var i = {};
-      function n(o) {
-        if (i[o]) return i[o].exports;
-        var s = i[o] = { i: o, l: !1, exports: {} };
-        return e[o].call(s.exports, s, s.exports, n), s.l = !0, s.exports;
+      function r(a) {
+        if (i[a]) return i[a].exports;
+        var n = i[a] = { i: a, l: !1, exports: {} };
+        return e[a].call(n.exports, n, n.exports, r), n.l = !0, n.exports;
       }
-      return n.m = e, n.c = i, n.d = function(o, s, a) {
-        n.o(o, s) || Object.defineProperty(o, s, { enumerable: !0, get: a });
-      }, n.r = function(o) {
-        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(o, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(o, "__esModule", { value: !0 });
-      }, n.t = function(o, s) {
-        if (1 & s && (o = n(o)), 8 & s || 4 & s && typeof o == "object" && o && o.__esModule) return o;
-        var a = /* @__PURE__ */ Object.create(null);
-        if (n.r(a), Object.defineProperty(a, "default", { enumerable: !0, value: o }), 2 & s && typeof o != "string") for (var d in o) n.d(a, d, (function(l) {
-          return o[l];
+      return r.m = e, r.c = i, r.d = function(a, n, s) {
+        r.o(a, n) || Object.defineProperty(a, n, { enumerable: !0, get: s });
+      }, r.r = function(a) {
+        typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(a, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(a, "__esModule", { value: !0 });
+      }, r.t = function(a, n) {
+        if (1 & n && (a = r(a)), 8 & n || 4 & n && typeof a == "object" && a && a.__esModule) return a;
+        var s = /* @__PURE__ */ Object.create(null);
+        if (r.r(s), Object.defineProperty(s, "default", { enumerable: !0, value: a }), 2 & n && typeof a != "string") for (var d in a) r.d(s, d, (function(l) {
+          return a[l];
         }).bind(null, d));
-        return a;
-      }, n.n = function(o) {
-        var s = o && o.__esModule ? function() {
-          return o.default;
+        return s;
+      }, r.n = function(a) {
+        var n = a && a.__esModule ? function() {
+          return a.default;
         } : function() {
-          return o;
+          return a;
         };
-        return n.d(s, "a", s), s;
-      }, n.o = function(o, s) {
-        return Object.prototype.hasOwnProperty.call(o, s);
-      }, n.p = "", n(n.s = 3);
+        return r.d(n, "a", n), n;
+      }, r.o = function(a, n) {
+        return Object.prototype.hasOwnProperty.call(a, n);
+      }, r.p = "", r(r.s = 3);
     }([function(e, i) {
-      var n;
-      n = /* @__PURE__ */ function() {
+      var r;
+      r = /* @__PURE__ */ function() {
         return this;
       }();
       try {
-        n = n || new Function("return this")();
+        r = r || new Function("return this")();
       } catch {
-        typeof window == "object" && (n = window);
+        typeof window == "object" && (r = window);
       }
-      e.exports = n;
-    }, function(e, i, n) {
-      (function(o) {
-        var s = n(2), a = setTimeout;
+      e.exports = r;
+    }, function(e, i, r) {
+      (function(a) {
+        var n = r(2), s = setTimeout;
         function d() {
         }
         function l(f) {
@@ -531,166 +524,166 @@ var De = { exports: {} };
           if (typeof f != "function") throw new TypeError("not a function");
           this._state = 0, this._handled = !1, this._value = void 0, this._deferreds = [], p(f, this);
         }
-        function h(f, g) {
+        function h(f, v) {
           for (; f._state === 3; ) f = f._value;
           f._state !== 0 ? (f._handled = !0, l._immediateFn(function() {
-            var v = f._state === 1 ? g.onFulfilled : g.onRejected;
-            if (v !== null) {
-              var w;
+            var g = f._state === 1 ? v.onFulfilled : v.onRejected;
+            if (g !== null) {
+              var b;
               try {
-                w = v(f._value);
-              } catch (x) {
-                return void u(g.promise, x);
+                b = g(f._value);
+              } catch (S) {
+                return void u(v.promise, S);
               }
-              c(g.promise, w);
-            } else (f._state === 1 ? c : u)(g.promise, f._value);
-          })) : f._deferreds.push(g);
+              c(v.promise, b);
+            } else (f._state === 1 ? c : u)(v.promise, f._value);
+          })) : f._deferreds.push(v);
         }
-        function c(f, g) {
+        function c(f, v) {
           try {
-            if (g === f) throw new TypeError("A promise cannot be resolved with itself.");
-            if (g && (typeof g == "object" || typeof g == "function")) {
-              var v = g.then;
-              if (g instanceof l) return f._state = 3, f._value = g, void b(f);
-              if (typeof v == "function") return void p((w = v, x = g, function() {
-                w.apply(x, arguments);
+            if (v === f) throw new TypeError("A promise cannot be resolved with itself.");
+            if (v && (typeof v == "object" || typeof v == "function")) {
+              var g = v.then;
+              if (v instanceof l) return f._state = 3, f._value = v, void y(f);
+              if (typeof g == "function") return void p((b = g, S = v, function() {
+                b.apply(S, arguments);
               }), f);
             }
-            f._state = 1, f._value = g, b(f);
-          } catch (S) {
-            u(f, S);
+            f._state = 1, f._value = v, y(f);
+          } catch (C) {
+            u(f, C);
           }
-          var w, x;
+          var b, S;
         }
-        function u(f, g) {
-          f._state = 2, f._value = g, b(f);
+        function u(f, v) {
+          f._state = 2, f._value = v, y(f);
         }
-        function b(f) {
+        function y(f) {
           f._state === 2 && f._deferreds.length === 0 && l._immediateFn(function() {
             f._handled || l._unhandledRejectionFn(f._value);
           });
-          for (var g = 0, v = f._deferreds.length; g < v; g++) h(f, f._deferreds[g]);
+          for (var v = 0, g = f._deferreds.length; v < g; v++) h(f, f._deferreds[v]);
           f._deferreds = null;
         }
-        function C(f, g, v) {
-          this.onFulfilled = typeof f == "function" ? f : null, this.onRejected = typeof g == "function" ? g : null, this.promise = v;
+        function w(f, v, g) {
+          this.onFulfilled = typeof f == "function" ? f : null, this.onRejected = typeof v == "function" ? v : null, this.promise = g;
         }
-        function p(f, g) {
-          var v = !1;
+        function p(f, v) {
+          var g = !1;
           try {
-            f(function(w) {
-              v || (v = !0, c(g, w));
-            }, function(w) {
-              v || (v = !0, u(g, w));
+            f(function(b) {
+              g || (g = !0, c(v, b));
+            }, function(b) {
+              g || (g = !0, u(v, b));
             });
-          } catch (w) {
-            if (v) return;
-            v = !0, u(g, w);
+          } catch (b) {
+            if (g) return;
+            g = !0, u(v, b);
           }
         }
         l.prototype.catch = function(f) {
           return this.then(null, f);
-        }, l.prototype.then = function(f, g) {
-          var v = new this.constructor(d);
-          return h(this, new C(f, g, v)), v;
-        }, l.prototype.finally = s.a, l.all = function(f) {
-          return new l(function(g, v) {
+        }, l.prototype.then = function(f, v) {
+          var g = new this.constructor(d);
+          return h(this, new w(f, v, g)), g;
+        }, l.prototype.finally = n.a, l.all = function(f) {
+          return new l(function(v, g) {
             if (!f || f.length === void 0) throw new TypeError("Promise.all accepts an array");
-            var w = Array.prototype.slice.call(f);
-            if (w.length === 0) return g([]);
-            var x = w.length;
-            function S(_, I) {
+            var b = Array.prototype.slice.call(f);
+            if (b.length === 0) return v([]);
+            var S = b.length;
+            function C(x, E) {
               try {
-                if (I && (typeof I == "object" || typeof I == "function")) {
-                  var E = I.then;
-                  if (typeof E == "function") return void E.call(I, function(O) {
-                    S(_, O);
-                  }, v);
+                if (E && (typeof E == "object" || typeof E == "function")) {
+                  var M = E.then;
+                  if (typeof M == "function") return void M.call(E, function(P) {
+                    C(x, P);
+                  }, g);
                 }
-                w[_] = I, --x == 0 && g(w);
-              } catch (O) {
-                v(O);
+                b[x] = E, --S == 0 && v(b);
+              } catch (P) {
+                g(P);
               }
             }
-            for (var m = 0; m < w.length; m++) S(m, w[m]);
+            for (var m = 0; m < b.length; m++) C(m, b[m]);
           });
         }, l.resolve = function(f) {
-          return f && typeof f == "object" && f.constructor === l ? f : new l(function(g) {
-            g(f);
-          });
-        }, l.reject = function(f) {
-          return new l(function(g, v) {
+          return f && typeof f == "object" && f.constructor === l ? f : new l(function(v) {
             v(f);
           });
-        }, l.race = function(f) {
-          return new l(function(g, v) {
-            for (var w = 0, x = f.length; w < x; w++) f[w].then(g, v);
+        }, l.reject = function(f) {
+          return new l(function(v, g) {
+            g(f);
           });
-        }, l._immediateFn = typeof o == "function" && function(f) {
-          o(f);
+        }, l.race = function(f) {
+          return new l(function(v, g) {
+            for (var b = 0, S = f.length; b < S; b++) f[b].then(v, g);
+          });
+        }, l._immediateFn = typeof a == "function" && function(f) {
+          a(f);
         } || function(f) {
-          a(f, 0);
+          s(f, 0);
         }, l._unhandledRejectionFn = function(f) {
           typeof console < "u" && console && console.warn("Possible Unhandled Promise Rejection:", f);
         }, i.a = l;
-      }).call(this, n(5).setImmediate);
-    }, function(e, i, n) {
-      i.a = function(o) {
-        var s = this.constructor;
-        return this.then(function(a) {
-          return s.resolve(o()).then(function() {
-            return a;
+      }).call(this, r(5).setImmediate);
+    }, function(e, i, r) {
+      i.a = function(a) {
+        var n = this.constructor;
+        return this.then(function(s) {
+          return n.resolve(a()).then(function() {
+            return s;
           });
-        }, function(a) {
-          return s.resolve(o()).then(function() {
-            return s.reject(a);
+        }, function(s) {
+          return n.resolve(a()).then(function() {
+            return n.reject(s);
           });
         });
       };
-    }, function(e, i, n) {
-      function o(p) {
-        return (o = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(f) {
+    }, function(e, i, r) {
+      function a(p) {
+        return (a = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(f) {
           return typeof f;
         } : function(f) {
           return f && typeof Symbol == "function" && f.constructor === Symbol && f !== Symbol.prototype ? "symbol" : typeof f;
         })(p);
       }
-      n(4);
-      var s, a, d, l, h, c, u, b = n(8), C = (a = function(p) {
-        return new Promise(function(f, g) {
+      r(4);
+      var n, s, d, l, h, c, u, y = r(8), w = (s = function(p) {
+        return new Promise(function(f, v) {
           p = l(p), (p = h(p)).beforeSend && p.beforeSend();
-          var v = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
-          v.open(p.method, p.url), v.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(p.headers).forEach(function(x) {
-            var S = p.headers[x];
-            v.setRequestHeader(x, S);
+          var g = window.XMLHttpRequest ? new window.XMLHttpRequest() : new window.ActiveXObject("Microsoft.XMLHTTP");
+          g.open(p.method, p.url), g.setRequestHeader("X-Requested-With", "XMLHttpRequest"), Object.keys(p.headers).forEach(function(S) {
+            var C = p.headers[S];
+            g.setRequestHeader(S, C);
           });
-          var w = p.ratio;
-          v.upload.addEventListener("progress", function(x) {
-            var S = Math.round(x.loaded / x.total * 100), m = Math.ceil(S * w / 100);
+          var b = p.ratio;
+          g.upload.addEventListener("progress", function(S) {
+            var C = Math.round(S.loaded / S.total * 100), m = Math.ceil(C * b / 100);
             p.progress(Math.min(m, 100));
-          }, !1), v.addEventListener("progress", function(x) {
-            var S = Math.round(x.loaded / x.total * 100), m = Math.ceil(S * (100 - w) / 100) + w;
+          }, !1), g.addEventListener("progress", function(S) {
+            var C = Math.round(S.loaded / S.total * 100), m = Math.ceil(C * (100 - b) / 100) + b;
             p.progress(Math.min(m, 100));
-          }, !1), v.onreadystatechange = function() {
-            if (v.readyState === 4) {
-              var x = v.response;
+          }, !1), g.onreadystatechange = function() {
+            if (g.readyState === 4) {
+              var S = g.response;
               try {
-                x = JSON.parse(x);
+                S = JSON.parse(S);
               } catch {
               }
-              var S = b.parseHeaders(v.getAllResponseHeaders()), m = { body: x, code: v.status, headers: S };
-              u(v.status) ? f(m) : g(m);
+              var C = y.parseHeaders(g.getAllResponseHeaders()), m = { body: S, code: g.status, headers: C };
+              u(g.status) ? f(m) : v(m);
             }
-          }, v.send(p.data);
+          }, g.send(p.data);
         });
       }, d = function(p) {
-        return p.method = "POST", a(p);
+        return p.method = "POST", s(p);
       }, l = function() {
         var p = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         if (p.url && typeof p.url != "string") throw new Error("Url must be a string");
         if (p.url = p.url || "", p.method && typeof p.method != "string") throw new Error("`method` must be a string or null");
-        if (p.method = p.method ? p.method.toUpperCase() : "GET", p.headers && o(p.headers) !== "object") throw new Error("`headers` must be an object or null");
-        if (p.headers = p.headers || {}, p.type && (typeof p.type != "string" || !Object.values(s).includes(p.type))) throw new Error("`type` must be taken from module's «contentType» library");
+        if (p.method = p.method ? p.method.toUpperCase() : "GET", p.headers && a(p.headers) !== "object") throw new Error("`headers` must be an object or null");
+        if (p.headers = p.headers || {}, p.type && (typeof p.type != "string" || !Object.values(n).includes(p.type))) throw new Error("`type` must be taken from module's «contentType» library");
         if (p.progress && typeof p.progress != "function") throw new Error("`progress` must be a function or null");
         if (p.progress = p.progress || function(f) {
         }, p.beforeSend = p.beforeSend || function(f) {
@@ -703,70 +696,70 @@ var De = { exports: {} };
       }, h = function(p) {
         switch (p.method) {
           case "GET":
-            var f = c(p.data, s.URLENCODED);
+            var f = c(p.data, n.URLENCODED);
             delete p.data, p.url = /\?/.test(p.url) ? p.url + "&" + f : p.url + "?" + f;
             break;
           case "POST":
           case "PUT":
           case "DELETE":
           case "UPDATE":
-            var g = function() {
-              return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}).type || s.JSON;
+            var v = function() {
+              return (arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}).type || n.JSON;
             }(p);
-            (b.isFormData(p.data) || b.isFormElement(p.data)) && (g = s.FORM), p.data = c(p.data, g), g !== C.contentType.FORM && (p.headers["content-type"] = g);
+            (y.isFormData(p.data) || y.isFormElement(p.data)) && (v = n.FORM), p.data = c(p.data, v), v !== w.contentType.FORM && (p.headers["content-type"] = v);
         }
         return p;
       }, c = function() {
         var p = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
         switch (arguments.length > 1 ? arguments[1] : void 0) {
-          case s.URLENCODED:
-            return b.urlEncode(p);
-          case s.JSON:
-            return b.jsonEncode(p);
-          case s.FORM:
-            return b.formEncode(p);
+          case n.URLENCODED:
+            return y.urlEncode(p);
+          case n.JSON:
+            return y.jsonEncode(p);
+          case n.FORM:
+            return y.formEncode(p);
           default:
             return p;
         }
       }, u = function(p) {
         return p >= 200 && p < 300;
-      }, { contentType: s = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: a, get: function(p) {
-        return p.method = "GET", a(p);
+      }, { contentType: n = { URLENCODED: "application/x-www-form-urlencoded; charset=utf-8", FORM: "multipart/form-data", JSON: "application/json; charset=utf-8" }, request: s, get: function(p) {
+        return p.method = "GET", s(p);
       }, post: d, transport: function(p) {
-        return p = l(p), b.selectFiles(p).then(function(f) {
-          for (var g = new FormData(), v = 0; v < f.length; v++) g.append(p.fieldName, f[v], f[v].name);
-          b.isObject(p.data) && Object.keys(p.data).forEach(function(x) {
-            var S = p.data[x];
-            g.append(x, S);
+        return p = l(p), y.selectFiles(p).then(function(f) {
+          for (var v = new FormData(), g = 0; g < f.length; g++) v.append(p.fieldName, f[g], f[g].name);
+          y.isObject(p.data) && Object.keys(p.data).forEach(function(S) {
+            var C = p.data[S];
+            v.append(S, C);
           });
-          var w = p.beforeSend;
+          var b = p.beforeSend;
           return p.beforeSend = function() {
-            return w(f);
-          }, p.data = g, d(p);
+            return b(f);
+          }, p.data = v, d(p);
         });
       }, selectFiles: function(p) {
-        return delete (p = l(p)).beforeSend, b.selectFiles(p);
+        return delete (p = l(p)).beforeSend, y.selectFiles(p);
       } });
-      e.exports = C;
-    }, function(e, i, n) {
-      n.r(i);
-      var o = n(1);
-      window.Promise = window.Promise || o.a;
-    }, function(e, i, n) {
-      (function(o) {
-        var s = o !== void 0 && o || typeof self < "u" && self || window, a = Function.prototype.apply;
+      e.exports = w;
+    }, function(e, i, r) {
+      r.r(i);
+      var a = r(1);
+      window.Promise = window.Promise || a.a;
+    }, function(e, i, r) {
+      (function(a) {
+        var n = a !== void 0 && a || typeof self < "u" && self || window, s = Function.prototype.apply;
         function d(l, h) {
           this._id = l, this._clearFn = h;
         }
         i.setTimeout = function() {
-          return new d(a.call(setTimeout, s, arguments), clearTimeout);
+          return new d(s.call(setTimeout, n, arguments), clearTimeout);
         }, i.setInterval = function() {
-          return new d(a.call(setInterval, s, arguments), clearInterval);
+          return new d(s.call(setInterval, n, arguments), clearInterval);
         }, i.clearTimeout = i.clearInterval = function(l) {
           l && l.close();
         }, d.prototype.unref = d.prototype.ref = function() {
         }, d.prototype.close = function() {
-          this._clearFn.call(s, this._id);
+          this._clearFn.call(n, this._id);
         }, i.enroll = function(l, h) {
           clearTimeout(l._idleTimeoutId), l._idleTimeout = h;
         }, i.unenroll = function(l) {
@@ -777,182 +770,182 @@ var De = { exports: {} };
           h >= 0 && (l._idleTimeoutId = setTimeout(function() {
             l._onTimeout && l._onTimeout();
           }, h));
-        }, n(6), i.setImmediate = typeof self < "u" && self.setImmediate || o !== void 0 && o.setImmediate || this && this.setImmediate, i.clearImmediate = typeof self < "u" && self.clearImmediate || o !== void 0 && o.clearImmediate || this && this.clearImmediate;
-      }).call(this, n(0));
-    }, function(e, i, n) {
-      (function(o, s) {
-        (function(a, d) {
-          if (!a.setImmediate) {
-            var l, h, c, u, b, C = 1, p = {}, f = !1, g = a.document, v = Object.getPrototypeOf && Object.getPrototypeOf(a);
-            v = v && v.setTimeout ? v : a, {}.toString.call(a.process) === "[object process]" ? l = function(S) {
-              s.nextTick(function() {
-                x(S);
+        }, r(6), i.setImmediate = typeof self < "u" && self.setImmediate || a !== void 0 && a.setImmediate || this && this.setImmediate, i.clearImmediate = typeof self < "u" && self.clearImmediate || a !== void 0 && a.clearImmediate || this && this.clearImmediate;
+      }).call(this, r(0));
+    }, function(e, i, r) {
+      (function(a, n) {
+        (function(s, d) {
+          if (!s.setImmediate) {
+            var l, h, c, u, y, w = 1, p = {}, f = !1, v = s.document, g = Object.getPrototypeOf && Object.getPrototypeOf(s);
+            g = g && g.setTimeout ? g : s, {}.toString.call(s.process) === "[object process]" ? l = function(C) {
+              n.nextTick(function() {
+                S(C);
               });
             } : function() {
-              if (a.postMessage && !a.importScripts) {
-                var S = !0, m = a.onmessage;
-                return a.onmessage = function() {
-                  S = !1;
-                }, a.postMessage("", "*"), a.onmessage = m, S;
+              if (s.postMessage && !s.importScripts) {
+                var C = !0, m = s.onmessage;
+                return s.onmessage = function() {
+                  C = !1;
+                }, s.postMessage("", "*"), s.onmessage = m, C;
               }
-            }() ? (u = "setImmediate$" + Math.random() + "$", b = function(S) {
-              S.source === a && typeof S.data == "string" && S.data.indexOf(u) === 0 && x(+S.data.slice(u.length));
-            }, a.addEventListener ? a.addEventListener("message", b, !1) : a.attachEvent("onmessage", b), l = function(S) {
-              a.postMessage(u + S, "*");
-            }) : a.MessageChannel ? ((c = new MessageChannel()).port1.onmessage = function(S) {
-              x(S.data);
-            }, l = function(S) {
-              c.port2.postMessage(S);
-            }) : g && "onreadystatechange" in g.createElement("script") ? (h = g.documentElement, l = function(S) {
-              var m = g.createElement("script");
+            }() ? (u = "setImmediate$" + Math.random() + "$", y = function(C) {
+              C.source === s && typeof C.data == "string" && C.data.indexOf(u) === 0 && S(+C.data.slice(u.length));
+            }, s.addEventListener ? s.addEventListener("message", y, !1) : s.attachEvent("onmessage", y), l = function(C) {
+              s.postMessage(u + C, "*");
+            }) : s.MessageChannel ? ((c = new MessageChannel()).port1.onmessage = function(C) {
+              S(C.data);
+            }, l = function(C) {
+              c.port2.postMessage(C);
+            }) : v && "onreadystatechange" in v.createElement("script") ? (h = v.documentElement, l = function(C) {
+              var m = v.createElement("script");
               m.onreadystatechange = function() {
-                x(S), m.onreadystatechange = null, h.removeChild(m), m = null;
+                S(C), m.onreadystatechange = null, h.removeChild(m), m = null;
               }, h.appendChild(m);
-            }) : l = function(S) {
-              setTimeout(x, 0, S);
-            }, v.setImmediate = function(S) {
-              typeof S != "function" && (S = new Function("" + S));
-              for (var m = new Array(arguments.length - 1), _ = 0; _ < m.length; _++) m[_] = arguments[_ + 1];
-              var I = { callback: S, args: m };
-              return p[C] = I, l(C), C++;
-            }, v.clearImmediate = w;
+            }) : l = function(C) {
+              setTimeout(S, 0, C);
+            }, g.setImmediate = function(C) {
+              typeof C != "function" && (C = new Function("" + C));
+              for (var m = new Array(arguments.length - 1), x = 0; x < m.length; x++) m[x] = arguments[x + 1];
+              var E = { callback: C, args: m };
+              return p[w] = E, l(w), w++;
+            }, g.clearImmediate = b;
           }
-          function w(S) {
-            delete p[S];
+          function b(C) {
+            delete p[C];
           }
-          function x(S) {
-            if (f) setTimeout(x, 0, S);
+          function S(C) {
+            if (f) setTimeout(S, 0, C);
             else {
-              var m = p[S];
+              var m = p[C];
               if (m) {
                 f = !0;
                 try {
-                  (function(_) {
-                    var I = _.callback, E = _.args;
-                    switch (E.length) {
+                  (function(x) {
+                    var E = x.callback, M = x.args;
+                    switch (M.length) {
                       case 0:
-                        I();
+                        E();
                         break;
                       case 1:
-                        I(E[0]);
+                        E(M[0]);
                         break;
                       case 2:
-                        I(E[0], E[1]);
+                        E(M[0], M[1]);
                         break;
                       case 3:
-                        I(E[0], E[1], E[2]);
+                        E(M[0], M[1], M[2]);
                         break;
                       default:
-                        I.apply(d, E);
+                        E.apply(d, M);
                     }
                   })(m);
                 } finally {
-                  w(S), f = !1;
+                  b(C), f = !1;
                 }
               }
             }
           }
-        })(typeof self > "u" ? o === void 0 ? this : o : self);
-      }).call(this, n(0), n(7));
+        })(typeof self > "u" ? a === void 0 ? this : a : self);
+      }).call(this, r(0), r(7));
     }, function(e, i) {
-      var n, o, s = e.exports = {};
-      function a() {
+      var r, a, n = e.exports = {};
+      function s() {
         throw new Error("setTimeout has not been defined");
       }
       function d() {
         throw new Error("clearTimeout has not been defined");
       }
-      function l(v) {
-        if (n === setTimeout) return setTimeout(v, 0);
-        if ((n === a || !n) && setTimeout) return n = setTimeout, setTimeout(v, 0);
+      function l(g) {
+        if (r === setTimeout) return setTimeout(g, 0);
+        if ((r === s || !r) && setTimeout) return r = setTimeout, setTimeout(g, 0);
         try {
-          return n(v, 0);
+          return r(g, 0);
         } catch {
           try {
-            return n.call(null, v, 0);
+            return r.call(null, g, 0);
           } catch {
-            return n.call(this, v, 0);
+            return r.call(this, g, 0);
           }
         }
       }
       (function() {
         try {
-          n = typeof setTimeout == "function" ? setTimeout : a;
+          r = typeof setTimeout == "function" ? setTimeout : s;
         } catch {
-          n = a;
+          r = s;
         }
         try {
-          o = typeof clearTimeout == "function" ? clearTimeout : d;
+          a = typeof clearTimeout == "function" ? clearTimeout : d;
         } catch {
-          o = d;
+          a = d;
         }
       })();
-      var h, c = [], u = !1, b = -1;
-      function C() {
-        u && h && (u = !1, h.length ? c = h.concat(c) : b = -1, c.length && p());
+      var h, c = [], u = !1, y = -1;
+      function w() {
+        u && h && (u = !1, h.length ? c = h.concat(c) : y = -1, c.length && p());
       }
       function p() {
         if (!u) {
-          var v = l(C);
+          var g = l(w);
           u = !0;
-          for (var w = c.length; w; ) {
-            for (h = c, c = []; ++b < w; ) h && h[b].run();
-            b = -1, w = c.length;
+          for (var b = c.length; b; ) {
+            for (h = c, c = []; ++y < b; ) h && h[y].run();
+            y = -1, b = c.length;
           }
-          h = null, u = !1, function(x) {
-            if (o === clearTimeout) return clearTimeout(x);
-            if ((o === d || !o) && clearTimeout) return o = clearTimeout, clearTimeout(x);
+          h = null, u = !1, function(S) {
+            if (a === clearTimeout) return clearTimeout(S);
+            if ((a === d || !a) && clearTimeout) return a = clearTimeout, clearTimeout(S);
             try {
-              o(x);
+              a(S);
             } catch {
               try {
-                return o.call(null, x);
+                return a.call(null, S);
               } catch {
-                return o.call(this, x);
+                return a.call(this, S);
               }
             }
-          }(v);
+          }(g);
         }
       }
-      function f(v, w) {
-        this.fun = v, this.array = w;
+      function f(g, b) {
+        this.fun = g, this.array = b;
       }
-      function g() {
+      function v() {
       }
-      s.nextTick = function(v) {
-        var w = new Array(arguments.length - 1);
-        if (arguments.length > 1) for (var x = 1; x < arguments.length; x++) w[x - 1] = arguments[x];
-        c.push(new f(v, w)), c.length !== 1 || u || l(p);
+      n.nextTick = function(g) {
+        var b = new Array(arguments.length - 1);
+        if (arguments.length > 1) for (var S = 1; S < arguments.length; S++) b[S - 1] = arguments[S];
+        c.push(new f(g, b)), c.length !== 1 || u || l(p);
       }, f.prototype.run = function() {
         this.fun.apply(null, this.array);
-      }, s.title = "browser", s.browser = !0, s.env = {}, s.argv = [], s.version = "", s.versions = {}, s.on = g, s.addListener = g, s.once = g, s.off = g, s.removeListener = g, s.removeAllListeners = g, s.emit = g, s.prependListener = g, s.prependOnceListener = g, s.listeners = function(v) {
+      }, n.title = "browser", n.browser = !0, n.env = {}, n.argv = [], n.version = "", n.versions = {}, n.on = v, n.addListener = v, n.once = v, n.off = v, n.removeListener = v, n.removeAllListeners = v, n.emit = v, n.prependListener = v, n.prependOnceListener = v, n.listeners = function(g) {
         return [];
-      }, s.binding = function(v) {
+      }, n.binding = function(g) {
         throw new Error("process.binding is not supported");
-      }, s.cwd = function() {
+      }, n.cwd = function() {
         return "/";
-      }, s.chdir = function(v) {
+      }, n.chdir = function(g) {
         throw new Error("process.chdir is not supported");
-      }, s.umask = function() {
+      }, n.umask = function() {
         return 0;
       };
-    }, function(e, i, n) {
-      function o(a, d) {
+    }, function(e, i, r) {
+      function a(s, d) {
         for (var l = 0; l < d.length; l++) {
           var h = d[l];
-          h.enumerable = h.enumerable || !1, h.configurable = !0, "value" in h && (h.writable = !0), Object.defineProperty(a, h.key, h);
+          h.enumerable = h.enumerable || !1, h.configurable = !0, "value" in h && (h.writable = !0), Object.defineProperty(s, h.key, h);
         }
       }
-      var s = n(9);
+      var n = r(9);
       e.exports = function() {
-        function a() {
+        function s() {
           (function(c, u) {
             if (!(c instanceof u)) throw new TypeError("Cannot call a class as a function");
-          })(this, a);
+          })(this, s);
         }
         var d, l, h;
-        return d = a, h = [{ key: "urlEncode", value: function(c) {
-          return s(c);
+        return d = s, h = [{ key: "urlEncode", value: function(c) {
+          return n(c);
         } }, { key: "jsonEncode", value: function(c) {
           return JSON.stringify(c);
         } }, { key: "formEncode", value: function(c) {
@@ -960,9 +953,9 @@ var De = { exports: {} };
           if (this.isFormElement(c)) return new FormData(c);
           if (this.isObject(c)) {
             var u = new FormData();
-            return Object.keys(c).forEach(function(b) {
-              var C = c[b];
-              u.append(b, C);
+            return Object.keys(c).forEach(function(y) {
+              var w = c[y];
+              u.append(y, w);
             }), u;
           }
           throw new Error("`data` must be an instance of Object, FormData or <FORM> HTMLElement");
@@ -974,51 +967,51 @@ var De = { exports: {} };
           return c instanceof HTMLFormElement;
         } }, { key: "selectFiles", value: function() {
           var c = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-          return new Promise(function(u, b) {
-            var C = document.createElement("INPUT");
-            C.type = "file", c.multiple && C.setAttribute("multiple", "multiple"), c.accept && C.setAttribute("accept", c.accept), C.style.display = "none", document.body.appendChild(C), C.addEventListener("change", function(p) {
+          return new Promise(function(u, y) {
+            var w = document.createElement("INPUT");
+            w.type = "file", c.multiple && w.setAttribute("multiple", "multiple"), c.accept && w.setAttribute("accept", c.accept), w.style.display = "none", document.body.appendChild(w), w.addEventListener("change", function(p) {
               var f = p.target.files;
-              u(f), document.body.removeChild(C);
-            }, !1), C.click();
+              u(f), document.body.removeChild(w);
+            }, !1), w.click();
           });
         } }, { key: "parseHeaders", value: function(c) {
-          var u = c.trim().split(/[\r\n]+/), b = {};
-          return u.forEach(function(C) {
-            var p = C.split(": "), f = p.shift(), g = p.join(": ");
-            f && (b[f] = g);
-          }), b;
-        } }], (l = null) && o(d.prototype, l), h && o(d, h), a;
+          var u = c.trim().split(/[\r\n]+/), y = {};
+          return u.forEach(function(w) {
+            var p = w.split(": "), f = p.shift(), v = p.join(": ");
+            f && (y[f] = v);
+          }), y;
+        } }], (l = null) && a(d.prototype, l), h && a(d, h), s;
       }();
     }, function(e, i) {
-      var n = function(s) {
-        return encodeURIComponent(s).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
-      }, o = function(s, a, d, l) {
-        return a = a || null, d = d || "&", l = l || null, s ? function(h) {
+      var r = function(n) {
+        return encodeURIComponent(n).replace(/[!'()*]/g, escape).replace(/%20/g, "+");
+      }, a = function(n, s, d, l) {
+        return s = s || null, d = d || "&", l = l || null, n ? function(h) {
           for (var c = new Array(), u = 0; u < h.length; u++) h[u] && c.push(h[u]);
           return c;
-        }(Object.keys(s).map(function(h) {
-          var c, u, b = h;
-          if (l && (b = l + "[" + b + "]"), typeof s[h] == "object" && s[h] !== null) c = o(s[h], null, d, b);
+        }(Object.keys(n).map(function(h) {
+          var c, u, y = h;
+          if (l && (y = l + "[" + y + "]"), typeof n[h] == "object" && n[h] !== null) c = a(n[h], null, d, y);
           else {
-            a && (u = b, b = !isNaN(parseFloat(u)) && isFinite(u) ? a + Number(b) : b);
-            var C = s[h];
-            C = (C = (C = (C = C === !0 ? "1" : C) === !1 ? "0" : C) === 0 ? "0" : C) || "", c = n(b) + "=" + n(C);
+            s && (u = y, y = !isNaN(parseFloat(u)) && isFinite(u) ? s + Number(y) : y);
+            var w = n[h];
+            w = (w = (w = (w = w === !0 ? "1" : w) === !1 ? "0" : w) === 0 ? "0" : w) || "", c = r(y) + "=" + r(w);
           }
           return c;
         })).join(d).replace(/[!'()*]/g, "") : "";
       };
-      e.exports = o;
+      e.exports = a;
     }]);
   });
-})(De);
-var ni = De.exports;
-const ut = /* @__PURE__ */ ii(ni);
-function zt(r) {
-  return r !== void 0 && typeof r.then == "function";
+})(ue);
+var je = ue.exports;
+const Q = /* @__PURE__ */ Ue(je);
+function St(o) {
+  return o !== void 0 && typeof o.then == "function";
 }
-class de extends Error {
+class qt extends Error {
 }
-class oi {
+class ze {
   constructor({ config: t, onUpload: e, onError: i }) {
     this.config = t, this.onUpload = e, this.onError = i;
   }
@@ -1026,44 +1019,44 @@ class oi {
    * Upload file selected from device
    */
   uploadSelectedFile({ onPreview: t, onNonImageFile: e }) {
-    var o;
-    const i = (s) => {
-      const a = new FileReader();
-      a.readAsDataURL(s), a.onload = (d) => {
+    var a;
+    const i = (n) => {
+      const s = new FileReader();
+      s.readAsDataURL(n), s.onload = (d) => {
         t(d.target.result);
-      }, a.onerror = () => {
+      }, s.onerror = () => {
         this.onError("Failed to read file");
       };
     };
-    let n;
-    if ((o = this.config.uploader) != null && o.uploadByFile)
-      n = ut.selectFiles({ accept: this.config.types ?? "image/*" }).then((s) => {
-        if (!s || s.length === 0)
+    let r;
+    if ((a = this.config.uploader) != null && a.uploadByFile)
+      r = Q.selectFiles({ accept: this.config.types ?? "image/*" }).then((n) => {
+        if (!n || n.length === 0)
           throw new Error("No file selected");
-        if ((e == null ? void 0 : e(s[0])) === !0)
-          throw new de();
-        i(s[0]);
-        const a = this.config.uploader.uploadByFile(s[0]);
-        return zt(a) || console.warn("Custom uploader method uploadByFile should return a Promise"), a;
+        if ((e == null ? void 0 : e(n[0])) === !0)
+          throw new qt();
+        i(n[0]);
+        const s = this.config.uploader.uploadByFile(n[0]);
+        return St(s) || console.warn("Custom uploader method uploadByFile should return a Promise"), s;
       });
     else {
       if (!this.config.endpoints.byFile) {
         this.onError("Upload endpoint (byFile) is not configured");
         return;
       }
-      n = ut.transport({
+      r = Q.transport({
         url: this.config.endpoints.byFile,
         data: this.config.additionalRequestData,
         accept: this.config.types ?? "image/*",
         headers: this.config.additionalRequestHeaders,
-        beforeSend: (s) => {
-          s && s.length > 0 && i(s[0]);
+        beforeSend: (n) => {
+          n && n.length > 0 && i(n[0]);
         },
         fieldName: this.config.field ?? "image"
-      }).then((s) => s.body);
+      }).then((n) => n.body);
     }
-    n.then((s) => this.onUpload(s)).catch((s) => {
-      s instanceof de || this.onError(s);
+    r.then((n) => this.onUpload(n)).catch((n) => {
+      n instanceof qt || this.onError(n);
     });
   }
   /**
@@ -1073,51 +1066,51 @@ class oi {
     var i;
     let e;
     if ((i = this.config.uploader) != null && i.uploadByUrl)
-      e = this.config.uploader.uploadByUrl(t), zt(e) || console.warn("Custom uploader method uploadByUrl should return a Promise");
+      e = this.config.uploader.uploadByUrl(t), St(e) || console.warn("Custom uploader method uploadByUrl should return a Promise");
     else {
       if (!this.config.endpoints.byUrl) {
         this.onError("Upload endpoint (byUrl) is not configured");
         return;
       }
-      e = ut.post({
+      e = Q.post({
         url: this.config.endpoints.byUrl,
         data: {
           url: t,
           ...this.config.additionalRequestData
         },
-        type: ut.contentType.JSON,
+        type: Q.contentType.JSON,
         headers: this.config.additionalRequestHeaders
-      }).then((n) => n.body);
+      }).then((r) => r.body);
     }
-    e.then((n) => this.onUpload(n)).catch((n) => this.onError(n));
+    e.then((r) => this.onUpload(r)).catch((r) => this.onError(r));
   }
   /**
    * Upload file from drag-n-drop or paste
    */
   uploadByFile(t, { onPreview: e }) {
     const i = new FileReader();
-    i.onload = (n) => {
-      var s;
-      e(n.target.result);
-      let o;
-      if ((s = this.config.uploader) != null && s.uploadByFile)
-        o = this.config.uploader.uploadByFile(t), zt(o) || console.warn("Custom uploader method uploadByFile should return a Promise");
+    i.onload = (r) => {
+      var n;
+      e(r.target.result);
+      let a;
+      if ((n = this.config.uploader) != null && n.uploadByFile)
+        a = this.config.uploader.uploadByFile(t), St(a) || console.warn("Custom uploader method uploadByFile should return a Promise");
       else {
         if (!this.config.endpoints.byFile) {
           this.onError("Upload endpoint (byFile) is not configured");
           return;
         }
-        const a = new FormData();
-        a.append(this.config.field ?? "image", t), this.config.additionalRequestData && Object.entries(this.config.additionalRequestData).forEach(([d, l]) => {
-          a.append(d, l);
-        }), o = ut.post({
+        const s = new FormData();
+        s.append(this.config.field ?? "image", t), this.config.additionalRequestData && Object.entries(this.config.additionalRequestData).forEach(([d, l]) => {
+          s.append(d, l);
+        }), a = Q.post({
           url: this.config.endpoints.byFile,
-          data: a,
-          type: ut.contentType.JSON,
+          data: s,
+          type: Q.contentType.JSON,
           headers: this.config.additionalRequestHeaders
         }).then((d) => d.body);
       }
-      o.then((a) => this.onUpload(a)).catch((a) => this.onError(a));
+      a.then((s) => this.onUpload(s)).catch((s) => this.onError(s));
     }, i.onerror = () => {
       this.onError("Failed to read file");
     }, i.readAsDataURL(t);
@@ -1132,104 +1125,104 @@ class oi {
  *
  * Date: 2024-04-21T07:43:05.335Z
  */
-function ue(r, t) {
-  var e = Object.keys(r);
+function Gt(o, t) {
+  var e = Object.keys(o);
   if (Object.getOwnPropertySymbols) {
-    var i = Object.getOwnPropertySymbols(r);
-    t && (i = i.filter(function(n) {
-      return Object.getOwnPropertyDescriptor(r, n).enumerable;
+    var i = Object.getOwnPropertySymbols(o);
+    t && (i = i.filter(function(r) {
+      return Object.getOwnPropertyDescriptor(o, r).enumerable;
     })), e.push.apply(e, i);
   }
   return e;
 }
-function Te(r) {
+function pe(o) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? ue(Object(e), !0).forEach(function(i) {
-      li(r, i, e[i]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(r, Object.getOwnPropertyDescriptors(e)) : ue(Object(e)).forEach(function(i) {
-      Object.defineProperty(r, i, Object.getOwnPropertyDescriptor(e, i));
+    t % 2 ? Gt(Object(e), !0).forEach(function(i) {
+      Ye(o, i, e[i]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(o, Object.getOwnPropertyDescriptors(e)) : Gt(Object(e)).forEach(function(i) {
+      Object.defineProperty(o, i, Object.getOwnPropertyDescriptor(e, i));
     });
   }
-  return r;
+  return o;
 }
-function si(r, t) {
-  if (typeof r != "object" || !r) return r;
-  var e = r[Symbol.toPrimitive];
+function We(o, t) {
+  if (typeof o != "object" || !o) return o;
+  var e = o[Symbol.toPrimitive];
   if (e !== void 0) {
-    var i = e.call(r, t);
+    var i = e.call(o, t);
     if (typeof i != "object") return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return String(r);
+  return String(o);
 }
-function Me(r) {
-  var t = si(r, "string");
+function fe(o) {
+  var t = We(o, "string");
   return typeof t == "symbol" ? t : t + "";
 }
-function Xt(r) {
+function Mt(o) {
   "@babel/helpers - typeof";
-  return Xt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
+  return Mt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
     return typeof t;
   } : function(t) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-  }, Xt(r);
+  }, Mt(o);
 }
-function ai(r, t) {
-  if (!(r instanceof t))
+function Xe(o, t) {
+  if (!(o instanceof t))
     throw new TypeError("Cannot call a class as a function");
 }
-function pe(r, t) {
+function Vt(o, t) {
   for (var e = 0; e < t.length; e++) {
     var i = t[e];
-    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(r, Me(i.key), i);
+    i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(o, fe(i.key), i);
   }
 }
-function ri(r, t, e) {
-  return t && pe(r.prototype, t), e && pe(r, e), Object.defineProperty(r, "prototype", {
+function $e(o, t, e) {
+  return t && Vt(o.prototype, t), e && Vt(o, e), Object.defineProperty(o, "prototype", {
     writable: !1
-  }), r;
+  }), o;
 }
-function li(r, t, e) {
-  return t = Me(t), t in r ? Object.defineProperty(r, t, {
+function Ye(o, t, e) {
+  return t = fe(t), t in o ? Object.defineProperty(o, t, {
     value: e,
     enumerable: !0,
     configurable: !0,
     writable: !0
-  }) : r[t] = e, r;
+  }) : o[t] = e, o;
 }
-function Le(r) {
-  return hi(r) || ci(r) || di(r) || ui();
+function me(o) {
+  return qe(o) || Ge(o) || Ve(o) || Je();
 }
-function hi(r) {
-  if (Array.isArray(r)) return Yt(r);
+function qe(o) {
+  if (Array.isArray(o)) return _t(o);
 }
-function ci(r) {
-  if (typeof Symbol < "u" && r[Symbol.iterator] != null || r["@@iterator"] != null) return Array.from(r);
+function Ge(o) {
+  if (typeof Symbol < "u" && o[Symbol.iterator] != null || o["@@iterator"] != null) return Array.from(o);
 }
-function di(r, t) {
-  if (r) {
-    if (typeof r == "string") return Yt(r, t);
-    var e = Object.prototype.toString.call(r).slice(8, -1);
-    if (e === "Object" && r.constructor && (e = r.constructor.name), e === "Map" || e === "Set") return Array.from(r);
-    if (e === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)) return Yt(r, t);
+function Ve(o, t) {
+  if (o) {
+    if (typeof o == "string") return _t(o, t);
+    var e = Object.prototype.toString.call(o).slice(8, -1);
+    if (e === "Object" && o.constructor && (e = o.constructor.name), e === "Map" || e === "Set") return Array.from(o);
+    if (e === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)) return _t(o, t);
   }
 }
-function Yt(r, t) {
-  (t == null || t > r.length) && (t = r.length);
-  for (var e = 0, i = new Array(t); e < t; e++) i[e] = r[e];
+function _t(o, t) {
+  (t == null || t > o.length) && (t = o.length);
+  for (var e = 0, i = new Array(t); e < t; e++) i[e] = o[e];
   return i;
 }
-function ui() {
+function Je() {
   throw new TypeError(`Invalid attempt to spread non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-var Bt = typeof window < "u" && typeof window.document < "u", Y = Bt ? window : {}, ne = Bt && Y.document.documentElement ? "ontouchstart" in Y.document.documentElement : !1, oe = Bt ? "PointerEvent" in Y : !1, k = "cropper", se = "all", Pe = "crop", Be = "move", Ne = "zoom", rt = "e", lt = "w", pt = "s", tt = "n", wt = "ne", St = "nw", xt = "se", _t = "sw", Vt = "".concat(k, "-crop"), fe = "".concat(k, "-disabled"), N = "".concat(k, "-hidden"), me = "".concat(k, "-hide"), pi = "".concat(k, "-invisible"), Pt = "".concat(k, "-modal"), Jt = "".concat(k, "-move"), At = "".concat(k, "Action"), Tt = "".concat(k, "Preview"), ae = "crop", Ge = "move", He = "none", Zt = "crop", Kt = "cropend", Qt = "cropmove", te = "cropstart", ge = "dblclick", fi = ne ? "touchstart" : "mousedown", mi = ne ? "touchmove" : "mousemove", gi = ne ? "touchend touchcancel" : "mouseup", ve = oe ? "pointerdown" : fi, ye = oe ? "pointermove" : mi, be = oe ? "pointerup pointercancel" : gi, Ce = "ready", we = "resize", Se = "wheel", ee = "zoom", xe = "image/jpeg", vi = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, yi = /^data:/, bi = /^data:image\/jpeg;base64,/, Ci = /^img|canvas$/i, Fe = 200, Ue = 100, _e = {
+var wt = typeof window < "u" && typeof window.document < "u", z = wt ? window : {}, Bt = wt && z.document.documentElement ? "ontouchstart" in z.document.documentElement : !1, Ht = wt ? "PointerEvent" in z : !1, _ = "cropper", Ft = "all", ge = "crop", ve = "move", ye = "zoom", J = "e", Z = "w", tt = "s", X = "n", st = "ne", lt = "nw", ht = "se", ct = "sw", Tt = "".concat(_, "-crop"), Jt = "".concat(_, "-disabled"), N = "".concat(_, "-hidden"), Zt = "".concat(_, "-hide"), Ze = "".concat(_, "-invisible"), yt = "".concat(_, "-modal"), It = "".concat(_, "-move"), ut = "".concat(_, "Action"), mt = "".concat(_, "Preview"), Ut = "crop", we = "move", be = "none", At = "crop", Lt = "cropend", kt = "cropmove", Rt = "cropstart", Kt = "dblclick", Ke = Bt ? "touchstart" : "mousedown", Qe = Bt ? "touchmove" : "mousemove", ti = Bt ? "touchend touchcancel" : "mouseup", Qt = Ht ? "pointerdown" : Ke, te = Ht ? "pointermove" : Qe, ee = Ht ? "pointerup pointercancel" : ti, ie = "ready", re = "resize", ae = "wheel", Nt = "zoom", ne = "image/jpeg", ei = /^e|w|s|n|se|sw|ne|nw|all|crop|move|zoom$/, ii = /^data:/, ri = /^data:image\/jpeg;base64,/, ai = /^img|canvas$/i, Ce = 200, Se = 100, oe = {
   // Define the view mode of the cropper
   viewMode: 0,
   // 0, 1, 2, 3
   // Define the dragging mode of the cropper
-  dragMode: ae,
+  dragMode: Ut,
   // 'crop', 'move' or 'none'
   // Define the initial aspect ratio of the crop box
   initialAspectRatio: NaN,
@@ -1286,8 +1279,8 @@ var Bt = typeof window < "u" && typeof window.document < "u", Y = Bt ? window : 
   minCanvasHeight: 0,
   minCropBoxWidth: 0,
   minCropBoxHeight: 0,
-  minContainerWidth: Fe,
-  minContainerHeight: Ue,
+  minContainerWidth: Ce,
+  minContainerHeight: Se,
   // Shortcuts of events
   ready: null,
   cropstart: null,
@@ -1295,340 +1288,340 @@ var Bt = typeof window < "u" && typeof window.document < "u", Y = Bt ? window : 
   cropend: null,
   crop: null,
   zoom: null
-}, wi = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', Si = Number.isNaN || Y.isNaN;
-function A(r) {
-  return typeof r == "number" && !Si(r);
+}, ni = '<div class="cropper-container" touch-action="none"><div class="cropper-wrap-box"><div class="cropper-canvas"></div></div><div class="cropper-drag-box"></div><div class="cropper-crop-box"><span class="cropper-view-box"></span><span class="cropper-dashed dashed-h"></span><span class="cropper-dashed dashed-v"></span><span class="cropper-center"></span><span class="cropper-face"></span><span class="cropper-line line-e" data-cropper-action="e"></span><span class="cropper-line line-n" data-cropper-action="n"></span><span class="cropper-line line-w" data-cropper-action="w"></span><span class="cropper-line line-s" data-cropper-action="s"></span><span class="cropper-point point-e" data-cropper-action="e"></span><span class="cropper-point point-n" data-cropper-action="n"></span><span class="cropper-point point-w" data-cropper-action="w"></span><span class="cropper-point point-s" data-cropper-action="s"></span><span class="cropper-point point-ne" data-cropper-action="ne"></span><span class="cropper-point point-nw" data-cropper-action="nw"></span><span class="cropper-point point-sw" data-cropper-action="sw"></span><span class="cropper-point point-se" data-cropper-action="se"></span></div></div>', oi = Number.isNaN || z.isNaN;
+function O(o) {
+  return typeof o == "number" && !oi(o);
 }
-var Ie = function(t) {
+var se = function(t) {
   return t > 0 && t < 1 / 0;
 };
-function jt(r) {
-  return typeof r > "u";
+function xt(o) {
+  return typeof o > "u";
 }
-function ht(r) {
-  return Xt(r) === "object" && r !== null;
+function K(o) {
+  return Mt(o) === "object" && o !== null;
 }
-var xi = Object.prototype.hasOwnProperty;
-function ft(r) {
-  if (!ht(r))
+var si = Object.prototype.hasOwnProperty;
+function et(o) {
+  if (!K(o))
     return !1;
   try {
-    var t = r.constructor, e = t.prototype;
-    return t && e && xi.call(e, "isPrototypeOf");
+    var t = o.constructor, e = t.prototype;
+    return t && e && si.call(e, "isPrototypeOf");
   } catch {
     return !1;
   }
 }
-function B(r) {
-  return typeof r == "function";
+function R(o) {
+  return typeof o == "function";
 }
-var _i = Array.prototype.slice;
-function ze(r) {
-  return Array.from ? Array.from(r) : _i.call(r);
+var li = Array.prototype.slice;
+function xe(o) {
+  return Array.from ? Array.from(o) : li.call(o);
 }
-function T(r, t) {
-  return r && B(t) && (Array.isArray(r) || A(r.length) ? ze(r).forEach(function(e, i) {
-    t.call(r, e, i, r);
-  }) : ht(r) && Object.keys(r).forEach(function(e) {
-    t.call(r, r[e], e, r);
-  })), r;
+function I(o, t) {
+  return o && R(t) && (Array.isArray(o) || O(o.length) ? xe(o).forEach(function(e, i) {
+    t.call(o, e, i, o);
+  }) : K(o) && Object.keys(o).forEach(function(e) {
+    t.call(o, o[e], e, o);
+  })), o;
 }
-var R = Object.assign || function(t) {
-  for (var e = arguments.length, i = new Array(e > 1 ? e - 1 : 0), n = 1; n < e; n++)
-    i[n - 1] = arguments[n];
-  return ht(t) && i.length > 0 && i.forEach(function(o) {
-    ht(o) && Object.keys(o).forEach(function(s) {
-      t[s] = o[s];
+var T = Object.assign || function(t) {
+  for (var e = arguments.length, i = new Array(e > 1 ? e - 1 : 0), r = 1; r < e; r++)
+    i[r - 1] = arguments[r];
+  return K(t) && i.length > 0 && i.forEach(function(a) {
+    K(a) && Object.keys(a).forEach(function(n) {
+      t[n] = a[n];
     });
   }), t;
-}, Ii = /\.\d*(?:0|9){12}\d*$/;
-function gt(r) {
+}, hi = /\.\d*(?:0|9){12}\d*$/;
+function rt(o) {
   var t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 1e11;
-  return Ii.test(r) ? Math.round(r * t) / t : r;
+  return hi.test(o) ? Math.round(o * t) / t : o;
 }
-var Ai = /^width|height|left|top|marginLeft|marginTop$/;
-function et(r, t) {
-  var e = r.style;
-  T(t, function(i, n) {
-    Ai.test(n) && A(i) && (i = "".concat(i, "px")), e[n] = i;
+var ci = /^width|height|left|top|marginLeft|marginTop$/;
+function $(o, t) {
+  var e = o.style;
+  I(t, function(i, r) {
+    ci.test(r) && O(i) && (i = "".concat(i, "px")), e[r] = i;
   });
 }
-function Ei(r, t) {
-  return r.classList ? r.classList.contains(t) : r.className.indexOf(t) > -1;
+function di(o, t) {
+  return o.classList ? o.classList.contains(t) : o.className.indexOf(t) > -1;
 }
-function M(r, t) {
+function A(o, t) {
   if (t) {
-    if (A(r.length)) {
-      T(r, function(i) {
-        M(i, t);
+    if (O(o.length)) {
+      I(o, function(i) {
+        A(i, t);
       });
       return;
     }
-    if (r.classList) {
-      r.classList.add(t);
+    if (o.classList) {
+      o.classList.add(t);
       return;
     }
-    var e = r.className.trim();
-    e ? e.indexOf(t) < 0 && (r.className = "".concat(e, " ").concat(t)) : r.className = t;
+    var e = o.className.trim();
+    e ? e.indexOf(t) < 0 && (o.className = "".concat(e, " ").concat(t)) : o.className = t;
   }
 }
-function X(r, t) {
+function j(o, t) {
   if (t) {
-    if (A(r.length)) {
-      T(r, function(e) {
-        X(e, t);
+    if (O(o.length)) {
+      I(o, function(e) {
+        j(e, t);
       });
       return;
     }
-    if (r.classList) {
-      r.classList.remove(t);
+    if (o.classList) {
+      o.classList.remove(t);
       return;
     }
-    r.className.indexOf(t) >= 0 && (r.className = r.className.replace(t, ""));
+    o.className.indexOf(t) >= 0 && (o.className = o.className.replace(t, ""));
   }
 }
-function mt(r, t, e) {
+function it(o, t, e) {
   if (t) {
-    if (A(r.length)) {
-      T(r, function(i) {
-        mt(i, t, e);
+    if (O(o.length)) {
+      I(o, function(i) {
+        it(i, t, e);
       });
       return;
     }
-    e ? M(r, t) : X(r, t);
+    e ? A(o, t) : j(o, t);
   }
 }
-var ki = /([a-z\d])([A-Z])/g;
-function re(r) {
-  return r.replace(ki, "$1-$2").toLowerCase();
+var ui = /([a-z\d])([A-Z])/g;
+function jt(o) {
+  return o.replace(ui, "$1-$2").toLowerCase();
 }
-function ie(r, t) {
-  return ht(r[t]) ? r[t] : r.dataset ? r.dataset[t] : r.getAttribute("data-".concat(re(t)));
+function Pt(o, t) {
+  return K(o[t]) ? o[t] : o.dataset ? o.dataset[t] : o.getAttribute("data-".concat(jt(t)));
 }
-function Et(r, t, e) {
-  ht(e) ? r[t] = e : r.dataset ? r.dataset[t] = e : r.setAttribute("data-".concat(re(t)), e);
+function pt(o, t, e) {
+  K(e) ? o[t] = e : o.dataset ? o.dataset[t] = e : o.setAttribute("data-".concat(jt(t)), e);
 }
-function Ri(r, t) {
-  if (ht(r[t]))
+function pi(o, t) {
+  if (K(o[t]))
     try {
-      delete r[t];
+      delete o[t];
     } catch {
-      r[t] = void 0;
+      o[t] = void 0;
     }
-  else if (r.dataset)
+  else if (o.dataset)
     try {
-      delete r.dataset[t];
+      delete o.dataset[t];
     } catch {
-      r.dataset[t] = void 0;
+      o.dataset[t] = void 0;
     }
   else
-    r.removeAttribute("data-".concat(re(t)));
+    o.removeAttribute("data-".concat(jt(t)));
 }
-var je = /\s\s*/, $e = function() {
-  var r = !1;
-  if (Bt) {
+var Ee = /\s\s*/, De = function() {
+  var o = !1;
+  if (wt) {
     var t = !1, e = function() {
     }, i = Object.defineProperty({}, "once", {
       get: function() {
-        return r = !0, t;
+        return o = !0, t;
       },
       /**
        * This setter can fix a `TypeError` in strict mode
        * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Getter_only}
        * @param {boolean} value - The value to set
        */
-      set: function(o) {
-        t = o;
+      set: function(a) {
+        t = a;
       }
     });
-    Y.addEventListener("test", e, i), Y.removeEventListener("test", e, i);
+    z.addEventListener("test", e, i), z.removeEventListener("test", e, i);
   }
-  return r;
+  return o;
 }();
-function z(r, t, e) {
-  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = e;
-  t.trim().split(je).forEach(function(o) {
-    if (!$e) {
-      var s = r.listeners;
-      s && s[o] && s[o][e] && (n = s[o][e], delete s[o][e], Object.keys(s[o]).length === 0 && delete s[o], Object.keys(s).length === 0 && delete r.listeners);
+function H(o, t, e) {
+  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, r = e;
+  t.trim().split(Ee).forEach(function(a) {
+    if (!De) {
+      var n = o.listeners;
+      n && n[a] && n[a][e] && (r = n[a][e], delete n[a][e], Object.keys(n[a]).length === 0 && delete n[a], Object.keys(n).length === 0 && delete o.listeners);
     }
-    r.removeEventListener(o, n, i);
+    o.removeEventListener(a, r, i);
   });
 }
-function H(r, t, e) {
-  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = e;
-  t.trim().split(je).forEach(function(o) {
-    if (i.once && !$e) {
-      var s = r.listeners, a = s === void 0 ? {} : s;
-      n = function() {
-        delete a[o][e], r.removeEventListener(o, n, i);
+function B(o, t, e) {
+  var i = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, r = e;
+  t.trim().split(Ee).forEach(function(a) {
+    if (i.once && !De) {
+      var n = o.listeners, s = n === void 0 ? {} : n;
+      r = function() {
+        delete s[a][e], o.removeEventListener(a, r, i);
         for (var l = arguments.length, h = new Array(l), c = 0; c < l; c++)
           h[c] = arguments[c];
-        e.apply(r, h);
-      }, a[o] || (a[o] = {}), a[o][e] && r.removeEventListener(o, a[o][e], i), a[o][e] = n, r.listeners = a;
+        e.apply(o, h);
+      }, s[a] || (s[a] = {}), s[a][e] && o.removeEventListener(a, s[a][e], i), s[a][e] = r, o.listeners = s;
     }
-    r.addEventListener(o, n, i);
+    o.addEventListener(a, r, i);
   });
 }
-function vt(r, t, e) {
+function at(o, t, e) {
   var i;
-  return B(Event) && B(CustomEvent) ? i = new CustomEvent(t, {
+  return R(Event) && R(CustomEvent) ? i = new CustomEvent(t, {
     detail: e,
     bubbles: !0,
     cancelable: !0
-  }) : (i = document.createEvent("CustomEvent"), i.initCustomEvent(t, !0, !0, e)), r.dispatchEvent(i);
+  }) : (i = document.createEvent("CustomEvent"), i.initCustomEvent(t, !0, !0, e)), o.dispatchEvent(i);
 }
-function We(r) {
-  var t = r.getBoundingClientRect();
+function Oe(o) {
+  var t = o.getBoundingClientRect();
   return {
     left: t.left + (window.pageXOffset - document.documentElement.clientLeft),
     top: t.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
-var $t = Y.location, Oi = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
-function Ae(r) {
-  var t = r.match(Oi);
-  return t !== null && (t[1] !== $t.protocol || t[2] !== $t.hostname || t[3] !== $t.port);
+var Et = z.location, fi = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
+function le(o) {
+  var t = o.match(fi);
+  return t !== null && (t[1] !== Et.protocol || t[2] !== Et.hostname || t[3] !== Et.port);
 }
-function Ee(r) {
+function he(o) {
   var t = "timestamp=".concat((/* @__PURE__ */ new Date()).getTime());
-  return r + (r.indexOf("?") === -1 ? "?" : "&") + t;
+  return o + (o.indexOf("?") === -1 ? "?" : "&") + t;
 }
-function It(r) {
-  var t = r.rotate, e = r.scaleX, i = r.scaleY, n = r.translateX, o = r.translateY, s = [];
-  A(n) && n !== 0 && s.push("translateX(".concat(n, "px)")), A(o) && o !== 0 && s.push("translateY(".concat(o, "px)")), A(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), A(e) && e !== 1 && s.push("scaleX(".concat(e, ")")), A(i) && i !== 1 && s.push("scaleY(".concat(i, ")"));
-  var a = s.length ? s.join(" ") : "none";
+function dt(o) {
+  var t = o.rotate, e = o.scaleX, i = o.scaleY, r = o.translateX, a = o.translateY, n = [];
+  O(r) && r !== 0 && n.push("translateX(".concat(r, "px)")), O(a) && a !== 0 && n.push("translateY(".concat(a, "px)")), O(t) && t !== 0 && n.push("rotate(".concat(t, "deg)")), O(e) && e !== 1 && n.push("scaleX(".concat(e, ")")), O(i) && i !== 1 && n.push("scaleY(".concat(i, ")"));
+  var s = n.length ? n.join(" ") : "none";
   return {
-    WebkitTransform: a,
-    msTransform: a,
-    transform: a
+    WebkitTransform: s,
+    msTransform: s,
+    transform: s
   };
 }
-function Di(r) {
-  var t = Te({}, r), e = 0;
-  return T(r, function(i, n) {
-    delete t[n], T(t, function(o) {
-      var s = Math.abs(i.startX - o.startX), a = Math.abs(i.startY - o.startY), d = Math.abs(i.endX - o.endX), l = Math.abs(i.endY - o.endY), h = Math.sqrt(s * s + a * a), c = Math.sqrt(d * d + l * l), u = (c - h) / h;
+function mi(o) {
+  var t = pe({}, o), e = 0;
+  return I(o, function(i, r) {
+    delete t[r], I(t, function(a) {
+      var n = Math.abs(i.startX - a.startX), s = Math.abs(i.startY - a.startY), d = Math.abs(i.endX - a.endX), l = Math.abs(i.endY - a.endY), h = Math.sqrt(n * n + s * s), c = Math.sqrt(d * d + l * l), u = (c - h) / h;
       Math.abs(u) > Math.abs(e) && (e = u);
     });
   }), e;
 }
-function Mt(r, t) {
-  var e = r.pageX, i = r.pageY, n = {
+function gt(o, t) {
+  var e = o.pageX, i = o.pageY, r = {
     endX: e,
     endY: i
   };
-  return t ? n : Te({
+  return t ? r : pe({
     startX: e,
     startY: i
-  }, n);
+  }, r);
 }
-function Ti(r) {
+function gi(o) {
   var t = 0, e = 0, i = 0;
-  return T(r, function(n) {
-    var o = n.startX, s = n.startY;
-    t += o, e += s, i += 1;
+  return I(o, function(r) {
+    var a = r.startX, n = r.startY;
+    t += a, e += n, i += 1;
   }), t /= i, e /= i, {
     pageX: t,
     pageY: e
   };
 }
-function it(r) {
-  var t = r.aspectRatio, e = r.height, i = r.width, n = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", o = Ie(i), s = Ie(e);
-  if (o && s) {
-    var a = e * t;
-    n === "contain" && a > i || n === "cover" && a < i ? e = i / t : i = e * t;
-  } else o ? e = i / t : s && (i = e * t);
+function Y(o) {
+  var t = o.aspectRatio, e = o.height, i = o.width, r = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "contain", a = se(i), n = se(e);
+  if (a && n) {
+    var s = e * t;
+    r === "contain" && s > i || r === "cover" && s < i ? e = i / t : i = e * t;
+  } else a ? e = i / t : n && (i = e * t);
   return {
     width: i,
     height: e
   };
 }
-function Mi(r) {
-  var t = r.width, e = r.height, i = r.degree;
+function vi(o) {
+  var t = o.width, e = o.height, i = o.degree;
   if (i = Math.abs(i) % 180, i === 90)
     return {
       width: e,
       height: t
     };
-  var n = i % 90 * Math.PI / 180, o = Math.sin(n), s = Math.cos(n), a = t * s + e * o, d = t * o + e * s;
+  var r = i % 90 * Math.PI / 180, a = Math.sin(r), n = Math.cos(r), s = t * n + e * a, d = t * a + e * n;
   return i > 90 ? {
     width: d,
-    height: a
+    height: s
   } : {
-    width: a,
+    width: s,
     height: d
   };
 }
-function Li(r, t, e, i) {
-  var n = t.aspectRatio, o = t.naturalWidth, s = t.naturalHeight, a = t.rotate, d = a === void 0 ? 0 : a, l = t.scaleX, h = l === void 0 ? 1 : l, c = t.scaleY, u = c === void 0 ? 1 : c, b = e.aspectRatio, C = e.naturalWidth, p = e.naturalHeight, f = i.fillColor, g = f === void 0 ? "transparent" : f, v = i.imageSmoothingEnabled, w = v === void 0 ? !0 : v, x = i.imageSmoothingQuality, S = x === void 0 ? "low" : x, m = i.maxWidth, _ = m === void 0 ? 1 / 0 : m, I = i.maxHeight, E = I === void 0 ? 1 / 0 : I, O = i.minWidth, W = O === void 0 ? 0 : O, q = i.minHeight, F = q === void 0 ? 0 : q, G = document.createElement("canvas"), D = G.getContext("2d"), P = it({
-    aspectRatio: b,
-    width: _,
-    height: E
-  }), U = it({
-    aspectRatio: b,
-    width: W,
-    height: F
-  }, "cover"), ct = Math.min(P.width, Math.max(U.width, C)), dt = Math.min(P.height, Math.max(U.height, p)), nt = it({
-    aspectRatio: n,
-    width: _,
-    height: E
-  }), V = it({
-    aspectRatio: n,
-    width: W,
-    height: F
-  }, "cover"), J = Math.min(nt.width, Math.max(V.width, o)), ot = Math.min(nt.height, Math.max(V.height, s)), yt = [-J / 2, -ot / 2, J, ot];
-  return G.width = gt(ct), G.height = gt(dt), D.fillStyle = g, D.fillRect(0, 0, ct, dt), D.save(), D.translate(ct / 2, dt / 2), D.rotate(d * Math.PI / 180), D.scale(h, u), D.imageSmoothingEnabled = w, D.imageSmoothingQuality = S, D.drawImage.apply(D, [r].concat(Le(yt.map(function(st) {
-    return Math.floor(gt(st));
-  })))), D.restore(), G;
+function yi(o, t, e, i) {
+  var r = t.aspectRatio, a = t.naturalWidth, n = t.naturalHeight, s = t.rotate, d = s === void 0 ? 0 : s, l = t.scaleX, h = l === void 0 ? 1 : l, c = t.scaleY, u = c === void 0 ? 1 : c, y = e.aspectRatio, w = e.naturalWidth, p = e.naturalHeight, f = i.fillColor, v = f === void 0 ? "transparent" : f, g = i.imageSmoothingEnabled, b = g === void 0 ? !0 : g, S = i.imageSmoothingQuality, C = S === void 0 ? "low" : S, m = i.maxWidth, x = m === void 0 ? 1 / 0 : m, E = i.maxHeight, M = E === void 0 ? 1 / 0 : E, P = i.minWidth, q = P === void 0 ? 0 : P, G = i.minHeight, W = G === void 0 ? 0 : G, U = document.createElement("canvas"), k = U.getContext("2d"), V = Y({
+    aspectRatio: y,
+    width: x,
+    height: M
+  }), ft = Y({
+    aspectRatio: y,
+    width: q,
+    height: W
+  }, "cover"), bt = Math.min(V.width, Math.max(ft.width, w)), Ct = Math.min(V.height, Math.max(ft.height, p)), zt = Y({
+    aspectRatio: r,
+    width: x,
+    height: M
+  }), Wt = Y({
+    aspectRatio: r,
+    width: q,
+    height: W
+  }, "cover"), Xt = Math.min(zt.width, Math.max(Wt.width, a)), $t = Math.min(zt.height, Math.max(Wt.height, n)), Te = [-Xt / 2, -$t / 2, Xt, $t];
+  return U.width = rt(bt), U.height = rt(Ct), k.fillStyle = v, k.fillRect(0, 0, bt, Ct), k.save(), k.translate(bt / 2, Ct / 2), k.rotate(d * Math.PI / 180), k.scale(h, u), k.imageSmoothingEnabled = b, k.imageSmoothingQuality = C, k.drawImage.apply(k, [o].concat(me(Te.map(function(Ie) {
+    return Math.floor(rt(Ie));
+  })))), k.restore(), U;
 }
-var qe = String.fromCharCode;
-function Pi(r, t, e) {
+var Me = String.fromCharCode;
+function wi(o, t, e) {
   var i = "";
   e += t;
-  for (var n = t; n < e; n += 1)
-    i += qe(r.getUint8(n));
+  for (var r = t; r < e; r += 1)
+    i += Me(o.getUint8(r));
   return i;
 }
-var Bi = /^data:.*,/;
-function Ni(r) {
-  var t = r.replace(Bi, ""), e = atob(t), i = new ArrayBuffer(e.length), n = new Uint8Array(i);
-  return T(n, function(o, s) {
-    n[s] = e.charCodeAt(s);
+var bi = /^data:.*,/;
+function Ci(o) {
+  var t = o.replace(bi, ""), e = atob(t), i = new ArrayBuffer(e.length), r = new Uint8Array(i);
+  return I(r, function(a, n) {
+    r[n] = e.charCodeAt(n);
   }), i;
 }
-function Gi(r, t) {
-  for (var e = [], i = 8192, n = new Uint8Array(r); n.length > 0; )
-    e.push(qe.apply(null, ze(n.subarray(0, i)))), n = n.subarray(i);
+function Si(o, t) {
+  for (var e = [], i = 8192, r = new Uint8Array(o); r.length > 0; )
+    e.push(Me.apply(null, xe(r.subarray(0, i)))), r = r.subarray(i);
   return "data:".concat(t, ";base64,").concat(btoa(e.join("")));
 }
-function Hi(r) {
-  var t = new DataView(r), e;
+function xi(o) {
+  var t = new DataView(o), e;
   try {
-    var i, n, o;
+    var i, r, a;
     if (t.getUint8(0) === 255 && t.getUint8(1) === 216)
-      for (var s = t.byteLength, a = 2; a + 1 < s; ) {
-        if (t.getUint8(a) === 255 && t.getUint8(a + 1) === 225) {
-          n = a;
+      for (var n = t.byteLength, s = 2; s + 1 < n; ) {
+        if (t.getUint8(s) === 255 && t.getUint8(s + 1) === 225) {
+          r = s;
           break;
         }
-        a += 1;
+        s += 1;
       }
-    if (n) {
-      var d = n + 4, l = n + 10;
-      if (Pi(t, d, 4) === "Exif") {
+    if (r) {
+      var d = r + 4, l = r + 10;
+      if (wi(t, d, 4) === "Exif") {
         var h = t.getUint16(l);
         if (i = h === 18761, (i || h === 19789) && t.getUint16(l + 2, i) === 42) {
           var c = t.getUint32(l + 4, i);
-          c >= 8 && (o = l + c);
+          c >= 8 && (a = l + c);
         }
       }
     }
-    if (o) {
-      var u = t.getUint16(o, i), b, C;
-      for (C = 0; C < u; C += 1)
-        if (b = o + C * 12 + 2, t.getUint16(b, i) === 274) {
-          b += 8, e = t.getUint16(b, i), t.setUint16(b, 1, i);
+    if (a) {
+      var u = t.getUint16(a, i), y, w;
+      for (w = 0; w < u; w += 1)
+        if (y = a + w * 12 + 2, t.getUint16(y, i) === 274) {
+          y += 8, e = t.getUint16(y, i), t.setUint16(y, 1, i);
           break;
         }
     }
@@ -1637,9 +1630,9 @@ function Hi(r) {
   }
   return e;
 }
-function Fi(r) {
+function Ei(o) {
   var t = 0, e = 1, i = 1;
-  switch (r) {
+  switch (o) {
     case 2:
       e = -1;
       break;
@@ -1668,369 +1661,369 @@ function Fi(r) {
     scaleY: i
   };
 }
-var Ui = {
+var Di = {
   render: function() {
     this.initContainer(), this.initCanvas(), this.initCropBox(), this.renderCanvas(), this.cropped && this.renderCropBox();
   },
   initContainer: function() {
-    var t = this.element, e = this.options, i = this.container, n = this.cropper, o = Number(e.minContainerWidth), s = Number(e.minContainerHeight);
-    M(n, N), X(t, N);
-    var a = {
-      width: Math.max(i.offsetWidth, o >= 0 ? o : Fe),
-      height: Math.max(i.offsetHeight, s >= 0 ? s : Ue)
+    var t = this.element, e = this.options, i = this.container, r = this.cropper, a = Number(e.minContainerWidth), n = Number(e.minContainerHeight);
+    A(r, N), j(t, N);
+    var s = {
+      width: Math.max(i.offsetWidth, a >= 0 ? a : Ce),
+      height: Math.max(i.offsetHeight, n >= 0 ? n : Se)
     };
-    this.containerData = a, et(n, {
-      width: a.width,
-      height: a.height
-    }), M(t, N), X(n, N);
+    this.containerData = s, $(r, {
+      width: s.width,
+      height: s.height
+    }), A(t, N), j(r, N);
   },
   // Canvas (image wrapper)
   initCanvas: function() {
-    var t = this.containerData, e = this.imageData, i = this.options.viewMode, n = Math.abs(e.rotate) % 180 === 90, o = n ? e.naturalHeight : e.naturalWidth, s = n ? e.naturalWidth : e.naturalHeight, a = o / s, d = t.width, l = t.height;
-    t.height * a > t.width ? i === 3 ? d = t.height * a : l = t.width / a : i === 3 ? l = t.width / a : d = t.height * a;
+    var t = this.containerData, e = this.imageData, i = this.options.viewMode, r = Math.abs(e.rotate) % 180 === 90, a = r ? e.naturalHeight : e.naturalWidth, n = r ? e.naturalWidth : e.naturalHeight, s = a / n, d = t.width, l = t.height;
+    t.height * s > t.width ? i === 3 ? d = t.height * s : l = t.width / s : i === 3 ? l = t.width / s : d = t.height * s;
     var h = {
-      aspectRatio: a,
-      naturalWidth: o,
-      naturalHeight: s,
+      aspectRatio: s,
+      naturalWidth: a,
+      naturalHeight: n,
       width: d,
       height: l
     };
-    this.canvasData = h, this.limited = i === 1 || i === 2, this.limitCanvas(!0, !0), h.width = Math.min(Math.max(h.width, h.minWidth), h.maxWidth), h.height = Math.min(Math.max(h.height, h.minHeight), h.maxHeight), h.left = (t.width - h.width) / 2, h.top = (t.height - h.height) / 2, h.oldLeft = h.left, h.oldTop = h.top, this.initialCanvasData = R({}, h);
+    this.canvasData = h, this.limited = i === 1 || i === 2, this.limitCanvas(!0, !0), h.width = Math.min(Math.max(h.width, h.minWidth), h.maxWidth), h.height = Math.min(Math.max(h.height, h.minHeight), h.maxHeight), h.left = (t.width - h.width) / 2, h.top = (t.height - h.height) / 2, h.oldLeft = h.left, h.oldTop = h.top, this.initialCanvasData = T({}, h);
   },
   limitCanvas: function(t, e) {
-    var i = this.options, n = this.containerData, o = this.canvasData, s = this.cropBoxData, a = i.viewMode, d = o.aspectRatio, l = this.cropped && s;
+    var i = this.options, r = this.containerData, a = this.canvasData, n = this.cropBoxData, s = i.viewMode, d = a.aspectRatio, l = this.cropped && n;
     if (t) {
       var h = Number(i.minCanvasWidth) || 0, c = Number(i.minCanvasHeight) || 0;
-      a > 1 ? (h = Math.max(h, n.width), c = Math.max(c, n.height), a === 3 && (c * d > h ? h = c * d : c = h / d)) : a > 0 && (h ? h = Math.max(h, l ? s.width : 0) : c ? c = Math.max(c, l ? s.height : 0) : l && (h = s.width, c = s.height, c * d > h ? h = c * d : c = h / d));
-      var u = it({
+      s > 1 ? (h = Math.max(h, r.width), c = Math.max(c, r.height), s === 3 && (c * d > h ? h = c * d : c = h / d)) : s > 0 && (h ? h = Math.max(h, l ? n.width : 0) : c ? c = Math.max(c, l ? n.height : 0) : l && (h = n.width, c = n.height, c * d > h ? h = c * d : c = h / d));
+      var u = Y({
         aspectRatio: d,
         width: h,
         height: c
       });
-      h = u.width, c = u.height, o.minWidth = h, o.minHeight = c, o.maxWidth = 1 / 0, o.maxHeight = 1 / 0;
+      h = u.width, c = u.height, a.minWidth = h, a.minHeight = c, a.maxWidth = 1 / 0, a.maxHeight = 1 / 0;
     }
     if (e)
-      if (a > (l ? 0 : 1)) {
-        var b = n.width - o.width, C = n.height - o.height;
-        o.minLeft = Math.min(0, b), o.minTop = Math.min(0, C), o.maxLeft = Math.max(0, b), o.maxTop = Math.max(0, C), l && this.limited && (o.minLeft = Math.min(s.left, s.left + (s.width - o.width)), o.minTop = Math.min(s.top, s.top + (s.height - o.height)), o.maxLeft = s.left, o.maxTop = s.top, a === 2 && (o.width >= n.width && (o.minLeft = Math.min(0, b), o.maxLeft = Math.max(0, b)), o.height >= n.height && (o.minTop = Math.min(0, C), o.maxTop = Math.max(0, C))));
+      if (s > (l ? 0 : 1)) {
+        var y = r.width - a.width, w = r.height - a.height;
+        a.minLeft = Math.min(0, y), a.minTop = Math.min(0, w), a.maxLeft = Math.max(0, y), a.maxTop = Math.max(0, w), l && this.limited && (a.minLeft = Math.min(n.left, n.left + (n.width - a.width)), a.minTop = Math.min(n.top, n.top + (n.height - a.height)), a.maxLeft = n.left, a.maxTop = n.top, s === 2 && (a.width >= r.width && (a.minLeft = Math.min(0, y), a.maxLeft = Math.max(0, y)), a.height >= r.height && (a.minTop = Math.min(0, w), a.maxTop = Math.max(0, w))));
       } else
-        o.minLeft = -o.width, o.minTop = -o.height, o.maxLeft = n.width, o.maxTop = n.height;
+        a.minLeft = -a.width, a.minTop = -a.height, a.maxLeft = r.width, a.maxTop = r.height;
   },
   renderCanvas: function(t, e) {
-    var i = this.canvasData, n = this.imageData;
+    var i = this.canvasData, r = this.imageData;
     if (e) {
-      var o = Mi({
-        width: n.naturalWidth * Math.abs(n.scaleX || 1),
-        height: n.naturalHeight * Math.abs(n.scaleY || 1),
-        degree: n.rotate || 0
-      }), s = o.width, a = o.height, d = i.width * (s / i.naturalWidth), l = i.height * (a / i.naturalHeight);
-      i.left -= (d - i.width) / 2, i.top -= (l - i.height) / 2, i.width = d, i.height = l, i.aspectRatio = s / a, i.naturalWidth = s, i.naturalHeight = a, this.limitCanvas(!0, !1);
+      var a = vi({
+        width: r.naturalWidth * Math.abs(r.scaleX || 1),
+        height: r.naturalHeight * Math.abs(r.scaleY || 1),
+        degree: r.rotate || 0
+      }), n = a.width, s = a.height, d = i.width * (n / i.naturalWidth), l = i.height * (s / i.naturalHeight);
+      i.left -= (d - i.width) / 2, i.top -= (l - i.height) / 2, i.width = d, i.height = l, i.aspectRatio = n / s, i.naturalWidth = n, i.naturalHeight = s, this.limitCanvas(!0, !1);
     }
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, et(this.canvas, R({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCanvas(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, $(this.canvas, T({
       width: i.width,
       height: i.height
-    }, It({
+    }, dt({
       translateX: i.left,
       translateY: i.top
     }))), this.renderImage(t), this.cropped && this.limited && this.limitCropBox(!0, !0);
   },
   renderImage: function(t) {
-    var e = this.canvasData, i = this.imageData, n = i.naturalWidth * (e.width / e.naturalWidth), o = i.naturalHeight * (e.height / e.naturalHeight);
-    R(i, {
-      width: n,
-      height: o,
-      left: (e.width - n) / 2,
-      top: (e.height - o) / 2
-    }), et(this.image, R({
+    var e = this.canvasData, i = this.imageData, r = i.naturalWidth * (e.width / e.naturalWidth), a = i.naturalHeight * (e.height / e.naturalHeight);
+    T(i, {
+      width: r,
+      height: a,
+      left: (e.width - r) / 2,
+      top: (e.height - a) / 2
+    }), $(this.image, T({
       width: i.width,
       height: i.height
-    }, It(R({
+    }, dt(T({
       translateX: i.left,
       translateY: i.top
     }, i)))), t && this.output();
   },
   initCropBox: function() {
-    var t = this.options, e = this.canvasData, i = t.aspectRatio || t.initialAspectRatio, n = Number(t.autoCropArea) || 0.8, o = {
+    var t = this.options, e = this.canvasData, i = t.aspectRatio || t.initialAspectRatio, r = Number(t.autoCropArea) || 0.8, a = {
       width: e.width,
       height: e.height
     };
-    i && (e.height * i > e.width ? o.height = o.width / i : o.width = o.height * i), this.cropBoxData = o, this.limitCropBox(!0, !0), o.width = Math.min(Math.max(o.width, o.minWidth), o.maxWidth), o.height = Math.min(Math.max(o.height, o.minHeight), o.maxHeight), o.width = Math.max(o.minWidth, o.width * n), o.height = Math.max(o.minHeight, o.height * n), o.left = e.left + (e.width - o.width) / 2, o.top = e.top + (e.height - o.height) / 2, o.oldLeft = o.left, o.oldTop = o.top, this.initialCropBoxData = R({}, o);
+    i && (e.height * i > e.width ? a.height = a.width / i : a.width = a.height * i), this.cropBoxData = a, this.limitCropBox(!0, !0), a.width = Math.min(Math.max(a.width, a.minWidth), a.maxWidth), a.height = Math.min(Math.max(a.height, a.minHeight), a.maxHeight), a.width = Math.max(a.minWidth, a.width * r), a.height = Math.max(a.minHeight, a.height * r), a.left = e.left + (e.width - a.width) / 2, a.top = e.top + (e.height - a.height) / 2, a.oldLeft = a.left, a.oldTop = a.top, this.initialCropBoxData = T({}, a);
   },
   limitCropBox: function(t, e) {
-    var i = this.options, n = this.containerData, o = this.canvasData, s = this.cropBoxData, a = this.limited, d = i.aspectRatio;
+    var i = this.options, r = this.containerData, a = this.canvasData, n = this.cropBoxData, s = this.limited, d = i.aspectRatio;
     if (t) {
-      var l = Number(i.minCropBoxWidth) || 0, h = Number(i.minCropBoxHeight) || 0, c = a ? Math.min(n.width, o.width, o.width + o.left, n.width - o.left) : n.width, u = a ? Math.min(n.height, o.height, o.height + o.top, n.height - o.top) : n.height;
-      l = Math.min(l, n.width), h = Math.min(h, n.height), d && (l && h ? h * d > l ? h = l / d : l = h * d : l ? h = l / d : h && (l = h * d), u * d > c ? u = c / d : c = u * d), s.minWidth = Math.min(l, c), s.minHeight = Math.min(h, u), s.maxWidth = c, s.maxHeight = u;
+      var l = Number(i.minCropBoxWidth) || 0, h = Number(i.minCropBoxHeight) || 0, c = s ? Math.min(r.width, a.width, a.width + a.left, r.width - a.left) : r.width, u = s ? Math.min(r.height, a.height, a.height + a.top, r.height - a.top) : r.height;
+      l = Math.min(l, r.width), h = Math.min(h, r.height), d && (l && h ? h * d > l ? h = l / d : l = h * d : l ? h = l / d : h && (l = h * d), u * d > c ? u = c / d : c = u * d), n.minWidth = Math.min(l, c), n.minHeight = Math.min(h, u), n.maxWidth = c, n.maxHeight = u;
     }
-    e && (a ? (s.minLeft = Math.max(0, o.left), s.minTop = Math.max(0, o.top), s.maxLeft = Math.min(n.width, o.left + o.width) - s.width, s.maxTop = Math.min(n.height, o.top + o.height) - s.height) : (s.minLeft = 0, s.minTop = 0, s.maxLeft = n.width - s.width, s.maxTop = n.height - s.height));
+    e && (s ? (n.minLeft = Math.max(0, a.left), n.minTop = Math.max(0, a.top), n.maxLeft = Math.min(r.width, a.left + a.width) - n.width, n.maxTop = Math.min(r.height, a.top + a.height) - n.height) : (n.minLeft = 0, n.minTop = 0, n.maxLeft = r.width - n.width, n.maxTop = r.height - n.height));
   },
   renderCropBox: function() {
     var t = this.options, e = this.containerData, i = this.cropBoxData;
-    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && Et(this.face, At, i.width >= e.width && i.height >= e.height ? Be : se), et(this.cropBox, R({
+    (i.width > i.maxWidth || i.width < i.minWidth) && (i.left = i.oldLeft), (i.height > i.maxHeight || i.height < i.minHeight) && (i.top = i.oldTop), i.width = Math.min(Math.max(i.width, i.minWidth), i.maxWidth), i.height = Math.min(Math.max(i.height, i.minHeight), i.maxHeight), this.limitCropBox(!1, !0), i.left = Math.min(Math.max(i.left, i.minLeft), i.maxLeft), i.top = Math.min(Math.max(i.top, i.minTop), i.maxTop), i.oldLeft = i.left, i.oldTop = i.top, t.movable && t.cropBoxMovable && pt(this.face, ut, i.width >= e.width && i.height >= e.height ? ve : Ft), $(this.cropBox, T({
       width: i.width,
       height: i.height
-    }, It({
+    }, dt({
       translateX: i.left,
       translateY: i.top
     }))), this.cropped && this.limited && this.limitCanvas(!0, !0), this.disabled || this.output();
   },
   output: function() {
-    this.preview(), vt(this.element, Zt, this.getData());
+    this.preview(), at(this.element, At, this.getData());
   }
-}, zi = {
+}, Oi = {
   initPreview: function() {
-    var t = this.element, e = this.crossOrigin, i = this.options.preview, n = e ? this.crossOriginUrl : this.url, o = t.alt || "The image to preview", s = document.createElement("img");
-    if (e && (s.crossOrigin = e), s.src = n, s.alt = o, this.viewBox.appendChild(s), this.viewBoxImage = s, !!i) {
-      var a = i;
-      typeof i == "string" ? a = t.ownerDocument.querySelectorAll(i) : i.querySelector && (a = [i]), this.previews = a, T(a, function(d) {
+    var t = this.element, e = this.crossOrigin, i = this.options.preview, r = e ? this.crossOriginUrl : this.url, a = t.alt || "The image to preview", n = document.createElement("img");
+    if (e && (n.crossOrigin = e), n.src = r, n.alt = a, this.viewBox.appendChild(n), this.viewBoxImage = n, !!i) {
+      var s = i;
+      typeof i == "string" ? s = t.ownerDocument.querySelectorAll(i) : i.querySelector && (s = [i]), this.previews = s, I(s, function(d) {
         var l = document.createElement("img");
-        Et(d, Tt, {
+        pt(d, mt, {
           width: d.offsetWidth,
           height: d.offsetHeight,
           html: d.innerHTML
-        }), e && (l.crossOrigin = e), l.src = n, l.alt = o, l.style.cssText = 'display:block;width:100%;height:auto;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation:0deg!important;"', d.innerHTML = "", d.appendChild(l);
+        }), e && (l.crossOrigin = e), l.src = r, l.alt = a, l.style.cssText = 'display:block;width:100%;height:auto;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;image-orientation:0deg!important;"', d.innerHTML = "", d.appendChild(l);
       });
     }
   },
   resetPreview: function() {
-    T(this.previews, function(t) {
-      var e = ie(t, Tt);
-      et(t, {
+    I(this.previews, function(t) {
+      var e = Pt(t, mt);
+      $(t, {
         width: e.width,
         height: e.height
-      }), t.innerHTML = e.html, Ri(t, Tt);
+      }), t.innerHTML = e.html, pi(t, mt);
     });
   },
   preview: function() {
-    var t = this.imageData, e = this.canvasData, i = this.cropBoxData, n = i.width, o = i.height, s = t.width, a = t.height, d = i.left - e.left - t.left, l = i.top - e.top - t.top;
-    !this.cropped || this.disabled || (et(this.viewBoxImage, R({
-      width: s,
-      height: a
-    }, It(R({
+    var t = this.imageData, e = this.canvasData, i = this.cropBoxData, r = i.width, a = i.height, n = t.width, s = t.height, d = i.left - e.left - t.left, l = i.top - e.top - t.top;
+    !this.cropped || this.disabled || ($(this.viewBoxImage, T({
+      width: n,
+      height: s
+    }, dt(T({
       translateX: -d,
       translateY: -l
-    }, t)))), T(this.previews, function(h) {
-      var c = ie(h, Tt), u = c.width, b = c.height, C = u, p = b, f = 1;
-      n && (f = u / n, p = o * f), o && p > b && (f = b / o, C = n * f, p = b), et(h, {
-        width: C,
+    }, t)))), I(this.previews, function(h) {
+      var c = Pt(h, mt), u = c.width, y = c.height, w = u, p = y, f = 1;
+      r && (f = u / r, p = a * f), a && p > y && (f = y / a, w = r * f, p = y), $(h, {
+        width: w,
         height: p
-      }), et(h.getElementsByTagName("img")[0], R({
-        width: s * f,
-        height: a * f
-      }, It(R({
+      }), $(h.getElementsByTagName("img")[0], T({
+        width: n * f,
+        height: s * f
+      }, dt(T({
         translateX: -d * f,
         translateY: -l * f
       }, t))));
     }));
   }
-}, ji = {
+}, Mi = {
   bind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    B(e.cropstart) && H(t, te, e.cropstart), B(e.cropmove) && H(t, Qt, e.cropmove), B(e.cropend) && H(t, Kt, e.cropend), B(e.crop) && H(t, Zt, e.crop), B(e.zoom) && H(t, ee, e.zoom), H(i, ve, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && H(i, Se, this.onWheel = this.wheel.bind(this), {
+    R(e.cropstart) && B(t, Rt, e.cropstart), R(e.cropmove) && B(t, kt, e.cropmove), R(e.cropend) && B(t, Lt, e.cropend), R(e.crop) && B(t, At, e.crop), R(e.zoom) && B(t, Nt, e.zoom), B(i, Qt, this.onCropStart = this.cropStart.bind(this)), e.zoomable && e.zoomOnWheel && B(i, ae, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && H(i, ge, this.onDblclick = this.dblclick.bind(this)), H(t.ownerDocument, ye, this.onCropMove = this.cropMove.bind(this)), H(t.ownerDocument, be, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && H(window, we, this.onResize = this.resize.bind(this));
+    }), e.toggleDragModeOnDblclick && B(i, Kt, this.onDblclick = this.dblclick.bind(this)), B(t.ownerDocument, te, this.onCropMove = this.cropMove.bind(this)), B(t.ownerDocument, ee, this.onCropEnd = this.cropEnd.bind(this)), e.responsive && B(window, re, this.onResize = this.resize.bind(this));
   },
   unbind: function() {
     var t = this.element, e = this.options, i = this.cropper;
-    B(e.cropstart) && z(t, te, e.cropstart), B(e.cropmove) && z(t, Qt, e.cropmove), B(e.cropend) && z(t, Kt, e.cropend), B(e.crop) && z(t, Zt, e.crop), B(e.zoom) && z(t, ee, e.zoom), z(i, ve, this.onCropStart), e.zoomable && e.zoomOnWheel && z(i, Se, this.onWheel, {
+    R(e.cropstart) && H(t, Rt, e.cropstart), R(e.cropmove) && H(t, kt, e.cropmove), R(e.cropend) && H(t, Lt, e.cropend), R(e.crop) && H(t, At, e.crop), R(e.zoom) && H(t, Nt, e.zoom), H(i, Qt, this.onCropStart), e.zoomable && e.zoomOnWheel && H(i, ae, this.onWheel, {
       passive: !1,
       capture: !0
-    }), e.toggleDragModeOnDblclick && z(i, ge, this.onDblclick), z(t.ownerDocument, ye, this.onCropMove), z(t.ownerDocument, be, this.onCropEnd), e.responsive && z(window, we, this.onResize);
+    }), e.toggleDragModeOnDblclick && H(i, Kt, this.onDblclick), H(t.ownerDocument, te, this.onCropMove), H(t.ownerDocument, ee, this.onCropEnd), e.responsive && H(window, re, this.onResize);
   }
-}, $i = {
+}, _i = {
   resize: function() {
     if (!this.disabled) {
-      var t = this.options, e = this.container, i = this.containerData, n = e.offsetWidth / i.width, o = e.offsetHeight / i.height, s = Math.abs(n - 1) > Math.abs(o - 1) ? n : o;
-      if (s !== 1) {
-        var a, d;
-        t.restore && (a = this.getCanvasData(), d = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(T(a, function(l, h) {
-          a[h] = l * s;
-        })), this.setCropBoxData(T(d, function(l, h) {
-          d[h] = l * s;
+      var t = this.options, e = this.container, i = this.containerData, r = e.offsetWidth / i.width, a = e.offsetHeight / i.height, n = Math.abs(r - 1) > Math.abs(a - 1) ? r : a;
+      if (n !== 1) {
+        var s, d;
+        t.restore && (s = this.getCanvasData(), d = this.getCropBoxData()), this.render(), t.restore && (this.setCanvasData(I(s, function(l, h) {
+          s[h] = l * n;
+        })), this.setCropBoxData(I(d, function(l, h) {
+          d[h] = l * n;
         })));
       }
     }
   },
   dblclick: function() {
-    this.disabled || this.options.dragMode === He || this.setDragMode(Ei(this.dragBox, Vt) ? Ge : ae);
+    this.disabled || this.options.dragMode === be || this.setDragMode(di(this.dragBox, Tt) ? we : Ut);
   },
   wheel: function(t) {
-    var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, n = 1;
+    var e = this, i = Number(this.options.wheelZoomRatio) || 0.1, r = 1;
     this.disabled || (t.preventDefault(), !this.wheeling && (this.wheeling = !0, setTimeout(function() {
       e.wheeling = !1;
-    }, 50), t.deltaY ? n = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? n = -t.wheelDelta / 120 : t.detail && (n = t.detail > 0 ? 1 : -1), this.zoom(-n * i, t)));
+    }, 50), t.deltaY ? r = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? r = -t.wheelDelta / 120 : t.detail && (r = t.detail > 0 ? 1 : -1), this.zoom(-r * i, t)));
   },
   cropStart: function(t) {
     var e = t.buttons, i = t.button;
     if (!(this.disabled || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
-    (A(e) && e !== 1 || A(i) && i !== 0 || t.ctrlKey))) {
-      var n = this.options, o = this.pointers, s;
-      t.changedTouches ? T(t.changedTouches, function(a) {
-        o[a.identifier] = Mt(a);
-      }) : o[t.pointerId || 0] = Mt(t), Object.keys(o).length > 1 && n.zoomable && n.zoomOnTouch ? s = Ne : s = ie(t.target, At), vi.test(s) && vt(this.element, te, {
+    (O(e) && e !== 1 || O(i) && i !== 0 || t.ctrlKey))) {
+      var r = this.options, a = this.pointers, n;
+      t.changedTouches ? I(t.changedTouches, function(s) {
+        a[s.identifier] = gt(s);
+      }) : a[t.pointerId || 0] = gt(t), Object.keys(a).length > 1 && r.zoomable && r.zoomOnTouch ? n = ye : n = Pt(t.target, ut), ei.test(n) && at(this.element, Rt, {
         originalEvent: t,
-        action: s
-      }) !== !1 && (t.preventDefault(), this.action = s, this.cropping = !1, s === Pe && (this.cropping = !0, M(this.dragBox, Pt)));
+        action: n
+      }) !== !1 && (t.preventDefault(), this.action = n, this.cropping = !1, n === ge && (this.cropping = !0, A(this.dragBox, yt)));
     }
   },
   cropMove: function(t) {
     var e = this.action;
     if (!(this.disabled || !e)) {
       var i = this.pointers;
-      t.preventDefault(), vt(this.element, Qt, {
+      t.preventDefault(), at(this.element, kt, {
         originalEvent: t,
         action: e
-      }) !== !1 && (t.changedTouches ? T(t.changedTouches, function(n) {
-        R(i[n.identifier] || {}, Mt(n, !0));
-      }) : R(i[t.pointerId || 0] || {}, Mt(t, !0)), this.change(t));
+      }) !== !1 && (t.changedTouches ? I(t.changedTouches, function(r) {
+        T(i[r.identifier] || {}, gt(r, !0));
+      }) : T(i[t.pointerId || 0] || {}, gt(t, !0)), this.change(t));
     }
   },
   cropEnd: function(t) {
     if (!this.disabled) {
       var e = this.action, i = this.pointers;
-      t.changedTouches ? T(t.changedTouches, function(n) {
-        delete i[n.identifier];
-      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, mt(this.dragBox, Pt, this.cropped && this.options.modal)), vt(this.element, Kt, {
+      t.changedTouches ? I(t.changedTouches, function(r) {
+        delete i[r.identifier];
+      }) : delete i[t.pointerId || 0], e && (t.preventDefault(), Object.keys(i).length || (this.action = ""), this.cropping && (this.cropping = !1, it(this.dragBox, yt, this.cropped && this.options.modal)), at(this.element, Lt, {
         originalEvent: t,
         action: e
       }));
     }
   }
-}, Wi = {
+}, Ti = {
   change: function(t) {
-    var e = this.options, i = this.canvasData, n = this.containerData, o = this.cropBoxData, s = this.pointers, a = this.action, d = e.aspectRatio, l = o.left, h = o.top, c = o.width, u = o.height, b = l + c, C = h + u, p = 0, f = 0, g = n.width, v = n.height, w = !0, x;
-    !d && t.shiftKey && (d = c && u ? c / u : 1), this.limited && (p = o.minLeft, f = o.minTop, g = p + Math.min(n.width, i.width, i.left + i.width), v = f + Math.min(n.height, i.height, i.top + i.height));
-    var S = s[Object.keys(s)[0]], m = {
-      x: S.endX - S.startX,
-      y: S.endY - S.startY
-    }, _ = function(E) {
-      switch (E) {
-        case rt:
-          b + m.x > g && (m.x = g - b);
+    var e = this.options, i = this.canvasData, r = this.containerData, a = this.cropBoxData, n = this.pointers, s = this.action, d = e.aspectRatio, l = a.left, h = a.top, c = a.width, u = a.height, y = l + c, w = h + u, p = 0, f = 0, v = r.width, g = r.height, b = !0, S;
+    !d && t.shiftKey && (d = c && u ? c / u : 1), this.limited && (p = a.minLeft, f = a.minTop, v = p + Math.min(r.width, i.width, i.left + i.width), g = f + Math.min(r.height, i.height, i.top + i.height));
+    var C = n[Object.keys(n)[0]], m = {
+      x: C.endX - C.startX,
+      y: C.endY - C.startY
+    }, x = function(M) {
+      switch (M) {
+        case J:
+          y + m.x > v && (m.x = v - y);
           break;
-        case lt:
+        case Z:
           l + m.x < p && (m.x = p - l);
           break;
-        case tt:
+        case X:
           h + m.y < f && (m.y = f - h);
           break;
-        case pt:
-          C + m.y > v && (m.y = v - C);
+        case tt:
+          w + m.y > g && (m.y = g - w);
           break;
       }
     };
-    switch (a) {
-      case se:
+    switch (s) {
+      case Ft:
         l += m.x, h += m.y;
         break;
-      case rt:
-        if (m.x >= 0 && (b >= g || d && (h <= f || C >= v))) {
-          w = !1;
+      case J:
+        if (m.x >= 0 && (y >= v || d && (h <= f || w >= g))) {
+          b = !1;
           break;
         }
-        _(rt), c += m.x, c < 0 && (a = lt, c = -c, l -= c), d && (u = c / d, h += (o.height - u) / 2);
+        x(J), c += m.x, c < 0 && (s = Z, c = -c, l -= c), d && (u = c / d, h += (a.height - u) / 2);
+        break;
+      case X:
+        if (m.y <= 0 && (h <= f || d && (l <= p || y >= v))) {
+          b = !1;
+          break;
+        }
+        x(X), u -= m.y, h += m.y, u < 0 && (s = tt, u = -u, h -= u), d && (c = u * d, l += (a.width - c) / 2);
+        break;
+      case Z:
+        if (m.x <= 0 && (l <= p || d && (h <= f || w >= g))) {
+          b = !1;
+          break;
+        }
+        x(Z), c -= m.x, l += m.x, c < 0 && (s = J, c = -c, l -= c), d && (u = c / d, h += (a.height - u) / 2);
         break;
       case tt:
-        if (m.y <= 0 && (h <= f || d && (l <= p || b >= g))) {
-          w = !1;
+        if (m.y >= 0 && (w >= g || d && (l <= p || y >= v))) {
+          b = !1;
           break;
         }
-        _(tt), u -= m.y, h += m.y, u < 0 && (a = pt, u = -u, h -= u), d && (c = u * d, l += (o.width - c) / 2);
+        x(tt), u += m.y, u < 0 && (s = X, u = -u, h -= u), d && (c = u * d, l += (a.width - c) / 2);
+        break;
+      case st:
+        if (d) {
+          if (m.y <= 0 && (h <= f || y >= v)) {
+            b = !1;
+            break;
+          }
+          x(X), u -= m.y, h += m.y, c = u * d;
+        } else
+          x(X), x(J), m.x >= 0 ? y < v ? c += m.x : m.y <= 0 && h <= f && (b = !1) : c += m.x, m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
+        c < 0 && u < 0 ? (s = ct, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (s = lt, c = -c, l -= c) : u < 0 && (s = ht, u = -u, h -= u);
         break;
       case lt:
-        if (m.x <= 0 && (l <= p || d && (h <= f || C >= v))) {
-          w = !1;
-          break;
-        }
-        _(lt), c -= m.x, l += m.x, c < 0 && (a = rt, c = -c, l -= c), d && (u = c / d, h += (o.height - u) / 2);
-        break;
-      case pt:
-        if (m.y >= 0 && (C >= v || d && (l <= p || b >= g))) {
-          w = !1;
-          break;
-        }
-        _(pt), u += m.y, u < 0 && (a = tt, u = -u, h -= u), d && (c = u * d, l += (o.width - c) / 2);
-        break;
-      case wt:
-        if (d) {
-          if (m.y <= 0 && (h <= f || b >= g)) {
-            w = !1;
-            break;
-          }
-          _(tt), u -= m.y, h += m.y, c = u * d;
-        } else
-          _(tt), _(rt), m.x >= 0 ? b < g ? c += m.x : m.y <= 0 && h <= f && (w = !1) : c += m.x, m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
-        c < 0 && u < 0 ? (a = _t, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = St, c = -c, l -= c) : u < 0 && (a = xt, u = -u, h -= u);
-        break;
-      case St:
         if (d) {
           if (m.y <= 0 && (h <= f || l <= p)) {
-            w = !1;
+            b = !1;
             break;
           }
-          _(tt), u -= m.y, h += m.y, c = u * d, l += o.width - c;
+          x(X), u -= m.y, h += m.y, c = u * d, l += a.width - c;
         } else
-          _(tt), _(lt), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y <= 0 && h <= f && (w = !1) : (c -= m.x, l += m.x), m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
-        c < 0 && u < 0 ? (a = xt, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = wt, c = -c, l -= c) : u < 0 && (a = _t, u = -u, h -= u);
+          x(X), x(Z), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y <= 0 && h <= f && (b = !1) : (c -= m.x, l += m.x), m.y <= 0 ? h > f && (u -= m.y, h += m.y) : (u -= m.y, h += m.y);
+        c < 0 && u < 0 ? (s = ht, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (s = st, c = -c, l -= c) : u < 0 && (s = ct, u = -u, h -= u);
         break;
-      case _t:
+      case ct:
         if (d) {
-          if (m.x <= 0 && (l <= p || C >= v)) {
-            w = !1;
+          if (m.x <= 0 && (l <= p || w >= g)) {
+            b = !1;
             break;
           }
-          _(lt), c -= m.x, l += m.x, u = c / d;
+          x(Z), c -= m.x, l += m.x, u = c / d;
         } else
-          _(pt), _(lt), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y >= 0 && C >= v && (w = !1) : (c -= m.x, l += m.x), m.y >= 0 ? C < v && (u += m.y) : u += m.y;
-        c < 0 && u < 0 ? (a = wt, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = xt, c = -c, l -= c) : u < 0 && (a = St, u = -u, h -= u);
+          x(tt), x(Z), m.x <= 0 ? l > p ? (c -= m.x, l += m.x) : m.y >= 0 && w >= g && (b = !1) : (c -= m.x, l += m.x), m.y >= 0 ? w < g && (u += m.y) : u += m.y;
+        c < 0 && u < 0 ? (s = st, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (s = ht, c = -c, l -= c) : u < 0 && (s = lt, u = -u, h -= u);
         break;
-      case xt:
+      case ht:
         if (d) {
-          if (m.x >= 0 && (b >= g || C >= v)) {
-            w = !1;
+          if (m.x >= 0 && (y >= v || w >= g)) {
+            b = !1;
             break;
           }
-          _(rt), c += m.x, u = c / d;
+          x(J), c += m.x, u = c / d;
         } else
-          _(pt), _(rt), m.x >= 0 ? b < g ? c += m.x : m.y >= 0 && C >= v && (w = !1) : c += m.x, m.y >= 0 ? C < v && (u += m.y) : u += m.y;
-        c < 0 && u < 0 ? (a = St, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (a = _t, c = -c, l -= c) : u < 0 && (a = wt, u = -u, h -= u);
+          x(tt), x(J), m.x >= 0 ? y < v ? c += m.x : m.y >= 0 && w >= g && (b = !1) : c += m.x, m.y >= 0 ? w < g && (u += m.y) : u += m.y;
+        c < 0 && u < 0 ? (s = lt, u = -u, c = -c, h -= u, l -= c) : c < 0 ? (s = ct, c = -c, l -= c) : u < 0 && (s = st, u = -u, h -= u);
         break;
-      case Be:
-        this.move(m.x, m.y), w = !1;
+      case ve:
+        this.move(m.x, m.y), b = !1;
         break;
-      case Ne:
-        this.zoom(Di(s), t), w = !1;
+      case ye:
+        this.zoom(mi(n), t), b = !1;
         break;
-      case Pe:
+      case ge:
         if (!m.x || !m.y) {
-          w = !1;
+          b = !1;
           break;
         }
-        x = We(this.cropper), l = S.startX - x.left, h = S.startY - x.top, c = o.minWidth, u = o.minHeight, m.x > 0 ? a = m.y > 0 ? xt : wt : m.x < 0 && (l -= c, a = m.y > 0 ? _t : St), m.y < 0 && (h -= u), this.cropped || (X(this.cropBox, N), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
+        S = Oe(this.cropper), l = C.startX - S.left, h = C.startY - S.top, c = a.minWidth, u = a.minHeight, m.x > 0 ? s = m.y > 0 ? ht : st : m.x < 0 && (l -= c, s = m.y > 0 ? ct : lt), m.y < 0 && (h -= u), this.cropped || (j(this.cropBox, N), this.cropped = !0, this.limited && this.limitCropBox(!0, !0));
         break;
     }
-    w && (o.width = c, o.height = u, o.left = l, o.top = h, this.action = a, this.renderCropBox()), T(s, function(I) {
-      I.startX = I.endX, I.startY = I.endY;
+    b && (a.width = c, a.height = u, a.left = l, a.top = h, this.action = s, this.renderCropBox()), I(n, function(E) {
+      E.startX = E.endX, E.startY = E.endY;
     });
   }
-}, qi = {
+}, Ii = {
   // Show the crop box manually
   crop: function() {
-    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && M(this.dragBox, Pt), X(this.cropBox, N), this.setCropBoxData(this.initialCropBoxData)), this;
+    return this.ready && !this.cropped && !this.disabled && (this.cropped = !0, this.limitCropBox(!0, !0), this.options.modal && A(this.dragBox, yt), j(this.cropBox, N), this.setCropBoxData(this.initialCropBoxData)), this;
   },
   // Reset the image and crop box to their initial states
   reset: function() {
-    return this.ready && !this.disabled && (this.imageData = R({}, this.initialImageData), this.canvasData = R({}, this.initialCanvasData), this.cropBoxData = R({}, this.initialCropBoxData), this.renderCanvas(), this.cropped && this.renderCropBox()), this;
+    return this.ready && !this.disabled && (this.imageData = T({}, this.initialImageData), this.canvasData = T({}, this.initialCanvasData), this.cropBoxData = T({}, this.initialCropBoxData), this.renderCanvas(), this.cropped && this.renderCropBox()), this;
   },
   // Clear the crop box
   clear: function() {
-    return this.cropped && !this.disabled && (R(this.cropBoxData, {
+    return this.cropped && !this.disabled && (T(this.cropBoxData, {
       left: 0,
       top: 0,
       width: 0,
       height: 0
-    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), X(this.dragBox, Pt), M(this.cropBox, N)), this;
+    }), this.cropped = !1, this.renderCropBox(), this.limitCanvas(!0, !0), this.renderCanvas(), j(this.dragBox, yt), A(this.cropBox, N)), this;
   },
   /**
    * Replace the image's src and rebuild the cropper
@@ -2040,17 +2033,17 @@ var Ui = {
    */
   replace: function(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
-    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, T(this.previews, function(i) {
+    return !this.disabled && t && (this.isImg && (this.element.src = t), e ? (this.url = t, this.image.src = t, this.ready && (this.viewBoxImage.src = t, I(this.previews, function(i) {
       i.getElementsByTagName("img")[0].src = t;
     }))) : (this.isImg && (this.replaced = !0), this.options.data = null, this.uncreate(), this.load(t))), this;
   },
   // Enable (unfreeze) the cropper
   enable: function() {
-    return this.ready && this.disabled && (this.disabled = !1, X(this.cropper, fe)), this;
+    return this.ready && this.disabled && (this.disabled = !1, j(this.cropper, Jt)), this;
   },
   // Disable (freeze) the cropper
   disable: function() {
-    return this.ready && !this.disabled && (this.disabled = !0, M(this.cropper, fe)), this;
+    return this.ready && !this.disabled && (this.disabled = !0, A(this.cropper, Jt)), this;
   },
   /**
    * Destroy the cropper and remove the instance from the image
@@ -2058,7 +2051,7 @@ var Ui = {
    */
   destroy: function() {
     var t = this.element;
-    return t[k] ? (t[k] = void 0, this.isImg && this.replaced && (t.src = this.originalUrl), this.uncreate(), this) : this;
+    return t[_] ? (t[_] = void 0, this.isImg && this.replaced && (t.src = this.originalUrl), this.uncreate(), this) : this;
   },
   /**
    * Move the canvas with relative offsets
@@ -2067,8 +2060,8 @@ var Ui = {
    * @returns {Cropper} this
    */
   move: function(t) {
-    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, n = i.left, o = i.top;
-    return this.moveTo(jt(t) ? t : n + Number(t), jt(e) ? e : o + Number(e));
+    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, r = i.left, a = i.top;
+    return this.moveTo(xt(t) ? t : r + Number(t), xt(e) ? e : a + Number(e));
   },
   /**
    * Move the canvas to an absolute point
@@ -2077,8 +2070,8 @@ var Ui = {
    * @returns {Cropper} this
    */
   moveTo: function(t) {
-    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, n = !1;
-    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.movable && (A(t) && (i.left = t, n = !0), A(e) && (i.top = e, n = !0), n && this.renderCanvas(!0)), this;
+    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.canvasData, r = !1;
+    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.movable && (O(t) && (i.left = t, r = !0), O(e) && (i.top = e, r = !0), r && this.renderCanvas(!0)), this;
   },
   /**
    * Zoom the canvas with a relative ratio
@@ -2098,23 +2091,23 @@ var Ui = {
    * @returns {Cropper} this
    */
   zoomTo: function(t, e, i) {
-    var n = this.options, o = this.canvasData, s = o.width, a = o.height, d = o.naturalWidth, l = o.naturalHeight;
-    if (t = Number(t), t >= 0 && this.ready && !this.disabled && n.zoomable) {
+    var r = this.options, a = this.canvasData, n = a.width, s = a.height, d = a.naturalWidth, l = a.naturalHeight;
+    if (t = Number(t), t >= 0 && this.ready && !this.disabled && r.zoomable) {
       var h = d * t, c = l * t;
-      if (vt(this.element, ee, {
+      if (at(this.element, Nt, {
         ratio: t,
-        oldRatio: s / d,
+        oldRatio: n / d,
         originalEvent: i
       }) === !1)
         return this;
       if (i) {
-        var u = this.pointers, b = We(this.cropper), C = u && Object.keys(u).length ? Ti(u) : {
+        var u = this.pointers, y = Oe(this.cropper), w = u && Object.keys(u).length ? gi(u) : {
           pageX: i.pageX,
           pageY: i.pageY
         };
-        o.left -= (h - s) * ((C.pageX - b.left - o.left) / s), o.top -= (c - a) * ((C.pageY - b.top - o.top) / a);
-      } else ft(e) && A(e.x) && A(e.y) ? (o.left -= (h - s) * ((e.x - o.left) / s), o.top -= (c - a) * ((e.y - o.top) / a)) : (o.left -= (h - s) / 2, o.top -= (c - a) / 2);
-      o.width = h, o.height = c, this.renderCanvas(!0);
+        a.left -= (h - n) * ((w.pageX - y.left - a.left) / n), a.top -= (c - s) * ((w.pageY - y.top - a.top) / s);
+      } else et(e) && O(e.x) && O(e.y) ? (a.left -= (h - n) * ((e.x - a.left) / n), a.top -= (c - s) * ((e.y - a.top) / s)) : (a.left -= (h - n) / 2, a.top -= (c - s) / 2);
+      a.width = h, a.height = c, this.renderCanvas(!0);
     }
     return this;
   },
@@ -2132,7 +2125,7 @@ var Ui = {
    * @returns {Cropper} this
    */
   rotateTo: function(t) {
-    return t = Number(t), A(t) && this.ready && !this.disabled && this.options.rotatable && (this.imageData.rotate = t % 360, this.renderCanvas(!0, !0)), this;
+    return t = Number(t), O(t) && this.ready && !this.disabled && this.options.rotatable && (this.imageData.rotate = t % 360, this.renderCanvas(!0, !0)), this;
   },
   /**
    * Scale the image on the x-axis.
@@ -2141,7 +2134,7 @@ var Ui = {
    */
   scaleX: function(t) {
     var e = this.imageData.scaleY;
-    return this.scale(t, A(e) ? e : 1);
+    return this.scale(t, O(e) ? e : 1);
   },
   /**
    * Scale the image on the y-axis.
@@ -2150,7 +2143,7 @@ var Ui = {
    */
   scaleY: function(t) {
     var e = this.imageData.scaleX;
-    return this.scale(A(e) ? e : 1, t);
+    return this.scale(O(e) ? e : 1, t);
   },
   /**
    * Scale the image
@@ -2159,8 +2152,8 @@ var Ui = {
    * @returns {Cropper} this
    */
   scale: function(t) {
-    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.imageData, n = !1;
-    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.scalable && (A(t) && (i.scaleX = t, n = !0), A(e) && (i.scaleY = e, n = !0), n && this.renderCanvas(!0, !0)), this;
+    var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, i = this.imageData, r = !1;
+    return t = Number(t), e = Number(e), this.ready && !this.disabled && this.options.scalable && (O(t) && (i.scaleX = t, r = !0), O(e) && (i.scaleY = e, r = !0), r && this.renderCanvas(!0, !0)), this;
   },
   /**
    * Get the cropped area position and size data (base on the original image)
@@ -2168,29 +2161,29 @@ var Ui = {
    * @returns {Object} The result cropped data.
    */
   getData: function() {
-    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.options, i = this.imageData, n = this.canvasData, o = this.cropBoxData, s;
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.options, i = this.imageData, r = this.canvasData, a = this.cropBoxData, n;
     if (this.ready && this.cropped) {
-      s = {
-        x: o.left - n.left,
-        y: o.top - n.top,
-        width: o.width,
-        height: o.height
+      n = {
+        x: a.left - r.left,
+        y: a.top - r.top,
+        width: a.width,
+        height: a.height
       };
-      var a = i.width / i.naturalWidth;
-      if (T(s, function(h, c) {
-        s[c] = h / a;
+      var s = i.width / i.naturalWidth;
+      if (I(n, function(h, c) {
+        n[c] = h / s;
       }), t) {
-        var d = Math.round(s.y + s.height), l = Math.round(s.x + s.width);
-        s.x = Math.round(s.x), s.y = Math.round(s.y), s.width = l - s.x, s.height = d - s.y;
+        var d = Math.round(n.y + n.height), l = Math.round(n.x + n.width);
+        n.x = Math.round(n.x), n.y = Math.round(n.y), n.width = l - n.x, n.height = d - n.y;
       }
     } else
-      s = {
+      n = {
         x: 0,
         y: 0,
         width: 0,
         height: 0
       };
-    return e.rotatable && (s.rotate = i.rotate || 0), e.scalable && (s.scaleX = i.scaleX || 1, s.scaleY = i.scaleY || 1), s;
+    return e.rotatable && (n.rotate = i.rotate || 0), e.scalable && (n.scaleX = i.scaleX || 1, n.scaleY = i.scaleY || 1), n;
   },
   /**
    * Set the cropped area position and size with new data
@@ -2198,12 +2191,12 @@ var Ui = {
    * @returns {Cropper} this
    */
   setData: function(t) {
-    var e = this.options, i = this.imageData, n = this.canvasData, o = {};
-    if (this.ready && !this.disabled && ft(t)) {
-      var s = !1;
-      e.rotatable && A(t.rotate) && t.rotate !== i.rotate && (i.rotate = t.rotate, s = !0), e.scalable && (A(t.scaleX) && t.scaleX !== i.scaleX && (i.scaleX = t.scaleX, s = !0), A(t.scaleY) && t.scaleY !== i.scaleY && (i.scaleY = t.scaleY, s = !0)), s && this.renderCanvas(!0, !0);
-      var a = i.width / i.naturalWidth;
-      A(t.x) && (o.left = t.x * a + n.left), A(t.y) && (o.top = t.y * a + n.top), A(t.width) && (o.width = t.width * a), A(t.height) && (o.height = t.height * a), this.setCropBoxData(o);
+    var e = this.options, i = this.imageData, r = this.canvasData, a = {};
+    if (this.ready && !this.disabled && et(t)) {
+      var n = !1;
+      e.rotatable && O(t.rotate) && t.rotate !== i.rotate && (i.rotate = t.rotate, n = !0), e.scalable && (O(t.scaleX) && t.scaleX !== i.scaleX && (i.scaleX = t.scaleX, n = !0), O(t.scaleY) && t.scaleY !== i.scaleY && (i.scaleY = t.scaleY, n = !0)), n && this.renderCanvas(!0, !0);
+      var s = i.width / i.naturalWidth;
+      O(t.x) && (a.left = t.x * s + r.left), O(t.y) && (a.top = t.y * s + r.top), O(t.width) && (a.width = t.width * s), O(t.height) && (a.height = t.height * s), this.setCropBoxData(a);
     }
     return this;
   },
@@ -2212,14 +2205,14 @@ var Ui = {
    * @returns {Object} The result container data.
    */
   getContainerData: function() {
-    return this.ready ? R({}, this.containerData) : {};
+    return this.ready ? T({}, this.containerData) : {};
   },
   /**
    * Get the image position and size data.
    * @returns {Object} The result image data.
    */
   getImageData: function() {
-    return this.sized ? R({}, this.imageData) : {};
+    return this.sized ? T({}, this.imageData) : {};
   },
   /**
    * Get the canvas position and size data.
@@ -2227,7 +2220,7 @@ var Ui = {
    */
   getCanvasData: function() {
     var t = this.canvasData, e = {};
-    return this.ready && T(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
+    return this.ready && I(["left", "top", "width", "height", "naturalWidth", "naturalHeight"], function(i) {
       e[i] = t[i];
     }), e;
   },
@@ -2238,7 +2231,7 @@ var Ui = {
    */
   setCanvasData: function(t) {
     var e = this.canvasData, i = e.aspectRatio;
-    return this.ready && !this.disabled && ft(t) && (A(t.left) && (e.left = t.left), A(t.top) && (e.top = t.top), A(t.width) ? (e.width = t.width, e.height = t.width / i) : A(t.height) && (e.height = t.height, e.width = t.height * i), this.renderCanvas(!0)), this;
+    return this.ready && !this.disabled && et(t) && (O(t.left) && (e.left = t.left), O(t.top) && (e.top = t.top), O(t.width) ? (e.width = t.width, e.height = t.width / i) : O(t.height) && (e.height = t.height, e.width = t.height * i), this.renderCanvas(!0)), this;
   },
   /**
    * Get the crop box position and size data.
@@ -2259,8 +2252,8 @@ var Ui = {
    * @returns {Cropper} this
    */
   setCropBoxData: function(t) {
-    var e = this.cropBoxData, i = this.options.aspectRatio, n, o;
-    return this.ready && this.cropped && !this.disabled && ft(t) && (A(t.left) && (e.left = t.left), A(t.top) && (e.top = t.top), A(t.width) && t.width !== e.width && (n = !0, e.width = t.width), A(t.height) && t.height !== e.height && (o = !0, e.height = t.height), i && (n ? e.height = e.width / i : o && (e.width = e.height * i)), this.renderCropBox()), this;
+    var e = this.cropBoxData, i = this.options.aspectRatio, r, a;
+    return this.ready && this.cropped && !this.disabled && et(t) && (O(t.left) && (e.left = t.left), O(t.top) && (e.top = t.top), O(t.width) && t.width !== e.width && (r = !0, e.width = t.width), O(t.height) && t.height !== e.height && (a = !0, e.height = t.height), i && (r ? e.height = e.width / i : a && (e.width = e.height * i)), this.renderCropBox()), this;
   },
   /**
    * Get a canvas drawn the cropped image.
@@ -2271,38 +2264,38 @@ var Ui = {
     var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
     if (!this.ready || !window.HTMLCanvasElement)
       return null;
-    var e = this.canvasData, i = Li(this.image, this.imageData, e, t);
+    var e = this.canvasData, i = yi(this.image, this.imageData, e, t);
     if (!this.cropped)
       return i;
-    var n = this.getData(t.rounded), o = n.x, s = n.y, a = n.width, d = n.height, l = i.width / Math.floor(e.naturalWidth);
-    l !== 1 && (o *= l, s *= l, a *= l, d *= l);
-    var h = a / d, c = it({
+    var r = this.getData(t.rounded), a = r.x, n = r.y, s = r.width, d = r.height, l = i.width / Math.floor(e.naturalWidth);
+    l !== 1 && (a *= l, n *= l, s *= l, d *= l);
+    var h = s / d, c = Y({
       aspectRatio: h,
       width: t.maxWidth || 1 / 0,
       height: t.maxHeight || 1 / 0
-    }), u = it({
+    }), u = Y({
       aspectRatio: h,
       width: t.minWidth || 0,
       height: t.minHeight || 0
-    }, "cover"), b = it({
+    }, "cover"), y = Y({
       aspectRatio: h,
-      width: t.width || (l !== 1 ? i.width : a),
+      width: t.width || (l !== 1 ? i.width : s),
       height: t.height || (l !== 1 ? i.height : d)
-    }), C = b.width, p = b.height;
-    C = Math.min(c.width, Math.max(u.width, C)), p = Math.min(c.height, Math.max(u.height, p));
-    var f = document.createElement("canvas"), g = f.getContext("2d");
-    f.width = gt(C), f.height = gt(p), g.fillStyle = t.fillColor || "transparent", g.fillRect(0, 0, C, p);
-    var v = t.imageSmoothingEnabled, w = v === void 0 ? !0 : v, x = t.imageSmoothingQuality;
-    g.imageSmoothingEnabled = w, x && (g.imageSmoothingQuality = x);
-    var S = i.width, m = i.height, _ = o, I = s, E, O, W, q, F, G;
-    _ <= -a || _ > S ? (_ = 0, E = 0, W = 0, F = 0) : _ <= 0 ? (W = -_, _ = 0, E = Math.min(S, a + _), F = E) : _ <= S && (W = 0, E = Math.min(a, S - _), F = E), E <= 0 || I <= -d || I > m ? (I = 0, O = 0, q = 0, G = 0) : I <= 0 ? (q = -I, I = 0, O = Math.min(m, d + I), G = O) : I <= m && (q = 0, O = Math.min(d, m - I), G = O);
-    var D = [_, I, E, O];
-    if (F > 0 && G > 0) {
-      var P = C / a;
-      D.push(W * P, q * P, F * P, G * P);
+    }), w = y.width, p = y.height;
+    w = Math.min(c.width, Math.max(u.width, w)), p = Math.min(c.height, Math.max(u.height, p));
+    var f = document.createElement("canvas"), v = f.getContext("2d");
+    f.width = rt(w), f.height = rt(p), v.fillStyle = t.fillColor || "transparent", v.fillRect(0, 0, w, p);
+    var g = t.imageSmoothingEnabled, b = g === void 0 ? !0 : g, S = t.imageSmoothingQuality;
+    v.imageSmoothingEnabled = b, S && (v.imageSmoothingQuality = S);
+    var C = i.width, m = i.height, x = a, E = n, M, P, q, G, W, U;
+    x <= -s || x > C ? (x = 0, M = 0, q = 0, W = 0) : x <= 0 ? (q = -x, x = 0, M = Math.min(C, s + x), W = M) : x <= C && (q = 0, M = Math.min(s, C - x), W = M), M <= 0 || E <= -d || E > m ? (E = 0, P = 0, G = 0, U = 0) : E <= 0 ? (G = -E, E = 0, P = Math.min(m, d + E), U = P) : E <= m && (G = 0, P = Math.min(d, m - E), U = P);
+    var k = [x, E, M, P];
+    if (W > 0 && U > 0) {
+      var V = w / s;
+      k.push(q * V, G * V, W * V, U * V);
     }
-    return g.drawImage.apply(g, [i].concat(Le(D.map(function(U) {
-      return Math.floor(gt(U));
+    return v.drawImage.apply(v, [i].concat(me(k.map(function(ft) {
+      return Math.floor(rt(ft));
     })))), f;
   },
   /**
@@ -2312,7 +2305,7 @@ var Ui = {
    */
   setAspectRatio: function(t) {
     var e = this.options;
-    return !this.disabled && !jt(t) && (e.aspectRatio = Math.max(0, t) || NaN, this.ready && (this.initCropBox(), this.cropped && this.renderCropBox())), this;
+    return !this.disabled && !xt(t) && (e.aspectRatio = Math.max(0, t) || NaN, this.ready && (this.initCropBox(), this.cropped && this.renderCropBox())), this;
   },
   /**
    * Change the drag mode.
@@ -2320,31 +2313,31 @@ var Ui = {
    * @returns {Cropper} this
    */
   setDragMode: function(t) {
-    var e = this.options, i = this.dragBox, n = this.face;
+    var e = this.options, i = this.dragBox, r = this.face;
     if (this.ready && !this.disabled) {
-      var o = t === ae, s = e.movable && t === Ge;
-      t = o || s ? t : He, e.dragMode = t, Et(i, At, t), mt(i, Vt, o), mt(i, Jt, s), e.cropBoxMovable || (Et(n, At, t), mt(n, Vt, o), mt(n, Jt, s));
+      var a = t === Ut, n = e.movable && t === we;
+      t = a || n ? t : be, e.dragMode = t, pt(i, ut, t), it(i, Tt, a), it(i, It, n), e.cropBoxMovable || (pt(r, ut, t), it(r, Tt, a), it(r, It, n));
     }
     return this;
   }
-}, Xi = Y.Cropper, Xe = /* @__PURE__ */ function() {
-  function r(t) {
+}, Ai = z.Cropper, _e = /* @__PURE__ */ function() {
+  function o(t) {
     var e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (ai(this, r), !t || !Ci.test(t.tagName))
+    if (Xe(this, o), !t || !ai.test(t.tagName))
       throw new Error("The first argument is required and must be an <img> or <canvas> element.");
-    this.element = t, this.options = R({}, _e, ft(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
+    this.element = t, this.options = T({}, oe, et(e) && e), this.cropped = !1, this.disabled = !1, this.pointers = {}, this.ready = !1, this.reloading = !1, this.replaced = !1, this.sized = !1, this.sizing = !1, this.init();
   }
-  return ri(r, [{
+  return $e(o, [{
     key: "init",
     value: function() {
-      var e = this.element, i = e.tagName.toLowerCase(), n;
-      if (!e[k]) {
-        if (e[k] = this, i === "img") {
-          if (this.isImg = !0, n = e.getAttribute("src") || "", this.originalUrl = n, !n)
+      var e = this.element, i = e.tagName.toLowerCase(), r;
+      if (!e[_]) {
+        if (e[_] = this, i === "img") {
+          if (this.isImg = !0, r = e.getAttribute("src") || "", this.originalUrl = r, !r)
             return;
-          n = e.src;
-        } else i === "canvas" && window.HTMLCanvasElement && (n = e.toDataURL());
-        this.load(n);
+          r = e.src;
+        } else i === "canvas" && window.HTMLCanvasElement && (r = e.toDataURL());
+        this.load(r);
       }
     }
   }, {
@@ -2353,64 +2346,64 @@ var Ui = {
       var i = this;
       if (e) {
         this.url = e, this.imageData = {};
-        var n = this.element, o = this.options;
-        if (!o.rotatable && !o.scalable && (o.checkOrientation = !1), !o.checkOrientation || !window.ArrayBuffer) {
+        var r = this.element, a = this.options;
+        if (!a.rotatable && !a.scalable && (a.checkOrientation = !1), !a.checkOrientation || !window.ArrayBuffer) {
           this.clone();
           return;
         }
-        if (yi.test(e)) {
-          bi.test(e) ? this.read(Ni(e)) : this.clone();
+        if (ii.test(e)) {
+          ri.test(e) ? this.read(Ci(e)) : this.clone();
           return;
         }
-        var s = new XMLHttpRequest(), a = this.clone.bind(this);
-        this.reloading = !0, this.xhr = s, s.onabort = a, s.onerror = a, s.ontimeout = a, s.onprogress = function() {
-          s.getResponseHeader("content-type") !== xe && s.abort();
-        }, s.onload = function() {
-          i.read(s.response);
-        }, s.onloadend = function() {
+        var n = new XMLHttpRequest(), s = this.clone.bind(this);
+        this.reloading = !0, this.xhr = n, n.onabort = s, n.onerror = s, n.ontimeout = s, n.onprogress = function() {
+          n.getResponseHeader("content-type") !== ne && n.abort();
+        }, n.onload = function() {
+          i.read(n.response);
+        }, n.onloadend = function() {
           i.reloading = !1, i.xhr = null;
-        }, o.checkCrossOrigin && Ae(e) && n.crossOrigin && (e = Ee(e)), s.open("GET", e, !0), s.responseType = "arraybuffer", s.withCredentials = n.crossOrigin === "use-credentials", s.send();
+        }, a.checkCrossOrigin && le(e) && r.crossOrigin && (e = he(e)), n.open("GET", e, !0), n.responseType = "arraybuffer", n.withCredentials = r.crossOrigin === "use-credentials", n.send();
       }
     }
   }, {
     key: "read",
     value: function(e) {
-      var i = this.options, n = this.imageData, o = Hi(e), s = 0, a = 1, d = 1;
-      if (o > 1) {
-        this.url = Gi(e, xe);
-        var l = Fi(o);
-        s = l.rotate, a = l.scaleX, d = l.scaleY;
+      var i = this.options, r = this.imageData, a = xi(e), n = 0, s = 1, d = 1;
+      if (a > 1) {
+        this.url = Si(e, ne);
+        var l = Ei(a);
+        n = l.rotate, s = l.scaleX, d = l.scaleY;
       }
-      i.rotatable && (n.rotate = s), i.scalable && (n.scaleX = a, n.scaleY = d), this.clone();
+      i.rotatable && (r.rotate = n), i.scalable && (r.scaleX = s, r.scaleY = d), this.clone();
     }
   }, {
     key: "clone",
     value: function() {
-      var e = this.element, i = this.url, n = e.crossOrigin, o = i;
-      this.options.checkCrossOrigin && Ae(i) && (n || (n = "anonymous"), o = Ee(i)), this.crossOrigin = n, this.crossOriginUrl = o;
-      var s = document.createElement("img");
-      n && (s.crossOrigin = n), s.src = o || i, s.alt = e.alt || "The image to crop", this.image = s, s.onload = this.start.bind(this), s.onerror = this.stop.bind(this), M(s, me), e.parentNode.insertBefore(s, e.nextSibling);
+      var e = this.element, i = this.url, r = e.crossOrigin, a = i;
+      this.options.checkCrossOrigin && le(i) && (r || (r = "anonymous"), a = he(i)), this.crossOrigin = r, this.crossOriginUrl = a;
+      var n = document.createElement("img");
+      r && (n.crossOrigin = r), n.src = a || i, n.alt = e.alt || "The image to crop", this.image = n, n.onload = this.start.bind(this), n.onerror = this.stop.bind(this), A(n, Zt), e.parentNode.insertBefore(n, e.nextSibling);
     }
   }, {
     key: "start",
     value: function() {
       var e = this, i = this.image;
       i.onload = null, i.onerror = null, this.sizing = !0;
-      var n = Y.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(Y.navigator.userAgent), o = function(l, h) {
-        R(e.imageData, {
+      var r = z.navigator && /(?:iPad|iPhone|iPod).*?AppleWebKit/i.test(z.navigator.userAgent), a = function(l, h) {
+        T(e.imageData, {
           naturalWidth: l,
           naturalHeight: h,
           aspectRatio: l / h
-        }), e.initialImageData = R({}, e.imageData), e.sizing = !1, e.sized = !0, e.build();
+        }), e.initialImageData = T({}, e.imageData), e.sizing = !1, e.sized = !0, e.build();
       };
-      if (i.naturalWidth && !n) {
-        o(i.naturalWidth, i.naturalHeight);
+      if (i.naturalWidth && !r) {
+        a(i.naturalWidth, i.naturalHeight);
         return;
       }
-      var s = document.createElement("img"), a = document.body || document.documentElement;
-      this.sizingImage = s, s.onload = function() {
-        o(s.width, s.height), n || a.removeChild(s);
-      }, s.src = i.src, n || (s.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", a.appendChild(s));
+      var n = document.createElement("img"), s = document.body || document.documentElement;
+      this.sizingImage = n, n.onload = function() {
+        a(n.width, n.height), r || s.removeChild(n);
+      }, n.src = i.src, r || (n.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", s.appendChild(n));
     }
   }, {
     key: "stop",
@@ -2422,12 +2415,12 @@ var Ui = {
     key: "build",
     value: function() {
       if (!(!this.sized || this.ready)) {
-        var e = this.element, i = this.options, n = this.image, o = e.parentNode, s = document.createElement("div");
-        s.innerHTML = wi;
-        var a = s.querySelector(".".concat(k, "-container")), d = a.querySelector(".".concat(k, "-canvas")), l = a.querySelector(".".concat(k, "-drag-box")), h = a.querySelector(".".concat(k, "-crop-box")), c = h.querySelector(".".concat(k, "-face"));
-        this.container = o, this.cropper = a, this.canvas = d, this.dragBox = l, this.cropBox = h, this.viewBox = a.querySelector(".".concat(k, "-view-box")), this.face = c, d.appendChild(n), M(e, N), o.insertBefore(a, e.nextSibling), X(n, me), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, M(h, N), i.guides || M(h.getElementsByClassName("".concat(k, "-dashed")), N), i.center || M(h.getElementsByClassName("".concat(k, "-center")), N), i.background && M(a, "".concat(k, "-bg")), i.highlight || M(c, pi), i.cropBoxMovable && (M(c, Jt), Et(c, At, se)), i.cropBoxResizable || (M(h.getElementsByClassName("".concat(k, "-line")), N), M(h.getElementsByClassName("".concat(k, "-point")), N)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), B(i.ready) && H(e, Ce, i.ready, {
+        var e = this.element, i = this.options, r = this.image, a = e.parentNode, n = document.createElement("div");
+        n.innerHTML = ni;
+        var s = n.querySelector(".".concat(_, "-container")), d = s.querySelector(".".concat(_, "-canvas")), l = s.querySelector(".".concat(_, "-drag-box")), h = s.querySelector(".".concat(_, "-crop-box")), c = h.querySelector(".".concat(_, "-face"));
+        this.container = a, this.cropper = s, this.canvas = d, this.dragBox = l, this.cropBox = h, this.viewBox = s.querySelector(".".concat(_, "-view-box")), this.face = c, d.appendChild(r), A(e, N), a.insertBefore(s, e.nextSibling), j(r, Zt), this.initPreview(), this.bind(), i.initialAspectRatio = Math.max(0, i.initialAspectRatio) || NaN, i.aspectRatio = Math.max(0, i.aspectRatio) || NaN, i.viewMode = Math.max(0, Math.min(3, Math.round(i.viewMode))) || 0, A(h, N), i.guides || A(h.getElementsByClassName("".concat(_, "-dashed")), N), i.center || A(h.getElementsByClassName("".concat(_, "-center")), N), i.background && A(s, "".concat(_, "-bg")), i.highlight || A(c, Ze), i.cropBoxMovable && (A(c, It), pt(c, ut, Ft)), i.cropBoxResizable || (A(h.getElementsByClassName("".concat(_, "-line")), N), A(h.getElementsByClassName("".concat(_, "-point")), N)), this.render(), this.ready = !0, this.setDragMode(i.dragMode), i.autoCrop && this.crop(), this.setData(i.data), R(i.ready) && B(e, ie, i.ready, {
           once: !0
-        }), vt(e, Ce);
+        }), at(e, ie);
       }
     }
   }, {
@@ -2436,7 +2429,7 @@ var Ui = {
       if (this.ready) {
         this.ready = !1, this.unbind(), this.resetPreview();
         var e = this.cropper.parentNode;
-        e && e.removeChild(this.cropper), X(this.element, N);
+        e && e.removeChild(this.cropper), j(this.element, N);
       }
     }
   }, {
@@ -2451,7 +2444,7 @@ var Ui = {
   }], [{
     key: "noConflict",
     value: function() {
-      return window.Cropper = Xi, r;
+      return window.Cropper = Ai, o;
     }
     /**
      * Change the default options.
@@ -2460,20 +2453,20 @@ var Ui = {
   }, {
     key: "setDefaults",
     value: function(e) {
-      R(_e, ft(e) && e);
+      T(oe, et(e) && e);
     }
   }]);
 }();
-R(Xe.prototype, Ui, zi, ji, $i, Wi, qi);
-const Lt = (r) => Math.min(1, Math.max(0, r)), ke = ["16:9", "3:2", "1:1"], Wt = "3:2";
-function L(r, t = null, e = {}) {
-  const i = document.createElement(r);
+T(_e.prototype, Di, Oi, Mi, _i, Ti, Ii);
+const vt = (o) => Math.min(1, Math.max(0, o)), ce = ["16:9", "3:2", "1:1"], Dt = "3:2";
+function L(o, t = null, e = {}) {
+  const i = document.createElement(o);
   Array.isArray(t) ? i.classList.add(...t) : t !== null && i.classList.add(t);
-  for (const n in e)
-    Object.prototype.hasOwnProperty.call(e, n) && (i[n] = e[n]);
+  for (const r in e)
+    Object.prototype.hasOwnProperty.call(e, r) && (i[r] = e[r]);
   return i;
 }
-class Yi {
+class Li {
   constructor() {
     this.overlay = null, this.cropper = null, this.escHandler = null, this.resolvePromise = null, this.showOriginalOnClickInput = null, this.aspectRatioInputs = [];
   }
@@ -2486,24 +2479,24 @@ class Yi {
    * @param existingCropAspectRatio - сохранённый режим соотношения сторон
    * @returns Promise с результатом кадрирования или null при отмене
    */
-  open(t, e, i = !1, n = Wt) {
-    return this.overlay && this.destroy(), new Promise((o) => {
-      this.resolvePromise = o;
-      const s = this.normalizeCropAspectRatio(n);
-      this.overlay = this.createOverlay(i, s);
-      const a = this.overlay.querySelector(".gallery-crop-modal__image-wrapper");
-      if (!a) {
+  open(t, e, i = !1, r = Dt) {
+    return this.overlay && this.destroy(), new Promise((a) => {
+      this.resolvePromise = a;
+      const n = this.normalizeCropAspectRatio(r);
+      this.overlay = this.createOverlay(i, n);
+      const s = this.overlay.querySelector(".gallery-crop-modal__image-wrapper");
+      if (!s) {
         this.close(null);
         return;
       }
       const d = L("img", null, {
         src: t
       });
-      d.style.maxWidth = "100%", d.style.display = "block", a.appendChild(d), document.body.appendChild(this.overlay), d.onload = () => {
-        this.cropper = new Xe(d, {
+      d.style.maxWidth = "100%", d.style.display = "block", s.appendChild(d), document.body.appendChild(this.overlay), d.onload = () => {
+        this.cropper = new _e(d, {
           viewMode: 1,
           autoCropArea: 1,
-          aspectRatio: this.numericAspectRatio(s),
+          aspectRatio: this.numericAspectRatio(n),
           responsive: !0,
           restore: !0,
           guides: !0,
@@ -2546,13 +2539,13 @@ class Yi {
   createOverlay(t, e) {
     const i = L("div", "gallery-crop-modal");
     i.addEventListener("click", () => this.close(null));
-    const n = L("div", "gallery-crop-modal__container");
-    n.addEventListener("click", (u) => u.stopPropagation());
-    const o = L("div", "gallery-crop-modal__image-wrapper"), s = L("div", "gallery-crop-modal__options"), a = L("label", "gallery-crop-modal__option");
-    this.showOriginalOnClickInput = L("input", null, { type: "checkbox" }), this.showOriginalOnClickInput.checked = t, a.append(
+    const r = L("div", "gallery-crop-modal__container");
+    r.addEventListener("click", (u) => u.stopPropagation());
+    const a = L("div", "gallery-crop-modal__image-wrapper"), n = L("div", "gallery-crop-modal__options"), s = L("label", "gallery-crop-modal__option");
+    this.showOriginalOnClickInput = L("input", null, { type: "checkbox" }), this.showOriginalOnClickInput.checked = t, s.append(
       this.showOriginalOnClickInput,
       document.createTextNode("Показывать необрезанное изображение по клику")
-    ), s.appendChild(a), s.appendChild(this.createAspectRatioOptions(e));
+    ), n.appendChild(s), n.appendChild(this.createAspectRatioOptions(e));
     const d = L("div", "gallery-crop-modal__actions"), l = L("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--danger"]);
     l.textContent = "Сбросить", l.addEventListener("click", () => {
       this.close({
@@ -2560,20 +2553,20 @@ class Yi {
         croppedWidth: 0,
         croppedHeight: 0,
         showOriginalOnClick: !1,
-        cropAspectRatio: Wt
+        cropAspectRatio: Dt
       });
     });
     const h = L("button", "gallery-crop-modal__btn");
     h.textContent = "Отмена", h.addEventListener("click", () => this.close(null));
     const c = L("button", ["gallery-crop-modal__btn", "gallery-crop-modal__btn--primary"]);
-    return c.textContent = "Применить", c.addEventListener("click", () => this.handleApply()), d.appendChild(l), d.appendChild(h), d.appendChild(c), n.appendChild(o), n.appendChild(s), n.appendChild(d), i.appendChild(n), i;
+    return c.textContent = "Применить", c.addEventListener("click", () => this.handleApply()), d.appendChild(l), d.appendChild(h), d.appendChild(c), r.appendChild(a), r.appendChild(n), r.appendChild(d), i.appendChild(r), i;
   }
   /**
    * Обрабатывает нажатие кнопки "Применить" — собирает данные кадрирования
    * и закрывает модальное окно с результатом.
    */
   handleApply() {
-    var n;
+    var r;
     if (!this.cropper) {
       this.close(null);
       return;
@@ -2581,7 +2574,7 @@ class Yi {
     const t = this.cropper.getData(!0), e = this.cropper.getImageData(), i = this.cropDataToString(t, e.naturalWidth, e.naturalHeight);
     this.close({
       ...i,
-      showOriginalOnClick: ((n = this.showOriginalOnClickInput) == null ? void 0 : n.checked) ?? !1,
+      showOriginalOnClick: ((r = this.showOriginalOnClickInput) == null ? void 0 : r.checked) ?? !1,
       cropAspectRatio: this.selectedCropAspectRatio()
     });
   }
@@ -2609,9 +2602,9 @@ class Yi {
    * @param naturalHeight - натуральная высота изображения
    */
   cropDataToString(t, e, i) {
-    const n = Lt(t.x / e), o = Lt(t.y / i), s = Lt((t.x + t.width) / e), a = Lt((t.y + t.height) / i);
+    const r = vt(t.x / e), a = vt(t.y / i), n = vt((t.x + t.width) / e), s = vt((t.y + t.height) / i);
     return {
-      crop: `${n.toFixed(4)}x${o.toFixed(4)}:${s.toFixed(4)}x${a.toFixed(4)}`,
+      crop: `${r.toFixed(4)}x${a.toFixed(4)}:${n.toFixed(4)}x${s.toFixed(4)}`,
       croppedWidth: Math.round(t.width),
       croppedHeight: Math.round(t.height),
       showOriginalOnClick: !1,
@@ -2626,26 +2619,26 @@ class Yi {
    * @param naturalHeight - натуральная высота изображения
    */
   restoreCropArea(t, e, i) {
-    var o;
-    const n = this.parseCropString(t);
-    n && ((o = this.cropper) == null || o.setData({
-      x: n.x1 * e,
-      y: n.y1 * i,
-      width: (n.x2 - n.x1) * e,
-      height: (n.y2 - n.y1) * i
+    var a;
+    const r = this.parseCropString(t);
+    r && ((a = this.cropper) == null || a.setData({
+      x: r.x1 * e,
+      y: r.y1 * i,
+      width: (r.x2 - r.x1) * e,
+      height: (r.y2 - r.y1) * i
     }));
   }
   createAspectRatioOptions(t) {
     const e = L("fieldset", "gallery-crop-modal__aspect-ratios"), i = L("legend", "gallery-crop-modal__aspect-ratios-label");
     return i.textContent = "Соотношение сторон", e.appendChild(i), [
       { label: "Любое", value: "free" },
-      ...ke.map((o) => ({ label: o, value: o }))
-    ].forEach(({ label: o, value: s }) => {
-      const a = L("label", "gallery-crop-modal__aspect-ratio"), d = L("input", null, { type: "radio" }), l = L("span", "gallery-crop-modal__aspect-ratio-label");
-      d.name = "gallery-crop-aspect-ratio", d.value = s, d.checked = s === t, d.addEventListener("change", () => {
+      ...ce.map((a) => ({ label: a, value: a }))
+    ].forEach(({ label: a, value: n }) => {
+      const s = L("label", "gallery-crop-modal__aspect-ratio"), d = L("input", null, { type: "radio" }), l = L("span", "gallery-crop-modal__aspect-ratio-label");
+      d.name = "gallery-crop-aspect-ratio", d.value = n, d.checked = n === t, d.addEventListener("change", () => {
         var h;
-        d.checked && ((h = this.cropper) == null || h.setAspectRatio(this.numericAspectRatio(s)));
-      }), l.textContent = o, a.append(d, l), e.appendChild(a), this.aspectRatioInputs.push(d);
+        d.checked && ((h = this.cropper) == null || h.setAspectRatio(this.numericAspectRatio(n)));
+      }), l.textContent = a, s.append(d, l), e.appendChild(s), this.aspectRatioInputs.push(d);
     }), e;
   }
   selectedCropAspectRatio() {
@@ -2654,1082 +2647,10 @@ class Yi {
     return this.normalizeCropAspectRatio(t);
   }
   normalizeCropAspectRatio(t) {
-    return t === "free" || ke.includes(t) ? t : Wt;
+    return t === "free" || ce.includes(t) ? t : Dt;
   }
   numericAspectRatio(t) {
     return t === "free" ? Number.NaN : t === "16:9" ? 16 / 9 : t === "1:1" ? 1 : 3 / 2;
-  }
-}
-const Vi = 12e4, Ji = 2e3, Zi = 1e3, Ki = 1.5, Re = 0.2, Qi = 200;
-class $ extends Error {
-  /**
-   * Create a safe workflow error.
-   * @param code - stable application error code
-   * @param message - user-facing error message
-   * @param status - HTTP response status
-   */
-  constructor(t, e, i) {
-    super(e), this.name = "AiImageClientError", this.code = t, this.status = i;
-  }
-}
-class tn {
-  /**
-   * Create the host client.
-   * @param config - host endpoints, headers and resource identity
-   */
-  constructor(t) {
-    this.config = t;
-  }
-  /**
-   * Generate or improve a prompt from the current publication without starting image generation.
-   * @param request - prompt action, idempotency key and current publication text
-   * @param signal - optional cancellation signal
-   */
-  async assistPrompt(t, e) {
-    return this.requestAssistanceText(t, "prompt", e);
-  }
-  /**
-   * Generate an editorial caption from the current publication and final image prompt.
-   * @param request - caption action, idempotency key and current publication text
-   * @param signal - optional cancellation signal
-   */
-  async generateCaption(t, e) {
-    return this.requestAssistanceText(t, "caption", e);
-  }
-  /**
-   * Start an idempotent image generation operation.
-   * @param request - prompt and idempotency identifiers
-   * @param signal - optional cancellation signal
-   */
-  async generate(t, e) {
-    return this.mutate(this.config.endpoints.generate, {
-      action_id: t.actionId,
-      block_id: t.blockId,
-      aspect_ratio: t.aspectRatio,
-      context: this.config.context,
-      prompt: t.prompt,
-      session_id: t.sessionId,
-      ...t.resolution === void 0 ? {} : { resolution: t.resolution }
-    }, e);
-  }
-  /**
-   * Start an idempotent refinement operation.
-   * @param request - candidate, prompt and idempotency identifiers
-   * @param signal - optional cancellation signal
-   */
-  async refine(t, e) {
-    return this.mutate(this.resolveEndpoint(this.config.endpoints.refine, { sessionId: t.sessionId }), {
-      action_id: t.actionId,
-      block_id: t.blockId,
-      candidate_id: t.candidateId,
-      context: this.config.context,
-      prompt: t.prompt,
-      session_id: t.sessionId
-    }, e);
-  }
-  /**
-   * Start an idempotent finalization operation.
-   * @param request - candidate and idempotency identifiers
-   * @param signal - optional cancellation signal
-   */
-  async finalize(t, e) {
-    return this.mutate(this.resolveEndpoint(this.config.endpoints.finalize, { sessionId: t.sessionId }), {
-      action_id: t.actionId,
-      block_id: t.blockId,
-      candidate_id: t.candidateId,
-      context: this.config.context,
-      session_id: t.sessionId
-    }, e);
-  }
-  /**
-   * Cancel a generation session without exposing temporary output.
-   * @param request - session and block identity
-   * @param signal - optional cancellation signal
-   */
-  async cancel(t, e) {
-    return this.mutate(this.resolveEndpoint(this.config.endpoints.cancel, { sessionId: t.sessionId }), {
-      block_id: t.blockId,
-      context: this.config.context,
-      session_id: t.sessionId
-    }, e);
-  }
-  /**
-   * List the editor's own unfinished sessions and the slot limit.
-   * @param blockId - current Editor.js block identifier
-   * @param signal - optional cancellation signal
-   */
-  async listSessions(t, e) {
-    const i = await this.request(this.config.endpoints.sessions, {
-      body: JSON.stringify({
-        block_id: t,
-        context: this.config.context
-      }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        ...this.config.headers
-      },
-      method: "POST",
-      signal: e
-    }, {
-      invalidResponse: "Некорректный ответ сервера со списком генераций.",
-      networkError: "Не удалось получить список активных генераций.",
-      requestFailed: "Сервер не смог вернуть список активных генераций."
-    });
-    return this.normalizeActiveSessions(i);
-  }
-  /**
-   * Move a session started elsewhere into the current block.
-   * @param request - session and block identity
-   * @param signal - optional cancellation signal
-   */
-  async adopt(t, e) {
-    return this.mutate(this.resolveEndpoint(this.config.endpoints.adopt, { sessionId: t.sessionId }), {
-      block_id: t.blockId,
-      context: this.config.context,
-      session_id: t.sessionId
-    }, e);
-  }
-  /**
-   * Poll until the host reports a terminal state.
-   * @param request - session identity, observer and cancellation signal
-   */
-  async poll(t) {
-    var s;
-    const e = Date.now(), i = this.config.pollTimeoutMs ?? Vi, n = this.config.pollMaxIntervalMs ?? Ji;
-    let o = this.config.pollIntervalMs ?? Zi;
-    for (; ; ) {
-      const a = await this.status(t.sessionId, t.blockId, t.signal);
-      if ((s = t.onStatus) == null || s.call(t, a), this.isTerminal(a.status))
-        return a;
-      if (Date.now() - e >= i)
-        throw new $(
-          "poll_timeout",
-          "Превышено время ожидания генерации изображения.",
-          0
-        );
-      await this.wait(this.jittered(o), t.signal), o = Math.min(Math.ceil(o * Ki), n);
-    }
-  }
-  /**
-   * Spread a polling delay by ±20 % so several tabs do not hit the status endpoint in lockstep.
-   * @param durationMs - base delay
-   */
-  jittered(t) {
-    const e = 1 - Re + Math.random() * Re * 2;
-    return Math.round(t * e);
-  }
-  /**
-   * Browser previews use the reduced JPEG variant; the full image stays server-side for finalize and refine.
-   * @param url - resolved candidate endpoint
-   */
-  previewVariant(t) {
-    return `${t}${t.includes("?") ? "&" : "?"}variant=preview`;
-  }
-  /**
-   * Read the current host session state.
-   * @param sessionId - generation session identifier
-   * @param blockId - Editor.js block identifier
-   * @param signal - optional cancellation signal
-   */
-  async status(t, e, i) {
-    const n = this.resolveEndpoint(this.config.endpoints.status, { sessionId: t }), o = new URLSearchParams({ block_id: e });
-    for (const [a, d] of Object.entries(this.config.context))
-      d !== null && o.set(`context[${a}]`, String(d));
-    const s = await this.request(`${n}${n.includes("?") ? "&" : "?"}${o.toString()}`, {
-      headers: {
-        Accept: "application/json",
-        ...this.config.headers
-      },
-      method: "GET",
-      signal: i
-    });
-    return this.normalizeSession(s);
-  }
-  /**
-   * Execute one prompt-assistance action and return its text field.
-   * @param request - prompt or caption assistance payload
-   * @param responseField - successful response field
-   * @param signal - optional cancellation signal
-   */
-  async requestAssistanceText(t, e, i) {
-    const n = this.config.endpoints.prompt, o = this.config.publicationContext, s = e === "caption";
-    if (typeof n != "string" || n === "" || o === void 0)
-      throw new $(
-        "prompt_unavailable",
-        s ? "Генерация описания недоступна." : "Помощь с промптом недоступна.",
-        0
-      );
-    const a = {
-      action: t.action,
-      action_id: t.actionId,
-      block_id: t.blockId,
-      context: this.config.context,
-      publication: t.publication,
-      publicationContext: o
-    };
-    t.action !== "generate" && (a.draft = t.draft);
-    const l = (await this.request(n, {
-      body: JSON.stringify(a),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        ...this.config.headers
-      },
-      method: "POST",
-      signal: i
-    }, {
-      invalidResponse: s ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
-      networkError: s ? "Не удалось связаться с сервером подготовки описания." : "Не удалось связаться с сервером подготовки промпта.",
-      requestFailed: s ? "Сервер не смог подготовить описание изображения." : "Сервер не смог подготовить промпт для изображения."
-    }))[e];
-    if (typeof l != "string" || l.trim() === "")
-      throw new $(
-        "invalid_response",
-        s ? "Некорректный ответ сервера подготовки описания." : "Некорректный ответ сервера подготовки промпта.",
-        Qi
-      );
-    return l;
-  }
-  /**
-   * Execute a host JSON request.
-   * @param url - host URL
-   * @param init - fetch options
-   * @param messages - safe operation-specific failures
-   */
-  async request(t, e, i = {
-    invalidResponse: "Некорректный ответ сервера генерации изображений.",
-    networkError: "Не удалось связаться с сервером генерации изображений.",
-    requestFailed: "Сервер не смог выполнить операцию с изображением."
-  }) {
-    let n;
-    try {
-      n = await fetch(t, e);
-    } catch (s) {
-      throw s instanceof DOMException && s.name === "AbortError" ? s : new $(
-        "network_error",
-        i.networkError,
-        0
-      );
-    }
-    const o = await n.json().catch(() => null);
-    if (!n.ok) {
-      if (this.isRecord(o) && this.isRecord(o.error)) {
-        const s = o.error.code, a = o.error.message;
-        if (typeof s == "string" && typeof a == "string")
-          throw new $(s, a, n.status);
-      }
-      throw new $(
-        "request_failed",
-        i.requestFailed,
-        n.status
-      );
-    }
-    if (!this.isRecord(o) || !this.isRecord(o.data))
-      throw new $(
-        "invalid_response",
-        i.invalidResponse,
-        n.status
-      );
-    return o.data;
-  }
-  /**
-   * Send a JSON mutation and normalize its session response.
-   * @param url - host mutation URL
-   * @param body - JSON request body
-   * @param signal - optional cancellation signal
-   */
-  async mutate(t, e, i) {
-    const n = await this.request(t, {
-      body: JSON.stringify(e),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        ...this.config.headers
-      },
-      method: "POST",
-      signal: i
-    });
-    return this.normalizeSession(n);
-  }
-  /**
-   * Normalize the host response and discard provider-only fields.
-   * @param data - host response data
-   */
-  normalizeSession(t) {
-    const e = this.requiredString(t, "session_id");
-    let i;
-    if (Array.isArray(t.candidates)) {
-      i = [];
-      for (const o of t.candidates)
-        !this.isRecord(o) || typeof o.id != "string" || o.id === "" || i.push({
-          id: o.id,
-          parentId: typeof o.parent_id == "string" ? o.parent_id : null,
-          previewUrl: this.previewVariant(this.resolveEndpoint(this.config.endpoints.candidate, {
-            candidateId: o.id,
-            sessionId: e
-          }))
-        });
-    }
-    const n = this.isRecord(t.error) && typeof t.error.code == "string" && typeof t.error.message == "string" ? {
-      code: t.error.code,
-      message: t.error.message
-    } : void 0;
-    return {
-      candidates: i,
-      error: n,
-      image: this.isRecord(t.image) ? t.image : void 0,
-      progress: typeof t.progress == "string" ? t.progress : void 0,
-      selectedCandidateId: typeof t.selected_candidate_id == "string" ? t.selected_candidate_id : void 0,
-      sessionId: e,
-      status: this.requiredString(t, "status")
-    };
-  }
-  /**
-   * Normalize the unfinished-session list and drop malformed rows.
-   * @param data - host response data
-   */
-  normalizeActiveSessions(t) {
-    const e = typeof t.limit == "number" && Number.isFinite(t.limit) ? t.limit : 1, i = [];
-    if (Array.isArray(t.sessions))
-      for (const n of t.sessions) {
-        if (!this.isRecord(n) || typeof n.session_id != "string" || n.session_id === "")
-          continue;
-        const o = this.isRecord(n.owner) ? n.owner : {}, s = typeof n.preview_candidate_id == "string" ? n.preview_candidate_id : null;
-        i.push({
-          candidateCount: typeof n.candidate_count == "number" ? n.candidate_count : 0,
-          createdAt: typeof n.created_at == "string" ? n.created_at : null,
-          isCurrentBlock: n.is_current_block === !0,
-          owner: {
-            title: typeof o.title == "string" && o.title !== "" ? o.title : "Публикация",
-            url: typeof o.url == "string" && o.url !== "" ? o.url : null
-          },
-          previewUrl: s === null ? null : this.previewVariant(this.resolveEndpoint(this.config.endpoints.candidate, {
-            candidateId: s,
-            sessionId: n.session_id
-          })),
-          prompt: typeof n.prompt == "string" && n.prompt !== "" ? n.prompt : null,
-          sessionId: n.session_id,
-          status: typeof n.status == "string" ? n.status : "queued"
-        });
-      }
-    return { limit: e, sessions: i };
-  }
-  /**
-   * Replace encoded identifiers in a host endpoint template.
-   * @param template - URL containing named placeholders
-   * @param values - placeholder values
-   */
-  resolveEndpoint(t, e) {
-    return Object.entries(e).reduce(
-      (i, [n, o]) => i.split(`{${n}}`).join(encodeURIComponent(o)),
-      t
-    );
-  }
-  /**
-   * Determine whether polling should stop.
-   * @param status - normalized host state
-   */
-  isTerminal(t) {
-    return ["cancelled", "completed", "expired", "failed", "ready"].includes(t);
-  }
-  /**
-   * Wait between polling attempts and respect cancellation.
-   * @param durationMs - delay duration
-   * @param signal - optional cancellation signal
-   */
-  async wait(t, e) {
-    if ((e == null ? void 0 : e.aborted) === !0)
-      throw new DOMException("The operation was aborted.", "AbortError");
-    t <= 0 || await new Promise((i, n) => {
-      let o;
-      const s = () => {
-        clearTimeout(o), n(new DOMException("The operation was aborted.", "AbortError"));
-      };
-      o = setTimeout(() => {
-        e == null || e.removeEventListener("abort", s), i();
-      }, t), e == null || e.addEventListener("abort", s, { once: !0 });
-    });
-  }
-  /**
-   * Read a required non-empty response string.
-   * @param data - response data object
-   * @param key - response key
-   */
-  requiredString(t, e) {
-    const i = t[e];
-    if (typeof i != "string" || i === "")
-      throw new $(
-        "invalid_response",
-        "Некорректный ответ сервера генерации изображений.",
-        0
-      );
-    return i;
-  }
-  /**
-   * Check whether a value is a JSON object.
-   * @param value - unknown response value
-   */
-  isRecord(t) {
-    return typeof t == "object" && t !== null && !Array.isArray(t);
-  }
-}
-class en {
-  constructor({
-    onAdoptSession: t,
-    onAssistPrompt: e,
-    onCancel: i,
-    onCloseSession: n,
-    onFinalize: o,
-    onGenerate: s,
-    onRefine: a,
-    onSelectCandidate: d,
-    onSelectHistory: l,
-    promptAssistanceEnabled: h,
-    promptId: c,
-    aspectRatio: u,
-    aspectRatios: b,
-    resolution: C,
-    resolutions: p,
-    metadataPlaceholders: f,
-    source: g
-  }) {
-    this.isGenerationBusy = !1, this.operationStartedAt = null, this.operationElapsedSeconds = 0, this.lastOperationSeconds = null, this.operationTicker = null, this.lastStatusMessage = "", this.isPromptAssistanceBusy = !1, this.isGeneratedCaptionBusy = !1, this.hasFreeSessionSlot = !0, this.promptAssistanceEnabled = h, this.defaultResolution = C, this.onAdoptSession = t, this.onCloseSession = n, this.onSelectCandidate = d, this.onSelectHistory = l;
-    const v = y("div", ["ai-image-tool__generator"]), w = y("div", ["ai-image-tool__sessions"]), x = y("div", ["ai-image-tool__sessions-title"]), S = y("div", ["ai-image-tool__sessions-list"]), m = y("div", ["ai-image-tool__prompt-section"]), _ = y("label", ["ai-image-tool__label"]), I = y("textarea", ["ai-image-tool__prompt"]), E = y("label", ["ai-image-tool__caption-option"]), O = y("input", ["ai-image-tool__caption-checkbox"]), W = y("span"), q = y("div", ["ai-image-tool__prompt-assistance"]), F = y("div", ["ai-image-tool__aspect-ratio-field"]), G = y("span", ["ai-image-tool__aspect-ratio-label"]), D = y("div", ["ai-image-tool__aspect-ratios"]), P = y("label", ["ai-image-tool__resolution-option"]), U = y("input", ["ai-image-tool__resolution-checkbox"]), ct = y("span"), dt = y("div", ["ai-image-tool__prompt-actions"]), nt = y("button", ["ai-image-tool__action", "ai-image-tool__action--generate"], { type: "button" }), V = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), J = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), ot = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], { type: "button" }), yt = y("div", ["ai-image-tool__status"]), st = y("div", ["ai-image-tool__error"]), Nt = y("div", ["ai-image-tool__candidates"]), kt = y("div", ["ai-image-tool__selection"]), Rt = y("img", ["ai-image-tool__selected-preview"]), Gt = y("div", ["ai-image-tool__metadata"]), Z = y("textarea", ["ai-image-tool__metadata-input", "ai-image-tool__metadata-caption"]), K = y("input", ["ai-image-tool__metadata-input"]), Q = y("input", ["ai-image-tool__metadata-input"]), Ht = y("div", ["ai-image-tool__caption-status"]), Ft = y("label", ["ai-image-tool__label"]), at = y("textarea", ["ai-image-tool__prompt"]), Ot = y("button", ["ai-image-tool__action"], { type: "button" }), Dt = y("button", ["ai-image-tool__action"], { type: "button" }), le = y("div", ["ai-image-tool__history"]), Ut = y("div", ["ai-image-tool__history-status"]);
-    I.id = c, I.rows = 3, I.placeholder = "Опишите изображение, которое нужно создать", _.htmlFor = c, _.textContent = "Введите промпт", nt.textContent = "Генерировать", V.textContent = "Промпт по публикации", J.textContent = "Улучшить промпт", ot.textContent = "Отменить", V.hidden = !h, J.hidden = !h, O.type = "checkbox", O.id = `${c}-generate-caption`, W.textContent = "Также сгенерировать описание", E.htmlFor = O.id, E.hidden = !h, E.append(O, W), q.append(E, J), D.setAttribute("role", "radiogroup"), D.setAttribute("aria-label", "Соотношение сторон"), this.createAspectRatioOptions(D, b, u, c), G.textContent = "Соотношение сторон:", U.type = "checkbox", U.id = `${c}-hd-resolution`, U.checked = C === "2k", ct.textContent = "HD 2k", P.htmlFor = U.id, P.title = "Варианты в 2k: дольше и дороже, зато детальнее", P.hidden = !(p.includes("1k") && p.includes("2k")), P.append(U, ct), F.append(G, D, P), dt.append(V, ot, nt), m.append(_, I, q, F, dt), Rt.alt = "Выбранный вариант", Rt.dataset.selectedPreview = "", Z.id = `${c}-caption`, Z.rows = 2, Z.dataset.generatedCaption = "", Z.dataset.aiImageMetadata = "", Z.placeholder = f.caption, Z.setAttribute("aria-label", f.caption), K.type = "text", K.dataset.aiImageMetadata = "", K.placeholder = f.source, K.setAttribute("aria-label", f.source), K.defaultValue = g.name, K.value = g.name, Q.type = "url", Q.dataset.aiImageMetadata = "", Q.placeholder = f.sourceLink, Q.setAttribute("aria-label", f.sourceLink), Q.defaultValue = g.url, Q.value = g.url, Ht.setAttribute("aria-live", "polite"), Gt.append(Z, K, Q, Ht), at.id = `${c}-refinement`, at.rows = 2, at.dataset.refinementPrompt = "", Ft.htmlFor = at.id, Ft.textContent = "Как доработать изображение", Ot.textContent = "Доработать", Dt.textContent = "Использовать изображение", kt.hidden = !0, kt.append(
-      Rt,
-      Gt,
-      Ft,
-      at,
-      Ot,
-      Dt,
-      le,
-      Ut
-    ), yt.setAttribute("aria-live", "polite"), st.setAttribute("aria-live", "assertive"), st.setAttribute("role", "alert"), st.hidden = !0, Ut.setAttribute("aria-live", "polite"), Nt.hidden = !0, v.hidden = !0, w.hidden = !0, w.append(x, S), v.append(w, m, yt, st, Nt, kt), nt.addEventListener("click", () => s(
-      I.value,
-      O.checked,
-      this.selectedAspectRatio(),
-      this.selectedResolution()
-    )), V.addEventListener("click", () => e("generate", I.value)), J.addEventListener("click", () => e("improve", I.value)), ot.addEventListener("click", i), Ot.addEventListener("click", () => a(at.value)), Dt.addEventListener("click", o), I.addEventListener("input", () => this.updatePromptControls()), this.nodes = {
-      wrapper: v,
-      sessionsSection: w,
-      sessionsTitle: x,
-      sessionsList: S,
-      promptSection: m,
-      prompt: I,
-      generateButton: nt,
-      generateFromPublicationButton: V,
-      improvePromptButton: J,
-      generateCaptionCheckbox: O,
-      aspectRatioOptions: D,
-      hdResolutionOption: P,
-      hdResolutionCheckbox: U,
-      generationStatus: yt,
-      generationError: st,
-      candidates: Nt,
-      selection: kt,
-      selectedPreview: Rt,
-      metadataSection: Gt,
-      generatedCaption: Z,
-      generatedCaptionStatus: Ht,
-      sourceName: K,
-      sourceUrl: Q,
-      refinementPrompt: at,
-      refineButton: Ot,
-      finalizeButton: Dt,
-      cancelButton: ot,
-      history: le,
-      historyStatus: Ut
-    }, this.updatePromptControls();
-  }
-  open() {
-    this.nodes.wrapper.hidden = !1, this.nodes.prompt.focus();
-  }
-  close() {
-    this.nodes.wrapper.hidden = !0, this.reset();
-  }
-  /**
-   * Show the editor's unfinished sessions above the prompt: each one can be
-   * continued here, opened in its own publication, or closed to free a slot.
-   */
-  showActiveSessions(t) {
-    const { limit: e, sessions: i } = t;
-    if (this.hasFreeSessionSlot = i.length < e, this.nodes.sessionsList.replaceChildren(), i.length === 0) {
-      this.nodes.sessionsSection.hidden = !0, this.updatePromptControls();
-      return;
-    }
-    this.nodes.sessionsTitle.textContent = this.hasFreeSessionSlot ? `Незакрытые генерации: ${i.length} из ${e}` : `Все слоты заняты (${i.length} из ${e}) — продолжите одну или закройте лишние`;
-    for (const n of i)
-      this.nodes.sessionsList.appendChild(this.buildSessionCard(n));
-    this.nodes.sessionsSection.hidden = !1, this.updatePromptControls();
-  }
-  hideActiveSessions() {
-    this.hasFreeSessionSlot = !0, this.nodes.sessionsSection.hidden = !0, this.nodes.sessionsList.replaceChildren(), this.updatePromptControls();
-  }
-  buildSessionCard(t) {
-    const e = y("div", ["ai-image-tool__session"], { "data-session-id": t.sessionId }), i = y("div", ["ai-image-tool__session-preview"]);
-    if (t.previewUrl !== null) {
-      const h = y("img", ["ai-image-tool__session-thumb"], {
-        alt: "",
-        loading: "lazy",
-        src: t.previewUrl
-      });
-      i.appendChild(h);
-    }
-    const n = y("div", ["ai-image-tool__session-body"]), o = t.owner.url === null ? y("span", ["ai-image-tool__session-title"]) : y("a", ["ai-image-tool__session-title"], {
-      href: t.owner.url,
-      rel: "noopener",
-      target: "_blank"
-    });
-    o.textContent = t.owner.title;
-    const s = y("div", ["ai-image-tool__session-meta"]);
-    if (s.textContent = [
-      t.isCurrentBlock ? "этот блок" : null,
-      this.sessionStatusLabel(t.status),
-      t.candidateCount > 0 ? `${t.candidateCount} вар.` : null,
-      this.sessionTimeLabel(t.createdAt)
-    ].filter((h) => h !== null).join(" · "), n.append(o, s), t.prompt !== null) {
-      const h = y("div", ["ai-image-tool__session-prompt"]);
-      h.textContent = t.prompt, n.appendChild(h);
-    }
-    const a = y("div", ["ai-image-tool__session-actions"]), d = y("button", ["ai-image-tool__action", "ai-image-tool__action--secondary"], {
-      type: "button"
-    });
-    d.textContent = t.isCurrentBlock ? "Продолжить" : "Продолжить здесь", d.addEventListener("click", () => this.onAdoptSession(t.sessionId));
-    const l = y("button", ["ai-image-tool__session-close"], {
-      title: "Закрыть генерацию и освободить слот",
-      type: "button"
-    });
-    return l.setAttribute("aria-label", "Закрыть генерацию"), l.textContent = "×", l.addEventListener("click", () => this.onCloseSession(t.sessionId)), a.append(d, l), e.append(i, n, a), e;
-  }
-  sessionStatusLabel(t) {
-    return {
-      failed: "ошибка",
-      finalizing: "вставляется",
-      generating: "генерируется",
-      queued: "в очереди",
-      ready: "варианты готовы",
-      refining: "дорабатывается"
-    }[t] ?? t;
-  }
-  sessionTimeLabel(t) {
-    if (t === null)
-      return null;
-    const e = new Date(t);
-    return Number.isNaN(e.getTime()) ? null : e.toLocaleString("ru-RU", {
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      month: "2-digit"
-    });
-  }
-  setPromptValue(t) {
-    this.nodes.prompt.value = t, this.updatePromptControls();
-  }
-  showPromptAssistanceStatus(t) {
-    this.nodes.generationStatus.textContent = t;
-  }
-  setPromptAssistanceBusy(t) {
-    this.isPromptAssistanceBusy = t, this.updatePromptControls();
-  }
-  setGenerationBusy(t) {
-    this.isGenerationBusy = t, t ? this.startOperationTimer() : (this.stopOperationTimer(!0), this.renderGenerationStatus()), this.updatePromptControls(), this.updateSelectionControls();
-  }
-  /** Генерация идёт десяток секунд: рядом с лоадером тикают секунды, в конце - итог. */
-  startOperationTimer() {
-    this.operationTicker === null && (this.operationStartedAt = Date.now(), this.operationElapsedSeconds = 0, this.lastOperationSeconds = null, this.operationTicker = setInterval(() => {
-      this.operationStartedAt !== null && (this.operationElapsedSeconds = (Date.now() - this.operationStartedAt) / 1e3, this.renderGenerationStatus());
-    }, 1e3));
-  }
-  stopOperationTimer(t) {
-    this.operationTicker !== null && (clearInterval(this.operationTicker), this.operationTicker = null), t && this.operationStartedAt !== null && (this.lastOperationSeconds = (Date.now() - this.operationStartedAt) / 1e3), this.operationStartedAt = null, this.operationElapsedSeconds = 0;
-  }
-  formatSeconds(t) {
-    return `${t.toFixed(1).replace(".", ",")} с`;
-  }
-  renderGenerationStatus() {
-    const t = this.lastStatusMessage;
-    if (t === "") {
-      this.nodes.generationStatus.textContent = "", this.nodes.generationStatus.dataset.busy = "false";
-      return;
-    }
-    if (this.nodes.generationStatus.dataset.busy = String(this.operationStartedAt !== null), this.operationStartedAt !== null) {
-      this.nodes.generationStatus.textContent = `${t} ${this.formatSeconds(this.operationElapsedSeconds)}`;
-      return;
-    }
-    this.nodes.generationStatus.textContent = this.lastOperationSeconds === null ? t : `${t} (за ${this.formatSeconds(this.lastOperationSeconds)})`;
-  }
-  prepareGeneratedCaption() {
-    this.isGeneratedCaptionBusy = !0, this.nodes.generatedCaption.value = "", this.nodes.generatedCaptionStatus.textContent = "Генерируем описание...", delete this.nodes.generatedCaptionStatus.dataset.error, this.updateSelectionControls();
-  }
-  completeGeneratedCaption(t) {
-    this.isGeneratedCaptionBusy = !1, this.nodes.generatedCaption.value = t, this.nodes.generatedCaptionStatus.textContent = "Описание готово — можно отредактировать.", delete this.nodes.generatedCaptionStatus.dataset.error, this.updateSelectionControls();
-  }
-  failGeneratedCaption(t) {
-    this.isGeneratedCaptionBusy = !1, this.nodes.generatedCaptionStatus.textContent = t, this.nodes.generatedCaptionStatus.dataset.error = "", this.updateSelectionControls();
-  }
-  resetGeneratedCaption() {
-    this.isGeneratedCaptionBusy = !1, this.nodes.generatedCaption.value = "", this.nodes.sourceName.value = this.nodes.sourceName.defaultValue, this.nodes.sourceUrl.value = this.nodes.sourceUrl.defaultValue, this.nodes.generatedCaptionStatus.textContent = "", delete this.nodes.generatedCaptionStatus.dataset.error, this.updateSelectionControls();
-  }
-  getImageMetadata() {
-    return {
-      caption: this.nodes.generatedCaption.value,
-      source: this.nodes.sourceName.value,
-      sourceLink: this.nodes.sourceUrl.value
-    };
-  }
-  showGenerationStatus(t, e) {
-    const i = {
-      finalization_queued: "Сохранение поставлено в очередь...",
-      finalization_submitting: "Отправляем выбранное изображение на сохранение...",
-      finalizing: "Сохраняем изображение...",
-      generation_processing: "Нейросеть генерирует варианты...",
-      generation_queued: "Генерация поставлена в очередь...",
-      generation_submitting: "Отправляем запрос на генерацию...",
-      generating: "Нейросеть генерирует варианты...",
-      media_copying: "Копируем изображение из временного хранилища...",
-      media_resizing: "Ресайз изображения...",
-      media_warming: "Прогрев изображения...",
-      queued: "Запрос поставлен в очередь...",
-      ready: "Выберите вариант изображения, его можно будет доработать.",
-      refinement_processing: "Нейросеть дорабатывает изображение...",
-      refinement_queued: "Доработка поставлена в очередь...",
-      refinement_submitting: "Отправляем запрос на доработку...",
-      refining: "Нейросеть дорабатывает изображение..."
-    }, n = e ?? t, o = i[n] ?? "";
-    this.lastStatusMessage = o, this.renderGenerationStatus(), this.nodes.historyStatus.textContent = n.startsWith("refinement_") ? o : "";
-  }
-  showGenerationError(t) {
-    this.nodes.generationError.textContent = t, this.nodes.generationError.hidden = t === "";
-  }
-  showCandidates(t) {
-    var e;
-    this.nodes.candidates.replaceChildren(), t.forEach((i, n) => {
-      const o = y("button", ["ai-image-tool__candidate"], { type: "button" }), s = y("img", ["ai-image-tool__candidate-image"]);
-      o.dataset.candidateId = i.id, o.setAttribute("aria-label", `Выбрать вариант ${n + 1}`), o.setAttribute("aria-pressed", "false"), o.addEventListener("click", () => this.selectCandidate(i.id)), s.alt = `Вариант ${n + 1}`, s.src = i.previewUrl, o.appendChild(s), this.nodes.candidates.appendChild(o);
-    }), this.nodes.promptSection.hidden = !0, this.nodes.candidates.hidden = !1, this.showGenerationStatus("ready"), (e = this.nodes.candidates.querySelector("[data-candidate-id]")) == null || e.focus();
-  }
-  showSelectedCandidate(t, e) {
-    this.nodes.candidates.querySelectorAll("[data-candidate-id]").forEach((i) => {
-      i.setAttribute("aria-pressed", String(i.dataset.candidateId === t.id));
-    }), this.nodes.selectedPreview.src = t.previewUrl, this.nodes.selection.hidden = !1, this.nodes.history.replaceChildren(), e.forEach((i, n) => {
-      const o = y("button", ["ai-image-tool__history-item"], { type: "button" });
-      o.dataset.historyCandidateId = i.id, o.textContent = `Версия ${n + 1}`, o.setAttribute("aria-current", i.id === t.id ? "true" : "false"), o.addEventListener("click", () => this.selectHistory(i.id)), this.nodes.history.appendChild(o);
-    });
-  }
-  clearRefinementPrompt() {
-    this.nodes.refinementPrompt.value = "";
-  }
-  selectCandidate(t) {
-    this.onSelectCandidate(t);
-  }
-  selectHistory(t) {
-    this.onSelectHistory(t);
-  }
-  reset() {
-    this.nodes.promptSection.hidden = !1, this.nodes.candidates.hidden = !0, this.nodes.selection.hidden = !0, this.nodes.candidates.replaceChildren(), this.nodes.history.replaceChildren(), this.nodes.prompt.value = "", this.nodes.refinementPrompt.value = "", this.lastStatusMessage = "", this.lastOperationSeconds = null, this.stopOperationTimer(!1), this.nodes.generationStatus.textContent = "", this.showGenerationError(""), this.resetGeneratedCaption(), this.setGenerationBusy(!1), this.setPromptAssistanceBusy(!1);
-  }
-  updatePromptControls() {
-    const t = this.isGenerationBusy || this.isPromptAssistanceBusy;
-    this.nodes.wrapper.setAttribute("aria-busy", String(t)), this.nodes.prompt.disabled = t, this.nodes.generateButton.disabled = t || !this.hasFreeSessionSlot, this.nodes.generateFromPublicationButton.disabled = t || !this.promptAssistanceEnabled, this.nodes.generateCaptionCheckbox.disabled = t || !this.promptAssistanceEnabled, this.nodes.aspectRatioOptions.querySelectorAll('input[type="radio"]').forEach((e) => {
-      e.disabled = t;
-    }), this.nodes.hdResolutionCheckbox.disabled = t, this.nodes.improvePromptButton.disabled = t || !this.promptAssistanceEnabled || this.nodes.prompt.value.trim() === "";
-  }
-  updateSelectionControls() {
-    this.nodes.refinementPrompt.disabled = this.isGenerationBusy, this.nodes.refineButton.disabled = this.isGenerationBusy, this.nodes.finalizeButton.disabled = this.isGenerationBusy || this.isGeneratedCaptionBusy, this.nodes.generatedCaption.disabled = this.isGenerationBusy || this.isGeneratedCaptionBusy, this.nodes.sourceName.disabled = this.isGenerationBusy, this.nodes.sourceUrl.disabled = this.isGenerationBusy;
-  }
-  createAspectRatioOptions(t, e, i, n) {
-    const o = e.includes(i) ? i : e[0] ?? "3:2";
-    e.forEach((s) => {
-      const a = y("label", ["ai-image-tool__aspect-ratio-option"]), d = y("input", ["ai-image-tool__aspect-ratio-input"]), l = y("span");
-      d.type = "radio", d.name = `${n}-aspect-ratio`, d.value = s, d.checked = s === o, l.textContent = s, a.append(d, l), t.appendChild(a);
-    });
-  }
-  selectedAspectRatio() {
-    var e;
-    const t = (e = this.nodes.aspectRatioOptions.querySelector('input[type="radio"]:checked')) == null ? void 0 : e.value;
-    return t === "16:9" || t === "1:1" ? t : "3:2";
-  }
-  selectedResolution() {
-    return this.nodes.hdResolutionOption.hidden ? this.defaultResolution : this.nodes.hdResolutionCheckbox.checked ? "2k" : "1k";
-  }
-}
-class nn {
-  constructor({
-    blockId: t,
-    config: e,
-    initialPending: i,
-    metadataPlaceholders: n,
-    onChange: o,
-    onFinalized: s
-  }) {
-    this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.isPromptAssistanceRunning = !1, this.isCaptionRequestRunning = !1, this.isDestroyed = !1, this.hasCancelledPendingGeneration = !1, this.pollController = null, this.promptAssistanceController = null, this.captionController = null, this.promptAssistanceRequestToken = 0, this.captionRequestToken = 0, this.candidates = /* @__PURE__ */ new Map(), this.history = [], this.selectedCandidateId = null, this.blockId = t, this.client = new tn(e), this.config = e, this.onChange = o, this.onFinalized = s, this.sessionId = (i == null ? void 0 : i.sessionId) ?? null;
-    const a = typeof e.endpoints.prompt == "string" && e.endpoints.prompt.trim() !== "" && e.publicationContext !== void 0 && typeof e.getPublicationContext == "function", d = this.availableResolutions(e.resolutions);
-    this.ui = new en({
-      onAdoptSession: (l) => this.adoptSession(l),
-      onAssistPrompt: (l, h) => this.assistPrompt(l, h),
-      onCancel: () => this.cancel(),
-      onCloseSession: (l) => this.closeSession(l),
-      onFinalize: () => this.finalizeSelectedCandidate(),
-      onGenerate: (l, h, c, u) => this.generate(l, h, c, u),
-      onRefine: (l) => this.refine(l),
-      onSelectCandidate: (l) => this.selectCandidate(l),
-      onSelectHistory: (l) => this.selectCandidate(l),
-      aspectRatio: this.defaultAspectRatio(e.aspectRatio),
-      aspectRatios: this.availableAspectRatios(e.aspectRatios),
-      resolution: this.defaultResolution(e.resolution, d),
-      resolutions: d,
-      metadataPlaceholders: n,
-      promptAssistanceEnabled: a,
-      promptId: `gallery-ai-prompt-${t}`,
-      source: e.source ?? { name: "", url: "" }
-    }), this.element = this.ui.nodes.wrapper;
-  }
-  open() {
-    this.isDestroyed || (this.sessionId === null && (this.sessionId = globalThis.crypto.randomUUID(), this.hasCancelledPendingGeneration = !1, this.onChange()), this.ui.open(), this.refreshActiveSessions());
-  }
-  /**
-   * Показать незакрытые генерации редактора: сессия живёт сутки и занимает
-   * слот, поэтому решение — продолжить её или закрыть — принимает он сам.
-   */
-  refreshActiveSessions() {
-    this.client.listSessions(this.blockId).then((t) => {
-      this.isDestroyed || this.ui.showActiveSessions(t);
-    }).catch(() => {
-    });
-  }
-  adoptSession(t) {
-    this.isDestroyed || this.isGenerationRequestRunning || this.runAdoptSession(t);
-  }
-  async runAdoptSession(t) {
-    const e = this.replacePollController();
-    this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.ui.setGenerationBusy(!0);
-    try {
-      const i = await this.client.adopt({ blockId: this.blockId, sessionId: t }, e.signal);
-      this.candidates.clear(), this.history = [], this.selectedCandidateId = null, this.sessionId = t, this.hasCancelledPendingGeneration = !1, this.onChange(), this.ui.hideActiveSessions(), this.applySession(i), (i.status === "queued" || i.status === "generating" || i.status === "refining") && this.applySession(await this.client.poll({
-        blockId: this.blockId,
-        onStatus: (n) => this.applySession(n),
-        sessionId: t,
-        signal: e.signal
-      }));
-    } catch (i) {
-      this.handleOperationError(i, "Не удалось продолжить эту генерацию.", () => {
-      }), this.refreshActiveSessions();
-    } finally {
-      this.finishGenerationRequest(e);
-    }
-  }
-  closeSession(t) {
-    if (this.isDestroyed)
-      return;
-    const e = t === this.sessionId;
-    e && (this.hasCancelledPendingGeneration = !0), this.client.cancel({ blockId: this.blockId, sessionId: t }).catch(() => {
-    }).then(() => {
-      this.isDestroyed || (e && (this.resetSession(), this.sessionId = globalThis.crypto.randomUUID(), this.hasCancelledPendingGeneration = !1, this.ui.close(), this.ui.open(), this.onChange()), this.refreshActiveSessions());
-    });
-  }
-  getPendingData() {
-    if (this.sessionId !== null)
-      return {
-        pending: !0,
-        sessionId: this.sessionId
-      };
-  }
-  destroy() {
-    this.isDestroyed = !0, this.abortPromptAssistance(), this.abortCaptionGeneration(), this.cancelPendingGeneration();
-  }
-  cancel() {
-    this.abortPromptAssistance(), this.abortCaptionGeneration(), this.cancelPendingGeneration(), this.resetSession(), this.ui.close(), this.onChange();
-  }
-  cancelPendingGeneration() {
-    var e;
-    if (this.sessionId === null || this.hasCancelledPendingGeneration)
-      return;
-    const t = this.sessionId;
-    this.hasCancelledPendingGeneration = !0, (e = this.pollController) == null || e.abort(), this.client.cancel({ blockId: this.blockId, sessionId: t }).catch(() => {
-    });
-  }
-  resetSession() {
-    var t;
-    (t = this.pollController) == null || t.abort(), this.pollController = null, this.sessionId = null, this.generationActionId = null, this.refinementActionId = null, this.finalizationActionId = null, this.isGenerationRequestRunning = !1, this.selectedCandidateId = null, this.candidates.clear(), this.history = [];
-  }
-  abortPromptAssistance() {
-    var t;
-    this.promptAssistanceRequestToken += 1, (t = this.promptAssistanceController) == null || t.abort(), this.promptAssistanceController = null, this.isPromptAssistanceRunning = !1;
-  }
-  abortCaptionGeneration() {
-    var t;
-    this.captionRequestToken += 1, (t = this.captionController) == null || t.abort(), this.captionController = null, this.isCaptionRequestRunning = !1;
-  }
-  assistPrompt(t, e) {
-    const i = this.config.getPublicationContext;
-    if (this.isDestroyed || this.isPromptAssistanceRunning || i === void 0)
-      return;
-    if (t === "improve" && e.trim() === "") {
-      this.ui.showGenerationError("Введите промпт, который нужно улучшить.");
-      return;
-    }
-    this.ui.showGenerationError(""), this.isPromptAssistanceRunning = !0;
-    const n = ++this.promptAssistanceRequestToken, o = new AbortController();
-    this.promptAssistanceController = o, this.ui.setPromptAssistanceBusy(!0), this.ui.showPromptAssistanceStatus(t === "generate" ? "Подготавливаем промпт по публикации..." : "Улучшаем промпт с учётом публикации..."), this.runPromptAssistance(t, e, i, o, n);
-  }
-  async runPromptAssistance(t, e, i, n, o) {
-    try {
-      const s = await i();
-      if (!this.isCurrentPromptAssistance(o, n))
-        return;
-      this.assertPublicationHasText(s, "В публикации нет текста для подготовки промпта.");
-      const a = t === "generate" ? {
-        action: t,
-        actionId: globalThis.crypto.randomUUID(),
-        blockId: this.blockId,
-        publication: s
-      } : {
-        action: t,
-        actionId: globalThis.crypto.randomUUID(),
-        blockId: this.blockId,
-        draft: e,
-        publication: s
-      }, d = await this.client.assistPrompt(a, n.signal);
-      this.isCurrentPromptAssistance(o, n) && (this.ui.setPromptValue(d), this.ui.showPromptAssistanceStatus("Промпт готов — проверьте и при необходимости отредактируйте"));
-    } catch (s) {
-      this.isCurrentPromptAssistance(o, n) && !this.isAbortError(s) && (this.ui.showPromptAssistanceStatus(""), this.ui.showGenerationError(this.errorMessage(s, "Не удалось подготовить промпт для изображения.")));
-    } finally {
-      this.isCurrentPromptAssistance(o, n) && (this.isPromptAssistanceRunning = !1, this.promptAssistanceController = null, this.ui.setPromptAssistanceBusy(!1));
-    }
-  }
-  isCurrentPromptAssistance(t, e) {
-    return !this.isDestroyed && this.promptAssistanceRequestToken === t && this.promptAssistanceController === e;
-  }
-  startCaptionGeneration(t) {
-    const e = this.config.getPublicationContext;
-    if (this.abortCaptionGeneration(), this.ui.prepareGeneratedCaption(), e === void 0) {
-      this.ui.failGeneratedCaption("Описание недоступно — введите подпись вручную.");
-      return;
-    }
-    this.isCaptionRequestRunning = !0;
-    const i = ++this.captionRequestToken, n = new AbortController();
-    this.captionController = n, this.runCaptionGeneration(t, e, n, i);
-  }
-  async runCaptionGeneration(t, e, i, n) {
-    try {
-      const o = await e();
-      if (!this.isCurrentCaptionRequest(n, i))
-        return;
-      this.assertPublicationHasText(o, "В публикации нет текста для подготовки описания.");
-      const s = await this.client.generateCaption({
-        action: "caption",
-        actionId: globalThis.crypto.randomUUID(),
-        blockId: this.blockId,
-        draft: t,
-        publication: o
-      }, i.signal);
-      this.isCurrentCaptionRequest(n, i) && this.ui.completeGeneratedCaption(s);
-    } catch (o) {
-      this.isCurrentCaptionRequest(n, i) && !this.isAbortError(o) && this.ui.failGeneratedCaption(`${this.errorMessage(o, "Не удалось подготовить описание изображения.")} Можно ввести подпись вручную.`);
-    } finally {
-      this.isCurrentCaptionRequest(n, i) && (this.isCaptionRequestRunning = !1, this.captionController = null);
-    }
-  }
-  isCurrentCaptionRequest(t, e) {
-    return !this.isDestroyed && this.captionRequestToken === t && this.captionController === e;
-  }
-  generate(t, e, i, n) {
-    const o = t.trim();
-    if (o === "") {
-      this.ui.showGenerationError("Введите промпт для генерации изображения.");
-      return;
-    }
-    if (this.isGenerationRequestRunning || this.sessionId === null)
-      return;
-    this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.generationActionId ?? (this.generationActionId = globalThis.crypto.randomUUID());
-    const s = this.generationActionId, a = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "generation_submitting"), e ? this.startCaptionGeneration(o) : (this.abortCaptionGeneration(), this.ui.resetGeneratedCaption()), this.runGeneration(o, i, n, s, a);
-  }
-  async runGeneration(t, e, i, n, o) {
-    if (this.sessionId === null)
-      return;
-    const s = this.sessionId;
-    try {
-      const a = await this.client.generate({
-        actionId: n,
-        aspectRatio: e,
-        blockId: this.blockId,
-        prompt: t,
-        resolution: i ?? void 0,
-        sessionId: s
-      }, o.signal);
-      this.generationActionId = null, this.applySession(a);
-      const d = a.status === "ready" ? a : await this.client.poll({
-        blockId: this.blockId,
-        onStatus: (l) => this.applySession(l),
-        sessionId: s,
-        signal: o.signal
-      });
-      this.applySession(d);
-    } catch (a) {
-      this.handleOperationError(a, "Не удалось сгенерировать изображение.", () => {
-        this.generationActionId = null;
-      });
-    } finally {
-      this.finishGenerationRequest(o);
-    }
-  }
-  refine(t) {
-    const e = t.trim();
-    if (e === "") {
-      this.ui.showGenerationError("Опишите, как нужно доработать изображение.");
-      return;
-    }
-    if (this.isGenerationRequestRunning || this.sessionId === null || this.selectedCandidateId === null)
-      return;
-    this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.refinementActionId ?? (this.refinementActionId = globalThis.crypto.randomUUID());
-    const i = this.refinementActionId, n = this.selectedCandidateId, o = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("queued", "refinement_submitting"), this.runRefinement(e, n, i, o);
-  }
-  async runRefinement(t, e, i, n) {
-    if (this.sessionId === null)
-      return;
-    const o = this.sessionId;
-    try {
-      const s = await this.client.refine({
-        actionId: i,
-        blockId: this.blockId,
-        candidateId: e,
-        prompt: t,
-        sessionId: o
-      }, n.signal);
-      this.refinementActionId = null, this.applySession(s);
-      const a = s.status === "ready" ? s : await this.client.poll({
-        blockId: this.blockId,
-        onStatus: (d) => this.applySession(d),
-        sessionId: o,
-        signal: n.signal
-      });
-      this.applySession(a), this.ui.clearRefinementPrompt();
-    } catch (s) {
-      this.handleOperationError(s, "Не удалось доработать изображение.", () => {
-        this.refinementActionId = null;
-      });
-    } finally {
-      this.finishGenerationRequest(n);
-    }
-  }
-  finalizeSelectedCandidate() {
-    if (this.isGenerationRequestRunning || this.isCaptionRequestRunning || this.sessionId === null || this.selectedCandidateId === null)
-      return;
-    this.ui.showGenerationError(""), this.isGenerationRequestRunning = !0, this.finalizationActionId ?? (this.finalizationActionId = globalThis.crypto.randomUUID());
-    const t = this.finalizationActionId, e = this.selectedCandidateId, i = this.ui.getImageMetadata(), n = this.replacePollController();
-    this.ui.setGenerationBusy(!0), this.ui.showGenerationStatus("finalizing", "finalization_submitting"), this.runFinalization(e, t, n, i);
-  }
-  async runFinalization(t, e, i, n) {
-    if (this.sessionId === null)
-      return;
-    const o = this.sessionId;
-    try {
-      const s = await this.client.finalize({
-        actionId: e,
-        blockId: this.blockId,
-        candidateId: t,
-        sessionId: o
-      }, i.signal);
-      this.finalizationActionId = null, this.applySession(s);
-      const a = s.status === "completed" ? s : await this.client.poll({
-        blockId: this.blockId,
-        onStatus: (l) => this.applySession(l),
-        sessionId: o,
-        signal: i.signal
-      });
-      if (a.error !== void 0)
-        throw new $(a.error.code, a.error.message, 0);
-      if (a.image === void 0 || !this.isStandardImageData(a.image))
-        throw new $("invalid_final_image", "Сервер вернул некорректные данные изображения.", 0);
-      const d = this.mapImageToGalleryItem(a.image, n);
-      this.resetSession(), this.ui.close(), this.onFinalized(d), this.onChange();
-    } catch (s) {
-      this.handleOperationError(s, "Не удалось сохранить изображение.", () => {
-        this.finalizationActionId = null;
-      });
-    } finally {
-      this.finishGenerationRequest(i);
-    }
-  }
-  applySession(t) {
-    this.ui.showGenerationStatus(t.status, t.progress), t.status === "ready" && t.candidates !== void 0 && (t.candidates.forEach((e) => this.candidates.set(e.id, e)), t.selectedCandidateId === void 0 ? this.ui.showCandidates(t.candidates) : this.applyRefinementCandidate(t.selectedCandidateId)), t.error !== void 0 && this.ui.showGenerationError(t.error.message);
-  }
-  selectCandidate(t) {
-    const e = this.candidates.get(t);
-    if (e === void 0)
-      return;
-    const i = this.history.findIndex((n) => n.id === e.id);
-    i < 0 && e.parentId === null ? this.history = [e] : i < 0 && this.history.push(e), this.selectedCandidateId = e.id, this.ui.showSelectedCandidate(e, this.history);
-  }
-  applyRefinementCandidate(t) {
-    const e = this.candidates.get(t);
-    if (e === void 0)
-      return;
-    if (this.history.findIndex((n) => n.id === e.id) < 0) {
-      const n = this.history.findIndex((o) => o.id === e.parentId);
-      this.history = n >= 0 ? [...this.history.slice(0, n + 1), e] : [e];
-    }
-    this.selectedCandidateId = e.id, this.ui.showSelectedCandidate(e, this.history);
-  }
-  replacePollController() {
-    var t;
-    return (t = this.pollController) == null || t.abort(), this.pollController = new AbortController(), this.pollController;
-  }
-  finishGenerationRequest(t) {
-    this.pollController === t && (this.isGenerationRequestRunning = !1, this.ui.setGenerationBusy(!1));
-  }
-  handleOperationError(t, e, i) {
-    this.isAbortError(t) || (t instanceof $ && t.status > 0 && i(), this.ui.showGenerationError(this.errorMessage(t, e)));
-  }
-  isStandardImageData(t) {
-    const e = t.file;
-    return typeof e == "object" && e !== null && "url" in e && typeof e.url == "string" && e.url !== "" && typeof t.caption == "string" && typeof t.link == "string" && typeof t.alt == "string";
-  }
-  mapImageToGalleryItem(t, e) {
-    return {
-      caption: e.caption,
-      height: t.file.height,
-      imagorPath: t.file.imagor_path,
-      media_id: t.file.media_id,
-      source: e.source,
-      sourceLink: e.sourceLink,
-      url: t.file.url,
-      width: t.file.width,
-      isAiGenerated: !0
-    };
-  }
-  assertPublicationHasText(t, e) {
-    if (![t.title, t.subtitle, t.announce, t.body].some((i) => i.trim() !== ""))
-      throw new Error(e);
-  }
-  isAbortError(t) {
-    return t instanceof DOMException && t.name === "AbortError";
-  }
-  errorMessage(t, e) {
-    return t instanceof Error ? t.message : e;
-  }
-  availableAspectRatios(t) {
-    const e = (t == null ? void 0 : t.filter((i) => this.isAspectRatio(i))) ?? [];
-    return e.length > 0 ? e : ["16:9", "3:2", "1:1"];
-  }
-  defaultAspectRatio(t) {
-    return this.isAspectRatio(t) ? t : "3:2";
-  }
-  isAspectRatio(t) {
-    return t === "16:9" || t === "3:2" || t === "1:1";
-  }
-  availableResolutions(t) {
-    return (t == null ? void 0 : t.filter((e) => this.isResolution(e))) ?? [];
-  }
-  /** Without a host default the first allowed resolution wins; nothing is sent when the host lists none. */
-  defaultResolution(t, e) {
-    return this.isResolution(t) ? t : e[0] ?? null;
-  }
-  isResolution(t) {
-    return t === "1k" || t === "2k";
   }
 }
 /**
@@ -3738,64 +2659,48 @@ class nn {
  * @author iXBT
  * @license MIT
  */
-class on {
-  constructor({ data: t, config: e, api: i, readOnly: n, block: o }) {
-    this.aiGenerationController = null, this.currentLoadingItem = null, this.api = i, this.readOnly = n, this.block = o;
-    const s = e ?? {};
+class ki {
+  constructor({ data: t, config: e, api: i, readOnly: r, block: a }) {
+    this.currentLoadingItem = null, this.api = i, this.readOnly = r, this.block = a;
+    const n = e ?? {};
     this.config = {
-      endpoints: s.endpoints ?? {},
-      additionalRequestData: s.additionalRequestData,
-      additionalRequestHeaders: s.additionalRequestHeaders,
-      field: s.field ?? "image",
-      types: s.types ?? "image/*",
-      captionPlaceholder: this.api.i18n.t(s.captionPlaceholder ?? "Caption"),
-      sourcePlaceholder: this.api.i18n.t(s.sourcePlaceholder ?? "Source"),
-      sourceLinkPlaceholder: this.api.i18n.t(s.sourceLinkPlaceholder ?? "Source link"),
-      buttonContent: s.buttonContent ?? this.api.i18n.t("Add Image"),
-      urlButtonContent: s.urlButtonContent ?? this.api.i18n.t("Add from URL"),
-      uploader: s.uploader,
-      onNonImageFile: s.onNonImageFile,
-      mediaHost: s.mediaHost,
-      cover: s.cover,
-      onMediaRemoved: s.onMediaRemoved,
-      onCropApplied: s.onCropApplied,
-      generation: s.generation
+      endpoints: n.endpoints ?? {},
+      additionalRequestData: n.additionalRequestData,
+      additionalRequestHeaders: n.additionalRequestHeaders,
+      field: n.field ?? "image",
+      types: n.types ?? "image/*",
+      captionPlaceholder: this.api.i18n.t(n.captionPlaceholder ?? "Caption"),
+      sourcePlaceholder: this.api.i18n.t(n.sourcePlaceholder ?? "Source"),
+      sourceLinkPlaceholder: this.api.i18n.t(n.sourceLinkPlaceholder ?? "Source link"),
+      buttonContent: n.buttonContent ?? this.api.i18n.t("Add Image"),
+      urlButtonContent: n.urlButtonContent ?? this.api.i18n.t("Add from URL"),
+      uploader: n.uploader,
+      onNonImageFile: n.onNonImageFile,
+      mediaHost: n.mediaHost,
+      cover: n.cover,
+      onMediaRemoved: n.onMediaRemoved,
+      onCropApplied: n.onCropApplied
     }, this._data = {
       items: (t == null ? void 0 : t.items) ?? [],
       layout: (t == null ? void 0 : t.layout) ?? "grid",
       columns: (t == null ? void 0 : t.columns) ?? 3,
       stretched: (t == null ? void 0 : t.stretched) ?? !1
-    }, this.isPendingAiGeneration(t == null ? void 0 : t.aiGeneration) && (this._data.aiGeneration = t.aiGeneration), this.uploader = new oi({
+    }, this.uploader = new ze({
       config: this.config,
-      onUpload: (a) => this.onUpload(a),
-      onError: (a) => this.uploadingFailed(a)
-    }), this.cropModal = new Yi(), this.ui = new qt({
+      onUpload: (s) => this.onUpload(s),
+      onError: (s) => this.uploadingFailed(s)
+    }), this.cropModal = new Li(), this.ui = new Ot({
       api: i,
       config: this.config,
       onSelectFile: () => this.selectFile(),
-      onPasteFile: (a) => this.uploadFile(a),
-      onSelectUrl: (a) => this.uploadFromUrl(a),
-      onColumnsChange: (a) => this.onColumnsChange(a),
-      onRemoveImage: (a, d) => this.onRemoveImage(a, d),
-      onCropImage: (a) => this.handleCropImage(a),
+      onPasteFile: (s) => this.uploadFile(s),
+      onSelectUrl: (s) => this.uploadFromUrl(s),
+      onColumnsChange: (s) => this.onColumnsChange(s),
+      onRemoveImage: (s, d) => this.onRemoveImage(s, d),
+      onCropImage: (s) => this.handleCropImage(s),
       onItemSettingsChange: () => this.block.dispatchChange(),
-      onOpenAi: () => {
-        var a;
-        return (a = this.aiGenerationController) == null ? void 0 : a.open();
-      },
-      readOnly: n
-    }), this.config.generation !== void 0 && !this.readOnly && (this.aiGenerationController = new nn({
-      blockId: this.block.id,
-      config: this.config.generation,
-      initialPending: this._data.aiGeneration,
-      metadataPlaceholders: {
-        caption: this.config.captionPlaceholder ?? "Caption",
-        source: this.config.sourcePlaceholder ?? "Source",
-        sourceLink: this.config.sourceLinkPlaceholder ?? "Source link"
-      },
-      onChange: () => this.block.dispatchChange(),
-      onFinalized: (a) => this.onAiFinalized(a)
-    }));
+      readOnly: r
+    });
   }
   /**
    * Notify core that read-only mode is supported
@@ -3808,7 +2713,7 @@ class on {
    */
   static get toolbox() {
     return {
-      icon: Oe,
+      icon: de,
       title: "Gallery"
     };
   }
@@ -3840,40 +2745,30 @@ class on {
    * Renders Block content
    */
   render() {
-    var e;
     const t = this.ui.render(this._data.items, this._data.columns);
-    return this.aiGenerationController !== null && !t.contains(this.aiGenerationController.element) && t.appendChild(this.aiGenerationController.element), this._data.aiGeneration !== void 0 && ((e = this.aiGenerationController) == null || e.open()), this._data.stretched && this.setTune("stretched", !0), t;
+    return this._data.stretched && this.setTune("stretched", !0), t;
   }
   /**
    * Validate data
    */
   validate(t) {
-    return t.items.length > 0 || this.isPendingAiGeneration(t.aiGeneration);
+    return t.items.length > 0;
   }
   /**
    * Return Block data
    */
   save() {
-    var e;
-    this._data.items = this.ui.getItemsData(), this._data.columns = this.ui.getColumns();
-    const t = (e = this.aiGenerationController) == null ? void 0 : e.getPendingData();
-    return t === void 0 ? delete this._data.aiGeneration : this._data.aiGeneration = t, this._data;
+    return this._data.items = this.ui.getItemsData(), this._data.columns = this.ui.getColumns(), delete this._data.aiGeneration, this._data;
   }
   removed() {
-    var e;
-    if (((e = this.aiGenerationController) == null ? void 0 : e.getPendingData()) !== void 0) {
-      this.aiGenerationController.destroy();
-      return;
-    }
-    const t = this.ui.getItemsData().map((i) => i.media_id).filter((i) => !!i);
-    new Set(t).forEach((i) => {
-      var n, o;
-      return (o = (n = this.config).onMediaRemoved) == null ? void 0 : o.call(n, i);
+    const t = this.ui.getItemsData().map((e) => e.media_id).filter((e) => !!e);
+    new Set(t).forEach((e) => {
+      var i, r;
+      return (r = (i = this.config).onMediaRemoved) == null ? void 0 : r.call(i, e);
     });
   }
   destroy() {
-    var t;
-    (t = this.aiGenerationController) == null || t.destroy(), this.cropModal.destroy();
+    this.cropModal.destroy();
   }
   /**
    * Returns configuration for block tunes
@@ -3901,8 +2796,8 @@ class on {
       case "tag": {
         const e = t.detail.data;
         if (/^blob:/.test(e.src)) {
-          const n = await (await fetch(e.src)).blob();
-          this.uploadFile(n);
+          const r = await (await fetch(e.src)).blob();
+          this.uploadFile(r);
         } else
           this.uploadFromUrl(e.src);
         break;
@@ -3939,8 +2834,8 @@ class on {
   uploadFile(t) {
     var e, i;
     ((i = (e = this.config).onNonImageFile) == null ? void 0 : i.call(e, t)) !== !0 && this.uploader.uploadByFile(t, {
-      onPreview: (n) => {
-        this.currentLoadingItem = this.ui.createLoadingItem(n);
+      onPreview: (r) => {
+        this.currentLoadingItem = this.ui.createLoadingItem(r);
       }
     });
   }
@@ -3969,18 +2864,6 @@ class on {
     } else
       this.uploadingFailed("incorrect response: " + JSON.stringify(t));
   }
-  onAiFinalized(t) {
-    const e = this.ui.addItem(t), i = e.querySelector("img");
-    if (delete this._data.aiGeneration, i !== null) {
-      const n = () => {
-        e.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      };
-      i.complete ? requestAnimationFrame(n) : i.addEventListener("load", n, { once: !0 });
-    }
-  }
-  isPendingAiGeneration(t) {
-    return typeof t == "object" && t !== null && "pending" in t && t.pending === !0 && "sessionId" in t && typeof t.sessionId == "string" && t.sessionId !== "";
-  }
   /**
    * Handle upload errors
    */
@@ -4000,31 +2883,31 @@ class on {
    * Handle crop image request
    */
   async handleCropImage(t) {
-    var o, s;
+    var a, n;
     if (t.dataset.disableOptimization === "true")
       return;
     const e = t.dataset.url;
     if (!e) return;
-    const i = t.dataset.crop, n = await this.cropModal.open(
+    const i = t.dataset.crop, r = await this.cropModal.open(
       e,
       i,
       t.dataset.showOriginalOnClick === "true",
       this.normalizeCropAspectRatioMode(t.dataset.cropAspectRatio)
     );
-    if (n !== null) {
-      if (n.crop === "")
+    if (r !== null) {
+      if (r.crop === "")
         this.ui.updateItemAfterCrop(t, void 0, 0, 0, void 0, void 0);
       else {
         this.ui.updateItemAfterCrop(
           t,
-          n.crop,
-          n.croppedWidth,
-          n.croppedHeight,
-          n.showOriginalOnClick,
-          n.cropAspectRatio
+          r.crop,
+          r.croppedWidth,
+          r.croppedHeight,
+          r.showOriginalOnClick,
+          r.cropAspectRatio
         );
-        const a = t.dataset.mediaId;
-        a && ((s = (o = this.config).onCropApplied) == null || s.call(o, a, n.crop));
+        const s = t.dataset.mediaId;
+        s && ((n = (a = this.config).onCropApplied) == null || n.call(a, s, r.crop));
       }
       this.block.dispatchChange();
     }
@@ -4033,9 +2916,9 @@ class on {
    * Handle image removal - delete from S3
    */
   onRemoveImage(t, e) {
-    var n, o;
+    var r, a;
     if (this.block.dispatchChange(), e) {
-      (o = (n = this.config).onMediaRemoved) == null || o.call(n, e);
+      (a = (r = this.config).onMediaRemoved) == null || a.call(r, e);
       return;
     }
     const i = this.config.endpoints.deleteImage;
@@ -4046,8 +2929,8 @@ class on {
         ...this.config.additionalRequestHeaders || {}
       },
       body: JSON.stringify({ url: t })
-    }).then((s) => s.json()).catch((s) => {
-      console.error("Gallery Tool: failed to delete image", s);
+    }).then((n) => n.json()).catch((n) => {
+      console.error("Gallery Tool: failed to delete image", n);
     });
   }
   normalizeCropAspectRatioMode(t) {
@@ -4081,5 +2964,5 @@ class on {
   }
 }
 export {
-  on as default
+  ki as default
 };

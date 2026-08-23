@@ -1,4 +1,3 @@
-import type { AiImageClientConfig } from '../ai-image-client';
 import type { CropAspectRatio, CropAspectRatioMode, CropResult } from '../../../_shared/image-item/types';
 
 // Типы кропа живут в общем модуле packages/_shared/image-item (их делят media и gallery).
@@ -129,8 +128,6 @@ export interface GalleryConfig {
     /** Хост обновляет общий scalar pointer при смене обложки. */
     onCoverChanged?: (coverUuid: string | null) => void;
   };
-  /** Host-configured AI generation workflow. */
-  generation?: AiImageClientConfig;
 }
 
 /**

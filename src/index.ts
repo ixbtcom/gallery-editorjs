@@ -22,7 +22,6 @@ import './index.css';
 import Ui from './ui';
 import Uploader from './uploader';
 import CropModal from '../../_shared/image-item/crop-modal';
-import AiGenerationController from './ai-generation-controller';
 import { IconPicture } from '@codexteam/icons';
 import type {
   CropAspectRatioMode,
@@ -55,7 +54,6 @@ export default class GalleryTool implements BlockTool {
   private uploader: Uploader;
   private ui: Ui;
   private cropModal: CropModal;
-  private aiGenerationController: AiGenerationController | null = null;
   private _data: GalleryToolData;
   private currentLoadingItem: HTMLElement | null = null;
 
@@ -83,7 +81,6 @@ export default class GalleryTool implements BlockTool {
       cover: config.cover,
       onMediaRemoved: config.onMediaRemoved,
       onCropApplied: config.onCropApplied,
-      generation: config.generation,
     };
 
     this._data = {
@@ -92,10 +89,6 @@ export default class GalleryTool implements BlockTool {
       columns: data?.columns ?? 3,
       stretched: data?.stretched ?? false,
     };
-
-    if (this.isPendingAiGeneration(data?.aiGeneration)) {
-      this._data.aiGeneration = data.aiGeneration;
-    }
 
     this.uploader = new Uploader({
       config: this.config,
@@ -115,24 +108,9 @@ export default class GalleryTool implements BlockTool {
       onRemoveImage: (url: string, mediaId?: string) => this.onRemoveImage(url, mediaId),
       onCropImage: (item: HTMLElement) => this.handleCropImage(item),
       onItemSettingsChange: () => this.block.dispatchChange(),
-      onOpenAi: () => this.aiGenerationController?.open(),
       readOnly,
     });
 
-    if (this.config.generation !== undefined && !this.readOnly) {
-      this.aiGenerationController = new AiGenerationController({
-        blockId: this.block.id,
-        config: this.config.generation,
-        initialPending: this._data.aiGeneration,
-        metadataPlaceholders: {
-          caption: this.config.captionPlaceholder ?? 'Caption',
-          source: this.config.sourcePlaceholder ?? 'Source',
-          sourceLink: this.config.sourceLinkPlaceholder ?? 'Source link',
-        },
-        onChange: () => this.block.dispatchChange(),
-        onFinalized: item => this.onAiFinalized(item),
-      });
-    }
   }
 
   /**
@@ -184,13 +162,6 @@ export default class GalleryTool implements BlockTool {
   public render(): HTMLElement {
     const wrapper = this.ui.render(this._data.items, this._data.columns);
 
-    if (this.aiGenerationController !== null && !wrapper.contains(this.aiGenerationController.element)) {
-      wrapper.appendChild(this.aiGenerationController.element);
-    }
-    if (this._data.aiGeneration !== undefined) {
-      this.aiGenerationController?.open();
-    }
-
     if (this._data.stretched) {
       this.setTune('stretched', true);
     }
@@ -202,7 +173,7 @@ export default class GalleryTool implements BlockTool {
    * Validate data
    */
   public validate(savedData: GalleryToolData): boolean {
-    return savedData.items.length > 0 || this.isPendingAiGeneration(savedData.aiGeneration);
+    return savedData.items.length > 0;
   }
 
   /**
@@ -211,24 +182,14 @@ export default class GalleryTool implements BlockTool {
   public save(): GalleryToolData {
     this._data.items = this.ui.getItemsData();
     this._data.columns = this.ui.getColumns();
-    const pending = this.aiGenerationController?.getPendingData();
-
-    if (pending === undefined) {
-      delete this._data.aiGeneration;
-    } else {
-      this._data.aiGeneration = pending;
-    }
+    // ⛔ Генерация переехала в блок media: сохранённый у старой галереи маркер
+    // незавершённой сессии просто уходит из данных — открывать его нечем.
+    delete this._data.aiGeneration;
 
     return this._data;
   }
 
   public removed(): void {
-    if (this.aiGenerationController?.getPendingData() !== undefined) {
-      this.aiGenerationController.destroy();
-
-      return;
-    }
-
     const mediaIds = this.ui.getItemsData()
       .map(item => item.media_id)
       .filter((mediaId): mediaId is string => Boolean(mediaId));
@@ -237,7 +198,6 @@ export default class GalleryTool implements BlockTool {
   }
 
   public destroy(): void {
-    this.aiGenerationController?.destroy();
     this.cropModal.destroy();
   }
 
@@ -358,34 +318,6 @@ export default class GalleryTool implements BlockTool {
     } else {
       this.uploadingFailed('incorrect response: ' + JSON.stringify(response));
     }
-  }
-
-  private onAiFinalized(itemData: GalleryItemData): void {
-    const item = this.ui.addItem(itemData);
-    const image = item.querySelector<HTMLImageElement>('img');
-
-    delete this._data.aiGeneration;
-    if (image !== null) {
-      const scrollToImage = (): void => {
-        item.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
-      };
-
-      if (image.complete) {
-        requestAnimationFrame(scrollToImage);
-      } else {
-        image.addEventListener('load', scrollToImage, { once: true });
-      }
-    }
-  }
-
-  private isPendingAiGeneration(value: unknown): value is NonNullable<GalleryToolData['aiGeneration']> {
-    return typeof value === 'object'
-      && value !== null
-      && 'pending' in value
-      && value.pending === true
-      && 'sessionId' in value
-      && typeof value.sessionId === 'string'
-      && value.sessionId !== '';
   }
 
   /**

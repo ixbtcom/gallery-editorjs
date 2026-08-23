@@ -30,7 +30,6 @@ interface Nodes {
   itemsContainer: HTMLElement;
   addButtons: HTMLElement;
   fileButton: HTMLElement;
-  aiButton: HTMLButtonElement;
   clipboardButton: HTMLButtonElement;
   urlButton: HTMLElement;
   urlInput: HTMLElement;
@@ -47,7 +46,6 @@ interface UiParams {
   onRemoveImage: (url: string, mediaId?: string) => void;
   onCropImage: (item: HTMLElement) => void;
   onItemSettingsChange?: () => void;
-  onOpenAi?: () => void;
   readOnly: boolean;
 }
 
@@ -73,14 +71,13 @@ export default class Ui {
   private onRemoveImage: (url: string, mediaId?: string) => void;
   private onCropImage: (item: HTMLElement) => void;
   private onItemSettingsChange: () => void;
-  private onOpenAi: () => void;
   private readOnly: boolean;
   private currentColumns: number = 1;
   private previousColumns: number = 1;
   private isRendering: boolean = false;
   private columnsLocked: boolean = false;
 
-  constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, onOpenAi, readOnly }: UiParams) {
+  constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, readOnly }: UiParams) {
     this.api = api;
     this.config = config;
     this.onSelectFile = onSelectFile;
@@ -90,7 +87,6 @@ export default class Ui {
     this.onRemoveImage = onRemoveImage;
     this.onCropImage = onCropImage;
     this.onItemSettingsChange = onItemSettingsChange ?? (() => undefined);
-    this.onOpenAi = onOpenAi ?? (() => undefined);
     this.readOnly = readOnly;
 
     this.nodes = {
@@ -98,7 +94,6 @@ export default class Ui {
       itemsContainer: make('div', [this.CSS.itemsContainer]),
       addButtons: make('div', [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
-      aiButton: this.createAiButton(),
       clipboardButton: this.createClipboardButton(),
       urlButton: make('div'), // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
@@ -106,9 +101,6 @@ export default class Ui {
     };
 
     this.nodes.addButtons.appendChild(this.nodes.fileButton);
-    if (this.config.generation !== undefined && !this.readOnly) {
-      this.nodes.addButtons.appendChild(this.nodes.aiButton);
-    }
     this.nodes.addButtons.appendChild(this.nodes.clipboardButton);
     this.nodes.addButtons.appendChild(this.nodes.urlInput);
     this.nodes.addButtons.appendChild(this.nodes.columnsControl);
@@ -149,7 +141,6 @@ export default class Ui {
       columnsControl: 'gallery-tool__columns-control',
       columnsButton: 'gallery-tool__columns-button',
       columnsDisplay: 'gallery-tool__columns-display',
-      aiButton: 'gallery-tool__ai-button',
       clipboardButton: 'gallery-tool__clipboard-button',
     };
   }
@@ -592,15 +583,6 @@ export default class Ui {
     button.addEventListener('click', () => {
       void this.pasteFromClipboard();
     });
-
-    return button;
-  }
-
-  private createAiButton(): HTMLButtonElement {
-    const button = make('button', [this.CSS.button, this.CSS.aiButton], { type: 'button' }) as HTMLButtonElement;
-    button.innerHTML = `${IconAi}<span>Генерация</span>`;
-    button.setAttribute('aria-label', 'Генерация');
-    button.addEventListener('click', () => this.onOpenAi());
 
     return button;
   }

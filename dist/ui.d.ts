@@ -9,7 +9,6 @@ interface Nodes {
     itemsContainer: HTMLElement;
     addButtons: HTMLElement;
     fileButton: HTMLElement;
-    aiButton: HTMLButtonElement;
     clipboardButton: HTMLButtonElement;
     urlButton: HTMLElement;
     urlInput: HTMLElement;
@@ -25,7 +24,6 @@ interface UiParams {
     onRemoveImage: (url: string, mediaId?: string) => void;
     onCropImage: (item: HTMLElement) => void;
     onItemSettingsChange?: () => void;
-    onOpenAi?: () => void;
     readOnly: boolean;
 }
 /**
@@ -48,13 +46,12 @@ export default class Ui {
     private onRemoveImage;
     private onCropImage;
     private onItemSettingsChange;
-    private onOpenAi;
     private readOnly;
     private currentColumns;
     private previousColumns;
     private isRendering;
     private columnsLocked;
-    constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, onOpenAi, readOnly }: UiParams);
+    constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, readOnly }: UiParams);
     private get CSS();
     /**
      * Render the gallery UI
@@ -94,7 +91,6 @@ export default class Ui {
     getColumns(): number;
     private createFileButton;
     private createClipboardButton;
-    private createAiButton;
     private createAiBadge;
     private createUrlInput;
     private imageFromClipboardData;

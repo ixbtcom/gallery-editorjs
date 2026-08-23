@@ -49,29 +49,6 @@ function createUi(callbacks: {
   } as unknown as ConstructorParameters<typeof Ui>[0]);
 }
 
-function createAiUi(onOpenAi: () => void): Ui {
-  return new Ui({
-    api: {
-      i18n: { t: (message: string): string => message },
-      styles: {
-        button: 'ce-button',
-        input: 'ce-input',
-      },
-    } as unknown as API,
-    config: {
-      buttonContent: 'Загрузить',
-      endpoints: {},
-      generation: {},
-    } as GalleryConfig,
-    onColumnsChange: vi.fn(),
-    onCropImage: vi.fn(),
-    onOpenAi,
-    onRemoveImage: vi.fn(),
-    onSelectFile: vi.fn(),
-    onSelectUrl: vi.fn(),
-    readOnly: false,
-  });
-}
 
 function itemData(overrides: Partial<GalleryItemData> = {}): GalleryItemData {
   return {
@@ -119,23 +96,15 @@ describe('Gallery crop preview geometry', () => {
 });
 
 describe('Gallery AI entry point', () => {
-  it('places the AI action immediately after upload and opens the gallery-owned workflow', () => {
-    const onOpenAi = vi.fn();
-    const ui = createAiUi(onOpenAi);
+  it('кнопки «Генерация» у галереи нет — генерация переехала в блок media', () => {
+    // ⛔ Старые галереи открываются и правятся, но новые картинки и генерация
+    // живут в блоке media: две панели генерации спорили бы за сессии блока.
+    const ui = createUi();
     const controls = Array.from(ui.nodes.addButtons.children);
 
-    expect(controls[0]).toBe(ui.nodes.fileButton);
-    expect(controls[1]).toBe(ui.nodes.aiButton);
-    expect(controls[2]).toBe(ui.nodes.clipboardButton);
-    expect(controls[3]).toBe(ui.nodes.urlInput);
-    expect(ui.nodes.aiButton.textContent).toContain('Генерация');
-    expect(ui.nodes.aiButton.querySelector('.gallery-tool__ai-mark')?.textContent).toBe('Ai');
-    expect(ui.nodes.aiButton.getAttribute('aria-label')).toBe('Генерация');
-    expect(ui.nodes.aiButton.textContent).not.toBe('AI');
-
-    ui.nodes.aiButton.click();
-
-    expect(onOpenAi).toHaveBeenCalledOnce();
+    expect(controls).not.toContain(undefined);
+    expect(ui.nodes.addButtons.querySelector('.gallery-tool__ai-button')).toBeNull();
+    expect(ui.nodes.addButtons.textContent).not.toContain('Генерация');
   });
 
   it('marks AI-generated items with a persistent editor badge', () => {
