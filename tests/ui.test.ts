@@ -120,8 +120,10 @@ describe('Gallery AI entry point', () => {
   });
 });
 
-describe('Gallery clipboard insertion', () => {
-  it('adds a pasted image to the current gallery instead of submitting the URL field', () => {
+describe('Вставка в галерею отключена', () => {
+  it('картинка из буфера не попадает в старую галерею — её ловит блок media', () => {
+    // ⛔ Перехват вставки переехал в media вместе с картинками: иначе два тула
+    // спорят за один Ctrl+V, и файл уходит не туда, куда смотрит курсор.
     const onPasteFile = vi.fn();
     const onSelectUrl = vi.fn();
     const ui = createUi({ onPasteFile, onSelectUrl });
@@ -130,45 +132,20 @@ describe('Gallery clipboard insertion', () => {
     const event = new Event('paste', { bubbles: true, cancelable: true });
 
     Object.defineProperty(event, 'clipboardData', {
-      value: {
-        files: [image],
-        items: [],
-      },
+      value: { files: [image], items: [] },
     });
 
     input?.dispatchEvent(event);
 
-    expect(event.defaultPrevented).toBe(true);
-    expect(onPasteFile).toHaveBeenCalledOnce();
-    expect(onPasteFile).toHaveBeenCalledWith(image);
-    expect(onSelectUrl).not.toHaveBeenCalled();
+    expect(event.defaultPrevented).toBe(false);
+    expect(onPasteFile).not.toHaveBeenCalled();
   });
 
-  it('reads an image from the clipboard when the explicit button is clicked', async () => {
-    const onPasteFile = vi.fn();
-    const image = new Blob(['image'], { type: 'image/png' });
-    const read = vi.fn().mockResolvedValue([
-      {
-        getType: vi.fn().mockResolvedValue(image),
-        types: ['image/png'],
-      },
-    ]);
+  it('кнопки «Вставить из буфера» у галереи больше нет', () => {
+    const ui = createUi();
 
-    Object.defineProperty(navigator, 'clipboard', {
-      configurable: true,
-      value: { read },
-    });
-
-    const ui = createUi({ onPasteFile });
-    const clipboardButton = Array.from(ui.nodes.addButtons.querySelectorAll('button'))
-      .find(button => button.textContent?.includes('Вставить из буфера'));
-
-    expect(clipboardButton).toBeDefined();
-    clipboardButton?.click();
-
-    await vi.waitFor(() => {
-      expect(onPasteFile).toHaveBeenCalledWith(image);
-    });
+    expect(ui.nodes.addButtons.querySelector('.gallery-tool__clipboard-button')).toBeNull();
+    expect(ui.nodes.addButtons.textContent).not.toContain('Вставить из буфера');
   });
 });
 

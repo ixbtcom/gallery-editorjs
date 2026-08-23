@@ -1,4 +1,4 @@
-import { IconClipboard, IconPicture } from '@codexteam/icons';
+import { IconPicture } from '@codexteam/icons';
 import { make } from './utils/dom';
 import { createItemSettings } from '../../_shared/image-item/item-settings';
 import { resizeDisplayUrl } from '../../_shared/image-item/resize-display-url';
@@ -30,7 +30,6 @@ interface Nodes {
   itemsContainer: HTMLElement;
   addButtons: HTMLElement;
   fileButton: HTMLElement;
-  clipboardButton: HTMLButtonElement;
   urlButton: HTMLElement;
   urlInput: HTMLElement;
   columnsControl: HTMLElement;
@@ -40,7 +39,6 @@ interface UiParams {
   api: API;
   config: GalleryConfig;
   onSelectFile: () => void;
-  onPasteFile?: (file: Blob) => void;
   onSelectUrl: (url: string) => void;
   onColumnsChange: (columns: number) => void;
   onRemoveImage: (url: string, mediaId?: string) => void;
@@ -65,7 +63,6 @@ export default class Ui {
   private api: API;
   private config: GalleryConfig;
   private onSelectFile: () => void;
-  private onPasteFile: (file: Blob) => void;
   private onSelectUrl: (url: string) => void;
   private onColumnsChange: (columns: number) => void;
   private onRemoveImage: (url: string, mediaId?: string) => void;
@@ -77,11 +74,10 @@ export default class Ui {
   private isRendering: boolean = false;
   private columnsLocked: boolean = false;
 
-  constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, readOnly }: UiParams) {
+  constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, readOnly }: UiParams) {
     this.api = api;
     this.config = config;
     this.onSelectFile = onSelectFile;
-    this.onPasteFile = onPasteFile ?? (() => undefined);
     this.onSelectUrl = onSelectUrl;
     this.onColumnsChange = onColumnsChange;
     this.onRemoveImage = onRemoveImage;
@@ -94,14 +90,12 @@ export default class Ui {
       itemsContainer: make('div', [this.CSS.itemsContainer]),
       addButtons: make('div', [this.CSS.addButtons]),
       fileButton: this.createFileButton(),
-      clipboardButton: this.createClipboardButton(),
       urlButton: make('div'), // unused, kept for interface compatibility
       urlInput: this.createUrlInput(),
       columnsControl: this.createColumnsControl(),
     };
 
     this.nodes.addButtons.appendChild(this.nodes.fileButton);
-    this.nodes.addButtons.appendChild(this.nodes.clipboardButton);
     this.nodes.addButtons.appendChild(this.nodes.urlInput);
     this.nodes.addButtons.appendChild(this.nodes.columnsControl);
 
@@ -141,7 +135,6 @@ export default class Ui {
       columnsControl: 'gallery-tool__columns-control',
       columnsButton: 'gallery-tool__columns-button',
       columnsDisplay: 'gallery-tool__columns-display',
-      clipboardButton: 'gallery-tool__clipboard-button',
     };
   }
 
@@ -576,17 +569,6 @@ export default class Ui {
     return button;
   }
 
-  private createClipboardButton(): HTMLButtonElement {
-    const button = make('button', [this.CSS.button, this.CSS.clipboardButton], { type: 'button' }) as HTMLButtonElement;
-    button.innerHTML = `${IconClipboard}<span>${this.api.i18n.t('Вставить из буфера')}</span>`;
-    button.setAttribute('aria-label', this.api.i18n.t('Вставить изображение из буфера'));
-    button.addEventListener('click', () => {
-      void this.pasteFromClipboard();
-    });
-
-    return button;
-  }
-
   private createAiBadge(): HTMLElement {
     const badge = make('span', [this.CSS.itemAiBadge], {
       title: AI_CREATED_TOOLTIP,
@@ -613,18 +595,9 @@ export default class Ui {
       }
     });
 
-    input.addEventListener('paste', (event: ClipboardEvent) => {
-      const image = this.imageFromClipboardData(event.clipboardData);
-      if (image) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-        input.value = '';
-        this.onPasteFile(image);
-
-        return;
-      }
-
+    // ⛔ Картинку из буфера галерея больше не перехватывает: вставку целиком
+    // ведёт блок media. Здесь остаётся только обычный ввод ссылки.
+    input.addEventListener('paste', () => {
       setTimeout(() => {
         this.handleUrlInput(input);
       }, 50);
@@ -632,71 +605,6 @@ export default class Ui {
 
     wrapper.appendChild(input);
     return wrapper;
-  }
-
-  private imageFromClipboardData(data: DataTransfer | null): Blob | null {
-    if (!data) return null;
-
-    // Не-изображение с известным типом уходит в свой блок; галерея о нём
-    // больше не думает и поле ссылки не трогает.
-    const foreign = Array.from(data.files).find(candidate => candidate.type !== '' && !candidate.type.startsWith('image/'));
-
-    if (foreign && this.config.onNonImageFile?.(foreign) === true) {
-      return null;
-    }
-
-    const file = Array.from(data.files).find(candidate => candidate.type.startsWith('image/'));
-    if (file) return file;
-
-    for (const item of Array.from(data.items)) {
-      if (item.kind === 'file' && item.type.startsWith('image/')) {
-        return item.getAsFile();
-      }
-    }
-
-    return null;
-  }
-
-  private async pasteFromClipboard(): Promise<void> {
-    if (!navigator.clipboard || typeof navigator.clipboard.read !== 'function') {
-      this.showClipboardError('Не удалось прочитать буфер. Нажмите Ctrl/Cmd+V в поле ссылки.');
-
-      return;
-    }
-
-    try {
-      const clipboardItems = await navigator.clipboard.read();
-
-      for (const clipboardItem of clipboardItems) {
-        const imageType = clipboardItem.types.find(type => type.startsWith('image/'));
-        if (imageType) {
-          this.onPasteFile(await clipboardItem.getType(imageType));
-
-          return;
-        }
-
-        // В буфере не изображение, но тип известен — отдаём соседнему блоку
-        // вместо отказа: кнопка «Вставить из буфера» обязана принимать
-        // документ и ролик так же, как перетаскивание.
-        const otherType = clipboardItem.types.find(type => type !== 'text/plain' && type !== 'text/html');
-
-        if (otherType && this.config.onNonImageFile !== undefined) {
-          const blob = await clipboardItem.getType(otherType);
-
-          if (this.config.onNonImageFile(blob) === true) {
-            return;
-          }
-        }
-      }
-
-      this.showClipboardError('В буфере обмена нет файла, который можно вставить.');
-    } catch {
-      this.showClipboardError('Не удалось прочитать буфер. Нажмите Ctrl/Cmd+V в поле ссылки.');
-    }
-  }
-
-  private showClipboardError(message: string): void {
-    this.api.notifier.show({ message: this.api.i18n.t(message), style: 'error' });
   }
 
   /**

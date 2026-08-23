@@ -9,7 +9,6 @@ interface Nodes {
     itemsContainer: HTMLElement;
     addButtons: HTMLElement;
     fileButton: HTMLElement;
-    clipboardButton: HTMLButtonElement;
     urlButton: HTMLElement;
     urlInput: HTMLElement;
     columnsControl: HTMLElement;
@@ -18,7 +17,6 @@ interface UiParams {
     api: API;
     config: GalleryConfig;
     onSelectFile: () => void;
-    onPasteFile?: (file: Blob) => void;
     onSelectUrl: (url: string) => void;
     onColumnsChange: (columns: number) => void;
     onRemoveImage: (url: string, mediaId?: string) => void;
@@ -40,7 +38,6 @@ export default class Ui {
     private api;
     private config;
     private onSelectFile;
-    private onPasteFile;
     private onSelectUrl;
     private onColumnsChange;
     private onRemoveImage;
@@ -51,7 +48,7 @@ export default class Ui {
     private previousColumns;
     private isRendering;
     private columnsLocked;
-    constructor({ api, config, onSelectFile, onPasteFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, readOnly }: UiParams);
+    constructor({ api, config, onSelectFile, onSelectUrl, onColumnsChange, onRemoveImage, onCropImage, onItemSettingsChange, readOnly }: UiParams);
     private get CSS();
     /**
      * Render the gallery UI
@@ -90,12 +87,8 @@ export default class Ui {
      */
     getColumns(): number;
     private createFileButton;
-    private createClipboardButton;
     private createAiBadge;
     private createUrlInput;
-    private imageFromClipboardData;
-    private pasteFromClipboard;
-    private showClipboardError;
     /**
      * Process URL from input field
      */

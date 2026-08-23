@@ -1,4 +1,4 @@
-import { ToolboxConfig, BlockToolConstructorOptions, BlockTool, PasteConfig, PasteEvent } from '@editorjs/editorjs';
+import { ToolboxConfig, BlockToolConstructorOptions, BlockTool, PasteConfig } from '@editorjs/editorjs';
 import { TunesMenuConfig } from '@editorjs/editorjs/types/tools';
 import { GalleryConfig, GalleryToolData } from './types/types';
 
@@ -41,6 +41,11 @@ export default class GalleryTool implements BlockTool {
     /**
      * Specify paste substitutes
      */
+    /**
+     * ⛔ Галерея вставку не перехватывает: картинки из буфера, ссылки и файлы
+     * ведёт блок media — иначе два тула спорят за один Ctrl+V и файл уходит не
+     * туда, где стоит курсор. Старые галереи по-прежнему открываются и правятся.
+     */
     static get pasteConfig(): PasteConfig;
     /**
      * Renders Block content
@@ -60,10 +65,6 @@ export default class GalleryTool implements BlockTool {
      * Returns configuration for block tunes
      */
     renderSettings(): TunesMenuConfig;
-    /**
-     * Handle paste events
-     */
-    onPaste(event: PasteEvent): Promise<void>;
     /**
      * Handle file selection
      */

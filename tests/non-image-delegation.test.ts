@@ -38,21 +38,21 @@ describe('gallery delegates non-image files', () => {
     return { tool, uploadByFile, element };
   }
 
-  it('keeps the gallery untouched when the pasted file is claimed by another block', async () => {
+  it('файл, забранный другим блоком, галерею не меняет', async () => {
     const onNonImageFile = vi.fn().mockReturnValue(true);
     const { tool, uploadByFile } = makeGallery(onNonImageFile);
 
-    await tool.onPaste({
-      type: 'file',
-      detail: { file: new File(['%PDF'], 'doc.pdf', { type: 'application/pdf' }) },
-    } as never);
+    await (tool as unknown as { uploadFile: (file: Blob) => Promise<void> })
+      .uploadFile(new File(['%PDF'], 'doc.pdf', { type: 'application/pdf' }));
 
     expect(onNonImageFile).toHaveBeenCalledOnce();
     expect(uploadByFile).not.toHaveBeenCalled();
     expect(tool.save().items).toHaveLength(0);
   });
 
-  it('delegates a non-image file pasted into the url field instead of ignoring it', async () => {
+  it('вставка в поле ссылки больше не перехватывается галереей — этим занят блок media', async () => {
+    // ⛔ Файлы и картинки из буфера целиком ведёт media: галерея не слушает
+    // clipboardData, поэтому и делегировать ей нечего.
     const onNonImageFile = vi.fn().mockReturnValue(true);
     const { uploadByFile, element } = makeGallery(onNonImageFile);
 
@@ -62,24 +62,20 @@ describe('gallery delegates non-image files', () => {
 
     expect(input).not.toBeNull();
 
-    // Поле ссылки в галерее слушает paste: раньше файл-не-картинка там просто
-    // терялся, теперь он уходит в собственный блок.
     input?.dispatchEvent(Object.assign(new Event('paste', { bubbles: true }), { clipboardData: transfer }));
 
     await new Promise((resolve) => setTimeout(resolve, 20));
 
-    expect(onNonImageFile).toHaveBeenCalled();
+    expect(onNonImageFile).not.toHaveBeenCalled();
     expect(uploadByFile).not.toHaveBeenCalled();
   });
 
-  it('still uploads images into the gallery itself', async () => {
+  it('выбор файла в галерее по-прежнему делегирует не-картинку соседнему блоку', async () => {
+    // Диалог «выбрать файл» у галереи остался — там делегирование и работает.
     const onNonImageFile = vi.fn().mockReturnValue(false);
     const { tool, uploadByFile } = makeGallery(onNonImageFile);
 
-    await tool.onPaste({
-      type: 'file',
-      detail: { file: new File(['\xFF\xD8'], 'photo.jpg', { type: 'image/jpeg' }) },
-    } as never);
+    await (tool as unknown as { uploadFile: (file: Blob) => Promise<void> }).uploadFile(new File(['\xFF\xD8'], 'photo.jpg', { type: 'image/jpeg' }));
 
     // Загрузчик сначала читает файл через FileReader — ждём его тик.
     await new Promise((resolve) => setTimeout(resolve, 30));

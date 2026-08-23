@@ -12,9 +12,6 @@ import type {
   BlockTool,
   BlockAPI,
   PasteConfig,
-  PasteEvent,
-  PatternPasteEventDetail,
-  FilePasteEventDetail,
 } from '@editorjs/editorjs';
 import type { TunesMenuConfig } from '@editorjs/editorjs/types/tools';
 import './index.css';
@@ -102,7 +99,6 @@ export default class GalleryTool implements BlockTool {
       api,
       config: this.config,
       onSelectFile: () => this.selectFile(),
-      onPasteFile: (file: Blob) => this.uploadFile(file),
       onSelectUrl: (url: string) => this.uploadFromUrl(url),
       onColumnsChange: (columns: number) => this.onColumnsChange(columns),
       onRemoveImage: (url: string, mediaId?: string) => this.onRemoveImage(url, mediaId),
@@ -140,20 +136,13 @@ export default class GalleryTool implements BlockTool {
   /**
    * Specify paste substitutes
    */
+  /**
+   * ⛔ Галерея вставку не перехватывает: картинки из буфера, ссылки и файлы
+   * ведёт блок media — иначе два тула спорят за один Ctrl+V и файл уходит не
+   * туда, где стоит курсор. Старые галереи по-прежнему открываются и правятся.
+   */
   public static get pasteConfig(): PasteConfig {
-    return {
-      tags: [
-        {
-          img: { src: true },
-        },
-      ],
-      patterns: {
-        image: /https?:\/\/\S+\.(gif|jpe?g|tiff|png|svg|webp)(\?[a-z0-9=]*)?$/i,
-      },
-      files: {
-        mimeTypes: ['image/*'],
-      },
-    };
+    return false as unknown as PasteConfig;
   }
 
   /**
@@ -224,36 +213,6 @@ export default class GalleryTool implements BlockTool {
     }));
 
     return layoutItems;
-  }
-
-  /**
-   * Handle paste events
-   */
-  public async onPaste(event: PasteEvent): Promise<void> {
-    switch (event.type) {
-      case 'tag': {
-        const image = (event.detail as { data: HTMLImageElement }).data;
-
-        if (/^blob:/.test(image.src)) {
-          const response = await fetch(image.src);
-          const file = await response.blob();
-          this.uploadFile(file);
-        } else {
-          this.uploadFromUrl(image.src);
-        }
-        break;
-      }
-      case 'pattern': {
-        const url = (event.detail as PatternPasteEventDetail).data;
-        this.uploadFromUrl(url);
-        break;
-      }
-      case 'file': {
-        const file = (event.detail as FilePasteEventDetail).file;
-        this.uploadFile(file);
-        break;
-      }
-    }
   }
 
   /**
