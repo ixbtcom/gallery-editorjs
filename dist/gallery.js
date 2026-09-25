@@ -2817,7 +2817,7 @@ class Ai {
           a.cropAspectRatio
         );
         const s = t.dataset.mediaId;
-        s && ((n = (r = this.config).onCropApplied) == null || n.call(r, s, a.crop));
+        s && ((n = (r = this.config).onCropApplied) == null || n.call(r, s, a.crop, a.croppedWidth, a.croppedHeight));
       }
       this.block.dispatchChange();
     }

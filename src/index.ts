@@ -350,7 +350,7 @@ export default class GalleryTool implements BlockTool {
       const mediaId = item.dataset.mediaId;
 
       if (mediaId) {
-        this.config.onCropApplied?.(mediaId, result.crop);
+        this.config.onCropApplied?.(mediaId, result.crop, result.croppedWidth, result.croppedHeight);
       }
     }
 

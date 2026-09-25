@@ -112,7 +112,7 @@ export interface GalleryConfig {
      */
     onNonImageFile?: (file: Blob) => boolean;
     onMediaRemoved?: (mediaId: string) => void;
-    onCropApplied?: (mediaId: string, crop: string) => void;
+    onCropApplied?: (mediaId: string, crop: string, croppedWidth: number, croppedHeight: number) => void;
     /** Локальный выбор базовой обложки, provided by filament-editorjs. */
     cover?: {
         enabled?: boolean;
